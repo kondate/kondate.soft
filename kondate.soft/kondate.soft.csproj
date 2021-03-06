@@ -1,0 +1,2323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CF3FC99-694F-4172-9DDC-AE9D8EC02D2D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>kondate.soft</RootNamespace>
+    <AssemblyName>kondate.soft</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\192.168.0.3\Update_Krest\Samn\Setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>127</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5D61AE803B83058767267484D5C1A0805453904A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>kondate.soft_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>samarn_logo_256x256_Vtt_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>kondate.soft.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form_001Test_1panel_top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_001Test_1panel_top.Designer.cs">
+      <DependentUpon>Form_001Test_1panel_top.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_001Test_3menu_top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_001Test_3menu_top.Designer.cs">
+      <DependentUpon>Form_001Test_3menu_top.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_001Test_2panel_top.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_001Test_2panel_top.Designer.cs">
+      <DependentUpon>Form_001Test_2panel_top.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_001Test_4panel_contens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_001Test_4panel_contens.Designer.cs">
+      <DependentUpon>Form_001Test_4panel_contens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_001Test_5panel_form_grid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_001Test_5panel_form_grid.Designer.cs">
+      <DependentUpon>Form_001Test_5panel_form_grid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_muti_combobox_11co.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_muti_combobox_11co.Designer.cs">
+      <DependentUpon>Form_muti_combobox_11co.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Spash_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Spash_Screen.Designer.cs">
+      <DependentUpon>Form_Spash_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME.Designer.cs">
+      <DependentUpon>HOME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_01PR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_01PR_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record_detail.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_01PR_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record_Print.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_01PR_record_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_02PO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_02PO_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record_detail.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_02PO_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record_Print.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_02PO_record_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_03PR_Check_PR__ALL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_03PR_Check_PR__ALL.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_03PR_Check_PR__ALL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_04AP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_04AP_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record_detail.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_04AP_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record_Print.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_04AP_record_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_05RG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_05RG_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_detail.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_05RG_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_print.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_05RG_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing_Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing_Department.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce.Designer.cs">
+      <DependentUpon>HOME03_Production_02Berg_Produce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_02Berg_Produce_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce_record.Designer.cs">
+      <DependentUpon>HOME03_Production_02Berg_Produce_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_02Berg_Produce_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce.Designer.cs">
+      <DependentUpon>HOME03_Production_03Produce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce_record.Designer.cs">
+      <DependentUpon>HOME03_Production_03Produce_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_03Produce_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_03Produce_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_03Produce_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC.Designer.cs">
+      <DependentUpon>HOME03_Production_04QC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC_record.Designer.cs">
+      <DependentUpon>HOME03_Production_04QC_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_04QC_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_04QC_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye.Designer.cs">
+      <DependentUpon>HOME03_Production_05Send_Dye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_record.Designer.cs">
+      <DependentUpon>HOME03_Production_05Send_Dye_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_05Send_Dye_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_05Send_Dye_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye.Designer.cs">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record.Designer.cs">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt.Designer.cs">
+      <DependentUpon>HOME03_Production_08Cut_shirt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record.Designer.cs">
+      <DependentUpon>HOME03_Production_08Cut_shirt_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_08Cut_shirt_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_08Cut_shirt_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt.Designer.cs">
+      <DependentUpon>HOME03_Production_09Sew_shirt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record.Designer.cs">
+      <DependentUpon>HOME03_Production_09Sew_shirt_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_09Sew_shirt_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_09Sew_shirt_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt.Designer.cs">
+      <DependentUpon>HOME03_Production_10Rolled_shirt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record.Designer.cs">
+      <DependentUpon>HOME03_Production_10Rolled_shirt_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_10Rolled_shirt_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_10Rolled_shirt_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt.Designer.cs">
+      <DependentUpon>HOME03_Production_11QCS_shirt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record.Designer.cs">
+      <DependentUpon>HOME03_Production_11QCS_shirt_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_11QCS_shirt_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_11QCS_shirt_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt.Designer.cs">
+      <DependentUpon>HOME03_Production_12FG_shirt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record.Designer.cs">
+      <DependentUpon>HOME03_Production_12FG_shirt_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_12FG_shirt_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_12FG_shirt_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13Type_Machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13Type_Machine.Designer.cs">
+      <DependentUpon>HOME03_Production_13Type_Machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_14Machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_14Machine.Designer.cs">
+      <DependentUpon>HOME03_Production_14Machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_15produce_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_15produce_type.Designer.cs">
+      <DependentUpon>HOME03_Production_15produce_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_16face_baking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_16face_baking.Designer.cs">
+      <DependentUpon>HOME03_Production_16face_baking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_17Number_mat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_17Number_mat.Designer.cs">
+      <DependentUpon>HOME03_Production_17Number_mat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_18Number_Color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_18Number_Color.Designer.cs">
+      <DependentUpon>HOME03_Production_18Number_Color.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_19shirt_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_19shirt_type.Designer.cs">
+      <DependentUpon>HOME03_Production_19shirt_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_20shirt_size.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_20shirt_size.Designer.cs">
+      <DependentUpon>HOME03_Production_20shirt_size.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_21room_collect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_21room_collect.Designer.cs">
+      <DependentUpon>HOME03_Production_21room_collect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production_department.Designer.cs">
+      <DependentUpon>HOME03_Production_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01Mat_Average.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01Mat_Average.Designer.cs">
+      <DependentUpon>HOME04_Warehouse_01Mat_Average.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse_department.Designer.cs">
+      <DependentUpon>HOME04_Warehouse_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale.Designer.cs">
+      <DependentUpon>HOME05_Sale_01sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash.Designer.cs">
+      <DependentUpon>HOME05_Sale_02sale_cash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record.Designer.cs">
+      <DependentUpon>HOME05_Sale_01sale_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record_detail.Designer.cs">
+      <DependentUpon>HOME05_Sale_01sale_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record_print_copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record_print_copy.Designer.cs">
+      <DependentUpon>HOME05_Sale_01sale_record_print_copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_01sale_record_print.Designer.cs">
+      <DependentUpon>HOME05_Sale_01sale_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02cus_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02cus_type.Designer.cs">
+      <DependentUpon>HOME05_Sale_02cus_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record.Designer.cs">
+      <DependentUpon>HOME05_Sale_02sale_cash_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_detail.Designer.cs">
+      <DependentUpon>HOME05_Sale_02sale_cash_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_print.Designer.cs">
+      <DependentUpon>HOME05_Sale_02sale_cash_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_print_copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_print_copy.Designer.cs">
+      <DependentUpon>HOME05_Sale_02sale_cash_record_print_copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV.Designer.cs">
+      <DependentUpon>HOME05_Sale_03IV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record.Designer.cs">
+      <DependentUpon>HOME05_Sale_03IV_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record_detail.Designer.cs">
+      <DependentUpon>HOME05_Sale_03IV_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record_print.Designer.cs">
+      <DependentUpon>HOME05_Sale_03IV_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record_print_copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03IV_record_print_copy.Designer.cs">
+      <DependentUpon>HOME05_Sale_03IV_record_print_copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03cus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_03cus.Designer.cs">
+      <DependentUpon>HOME05_Sale_03cus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill.Designer.cs">
+      <DependentUpon>HOME05_Sale_04Wang_bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record.Designer.cs">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_detail.Designer.cs">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_print.Designer.cs">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_print_copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_print_copy.Designer.cs">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record_print_copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME05_Sales_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME05_Sales_department.Designer.cs">
+      <DependentUpon>HOME05_Sales_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME06_Registration_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME06_Registration_department.Designer.cs">
+      <DependentUpon>HOME06_Registration_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME07_Credit_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME07_Credit_department.Designer.cs">
+      <DependentUpon>HOME07_Credit_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME08_Finance_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME08_Finance_department.Designer.cs">
+      <DependentUpon>HOME08_Finance_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME09_Accounting_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME09_Accounting_department.Designer.cs">
+      <DependentUpon>HOME09_Accounting_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME10_HR_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME10_HR_department.Designer.cs">
+      <DependentUpon>HOME10_HR_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME11_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME11_Report.Designer.cs">
+      <DependentUpon>HOME11_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME12_Set_license.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME12_Set_license.Designer.cs">
+      <DependentUpon>HOME12_Set_license.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_01_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_01_user.Designer.cs">
+      <DependentUpon>HOME12_Set_license_01_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_02_user_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_02_user_type.Designer.cs">
+      <DependentUpon>HOME12_Set_license_02_user_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_03_change_pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_03_change_pass.Designer.cs">
+      <DependentUpon>HOME12_Set_license_03_change_pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_04_user_role.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_04_user_role.Designer.cs">
+      <DependentUpon>HOME12_Set_license_04_user_role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_05_user_trans_log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME12_license\HOME12_Set_license_05_user_trans_log.Designer.cs">
+      <DependentUpon>HOME12_Set_license_05_user_trans_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Set_Support.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Set_Support.Designer.cs">
+      <DependentUpon>HOME13_Set_Support.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair.Designer.cs">
+      <DependentUpon>Home13_Support_01repair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair_record.Designer.cs">
+      <DependentUpon>Home13_Support_01repair_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair_record_detail.Designer.cs">
+      <DependentUpon>Home13_Support_01repair_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_01repair_record_print.Designer.cs">
+      <DependentUpon>Home13_Support_01repair_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair.Designer.cs">
+      <DependentUpon>Home13_Support_02approve_repair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair_1reques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair_1reques.Designer.cs">
+      <DependentUpon>Home13_Support_02approve_repair_1reques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair_record.Designer.cs">
+      <DependentUpon>Home13_Support_02approve_repair_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_02approve_repair_record_print.Designer.cs">
+      <DependentUpon>Home13_Support_02approve_repair_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair.Designer.cs">
+      <DependentUpon>Home13_Support_03get_repair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair_1approve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair_1approve.Designer.cs">
+      <DependentUpon>Home13_Support_03get_repair_1approve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair_record.Designer.cs">
+      <DependentUpon>Home13_Support_03get_repair_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME13_Support\Home13_Support_03get_repair_record_detail.Designer.cs">
+      <DependentUpon>Home13_Support_03get_repair_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home2.Designer.cs">
+      <DependentUpon>Home2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_1PR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_1PR.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_1PR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_2ACC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_2ACC.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_3Member.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_3Member.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_3Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_4WH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_SETUP_Enter_4WH.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_03QC_record.cs">
+      <DependentUpon>Report_c002_03QC_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_02produce_record.cs">
+      <DependentUpon>Report_c002_02produce_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_01berg_produce_record.cs">
+      <DependentUpon>Report_c002_01berg_produce_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_05Send_dye_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_c002_05Send_dye_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.cs">
+      <DependentUpon>Report_c002_12FG_shirt_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_11QCS_shirt_record.cs">
+      <DependentUpon>Report_c002_11QCS_shirt_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_10Rolled_shirt_record.cs">
+      <DependentUpon>Report_c002_10Rolled_shirt_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_09Sew_shirt_record.cs">
+      <DependentUpon>Report_c002_09Sew_shirt_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_08Cut_shirt_record.cs">
+      <DependentUpon>Report_c002_08Cut_shirt_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_07Receive_Send_dye_record.cs">
+      <DependentUpon>Report_c002_07Receive_Send_dye_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_s001_01sale_record.cs">
+      <DependentUpon>Report_s001_01sale_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_k020db_receive_record.cs">
+      <DependentUpon>Report_k020db_receive_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_k019db_approve_record.cs">
+      <DependentUpon>Report_k019db_approve_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_k018db_po_record.cs">
+      <DependentUpon>Report_k018db_po_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_k017db_pr_record.cs">
+      <DependentUpon>Report_k017db_pr_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_b001mat.cs">
+      <DependentUpon>Report_b001mat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_Chart_of_accounts.cs">
+      <DependentUpon>Report_Chart_of_accounts.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_s001_01sale_record_copy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_s001_01sale_record_copy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_a003db_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_a003db_user.Designer.cs">
+      <DependentUpon>Form_a003db_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001mat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001mat.Designer.cs">
+      <DependentUpon>Form_b001mat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_01mat_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_01mat_type.Designer.cs">
+      <DependentUpon>Form_b001_01mat_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_01mat_type2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_01mat_type2.Designer.cs">
+      <DependentUpon>Form_b001_01mat_type2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_02mat_sac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_02mat_sac.Designer.cs">
+      <DependentUpon>Form_b001_02mat_sac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_02mat_sac2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_02mat_sac2.Designer.cs">
+      <DependentUpon>Form_b001_02mat_sac2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_03mat_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_03mat_group.Designer.cs">
+      <DependentUpon>Form_b001_03mat_group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_03mat_group2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_03mat_group2.Designer.cs">
+      <DependentUpon>Form_b001_03mat_group2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_04mat_brand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_04mat_brand.Designer.cs">
+      <DependentUpon>Form_b001_04mat_brand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_04mat_brand2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_04mat_brand2.Designer.cs">
+      <DependentUpon>Form_b001_04mat_brand2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_05mat_unit1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_05mat_unit1.Designer.cs">
+      <DependentUpon>Form_b001_05mat_unit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_05mat_unit2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_05mat_unit2.Designer.cs">
+      <DependentUpon>Form_b001_05mat_unit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_09bom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_b001_09bom.Designer.cs">
+      <DependentUpon>Form_b001_09bom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_btnAdd_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_btnAdd_detail.Designer.cs">
+      <DependentUpon>Form_btnAdd_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_btnAdd_PR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_btnAdd_PR.Designer.cs">
+      <DependentUpon>Form_btnAdd_PR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_01machine_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_01machine_type.Designer.cs">
+      <DependentUpon>Form_c001_01machine_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_02machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_02machine.Designer.cs">
+      <DependentUpon>Form_c001_02machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_03berg_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_03berg_type.Designer.cs">
+      <DependentUpon>Form_c001_03berg_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_04produce_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_04produce_type.Designer.cs">
+      <DependentUpon>Form_c001_04produce_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_05face_faking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_05face_faking.Designer.cs">
+      <DependentUpon>Form_c001_05face_faking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_06number_mat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_06number_mat.Designer.cs">
+      <DependentUpon>Form_c001_06number_mat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_07number_color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_07number_color.Designer.cs">
+      <DependentUpon>Form_c001_07number_color.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_08shirt_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_08shirt_type.Designer.cs">
+      <DependentUpon>Form_c001_08shirt_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_09shirt_size.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_09shirt_size.Designer.cs">
+      <DependentUpon>Form_c001_09shirt_size.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_10room_collect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_c001_10room_collect.Designer.cs">
+      <DependentUpon>Form_c001_10room_collect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_h013support_02_problem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_h013support_02_problem.Designer.cs">
+      <DependentUpon>Form_h013support_02_problem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_2acc_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_2acc_type.Designer.cs">
+      <DependentUpon>Form_k013db_2acc_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_3acc_work_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_3acc_work_type.Designer.cs">
+      <DependentUpon>Form_k013db_3acc_work_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_4acc_degree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_4acc_degree.Designer.cs">
+      <DependentUpon>Form_k013db_4acc_degree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_5acc_balance_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_5acc_balance_type.Designer.cs">
+      <DependentUpon>Form_k013db_5acc_balance_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_6acc_control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_6acc_control.Designer.cs">
+      <DependentUpon>Form_k013db_6acc_control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_7user_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013db_7user_type.Designer.cs">
+      <DependentUpon>Form_k013db_7user_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_06wherehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_06wherehouse.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_06wherehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_07project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_07project.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_07project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_09code_bank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_09code_bank.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_09code_bank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_10code_bank_branch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_10code_bank_branch.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_10code_bank_branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_13group_tax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_13group_tax.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_13group_tax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_15wherehouse_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_15wherehouse_type.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_15wherehouse_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_16department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_16department.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_16department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_17job.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k013_1db_acc_17job.Designer.cs">
+      <DependentUpon>Form_k013_1db_acc_17job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k016db_1supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k016db_1supplier.Designer.cs">
+      <DependentUpon>Form_k016db_1supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k016db_supplier_2type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k016db_supplier_2type.Designer.cs">
+      <DependentUpon>Form_k016db_supplier_2type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k016db_supplier_3group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_k016db_supplier_3group.Designer.cs">
+      <DependentUpon>Form_k016db_supplier_3group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_muti_combobox_1co.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_muti_combobox_1co.Designer.cs">
+      <DependentUpon>Form_muti_combobox_1co.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_muti_combobox_2branch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_muti_combobox_2branch.Designer.cs">
+      <DependentUpon>Form_muti_combobox_2branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type.Designer.cs">
+      <DependentUpon>Form_r001_02pay_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type_2Checque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type_2Checque.Designer.cs">
+      <DependentUpon>Form_r001_02pay_type_2Checque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type_3Credit_card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type_3Credit_card.Designer.cs">
+      <DependentUpon>Form_r001_02pay_type_3Credit_card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type_4transfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_r001_02pay_type_4transfer.Designer.cs">
+      <DependentUpon>Form_r001_02pay_type_4transfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_s001_02cus_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_s001_02cus_type.Designer.cs">
+      <DependentUpon>Form_s001_02cus_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_s001_03cus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_SETUP\Form_s001_03cus.Designer.cs">
+      <DependentUpon>Form_s001_03cus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_01_profix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_01_profix.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_1PR_01_profix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_02_Supplier_Type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_02_Supplier_Type.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_1PR_02_Supplier_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_03_Supplier_Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_03_Supplier_Group.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_1PR_03_Supplier_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_04_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_01PR\Home_SETUP_Enter_1PR_04_Supplier.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_1PR_04_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_04_Co.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_04_Co.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_04_Co.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_05_Branch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_05_Branch.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_05_Branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_06_wherehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_06_wherehouse.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_06_wherehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_07_project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_07_project.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_07_project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_08_acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc_import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc_import.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_08_acc_import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc_Print.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_08_acc_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_09_code_bank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_09_code_bank.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_09_code_bank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_10_code_bank_branch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_10_code_bank_branch.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_10_code_bank_branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_13_group_tax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_13_group_tax.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_13_group_tax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_15_wherehouse_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_15_wherehouse_type.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_15_wherehouse_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_16_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_16_department.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_16_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_17_job.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_17_job.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_17_job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_18_currency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_18_currency.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_18_currency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_19_berg_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_19_berg_type.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_2ACC_19_berg_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_07_mat_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_07_mat_Print.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_07_mat_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_01_mat_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_01_mat_type.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_01_mat_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_02_mat_sac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_02_mat_sac.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_02_mat_sac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_03_mat_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_03_mat_group.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_03_mat_group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_04_mat_brand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_04_mat_brand.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_04_mat_brand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_06_mat_unit2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_06_mat_unit2.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_06_mat_unit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_07_mat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_07_mat.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_07_mat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_05_mat_unit1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_05_mat_unit1.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_05_mat_unit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_08_bom_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_08_bom_type.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_08_bom_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_09_bom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_04WH\Home_SETUP_Enter_4WH_09_bom.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_4WH_09_bom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP_13SP\Home_SETUP_Enter_13SP_01_support_02_problem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP_13SP\Home_SETUP_Enter_13SP_01_support_02_problem.Designer.cs">
+      <DependentUpon>Home_SETUP_Enter_13SP_01_support_02_problem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="W_CryptorEngine.cs" />
+    <Compile Include="W_ID_Select.cs" />
+    <EmbeddedResource Include="Form_001Test_1panel_top.resx">
+      <DependentUpon>Form_001Test_1panel_top.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_001Test_2panel_top.resx">
+      <DependentUpon>Form_001Test_2panel_top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_001Test_3menu_top.resx">
+      <DependentUpon>Form_001Test_3menu_top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_001Test_4panel_contens.resx">
+      <DependentUpon>Form_001Test_4panel_contens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_001Test_5panel_form_grid.resx">
+      <DependentUpon>Form_001Test_5panel_form_grid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_muti_combobox_11co.resx">
+      <DependentUpon>Form_muti_combobox_11co.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Spash_Screen.resx">
+      <DependentUpon>Form_Spash_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME.resx">
+      <DependentUpon>HOME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_01PR.resx">
+      <DependentUpon>HOME02_Purchasing_01PR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record.resx">
+      <DependentUpon>HOME02_Purchasing_01PR_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record_detail.resx">
+      <DependentUpon>HOME02_Purchasing_01PR_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_01PR_record_Print.resx">
+      <DependentUpon>HOME02_Purchasing_01PR_record_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_02PO.resx">
+      <DependentUpon>HOME02_Purchasing_02PO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record.resx">
+      <DependentUpon>HOME02_Purchasing_02PO_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record_detail.resx">
+      <DependentUpon>HOME02_Purchasing_02PO_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_02PO_record_Print.resx">
+      <DependentUpon>HOME02_Purchasing_02PO_record_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_03PR_Check_PR__ALL.resx">
+      <DependentUpon>HOME02_Purchasing_03PR_Check_PR__ALL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_04AP.resx">
+      <DependentUpon>HOME02_Purchasing_04AP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record.resx">
+      <DependentUpon>HOME02_Purchasing_04AP_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record_detail.resx">
+      <DependentUpon>HOME02_Purchasing_04AP_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_04AP_record_Print.resx">
+      <DependentUpon>HOME02_Purchasing_04AP_record_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_05RG.resx">
+      <DependentUpon>HOME02_Purchasing_05RG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record.resx">
+      <DependentUpon>HOME02_Purchasing_05RG_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_detail.resx">
+      <DependentUpon>HOME02_Purchasing_05RG_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_print.resx">
+      <DependentUpon>HOME02_Purchasing_05RG_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing_Department.resx">
+      <DependentUpon>HOME02_Purchasing_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_02Berg_Produce.resx">
+      <DependentUpon>HOME03_Production_02Berg_Produce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_02Berg_Produce_record.resx">
+      <DependentUpon>HOME03_Production_02Berg_Produce_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_02Berg_Produce_record_detail.resx">
+      <DependentUpon>HOME03_Production_02Berg_Produce_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_02Berg_Produce_record_print.resx">
+      <DependentUpon>HOME03_Production_02Berg_Produce_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_03Produce.resx">
+      <DependentUpon>HOME03_Production_03Produce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_03Produce_record.resx">
+      <DependentUpon>HOME03_Production_03Produce_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_03Produce_record_detail.resx">
+      <DependentUpon>HOME03_Production_03Produce_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_03Produce_record_print.resx">
+      <DependentUpon>HOME03_Production_03Produce_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC.resx">
+      <DependentUpon>HOME03_Production_04QC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC_record.resx">
+      <DependentUpon>HOME03_Production_04QC_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC_record_detail.resx">
+      <DependentUpon>HOME03_Production_04QC_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC_record_print.resx">
+      <DependentUpon>HOME03_Production_04QC_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye.resx">
+      <DependentUpon>HOME03_Production_05Send_Dye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye_record.resx">
+      <DependentUpon>HOME03_Production_05Send_Dye_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye_record_detail.resx">
+      <DependentUpon>HOME03_Production_05Send_Dye_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye_record_print.resx">
+      <DependentUpon>HOME03_Production_05Send_Dye_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye.resx">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record.resx">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_detail.resx">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_print.resx">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt.resx">
+      <DependentUpon>HOME03_Production_08Cut_shirt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt_record.resx">
+      <DependentUpon>HOME03_Production_08Cut_shirt_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_detail.resx">
+      <DependentUpon>HOME03_Production_08Cut_shirt_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_print.resx">
+      <DependentUpon>HOME03_Production_08Cut_shirt_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt.resx">
+      <DependentUpon>HOME03_Production_09Sew_shirt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt_record.resx">
+      <DependentUpon>HOME03_Production_09Sew_shirt_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_detail.resx">
+      <DependentUpon>HOME03_Production_09Sew_shirt_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_print.resx">
+      <DependentUpon>HOME03_Production_09Sew_shirt_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt.resx">
+      <DependentUpon>HOME03_Production_10Rolled_shirt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record.resx">
+      <DependentUpon>HOME03_Production_10Rolled_shirt_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_detail.resx">
+      <DependentUpon>HOME03_Production_10Rolled_shirt_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_print.resx">
+      <DependentUpon>HOME03_Production_10Rolled_shirt_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt.resx">
+      <DependentUpon>HOME03_Production_11QCS_shirt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt_record.resx">
+      <DependentUpon>HOME03_Production_11QCS_shirt_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_detail.resx">
+      <DependentUpon>HOME03_Production_11QCS_shirt_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_print.resx">
+      <DependentUpon>HOME03_Production_11QCS_shirt_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt.resx">
+      <DependentUpon>HOME03_Production_12FG_shirt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt_record.resx">
+      <DependentUpon>HOME03_Production_12FG_shirt_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt_record_detail.resx">
+      <DependentUpon>HOME03_Production_12FG_shirt_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt_record_print.resx">
+      <DependentUpon>HOME03_Production_12FG_shirt_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_13Type_Machine.resx">
+      <DependentUpon>HOME03_Production_13Type_Machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_14Machine.resx">
+      <DependentUpon>HOME03_Production_14Machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_15produce_type.resx">
+      <DependentUpon>HOME03_Production_15produce_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_16face_baking.resx">
+      <DependentUpon>HOME03_Production_16face_baking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_17Number_mat.resx">
+      <DependentUpon>HOME03_Production_17Number_mat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_18Number_Color.resx">
+      <DependentUpon>HOME03_Production_18Number_Color.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_19shirt_type.resx">
+      <DependentUpon>HOME03_Production_19shirt_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_20shirt_size.resx">
+      <DependentUpon>HOME03_Production_20shirt_size.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_21room_collect.resx">
+      <DependentUpon>HOME03_Production_21room_collect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production_department.resx">
+      <DependentUpon>HOME03_Production_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_01Mat_Average.resx">
+      <DependentUpon>HOME04_Warehouse_01Mat_Average.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse_department.resx">
+      <DependentUpon>HOME04_Warehouse_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_01sale.resx">
+      <DependentUpon>HOME05_Sale_01sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_01sale_record.resx">
+      <DependentUpon>HOME05_Sale_01sale_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_01sale_record_detail.resx">
+      <DependentUpon>HOME05_Sale_01sale_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_01sale_record_print_copy.resx">
+      <DependentUpon>HOME05_Sale_01sale_record_print_copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_01sale_record_print.resx">
+      <DependentUpon>HOME05_Sale_01sale_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_02cus_type.resx">
+      <DependentUpon>HOME05_Sale_02cus_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_02sale_cash.resx">
+      <DependentUpon>HOME05_Sale_02sale_cash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_02sale_cash_record.resx">
+      <DependentUpon>HOME05_Sale_02sale_cash_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_detail.resx">
+      <DependentUpon>HOME05_Sale_02sale_cash_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_print.resx">
+      <DependentUpon>HOME05_Sale_02sale_cash_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_02sale_cash_record_print_copy.resx">
+      <DependentUpon>HOME05_Sale_02sale_cash_record_print_copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_03IV.resx">
+      <DependentUpon>HOME05_Sale_03IV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_03IV_record.resx">
+      <DependentUpon>HOME05_Sale_03IV_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_03IV_record_detail.resx">
+      <DependentUpon>HOME05_Sale_03IV_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_03IV_record_print.resx">
+      <DependentUpon>HOME05_Sale_03IV_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_03IV_record_print_copy.resx">
+      <DependentUpon>HOME05_Sale_03IV_record_print_copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_03cus.resx">
+      <DependentUpon>HOME05_Sale_03cus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_04Wang_bill.resx">
+      <DependentUpon>HOME05_Sale_04Wang_bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record.resx">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_detail.resx">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_print.resx">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales\HOME05_Sale_04Wang_bill_record_print_copy.resx">
+      <DependentUpon>HOME05_Sale_04Wang_bill_record_print_copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME05_Sales_department.resx">
+      <DependentUpon>HOME05_Sales_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME06_Registration_department.resx">
+      <DependentUpon>HOME06_Registration_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME07_Credit_department.resx">
+      <DependentUpon>HOME07_Credit_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME08_Finance_department.resx">
+      <DependentUpon>HOME08_Finance_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME09_Accounting_department.resx">
+      <DependentUpon>HOME09_Accounting_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME10_HR_department.resx">
+      <DependentUpon>HOME10_HR_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME11_Report.resx">
+      <DependentUpon>HOME11_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME12_Set_license.resx">
+      <DependentUpon>HOME12_Set_license.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME12_license\HOME12_Set_license_01_user.resx">
+      <DependentUpon>HOME12_Set_license_01_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME12_license\HOME12_Set_license_02_user_type.resx">
+      <DependentUpon>HOME12_Set_license_02_user_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME12_license\HOME12_Set_license_03_change_pass.resx">
+      <DependentUpon>HOME12_Set_license_03_change_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME12_license\HOME12_Set_license_04_user_role.resx">
+      <DependentUpon>HOME12_Set_license_04_user_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME12_license\HOME12_Set_license_05_user_trans_log.resx">
+      <DependentUpon>HOME12_Set_license_05_user_trans_log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Set_Support.resx">
+      <DependentUpon>HOME13_Set_Support.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_01repair.resx">
+      <DependentUpon>Home13_Support_01repair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_01repair_record.resx">
+      <DependentUpon>Home13_Support_01repair_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_01repair_record_detail.resx">
+      <DependentUpon>Home13_Support_01repair_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_01repair_record_print.resx">
+      <DependentUpon>Home13_Support_01repair_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_02approve_repair.resx">
+      <DependentUpon>Home13_Support_02approve_repair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_02approve_repair_1reques.resx">
+      <DependentUpon>Home13_Support_02approve_repair_1reques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_02approve_repair_record.resx">
+      <DependentUpon>Home13_Support_02approve_repair_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_02approve_repair_record_print.resx">
+      <DependentUpon>Home13_Support_02approve_repair_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_03get_repair.resx">
+      <DependentUpon>Home13_Support_03get_repair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_03get_repair_1approve.resx">
+      <DependentUpon>Home13_Support_03get_repair_1approve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_03get_repair_record.resx">
+      <DependentUpon>Home13_Support_03get_repair_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME13_Support\Home13_Support_03get_repair_record_detail.resx">
+      <DependentUpon>Home13_Support_03get_repair_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home2.resx">
+      <DependentUpon>Home2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_SETUP_Enter_1PR.resx">
+      <DependentUpon>Home_SETUP_Enter_1PR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_SETUP_Enter_2ACC.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_SETUP_Enter_3Member.resx">
+      <DependentUpon>Home_SETUP_Enter_3Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_SETUP_Enter_4WH.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_03QC_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_03QC_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_02produce_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_02produce_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_01berg_produce_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_01berg_produce_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_05Send_dye_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_05Send_dye_record.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_12FG_shirt_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_11QCS_shirt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_11QCS_shirt_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_10Rolled_shirt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_10Rolled_shirt_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_09Sew_shirt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_09Sew_shirt_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_08Cut_shirt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_08Cut_shirt_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_07Receive_Send_dye_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_07Receive_Send_dye_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_s001_01sale_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_s001_01sale_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_k020db_receive_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_k020db_receive_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_k019db_approve_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_k019db_approve_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_k018db_po_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_k018db_po_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_k017db_pr_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_k017db_pr_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_b001mat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_b001mat.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_Chart_of_accounts.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_Chart_of_accounts.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_s001_01sale_record_copy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_s001_01sale_record_copy.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_a003db_user.resx">
+      <DependentUpon>Form_a003db_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001mat.resx">
+      <DependentUpon>Form_b001mat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_01mat_type.resx">
+      <DependentUpon>Form_b001_01mat_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_01mat_type2.resx">
+      <DependentUpon>Form_b001_01mat_type2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_02mat_sac.resx">
+      <DependentUpon>Form_b001_02mat_sac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_02mat_sac2.resx">
+      <DependentUpon>Form_b001_02mat_sac2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_03mat_group.resx">
+      <DependentUpon>Form_b001_03mat_group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_03mat_group2.resx">
+      <DependentUpon>Form_b001_03mat_group2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_04mat_brand.resx">
+      <DependentUpon>Form_b001_04mat_brand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_04mat_brand2.resx">
+      <DependentUpon>Form_b001_04mat_brand2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_05mat_unit1.resx">
+      <DependentUpon>Form_b001_05mat_unit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_05mat_unit2.resx">
+      <DependentUpon>Form_b001_05mat_unit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_b001_09bom.resx">
+      <DependentUpon>Form_b001_09bom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_btnAdd_detail.resx">
+      <DependentUpon>Form_btnAdd_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_btnAdd_PR.resx">
+      <DependentUpon>Form_btnAdd_PR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_01machine_type.resx">
+      <DependentUpon>Form_c001_01machine_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_02machine.resx">
+      <DependentUpon>Form_c001_02machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_03berg_type.resx">
+      <DependentUpon>Form_c001_03berg_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_04produce_type.resx">
+      <DependentUpon>Form_c001_04produce_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_05face_faking.resx">
+      <DependentUpon>Form_c001_05face_faking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_06number_mat.resx">
+      <DependentUpon>Form_c001_06number_mat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_07number_color.resx">
+      <DependentUpon>Form_c001_07number_color.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_08shirt_type.resx">
+      <DependentUpon>Form_c001_08shirt_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_09shirt_size.resx">
+      <DependentUpon>Form_c001_09shirt_size.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_c001_10room_collect.resx">
+      <DependentUpon>Form_c001_10room_collect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_h013support_02_problem.resx">
+      <DependentUpon>Form_h013support_02_problem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013db_2acc_type.resx">
+      <DependentUpon>Form_k013db_2acc_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013db_3acc_work_type.resx">
+      <DependentUpon>Form_k013db_3acc_work_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013db_4acc_degree.resx">
+      <DependentUpon>Form_k013db_4acc_degree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013db_5acc_balance_type.resx">
+      <DependentUpon>Form_k013db_5acc_balance_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013db_6acc_control.resx">
+      <DependentUpon>Form_k013db_6acc_control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013db_7user_type.resx">
+      <DependentUpon>Form_k013db_7user_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_06wherehouse.resx">
+      <DependentUpon>Form_k013_1db_acc_06wherehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_07project.resx">
+      <DependentUpon>Form_k013_1db_acc_07project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_09code_bank.resx">
+      <DependentUpon>Form_k013_1db_acc_09code_bank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_10code_bank_branch.resx">
+      <DependentUpon>Form_k013_1db_acc_10code_bank_branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_13group_tax.resx">
+      <DependentUpon>Form_k013_1db_acc_13group_tax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_15wherehouse_type.resx">
+      <DependentUpon>Form_k013_1db_acc_15wherehouse_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_16department.resx">
+      <DependentUpon>Form_k013_1db_acc_16department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k013_1db_acc_17job.resx">
+      <DependentUpon>Form_k013_1db_acc_17job.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k016db_1supplier.resx">
+      <DependentUpon>Form_k016db_1supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k016db_supplier_2type.resx">
+      <DependentUpon>Form_k016db_supplier_2type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_k016db_supplier_3group.resx">
+      <DependentUpon>Form_k016db_supplier_3group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_muti_combobox_1co.resx">
+      <DependentUpon>Form_muti_combobox_1co.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_muti_combobox_2branch.resx">
+      <DependentUpon>Form_muti_combobox_2branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_r001_02pay_type.resx">
+      <DependentUpon>Form_r001_02pay_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_r001_02pay_type_2Checque.resx">
+      <DependentUpon>Form_r001_02pay_type_2Checque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_r001_02pay_type_3Credit_card.resx">
+      <DependentUpon>Form_r001_02pay_type_3Credit_card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_r001_02pay_type_4transfer.resx">
+      <DependentUpon>Form_r001_02pay_type_4transfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_s001_02cus_type.resx">
+      <DependentUpon>Form_s001_02cus_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_SETUP\Form_s001_03cus.resx">
+      <DependentUpon>Form_s001_03cus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_01PR\Home_SETUP_Enter_1PR_01_profix.resx">
+      <DependentUpon>Home_SETUP_Enter_1PR_01_profix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_01PR\Home_SETUP_Enter_1PR_02_Supplier_Type.resx">
+      <DependentUpon>Home_SETUP_Enter_1PR_02_Supplier_Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_01PR\Home_SETUP_Enter_1PR_03_Supplier_Group.resx">
+      <DependentUpon>Home_SETUP_Enter_1PR_03_Supplier_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_01PR\Home_SETUP_Enter_1PR_04_Supplier.resx">
+      <DependentUpon>Home_SETUP_Enter_1PR_04_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_04_Co.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_04_Co.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_05_Branch.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_05_Branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_06_wherehouse.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_06_wherehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_07_project.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_07_project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_08_acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc_import.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_08_acc_import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_08_acc_Print.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_08_acc_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_09_code_bank.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_09_code_bank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_10_code_bank_branch.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_10_code_bank_branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_13_group_tax.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_13_group_tax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_15_wherehouse_type.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_15_wherehouse_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_16_department.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_16_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_17_job.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_17_job.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_18_currency.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_18_currency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_02ACC\Home_SETUP_Enter_2ACC_19_berg_type.resx">
+      <DependentUpon>Home_SETUP_Enter_2ACC_19_berg_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_07_mat_Print.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_07_mat_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_01_mat_type.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_01_mat_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_02_mat_sac.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_02_mat_sac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_03_mat_group.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_03_mat_group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_04_mat_brand.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_04_mat_brand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_06_mat_unit2.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_06_mat_unit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_07_mat.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_07_mat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_05_mat_unit1.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_05_mat_unit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_08_bom_type.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_08_bom_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_04WH\Home_SETUP_Enter_4WH_09_bom.resx">
+      <DependentUpon>Home_SETUP_Enter_4WH_09_bom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP_13SP\Home_SETUP_Enter_13SP_01_support_02_problem.resx">
+      <DependentUpon>Home_SETUP_Enter_13SP_01_support_02_problem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="kondate.soft_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smerp70x70pixel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KSoft66 %281%29.ico" />
+    <Content Include="samarn_logo_256x256_Vtt_icon.ico" />
+    <None Include="Resources\cancel_36px.png" />
+    <None Include="Resources\print_36px.png" />
+    <None Include="Resources\delete_document_36px.png" />
+    <None Include="Resources\save_36px.png" />
+    <None Include="Resources\opened_folder_36px.png" />
+    <None Include="Resources\new_copy_36px.png" />
+    <None Include="Resources\sort_down_10px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HOME06_Registration\" />
+    <Folder Include="HOME07_Credit\" />
+    <Folder Include="HOME08_Finance\" />
+    <Folder Include="HOME09_Accounting\" />
+    <Folder Include="HOME10_HR\" />
+    <Folder Include="HOME11_Report\" />
+    <Folder Include="kondate\soft\SETUP_2ACC\" />
+    <Folder Include="SETUP_03Member\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

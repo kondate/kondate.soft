@@ -1,0 +1,4 @@
+This product contains open or freely configurable entry fields, 
+which are not intended for storing 
+personal data without additional technical and 
+organizational measures to safeguard data protection and privacy.
