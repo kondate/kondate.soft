@@ -247,6 +247,30 @@
     <Compile Include="HOME02_Purchasing_Department.Designer.cs">
       <DependentUpon>HOME02_Purchasing_Department.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG.Designer.cs">
+      <DependentUpon>HOME03_Production_01RG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record.Designer.cs">
+      <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_01RG_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_01RG_record_print.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1581,6 +1605,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HOME02_Purchasing_Department.resx">
       <DependentUpon>HOME02_Purchasing_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG.resx">
+      <DependentUpon>HOME03_Production_01RG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record.resx">
+      <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record_detail.resx">
+      <DependentUpon>HOME03_Production_01RG_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record_print.resx">
+      <DependentUpon>HOME03_Production_01RG_record_print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_02Berg_Produce.resx">
       <DependentUpon>HOME03_Production_02Berg_Produce.cs</DependentUpon>

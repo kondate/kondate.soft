@@ -222,7 +222,7 @@ namespace kondate.soft.HOME04_Warehouse
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-
+            //test.....
         }
 
         private void BtnPrint_Click(object sender, EventArgs e)

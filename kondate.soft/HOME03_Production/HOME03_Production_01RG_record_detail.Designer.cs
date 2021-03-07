@@ -1,6 +1,6 @@
-﻿namespace kondate.soft
+﻿namespace kondate.soft.HOME03_Production
 {
-    partial class Form_001Test_3menu_top
+    partial class HOME03_Production_01RG_record_detail
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_001Test_3menu_top));
-            this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_01RG_record_detail));
+            this.panel_top = new System.Windows.Forms.Panel();
+            this.iblword_top = new System.Windows.Forms.Label();
+            this.btnmaximize_full = new System.Windows.Forms.PictureBox();
+            this.btnminimize = new System.Windows.Forms.PictureBox();
+            this.btnmaximize = new System.Windows.Forms.PictureBox();
+            this.btnclose = new System.Windows.Forms.PictureBox();
             this.panel_button_top = new System.Windows.Forms.Panel();
+            this.BtnGrid = new System.Windows.Forms.Button();
             this.BtnPrint_copy = new System.Windows.Forms.Button();
             this.btnPreview_copy = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
@@ -40,28 +46,99 @@
             this.BtnCancel_Doc = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnNew = new System.Windows.Forms.Button();
-            this.panel_top_search = new System.Windows.Forms.Panel();
-            this.panel_low_sum = new System.Windows.Forms.Panel();
-            this.panel_Grid_Record = new System.Windows.Forms.Panel();
-            this.panel_Grid_Detail = new System.Windows.Forms.Panel();
-            this.BtnGrid = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
+            this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
+            this.panel1_contens = new System.Windows.Forms.Panel();
+            this.button_low_right = new System.Windows.Forms.Button();
+            this.iblstatus = new System.Windows.Forms.Label();
+            this.panel_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             this.panel_button_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
+            this.panel1_contens.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel_button_top_pictureBox
+            // panel_top
             // 
-            this.panel_button_top_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("panel_button_top_pictureBox.Image")));
-            this.panel_button_top_pictureBox.Location = new System.Drawing.Point(31, 79);
-            this.panel_button_top_pictureBox.Name = "panel_button_top_pictureBox";
-            this.panel_button_top_pictureBox.Size = new System.Drawing.Size(1013, 66);
-            this.panel_button_top_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.panel_button_top_pictureBox.TabIndex = 9;
-            this.panel_button_top_pictureBox.TabStop = false;
+            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(101)))), ((int)(((byte)(27)))));
+            this.panel_top.Controls.Add(this.iblword_top);
+            this.panel_top.Controls.Add(this.btnmaximize_full);
+            this.panel_top.Controls.Add(this.btnminimize);
+            this.panel_top.Controls.Add(this.btnmaximize);
+            this.panel_top.Controls.Add(this.btnclose);
+            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
+            this.panel_top.Name = "panel_top";
+            this.panel_top.Size = new System.Drawing.Size(1561, 28);
+            this.panel_top.TabIndex = 10;
+            // 
+            // iblword_top
+            // 
+            this.iblword_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(101)))), ((int)(((byte)(27)))));
+            this.iblword_top.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.iblword_top.ForeColor = System.Drawing.Color.White;
+            this.iblword_top.Location = new System.Drawing.Point(16, 3);
+            this.iblword_top.Name = "iblword_top";
+            this.iblword_top.Size = new System.Drawing.Size(805, 23);
+            this.iblword_top.TabIndex = 535;
+            this.iblword_top.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnmaximize_full
+            // 
+            this.btnmaximize_full.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximize_full.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(101)))), ((int)(((byte)(27)))));
+            this.btnmaximize_full.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmaximize_full.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximize_full.Image")));
+            this.btnmaximize_full.Location = new System.Drawing.Point(1484, 2);
+            this.btnmaximize_full.Name = "btnmaximize_full";
+            this.btnmaximize_full.Size = new System.Drawing.Size(30, 22);
+            this.btnmaximize_full.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnmaximize_full.TabIndex = 21;
+            this.btnmaximize_full.TabStop = false;
+            this.btnmaximize_full.Visible = false;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnminimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimize.Image = ((System.Drawing.Image)(resources.GetObject("btnminimize.Image")));
+            this.btnminimize.Location = new System.Drawing.Point(1452, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(29, 22);
+            this.btnminimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnminimize.TabIndex = 17;
+            this.btnminimize.TabStop = false;
+            // 
+            // btnmaximize
+            // 
+            this.btnmaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(101)))), ((int)(((byte)(27)))));
+            this.btnmaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximize.Image")));
+            this.btnmaximize.Location = new System.Drawing.Point(1484, 3);
+            this.btnmaximize.Name = "btnmaximize";
+            this.btnmaximize.Size = new System.Drawing.Size(30, 22);
+            this.btnmaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnmaximize.TabIndex = 20;
+            this.btnmaximize.TabStop = false;
+            // 
+            // btnclose
+            // 
+            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.Location = new System.Drawing.Point(1523, 2);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(30, 22);
+            this.btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnclose.TabIndex = 15;
+            this.btnclose.TabStop = false;
             // 
             // panel_button_top
             // 
-            this.panel_button_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.panel_button_top.BackColor = System.Drawing.Color.White;
             this.panel_button_top.Controls.Add(this.BtnGrid);
             this.panel_button_top.Controls.Add(this.BtnPrint_copy);
             this.panel_button_top.Controls.Add(this.btnPreview_copy);
@@ -72,10 +149,31 @@
             this.panel_button_top.Controls.Add(this.BtnCancel_Doc);
             this.panel_button_top.Controls.Add(this.BtnSave);
             this.panel_button_top.Controls.Add(this.BtnNew);
-            this.panel_button_top.Location = new System.Drawing.Point(31, 12);
+            this.panel_button_top.Controls.Add(this.panel_button_top_pictureBox);
+            this.panel_button_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_button_top.Location = new System.Drawing.Point(0, 28);
             this.panel_button_top.Name = "panel_button_top";
-            this.panel_button_top.Size = new System.Drawing.Size(1013, 61);
-            this.panel_button_top.TabIndex = 10;
+            this.panel_button_top.Size = new System.Drawing.Size(1561, 61);
+            this.panel_button_top.TabIndex = 12;
+            // 
+            // BtnGrid
+            // 
+            this.BtnGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGrid.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnGrid.FlatAppearance.BorderSize = 0;
+            this.BtnGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnGrid.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnGrid.ForeColor = System.Drawing.Color.Black;
+            this.BtnGrid.Image = ((System.Drawing.Image)(resources.GetObject("BtnGrid.Image")));
+            this.BtnGrid.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnGrid.Location = new System.Drawing.Point(6, 3);
+            this.BtnGrid.Name = "BtnGrid";
+            this.BtnGrid.Size = new System.Drawing.Size(75, 55);
+            this.BtnGrid.TabIndex = 61;
+            this.BtnGrid.Text = "ระเบียน";
+            this.BtnGrid.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnGrid.UseVisualStyleBackColor = false;
             // 
             // BtnPrint_copy
             // 
@@ -249,80 +347,100 @@
             this.BtnNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnNew.UseVisualStyleBackColor = false;
             // 
-            // panel_top_search
+            // panel_button_top_pictureBox
             // 
-            this.panel_top_search.Location = new System.Drawing.Point(31, 151);
-            this.panel_top_search.Name = "panel_top_search";
-            this.panel_top_search.Size = new System.Drawing.Size(1013, 61);
-            this.panel_top_search.TabIndex = 11;
+            this.panel_button_top_pictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_button_top_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("panel_button_top_pictureBox.Image")));
+            this.panel_button_top_pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.panel_button_top_pictureBox.Name = "panel_button_top_pictureBox";
+            this.panel_button_top_pictureBox.Size = new System.Drawing.Size(1561, 66);
+            this.panel_button_top_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.panel_button_top_pictureBox.TabIndex = 62;
+            this.panel_button_top_pictureBox.TabStop = false;
             // 
-            // panel_low_sum
+            // panel1_contens
             // 
-            this.panel_low_sum.Location = new System.Drawing.Point(31, 635);
-            this.panel_low_sum.Name = "panel_low_sum";
-            this.panel_low_sum.Size = new System.Drawing.Size(1013, 31);
-            this.panel_low_sum.TabIndex = 12;
+            this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.button_low_right);
+            this.panel1_contens.Controls.Add(this.iblstatus);
+            this.panel1_contens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1_contens.Location = new System.Drawing.Point(0, 89);
+            this.panel1_contens.Name = "panel1_contens";
+            this.panel1_contens.Size = new System.Drawing.Size(1561, 581);
+            this.panel1_contens.TabIndex = 653;
             // 
-            // panel_Grid_Record
+            // button_low_right
             // 
-            this.panel_Grid_Record.Location = new System.Drawing.Point(30, 218);
-            this.panel_Grid_Record.Name = "panel_Grid_Record";
-            this.panel_Grid_Record.Size = new System.Drawing.Size(1013, 216);
-            this.panel_Grid_Record.TabIndex = 13;
+            this.button_low_right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_low_right.BackColor = System.Drawing.Color.White;
+            this.button_low_right.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.button_low_right.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_low_right.FlatAppearance.BorderSize = 0;
+            this.button_low_right.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button_low_right.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button_low_right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_low_right.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_low_right.ForeColor = System.Drawing.Color.Black;
+            this.button_low_right.Image = ((System.Drawing.Image)(resources.GetObject("button_low_right.Image")));
+            this.button_low_right.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_low_right.Location = new System.Drawing.Point(1529, 552);
+            this.button_low_right.Name = "button_low_right";
+            this.button_low_right.Size = new System.Drawing.Size(23, 24);
+            this.button_low_right.TabIndex = 649;
+            this.button_low_right.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_low_right.UseVisualStyleBackColor = false;
             // 
-            // panel_Grid_Detail
+            // iblstatus
             // 
-            this.panel_Grid_Detail.Location = new System.Drawing.Point(31, 440);
-            this.panel_Grid_Detail.Name = "panel_Grid_Detail";
-            this.panel_Grid_Detail.Size = new System.Drawing.Size(1013, 189);
-            this.panel_Grid_Detail.TabIndex = 14;
+            this.iblstatus.BackColor = System.Drawing.Color.White;
+            this.iblstatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iblstatus.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.iblstatus.ForeColor = System.Drawing.Color.Black;
+            this.iblstatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iblstatus.Location = new System.Drawing.Point(0, 549);
+            this.iblstatus.Name = "iblstatus";
+            this.iblstatus.Size = new System.Drawing.Size(1559, 30);
+            this.iblstatus.TabIndex = 648;
+            this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // BtnGrid
-            // 
-            this.BtnGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGrid.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnGrid.FlatAppearance.BorderSize = 0;
-            this.BtnGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnGrid.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnGrid.ForeColor = System.Drawing.Color.Black;
-            this.BtnGrid.Image = ((System.Drawing.Image)(resources.GetObject("BtnGrid.Image")));
-            this.BtnGrid.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnGrid.Location = new System.Drawing.Point(6, 3);
-            this.BtnGrid.Name = "BtnGrid";
-            this.BtnGrid.Size = new System.Drawing.Size(75, 55);
-            this.BtnGrid.TabIndex = 61;
-            this.BtnGrid.Text = "ระเบียน";
-            this.BtnGrid.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnGrid.UseVisualStyleBackColor = false;
-            // 
-            // Form_001Test_3menu_top
+            // HOME03_Production_01RG_record_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 678);
-            this.Controls.Add(this.panel_Grid_Detail);
-            this.Controls.Add(this.panel_Grid_Record);
-            this.Controls.Add(this.panel_low_sum);
-            this.Controls.Add(this.panel_top_search);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ClientSize = new System.Drawing.Size(1561, 670);
+            this.Controls.Add(this.panel1_contens);
             this.Controls.Add(this.panel_button_top);
-            this.Controls.Add(this.panel_button_top_pictureBox);
-            this.Name = "Form_001Test_3menu_top";
-            this.Text = "Form_001Test_2menu_top";
-            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
+            this.Controls.Add(this.panel_top);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "HOME03_Production_01RG_record_detail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ข้อมูลใบรับด้าย";
+            this.panel_top.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
             this.panel_button_top.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
+            this.panel1_contens.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox panel_button_top_pictureBox;
+        private System.Windows.Forms.Panel panel_top;
+        private System.Windows.Forms.Label iblword_top;
+        private System.Windows.Forms.PictureBox btnmaximize_full;
+        private System.Windows.Forms.PictureBox btnminimize;
+        private System.Windows.Forms.PictureBox btnmaximize;
+        private System.Windows.Forms.PictureBox btnclose;
         private System.Windows.Forms.Panel panel_button_top;
-        private System.Windows.Forms.Panel panel_top_search;
-        private System.Windows.Forms.Panel panel_low_sum;
-        private System.Windows.Forms.Panel panel_Grid_Record;
-        private System.Windows.Forms.Panel panel_Grid_Detail;
+        private System.Windows.Forms.Button BtnGrid;
         private System.Windows.Forms.Button BtnPrint_copy;
         private System.Windows.Forms.Button btnPreview_copy;
         private System.Windows.Forms.Button btnPreview;
@@ -332,6 +450,9 @@
         private System.Windows.Forms.Button BtnCancel_Doc;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnNew;
-        private System.Windows.Forms.Button BtnGrid;
+        private System.Windows.Forms.PictureBox panel_button_top_pictureBox;
+        private System.Windows.Forms.Panel panel1_contens;
+        private System.Windows.Forms.Button button_low_right;
+        private System.Windows.Forms.Label iblstatus;
     }
 }

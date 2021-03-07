@@ -641,6 +641,428 @@ namespace kondate.soft.HOME02_Purchasing
             this.GridView1.EnableHeadersVisualStyles = false;
 
         }
+        private void Show_GridView1_1Lot_no()
+        {
+            this.GridView1.ColumnCount = 43;
+            this.GridView1.Columns[0].Name = "Col_Auto_num";
+            this.GridView1.Columns[1].Name = "Col_txtmat_no";
+            this.GridView1.Columns[2].Name = "Col_txtmat_id";
+            this.GridView1.Columns[3].Name = "Col_txtmat_name";
+            this.GridView1.Columns[4].Name = "Col_txtmat_unit1_name";
+            this.GridView1.Columns[5].Name = "Col_txtmat_unit1_qty";
+
+            this.GridView1.Columns[6].Name = "Col_chmat_unit_status";
+
+            this.GridView1.Columns[7].Name = "Col_txtmat_unit2_name";
+            this.GridView1.Columns[8].Name = "Col_txtmat_unit2_qty";
+            this.GridView1.Columns[9].Name = "Col_txtmat_unit3_name";
+            this.GridView1.Columns[10].Name = "Col_txtmat_unit4_name";
+            this.GridView1.Columns[11].Name = "Col_txtmat_unit5_name";
+
+            this.GridView1.Columns[12].Name = "Col_txtqty_want";
+            this.GridView1.Columns[13].Name = "Col_txtqty_balance";  //  //ค้างรับยกมา
+            this.GridView1.Columns[14].Name = "Col_txtqty";
+            this.GridView1.Columns[15].Name = "Col_txtqty2";
+            this.GridView1.Columns[16].Name = "Col_txtqty_krasob";
+            this.GridView1.Columns[17].Name = "Col_txtqty_lod";
+            this.GridView1.Columns[18].Name = "Col_txtqty_pub";
+
+            this.GridView1.Columns[19].Name = "Col_txtprice";
+            this.GridView1.Columns[20].Name = "Col_txtdiscount_rate";
+            this.GridView1.Columns[21].Name = "Col_txtdiscount_money";
+            this.GridView1.Columns[22].Name = "Col_txtsum_total";
+
+            this.GridView1.Columns[23].Name = "Col_txtwant_receive_date";
+            this.GridView1.Columns[24].Name = "Col_txtmade_receive_date";
+            this.GridView1.Columns[25].Name = "Col_txtexpire_receive_date";
+
+            this.GridView1.Columns[26].Name = "Col_txtcost_qty_balance_yokma";  //กก
+            this.GridView1.Columns[27].Name = "Col_txtcost_qty_price_average_yokma";
+            this.GridView1.Columns[28].Name = "Col_txtcost_money_sum_yokma";  //กก
+
+            this.GridView1.Columns[29].Name = "Col_txtcost_qty_balance_yokpai";
+            this.GridView1.Columns[30].Name = "Col_txtcost_qty_price_average_yokpai";
+            this.GridView1.Columns[31].Name = "Col_txtcost_money_sum_yokpai";
+
+            this.GridView1.Columns[32].Name = "Col_txtcost_qty2_balance_yokma";  //ปอนด์
+            this.GridView1.Columns[33].Name = "Col_txtcost_qty2_balance_yokpai";  //ปอนด์
+
+            this.GridView1.Columns[34].Name = "Col_txtcost_qty_krasob_balance_yokma";  //กระสอบ
+            this.GridView1.Columns[35].Name = "Col_txtcost_qty_krasob_balance_yokpai";  //กระสอบ
+
+            this.GridView1.Columns[36].Name = "Col_txtcost_qty_lod_balance_yokma";  //หลอด
+            this.GridView1.Columns[37].Name = "Col_txtcost_qty_lod_balance_yokpai";  //หลอด
+
+            this.GridView1.Columns[38].Name = "Col_txtcost_qty_pub_balance_yokma";  //พับ
+            this.GridView1.Columns[39].Name = "Col_txtcost_qty_pub_balance_yokpai";  //พับ
+
+            this.GridView1.Columns[40].Name = "Col_txtqty_balance_yokpai";   //ค้างรับ
+            this.GridView1.Columns[41].Name = "Col_mat_status";
+            this.GridView1.Columns[42].Name = "Col_txtqty_receive_yokpai";  //รับแล้ว
+
+
+            this.GridView1.Columns[0].HeaderText = "No";
+            this.GridView1.Columns[1].HeaderText = "ลำดับ";
+            this.GridView1.Columns[2].HeaderText = " รหัส";
+            this.GridView1.Columns[3].HeaderText = " ชื่อสินค้า";
+            this.GridView1.Columns[4].HeaderText = " หน่วยหลัก";
+            this.GridView1.Columns[5].HeaderText = " หน่วย";
+            this.GridView1.Columns[6].HeaderText = "แปลง";
+            this.GridView1.Columns[7].HeaderText = " หน่วย2";
+            this.GridView1.Columns[8].HeaderText = " หน่วย";
+            this.GridView1.Columns[9].HeaderText = " หน่วย3";
+            this.GridView1.Columns[10].HeaderText = " หน่วย4";
+            this.GridView1.Columns[11].HeaderText = " หน่วย5";
+
+            this.GridView1.Columns[12].HeaderText = "จำนวนต้องการ";
+            this.GridView1.Columns[13].HeaderText = "จำนวนค้างรับ";  //ค้างรับยกมา
+            this.GridView1.Columns[14].HeaderText = "จำนวนรับ(หน่วยหลัก)";
+            this.GridView1.Columns[15].HeaderText = "จำนวนรับ(หน่วย2)";
+            this.GridView1.Columns[16].HeaderText = "จำนวนรับ(หน่วย3)";
+            this.GridView1.Columns[17].HeaderText = "จำนวนรับ(หน่วย4)";
+            this.GridView1.Columns[18].HeaderText = "จำนวนรับ(หน่วย5)";
+
+            this.GridView1.Columns[19].HeaderText = "ราคา";
+            this.GridView1.Columns[20].HeaderText = "ส่วนลด(%)";
+            this.GridView1.Columns[21].HeaderText = "ส่วนลด(บาท)";
+            this.GridView1.Columns[22].HeaderText = "จำนวนเงิน(บาท)";
+
+            this.GridView1.Columns[23].HeaderText = "วันที่ต้องการ";
+            this.GridView1.Columns[24].HeaderText = "วันผลิต";
+            this.GridView1.Columns[25].HeaderText = "วันหมดอายุ";
+
+            this.GridView1.Columns[26].HeaderText = "จำนวนยกมา";   //กก
+            this.GridView1.Columns[27].HeaderText = "ราคาเฉลี่ยยกมา";
+            this.GridView1.Columns[28].HeaderText = "จำนวนเงิน";
+
+            this.GridView1.Columns[29].HeaderText = "จำนวนยกไป";  //กก
+            this.GridView1.Columns[30].HeaderText = "ราคาเฉลี่ยยกไป";
+            this.GridView1.Columns[31].HeaderText = "จำนวนเงิน";
+
+            this.GridView1.Columns[32].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";  //ปอนด์
+            this.GridView1.Columns[33].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";  //ปอนด์
+
+            this.GridView1.Columns[34].HeaderText = "จำนวน(กระสอบ)ยกมา";  //กระสอบ
+            this.GridView1.Columns[35].HeaderText = "จำนวน(กระสอบ)ยกไป";  //กระสอบ
+
+            this.GridView1.Columns[36].HeaderText = "จำนวน(หลอด)ยกมา";  //หลอด
+            this.GridView1.Columns[37].HeaderText = "จำนวน(หลอด)ยกไป";  //หลอด
+
+            this.GridView1.Columns[38].HeaderText = "จำนวน(พับ)ยกมา";  //พับ
+            this.GridView1.Columns[39].HeaderText = "จำนวน(พับ)ยกไป";  //พับ
+
+            this.GridView1.Columns[40].HeaderText = "จำนวนค้างรับยกไป";   //กก
+            this.GridView1.Columns[41].HeaderText = "สถานะ";
+            this.GridView1.Columns[42].HeaderText = "จำนวนรับแล้วยกไป";  //กก
+
+            this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
+            this.GridView1.Columns["Col_Auto_num"].Width = 0;
+            this.GridView1.Columns["Col_Auto_num"].ReadOnly = true;
+            this.GridView1.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtmat_no"].Visible = false;  //"Col_txtmat_no";
+
+            this.GridView1.Columns["Col_txtmat_id"].Visible = true;  //"Col_txtmat_id";
+            this.GridView1.Columns["Col_txtmat_id"].Width = 120;
+            this.GridView1.Columns["Col_txtmat_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtmat_name"].Visible = true;  //"Col_txtmat_name";
+            this.GridView1.Columns["Col_txtmat_name"].Width = 150;
+            this.GridView1.Columns["Col_txtmat_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtmat_unit1_name"].Visible = true;  //"Col_txtmat_unit1_name";
+            this.GridView1.Columns["Col_txtmat_unit1_name"].Width = 80;
+            this.GridView1.Columns["Col_txtmat_unit1_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit1_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+            this.GridView1.Columns["Col_txtmat_unit1_qty"].Visible = true;  //"Col_txtmat_unit1_qty";
+            this.GridView1.Columns["Col_txtmat_unit1_qty"].Width = 80;
+            this.GridView1.Columns["Col_txtmat_unit1_qty"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit1_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit1_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_chmat_unit_status"].Visible = false;  //"Col_chmat_unit_status";
+            this.GridView1.Columns["Col_chmat_unit_status"].Width = 0;
+            this.GridView1.Columns["Col_chmat_unit_status"].ReadOnly = true;
+            this.GridView1.Columns["Col_chmat_unit_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_chmat_unit_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
+            dgvCmb.Name = "Col_Chk1";
+            dgvCmb.Width = 70;
+            dgvCmb.DisplayIndex = 7;
+            dgvCmb.HeaderText = "แปลงหน่วย?";
+            dgvCmb.ValueType = typeof(bool);
+            dgvCmb.ReadOnly = true;
+            dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb.DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            GridView1.Columns.Add(dgvCmb);
+
+            this.GridView1.Columns["Col_txtmat_unit2_name"].Visible = true;  //"Col_txtmat_unit2_name";
+            this.GridView1.Columns["Col_txtmat_unit2_name"].Width = 80;
+            this.GridView1.Columns["Col_txtmat_unit2_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit2_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+            this.GridView1.Columns["Col_txtmat_unit2_qty"].Visible = true;  //"Col_txtmat_unit2_qty";
+            this.GridView1.Columns["Col_txtmat_unit2_qty"].Width = 80;
+            this.GridView1.Columns["Col_txtmat_unit2_qty"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit2_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit2_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtmat_unit3_name"].Visible = true;  //"Col_txtmat_unit3_name";
+            this.GridView1.Columns["Col_txtmat_unit3_name"].Width = 80;
+            this.GridView1.Columns["Col_txtmat_unit3_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit3_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit3_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtmat_unit4_name"].Visible = true;  //"Col_txtmat_unit4_name";
+            this.GridView1.Columns["Col_txtmat_unit4_name"].Width = 80;
+            this.GridView1.Columns["Col_txtmat_unit4_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit4_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit4_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtmat_unit5_name"].Visible = true;  //"Col_txtmat_unit5_name";
+            this.GridView1.Columns["Col_txtmat_unit5_name"].Width = 80;
+            this.GridView1.Columns["Col_txtmat_unit5_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit5_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit5_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtqty_want"].Visible = false;  //"Col_txtqty_want";
+            this.GridView1.Columns["Col_txtqty_want"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_want"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_want"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_want"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_balance"].Visible = true;  //"Col_txtqty_balance";
+            this.GridView1.Columns["Col_txtqty_balance"].Width = 140;
+            this.GridView1.Columns["Col_txtqty_balance"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
+            this.GridView1.Columns["Col_txtqty"].Width = 140;
+            this.GridView1.Columns["Col_txtqty"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty2"].Visible = true;  //"Col_txtqty2";
+            this.GridView1.Columns["Col_txtqty2"].Width = 140;
+            this.GridView1.Columns["Col_txtqty2"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty2"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty2"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_krasob"].Visible = true;  //"Col_txtqty_krasob";
+            this.GridView1.Columns["Col_txtqty_krasob"].Width = 140;
+            this.GridView1.Columns["Col_txtqty_krasob"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty_krasob"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_krasob"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_lod"].Visible = true;  //"Col_txtqty_lod";
+            this.GridView1.Columns["Col_txtqty_lod"].Width = 140;
+            this.GridView1.Columns["Col_txtqty_lod"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty_lod"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_lod"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_pub"].Visible = true;  //"Col_txtqty_pub";
+            this.GridView1.Columns["Col_txtqty_pub"].Width = 140;
+            this.GridView1.Columns["Col_txtqty_pub"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty_pub"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_pub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
+            this.GridView1.Columns["Col_txtprice"].Visible = true;  //"Col_txtprice";
+            this.GridView1.Columns["Col_txtprice"].Width = 80;
+
+            if (this.txtreceive_type_id.Text.Trim() == "01")
+            {
+                this.GridView1.Columns["Col_txtprice"].ReadOnly = true;
+            }
+            if (this.txtreceive_type_id.Text.Trim() == "02")
+            {
+                this.GridView1.Columns["Col_txtprice"].ReadOnly = false;
+            }
+            this.GridView1.Columns["Col_txtprice"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtprice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtdiscount_rate"].Visible = false;  //"Col_txtdiscount_rate";
+            this.GridView1.Columns["Col_txtdiscount_rate"].Width = 0;
+            this.GridView1.Columns["Col_txtdiscount_rate"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtdiscount_rate"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtdiscount_rate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtdiscount_money"].Visible = true;  //"Col_txtdiscount_money";
+            this.GridView1.Columns["Col_txtdiscount_money"].Width = 100;
+
+            if (this.txtreceive_type_id.Text.Trim() == "01")
+            {
+                this.GridView1.Columns["Col_txtdiscount_money"].ReadOnly = true;
+            }
+            if (this.txtreceive_type_id.Text.Trim() == "02")
+            {
+                this.GridView1.Columns["Col_txtdiscount_money"].ReadOnly = false;
+            }
+            this.GridView1.Columns["Col_txtdiscount_money"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtdiscount_money"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtsum_total"].Visible = true;  //"Col_txtsum_total";
+            this.GridView1.Columns["Col_txtsum_total"].Width = 100;
+            this.GridView1.Columns["Col_txtsum_total"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_total"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtwant_receive_date"].Visible = false;  //"Col_txtwant_receive_date";
+            this.GridView1.Columns["Col_txtwant_receive_date"].Width = 0;
+            this.GridView1.Columns["Col_txtwant_receive_date"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtwant_receive_date"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtwant_receive_date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GridView1.Controls.Add(dtp1);
+            //dtp1.Visible = false;
+            //dtp1.Format = DateTimePickerFormat.Custom;
+            //dtp1.TextChanged += new EventHandler(dtp1_TextChange);
+
+            this.GridView1.Columns["Col_txtmade_receive_date"].Visible = false;  //"Col_txtmade_receive_date";
+            this.GridView1.Columns["Col_txtmade_receive_date"].Width = 0;
+            this.GridView1.Columns["Col_txtmade_receive_date"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtmade_receive_date"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmade_receive_date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GridView1.Controls.Add(dtp2);
+            //dtp2.Visible = false;
+            //dtp2.Format = DateTimePickerFormat.Custom;
+            //dtp2.TextChanged += new EventHandler(dtp2_TextChange);
+
+            this.GridView1.Columns["Col_txtexpire_receive_date"].Visible = false;  //"Col_txtexpire_receive_date";
+            this.GridView1.Columns["Col_txtexpire_receive_date"].Width = 0;
+            this.GridView1.Columns["Col_txtexpire_receive_date"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtexpire_receive_date"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtexpire_receive_date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GridView1.Controls.Add(dtp3);
+            //dtp3.Visible = false;
+            //dtp3.Format = DateTimePickerFormat.Custom;
+            //dtp3.TextChanged += new EventHandler(dtp3_TextChange);
+
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokma"].Visible = false;  //"Col_txtcost_qty_balance_yokma";
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokma"].Visible = false;  //"Col_txtcost_qty_price_average_yokma";
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_money_sum_yokma"].Visible = false;  //"Col_txtcost_money_sum_yokma";
+            this.GridView1.Columns["Col_txtcost_money_sum_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_money_sum_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_money_sum_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_money_sum_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokpai"].Visible = false;  //"Col_txtcost_qty_balance_yokpai";
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokpai"].Visible = false;  //"Col_txtcost_qty_price_average_yokpai";
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_price_average_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_money_sum_yokpai"].Visible = false;  //"Col_txtcost_money_sum_yokpai";
+            this.GridView1.Columns["Col_txtcost_money_sum_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_money_sum_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_money_sum_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_money_sum_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokma"].Visible = false;  //"Col_txtcost_qty2_balance_yokma";
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokpai"].Visible = false;  //"Col_txtcost_qty2_balance_yokpai";
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty2_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokma"].Visible = false;  //"Col_txtcost_qty_krasob_balance_yokma";
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokpai"].Visible = false;  //"Col_txtcost_qty_krasob_balance_yokpai";
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_krasob_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokma"].Visible = false;  //"Col_txtcost_qty_lod_balance_yokma";
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokpai"].Visible = false;  //"Col_txtcost_qty_lod_balance_yokpai";
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_lod_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokma"].Visible = false;  //"Col_txtcost_qty_pub_balance_yokma";
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokpai"].Visible = false;  //"Col_txtcost_qty_pub_balance_yokpai";
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcost_qty_pub_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_balance_yokpai"].Visible = false;  //"Col_txtqty_balance_yokpai";
+            this.GridView1.Columns["Col_txtqty_balance_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_balance_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_mat_status"].Visible = false;  //"Col_mat_status";
+            this.GridView1.Columns["Col_mat_status"].Width = 0;
+            this.GridView1.Columns["Col_mat_status"].ReadOnly = true;
+            this.GridView1.Columns["Col_mat_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_mat_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_receive_yokpai"].Visible = false;  //"Col_txtqty_receive_yokpai";
+            this.GridView1.Columns["Col_txtqty_receive_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_receive_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_receive_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_receive_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
+            this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
+            this.GridView1.GridColor = Color.FromArgb(227, 227, 227);
+
+            this.GridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            this.GridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            this.GridView1.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+            this.GridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Pixel); //Segoe UI, 11pt
+            this.GridView1.EnableHeadersVisualStyles = false;
+
+        }
         private void Clear_GridView1()
         {
             this.GridView1.Rows.Clear();
