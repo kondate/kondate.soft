@@ -419,6 +419,7 @@
             this.Name = "HOME03_Production_01RG_record_detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ข้อมูลใบรับด้าย";
+            this.Load += new System.EventHandler(this.HOME03_Production_01RG_record_detail_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();

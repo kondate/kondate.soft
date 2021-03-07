@@ -36,9 +36,9 @@
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -136,6 +136,33 @@
             this.panel1_contens.Size = new System.Drawing.Size(1100, 699);
             this.panel1_contens.TabIndex = 653;
             // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.CausesValidation = false;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayBackgroundEdge = false;
+            this.crystalReportViewer1.DisplayStatusBar = false;
+            this.crystalReportViewer1.EnableDrillDown = false;
+            this.crystalReportViewer1.EnableToolTips = false;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(1, 2);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowCopyButton = false;
+            this.crystalReportViewer1.ShowGotoPageButton = false;
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowLogo = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.ShowRefreshButton = false;
+            this.crystalReportViewer1.ShowTextSearchButton = false;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1094, 662);
+            this.crystalReportViewer1.TabIndex = 650;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
             // button_low_right
             // 
             this.button_low_right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,33 +197,6 @@
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.CausesValidation = false;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.DisplayBackgroundEdge = false;
-            this.crystalReportViewer1.DisplayStatusBar = false;
-            this.crystalReportViewer1.EnableDrillDown = false;
-            this.crystalReportViewer1.EnableToolTips = false;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(1, 2);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowCopyButton = false;
-            this.crystalReportViewer1.ShowGotoPageButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1094, 662);
-            this.crystalReportViewer1.TabIndex = 650;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
             // HOME03_Production_01RG_record_print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +211,7 @@
             this.Name = "HOME03_Production_01RG_record_print";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "พิมพ์ใบรับด้าย";
+            this.Load += new System.EventHandler(this.HOME03_Production_01RG_record_print_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();

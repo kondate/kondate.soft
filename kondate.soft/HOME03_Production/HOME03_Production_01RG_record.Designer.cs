@@ -420,6 +420,7 @@
             this.Name = "HOME03_Production_01RG_record";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "บันทึกรับด้าย";
+            this.Load += new System.EventHandler(this.HOME03_Production_01RG_record_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();

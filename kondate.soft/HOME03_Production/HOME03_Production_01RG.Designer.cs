@@ -47,8 +47,6 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
-            this.button_low_right = new System.Windows.Forms.Button();
-            this.iblstatus = new System.Windows.Forms.Label();
             this.PANEL1306_WH_txtwherehouse_id = new System.Windows.Forms.TextBox();
             this.PANEL1306_WH_btnwherehouse = new System.Windows.Forms.Button();
             this.PANEL1306_WH_txtwherehouse_name = new System.Windows.Forms.TextBox();
@@ -79,6 +77,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpstart = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.button_low_right = new System.Windows.Forms.Button();
+            this.iblstatus = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -415,40 +415,6 @@
             this.panel1_contens.Size = new System.Drawing.Size(1426, 581);
             this.panel1_contens.TabIndex = 651;
             // 
-            // button_low_right
-            // 
-            this.button_low_right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_low_right.BackColor = System.Drawing.Color.White;
-            this.button_low_right.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.button_low_right.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_low_right.FlatAppearance.BorderSize = 0;
-            this.button_low_right.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button_low_right.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button_low_right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_low_right.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button_low_right.ForeColor = System.Drawing.Color.Black;
-            this.button_low_right.Image = ((System.Drawing.Image)(resources.GetObject("button_low_right.Image")));
-            this.button_low_right.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_low_right.Location = new System.Drawing.Point(1398, 549);
-            this.button_low_right.Name = "button_low_right";
-            this.button_low_right.Size = new System.Drawing.Size(23, 24);
-            this.button_low_right.TabIndex = 649;
-            this.button_low_right.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_low_right.UseVisualStyleBackColor = false;
-            // 
-            // iblstatus
-            // 
-            this.iblstatus.BackColor = System.Drawing.Color.White;
-            this.iblstatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iblstatus.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.iblstatus.ForeColor = System.Drawing.Color.Black;
-            this.iblstatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iblstatus.Location = new System.Drawing.Point(0, 549);
-            this.iblstatus.Name = "iblstatus";
-            this.iblstatus.Size = new System.Drawing.Size(1424, 30);
-            this.iblstatus.TabIndex = 648;
-            this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // PANEL1306_WH_txtwherehouse_id
             // 
             this.PANEL1306_WH_txtwherehouse_id.BackColor = System.Drawing.Color.White;
@@ -783,6 +749,40 @@
             this.label7.Text = "วันที่ :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // button_low_right
+            // 
+            this.button_low_right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_low_right.BackColor = System.Drawing.Color.White;
+            this.button_low_right.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.button_low_right.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_low_right.FlatAppearance.BorderSize = 0;
+            this.button_low_right.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button_low_right.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button_low_right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_low_right.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_low_right.ForeColor = System.Drawing.Color.Black;
+            this.button_low_right.Image = ((System.Drawing.Image)(resources.GetObject("button_low_right.Image")));
+            this.button_low_right.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_low_right.Location = new System.Drawing.Point(1398, 549);
+            this.button_low_right.Name = "button_low_right";
+            this.button_low_right.Size = new System.Drawing.Size(23, 24);
+            this.button_low_right.TabIndex = 649;
+            this.button_low_right.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_low_right.UseVisualStyleBackColor = false;
+            // 
+            // iblstatus
+            // 
+            this.iblstatus.BackColor = System.Drawing.Color.White;
+            this.iblstatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iblstatus.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.iblstatus.ForeColor = System.Drawing.Color.Black;
+            this.iblstatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iblstatus.Location = new System.Drawing.Point(0, 549);
+            this.iblstatus.Name = "iblstatus";
+            this.iblstatus.Size = new System.Drawing.Size(1424, 30);
+            this.iblstatus.TabIndex = 648;
+            this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // HOME03_Production_01RG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,6 +799,7 @@
             this.Name = "HOME03_Production_01RG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ระเบียนรับด้าย";
+            this.Load += new System.EventHandler(this.HOME03_Production_01RG_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();

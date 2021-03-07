@@ -16,5 +16,10 @@ namespace kondate.soft.HOME03_Production
         {
             InitializeComponent();
         }
+
+        private void HOME03_Production_01RG_record_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
