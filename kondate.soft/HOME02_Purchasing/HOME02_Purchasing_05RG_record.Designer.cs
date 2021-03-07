@@ -46,6 +46,12 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.txtsum_qty_pub_yokpai = new System.Windows.Forms.TextBox();
+            this.txtsum_qty_pub_yokma = new System.Windows.Forms.TextBox();
+            this.txtsum_qty_lod_yokpai = new System.Windows.Forms.TextBox();
+            this.txtsum_qty_lod_yokma = new System.Windows.Forms.TextBox();
+            this.txtsum_qty_krasob_yokpai = new System.Windows.Forms.TextBox();
+            this.txtsum_qty_krasob_yokma = new System.Windows.Forms.TextBox();
             this.txtsum_qty_pub = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.txtsum_qty_lod = new System.Windows.Forms.TextBox();
@@ -218,12 +224,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
-            this.txtsum_qty_krasob_yokma = new System.Windows.Forms.TextBox();
-            this.txtsum_qty_krasob_yokpai = new System.Windows.Forms.TextBox();
-            this.txtsum_qty_lod_yokpai = new System.Windows.Forms.TextBox();
-            this.txtsum_qty_lod_yokma = new System.Windows.Forms.TextBox();
-            this.txtsum_qty_pub_yokpai = new System.Windows.Forms.TextBox();
-            this.txtsum_qty_pub_yokma = new System.Windows.Forms.TextBox();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -678,6 +678,90 @@
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             this.panel1_contens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseMove);
             // 
+            // txtsum_qty_pub_yokpai
+            // 
+            this.txtsum_qty_pub_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_pub_yokpai.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_pub_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_pub_yokpai.Location = new System.Drawing.Point(1499, 53);
+            this.txtsum_qty_pub_yokpai.Name = "txtsum_qty_pub_yokpai";
+            this.txtsum_qty_pub_yokpai.ReadOnly = true;
+            this.txtsum_qty_pub_yokpai.Size = new System.Drawing.Size(52, 21);
+            this.txtsum_qty_pub_yokpai.TabIndex = 1049;
+            this.txtsum_qty_pub_yokpai.Text = ".00";
+            this.txtsum_qty_pub_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_pub_yokpai.Visible = false;
+            // 
+            // txtsum_qty_pub_yokma
+            // 
+            this.txtsum_qty_pub_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_pub_yokma.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_pub_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_pub_yokma.Location = new System.Drawing.Point(1269, 54);
+            this.txtsum_qty_pub_yokma.Name = "txtsum_qty_pub_yokma";
+            this.txtsum_qty_pub_yokma.ReadOnly = true;
+            this.txtsum_qty_pub_yokma.Size = new System.Drawing.Size(61, 21);
+            this.txtsum_qty_pub_yokma.TabIndex = 1048;
+            this.txtsum_qty_pub_yokma.Text = ".00";
+            this.txtsum_qty_pub_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_pub_yokma.Visible = false;
+            // 
+            // txtsum_qty_lod_yokpai
+            // 
+            this.txtsum_qty_lod_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_lod_yokpai.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_lod_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_lod_yokpai.Location = new System.Drawing.Point(1499, 30);
+            this.txtsum_qty_lod_yokpai.Name = "txtsum_qty_lod_yokpai";
+            this.txtsum_qty_lod_yokpai.ReadOnly = true;
+            this.txtsum_qty_lod_yokpai.Size = new System.Drawing.Size(52, 21);
+            this.txtsum_qty_lod_yokpai.TabIndex = 1047;
+            this.txtsum_qty_lod_yokpai.Text = ".00";
+            this.txtsum_qty_lod_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_lod_yokpai.Visible = false;
+            // 
+            // txtsum_qty_lod_yokma
+            // 
+            this.txtsum_qty_lod_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_lod_yokma.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_lod_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_lod_yokma.Location = new System.Drawing.Point(1269, 31);
+            this.txtsum_qty_lod_yokma.Name = "txtsum_qty_lod_yokma";
+            this.txtsum_qty_lod_yokma.ReadOnly = true;
+            this.txtsum_qty_lod_yokma.Size = new System.Drawing.Size(61, 21);
+            this.txtsum_qty_lod_yokma.TabIndex = 1046;
+            this.txtsum_qty_lod_yokma.Text = ".00";
+            this.txtsum_qty_lod_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_lod_yokma.Visible = false;
+            // 
+            // txtsum_qty_krasob_yokpai
+            // 
+            this.txtsum_qty_krasob_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_krasob_yokpai.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_krasob_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_krasob_yokpai.Location = new System.Drawing.Point(1499, 7);
+            this.txtsum_qty_krasob_yokpai.Name = "txtsum_qty_krasob_yokpai";
+            this.txtsum_qty_krasob_yokpai.ReadOnly = true;
+            this.txtsum_qty_krasob_yokpai.Size = new System.Drawing.Size(52, 21);
+            this.txtsum_qty_krasob_yokpai.TabIndex = 1045;
+            this.txtsum_qty_krasob_yokpai.Text = ".00";
+            this.txtsum_qty_krasob_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_krasob_yokpai.Visible = false;
+            // 
+            // txtsum_qty_krasob_yokma
+            // 
+            this.txtsum_qty_krasob_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_krasob_yokma.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_krasob_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_krasob_yokma.Location = new System.Drawing.Point(1269, 8);
+            this.txtsum_qty_krasob_yokma.Name = "txtsum_qty_krasob_yokma";
+            this.txtsum_qty_krasob_yokma.ReadOnly = true;
+            this.txtsum_qty_krasob_yokma.Size = new System.Drawing.Size(61, 21);
+            this.txtsum_qty_krasob_yokma.TabIndex = 1044;
+            this.txtsum_qty_krasob_yokma.Text = ".00";
+            this.txtsum_qty_krasob_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_krasob_yokma.Visible = false;
+            // 
             // txtsum_qty_pub
             // 
             this.txtsum_qty_pub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -690,6 +774,7 @@
             this.txtsum_qty_pub.TabIndex = 1042;
             this.txtsum_qty_pub.Text = ".00";
             this.txtsum_qty_pub.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_pub.Visible = false;
             // 
             // label42
             // 
@@ -702,6 +787,7 @@
             this.label42.TabIndex = 1043;
             this.label42.Text = "รวม(พับ) :";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label42.Visible = false;
             // 
             // txtsum_qty_lod
             // 
@@ -715,6 +801,7 @@
             this.txtsum_qty_lod.TabIndex = 1040;
             this.txtsum_qty_lod.Text = ".00";
             this.txtsum_qty_lod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_lod.Visible = false;
             // 
             // label41
             // 
@@ -727,6 +814,7 @@
             this.label41.TabIndex = 1041;
             this.label41.Text = "รวม(หลอด) :";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label41.Visible = false;
             // 
             // txtsum_qty_krasob
             // 
@@ -740,6 +828,7 @@
             this.txtsum_qty_krasob.TabIndex = 1038;
             this.txtsum_qty_krasob.Text = ".00";
             this.txtsum_qty_krasob.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_krasob.Visible = false;
             // 
             // label40
             // 
@@ -752,6 +841,7 @@
             this.label40.TabIndex = 1039;
             this.label40.Text = "รวม(กระสอบ) :";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label40.Visible = false;
             // 
             // ch_yokma
             // 
@@ -2878,84 +2968,6 @@
             this.iblstatus.Size = new System.Drawing.Size(1575, 30);
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtsum_qty_krasob_yokma
-            // 
-            this.txtsum_qty_krasob_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_krasob_yokma.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_krasob_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_krasob_yokma.Location = new System.Drawing.Point(1269, 8);
-            this.txtsum_qty_krasob_yokma.Name = "txtsum_qty_krasob_yokma";
-            this.txtsum_qty_krasob_yokma.ReadOnly = true;
-            this.txtsum_qty_krasob_yokma.Size = new System.Drawing.Size(61, 21);
-            this.txtsum_qty_krasob_yokma.TabIndex = 1044;
-            this.txtsum_qty_krasob_yokma.Text = ".00";
-            this.txtsum_qty_krasob_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtsum_qty_krasob_yokpai
-            // 
-            this.txtsum_qty_krasob_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_krasob_yokpai.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_krasob_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_krasob_yokpai.Location = new System.Drawing.Point(1499, 7);
-            this.txtsum_qty_krasob_yokpai.Name = "txtsum_qty_krasob_yokpai";
-            this.txtsum_qty_krasob_yokpai.ReadOnly = true;
-            this.txtsum_qty_krasob_yokpai.Size = new System.Drawing.Size(52, 21);
-            this.txtsum_qty_krasob_yokpai.TabIndex = 1045;
-            this.txtsum_qty_krasob_yokpai.Text = ".00";
-            this.txtsum_qty_krasob_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtsum_qty_lod_yokpai
-            // 
-            this.txtsum_qty_lod_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_lod_yokpai.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_lod_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_lod_yokpai.Location = new System.Drawing.Point(1499, 30);
-            this.txtsum_qty_lod_yokpai.Name = "txtsum_qty_lod_yokpai";
-            this.txtsum_qty_lod_yokpai.ReadOnly = true;
-            this.txtsum_qty_lod_yokpai.Size = new System.Drawing.Size(52, 21);
-            this.txtsum_qty_lod_yokpai.TabIndex = 1047;
-            this.txtsum_qty_lod_yokpai.Text = ".00";
-            this.txtsum_qty_lod_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtsum_qty_lod_yokma
-            // 
-            this.txtsum_qty_lod_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_lod_yokma.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_lod_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_lod_yokma.Location = new System.Drawing.Point(1269, 31);
-            this.txtsum_qty_lod_yokma.Name = "txtsum_qty_lod_yokma";
-            this.txtsum_qty_lod_yokma.ReadOnly = true;
-            this.txtsum_qty_lod_yokma.Size = new System.Drawing.Size(61, 21);
-            this.txtsum_qty_lod_yokma.TabIndex = 1046;
-            this.txtsum_qty_lod_yokma.Text = ".00";
-            this.txtsum_qty_lod_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtsum_qty_pub_yokpai
-            // 
-            this.txtsum_qty_pub_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_pub_yokpai.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_pub_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_pub_yokpai.Location = new System.Drawing.Point(1499, 53);
-            this.txtsum_qty_pub_yokpai.Name = "txtsum_qty_pub_yokpai";
-            this.txtsum_qty_pub_yokpai.ReadOnly = true;
-            this.txtsum_qty_pub_yokpai.Size = new System.Drawing.Size(52, 21);
-            this.txtsum_qty_pub_yokpai.TabIndex = 1049;
-            this.txtsum_qty_pub_yokpai.Text = ".00";
-            this.txtsum_qty_pub_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtsum_qty_pub_yokma
-            // 
-            this.txtsum_qty_pub_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_pub_yokma.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_pub_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_pub_yokma.Location = new System.Drawing.Point(1269, 54);
-            this.txtsum_qty_pub_yokma.Name = "txtsum_qty_pub_yokma";
-            this.txtsum_qty_pub_yokma.ReadOnly = true;
-            this.txtsum_qty_pub_yokma.Size = new System.Drawing.Size(61, 21);
-            this.txtsum_qty_pub_yokma.TabIndex = 1048;
-            this.txtsum_qty_pub_yokma.Text = ".00";
-            this.txtsum_qty_pub_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // HOME02_Purchasing_05RG_record
             // 

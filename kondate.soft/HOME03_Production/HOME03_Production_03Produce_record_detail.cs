@@ -236,13 +236,13 @@ namespace kondate.soft.HOME03_Production
                         this.dtpdate_record.CustomFormat = this.dtpdate_record.Value.ToString("dd-MM-yyyy", UsaCulture);
 
                         this.txtfold_amount.Text = dt2.Rows[0]["txtfold_amount"].ToString();
+                        this.PANEL0106_NUMBER_MAT_txtnumber_mat_id.Text = dt2.Rows[0]["txtnumber_mat_id"].ToString();
+                        this.PANEL0106_NUMBER_MAT_txtnumber_mat_name.Text = dt2.Rows[0]["txtnumber_mat_name"].ToString();
 
                         this.txtmat_no.Text = dt2.Rows[0]["txtmat_no"].ToString();
                         this.PANEL_MAT_txtmat_id.Text = dt2.Rows[0]["txtmat_id"].ToString();
                         this.PANEL_MAT_txtmat_name.Text = dt2.Rows[0]["txtmat_name"].ToString();
 
-                        this.PANEL0106_NUMBER_MAT_txtnumber_mat_id.Text = dt2.Rows[0]["txtnumber_mat_id"].ToString();
-                        this.PANEL0106_NUMBER_MAT_txtnumber_mat_name.Text = dt2.Rows[0]["txtnumber_mat_name"].ToString();
 
                         this.txtmat_unit1_qty.Text = Convert.ToSingle(dt2.Rows[0]["txtmat_unit1_qty"]).ToString("###,###.00");
                         this.chmat_unit_status.Text = dt2.Rows[0]["chmat_unit_status"].ToString();

@@ -75,7 +75,7 @@ namespace kondate.soft.HOME02_Purchasing
             this.btnmaximize.Visible = false;
             this.btnmaximize_full.Visible = true;
 
-            W_ID_Select.M_FORM_NUMBER = "H0204APGR";
+            W_ID_Select.M_FORM_NUMBER = "H0205RGGR";
             CHECK_ADD_FORM();
 
             CHECK_USER_RULE();

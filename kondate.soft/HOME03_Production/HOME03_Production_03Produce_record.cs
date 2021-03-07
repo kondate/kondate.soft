@@ -2329,9 +2329,6 @@ namespace kondate.soft.HOME03_Production
         private void GridView1_Cal_Sum()
         {
 
-            double QTY_KRASOB = 0;
-            double QTY_LOAD = 0;
-            double QTY_KRASOB_LOAD = 0;
 
             double Sum2_Qty_Yokpai = 0;
             double Sum_Qty = 0;
@@ -2345,10 +2342,6 @@ namespace kondate.soft.HOME03_Production
             double Mbypai = 0;
             double QAbypai = 0;
 
-            double Sum_Qty_K = 0;
-            double Sum_Qty_K_KG = 0;
-            double Sum_Qty_L = 0;
-            double Sum_Qty_L_KG = 0;
 
 
             int k = 0;
@@ -2527,9 +2520,6 @@ namespace kondate.soft.HOME03_Production
 
             this.txtcount_rows.Text = k.ToString();
 
-            QTY_KRASOB = 0;
-            QTY_LOAD = 0;
-            QTY_KRASOB_LOAD = 0;
 
             Sum2_Qty_Yokpai = 0;
             Con_QTY = 0;
@@ -2540,11 +2530,6 @@ namespace kondate.soft.HOME03_Production
             Qbypai2 = 0;
             Mbypai = 0;
             QAbypai = 0;
-
-            Sum_Qty_K = 0;
-            Sum_Qty_K_KG = 0;
-            Sum_Qty_L = 0;
-            Sum_Qty_L_KG = 0;
 
 
         }

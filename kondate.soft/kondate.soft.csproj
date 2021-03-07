@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>127</ApplicationRevision>
+    <ApplicationRevision>128</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -253,11 +253,11 @@
     <Compile Include="HOME03_Production\HOME03_Production_01RG.Designer.cs">
       <DependentUpon>HOME03_Production_01RG.cs</DependentUpon>
     </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_01RG_record.cs">
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_print.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_01RG_record.Designer.cs">
-      <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_01RG_record_print.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_01RG_record_detail.cs">
       <SubType>Form</SubType>
@@ -265,11 +265,11 @@
     <Compile Include="HOME03_Production\HOME03_Production_01RG_record_detail.Designer.cs">
       <DependentUpon>HOME03_Production_01RG_record_detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_print.cs">
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_01RG_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_01RG_record_print.cs</DependentUpon>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_record.Designer.cs">
+      <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_02Berg_Produce.cs">
       <SubType>Form</SubType>
@@ -970,6 +970,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c003_receive_record.cs">
+      <DependentUpon>Report_c003_receive_record.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="KONDATE_REPORT\Report_s001_01sale_record.cs">
       <DependentUpon>Report_s001_01sale_record.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1609,14 +1616,14 @@
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG.resx">
       <DependentUpon>HOME03_Production_01RG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record.resx">
-      <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record_print.resx">
+      <DependentUpon>HOME03_Production_01RG_record_print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record_detail.resx">
       <DependentUpon>HOME03_Production_01RG_record_detail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record_print.resx">
-      <DependentUpon>HOME03_Production_01RG_record_print.cs</DependentUpon>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record.resx">
+      <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_02Berg_Produce.resx">
       <DependentUpon>HOME03_Production_02Berg_Produce.cs</DependentUpon>
@@ -1980,6 +1987,11 @@
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_07Receive_Send_dye_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_c002_07Receive_Send_dye_record.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c003_receive_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c003_receive_record.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_s001_01sale_record.rpt">

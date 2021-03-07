@@ -37,8 +37,8 @@ namespace kondate.soft
         private void HOME03_Production_01_Click(object sender, EventArgs e)
         {
 
-            W_ID_Select.WORD_TOP = this.HOME03_Production_01.Text.Trim();
-            kondate.soft.HOME02_Purchasing.HOME02_Purchasing_05RG_record frm2 = new kondate.soft.HOME02_Purchasing.HOME02_Purchasing_05RG_record();
+            W_ID_Select.WORD_TOP = this.HOME03_Production_01FG.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_01RG_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_01RG_record();
             frm2.Show();
 
         }
@@ -72,7 +72,7 @@ namespace kondate.soft
         private void HOME03_Production_02_Click(object sender, EventArgs e)
         {
             
-          W_ID_Select.WORD_TOP = this.HOME03_Production_02.Text.Trim();
+          W_ID_Select.WORD_TOP = this.HOME03_Production_02_BG.Text.Trim();
             kondate.soft.HOME03_Production.HOME03_Production_02Berg_Produce_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_02Berg_Produce_record();
             frm2.Show();
         }
@@ -80,7 +80,7 @@ namespace kondate.soft
         private void HOME03_Production_03_Click(object sender, EventArgs e)
         {
             
-            W_ID_Select.WORD_TOP = this.HOME03_Production_03.Text.Trim();
+            W_ID_Select.WORD_TOP = this.HOME03_Production_03_FG1.Text.Trim();
             kondate.soft.HOME03_Production.HOME03_Production_03Produce_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_03Produce_record();
             frm2.Show();
         }

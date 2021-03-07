@@ -214,6 +214,7 @@
             this.BtnSave.Text = "บันทึก";
             this.BtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnSave.UseVisualStyleBackColor = false;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // BtnNew
             // 

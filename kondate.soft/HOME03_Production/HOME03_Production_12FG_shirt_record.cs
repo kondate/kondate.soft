@@ -3819,10 +3819,7 @@ namespace kondate.soft.HOME03_Production
                                "txtcost_qty_balance," +  //9
                                "txtcost_qty_price_average," +  //10
                                "txtcost_money_sum," +  //11
-                               "txtcost_qty2_balance," +  //11
-                               "txtcost_qty_krasob_balance," +  //11
-                               "txtcost_qty_lod_balance," +  //11
-                              "txtcost_qty_pub_balance) " +  //14
+                               "txtcost_qty2_balance) " +  //14
                                "VALUES (@cdkey,@txtco_id," +  //1
                                "@txtwherehouse_id," +  //2
                                "@txtmat_no," +  //3
@@ -3834,10 +3831,7 @@ namespace kondate.soft.HOME03_Production
                                "@txtcost_qty_balance," +  //9
                                "@txtcost_qty_price_average," +  //10
                                "@txtcost_money_sum," +  //11
-                               "@txtcost_qty2_balance," +  //11
-                               "@txtcost_qty_krasob_balance," +  //11
-                               "@txtcost_qty_lod_balance," +  //11
-                               "@txtcost_qty_pub_balance)";   //14
+                               "@txtcost_qty2_balance)";   //14
 
                                 cmd2.Parameters.Add("@cdkey", SqlDbType.NVarChar).Value = W_ID_Select.CDKEY.Trim();
                                 cmd2.Parameters.Add("@txtco_id", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();  //1
@@ -3855,9 +3849,6 @@ namespace kondate.soft.HOME03_Production
                                 cmd2.Parameters.Add("@txtcost_money_sum", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 0));  //11
 
                                 cmd2.Parameters.Add("@txtcost_qty2_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //13
-                                cmd2.Parameters.Add("@txtcost_qty_krasob_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //13
-                                cmd2.Parameters.Add("@txtcost_qty_lod_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //13
-                                cmd2.Parameters.Add("@txtcost_qty_pub_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //13
 
                                 //==============================
 
