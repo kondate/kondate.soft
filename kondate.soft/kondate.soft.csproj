@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>129</ApplicationRevision>
+    <ApplicationRevision>130</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -564,6 +564,12 @@
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_21room_collect.Designer.cs">
       <DependentUpon>HOME03_Production_21room_collect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_01RG_Stock.Designer.cs">
+      <DependentUpon>HOME03_Production_01RG_Stock.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME03_Production_department.cs">
       <SubType>Form</SubType>
@@ -1771,6 +1777,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_21room_collect.resx">
       <DependentUpon>HOME03_Production_21room_collect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_Stock.resx">
+      <DependentUpon>HOME03_Production_01RG_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production_department.resx">
       <DependentUpon>HOME03_Production_department.cs</DependentUpon>

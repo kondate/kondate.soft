@@ -213,12 +213,11 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtberg_type_name"].Value = dt2.Rows[j]["txtberg_type_name"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_name"].Value = dt2.Rows[j]["txtwherehouse_name"].ToString();      //7
+                            this.GridView1.Rows[index].Cells["Col_txtmachine_id"].Value = dt2.Rows[j]["txtmachine_id"].ToString();      //7
                             this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //8
                             this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //9
                             this.GridView1.Rows[index].Cells["Col_txtnumber_mat_name"].Value = dt2.Rows[j]["txtnumber_mat_name"].ToString();      //9
 
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_krasob_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_krasob_sum"]).ToString("###,###.00");      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_loud_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_loud_sum"]).ToString("###,###.00");      //11
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //10
                             this.GridView1.Rows[index].Cells["Col_txtsum2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum2_qty"]).ToString("###,###.00");      //11
 
@@ -356,12 +355,11 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtberg_type_name"].Value = dt2.Rows[j]["txtberg_type_name"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_name"].Value = dt2.Rows[j]["txtwherehouse_name"].ToString();      //7
+                            this.GridView1.Rows[index].Cells["Col_txtmachine_id"].Value = dt2.Rows[j]["txtmachine_id"].ToString();      //7
                             this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //8
                             this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //9
                             this.GridView1.Rows[index].Cells["Col_txtnumber_mat_name"].Value = dt2.Rows[j]["txtnumber_mat_name"].ToString();      //9
 
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_krasob_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_krasob_sum"]).ToString("###,###.00");      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_loud_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_loud_sum"]).ToString("###,###.00");      //11
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //10
                             this.GridView1.Rows[index].Cells["Col_txtsum2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum2_qty"]).ToString("###,###.00");      //11
 
@@ -408,7 +406,7 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 16;
+            this.GridView1.ColumnCount = 15;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
@@ -417,14 +415,13 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[5].Name = "Col_txttrans_time";
             this.GridView1.Columns[6].Name = "Col_txtberg_type_name";
             this.GridView1.Columns[7].Name = "Col_txtwherehouse_name";
-            this.GridView1.Columns[8].Name = "Col_txtmat_id";
-            this.GridView1.Columns[9].Name = "Col_txtmat_name";
-            this.GridView1.Columns[10].Name = "Col_txtnumber_mat_name";
-            this.GridView1.Columns[11].Name = "Col_txtmat_unit1_qty_krasob_sum";
-            this.GridView1.Columns[12].Name = "Col_txtmat_unit1_qty_loud_sum";
-            this.GridView1.Columns[13].Name = "Col_txtsum_qty";
-            this.GridView1.Columns[14].Name = "Col_txtsum2_qty";
-            this.GridView1.Columns[15].Name = "Col_txtic_status";
+            this.GridView1.Columns[8].Name = "Col_txtmachine_id";
+            this.GridView1.Columns[9].Name = "Col_txtmat_id";
+            this.GridView1.Columns[10].Name = "Col_txtmat_name";
+            this.GridView1.Columns[11].Name = "Col_txtnumber_mat_name";
+            this.GridView1.Columns[12].Name = "Col_txtsum_qty";
+            this.GridView1.Columns[13].Name = "Col_txtsum2_qty";
+            this.GridView1.Columns[14].Name = "Col_txtic_status";
 
             this.GridView1.Columns[0].HeaderText = "No";
             this.GridView1.Columns[1].HeaderText = "txtco_id";
@@ -434,14 +431,13 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[5].HeaderText = " เวลา";
             this.GridView1.Columns[6].HeaderText = "ประเภทเบิก";
             this.GridView1.Columns[7].HeaderText = "คลัง";
-            this.GridView1.Columns[8].HeaderText = "รหัสวัตถุดิบ";
-            this.GridView1.Columns[9].HeaderText = "ชื่อวัตถุดิบ";
-            this.GridView1.Columns[10].HeaderText = "เบอร์วัตถุดิบ";
-            this.GridView1.Columns[11].HeaderText = "รวมกระสอบ";
-            this.GridView1.Columns[12].HeaderText = "รวมหลอด";
-            this.GridView1.Columns[13].HeaderText = "รวม กก.";
-            this.GridView1.Columns[14].HeaderText = "รวม ปอนด์";
-            this.GridView1.Columns[15].HeaderText = " สถานะ";
+            this.GridView1.Columns[8].HeaderText = "เครื่องจักร";
+            this.GridView1.Columns[9].HeaderText = "รหัสวัตถุดิบ";
+            this.GridView1.Columns[10].HeaderText = "ชื่อวัตถุดิบ";
+            this.GridView1.Columns[11].HeaderText = "เบอร์วัตถุดิบ";
+            this.GridView1.Columns[12].HeaderText = "รวม กก.";
+            this.GridView1.Columns[13].HeaderText = "รวม ปอนด์";
+            this.GridView1.Columns[14].HeaderText = " สถานะ";
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
@@ -477,6 +473,13 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtwherehouse_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtwherehouse_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+            this.GridView1.Columns["Col_txtmachine_id"].Visible = true;  //"Col_txtmachine_id";
+            this.GridView1.Columns["Col_txtmachine_id"].Width = 120;
+            this.GridView1.Columns["Col_txtmachine_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmachine_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmachine_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
             this.GridView1.Columns["Col_txtmat_id"].Visible = true;  //"Col_txtmat_id";
             this.GridView1.Columns["Col_txtmat_id"].Width = 120;
             this.GridView1.Columns["Col_txtmat_id"].ReadOnly = true;
@@ -494,18 +497,6 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtnumber_mat_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txtnumber_mat_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtnumber_mat_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtmat_unit1_qty_krasob_sum"].Visible = true;  //"Col_txtmat_unit1_qty_krasob_sum";
-            this.GridView1.Columns["Col_txtmat_unit1_qty_krasob_sum"].Width = 120;
-            this.GridView1.Columns["Col_txtmat_unit1_qty_krasob_sum"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtmat_unit1_qty_krasob_sum"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtmat_unit1_qty_krasob_sum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtmat_unit1_qty_loud_sum"].Visible = true;  //"Col_txtmat_unit1_qty_loud_sum";
-            this.GridView1.Columns["Col_txtmat_unit1_qty_loud_sum"].Width = 120;
-            this.GridView1.Columns["Col_txtmat_unit1_qty_loud_sum"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtmat_unit1_qty_loud_sum"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtmat_unit1_qty_loud_sum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView1.Columns["Col_txtsum_qty"].Visible = true;  //"Col_txtsum_qty";
             this.GridView1.Columns["Col_txtsum_qty"].Width = 120;
@@ -989,12 +980,11 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtberg_type_name"].Value = dt2.Rows[j]["txtberg_type_name"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_name"].Value = dt2.Rows[j]["txtwherehouse_name"].ToString();      //7
+                            this.GridView1.Rows[index].Cells["Col_txtmachine_id"].Value = dt2.Rows[j]["txtmachine_id"].ToString();      //7
                             this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //8
                             this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //9
                             this.GridView1.Rows[index].Cells["Col_txtnumber_mat_name"].Value = dt2.Rows[j]["txtnumber_mat_name"].ToString();      //9
 
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_krasob_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_krasob_sum"]).ToString("###,###.00");      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_loud_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_loud_sum"]).ToString("###,###.00");      //11
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //10
                             this.GridView1.Rows[index].Cells["Col_txtsum2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum2_qty"]).ToString("###,###.00");      //11
 

@@ -609,6 +609,7 @@
             this.HOME03_Production_02_BG_G.Text = "สต๊อคด้าย";
             this.HOME03_Production_02_BG_G.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_02_BG_G.UseVisualStyleBackColor = false;
+            this.HOME03_Production_02_BG_G.Click += new System.EventHandler(this.HOME03_Production_02_BG_G_Click);
             // 
             // HOME03_Production_03_FG1_G
             // 

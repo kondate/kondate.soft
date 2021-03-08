@@ -46,6 +46,18 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.PANEL0102_MACHINE = new System.Windows.Forms.Panel();
+            this.PANEL0102_MACHINE_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL0102_MACHINE_btnnew = new System.Windows.Forms.PictureBox();
+            this.PANEL0102_MACHINE_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL0102_MACHINE_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL0102_MACHINE_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL0102_MACHINE_dataGridView1_machine = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PANEL0102_MACHINE_txtmachine_id = new System.Windows.Forms.TextBox();
+            this.PANEL0102_MACHINE_btnmachine = new System.Windows.Forms.Button();
+            this.PANEL0102_MACHINE_txtmachine_name = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.PANEL_MAT = new System.Windows.Forms.Panel();
             this.PANEL_MAT_btnrefresh = new System.Windows.Forms.PictureBox();
             this.PANEL_MAT_panel_top = new System.Windows.Forms.Panel();
@@ -179,6 +191,7 @@
             this.PANEL1306_WH_btn_search = new System.Windows.Forms.PictureBox();
             this.PANEL1306_WH_txtsearch = new System.Windows.Forms.TextBox();
             this.PANEL1306_WH_dataGridView1_wherehouse = new System.Windows.Forms.DataGridView();
+            this.btnGo1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtemp_office_name_approve = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -202,19 +215,6 @@
             this.iblstatus = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
-            this.btnGo1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PANEL0102_MACHINE_txtmachine_id = new System.Windows.Forms.TextBox();
-            this.PANEL0102_MACHINE_btnmachine = new System.Windows.Forms.Button();
-            this.PANEL0102_MACHINE_txtmachine_name = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.PANEL0102_MACHINE = new System.Windows.Forms.Panel();
-            this.PANEL0102_MACHINE_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL0102_MACHINE_btnnew = new System.Windows.Forms.PictureBox();
-            this.PANEL0102_MACHINE_btnclose = new System.Windows.Forms.PictureBox();
-            this.PANEL0102_MACHINE_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL0102_MACHINE_txtsearch = new System.Windows.Forms.TextBox();
-            this.PANEL0102_MACHINE_dataGridView1_machine = new System.Windows.Forms.DataGridView();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -223,6 +223,11 @@
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
+            this.PANEL0102_MACHINE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnnew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btn_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_dataGridView1_machine)).BeginInit();
             this.PANEL_MAT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_MAT_btnrefresh)).BeginInit();
             this.PANEL_MAT_panel_top.SuspendLayout();
@@ -252,13 +257,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_dataGridView1_wherehouse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).BeginInit();
-            this.PANEL0102_MACHINE.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnnew)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnclose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btn_search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_dataGridView1_machine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_top
@@ -605,6 +605,164 @@
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             // 
+            // PANEL0102_MACHINE
+            // 
+            this.PANEL0102_MACHINE.AutoScroll = true;
+            this.PANEL0102_MACHINE.AutoSize = true;
+            this.PANEL0102_MACHINE.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PANEL0102_MACHINE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btnresize_low);
+            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btnnew);
+            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btnclose);
+            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btn_search);
+            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_txtsearch);
+            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_dataGridView1_machine);
+            this.PANEL0102_MACHINE.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0102_MACHINE.Location = new System.Drawing.Point(607, 157);
+            this.PANEL0102_MACHINE.Name = "PANEL0102_MACHINE";
+            this.PANEL0102_MACHINE.Size = new System.Drawing.Size(502, 337);
+            this.PANEL0102_MACHINE.TabIndex = 1061;
+            this.PANEL0102_MACHINE.Visible = false;
+            // 
+            // PANEL0102_MACHINE_btnresize_low
+            // 
+            this.PANEL0102_MACHINE_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL0102_MACHINE_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL0102_MACHINE_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.BorderSize = 0;
+            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL0102_MACHINE_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL0102_MACHINE_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0102_MACHINE_btnresize_low.ForeColor = System.Drawing.Color.Black;
+            this.PANEL0102_MACHINE_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnresize_low.Image")));
+            this.PANEL0102_MACHINE_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PANEL0102_MACHINE_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL0102_MACHINE_btnresize_low.Name = "PANEL0102_MACHINE_btnresize_low";
+            this.PANEL0102_MACHINE_btnresize_low.Size = new System.Drawing.Size(23, 22);
+            this.PANEL0102_MACHINE_btnresize_low.TabIndex = 438;
+            this.PANEL0102_MACHINE_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PANEL0102_MACHINE_btnresize_low.UseVisualStyleBackColor = false;
+            this.PANEL0102_MACHINE_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL0102_MACHINE_btnresize_low_MouseDown);
+            this.PANEL0102_MACHINE_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL0102_MACHINE_btnresize_low_MouseMove);
+            this.PANEL0102_MACHINE_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL0102_MACHINE_btnresize_low_MouseUp);
+            // 
+            // PANEL0102_MACHINE_btnnew
+            // 
+            this.PANEL0102_MACHINE_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL0102_MACHINE_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnnew.Image")));
+            this.PANEL0102_MACHINE_btnnew.Location = new System.Drawing.Point(3, 3);
+            this.PANEL0102_MACHINE_btnnew.Name = "PANEL0102_MACHINE_btnnew";
+            this.PANEL0102_MACHINE_btnnew.Size = new System.Drawing.Size(30, 22);
+            this.PANEL0102_MACHINE_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL0102_MACHINE_btnnew.TabIndex = 437;
+            this.PANEL0102_MACHINE_btnnew.TabStop = false;
+            this.PANEL0102_MACHINE_btnnew.Visible = false;
+            // 
+            // PANEL0102_MACHINE_btnclose
+            // 
+            this.PANEL0102_MACHINE_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL0102_MACHINE_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL0102_MACHINE_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnclose.Image")));
+            this.PANEL0102_MACHINE_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL0102_MACHINE_btnclose.Name = "PANEL0102_MACHINE_btnclose";
+            this.PANEL0102_MACHINE_btnclose.Size = new System.Drawing.Size(30, 22);
+            this.PANEL0102_MACHINE_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL0102_MACHINE_btnclose.TabIndex = 436;
+            this.PANEL0102_MACHINE_btnclose.TabStop = false;
+            this.PANEL0102_MACHINE_btnclose.Click += new System.EventHandler(this.PANEL0102_MACHINE_btnclose_Click);
+            // 
+            // PANEL0102_MACHINE_btn_search
+            // 
+            this.PANEL0102_MACHINE_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL0102_MACHINE_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btn_search.Image")));
+            this.PANEL0102_MACHINE_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL0102_MACHINE_btn_search.Name = "PANEL0102_MACHINE_btn_search";
+            this.PANEL0102_MACHINE_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL0102_MACHINE_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL0102_MACHINE_btn_search.TabIndex = 433;
+            this.PANEL0102_MACHINE_btn_search.TabStop = false;
+            this.PANEL0102_MACHINE_btn_search.Click += new System.EventHandler(this.PANEL0102_MACHINE_btn_search_Click);
+            // 
+            // PANEL0102_MACHINE_txtsearch
+            // 
+            this.PANEL0102_MACHINE_txtsearch.BackColor = System.Drawing.Color.White;
+            this.PANEL0102_MACHINE_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0102_MACHINE_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL0102_MACHINE_txtsearch.Name = "PANEL0102_MACHINE_txtsearch";
+            this.PANEL0102_MACHINE_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL0102_MACHINE_txtsearch.TabIndex = 432;
+            // 
+            // PANEL0102_MACHINE_dataGridView1_machine
+            // 
+            this.PANEL0102_MACHINE_dataGridView1_machine.AllowUserToAddRows = false;
+            this.PANEL0102_MACHINE_dataGridView1_machine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL0102_MACHINE_dataGridView1_machine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PANEL0102_MACHINE_dataGridView1_machine.Location = new System.Drawing.Point(3, 42);
+            this.PANEL0102_MACHINE_dataGridView1_machine.Name = "PANEL0102_MACHINE_dataGridView1_machine";
+            this.PANEL0102_MACHINE_dataGridView1_machine.Size = new System.Drawing.Size(491, 262);
+            this.PANEL0102_MACHINE_dataGridView1_machine.TabIndex = 0;
+            this.PANEL0102_MACHINE_dataGridView1_machine.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL0102_MACHINE_dataGridView1_machine_CellMouseClick);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(510, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 23);
+            this.label2.TabIndex = 1060;
+            this.label2.Text = "*";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // PANEL0102_MACHINE_txtmachine_id
+            // 
+            this.PANEL0102_MACHINE_txtmachine_id.BackColor = System.Drawing.Color.White;
+            this.PANEL0102_MACHINE_txtmachine_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0102_MACHINE_txtmachine_id.Location = new System.Drawing.Point(350, 103);
+            this.PANEL0102_MACHINE_txtmachine_id.Name = "PANEL0102_MACHINE_txtmachine_id";
+            this.PANEL0102_MACHINE_txtmachine_id.ReadOnly = true;
+            this.PANEL0102_MACHINE_txtmachine_id.Size = new System.Drawing.Size(156, 21);
+            this.PANEL0102_MACHINE_txtmachine_id.TabIndex = 1059;
+            // 
+            // PANEL0102_MACHINE_btnmachine
+            // 
+            this.PANEL0102_MACHINE_btnmachine.BackColor = System.Drawing.Color.White;
+            this.PANEL0102_MACHINE_btnmachine.FlatAppearance.BorderSize = 0;
+            this.PANEL0102_MACHINE_btnmachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL0102_MACHINE_btnmachine.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0102_MACHINE_btnmachine.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnmachine.Image")));
+            this.PANEL0102_MACHINE_btnmachine.Location = new System.Drawing.Point(323, 105);
+            this.PANEL0102_MACHINE_btnmachine.Name = "PANEL0102_MACHINE_btnmachine";
+            this.PANEL0102_MACHINE_btnmachine.Size = new System.Drawing.Size(22, 16);
+            this.PANEL0102_MACHINE_btnmachine.TabIndex = 1058;
+            this.PANEL0102_MACHINE_btnmachine.UseVisualStyleBackColor = false;
+            this.PANEL0102_MACHINE_btnmachine.Click += new System.EventHandler(this.PANEL0102_MACHINE_btnmachine_Click);
+            // 
+            // PANEL0102_MACHINE_txtmachine_name
+            // 
+            this.PANEL0102_MACHINE_txtmachine_name.BackColor = System.Drawing.Color.White;
+            this.PANEL0102_MACHINE_txtmachine_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0102_MACHINE_txtmachine_name.Location = new System.Drawing.Point(114, 103);
+            this.PANEL0102_MACHINE_txtmachine_name.Name = "PANEL0102_MACHINE_txtmachine_name";
+            this.PANEL0102_MACHINE_txtmachine_name.ReadOnly = true;
+            this.PANEL0102_MACHINE_txtmachine_name.Size = new System.Drawing.Size(234, 21);
+            this.PANEL0102_MACHINE_txtmachine_name.TabIndex = 1057;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(12, 101);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 23);
+            this.label8.TabIndex = 1056;
+            this.label8.Text = "เครื่องจักรผลิต :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // PANEL_MAT
             // 
             this.PANEL_MAT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -796,7 +954,7 @@
             this.PANEL0106_NUMBER_MAT.Controls.Add(this.PANEL0106_NUMBER_MAT_txtsearch);
             this.PANEL0106_NUMBER_MAT.Controls.Add(this.PANEL0106_NUMBER_MAT_dataGridView1_number_mat);
             this.PANEL0106_NUMBER_MAT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0106_NUMBER_MAT.Location = new System.Drawing.Point(8, 618);
+            this.PANEL0106_NUMBER_MAT.Location = new System.Drawing.Point(17, 452);
             this.PANEL0106_NUMBER_MAT.Name = "PANEL0106_NUMBER_MAT";
             this.PANEL0106_NUMBER_MAT.Size = new System.Drawing.Size(502, 337);
             this.PANEL0106_NUMBER_MAT.TabIndex = 1026;
@@ -1152,6 +1310,7 @@
             this.txtmat_unit1_qty_loud_convert_sum.TabIndex = 1021;
             this.txtmat_unit1_qty_loud_convert_sum.Text = ".00";
             this.txtmat_unit1_qty_loud_convert_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_loud_convert_sum.Visible = false;
             // 
             // txtmat_unit1_qty_krasob_convert_sum
             // 
@@ -1164,6 +1323,7 @@
             this.txtmat_unit1_qty_krasob_convert_sum.TabIndex = 1020;
             this.txtmat_unit1_qty_krasob_convert_sum.Text = ".00";
             this.txtmat_unit1_qty_krasob_convert_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_krasob_convert_sum.Visible = false;
             // 
             // label41
             // 
@@ -1176,6 +1336,7 @@
             this.label41.TabIndex = 1019;
             this.label41.Text = "กก. :";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label41.Visible = false;
             // 
             // label42
             // 
@@ -1188,6 +1349,7 @@
             this.label42.TabIndex = 1018;
             this.label42.Text = "กก. :";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label42.Visible = false;
             // 
             // txtmat_unit1_qty_loud_sum
             // 
@@ -1200,6 +1362,7 @@
             this.txtmat_unit1_qty_loud_sum.TabIndex = 1016;
             this.txtmat_unit1_qty_loud_sum.Text = ".00";
             this.txtmat_unit1_qty_loud_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_loud_sum.Visible = false;
             // 
             // label40
             // 
@@ -1212,6 +1375,7 @@
             this.label40.TabIndex = 1017;
             this.label40.Text = "รวมหลอด :";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label40.Visible = false;
             // 
             // txtmat_unit1_qty_krasob_sum
             // 
@@ -1224,6 +1388,7 @@
             this.txtmat_unit1_qty_krasob_sum.TabIndex = 1008;
             this.txtmat_unit1_qty_krasob_sum.Text = ".00";
             this.txtmat_unit1_qty_krasob_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_krasob_sum.Visible = false;
             // 
             // panel2
             // 
@@ -1568,6 +1733,7 @@
             this.label39.TabIndex = 1009;
             this.label39.Text = "รวมกระสอบ :";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label39.Visible = false;
             // 
             // label23
             // 
@@ -1691,6 +1857,7 @@
             this.PANEL0103_BERG_TYPE_txtberg_type_id.ReadOnly = true;
             this.PANEL0103_BERG_TYPE_txtberg_type_id.Size = new System.Drawing.Size(144, 21);
             this.PANEL0103_BERG_TYPE_txtberg_type_id.TabIndex = 1012;
+            this.PANEL0103_BERG_TYPE_txtberg_type_id.Text = "001";
             // 
             // PANEL0103_BERG_TYPE_btnberg_type
             // 
@@ -1715,6 +1882,7 @@
             this.PANEL0103_BERG_TYPE_txtberg_type_name.ReadOnly = true;
             this.PANEL0103_BERG_TYPE_txtberg_type_name.Size = new System.Drawing.Size(235, 21);
             this.PANEL0103_BERG_TYPE_txtberg_type_name.TabIndex = 1010;
+            this.PANEL0103_BERG_TYPE_txtberg_type_name.Text = "ผลิตผ้าดิบ";
             this.PANEL0103_BERG_TYPE_txtberg_type_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PANEL0103_BERG_TYPE_txtberg_type_name_KeyDown);
             // 
             // label22
@@ -2341,6 +2509,18 @@
             this.PANEL1306_WH_dataGridView1_wherehouse.TabIndex = 0;
             this.PANEL1306_WH_dataGridView1_wherehouse.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1306_WH_dataGridView1_wherehouse_CellMouseClick);
             // 
+            // btnGo1
+            // 
+            this.btnGo1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGo1.Image = ((System.Drawing.Image)(resources.GetObject("btnGo1.Image")));
+            this.btnGo1.Location = new System.Drawing.Point(536, 153);
+            this.btnGo1.Name = "btnGo1";
+            this.btnGo1.Size = new System.Drawing.Size(30, 22);
+            this.btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnGo1.TabIndex = 999;
+            this.btnGo1.TabStop = false;
+            this.btnGo1.Click += new System.EventHandler(this.btnGo1_Click);
+            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -2618,174 +2798,12 @@
             this.GridView1.Size = new System.Drawing.Size(1417, 324);
             this.GridView1.TabIndex = 994;
             this.GridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView1_CellClick);
+            this.GridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView1_CellContentClick);
             this.GridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView1_CellMouseLeave);
             this.GridView1.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView1_CellMouseMove);
             this.GridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridView1_EditingControlShowing);
             this.GridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView1_KeyDown);
             this.GridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GridView1_KeyUp);
-            // 
-            // btnGo1
-            // 
-            this.btnGo1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGo1.Image = ((System.Drawing.Image)(resources.GetObject("btnGo1.Image")));
-            this.btnGo1.Location = new System.Drawing.Point(13, 148);
-            this.btnGo1.Name = "btnGo1";
-            this.btnGo1.Size = new System.Drawing.Size(30, 22);
-            this.btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnGo1.TabIndex = 999;
-            this.btnGo1.TabStop = false;
-            this.btnGo1.Click += new System.EventHandler(this.btnGo1_Click);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(510, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 23);
-            this.label2.TabIndex = 1060;
-            this.label2.Text = "*";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // PANEL0102_MACHINE_txtmachine_id
-            // 
-            this.PANEL0102_MACHINE_txtmachine_id.BackColor = System.Drawing.Color.White;
-            this.PANEL0102_MACHINE_txtmachine_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE_txtmachine_id.Location = new System.Drawing.Point(350, 103);
-            this.PANEL0102_MACHINE_txtmachine_id.Name = "PANEL0102_MACHINE_txtmachine_id";
-            this.PANEL0102_MACHINE_txtmachine_id.ReadOnly = true;
-            this.PANEL0102_MACHINE_txtmachine_id.Size = new System.Drawing.Size(156, 21);
-            this.PANEL0102_MACHINE_txtmachine_id.TabIndex = 1059;
-            // 
-            // PANEL0102_MACHINE_btnmachine
-            // 
-            this.PANEL0102_MACHINE_btnmachine.BackColor = System.Drawing.Color.White;
-            this.PANEL0102_MACHINE_btnmachine.FlatAppearance.BorderSize = 0;
-            this.PANEL0102_MACHINE_btnmachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL0102_MACHINE_btnmachine.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE_btnmachine.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnmachine.Image")));
-            this.PANEL0102_MACHINE_btnmachine.Location = new System.Drawing.Point(323, 105);
-            this.PANEL0102_MACHINE_btnmachine.Name = "PANEL0102_MACHINE_btnmachine";
-            this.PANEL0102_MACHINE_btnmachine.Size = new System.Drawing.Size(22, 16);
-            this.PANEL0102_MACHINE_btnmachine.TabIndex = 1058;
-            this.PANEL0102_MACHINE_btnmachine.UseVisualStyleBackColor = false;
-            // 
-            // PANEL0102_MACHINE_txtmachine_name
-            // 
-            this.PANEL0102_MACHINE_txtmachine_name.BackColor = System.Drawing.Color.White;
-            this.PANEL0102_MACHINE_txtmachine_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE_txtmachine_name.Location = new System.Drawing.Point(114, 103);
-            this.PANEL0102_MACHINE_txtmachine_name.Name = "PANEL0102_MACHINE_txtmachine_name";
-            this.PANEL0102_MACHINE_txtmachine_name.ReadOnly = true;
-            this.PANEL0102_MACHINE_txtmachine_name.Size = new System.Drawing.Size(234, 21);
-            this.PANEL0102_MACHINE_txtmachine_name.TabIndex = 1057;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(12, 101);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 23);
-            this.label8.TabIndex = 1056;
-            this.label8.Text = "เครื่องจักรผลิต :";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PANEL0102_MACHINE
-            // 
-            this.PANEL0102_MACHINE.AutoScroll = true;
-            this.PANEL0102_MACHINE.AutoSize = true;
-            this.PANEL0102_MACHINE.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PANEL0102_MACHINE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btnresize_low);
-            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btnnew);
-            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btnclose);
-            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_btn_search);
-            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_txtsearch);
-            this.PANEL0102_MACHINE.Controls.Add(this.PANEL0102_MACHINE_dataGridView1_machine);
-            this.PANEL0102_MACHINE.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE.Location = new System.Drawing.Point(720, 151);
-            this.PANEL0102_MACHINE.Name = "PANEL0102_MACHINE";
-            this.PANEL0102_MACHINE.Size = new System.Drawing.Size(502, 337);
-            this.PANEL0102_MACHINE.TabIndex = 1061;
-            this.PANEL0102_MACHINE.Visible = false;
-            // 
-            // PANEL0102_MACHINE_btnresize_low
-            // 
-            this.PANEL0102_MACHINE_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL0102_MACHINE_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL0102_MACHINE_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.BorderSize = 0;
-            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL0102_MACHINE_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL0102_MACHINE_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL0102_MACHINE_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE_btnresize_low.ForeColor = System.Drawing.Color.Black;
-            this.PANEL0102_MACHINE_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnresize_low.Image")));
-            this.PANEL0102_MACHINE_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL0102_MACHINE_btnresize_low.Location = new System.Drawing.Point(475, 309);
-            this.PANEL0102_MACHINE_btnresize_low.Name = "PANEL0102_MACHINE_btnresize_low";
-            this.PANEL0102_MACHINE_btnresize_low.Size = new System.Drawing.Size(23, 22);
-            this.PANEL0102_MACHINE_btnresize_low.TabIndex = 438;
-            this.PANEL0102_MACHINE_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.PANEL0102_MACHINE_btnresize_low.UseVisualStyleBackColor = false;
-            // 
-            // PANEL0102_MACHINE_btnnew
-            // 
-            this.PANEL0102_MACHINE_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0102_MACHINE_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnnew.Image")));
-            this.PANEL0102_MACHINE_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL0102_MACHINE_btnnew.Name = "PANEL0102_MACHINE_btnnew";
-            this.PANEL0102_MACHINE_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0102_MACHINE_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0102_MACHINE_btnnew.TabIndex = 437;
-            this.PANEL0102_MACHINE_btnnew.TabStop = false;
-            this.PANEL0102_MACHINE_btnnew.Visible = false;
-            // 
-            // PANEL0102_MACHINE_btnclose
-            // 
-            this.PANEL0102_MACHINE_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL0102_MACHINE_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0102_MACHINE_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnclose.Image")));
-            this.PANEL0102_MACHINE_btnclose.Location = new System.Drawing.Point(465, 3);
-            this.PANEL0102_MACHINE_btnclose.Name = "PANEL0102_MACHINE_btnclose";
-            this.PANEL0102_MACHINE_btnclose.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0102_MACHINE_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0102_MACHINE_btnclose.TabIndex = 436;
-            this.PANEL0102_MACHINE_btnclose.TabStop = false;
-            // 
-            // PANEL0102_MACHINE_btn_search
-            // 
-            this.PANEL0102_MACHINE_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0102_MACHINE_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btn_search.Image")));
-            this.PANEL0102_MACHINE_btn_search.Location = new System.Drawing.Point(319, 15);
-            this.PANEL0102_MACHINE_btn_search.Name = "PANEL0102_MACHINE_btn_search";
-            this.PANEL0102_MACHINE_btn_search.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0102_MACHINE_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0102_MACHINE_btn_search.TabIndex = 433;
-            this.PANEL0102_MACHINE_btn_search.TabStop = false;
-            // 
-            // PANEL0102_MACHINE_txtsearch
-            // 
-            this.PANEL0102_MACHINE_txtsearch.BackColor = System.Drawing.Color.White;
-            this.PANEL0102_MACHINE_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE_txtsearch.Location = new System.Drawing.Point(87, 15);
-            this.PANEL0102_MACHINE_txtsearch.Name = "PANEL0102_MACHINE_txtsearch";
-            this.PANEL0102_MACHINE_txtsearch.Size = new System.Drawing.Size(231, 21);
-            this.PANEL0102_MACHINE_txtsearch.TabIndex = 432;
-            // 
-            // PANEL0102_MACHINE_dataGridView1_machine
-            // 
-            this.PANEL0102_MACHINE_dataGridView1_machine.AllowUserToAddRows = false;
-            this.PANEL0102_MACHINE_dataGridView1_machine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL0102_MACHINE_dataGridView1_machine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL0102_MACHINE_dataGridView1_machine.Location = new System.Drawing.Point(3, 42);
-            this.PANEL0102_MACHINE_dataGridView1_machine.Name = "PANEL0102_MACHINE_dataGridView1_machine";
-            this.PANEL0102_MACHINE_dataGridView1_machine.Size = new System.Drawing.Size(491, 262);
-            this.PANEL0102_MACHINE_dataGridView1_machine.TabIndex = 0;
             // 
             // HOME03_Production_02Berg_Produce_record
             // 
@@ -2812,6 +2830,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
+            this.PANEL0102_MACHINE.ResumeLayout(false);
+            this.PANEL0102_MACHINE.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnnew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btn_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_dataGridView1_machine)).EndInit();
             this.PANEL_MAT.ResumeLayout(false);
             this.PANEL_MAT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_MAT_btnrefresh)).EndInit();
@@ -2849,14 +2873,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_dataGridView1_wherehouse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).EndInit();
-            this.PANEL0102_MACHINE.ResumeLayout(false);
-            this.PANEL0102_MACHINE.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnnew)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnclose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btn_search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_dataGridView1_machine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

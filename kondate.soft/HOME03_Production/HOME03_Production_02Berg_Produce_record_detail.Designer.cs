@@ -832,6 +832,7 @@
             this.txtmat_unit1_qty_loud_convert_sum.TabIndex = 1021;
             this.txtmat_unit1_qty_loud_convert_sum.Text = ".00";
             this.txtmat_unit1_qty_loud_convert_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_loud_convert_sum.Visible = false;
             // 
             // txtmat_unit1_qty_krasob_convert_sum
             // 
@@ -844,6 +845,7 @@
             this.txtmat_unit1_qty_krasob_convert_sum.TabIndex = 1020;
             this.txtmat_unit1_qty_krasob_convert_sum.Text = ".00";
             this.txtmat_unit1_qty_krasob_convert_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_krasob_convert_sum.Visible = false;
             // 
             // label41
             // 
@@ -856,6 +858,7 @@
             this.label41.TabIndex = 1019;
             this.label41.Text = "กก. :";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label41.Visible = false;
             // 
             // label42
             // 
@@ -868,6 +871,7 @@
             this.label42.TabIndex = 1018;
             this.label42.Text = "กก. :";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label42.Visible = false;
             // 
             // txtmat_unit1_qty_loud_sum
             // 
@@ -880,6 +884,7 @@
             this.txtmat_unit1_qty_loud_sum.TabIndex = 1016;
             this.txtmat_unit1_qty_loud_sum.Text = ".00";
             this.txtmat_unit1_qty_loud_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_loud_sum.Visible = false;
             // 
             // label40
             // 
@@ -892,6 +897,7 @@
             this.label40.TabIndex = 1017;
             this.label40.Text = "รวมหลอด :";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label40.Visible = false;
             // 
             // txtmat_unit1_qty_krasob_sum
             // 
@@ -904,6 +910,7 @@
             this.txtmat_unit1_qty_krasob_sum.TabIndex = 1008;
             this.txtmat_unit1_qty_krasob_sum.Text = ".00";
             this.txtmat_unit1_qty_krasob_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtmat_unit1_qty_krasob_sum.Visible = false;
             // 
             // panel2
             // 
@@ -1236,6 +1243,7 @@
             this.label39.TabIndex = 1009;
             this.label39.Text = "รวมกระสอบ :";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label39.Visible = false;
             // 
             // label23
             // 
