@@ -547,7 +547,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.EnableHeadersVisualStyles = false;
 
         }
-          private void Clear_GridView1()
+        private void Clear_GridView1()
         {
             this.GridView1.Rows.Clear();
             this.GridView1.Refresh();
@@ -2174,8 +2174,12 @@ namespace kondate.soft.HOME03_Production
                                       "txtcost_qty2_balance_yokpai," +  //33
                                       "txtqty_balance_yokpai," +  //33
                                       "txtLot_no," +  //33
+                                      "txtLot_no_status," +  //33
 
-                                       "txtLot_no_status) " +  //34
+                                      "txtqty_cut," +  //33
+                                      "txtqty_after_cut," +  //33
+
+                                       "txtcut_id) " +  //34
 
                                 "VALUES ('" + W_ID_Select.CDKEY.Trim() + "','" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +  //1
                                 "'" + myDateTime.ToString("yyyy", UsaCulture) + "','" + myDateTime.ToString("MM", UsaCulture) + "','" + myDateTime.ToString("dd", UsaCulture) + "'," +
@@ -2226,8 +2230,14 @@ namespace kondate.soft.HOME03_Production
                                "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtcost_qty2_balance_yokpai"].Value.ToString())) + "'," +  //33
 
                                "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_balance_yokpai"].Value.ToString())) + "'," +  //33
+                                "'" + this.GridView1.Rows[i].Cells["Col_txtLot_no"].Value.ToString() + "'," +  //23
+                                "'0'," +
 
-                               "'" + this.GridView1.Rows[i].Cells["Col_txtLot_no"].Value.ToString() + "','0')";   //34
+                               "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //29
+                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) + "'," +  //29
+
+
+                               "'')";   //34
 
                                     cmd2.ExecuteNonQuery();
                                     //MessageBox.Show("ok3");
