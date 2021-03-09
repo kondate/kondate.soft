@@ -317,6 +317,7 @@ namespace kondate.soft.HOME03_Production
             Show_Qty_Yokma();
             GridView1_Cal_Sum();
             Sum_group_tax();
+            STOCK_FIND_INSERT();
 
             //เชื่อมต่อฐานข้อมูล=======================================================
             //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
@@ -1977,7 +1978,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[2].HeaderText = "เครื่องจักร";
             this.GridView1.Columns[3].HeaderText = "ม้วนที่";
 
-            this.GridView1.Columns[4].HeaderText = "ม้วน (กก.)";
+            this.GridView1.Columns[4].HeaderText = "น้ำหนัก/ม้วน(กก.)";
 
             this.GridView1.Columns[5].HeaderText = " เวลาเริ่ม";
             this.GridView1.Columns[6].HeaderText = " เวลาเสร็จ";
@@ -2003,7 +2004,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[22].HeaderText = " หน่วย(ปอนด์)";
             this.GridView1.Columns[23].HeaderText = " หน่วย";
 
-            this.GridView1.Columns[24].HeaderText = "ม้วน(ปอนด์)";
+            this.GridView1.Columns[24].HeaderText = "น้ำหนัก/ม้วน(ปอนด์)";
 
             this.GridView1.Columns[25].HeaderText = "ราคา";
             this.GridView1.Columns[26].HeaderText = "ส่วนลด(%)";
@@ -2053,7 +2054,7 @@ namespace kondate.soft.HOME03_Production
 
 
             this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
-            this.GridView1.Columns["Col_txtqty"].Width =100;
+            this.GridView1.Columns["Col_txtqty"].Width =140;
             this.GridView1.Columns["Col_txtqty"].ReadOnly = false;
             this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -2215,7 +2216,7 @@ namespace kondate.soft.HOME03_Production
 
 
             this.GridView1.Columns["Col_txtqty2"].Visible = true;  //"Col_txtqty2";
-            this.GridView1.Columns["Col_txtqty2"].Width =110;
+            this.GridView1.Columns["Col_txtqty2"].Width =140;
             this.GridView1.Columns["Col_txtqty2"].ReadOnly = true;
             this.GridView1.Columns["Col_txtqty2"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty2"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -2305,8 +2306,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_mat_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_mat_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             
-            this.GridView1.Columns["Col_txtface_baking_id"].Visible = false;  //"Col_txtface_baking_id";
-            this.GridView1.Columns["Col_txtface_baking_id"].Width = 0;
+            this.GridView1.Columns["Col_txtface_baking_id"].Visible = true;  //"Col_txtface_baking_id";
+            this.GridView1.Columns["Col_txtface_baking_id"].Width = 80;
             this.GridView1.Columns["Col_txtface_baking_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtface_baking_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtface_baking_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -6416,6 +6417,204 @@ namespace kondate.soft.HOME03_Production
 
             }
 
+            // END INSERT ชื่อสินค้าที่สต๊อค ยังไม่มี
+
+        }
+
+
+        private void STOCK_FIND_INSERT()
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+            Cursor.Current = Cursors.WaitCursor;
+
+            //สต๊อคสินค้า ตามคลัง =============================================================================================
+            for (int i = 0; i < this.GridView1.Rows.Count; i++)
+            {
+                if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value != null)
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open)
+                    {
+
+                        SqlCommand cmd2 = conn.CreateCommand();
+                        cmd2.CommandType = CommandType.Text;
+                        cmd2.Connection = conn;
+
+                        cmd2.CommandText = "SELECT *" +
+                                                    " FROM k021_mat_average" +
+                                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                                    " AND (txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
+                                                    " AND (txtmat_id = '" + this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString() + "')" +
+                                                    " ORDER BY txtmat_no ASC";
+                        try
+                        {
+                            //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                            SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                            DataTable dt2 = new DataTable();
+                            da.Fill(dt2);
+
+                            if (dt2.Rows.Count > 0)
+                            {
+                                for (int j = 0; j < dt2.Rows.Count; j++)
+                                {
+                                    //Col_mat_status
+                                    this.GridView1.Rows[i].Cells["Col_mat_status"].Value = "Y";
+                                }
+                                Cursor.Current = Cursors.Default;
+                            }
+                            else
+                            {
+                                this.GridView1.Rows[i].Cells["Col_mat_status"].Value = "N";
+                                //=======================================================
+                                Cursor.Current = Cursors.WaitCursor;
+                                //conn.Open();
+                                //if (conn.State == System.Data.ConnectionState.Open)
+                                //{
+
+                                    //SqlCommand cmd2 = conn.CreateCommand();
+                                    //cmd2.CommandType = CommandType.Text;
+                                    //cmd2.Connection = conn;
+
+                                    SqlTransaction trans;
+                                    trans = conn.BeginTransaction();
+                                    cmd2.Transaction = trans;
+                                    //try
+                                    //{
+
+                                        cmd2.CommandText = "INSERT INTO k021_mat_average(cdkey,txtco_id," +  //1
+                                       "txtwherehouse_id," +  //2
+                                       "txtmat_no," +  //3
+                                       "txtmat_id," +  //4
+                                       "txtmat_name," +  //5
+                                       "txtmat_unit1_qty," +  //6
+                                       "chmat_unit_status," +  //7
+                                       "txtmat_unit2_qty," +  //8
+                                       "txtcost_qty_balance," +  //9
+                                       "txtcost_qty_price_average," +  //10
+                                       "txtcost_money_sum," +  //11
+                                       "txtcost_qty2_balance) " +  //14
+                                       "VALUES (@cdkey,@txtco_id," +  //1
+                                       "@txtwherehouse_id," +  //2
+                                       "@txtmat_no," +  //3
+                                       "@txtmat_id," +  //4
+                                       "@txtmat_name," +  //5
+                                       "@txtmat_unit1_qty," +  //6
+                                       "@chmat_unit_status," +  //7
+                                       "@txtmat_unit2_qty," +  //8
+                                       "@txtcost_qty_balance," +  //9
+                                       "@txtcost_qty_price_average," +  //10
+                                       "@txtcost_money_sum," +  //11
+                                       "@txtcost_qty2_balance)";   //14
+
+                                        cmd2.Parameters.Add("@cdkey", SqlDbType.NVarChar).Value = W_ID_Select.CDKEY.Trim();
+                                        cmd2.Parameters.Add("@txtco_id", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();  //1
+
+                                        cmd2.Parameters.Add("@txtwherehouse_id", SqlDbType.NVarChar).Value = this.PANEL1306_WH_txtwherehouse_id.Text.ToString();  //2
+                                        cmd2.Parameters.Add("@txtmat_no", SqlDbType.NVarChar).Value = this.GridView1.Rows[i].Cells["Col_txtmat_no"].Value.ToString();  //3
+                                        cmd2.Parameters.Add("@txtmat_id", SqlDbType.NVarChar).Value = this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString();  //4
+                                        cmd2.Parameters.Add("@txtmat_name", SqlDbType.NVarChar).Value = this.GridView1.Rows[i].Cells["Col_txtmat_name"].Value.ToString();  //5
+                                        cmd2.Parameters.Add("@txtmat_unit1_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtmat_unit1_qty"].Value.ToString()));  //6
+                                        cmd2.Parameters.Add("@chmat_unit_status", SqlDbType.NVarChar).Value = this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString();  //7
+                                        cmd2.Parameters.Add("@txtmat_unit2_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));  //8
+
+                                        cmd2.Parameters.Add("@txtcost_qty_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 0));  //9
+                                        cmd2.Parameters.Add("@txtcost_qty_price_average", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 0));  //10
+                                        cmd2.Parameters.Add("@txtcost_money_sum", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 0));  //11
+
+                                        cmd2.Parameters.Add("@txtcost_qty2_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //13
+
+                                        //==============================
+
+                                        cmd2.ExecuteNonQuery();
+
+
+                                        Cursor.Current = Cursors.WaitCursor;
+                                        trans.Commit();
+                                        //conn.Close();
+
+                                        Cursor.Current = Cursors.Default;
+
+
+                                    //conn.Close();
+                                    //    }
+                                    //    catch (Exception ex)
+                                    //    {
+                                    //        //conn.Close();
+                                    //        MessageBox.Show("kondate.soft", ex.Message);
+                                    //        return;
+                                    //    }
+                                    //    finally
+                                    //    {
+                                    //        //conn.Close();
+                                    //    }
+                                //}
+                                //=============================================================
+
+
+                                Cursor.Current = Cursors.Default;
+                                // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                conn.Close();
+                                // return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Cursor.Current = Cursors.Default;
+
+                            MessageBox.Show("kondate.soft", ex.Message);
+                            return;
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                    }
+                } //== if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value != null)
+            } //== for (int i = 0; i < this.GridView1.Rows.Count; i++)
+
+            //สต๊อคสินค้า ตามคลัง =============================================================================================
+
+
+
+
+
+            // INSERT ชื่อสินค้าที่สต๊อค ยังไม่มี
+            for (int i = 0; i < this.GridView1.Rows.Count; i++)
+            {
+                if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value != null)
+                {
+                    if (this.GridView1.Rows[i].Cells["Col_mat_status"].Value.ToString() != "Y")
+                    {
+
+                    }
+                }
+            }
             // END INSERT ชื่อสินค้าที่สต๊อค ยังไม่มี
 
         }

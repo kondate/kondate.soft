@@ -48,6 +48,8 @@
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtic_id = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtsum_qty_change_rate = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtsum_qty_change = new System.Windows.Forms.TextBox();
@@ -188,8 +190,6 @@
             this.label62 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
-            this.txtic_id = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -591,6 +591,26 @@
             this.panel1.Size = new System.Drawing.Size(1408, 626);
             this.panel1.TabIndex = 1044;
             // 
+            // txtic_id
+            // 
+            this.txtic_id.BackColor = System.Drawing.Color.White;
+            this.txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtic_id.Location = new System.Drawing.Point(112, 74);
+            this.txtic_id.Name = "txtic_id";
+            this.txtic_id.Size = new System.Drawing.Size(234, 21);
+            this.txtic_id.TabIndex = 1079;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(9, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 23);
+            this.label6.TabIndex = 1078;
+            this.label6.Text = "เลขที่เบิกด้าย :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtsum_qty_change_rate
             // 
             this.txtsum_qty_change_rate.BackColor = System.Drawing.Color.Black;
@@ -636,7 +656,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 21);
             this.label1.TabIndex = 1075;
-            this.label1.Text = "ส่วนต่าง :";
+            this.label1.Text = "ส่วนต่าง(กก) :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtsum_qty_yes
@@ -660,7 +680,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 21);
             this.label9.TabIndex = 1073;
-            this.label9.Text = "ผลิตได้ :";
+            this.label9.Text = "ผลิตได้ (กก) :";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtsum_qty_ic
@@ -684,7 +704,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 21);
             this.label10.TabIndex = 1071;
-            this.label10.Text = "เบิกเข้าเครื่องจักร :";
+            this.label10.Text = "เบิกเข้าเครื่องจักร (กก) :";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PANEL_MAT_txtmat_id
@@ -2299,26 +2319,6 @@
             this.GridView1.TabIndex = 994;
             this.GridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView1_CellMouseLeave);
             this.GridView1.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView1_CellMouseMove);
-            // 
-            // txtic_id
-            // 
-            this.txtic_id.BackColor = System.Drawing.Color.White;
-            this.txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtic_id.Location = new System.Drawing.Point(112, 74);
-            this.txtic_id.Name = "txtic_id";
-            this.txtic_id.Size = new System.Drawing.Size(234, 21);
-            this.txtic_id.TabIndex = 1079;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(9, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 23);
-            this.label6.TabIndex = 1078;
-            this.label6.Text = "เลขที่เบิกด้าย :";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // HOME03_Production_03Produce_record_detail
             // 

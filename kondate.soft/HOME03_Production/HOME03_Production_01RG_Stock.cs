@@ -1852,6 +1852,8 @@ namespace kondate.soft.HOME03_Production
             double Sum_Qty = 0;
             double Sum_Qty2 = 0;
             double Sum2_Qty_Yokpai = 0;
+            double Sum_Qty23 = 0;
+            double Sum_Qty232 = 0;
             int k = 0;
 
 
@@ -1885,11 +1887,23 @@ namespace kondate.soft.HOME03_Production
                             Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n}", Sum2_Qty_Yokpai)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView3.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
                             this.txtsum2_qty.Text  = Sum2_Qty_Yokpai.ToString("N", new CultureInfo("en-US"));
                         }
+                        //หาจำนวนกระสอบ
+                        Sum_Qty23 = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) / Convert.ToDouble(string.Format("{0:n4}", this.txtwight_per_krasob.Text.ToString()));
+                        this.txtsum_qty_krasob.Text = Sum_Qty23.ToString("N0", new CultureInfo("en-US"));
+                        //หาจำนวนหลอด
+                        Sum_Qty232 = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty_krasob.Text.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.txtlod_per_krasob.Text.ToString()));
+                        this.txtsum_qty_lod.Text = Sum_Qty232.ToString("N0", new CultureInfo("en-US"));
 
                     }
                 }
 
             }
+             Sum_Qty = 0;
+             Sum_Qty2 = 0;
+             Sum2_Qty_Yokpai = 0;
+             Sum_Qty23 = 0;
+             Sum_Qty232 = 0;
+
         }
         //===========================================================
 

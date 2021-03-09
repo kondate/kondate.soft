@@ -458,7 +458,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[2].HeaderText = "เครื่องจักร";
             this.GridView1.Columns[3].HeaderText = "ม้วนที่";
 
-            this.GridView1.Columns[4].HeaderText = "ม้วน (กก.)";
+            this.GridView1.Columns[4].HeaderText = "น้ำหนัก/ม้วน (กก.)";
 
             this.GridView1.Columns[5].HeaderText = " เวลาเริ่ม";
             this.GridView1.Columns[6].HeaderText = " เวลาเสร็จ";
@@ -484,7 +484,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[22].HeaderText = " หน่วย(ปอนด์)";
             this.GridView1.Columns[23].HeaderText = " หน่วย";
 
-            this.GridView1.Columns[24].HeaderText = "ม้วน(ปอนด์)";
+            this.GridView1.Columns[24].HeaderText = "น้ำหนัก/ม้วน(ปอนด์)";
 
             this.GridView1.Columns[25].HeaderText = "ราคา";
             this.GridView1.Columns[26].HeaderText = "ส่วนลด(%)";
@@ -539,7 +539,7 @@ namespace kondate.soft.HOME03_Production
 
 
             this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
-            this.GridView1.Columns["Col_txtqty"].Width = 100;
+            this.GridView1.Columns["Col_txtqty"].Width = 140;
             this.GridView1.Columns["Col_txtqty"].ReadOnly = false;
             this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -706,7 +706,7 @@ namespace kondate.soft.HOME03_Production
 
 
             this.GridView1.Columns["Col_txtqty2"].Visible = true;  //"Col_txtqty2";
-            this.GridView1.Columns["Col_txtqty2"].Width = 110;
+            this.GridView1.Columns["Col_txtqty2"].Width = 140;
             this.GridView1.Columns["Col_txtqty2"].ReadOnly = true;
             this.GridView1.Columns["Col_txtqty2"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty2"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -796,8 +796,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_mat_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_mat_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtface_baking_id"].Visible = false;  //"Col_txtface_baking_id";
-            this.GridView1.Columns["Col_txtface_baking_id"].Width = 0;
+            this.GridView1.Columns["Col_txtface_baking_id"].Visible = true;  //"Col_txtface_baking_id";
+            this.GridView1.Columns["Col_txtface_baking_id"].Width = 90;
             this.GridView1.Columns["Col_txtface_baking_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtface_baking_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtface_baking_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
