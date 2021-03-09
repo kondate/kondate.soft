@@ -629,6 +629,7 @@
             this.HOME03_Production_03_FG1_G.Text = "สต๊อคผ้าดิบ";
             this.HOME03_Production_03_FG1_G.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_03_FG1_G.UseVisualStyleBackColor = false;
+            this.HOME03_Production_03_FG1_G.Click += new System.EventHandler(this.HOME03_Production_03_FG1_G_Click);
             // 
             // HOME03_Production_06_G
             // 

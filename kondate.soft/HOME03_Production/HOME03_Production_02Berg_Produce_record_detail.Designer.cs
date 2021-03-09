@@ -1417,6 +1417,7 @@
             this.label2.TabIndex = 996;
             this.label2.Text = "จำนวนเครื่องจักร :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Visible = false;
             // 
             // PANEL1313_ACC_GROUP_TAX
             // 
@@ -2028,6 +2029,7 @@
             this.txtnew_rows.TabIndex = 995;
             this.txtnew_rows.Text = "30";
             this.txtnew_rows.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtnew_rows.Visible = false;
             // 
             // txtemp_office_name_approve
             // 

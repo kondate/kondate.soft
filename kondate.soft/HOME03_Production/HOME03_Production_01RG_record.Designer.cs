@@ -1343,7 +1343,7 @@
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(132, 21);
             this.label44.TabIndex = 1051;
-            this.label44.Text = "จำนวนกระสอบ :";
+            this.label44.Text = "จำนวน Lot No :";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtQTY_amount

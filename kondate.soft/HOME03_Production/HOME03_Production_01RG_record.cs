@@ -6445,7 +6445,7 @@ namespace kondate.soft.HOME03_Production
                                                                  "txtemp_print_datetime = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture) + "'" +
                                                                 " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                               " AND (txtRG_id = '" + this.txtCRG_id.Text.Trim() + "')";
+                                                               " AND (txtCRG_id = '" + this.txtCRG_id.Text.Trim() + "')";
                     cmd2.ExecuteNonQuery();
 
 

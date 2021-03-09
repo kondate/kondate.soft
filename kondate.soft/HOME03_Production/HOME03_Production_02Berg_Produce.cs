@@ -231,6 +231,8 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_txtic_status"].Value = "ยกเลิก"; //12
                             }
 
+                            this.GridView1.Rows[index].Cells["Col_txtFG1_id"].Value = dt2.Rows[j]["txtFG1_id"].ToString();      //9
+                            this.GridView1.Rows[index].Cells["Col_txtroll_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtroll_sum"]).ToString("###,###.00");      //11
 
                         }
                         //=======================================================
@@ -258,6 +260,7 @@ namespace kondate.soft.HOME03_Production
             }
             //================================
             GridView1_Color();
+            GridView1_Color_Column();
         }
         private void Fill_Show_BRANCH_DATA_GridView1()
         {
@@ -373,6 +376,8 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_txtic_status"].Value = "ยกเลิก"; //12
                             }
 
+                            this.GridView1.Rows[index].Cells["Col_txtFG1_id"].Value = dt2.Rows[j]["txtFG1_id"].ToString();      //9
+                            this.GridView1.Rows[index].Cells["Col_txtroll_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtroll_sum"]).ToString("###,###.00");      //11
 
                         }
                         //=======================================================
@@ -400,13 +405,12 @@ namespace kondate.soft.HOME03_Production
             }
             //================================
             GridView1_Color();
-            //================================
-            GridView1_Color();
+            GridView1_Color_Column();
 
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 15;
+            this.GridView1.ColumnCount = 17;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
@@ -422,6 +426,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[12].Name = "Col_txtsum_qty";
             this.GridView1.Columns[13].Name = "Col_txtsum2_qty";
             this.GridView1.Columns[14].Name = "Col_txtic_status";
+            this.GridView1.Columns[15].Name = "Col_txtFG1_id";
+            this.GridView1.Columns[16].Name = "Col_txtroll_sum";
 
             this.GridView1.Columns[0].HeaderText = "No";
             this.GridView1.Columns[1].HeaderText = "txtco_id";
@@ -435,9 +441,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[9].HeaderText = "รหัสวัตถุดิบ";
             this.GridView1.Columns[10].HeaderText = "ชื่อวัตถุดิบ";
             this.GridView1.Columns[11].HeaderText = "เบอร์วัตถุดิบ";
-            this.GridView1.Columns[12].HeaderText = "รวม กก.";
-            this.GridView1.Columns[13].HeaderText = "รวม ปอนด์";
+            this.GridView1.Columns[12].HeaderText = "เบิก กก.";
+            this.GridView1.Columns[13].HeaderText = "เบิก ปอนด์";
             this.GridView1.Columns[14].HeaderText = " สถานะ";
+            this.GridView1.Columns[15].HeaderText = "เลขที่ FG1";
+            this.GridView1.Columns[16].HeaderText = "ผลิตผ้าดิบได้(ม้วน)";
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
@@ -517,6 +525,18 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtic_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtic_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+            this.GridView1.Columns["Col_txtFG1_id"].Visible = true;  //"Col_txtFG1_id";
+            this.GridView1.Columns["Col_txtFG1_id"].Width = 120;
+            this.GridView1.Columns["Col_txtFG1_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtFG1_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtFG1_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtroll_sum"].Visible = true;  //"Col_txtroll_sum";
+            this.GridView1.Columns["Col_txtroll_sum"].Width = 120;
+            this.GridView1.Columns["Col_txtroll_sum"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtroll_sum"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtroll_sum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
 
             this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
             this.GridView1.GridColor = Color.FromArgb(227, 227, 227);
@@ -545,6 +565,18 @@ namespace kondate.soft.HOME03_Production
                 //    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 //    GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
                 //}
+
+            }
+        }
+        private void GridView1_Color_Column()
+        {
+
+            for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
+            {
+                GridView1.Rows[i].Cells["Col_txtmachine_id"].Style.BackColor = Color.LightSkyBlue;
+                GridView1.Rows[i].Cells["Col_txtsum_qty"].Style.BackColor = Color.LightSkyBlue;
+
+                GridView1.Rows[i].Cells["Col_txtroll_sum"].Style.BackColor = Color.LightSkyBlue;
 
             }
         }
@@ -998,6 +1030,8 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_txtic_status"].Value = "ยกเลิก"; //12
                             }
 
+                            this.GridView1.Rows[index].Cells["Col_txtFG1_id"].Value = dt2.Rows[j]["txtFG1_id"].ToString();      //9
+                            this.GridView1.Rows[index].Cells["Col_txtroll_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtroll_sum"]).ToString("###,###.00");      //11
 
                         }
                         //=======================================================
@@ -1025,6 +1059,7 @@ namespace kondate.soft.HOME03_Production
             }
             //================================
             GridView1_Color();
+            GridView1_Color_Column();
 
         }
 

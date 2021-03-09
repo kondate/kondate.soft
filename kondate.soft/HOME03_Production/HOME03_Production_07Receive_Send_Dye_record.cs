@@ -3753,11 +3753,11 @@ namespace kondate.soft.HOME03_Production
                         for (int i = 0; i < z; i++)
                         {
                             k = 1 + i;
-                            string Lot_NO = DateTime.Now.ToString("yyMMdd HH:mm", ThaiCulture) + "-" + this.PANEL0105_FACE_BAKING_txtface_baking_name.Text.Trim() + "-" + k.ToString("00");
+                            string Lot_NO = DateTime.Now.ToString("yyMMddHHmm", ThaiCulture) + "-" + this.PANEL0105_FACE_BAKING_txtface_baking_name.Text.Trim() + "-" + k.ToString("00");
 
                             string[] row = new string[] { k.ToString(),   //"Col_Auto_num";  0
                                                                                                         this.PANEL1306_WH_txtwherehouse_id.Text.Trim(),  // "Col_txtwherehouse_id";  1
-                                                                                                        DateTime.Now.ToString("yyMMdd HH:mm", ThaiCulture),  // "Col_txtnumber_in_year"; 2
+                                                                                                        DateTime.Now.ToString("yyMMddHHmm", ThaiCulture),  // "Col_txtnumber_in_year"; 2
                                                                                                         this.PANEL0106_NUMBER_MAT_txtnumber_mat_id.Text.Trim(),  // "Col_txtnumber_mat_id";  3
                                                                                                         this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text.Trim(),  // "Col_txtnumber_color_id";  4
                                                                                                         this.PANEL0105_FACE_BAKING_txtface_baking_id.Text.Trim(),  // "Col_txtface_baking_id";  5
@@ -3830,11 +3830,11 @@ namespace kondate.soft.HOME03_Production
                         for (int i = 0; i < z2; i++)
                         {
                             k = 1 + i;
-                            string Lot_NO = DateTime.Now.ToString("yyMMdd HH:mm", ThaiCulture)  + "-" + this.PANEL0105_FACE_BAKING_txtface_baking_name.Text.Trim() + "-RIB";
+                            string Lot_NO = DateTime.Now.ToString("yyMMddHHmm", ThaiCulture)  + "-" + this.PANEL0105_FACE_BAKING_txtface_baking_name.Text.Trim() + "-RIB";
 
                             string[] row2 = new string[] { k.ToString(),   //"Col_Auto_num";
                                                                                                         this.PANEL1306_WH_txtwherehouse_id.Text.Trim(),  // "Col_txtwherehouse_id";
-                                                                                                        DateTime.Now.ToString("yyMMdd HH:mm", ThaiCulture),  // "Col_txtnumber_in_year";
+                                                                                                        DateTime.Now.ToString("yyMMddHHmm", ThaiCulture),  // "Col_txtnumber_in_year";
                                                                                                         this.PANEL0106_NUMBER_MAT_txtnumber_mat_id.Text.Trim(),  // "Col_txtnumber_mat_id";
                                                                                                         this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text.Trim(),  // "Col_txtnumber_color_id";
                                                                                                         this.PANEL0105_FACE_BAKING_txtface_baking_id.Text.Trim(),  // "Col_txtface_baking_id";

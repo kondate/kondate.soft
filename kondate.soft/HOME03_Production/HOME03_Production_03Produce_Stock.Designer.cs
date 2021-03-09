@@ -1,6 +1,6 @@
 ﻿namespace kondate.soft.HOME03_Production
 {
-    partial class HOME03_Production_01RG_Stock
+    partial class HOME03_Production_03Produce_Stock
     {
         /// <summary>
         /// Required designer variable.
@@ -443,7 +443,7 @@
             // GridView3
             // 
             this.GridView3.AllowUserToAddRows = false;
-            this.GridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.GridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView3.BackgroundColor = System.Drawing.Color.White;
             this.GridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -457,8 +457,8 @@
             // GridView2
             // 
             this.GridView2.AllowUserToAddRows = false;
-            this.GridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.GridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView2.BackgroundColor = System.Drawing.Color.White;
             this.GridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -495,7 +495,7 @@
             // PANEL1306_WH_dataGridView1_wherehouse
             // 
             this.PANEL1306_WH_dataGridView1_wherehouse.AllowUserToAddRows = false;
-            this.PANEL1306_WH_dataGridView1_wherehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PANEL1306_WH_dataGridView1_wherehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PANEL1306_WH_dataGridView1_wherehouse.BackgroundColor = System.Drawing.Color.White;
             this.PANEL1306_WH_dataGridView1_wherehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

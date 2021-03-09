@@ -445,7 +445,10 @@ namespace kondate.soft.HOME03_Production
                                                "txtic_status," +  //44
                                               "txtpayment_status," +  //45
                                               "txtacc_record_status," +  //46
-                                              "txtemp_print,txtemp_print_datetime) " +  //47
+                                              "txtemp_print," +  //46
+                                              "txtemp_print," +  //46
+                                              "txtFG1_id," +  //46
+                                              "txtroll_sum) " +  //47
 
                                                "VALUES (@cdkey,@txtco_id,@txtbranch_id," +  //1
                                                "@txttrans_date_server,@txttrans_time," +  //2
@@ -506,7 +509,10 @@ namespace kondate.soft.HOME03_Production
                                                "@txtic_status," +  //44
                                               "@txtpayment_status," +  //45
                                               "@txtacc_record_status," +  //46
-                                              "@txtemp_print,@txtemp_print_datetime)";   //47
+                                              "@txtemp_print," +  //46
+                                              "@txtemp_print_datetime," +  //46
+                                              "@txtFG1_id," +  //46
+                                              "@txtroll_sum)";   //47
 
                         cmd2.Parameters.Add("@cdkey", SqlDbType.NVarChar).Value = W_ID_Select.CDKEY.Trim();
                         cmd2.Parameters.Add("@txtco_id", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
@@ -588,9 +594,11 @@ namespace kondate.soft.HOME03_Production
                         cmd2.Parameters.Add("@txtacc_record_status", SqlDbType.NVarChar).Value = "";  //46
                         cmd2.Parameters.Add("@txtemp_print", SqlDbType.NVarChar).Value = W_ID_Select.M_EMP_OFFICE_NAME.Trim();  //47
                         cmd2.Parameters.Add("@txtemp_print_datetime", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture);//47
+                        cmd2.Parameters.Add("@txtFG1_id", SqlDbType.NVarChar).Value = "";  //44
+                        cmd2.Parameters.Add("@txtroll_sum", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}",0));  //43
 
-                        //=====================================================================================================================================================
-                        cmd2.ExecuteNonQuery();
+                    //=====================================================================================================================================================
+                    cmd2.ExecuteNonQuery();
                     //MessageBox.Show("ok2");
 
 

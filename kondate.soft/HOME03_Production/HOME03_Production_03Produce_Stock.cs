@@ -31,7 +31,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 namespace kondate.soft.HOME03_Production
 {
-    public partial class HOME03_Production_01RG_Stock : Form
+    public partial class HOME03_Production_03Produce_Stock : Form
     {
         //Move Form ====================================
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -64,7 +64,7 @@ namespace kondate.soft.HOME03_Production
 
 
 
-        public HOME03_Production_01RG_Stock()
+        public HOME03_Production_03Produce_Stock()
         {
             InitializeComponent();
         }
