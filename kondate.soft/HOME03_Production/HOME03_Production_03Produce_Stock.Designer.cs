@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_01RG_Stock));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_03Produce_Stock));
             this.panel_button_top = new System.Windows.Forms.Panel();
             this.btnPreview = new System.Windows.Forms.Button();
             this.BtnPrint = new System.Windows.Forms.Button();
@@ -70,6 +70,10 @@
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.panel_top = new System.Windows.Forms.Panel();
+            this.txtsum_qty_rib = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtsum_qty_roll = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
@@ -255,6 +259,10 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.txtsum_qty_roll);
+            this.panel1_contens.Controls.Add(this.label5);
+            this.panel1_contens.Controls.Add(this.txtsum_qty_rib);
+            this.panel1_contens.Controls.Add(this.label4);
             this.panel1_contens.Controls.Add(this.txtsum2_qty);
             this.panel1_contens.Controls.Add(this.label34);
             this.panel1_contens.Controls.Add(this.txtsum_qty);
@@ -289,7 +297,7 @@
             // 
             // txtsum2_qty
             // 
-            this.txtsum2_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtsum2_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsum2_qty.BackColor = System.Drawing.Color.Black;
             this.txtsum2_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtsum2_qty.ForeColor = System.Drawing.Color.Lime;
@@ -302,7 +310,7 @@
             // 
             // label34
             // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label34.ForeColor = System.Drawing.Color.Black;
             this.label34.Location = new System.Drawing.Point(1203, 563);
@@ -314,7 +322,7 @@
             // 
             // txtsum_qty
             // 
-            this.txtsum_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtsum_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsum_qty.BackColor = System.Drawing.Color.Black;
             this.txtsum_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtsum_qty.ForeColor = System.Drawing.Color.Lime;
@@ -327,7 +335,7 @@
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(945, 562);
@@ -443,7 +451,7 @@
             // GridView3
             // 
             this.GridView3.AllowUserToAddRows = false;
-            this.GridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.GridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView3.BackgroundColor = System.Drawing.Color.White;
             this.GridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -457,8 +465,8 @@
             // GridView2
             // 
             this.GridView2.AllowUserToAddRows = false;
-            this.GridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.GridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView2.BackgroundColor = System.Drawing.Color.White;
             this.GridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -495,7 +503,7 @@
             // PANEL1306_WH_dataGridView1_wherehouse
             // 
             this.PANEL1306_WH_dataGridView1_wherehouse.AllowUserToAddRows = false;
-            this.PANEL1306_WH_dataGridView1_wherehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.PANEL1306_WH_dataGridView1_wherehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PANEL1306_WH_dataGridView1_wherehouse.BackgroundColor = System.Drawing.Color.White;
             this.PANEL1306_WH_dataGridView1_wherehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -679,7 +687,57 @@
             this.panel_top.TabIndex = 9;
             this.panel_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseDown);
             // 
-            // HOME03_Production_01RG_Stock
+            // txtsum_qty_rib
+            // 
+            this.txtsum_qty_rib.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_rib.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_rib.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_rib.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_rib.Location = new System.Drawing.Point(865, 563);
+            this.txtsum_qty_rib.Name = "txtsum_qty_rib";
+            this.txtsum_qty_rib.Size = new System.Drawing.Size(81, 21);
+            this.txtsum_qty_rib.TabIndex = 1004;
+            this.txtsum_qty_rib.Text = ".00";
+            this.txtsum_qty_rib.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(723, 562);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 21);
+            this.label4.TabIndex = 1005;
+            this.label4.Text = "รวมจำนวน RIB เหลือ (Lot) :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtsum_qty_roll
+            // 
+            this.txtsum_qty_roll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_roll.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_roll.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_roll.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_roll.Location = new System.Drawing.Point(613, 561);
+            this.txtsum_qty_roll.Name = "txtsum_qty_roll";
+            this.txtsum_qty_roll.Size = new System.Drawing.Size(100, 21);
+            this.txtsum_qty_roll.TabIndex = 1006;
+            this.txtsum_qty_roll.Text = ".00";
+            this.txtsum_qty_roll.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(452, 560);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 21);
+            this.label5.TabIndex = 1007;
+            this.label5.Text = "รวมจำนวนม้วน เหลือ (Lot) :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // HOME03_Production_03Produce_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -691,7 +749,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HOME03_Production_01RG_Stock";
+            this.Name = "HOME03_Production_03Produce_Stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "เช็คสต๊อค";
             this.Load += new System.EventHandler(this.HOME04_Warehouse_01Mat_Average_Load);
@@ -755,5 +813,9 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txtsum_qty;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtsum_qty_roll;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtsum_qty_rib;
+        private System.Windows.Forms.Label label4;
     }
 }

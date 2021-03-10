@@ -70,6 +70,14 @@
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.panel_top = new System.Windows.Forms.Panel();
+            this.txtsum_qty_krasob = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtsum_qty_lod = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtwight_per_krasob = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtlod_per_krasob = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
@@ -255,6 +263,14 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.txtlod_per_krasob);
+            this.panel1_contens.Controls.Add(this.label8);
+            this.panel1_contens.Controls.Add(this.txtwight_per_krasob);
+            this.panel1_contens.Controls.Add(this.label6);
+            this.panel1_contens.Controls.Add(this.txtsum_qty_krasob);
+            this.panel1_contens.Controls.Add(this.label5);
+            this.panel1_contens.Controls.Add(this.txtsum_qty_lod);
+            this.panel1_contens.Controls.Add(this.label4);
             this.panel1_contens.Controls.Add(this.txtsum2_qty);
             this.panel1_contens.Controls.Add(this.label34);
             this.panel1_contens.Controls.Add(this.txtsum_qty);
@@ -289,7 +305,7 @@
             // 
             // txtsum2_qty
             // 
-            this.txtsum2_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtsum2_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsum2_qty.BackColor = System.Drawing.Color.Black;
             this.txtsum2_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtsum2_qty.ForeColor = System.Drawing.Color.Lime;
@@ -302,7 +318,7 @@
             // 
             // label34
             // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label34.ForeColor = System.Drawing.Color.Black;
             this.label34.Location = new System.Drawing.Point(1203, 563);
@@ -314,7 +330,7 @@
             // 
             // txtsum_qty
             // 
-            this.txtsum_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtsum_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsum_qty.BackColor = System.Drawing.Color.Black;
             this.txtsum_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtsum_qty.ForeColor = System.Drawing.Color.Lime;
@@ -327,7 +343,7 @@
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(945, 562);
@@ -679,6 +695,106 @@
             this.panel_top.TabIndex = 9;
             this.panel_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseDown);
             // 
+            // txtsum_qty_krasob
+            // 
+            this.txtsum_qty_krasob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_krasob.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_krasob.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_krasob.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_krasob.Location = new System.Drawing.Point(612, 562);
+            this.txtsum_qty_krasob.Name = "txtsum_qty_krasob";
+            this.txtsum_qty_krasob.Size = new System.Drawing.Size(89, 21);
+            this.txtsum_qty_krasob.TabIndex = 1010;
+            this.txtsum_qty_krasob.Text = ".00";
+            this.txtsum_qty_krasob.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(451, 561);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 21);
+            this.label5.TabIndex = 1011;
+            this.label5.Text = "รวมจำนวนกระสอบ เหลือ (Lot) :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtsum_qty_lod
+            // 
+            this.txtsum_qty_lod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_lod.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_lod.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_lod.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_lod.Location = new System.Drawing.Point(864, 564);
+            this.txtsum_qty_lod.Name = "txtsum_qty_lod";
+            this.txtsum_qty_lod.Size = new System.Drawing.Size(81, 21);
+            this.txtsum_qty_lod.TabIndex = 1008;
+            this.txtsum_qty_lod.Text = ".00";
+            this.txtsum_qty_lod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(707, 563);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 21);
+            this.label4.TabIndex = 1009;
+            this.label4.Text = "รวมจำนวนหลอด เหลือ (Lot) :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtwight_per_krasob
+            // 
+            this.txtwight_per_krasob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtwight_per_krasob.BackColor = System.Drawing.Color.Black;
+            this.txtwight_per_krasob.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtwight_per_krasob.ForeColor = System.Drawing.Color.Lime;
+            this.txtwight_per_krasob.Location = new System.Drawing.Point(143, 562);
+            this.txtwight_per_krasob.Name = "txtwight_per_krasob";
+            this.txtwight_per_krasob.Size = new System.Drawing.Size(70, 21);
+            this.txtwight_per_krasob.TabIndex = 1014;
+            this.txtwight_per_krasob.Text = "29.555";
+            this.txtwight_per_krasob.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(36, 562);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 21);
+            this.label6.TabIndex = 1015;
+            this.label6.Text = "นน/กระสอบ (กก) :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtlod_per_krasob
+            // 
+            this.txtlod_per_krasob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtlod_per_krasob.BackColor = System.Drawing.Color.Black;
+            this.txtlod_per_krasob.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtlod_per_krasob.ForeColor = System.Drawing.Color.Lime;
+            this.txtlod_per_krasob.Location = new System.Drawing.Point(345, 562);
+            this.txtlod_per_krasob.Name = "txtlod_per_krasob";
+            this.txtlod_per_krasob.Size = new System.Drawing.Size(89, 21);
+            this.txtlod_per_krasob.TabIndex = 1016;
+            this.txtlod_per_krasob.Text = "16.00";
+            this.txtlod_per_krasob.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(219, 562);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 21);
+            this.label8.TabIndex = 1017;
+            this.label8.Text = "จำนวนหลอด /กระสอบ :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // HOME03_Production_01RG_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,5 +871,13 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txtsum_qty;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtlod_per_krasob;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtwight_per_krasob;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtsum_qty_krasob;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtsum_qty_lod;
+        private System.Windows.Forms.Label label4;
     }
 }

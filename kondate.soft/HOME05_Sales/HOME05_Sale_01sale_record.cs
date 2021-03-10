@@ -5964,7 +5964,7 @@ namespace kondate.soft.HOME05_Sales
                                                     " FROM k021_mat_average" +
                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                     " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                    " AND (txtwherehouse_id = '" + this.GridView1.Rows[i].Cells["Col_txtwherehouse_id"].Value.ToString() + "')" +
+                                                    " AND (txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
                                                     " AND (txtmat_id = '" + this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString() + "')" +
                                                     " ORDER BY txtmat_no ASC";
                         try
@@ -5986,56 +5986,21 @@ namespace kondate.soft.HOME05_Sales
                             else
                             {
                                 this.GridView1.Rows[i].Cells["Col_mat_status"].Value = "N";
+                                //=======================================================
+                                Cursor.Current = Cursors.WaitCursor;
+                                //conn.Open();
+                                //if (conn.State == System.Data.ConnectionState.Open)
+                                //{
 
-                                Cursor.Current = Cursors.Default;
-                                // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                conn.Close();
-                                // return;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Cursor.Current = Cursors.Default;
+                                //SqlCommand cmd2 = conn.CreateCommand();
+                                //cmd2.CommandType = CommandType.Text;
+                                //cmd2.Connection = conn;
 
-                            MessageBox.Show("kondate.soft", ex.Message);
-                            return;
-                        }
-                        finally
-                        {
-                            conn.Close();
-                        }
-                    }
-                } //== if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value != null)
-            } //== for (int i = 0; i < this.GridView1.Rows.Count; i++)
-
-            //สต๊อคสินค้า ตามคลัง =============================================================================================
-
-
-
-
-
-            // INSERT ชื่อสินค้าที่สต๊อค ยังไม่มี
-            for (int i = 0; i < this.GridView1.Rows.Count; i++)
-            {
-                if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value != null)
-                {
-                    if (this.GridView1.Rows[i].Cells["Col_mat_status"].Value.ToString() != "Y")
-                    {
-                        //=======================================================
-                        Cursor.Current = Cursors.WaitCursor;
-                        conn.Open();
-                        if (conn.State == System.Data.ConnectionState.Open)
-                        {
-
-                            SqlCommand cmd2 = conn.CreateCommand();
-                            cmd2.CommandType = CommandType.Text;
-                            cmd2.Connection = conn;
-
-                            SqlTransaction trans;
-                            trans = conn.BeginTransaction();
-                            cmd2.Transaction = trans;
-                            try
-                            {
+                                SqlTransaction trans;
+                                trans = conn.BeginTransaction();
+                                cmd2.Transaction = trans;
+                                //try
+                                //{
 
                                 cmd2.CommandText = "INSERT INTO k021_mat_average(cdkey,txtco_id," +  //1
                                "txtwherehouse_id," +  //2
@@ -6086,25 +6051,61 @@ namespace kondate.soft.HOME05_Sales
 
                                 Cursor.Current = Cursors.WaitCursor;
                                 trans.Commit();
-                                conn.Close();
+                                //conn.Close();
 
                                 Cursor.Current = Cursors.Default;
 
 
+                                //conn.Close();
+                                //    }
+                                //    catch (Exception ex)
+                                //    {
+                                //        //conn.Close();
+                                //        MessageBox.Show("kondate.soft", ex.Message);
+                                //        return;
+                                //    }
+                                //    finally
+                                //    {
+                                //        //conn.Close();
+                                //    }
+                                //}
+                                //=============================================================
+
+
+                                Cursor.Current = Cursors.Default;
+                                // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 conn.Close();
-                            }
-                            catch (Exception ex)
-                            {
-                                conn.Close();
-                                MessageBox.Show("kondate.soft", ex.Message);
-                                return;
-                            }
-                            finally
-                            {
-                                conn.Close();
+                                // return;
                             }
                         }
-                        //=============================================================
+                        catch (Exception ex)
+                        {
+                            Cursor.Current = Cursors.Default;
+
+                            MessageBox.Show("kondate.soft", ex.Message);
+                            return;
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                    }
+                } //== if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value != null)
+            } //== for (int i = 0; i < this.GridView1.Rows.Count; i++)
+
+            //สต๊อคสินค้า ตามคลัง =============================================================================================
+
+
+
+
+
+            // INSERT ชื่อสินค้าที่สต๊อค ยังไม่มี
+            for (int i = 0; i < this.GridView1.Rows.Count; i++)
+            {
+                if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value != null)
+                {
+                    if (this.GridView1.Rows[i].Cells["Col_mat_status"].Value.ToString() != "Y")
+                    {
 
                     }
                 }
