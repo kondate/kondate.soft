@@ -220,7 +220,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = "";     //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -501,13 +501,13 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtbranch_id"].Visible = false;  //""Col_txtbranch_id"";
 
             this.GridView1.Columns["Col_txtRG_id"].Visible = true;  //"Col_txtRG_id";
-            this.GridView1.Columns["Col_txtRG_id"].Width = 140;
+            this.GridView1.Columns["Col_txtRG_id"].Width = 180;
             this.GridView1.Columns["Col_txtRG_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtRG_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtRG_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtPPT_id"].Visible = true;  //"Col_txtPPT_id";
-            this.GridView1.Columns["Col_txtPPT_id"].Width = 140;
+            this.GridView1.Columns["Col_txtPPT_id"].Visible = false;  //"Col_txtPPT_id";
+            this.GridView1.Columns["Col_txtPPT_id"].Width = 0;
             this.GridView1.Columns["Col_txtPPT_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtPPT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtPPT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -533,7 +533,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtsupplier_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txtemp_office_name"].Visible = true;  //"Col_txtemp_office_name";
-            this.GridView1.Columns["Col_txtemp_office_name"].Width = 120;
+            this.GridView1.Columns["Col_txtemp_office_name"].Width = 150;
             this.GridView1.Columns["Col_txtemp_office_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txtemp_office_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtemp_office_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -557,38 +557,38 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtRG_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtRG_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtsum_qty_pub_want"].Visible = true;  //"Col_txtsum_qty_pub_want";
-            this.GridView1.Columns["Col_txtsum_qty_pub_want"].Width = 100;
+            this.GridView1.Columns["Col_txtsum_qty_pub_want"].Visible = false;  //"Col_txtsum_qty_pub_want";
+            this.GridView1.Columns["Col_txtsum_qty_pub_want"].Width = 0;
             this.GridView1.Columns["Col_txtsum_qty_pub_want"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsum_qty_pub_want"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_pub_want"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].Visible = true;  //"Col_txtsum_qty_pub_receive";
-            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].Width = 100;
+            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].Visible = false;  //"Col_txtsum_qty_pub_receive";
+            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].Width = 0;
             this.GridView1.Columns["Col_txtsum_qty_pub_receive"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsum_qty_pub_receive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_pub_receive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].Visible = true;  //"Col_txtsum_qty_pub_balance";
-            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].Width = 100;
+            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].Visible = false;  //"Col_txtsum_qty_pub_balance";
+            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].Width = 0;
             this.GridView1.Columns["Col_txtsum_qty_pub_balance"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsum_qty_pub_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_pub_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtsum_qty_want"].Visible = true;  //"Col_txtsum_qty_want";
-            this.GridView1.Columns["Col_txtsum_qty_want"].Width = 100;
+            this.GridView1.Columns["Col_txtsum_qty_want"].Visible = false;  //"Col_txtsum_qty_want";
+            this.GridView1.Columns["Col_txtsum_qty_want"].Width = 0;
             this.GridView1.Columns["Col_txtsum_qty_want"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsum_qty_want"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_want"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtsum_qty_receive"].Visible = true;  //"Col_txtsum_qty_receive";
-            this.GridView1.Columns["Col_txtsum_qty_receive"].Width = 100;
+            this.GridView1.Columns["Col_txtsum_qty_receive"].Visible = false;  //"Col_txtsum_qty_receive";
+            this.GridView1.Columns["Col_txtsum_qty_receive"].Width = 0;
             this.GridView1.Columns["Col_txtsum_qty_receive"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsum_qty_receive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_receive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtsum_qty_balance"].Visible = true;  //"Col_txtsum_qty_balance";
-            this.GridView1.Columns["Col_txtsum_qty_balance"].Width = 100;
+            this.GridView1.Columns["Col_txtsum_qty_balance"].Visible = false;  //"Col_txtsum_qty_balance";
+            this.GridView1.Columns["Col_txtsum_qty_balance"].Width = 0;
             this.GridView1.Columns["Col_txtsum_qty_balance"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsum_qty_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

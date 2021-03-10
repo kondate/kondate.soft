@@ -75,6 +75,17 @@
             this.txtsum_discount = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.PANEL0105_FACE_BAKING = new System.Windows.Forms.Panel();
+            this.PANEL0105_FACE_BAKING_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL0105_FACE_BAKING_btnnew = new System.Windows.Forms.PictureBox();
+            this.PANEL0105_FACE_BAKING_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL0105_FACE_BAKING_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL0105_FACE_BAKING_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking = new System.Windows.Forms.DataGridView();
+            this.PANEL0105_FACE_BAKING_txtface_baking_id = new System.Windows.Forms.TextBox();
+            this.PANEL0105_FACE_BAKING_btnface_baking = new System.Windows.Forms.Button();
+            this.PANEL0105_FACE_BAKING_txtface_baking_name = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
             this.txtnumber_in_year = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.PANEL1306_WH = new System.Windows.Forms.Panel();
@@ -209,17 +220,6 @@
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
-            this.PANEL0105_FACE_BAKING_txtface_baking_id = new System.Windows.Forms.TextBox();
-            this.PANEL0105_FACE_BAKING_btnface_baking = new System.Windows.Forms.Button();
-            this.PANEL0105_FACE_BAKING_txtface_baking_name = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.PANEL0105_FACE_BAKING = new System.Windows.Forms.Panel();
-            this.PANEL0105_FACE_BAKING_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL0105_FACE_BAKING_btnnew = new System.Windows.Forms.PictureBox();
-            this.PANEL0105_FACE_BAKING_btnclose = new System.Windows.Forms.PictureBox();
-            this.PANEL0105_FACE_BAKING_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL0105_FACE_BAKING_txtsearch = new System.Windows.Forms.TextBox();
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking = new System.Windows.Forms.DataGridView();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -229,6 +229,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel1_contens.SuspendLayout();
+            this.PANEL0105_FACE_BAKING.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnnew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btn_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking)).BeginInit();
             this.PANEL1306_WH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btnclose)).BeginInit();
@@ -255,11 +260,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
-            this.PANEL0105_FACE_BAKING.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnnew)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnclose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btn_search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_top
@@ -1007,6 +1007,153 @@
             this.panel1_contens.TabIndex = 16;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             // 
+            // PANEL0105_FACE_BAKING
+            // 
+            this.PANEL0105_FACE_BAKING.AutoScroll = true;
+            this.PANEL0105_FACE_BAKING.AutoSize = true;
+            this.PANEL0105_FACE_BAKING.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PANEL0105_FACE_BAKING.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btnresize_low);
+            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btnnew);
+            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btnclose);
+            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btn_search);
+            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_txtsearch);
+            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking);
+            this.PANEL0105_FACE_BAKING.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING.Location = new System.Drawing.Point(522, 23);
+            this.PANEL0105_FACE_BAKING.Name = "PANEL0105_FACE_BAKING";
+            this.PANEL0105_FACE_BAKING.Size = new System.Drawing.Size(502, 337);
+            this.PANEL0105_FACE_BAKING.TabIndex = 1122;
+            this.PANEL0105_FACE_BAKING.Visible = false;
+            // 
+            // PANEL0105_FACE_BAKING_btnresize_low
+            // 
+            this.PANEL0105_FACE_BAKING_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL0105_FACE_BAKING_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL0105_FACE_BAKING_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.BorderSize = 0;
+            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL0105_FACE_BAKING_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL0105_FACE_BAKING_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_btnresize_low.ForeColor = System.Drawing.Color.Black;
+            this.PANEL0105_FACE_BAKING_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnresize_low.Image")));
+            this.PANEL0105_FACE_BAKING_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PANEL0105_FACE_BAKING_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL0105_FACE_BAKING_btnresize_low.Name = "PANEL0105_FACE_BAKING_btnresize_low";
+            this.PANEL0105_FACE_BAKING_btnresize_low.Size = new System.Drawing.Size(23, 22);
+            this.PANEL0105_FACE_BAKING_btnresize_low.TabIndex = 438;
+            this.PANEL0105_FACE_BAKING_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PANEL0105_FACE_BAKING_btnresize_low.UseVisualStyleBackColor = false;
+            this.PANEL0105_FACE_BAKING_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL0105_FACE_BAKING_btnresize_low_MouseDown);
+            this.PANEL0105_FACE_BAKING_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL0105_FACE_BAKING_btnresize_low_MouseMove);
+            this.PANEL0105_FACE_BAKING_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL0105_FACE_BAKING_btnresize_low_MouseUp);
+            // 
+            // PANEL0105_FACE_BAKING_btnnew
+            // 
+            this.PANEL0105_FACE_BAKING_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL0105_FACE_BAKING_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnnew.Image")));
+            this.PANEL0105_FACE_BAKING_btnnew.Location = new System.Drawing.Point(3, 3);
+            this.PANEL0105_FACE_BAKING_btnnew.Name = "PANEL0105_FACE_BAKING_btnnew";
+            this.PANEL0105_FACE_BAKING_btnnew.Size = new System.Drawing.Size(30, 22);
+            this.PANEL0105_FACE_BAKING_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL0105_FACE_BAKING_btnnew.TabIndex = 437;
+            this.PANEL0105_FACE_BAKING_btnnew.TabStop = false;
+            this.PANEL0105_FACE_BAKING_btnnew.Visible = false;
+            // 
+            // PANEL0105_FACE_BAKING_btnclose
+            // 
+            this.PANEL0105_FACE_BAKING_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL0105_FACE_BAKING_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL0105_FACE_BAKING_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnclose.Image")));
+            this.PANEL0105_FACE_BAKING_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL0105_FACE_BAKING_btnclose.Name = "PANEL0105_FACE_BAKING_btnclose";
+            this.PANEL0105_FACE_BAKING_btnclose.Size = new System.Drawing.Size(30, 22);
+            this.PANEL0105_FACE_BAKING_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL0105_FACE_BAKING_btnclose.TabIndex = 436;
+            this.PANEL0105_FACE_BAKING_btnclose.TabStop = false;
+            this.PANEL0105_FACE_BAKING_btnclose.Click += new System.EventHandler(this.PANEL0105_FACE_BAKING_btnclose_Click);
+            // 
+            // PANEL0105_FACE_BAKING_btn_search
+            // 
+            this.PANEL0105_FACE_BAKING_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL0105_FACE_BAKING_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btn_search.Image")));
+            this.PANEL0105_FACE_BAKING_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL0105_FACE_BAKING_btn_search.Name = "PANEL0105_FACE_BAKING_btn_search";
+            this.PANEL0105_FACE_BAKING_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL0105_FACE_BAKING_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL0105_FACE_BAKING_btn_search.TabIndex = 433;
+            this.PANEL0105_FACE_BAKING_btn_search.TabStop = false;
+            this.PANEL0105_FACE_BAKING_btn_search.Click += new System.EventHandler(this.PANEL0105_FACE_BAKING_btn_search_Click);
+            // 
+            // PANEL0105_FACE_BAKING_txtsearch
+            // 
+            this.PANEL0105_FACE_BAKING_txtsearch.BackColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL0105_FACE_BAKING_txtsearch.Name = "PANEL0105_FACE_BAKING_txtsearch";
+            this.PANEL0105_FACE_BAKING_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL0105_FACE_BAKING_txtsearch.TabIndex = 432;
+            // 
+            // PANEL0105_FACE_BAKING_dataGridView1_face_baking
+            // 
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.AllowUserToAddRows = false;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Location = new System.Drawing.Point(3, 42);
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Name = "PANEL0105_FACE_BAKING_dataGridView1_face_baking";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Size = new System.Drawing.Size(491, 262);
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.TabIndex = 0;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking_CellMouseClick);
+            // 
+            // PANEL0105_FACE_BAKING_txtface_baking_id
+            // 
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.BackColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Location = new System.Drawing.Point(411, 198);
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Name = "PANEL0105_FACE_BAKING_txtface_baking_id";
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Size = new System.Drawing.Size(66, 21);
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.TabIndex = 1121;
+            // 
+            // PANEL0105_FACE_BAKING_btnface_baking
+            // 
+            this.PANEL0105_FACE_BAKING_btnface_baking.BackColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_btnface_baking.FlatAppearance.BorderSize = 0;
+            this.PANEL0105_FACE_BAKING_btnface_baking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL0105_FACE_BAKING_btnface_baking.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_btnface_baking.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnface_baking.Image")));
+            this.PANEL0105_FACE_BAKING_btnface_baking.Location = new System.Drawing.Point(380, 200);
+            this.PANEL0105_FACE_BAKING_btnface_baking.Name = "PANEL0105_FACE_BAKING_btnface_baking";
+            this.PANEL0105_FACE_BAKING_btnface_baking.Size = new System.Drawing.Size(22, 16);
+            this.PANEL0105_FACE_BAKING_btnface_baking.TabIndex = 1120;
+            this.PANEL0105_FACE_BAKING_btnface_baking.UseVisualStyleBackColor = false;
+            this.PANEL0105_FACE_BAKING_btnface_baking.Click += new System.EventHandler(this.PANEL0105_FACE_BAKING_btnface_baking_Click);
+            // 
+            // PANEL0105_FACE_BAKING_txtface_baking_name
+            // 
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.BackColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Location = new System.Drawing.Point(168, 198);
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Name = "PANEL0105_FACE_BAKING_txtface_baking_name";
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Size = new System.Drawing.Size(235, 21);
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.TabIndex = 1119;
+            // 
+            // label51
+            // 
+            this.label51.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label51.ForeColor = System.Drawing.Color.Black;
+            this.label51.Location = new System.Drawing.Point(101, 198);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(60, 21);
+            this.label51.TabIndex = 1118;
+            this.label51.Text = "อบหน้า :";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtnumber_in_year
             // 
             this.txtnumber_in_year.BackColor = System.Drawing.Color.White;
@@ -1042,7 +1189,7 @@
             this.PANEL1306_WH.Controls.Add(this.PANEL1306_WH_txtsearch);
             this.PANEL1306_WH.Controls.Add(this.PANEL1306_WH_dataGridView1_wherehouse);
             this.PANEL1306_WH.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1306_WH.Location = new System.Drawing.Point(20, 358);
+            this.PANEL1306_WH.Location = new System.Drawing.Point(20, 600);
             this.PANEL1306_WH.Name = "PANEL1306_WH";
             this.PANEL1306_WH.Size = new System.Drawing.Size(502, 337);
             this.PANEL1306_WH.TabIndex = 1076;
@@ -2706,153 +2853,6 @@
             this.GridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GridView1_KeyUp);
             this.GridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GridView1_MouseClick);
             // 
-            // PANEL0105_FACE_BAKING_txtface_baking_id
-            // 
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.BackColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Location = new System.Drawing.Point(411, 198);
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Name = "PANEL0105_FACE_BAKING_txtface_baking_id";
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.ReadOnly = true;
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Size = new System.Drawing.Size(66, 21);
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.TabIndex = 1121;
-            // 
-            // PANEL0105_FACE_BAKING_btnface_baking
-            // 
-            this.PANEL0105_FACE_BAKING_btnface_baking.BackColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_btnface_baking.FlatAppearance.BorderSize = 0;
-            this.PANEL0105_FACE_BAKING_btnface_baking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL0105_FACE_BAKING_btnface_baking.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_btnface_baking.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnface_baking.Image")));
-            this.PANEL0105_FACE_BAKING_btnface_baking.Location = new System.Drawing.Point(380, 200);
-            this.PANEL0105_FACE_BAKING_btnface_baking.Name = "PANEL0105_FACE_BAKING_btnface_baking";
-            this.PANEL0105_FACE_BAKING_btnface_baking.Size = new System.Drawing.Size(22, 16);
-            this.PANEL0105_FACE_BAKING_btnface_baking.TabIndex = 1120;
-            this.PANEL0105_FACE_BAKING_btnface_baking.UseVisualStyleBackColor = false;
-            this.PANEL0105_FACE_BAKING_btnface_baking.Click += new System.EventHandler(this.PANEL0105_FACE_BAKING_btnface_baking_Click);
-            // 
-            // PANEL0105_FACE_BAKING_txtface_baking_name
-            // 
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.BackColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Location = new System.Drawing.Point(168, 198);
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Name = "PANEL0105_FACE_BAKING_txtface_baking_name";
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.ReadOnly = true;
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Size = new System.Drawing.Size(235, 21);
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.TabIndex = 1119;
-            // 
-            // label51
-            // 
-            this.label51.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label51.ForeColor = System.Drawing.Color.Black;
-            this.label51.Location = new System.Drawing.Point(101, 198);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(60, 21);
-            this.label51.TabIndex = 1118;
-            this.label51.Text = "อบหน้า :";
-            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PANEL0105_FACE_BAKING
-            // 
-            this.PANEL0105_FACE_BAKING.AutoScroll = true;
-            this.PANEL0105_FACE_BAKING.AutoSize = true;
-            this.PANEL0105_FACE_BAKING.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PANEL0105_FACE_BAKING.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btnresize_low);
-            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btnnew);
-            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btnclose);
-            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_btn_search);
-            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_txtsearch);
-            this.PANEL0105_FACE_BAKING.Controls.Add(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking);
-            this.PANEL0105_FACE_BAKING.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING.Location = new System.Drawing.Point(522, 23);
-            this.PANEL0105_FACE_BAKING.Name = "PANEL0105_FACE_BAKING";
-            this.PANEL0105_FACE_BAKING.Size = new System.Drawing.Size(502, 337);
-            this.PANEL0105_FACE_BAKING.TabIndex = 1122;
-            this.PANEL0105_FACE_BAKING.Visible = false;
-            // 
-            // PANEL0105_FACE_BAKING_btnresize_low
-            // 
-            this.PANEL0105_FACE_BAKING_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL0105_FACE_BAKING_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL0105_FACE_BAKING_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.BorderSize = 0;
-            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL0105_FACE_BAKING_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL0105_FACE_BAKING_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL0105_FACE_BAKING_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_btnresize_low.ForeColor = System.Drawing.Color.Black;
-            this.PANEL0105_FACE_BAKING_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnresize_low.Image")));
-            this.PANEL0105_FACE_BAKING_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL0105_FACE_BAKING_btnresize_low.Location = new System.Drawing.Point(475, 309);
-            this.PANEL0105_FACE_BAKING_btnresize_low.Name = "PANEL0105_FACE_BAKING_btnresize_low";
-            this.PANEL0105_FACE_BAKING_btnresize_low.Size = new System.Drawing.Size(23, 22);
-            this.PANEL0105_FACE_BAKING_btnresize_low.TabIndex = 438;
-            this.PANEL0105_FACE_BAKING_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.PANEL0105_FACE_BAKING_btnresize_low.UseVisualStyleBackColor = false;
-            this.PANEL0105_FACE_BAKING_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL0105_FACE_BAKING_btnresize_low_MouseDown);
-            this.PANEL0105_FACE_BAKING_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL0105_FACE_BAKING_btnresize_low_MouseMove);
-            this.PANEL0105_FACE_BAKING_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL0105_FACE_BAKING_btnresize_low_MouseUp);
-            // 
-            // PANEL0105_FACE_BAKING_btnnew
-            // 
-            this.PANEL0105_FACE_BAKING_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0105_FACE_BAKING_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnnew.Image")));
-            this.PANEL0105_FACE_BAKING_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL0105_FACE_BAKING_btnnew.Name = "PANEL0105_FACE_BAKING_btnnew";
-            this.PANEL0105_FACE_BAKING_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0105_FACE_BAKING_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0105_FACE_BAKING_btnnew.TabIndex = 437;
-            this.PANEL0105_FACE_BAKING_btnnew.TabStop = false;
-            this.PANEL0105_FACE_BAKING_btnnew.Visible = false;
-            // 
-            // PANEL0105_FACE_BAKING_btnclose
-            // 
-            this.PANEL0105_FACE_BAKING_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL0105_FACE_BAKING_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0105_FACE_BAKING_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnclose.Image")));
-            this.PANEL0105_FACE_BAKING_btnclose.Location = new System.Drawing.Point(465, 3);
-            this.PANEL0105_FACE_BAKING_btnclose.Name = "PANEL0105_FACE_BAKING_btnclose";
-            this.PANEL0105_FACE_BAKING_btnclose.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0105_FACE_BAKING_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0105_FACE_BAKING_btnclose.TabIndex = 436;
-            this.PANEL0105_FACE_BAKING_btnclose.TabStop = false;
-            this.PANEL0105_FACE_BAKING_btnclose.Click += new System.EventHandler(this.PANEL0105_FACE_BAKING_btnclose_Click);
-            // 
-            // PANEL0105_FACE_BAKING_btn_search
-            // 
-            this.PANEL0105_FACE_BAKING_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0105_FACE_BAKING_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btn_search.Image")));
-            this.PANEL0105_FACE_BAKING_btn_search.Location = new System.Drawing.Point(319, 15);
-            this.PANEL0105_FACE_BAKING_btn_search.Name = "PANEL0105_FACE_BAKING_btn_search";
-            this.PANEL0105_FACE_BAKING_btn_search.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0105_FACE_BAKING_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0105_FACE_BAKING_btn_search.TabIndex = 433;
-            this.PANEL0105_FACE_BAKING_btn_search.TabStop = false;
-            this.PANEL0105_FACE_BAKING_btn_search.Click += new System.EventHandler(this.PANEL0105_FACE_BAKING_btn_search_Click);
-            // 
-            // PANEL0105_FACE_BAKING_txtsearch
-            // 
-            this.PANEL0105_FACE_BAKING_txtsearch.BackColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_txtsearch.Location = new System.Drawing.Point(87, 15);
-            this.PANEL0105_FACE_BAKING_txtsearch.Name = "PANEL0105_FACE_BAKING_txtsearch";
-            this.PANEL0105_FACE_BAKING_txtsearch.Size = new System.Drawing.Size(231, 21);
-            this.PANEL0105_FACE_BAKING_txtsearch.TabIndex = 432;
-            // 
-            // PANEL0105_FACE_BAKING_dataGridView1_face_baking
-            // 
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.AllowUserToAddRows = false;
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Location = new System.Drawing.Point(3, 42);
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Name = "PANEL0105_FACE_BAKING_dataGridView1_face_baking";
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Size = new System.Drawing.Size(491, 262);
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.TabIndex = 0;
-            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking_CellMouseClick);
-            // 
             // HOME03_Production_05Send_Dye_record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2880,6 +2880,12 @@
             this.panel1.PerformLayout();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
+            this.PANEL0105_FACE_BAKING.ResumeLayout(false);
+            this.PANEL0105_FACE_BAKING.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnnew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btn_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking)).EndInit();
             this.PANEL1306_WH.ResumeLayout(false);
             this.PANEL1306_WH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btnnew)).EndInit();
@@ -2912,12 +2918,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
-            this.PANEL0105_FACE_BAKING.ResumeLayout(false);
-            this.PANEL0105_FACE_BAKING.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnnew)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btnclose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_btn_search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0105_FACE_BAKING_dataGridView1_face_baking)).EndInit();
             this.ResumeLayout(false);
 
         }

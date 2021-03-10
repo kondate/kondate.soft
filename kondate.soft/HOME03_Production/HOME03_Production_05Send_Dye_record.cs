@@ -843,6 +843,7 @@ namespace kondate.soft.HOME03_Production
                     {
                         this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value = ".00";
                     }
+
                 if (this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value == null)
                 {
                     this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value = ".00";
@@ -851,6 +852,7 @@ namespace kondate.soft.HOME03_Production
                 {
                     this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value = ".00";
                 }
+
                 if (double.Parse(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
                     {
 
@@ -1673,7 +1675,7 @@ namespace kondate.soft.HOME03_Production
                                            "txtapprove_date," + // 9
                                            "txtRG_id," + // 10
                                           "txtRG_date," + // 11
-                                           "txtreceive_id," + // 12
+                                           //"txtreceive_id," + // 12
                                           "txtreceive_date," + // 13
                                           "txtwherehouse_id," + // 14
                                           "txtsupplier_id," + // 15
@@ -1770,7 +1772,7 @@ namespace kondate.soft.HOME03_Production
                                            "@txtapprove_date," + // 9
                                            "@txtRG_id," + // 10
                                           "@txtRG_date," + // 11
-                                           "@txtreceive_id," + // 12
+                                           //"@txtreceive_id," + // 12
                                           "@txtreceive_date," + // 13
                                           "@txtwherehouse_id," + // 14
                                           "@txtsupplier_id," + // 15
@@ -1878,7 +1880,7 @@ namespace kondate.soft.HOME03_Production
 
                     cmd2.Parameters.Add("@txtRG_id", SqlDbType.NVarChar).Value = "";  //10
                     cmd2.Parameters.Add("@txtRG_date", SqlDbType.NVarChar).Value = "";  //11
-                    cmd2.Parameters.Add("@txtreceive_id", SqlDbType.NVarChar).Value = "";  //12
+                    //cmd2.Parameters.Add("@txtreceive_id", SqlDbType.NVarChar).Value = "";  //12
                     cmd2.Parameters.Add("@txtreceive_date", SqlDbType.NVarChar).Value = "";  //13
                     cmd2.Parameters.Add("@txtwherehouse_id", SqlDbType.NVarChar).Value = this.PANEL1306_WH_txtwherehouse_id.Text.Trim();  //14
                     cmd2.Parameters.Add("@txtsupplier_id", SqlDbType.NVarChar).Value = this.PANEL161_SUP_txtsupplier_id.Text.Trim();  //15
@@ -5455,7 +5457,17 @@ namespace kondate.soft.HOME03_Production
                     MessageBox.Show("Lot No นี้ เพิ่มเข้าไปใน ตารางแล้ว ");
                     return;
                 }
+                if (this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString() == this.GridView66.Rows[selectedRowIndex].Cells["Col_txtmat_id"].Value.ToString())
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("ระบบจะให้ส่งย้อมผ้าดิบ ได้ที่ละ 1 รหัสผ้าดิบ ต่อ 1 ใบส่งย้อม เท่านั้น !! ");
+                    return;
+                }
             }
+
 
             GridView66.Rows[selectedRowIndex].DefaultCellStyle.BackColor = Color.Green;
 

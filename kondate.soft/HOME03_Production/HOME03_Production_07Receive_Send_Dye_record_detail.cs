@@ -393,6 +393,10 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";     //48
                             this.GridView1.Rows[index].Cells["Col_txtqty_berg_cut_shirt_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_berg_cut_shirt_balance"]).ToString("###,###.00");     //49
 
+                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
+
 
                         }
 
@@ -628,7 +632,7 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 50;
+            this.GridView1.ColumnCount = 53;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtwherehouse_id";
             this.GridView1.Columns[2].Name = "Col_txtnumber_in_year";
@@ -697,6 +701,10 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[48].Name = "Col_txtsum_qty_rib_kg";
             this.GridView1.Columns[49].Name = "Col_txtqty_berg_cut_shirt_balance";
 
+            this.GridView1.Columns[50].Name = "Col_txtqty_cut";
+            this.GridView1.Columns[51].Name = "Col_txtqty_after_cut";
+            this.GridView1.Columns[52].Name = "Col_txtcut_id";
+
 
             this.GridView1.Columns[0].HeaderText = "No";
             this.GridView1.Columns[1].HeaderText = "คลัง";
@@ -763,6 +771,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[47].HeaderText = "Col_txtsum_qty_pub_kg";
             this.GridView1.Columns[48].HeaderText = "Col_txtsum_qty_rib_kg";
             this.GridView1.Columns[49].HeaderText = "รอสั่งตัด";  //Col_txtqty_berg_cut_shirt_balance
+
+            this.GridView1.Columns[50].HeaderText = "จำนวนส่งตัด";  //กก
+            this.GridView1.Columns[51].HeaderText = "จำนวนเหลือ";  //กก
+            this.GridView1.Columns[52].HeaderText = "เลขที่ส่งตัด";  //
+
 
             this.GridView1.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
             this.GridView1.Columns["Col_Auto_num"].Width = 60;
@@ -1102,6 +1115,23 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtqty_berg_cut_shirt_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty_berg_cut_shirt_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            this.GridView1.Columns["Col_txtqty_cut"].Visible = true;  //"Col_txtqty_cut";
+            this.GridView1.Columns["Col_txtqty_cut"].Width = 140;
+            this.GridView1.Columns["Col_txtqty_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_after_cut"].Visible = true;  //"Col_txtqty_after_cut";
+            this.GridView1.Columns["Col_txtqty_after_cut"].Width = 140;
+            this.GridView1.Columns["Col_txtqty_after_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcut_id"].Visible = true;  //"Col_txtcut_id";
+            this.GridView1.Columns["Col_txtcut_id"].Width = 140;
+            this.GridView1.Columns["Col_txtcut_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcut_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcut_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
             this.GridView1.GridColor = Color.FromArgb(227, 227, 227);

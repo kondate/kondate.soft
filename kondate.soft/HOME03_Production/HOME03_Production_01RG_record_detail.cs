@@ -352,9 +352,9 @@ namespace kondate.soft.HOME03_Production
                             GridView1.Rows[index].Cells["Col_txtqty_balance_yokpai"].Value = "0";      //26
                             GridView1.Rows[index].Cells["Col_txtqty_receive_yokpai"].Value = "0";      //26
 
-                                GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
-                                GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
-                                GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
+                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
 
 
                             }

@@ -211,5 +211,22 @@ namespace kondate.soft
             kondate.soft.HOME03_Production.HOME03_Production_03Produce_Stock frm2 = new kondate.soft.HOME03_Production.HOME03_Production_03Produce_Stock();
             frm2.Show();
         }
+
+        private void HOME03_Production_06_G_Click(object sender, EventArgs e)
+        {
+            
+             W_ID_Select.WORD_TOP = this.HOME03_Production_06_G.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_07Receive_Send_Dye_Stock frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Receive_Send_Dye_Stock();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_05_GR_Click(object sender, EventArgs e)
+        {
+            
+             W_ID_Select.WORD_TOP = this.HOME03_Production_05_GR.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_GR frm2 = new kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_GR();
+            frm2.Show();
+
+        }
     }
 }

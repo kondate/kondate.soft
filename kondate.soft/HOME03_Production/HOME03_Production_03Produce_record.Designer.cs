@@ -225,6 +225,7 @@
             this.label64 = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
+            this.ch_yokma = new System.Windows.Forms.CheckBox();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -652,6 +653,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.ch_yokma);
             this.panel1.Controls.Add(this.txtsum_qty_change_rate);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtsum_qty_change);
@@ -2926,6 +2928,16 @@
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ch_yokma
+            // 
+            this.ch_yokma.AutoSize = true;
+            this.ch_yokma.Location = new System.Drawing.Point(6, 6);
+            this.ch_yokma.Name = "ch_yokma";
+            this.ch_yokma.Size = new System.Drawing.Size(97, 17);
+            this.ch_yokma.TabIndex = 1070;
+            this.ch_yokma.Text = "บัญชี ยอดยกมา";
+            this.ch_yokma.UseVisualStyleBackColor = true;
+            // 
             // HOME03_Production_03Produce_record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3202,5 +3214,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtsum_qty_ic;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox ch_yokma;
     }
 }

@@ -739,7 +739,7 @@
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.txtmat_no);
             this.panel3.Controls.Add(this.label32);
-            this.panel3.Location = new System.Drawing.Point(3, 281);
+            this.panel3.Location = new System.Drawing.Point(667, 138);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(495, 173);
             this.panel3.TabIndex = 1055;
@@ -1525,7 +1525,7 @@
             // ch_yokma
             // 
             this.ch_yokma.AutoSize = true;
-            this.ch_yokma.Location = new System.Drawing.Point(844, 57);
+            this.ch_yokma.Location = new System.Drawing.Point(8, 7);
             this.ch_yokma.Name = "ch_yokma";
             this.ch_yokma.Size = new System.Drawing.Size(97, 17);
             this.ch_yokma.TabIndex = 1037;
@@ -1679,7 +1679,7 @@
             this.PANEL_MAT.Controls.Add(this.PANEL_MAT_txtsearch);
             this.PANEL_MAT.Controls.Add(this.PANEL_MAT_btnresize_low);
             this.PANEL_MAT.Controls.Add(this.PANEL_MAT_dataGridView1_mat);
-            this.PANEL_MAT.Location = new System.Drawing.Point(613, 480);
+            this.PANEL_MAT.Location = new System.Drawing.Point(613, 586);
             this.PANEL_MAT.Name = "PANEL_MAT";
             this.PANEL_MAT.Size = new System.Drawing.Size(1277, 663);
             this.PANEL_MAT.TabIndex = 1032;
@@ -1903,7 +1903,7 @@
             this.PANEL_PO.Controls.Add(this.PANEL_PO_panel_top);
             this.PANEL_PO.Controls.Add(this.PANEL_PO_btnresize_low);
             this.PANEL_PO.Controls.Add(this.PANEL_PO_GridView1);
-            this.PANEL_PO.Location = new System.Drawing.Point(12, 488);
+            this.PANEL_PO.Location = new System.Drawing.Point(12, 586);
             this.PANEL_PO.Name = "PANEL_PO";
             this.PANEL_PO.Size = new System.Drawing.Size(1478, 517);
             this.PANEL_PO.TabIndex = 905;
@@ -2147,7 +2147,7 @@
             this.txtemp_office_name_approve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtemp_office_name_approve.BackColor = System.Drawing.Color.White;
             this.txtemp_office_name_approve.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtemp_office_name_approve.Location = new System.Drawing.Point(115, 513);
+            this.txtemp_office_name_approve.Location = new System.Drawing.Point(115, 560);
             this.txtemp_office_name_approve.Name = "txtemp_office_name_approve";
             this.txtemp_office_name_approve.Size = new System.Drawing.Size(245, 21);
             this.txtemp_office_name_approve.TabIndex = 973;
@@ -2157,7 +2157,7 @@
             this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label26.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(34, 513);
+            this.label26.Location = new System.Drawing.Point(34, 560);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(75, 19);
             this.label26.TabIndex = 972;
@@ -3015,7 +3015,7 @@
             this.txtemp_office_name_manager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtemp_office_name_manager.BackColor = System.Drawing.Color.White;
             this.txtemp_office_name_manager.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtemp_office_name_manager.Location = new System.Drawing.Point(115, 487);
+            this.txtemp_office_name_manager.Location = new System.Drawing.Point(115, 534);
             this.txtemp_office_name_manager.Name = "txtemp_office_name_manager";
             this.txtemp_office_name_manager.Size = new System.Drawing.Size(245, 21);
             this.txtemp_office_name_manager.TabIndex = 866;
@@ -3025,7 +3025,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(34, 487);
+            this.label9.Location = new System.Drawing.Point(34, 534);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 19);
             this.label9.TabIndex = 864;
@@ -3037,7 +3037,7 @@
             this.txtcount_rows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtcount_rows.BackColor = System.Drawing.Color.White;
             this.txtcount_rows.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtcount_rows.Location = new System.Drawing.Point(115, 461);
+            this.txtcount_rows.Location = new System.Drawing.Point(115, 508);
             this.txtcount_rows.Name = "txtcount_rows";
             this.txtcount_rows.Size = new System.Drawing.Size(84, 21);
             this.txtcount_rows.TabIndex = 863;
@@ -3049,7 +3049,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(42, 459);
+            this.label15.Location = new System.Drawing.Point(42, 506);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 21);
             this.label15.TabIndex = 862;
@@ -3061,7 +3061,7 @@
             this.txtsum_price.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtsum_price.BackColor = System.Drawing.Color.White;
             this.txtsum_price.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_price.Location = new System.Drawing.Point(276, 462);
+            this.txtsum_price.Location = new System.Drawing.Point(276, 509);
             this.txtsum_price.Name = "txtsum_price";
             this.txtsum_price.Size = new System.Drawing.Size(84, 21);
             this.txtsum_price.TabIndex = 860;
@@ -3073,7 +3073,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(205, 462);
+            this.label14.Location = new System.Drawing.Point(205, 509);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(67, 19);
             this.label14.TabIndex = 861;

@@ -280,7 +280,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text.ToString();      //4
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["Col_txtnumber_color_id"].ToString();       //4
                             this.GridView1.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();       //5
 
 
@@ -508,8 +508,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[40].HeaderText = "ส่งย้อมแล้วยกไป";
             this.GridView1.Columns[41].HeaderText = "เหลือรอส่งย้อม อีก กก.";
 
-            this.GridView1.Columns[42].HeaderText = "จำนวนรับคืนแล้ว";  //กก
-            this.GridView1.Columns[43].HeaderText = "จำนวนเหลือรอคืน";  //กก
+            this.GridView1.Columns[42].HeaderText = "รับแล้ว";  //กก
+            this.GridView1.Columns[43].HeaderText = "รอรับ";  //กก
             this.GridView1.Columns[44].HeaderText = "เลขที่รับคืนย้อม";  //
 
             this.GridView1.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
