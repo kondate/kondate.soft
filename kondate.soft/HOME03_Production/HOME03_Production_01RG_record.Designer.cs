@@ -708,6 +708,7 @@
             this.panel1_contens.Controls.Add(this.button_low_right);
             this.panel1_contens.Controls.Add(this.iblstatus);
             this.panel1_contens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1_contens.ForeColor = System.Drawing.Color.Red;
             this.panel1_contens.Location = new System.Drawing.Point(0, 89);
             this.panel1_contens.Name = "panel1_contens";
             this.panel1_contens.Size = new System.Drawing.Size(1577, 620);
@@ -1338,7 +1339,7 @@
             // label44
             // 
             this.label44.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label44.ForeColor = System.Drawing.Color.Black;
+            this.label44.ForeColor = System.Drawing.Color.Red;
             this.label44.Location = new System.Drawing.Point(7, 126);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(132, 21);
@@ -1875,7 +1876,7 @@
             // label51
             // 
             this.label51.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label51.ForeColor = System.Drawing.Color.Black;
+            this.label51.ForeColor = System.Drawing.Color.Red;
             this.label51.Location = new System.Drawing.Point(9, 101);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(130, 21);
@@ -2593,7 +2594,7 @@
             // label30
             // 
             this.label30.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label30.ForeColor = System.Drawing.Color.Black;
+            this.label30.ForeColor = System.Drawing.Color.Red;
             this.label30.Location = new System.Drawing.Point(6, 202);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(133, 16);
@@ -3296,7 +3297,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(40, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 23);
@@ -3327,7 +3328,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(5, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 23);

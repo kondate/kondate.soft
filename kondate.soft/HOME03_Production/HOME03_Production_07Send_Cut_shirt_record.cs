@@ -361,7 +361,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtfold_number"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtfold_number"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.GridView1.Columns[8].Visible = false;
+            this.GridView1.Columns[9].Visible = false;
             DataGridViewCheckBoxColumn dgvCmb_SELECT = new DataGridViewCheckBoxColumn();
             dgvCmb_SELECT.Name = "Col_Chk_SELECT";
             dgvCmb_SELECT.Width = 120;  //70
@@ -917,11 +917,27 @@ namespace kondate.soft.HOME03_Production
                         this.txtsum2_qty.Text = Sum2_Qty.ToString("N", new CultureInfo("en-US"));
                     }
 
-                    //Sum_Qty_CUT_Yokpai  =================================================
+
+
+
+
+
+
+                    //GridView66.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                    //GridView66.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                    //GridView66.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
+
+                    //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToDouble(string.Format("{0:n}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty_after_cut"].Value.ToString()));       //21
+                    //GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToDouble(string.Format("{0:n}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty_cut"].Value.ToString()));     //36
+
+                    // "txtqty_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive_yokpai"].Value.ToString())) + "'," +
+                    //"txtqty_after_cut = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty_after_receive_yokpai"].Value.ToString())) + "'" +
+
+                    //Sum_Qty_CUT_Yokpai  ยอดตัด 0 + ยอด 0 = 0 =================================================
                     Sum_Qty_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
                     this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value = Sum_Qty_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
 
-                    //Sum_Qty_AF_CUT_Yokpai  =================================================
+                    //Sum_Qty_AF_CUT_Yokpai  300- 0 = 300 =================================================
                     Sum_Qty_AF_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
                     this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value = Sum_Qty_AF_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
 
@@ -2050,8 +2066,8 @@ namespace kondate.soft.HOME03_Production
 
                                       "txtqty_receive_yokma," +  //33
                                       "txtqty_receive_yokpai," +  //33
-
                                        "txtqty_after_receive_yokpai," +  //34
+
                                    "txtqty_receive," +  //52
                                    "txtqty_after_receive," +  //53
 
@@ -2150,18 +2166,18 @@ namespace kondate.soft.HOME03_Production
                                 cmd2.ExecuteNonQuery();
                                 //MessageBox.Show("ok7");
 
-                                cmd2.CommandText = "UPDATE c002_03QC_record_detail SET " +
-                                                   "txtSPT_status = '0'," +
-                                                   "txtSPT_id = '" + this.txtSPT_id.Text.ToString() + "'" +
-                                                   " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                                   " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                   " AND (txtwherehouse_id = '" + this.GridView1.Rows[i].Cells["Col_txtwherehouse_id"].Value.ToString() + "')" +
-                                                   " AND (txtface_baking_id = '" + this.GridView1.Rows[i].Cells["Col_txtface_baking_id"].Value.ToString() + "')" +
-                                                   " AND (txtnumber_in_year = '" + this.GridView1.Rows[i].Cells["Col_txtnumber_in_year"].Value.ToString() + "')" +
-                                                   " AND (txtlot_no = '" + this.GridView1.Rows[i].Cells["Col_txtlot_no"].Value.ToString() + "')" +
-                                                   " AND (txtSPT_id = '')";
+                                //cmd2.CommandText = "UPDATE c002_03QC_record_detail SET " +
+                                //                   "txtSPT_status = '0'," +
+                                //                   "txtSPT_id = '" + this.txtSPT_id.Text.ToString() + "'" +
+                                //                   " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                //                   " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                //                   " AND (txtwherehouse_id = '" + this.GridView1.Rows[i].Cells["Col_txtwherehouse_id"].Value.ToString() + "')" +
+                                //                   " AND (txtface_baking_id = '" + this.GridView1.Rows[i].Cells["Col_txtface_baking_id"].Value.ToString() + "')" +
+                                //                   " AND (txtnumber_in_year = '" + this.GridView1.Rows[i].Cells["Col_txtnumber_in_year"].Value.ToString() + "')" +
+                                //                   " AND (txtlot_no = '" + this.GridView1.Rows[i].Cells["Col_txtlot_no"].Value.ToString() + "')" +
+                                //                   " AND (txtSPT_id = '')";
 
-                                cmd2.ExecuteNonQuery();
+                                //cmd2.ExecuteNonQuery();
                                 //MessageBox.Show("ok7");
 
 
@@ -2386,7 +2402,7 @@ namespace kondate.soft.HOME03_Production
             W_ID_Select.LOG_NAME = "ปริ๊น";
             TRANS_LOG();
             //======================================================
-            kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_record_print();
+            kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record_print();
             frm2.Show();
             frm2.BringToFront();
             //====================
@@ -2458,7 +2474,7 @@ namespace kondate.soft.HOME03_Production
 
                 rpt.SetParameterValue("cdkey", W_ID_Select.CDKEY.Trim());
                 rpt.SetParameterValue("txtco_id", W_ID_Select.M_COID.Trim());
-                rpt.SetParameterValue("txtSPT_id", W_ID_Select.TRANS_ID.Trim());
+                rpt.SetParameterValue("txtspt_id", W_ID_Select.TRANS_ID.Trim());
 
                 //พิมพ์กับเครื่องที่เราต้องการ ระบุชื่อไปเลย=============================================
                 //rpt.PrintOptions.PrinterName = "EPSON TM-T88V Receipt5";
@@ -5581,7 +5597,7 @@ namespace kondate.soft.HOME03_Production
         private void BtnGrid_Click(object sender, EventArgs e)
         {
             W_ID_Select.WORD_TOP = "ระเบียนใบส่งตัด";
-            kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye frm2 = new kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye();
+            kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt();
             frm2.Show();
 
         }

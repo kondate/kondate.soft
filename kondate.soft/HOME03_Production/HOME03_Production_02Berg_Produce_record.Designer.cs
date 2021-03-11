@@ -2398,7 +2398,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(10, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 21);
@@ -2519,12 +2519,13 @@
             this.btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnGo1.TabIndex = 999;
             this.btnGo1.TabStop = false;
+            this.btnGo1.Visible = false;
             this.btnGo1.Click += new System.EventHandler(this.btnGo1_Click);
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(9, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 21);

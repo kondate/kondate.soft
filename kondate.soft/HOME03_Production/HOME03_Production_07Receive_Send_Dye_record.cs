@@ -87,7 +87,7 @@ namespace kondate.soft.HOME03_Production
             W_ID_Select.LOG_NAME = "Login";
             TRANS_LOG();
 
-            this.iblword_status.Text = "บันทึกใบรับผ้าย้อม";
+            this.iblword_status.Text = "บันทึกใบรับผ้าพับ";
 
             this.ActiveControl = this.txtrg_remark;
             this.BtnNew.Enabled = false;
@@ -1686,7 +1686,7 @@ namespace kondate.soft.HOME03_Production
             frm2.Closed += (s, args) => this.Close();
             frm2.Show();
 
-            this.iblword_status.Text = "บันทึกใบรับผ้าย้อม";
+            this.iblword_status.Text = "บันทึกใบรับผ้าพับ";
             this.txtPPT_id.ReadOnly = true;
         }
 
@@ -1700,7 +1700,7 @@ namespace kondate.soft.HOME03_Production
         {
             if (this.txtPPT_id.Text == "")
             {
-                MessageBox.Show("โปรด เลือก เลขที่ใบรับผ้าย้อม ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("โปรด เลือก เลขที่ใบรับผ้าพับ ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.txtPPT_id.Focus();
                 return;
             }
@@ -2167,6 +2167,12 @@ namespace kondate.soft.HOME03_Production
                                    "txtmat_ppt_remark," +  //45
 
                                    "txtlot_no,txtqty_berg_cut_shirt_balance,txtCS_id," +  //46
+
+                                      "txtqty_cut_yokma," +  //33
+                                      "txtqty_cut_yokpai," +  //33
+                                       "txtqty_after_cut_yokpai," +  //34
+
+
                                       "txtqty_cut," +  //33
                                       "txtqty_after_cut," +  //33
 
@@ -2243,6 +2249,11 @@ namespace kondate.soft.HOME03_Production
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtlot_no"].Value.ToString() + "'," +  //46
 
                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_berg_cut_shirt_balance"].Value.ToString())) + "',''," +    //47
+
+
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value.ToString())) + "'," +  //44
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value.ToString())) + "'," +  //44
+                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value.ToString())) + "'," +   //45
 
                                "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //29
                                "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) + "'," +  //29
@@ -2373,7 +2384,7 @@ namespace kondate.soft.HOME03_Production
 
                             "'" + this.txtRG_id.Text.Trim() + "'," +  //7 txtbill_id
                             "'RGMF'," +  //9 txtbill_type
-                            "'รับผ้าย้อม " + this.txtrg_remark.Text.Trim() + "'," +  //9 txtbill_remark
+                            "'รับผ้าพับ " + this.txtrg_remark.Text.Trim() + "'," +  //9 txtbill_remark
 
                              "'" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "'," +  //7 txtwherehouse_id
                            "'" + this.txtmat_no.Text + "'," +  //10 
@@ -2428,7 +2439,7 @@ namespace kondate.soft.HOME03_Production
                         trans.Commit();
                         conn.Close();
 
-                        if (this.iblword_status.Text.Trim() == "บันทึกใบรับผ้าย้อม")
+                        if (this.iblword_status.Text.Trim() == "บันทึกใบรับผ้าพับ")
                         {
                             W_ID_Select.LOG_ID = "5";
                             W_ID_Select.LOG_NAME = "บันทึกใหม่";
@@ -4638,7 +4649,7 @@ namespace kondate.soft.HOME03_Production
 
             this.GridView66.Columns[45].HeaderText = "รับคืนแล้ว (กก)";  //กก
             this.GridView66.Columns[46].HeaderText = "เหลือรอรับ (กก)";  //กก
-            this.GridView66.Columns[47].HeaderText = "เลขที่ใบรับผ้าย้อม";  //
+            this.GridView66.Columns[47].HeaderText = "เลขที่ใบรับผ้าพับ";  //
 
             this.GridView66.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView66.Columns["Col_Auto_num"].Width = 0;
@@ -5129,7 +5140,7 @@ namespace kondate.soft.HOME03_Production
                 }
                 else
                 {
-                    MessageBox.Show("ระบบจะให้รับผ้าพับ ได้ที่ละ 1 รหัสผ้าพับ ต่อ 1 ใบรับผ้าย้อมแล้ว เท่านั้น !! ");
+                    MessageBox.Show("ระบบจะให้รับผ้าพับ ได้ที่ละ 1 รหัสผ้าพับ ต่อ 1 ใบรับผ้าพับแล้ว เท่านั้น !! ");
                     return;
                 }
             }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_03Produce_Stock));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_07Receive_Send_Dye_Stock));
             this.panel_button_top = new System.Windows.Forms.Panel();
             this.btnPreview = new System.Windows.Forms.Button();
             this.BtnPrint = new System.Windows.Forms.Button();
@@ -39,6 +39,10 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.txtsum_qty_roll = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtsum_qty_rib = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtsum2_qty = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.txtsum_qty = new System.Windows.Forms.TextBox();
@@ -70,10 +74,6 @@
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.panel_top = new System.Windows.Forms.Panel();
-            this.txtsum_qty_rib = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtsum_qty_roll = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
@@ -295,6 +295,56 @@
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             // 
+            // txtsum_qty_roll
+            // 
+            this.txtsum_qty_roll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_roll.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_roll.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_roll.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_roll.Location = new System.Drawing.Point(613, 561);
+            this.txtsum_qty_roll.Name = "txtsum_qty_roll";
+            this.txtsum_qty_roll.Size = new System.Drawing.Size(100, 21);
+            this.txtsum_qty_roll.TabIndex = 1006;
+            this.txtsum_qty_roll.Text = ".00";
+            this.txtsum_qty_roll.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(452, 560);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 21);
+            this.label5.TabIndex = 1007;
+            this.label5.Text = "รวมจำนวนม้วน เหลือ (Lot) :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtsum_qty_rib
+            // 
+            this.txtsum_qty_rib.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsum_qty_rib.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_rib.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_rib.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_rib.Location = new System.Drawing.Point(865, 563);
+            this.txtsum_qty_rib.Name = "txtsum_qty_rib";
+            this.txtsum_qty_rib.Size = new System.Drawing.Size(81, 21);
+            this.txtsum_qty_rib.TabIndex = 1004;
+            this.txtsum_qty_rib.Text = ".00";
+            this.txtsum_qty_rib.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(723, 562);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 21);
+            this.label4.TabIndex = 1005;
+            this.label4.Text = "รวมจำนวน RIB เหลือ (Lot) :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtsum2_qty
             // 
             this.txtsum2_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -355,6 +405,7 @@
             this.iblword_status.Name = "iblword_status";
             this.iblword_status.Size = new System.Drawing.Size(347, 43);
             this.iblword_status.TabIndex = 777;
+            this.iblword_status.Text = "คลิ๊ก ดูสต๊อค รายการผ้าพับ";
             this.iblword_status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpend
@@ -687,57 +738,7 @@
             this.panel_top.TabIndex = 9;
             this.panel_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseDown);
             // 
-            // txtsum_qty_rib
-            // 
-            this.txtsum_qty_rib.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_rib.BackColor = System.Drawing.Color.Black;
-            this.txtsum_qty_rib.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_rib.ForeColor = System.Drawing.Color.Lime;
-            this.txtsum_qty_rib.Location = new System.Drawing.Point(865, 563);
-            this.txtsum_qty_rib.Name = "txtsum_qty_rib";
-            this.txtsum_qty_rib.Size = new System.Drawing.Size(81, 21);
-            this.txtsum_qty_rib.TabIndex = 1004;
-            this.txtsum_qty_rib.Text = ".00";
-            this.txtsum_qty_rib.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(723, 562);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 21);
-            this.label4.TabIndex = 1005;
-            this.label4.Text = "รวมจำนวน RIB เหลือ (Lot) :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtsum_qty_roll
-            // 
-            this.txtsum_qty_roll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsum_qty_roll.BackColor = System.Drawing.Color.Black;
-            this.txtsum_qty_roll.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_roll.ForeColor = System.Drawing.Color.Lime;
-            this.txtsum_qty_roll.Location = new System.Drawing.Point(613, 561);
-            this.txtsum_qty_roll.Name = "txtsum_qty_roll";
-            this.txtsum_qty_roll.Size = new System.Drawing.Size(100, 21);
-            this.txtsum_qty_roll.TabIndex = 1006;
-            this.txtsum_qty_roll.Text = ".00";
-            this.txtsum_qty_roll.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(452, 560);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 21);
-            this.label5.TabIndex = 1007;
-            this.label5.Text = "รวมจำนวนม้วน เหลือ (Lot) :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // HOME03_Production_03Produce_Stock
+            // HOME03_Production_07Receive_Send_Dye_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -749,7 +750,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HOME03_Production_03Produce_Stock";
+            this.Name = "HOME03_Production_07Receive_Send_Dye_Stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "เช็คสต๊อค";
             this.Load += new System.EventHandler(this.HOME04_Warehouse_01Mat_Average_Load);

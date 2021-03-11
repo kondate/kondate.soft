@@ -195,6 +195,7 @@
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -888,6 +889,7 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.label4);
             this.panel1_contens.Controls.Add(this.PANEL1306_WH);
             this.panel1_contens.Controls.Add(this.GridView66);
             this.panel1_contens.Controls.Add(this.label42);
@@ -1068,9 +1070,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView66.BackgroundColor = System.Drawing.Color.White;
             this.GridView66.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView66.Location = new System.Drawing.Point(528, 5);
+            this.GridView66.Location = new System.Drawing.Point(528, 54);
             this.GridView66.Name = "GridView66";
-            this.GridView66.Size = new System.Drawing.Size(845, 329);
+            this.GridView66.Size = new System.Drawing.Size(845, 280);
             this.GridView66.TabIndex = 1104;
             this.GridView66.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView66_CellMouseClick);
             this.GridView66.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView66_CellMouseLeave);
@@ -2478,6 +2480,19 @@
             this.GridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GridView1_KeyUp);
             this.GridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GridView1_MouseClick);
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(528, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(533, 43);
+            this.label4.TabIndex = 1214;
+            this.label4.Text = "ดับเบิ้ลคลิ๊ก รายการผ้าพับ เพื่อส่งตัด ..";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // HOME03_Production_07Send_Cut_shirt_record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2703,5 +2718,6 @@
         private System.Windows.Forms.TextBox txtsum_qty_pub_kg;
         private System.Windows.Forms.Button BtnGrid;
         private System.Windows.Forms.DataGridView GridView66;
+        private System.Windows.Forms.Label label4;
     }
 }

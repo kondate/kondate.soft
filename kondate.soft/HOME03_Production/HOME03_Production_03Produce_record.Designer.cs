@@ -53,6 +53,8 @@
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.ch_yokma = new System.Windows.Forms.CheckBox();
             this.txtsum_qty_change_rate = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtsum_qty_change = new System.Windows.Forms.TextBox();
@@ -225,7 +227,6 @@
             this.label64 = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.ch_yokma = new System.Windows.Forms.CheckBox();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -653,6 +654,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.ch_yokma);
             this.panel1.Controls.Add(this.txtsum_qty_change_rate);
             this.panel1.Controls.Add(this.label11);
@@ -723,6 +725,29 @@
             this.panel1.Size = new System.Drawing.Size(1424, 665);
             this.panel1.TabIndex = 1043;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(897, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(636, 43);
+            this.label20.TabIndex = 1071;
+            this.label20.Text = "ดับเบิ้ลคลิ๊ก รายการเบิกด้ายเข้าเครื่องจักร เพื่อบันทึกเป็นผ้าดิบ..";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ch_yokma
+            // 
+            this.ch_yokma.AutoSize = true;
+            this.ch_yokma.Location = new System.Drawing.Point(6, 6);
+            this.ch_yokma.Name = "ch_yokma";
+            this.ch_yokma.Size = new System.Drawing.Size(97, 17);
+            this.ch_yokma.TabIndex = 1070;
+            this.ch_yokma.Text = "บัญชี ยอดยกมา";
+            this.ch_yokma.UseVisualStyleBackColor = true;
             // 
             // txtsum_qty_change_rate
             // 
@@ -827,9 +852,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView66.BackgroundColor = System.Drawing.Color.White;
             this.GridView66.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView66.Location = new System.Drawing.Point(897, 9);
+            this.GridView66.Location = new System.Drawing.Point(897, 49);
             this.GridView66.Name = "GridView66";
-            this.GridView66.Size = new System.Drawing.Size(515, 210);
+            this.GridView66.Size = new System.Drawing.Size(515, 170);
             this.GridView66.TabIndex = 1061;
             this.GridView66.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView66_CellMouseClick);
             this.GridView66.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView66_CellMouseLeave);
@@ -837,7 +862,7 @@
             // 
             // btn_txtic_id
             // 
-            this.btn_txtic_id.BackColor = System.Drawing.Color.White;
+            this.btn_txtic_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_txtic_id.FlatAppearance.BorderSize = 0;
             this.btn_txtic_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -880,6 +905,7 @@
             this.btnGo_txtic_id.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnGo_txtic_id.TabIndex = 1059;
             this.btnGo_txtic_id.TabStop = false;
+            this.btnGo_txtic_id.Visible = false;
             this.btnGo_txtic_id.Click += new System.EventHandler(this.btnGo_txtic_id_Click);
             // 
             // PANEL1306_WH_btnwherehouse
@@ -898,7 +924,7 @@
             // 
             // txtic_id
             // 
-            this.txtic_id.BackColor = System.Drawing.Color.White;
+            this.txtic_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtic_id.Location = new System.Drawing.Point(111, 77);
             this.txtic_id.Name = "txtic_id";
@@ -2928,16 +2954,6 @@
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ch_yokma
-            // 
-            this.ch_yokma.AutoSize = true;
-            this.ch_yokma.Location = new System.Drawing.Point(6, 6);
-            this.ch_yokma.Name = "ch_yokma";
-            this.ch_yokma.Size = new System.Drawing.Size(97, 17);
-            this.ch_yokma.TabIndex = 1070;
-            this.ch_yokma.Text = "บัญชี ยอดยกมา";
-            this.ch_yokma.UseVisualStyleBackColor = true;
-            // 
             // HOME03_Production_03Produce_record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3215,5 +3231,6 @@
         private System.Windows.Forms.TextBox txtsum_qty_ic;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox ch_yokma;
+        private System.Windows.Forms.Label label20;
     }
 }

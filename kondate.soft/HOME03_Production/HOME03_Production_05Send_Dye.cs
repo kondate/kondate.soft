@@ -261,7 +261,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtRG_date"].Value = dt2.Rows[j]["txtRG_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -501,7 +501,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtRG_date"].Value = dt2.Rows[j]["txtRG_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -863,15 +863,15 @@ namespace kondate.soft.HOME03_Production
                 if (cell != null)
                 {
                     W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
-                    this.cboSearch.Text = "เลขที่ PO";
+                    this.cboSearch.Text = "เลขที่ใบส่งผ้าย้อม";
 
-                    if (this.cboSearch.Text == "เลขที่ PO")
+                    if (this.cboSearch.Text == "เลขที่ใบส่งผ้าย้อม")
                     {
                         this.txtsearch.Text = row.Cells[3].Value.ToString();
                         W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
 
                     }
-                    else if (this.cboSearch.Text == "ชื่อผู้บันทึก PO")
+                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งผ้าย้อม")
                     {
                         this.txtsearch.Text = row.Cells[8].Value.ToString();
 
@@ -1258,7 +1258,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtRG_date"].Value = dt2.Rows[j]["txtRG_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -1495,7 +1495,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtRG_date"].Value = dt2.Rows[j]["txtRG_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -1753,7 +1753,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtRG_date"].Value = dt2.Rows[j]["txtRG_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13

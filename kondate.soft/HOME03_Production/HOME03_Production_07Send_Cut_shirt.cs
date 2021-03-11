@@ -233,7 +233,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[13].Name = "Col_txtReceive_id";
                             //this.GridView1.Columns[14].Name = "Col_txtReceive_date";
                             //this.GridView1.Columns[15].Name = "Col_txtmoney_after_vat";
-                            //this.GridView1.Columns[16].Name = "Col_txtPPT_status";
+                            //this.GridView1.Columns[16].Name = "Col_txtSPT_status";
                             //this.GridView1.Columns[17].Name = "Col_txtapprove_status";
                             //this.GridView1.Columns[18].Name = "Col_txtCS_status";
                             //this.GridView1.Columns[19].Name = "Col_txtreceive_status";
@@ -260,23 +260,23 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtCS_id"].Value = dt2.Rows[j]["txtCS_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtCS_date"].Value = dt2.Rows[j]["txtCS_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
 
                             //PPT==============================
-                            if (dt2.Rows[j]["txtPPT_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtSPT_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = ""; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = ""; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ออก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ออกSPT"; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ยกเลิก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ยกเลิกSPT"; //19
                             }
 
 
@@ -477,7 +477,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[13].Name = "Col_txtReceive_id";
                             //this.GridView1.Columns[14].Name = "Col_txtReceive_date";
                             //this.GridView1.Columns[15].Name = "Col_txtmoney_after_vat";
-                            //this.GridView1.Columns[16].Name = "Col_txtPPT_status";
+                            //this.GridView1.Columns[16].Name = "Col_txtSPT_status";
                             //this.GridView1.Columns[17].Name = "Col_txtapprove_status";
                             //this.GridView1.Columns[18].Name = "Col_txtCS_status";
                             //this.GridView1.Columns[19].Name = "Col_txtreceive_status";
@@ -499,7 +499,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtCS_id"].Value = dt2.Rows[j]["txtCS_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtCS_date"].Value = dt2.Rows[j]["txtCS_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -507,17 +507,17 @@ namespace kondate.soft.HOME03_Production
 
 
                             //PPT==============================
-                            if (dt2.Rows[j]["txtPPT_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtSPT_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = ""; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = ""; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ออก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ออกSPT"; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ยกเลิก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ยกเลิกSPT"; //19
                             }
 
                             //Approve ==============================
@@ -632,7 +632,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[13].Name = "Col_txtReceive_id";
             this.GridView1.Columns[14].Name = "Col_txtReceive_date";
             this.GridView1.Columns[15].Name = "Col_txtmoney_after_vat";
-            this.GridView1.Columns[16].Name = "Col_txtPPT_status";
+            this.GridView1.Columns[16].Name = "Col_txtSPT_status";
             this.GridView1.Columns[17].Name = "Col_txtapprove_status";
             this.GridView1.Columns[18].Name = "Col_txtCS_status";
             this.GridView1.Columns[19].Name = "Col_txtreceive_status";
@@ -663,16 +663,16 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[14].HeaderText = " วันที่ รับเข้าคลัง";
 
             this.GridView1.Columns[15].HeaderText = " จำนวนเงิน(บาท)";
-            this.GridView1.Columns[16].HeaderText = " สถานะส่งย้อม";
+            this.GridView1.Columns[16].HeaderText = " สถานะส่งตัด";
             this.GridView1.Columns[17].HeaderText = " สถานะ ผลอนุมัติ";
             this.GridView1.Columns[18].HeaderText = "สถานะ RG";
             this.GridView1.Columns[19].HeaderText = " สถานะ รับเข้าคลัง";
 
-            this.GridView1.Columns[20].HeaderText = "ส่งย้อม(พับ)";
+            this.GridView1.Columns[20].HeaderText = "ส่งตัด(พับ)";
             this.GridView1.Columns[21].HeaderText = "รับแล้ว(พับ)";
             this.GridView1.Columns[22].HeaderText = "ค้างรับ(พับ)";
 
-            this.GridView1.Columns[23].HeaderText = "ส่งย้อม(Kg)";
+            this.GridView1.Columns[23].HeaderText = "ส่งตัด(Kg)";
             this.GridView1.Columns[24].HeaderText = "รับแล้ว(Kg)";
             this.GridView1.Columns[25].HeaderText = "ค้างรับ(Kg)";
 
@@ -756,11 +756,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtmoney_after_vat"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
-            this.GridView1.Columns["Col_txtPPT_status"].Visible = true;  //"Col_txtPPT_status";
-            this.GridView1.Columns["Col_txtPPT_status"].Width = 100;
-            this.GridView1.Columns["Col_txtPPT_status"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtPPT_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtPPT_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtSPT_status"].Visible = true;  //"Col_txtSPT_status";
+            this.GridView1.Columns["Col_txtSPT_status"].Width = 100;
+            this.GridView1.Columns["Col_txtSPT_status"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtSPT_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtSPT_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txtapprove_status"].Visible = false;  //"Col_txtapprove_status";
             this.GridView1.Columns["Col_txtapprove_status"].Width = 0;
@@ -861,15 +861,15 @@ namespace kondate.soft.HOME03_Production
                 if (cell != null)
                 {
                     W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
-                    this.cboSearch.Text = "เลขที่ PO";
+                    this.cboSearch.Text = "เลขที่ใบส่งตัด";
 
-                    if (this.cboSearch.Text == "เลขที่ PO")
+                    if (this.cboSearch.Text == "เลขที่ใบส่งตัด")
                     {
                         this.txtsearch.Text = row.Cells[3].Value.ToString();
                         W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
 
                     }
-                    else if (this.cboSearch.Text == "ชื่อผู้บันทึก PO")
+                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งตัด")
                     {
                         this.txtsearch.Text = row.Cells[8].Value.ToString();
 
@@ -1085,7 +1085,7 @@ namespace kondate.soft.HOME03_Production
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
                 W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งตัด";
-                kondate.soft.HOME03_Production.HOME03_Production_03Produce_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_03Produce_record_detail();
+                kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record_detail();
                 frm2.Show();
 
                 TRANS_LOG();
@@ -1228,7 +1228,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[13].Name = "Col_txtReceive_id";
                             //this.GridView1.Columns[14].Name = "Col_txtReceive_date";
                             //this.GridView1.Columns[15].Name = "Col_txtmoney_after_vat";
-                            //this.GridView1.Columns[16].Name = "Col_txtPPT_status";
+                            //this.GridView1.Columns[16].Name = "Col_txtSPT_status";
                             //this.GridView1.Columns[17].Name = "Col_txtapprove_status";
                             //this.GridView1.Columns[18].Name = "Col_txtCS_status";
                             //this.GridView1.Columns[19].Name = "Col_txtreceive_status";
@@ -1256,7 +1256,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtCS_id"].Value = dt2.Rows[j]["txtCS_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtCS_date"].Value = dt2.Rows[j]["txtCS_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -1264,17 +1264,17 @@ namespace kondate.soft.HOME03_Production
 
 
                             //PPT==============================
-                            if (dt2.Rows[j]["txtPPT_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtSPT_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = ""; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = ""; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ออก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ออกSPT"; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ยกเลิก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ยกเลิกSPT"; //19
                             }
 
                             //Approve ==============================
@@ -1465,7 +1465,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[13].Name = "Col_txtReceive_id";
                             //this.GridView1.Columns[14].Name = "Col_txtReceive_date";
                             //this.GridView1.Columns[15].Name = "Col_txtmoney_after_vat";
-                            //this.GridView1.Columns[16].Name = "Col_txtPPT_status";
+                            //this.GridView1.Columns[16].Name = "Col_txtSPT_status";
                             //this.GridView1.Columns[17].Name = "Col_txtapprove_status";
                             //this.GridView1.Columns[18].Name = "Col_txtCS_status";
                             //this.GridView1.Columns[19].Name = "Col_txtreceive_status";
@@ -1493,7 +1493,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtCS_id"].Value = dt2.Rows[j]["txtCS_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtCS_date"].Value = dt2.Rows[j]["txtCS_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -1501,17 +1501,17 @@ namespace kondate.soft.HOME03_Production
 
 
                             //PPT==============================
-                            if (dt2.Rows[j]["txtPPT_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtSPT_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = ""; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = ""; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ออก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ออกSPT"; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ยกเลิก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ยกเลิกSPT"; //19
                             }
 
                             //Approve ==============================
@@ -1723,7 +1723,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[13].Name = "Col_txtReceive_id";
                             //this.GridView1.Columns[14].Name = "Col_txtReceive_date";
                             //this.GridView1.Columns[15].Name = "Col_txtmoney_after_vat";
-                            //this.GridView1.Columns[16].Name = "Col_txtPPT_status";
+                            //this.GridView1.Columns[16].Name = "Col_txtSPT_status";
                             //this.GridView1.Columns[17].Name = "Col_txtapprove_status";
                             //this.GridView1.Columns[18].Name = "Col_txtCS_status";
                             //this.GridView1.Columns[19].Name = "Col_txtreceive_status";
@@ -1751,7 +1751,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtapprove_date"].Value = dt2.Rows[j]["txtapprove_date"].ToString();      //10
                             this.GridView1.Rows[index].Cells["Col_txtCS_id"].Value = dt2.Rows[j]["txtCS_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtCS_date"].Value = dt2.Rows[j]["txtCS_date"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //11
+                            this.GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = ""; // dt2.Rows[j]["txtreceive_id"].ToString();      //11
                             this.GridView1.Rows[index].Cells["Col_txtreceive_date"].Value = dt2.Rows[j]["txtreceive_date"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
@@ -1759,17 +1759,17 @@ namespace kondate.soft.HOME03_Production
 
 
                             //PPT==============================
-                            if (dt2.Rows[j]["txtPPT_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtSPT_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = ""; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = ""; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ออก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ออกSPT"; //19
                             }
-                            else if (dt2.Rows[j]["txtPPT_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtSPT_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtPPT_status"].Value = "ยกเลิก PPT"; //19
+                                this.GridView1.Rows[index].Cells["Col_txtSPT_status"].Value = "ยกเลิกSPT"; //19
                             }
 
                             //Approve ==============================

@@ -1118,20 +1118,26 @@ namespace kondate.soft.HOME03_Production
 
                 }
 
-  
-        //======================================================
-        //เชื่อมต่อฐานข้อมูล=======================================================
-        //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
-        SqlConnection conn = new SqlConnection(
-                new SqlConnectionStringBuilder()
-                {
-                    DataSource = W_ID_Select.ADATASOURCE,
-                    InitialCatalog = W_ID_Select.DATABASE_NAME,
-                    UserID = W_ID_Select.Crytal_USER,
-                    Password = W_ID_Select.Crytal_Pass
-                }
-                .ConnectionString
-            );
+                Show_GO1();
+
+
+
+        }
+        private void Show_GO1()
+        {
+            //======================================================
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                    new SqlConnectionStringBuilder()
+                    {
+                        DataSource = W_ID_Select.ADATASOURCE,
+                        InitialCatalog = W_ID_Select.DATABASE_NAME,
+                        UserID = W_ID_Select.Crytal_USER,
+                        Password = W_ID_Select.Crytal_Pass
+                    }
+                    .ConnectionString
+                );
             try
             {
                 //conn.Open();
@@ -1221,70 +1227,70 @@ namespace kondate.soft.HOME03_Production
 
                             //   string[] row = new string[] { k.ToString(), "", "", "", this.PANEL1306_WH_txtwherehouse_id.Text, this.PANEL_MAT_txtmat_id.Text.ToString(), this.txtnumber_mat_id.Text.ToString() };
                             //======================================================
-                                var index = GridView1.Rows.Add();
-                                GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            var index = GridView1.Rows.Add();
+                            GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
 
-                                GridView1.Rows[index].Cells["Col_txtmachine_id"].Value = this.PANEL0102_MACHINE_txtmachine_id.Text.ToString();      //1
-                                GridView1.Rows[index].Cells["Col_txttrans_time_start"].Value ="";      //2
-                                GridView1.Rows[index].Cells["Col_txttrans_time_end"].Value = "";      //3
-                                GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = this.PANEL1306_WH_txtwherehouse_id.Text.ToString();      //4
+                            GridView1.Rows[index].Cells["Col_txtmachine_id"].Value = this.PANEL0102_MACHINE_txtmachine_id.Text.ToString();      //1
+                            GridView1.Rows[index].Cells["Col_txttrans_time_start"].Value = "";      //2
+                            GridView1.Rows[index].Cells["Col_txttrans_time_end"].Value = "";      //3
+                            GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = this.PANEL1306_WH_txtwherehouse_id.Text.ToString();      //4
 
-                                //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_krasob"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_krasob"]).ToString("###,###.00");      //5
-                                //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_krasob_convert"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_krasob_convert"]).ToString("###,###.00");      //6
-                                //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_loud"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_loud"]).ToString("###,###.00");      //7
-                                //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_loud_convert"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_loud_convert"]).ToString("###,###.00");      //8
-
-
-                                GridView1.Rows[index].Cells["Col_txtemp_id"].Value = "";      //9
-                                GridView1.Rows[index].Cells["Col_txtemp_name"].Value = "";      //10
-                                GridView1.Rows[index].Cells["Col_txtic_remark"].Value = "";      //11
-
-                                GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //12
-                                GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //13
-                                GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //14
-                                GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = this.PANEL0106_NUMBER_MAT_txtnumber_mat_id.Text.ToString();      //15
-
-                                GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //16
-                                GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //17
-
-                                GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //18
-
-                                GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //19
-                                GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //20
+                            //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_krasob"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_krasob"]).ToString("###,###.00");      //5
+                            //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_krasob_convert"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_krasob_convert"]).ToString("###,###.00");      //6
+                            //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_loud"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_loud"]).ToString("###,###.00");      //7
+                            //GridView1.Rows[index].Cells["Col_txtmat_unit1_qty_loud_convert"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty_loud_convert"]).ToString("###,###.00");      //8
 
 
-                                GridView1.Rows[index].Cells["Col_txtLot_no"].Value = dt2.Rows[j]["txtLot_no"].ToString();      //12
-                                GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //21
-                                GridView1.Rows[index].Cells["Col_txtqty"].Value ="0";      //21
-                                GridView1.Rows[index].Cells["Col_txtqty2"].Value = "0";      //22
+                            GridView1.Rows[index].Cells["Col_txtemp_id"].Value = "";      //9
+                            GridView1.Rows[index].Cells["Col_txtemp_name"].Value = "";      //10
+                            GridView1.Rows[index].Cells["Col_txtic_remark"].Value = "";      //11
+
+                            GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //12
+                            GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //13
+                            GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //14
+                            GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = this.PANEL0106_NUMBER_MAT_txtnumber_mat_id.Text.ToString();      //15
+
+                            GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //16
+                            GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //17
+
+                            GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //18
+
+                            GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //19
+                            GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //20
 
 
-                                GridView1.Rows[index].Cells["Col_txtprice"].Value = "0";         //23
-                                GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = "0";      //24
-                                GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = "0";       //25
-                                GridView1.Rows[index].Cells["Col_txtsum_total"].Value = "0";       //26
+                            GridView1.Rows[index].Cells["Col_txtLot_no"].Value = dt2.Rows[j]["txtLot_no"].ToString();      //12
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //21
+                            GridView1.Rows[index].Cells["Col_txtqty"].Value = "0";      //21
+                            GridView1.Rows[index].Cells["Col_txtqty2"].Value = "0";      //22
 
-                                GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = "0";       //27
-                                GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = "0";       //28
-                                GridView1.Rows[index].Cells["Col_txtcost_money_sum_yokma"].Value = "0";      //29
 
-                                GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokpai"].Value = "0";      //30
-                                GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokpai"].Value = "0";       //31
-                                GridView1.Rows[index].Cells["Col_txtcost_money_sum_yokpai"].Value = "0";      //32
+                            GridView1.Rows[index].Cells["Col_txtprice"].Value = "0";         //23
+                            GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = "0";      //24
+                            GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = "0";       //25
+                            GridView1.Rows[index].Cells["Col_txtsum_total"].Value = "0";       //26
 
-                                GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = "0";      //33
-                                GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = "0";       //34
+                            GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = "0";       //27
+                            GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = "0";       //28
+                            GridView1.Rows[index].Cells["Col_txtcost_money_sum_yokma"].Value = "0";      //29
 
-                                GridView1.Rows[index].Cells["Col_txtitem_no"].Value = "";      //35
+                            GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokpai"].Value = "0";      //30
+                            GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokpai"].Value = "0";       //31
+                            GridView1.Rows[index].Cells["Col_txtcost_money_sum_yokpai"].Value = "0";      //32
 
-                                GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //36
-                                GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //37
-                                GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //37
+                            GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = "0";      //33
+                            GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = "0";       //34
 
-                            }
-                            //=======================================================
-                            Cursor.Current = Cursors.Default;
-                            //======================================================
+                            GridView1.Rows[index].Cells["Col_txtitem_no"].Value = "";      //35
+
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //37
+
+                        }
+                        //=======================================================
+                        Cursor.Current = Cursors.Default;
+                        //======================================================
 
                         //=======================================================
 
@@ -1323,10 +1329,7 @@ namespace kondate.soft.HOME03_Production
 
             //Fill_cboemp();
 
-
-
         }
-
         private void Show_GridView1()
         {
             this.GridView1.ColumnCount = 39;
@@ -4114,7 +4117,7 @@ namespace kondate.soft.HOME03_Production
                 {
                     this.PANEL0106_NUMBER_MAT_txtnumber_mat_id.Text = row.Cells[2].Value.ToString();
                     this.PANEL0106_NUMBER_MAT_txtnumber_mat_name.Text = row.Cells[3].Value.ToString();
-
+                    Show_GO1();
                 }
             }
         }

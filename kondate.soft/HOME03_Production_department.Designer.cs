@@ -122,7 +122,7 @@
             this.HOME03_Production_05_GR.Name = "HOME03_Production_05_GR";
             this.HOME03_Production_05_GR.Size = new System.Drawing.Size(175, 54);
             this.HOME03_Production_05_GR.TabIndex = 45;
-            this.HOME03_Production_05_GR.Text = "ส่งย้อมค้างรับ";
+            this.HOME03_Production_05_GR.Text = "ส่งย้อม ค้างรับ";
             this.HOME03_Production_05_GR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_05_GR.UseVisualStyleBackColor = false;
             this.HOME03_Production_05_GR.Click += new System.EventHandler(this.HOME03_Production_05_GR_Click);
@@ -728,9 +728,10 @@
             this.HOME03_Production_06_ST_GR.Name = "HOME03_Production_06_ST_GR";
             this.HOME03_Production_06_ST_GR.Size = new System.Drawing.Size(175, 54);
             this.HOME03_Production_06_ST_GR.TabIndex = 46;
-            this.HOME03_Production_06_ST_GR.Text = "ผ้าตัดค้างรับ";
+            this.HOME03_Production_06_ST_GR.Text = "ผ้าส่งตัด ค้างรับ";
             this.HOME03_Production_06_ST_GR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_ST_GR.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_ST_GR.Click += new System.EventHandler(this.HOME03_Production_06_ST_GR_Click);
             // 
             // HOME03_Production_06SY_GR
             // 
@@ -747,7 +748,7 @@
             this.HOME03_Production_06SY_GR.Name = "HOME03_Production_06SY_GR";
             this.HOME03_Production_06SY_GR.Size = new System.Drawing.Size(175, 54);
             this.HOME03_Production_06SY_GR.TabIndex = 47;
-            this.HOME03_Production_06SY_GR.Text = "สต๊อคเสื้อ";
+            this.HOME03_Production_06SY_GR.Text = "ผ้าส่งเย็บ ค้างรับ";
             this.HOME03_Production_06SY_GR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06SY_GR.UseVisualStyleBackColor = false;
             // 

@@ -340,9 +340,10 @@ namespace kondate.soft.HOME03_Production
                             GridView1.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();     //41
                             GridView1.Rows[index].Cells["Col_txtlot_no"].Value = dt2.Rows[j]["txtlot_no"].ToString();     //42
 
+
+
                             GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
                             GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
-
                             GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
 
 
@@ -446,6 +447,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[38].Name = "Col_mat_status";
             this.GridView1.Columns[39].Name = "Col_txtface_baking_id";
             this.GridView1.Columns[40].Name = "Col_txtlot_no";
+
+
 
             this.GridView1.Columns[41].Name = "Col_txtqty_cut";
             this.GridView1.Columns[42].Name = "Col_txtqty_after_cut";

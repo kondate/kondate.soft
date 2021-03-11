@@ -393,6 +393,10 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";     //48
                             this.GridView1.Rows[index].Cells["Col_txtqty_berg_cut_shirt_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_berg_cut_shirt_balance"]).ToString("###,###.00");     //49
 
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
+
                             GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
                             GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
                             GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
@@ -632,7 +636,7 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 53;
+            this.GridView1.ColumnCount = 56;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtwherehouse_id";
             this.GridView1.Columns[2].Name = "Col_txtnumber_in_year";
@@ -701,9 +705,14 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[48].Name = "Col_txtsum_qty_rib_kg";
             this.GridView1.Columns[49].Name = "Col_txtqty_berg_cut_shirt_balance";
 
-            this.GridView1.Columns[50].Name = "Col_txtqty_cut";
-            this.GridView1.Columns[51].Name = "Col_txtqty_after_cut";
-            this.GridView1.Columns[52].Name = "Col_txtcut_id";
+            this.GridView1.Columns[50].Name = "Col_txtqty_cut_yokma";
+            this.GridView1.Columns[51].Name = "Col_txtqty_cut_yokpai";
+            this.GridView1.Columns[52].Name = "Col_txtqty_after_cut_yokpai";
+
+
+            this.GridView1.Columns[53].Name = "Col_txtqty_cut";
+            this.GridView1.Columns[54].Name = "Col_txtqty_after_cut";
+            this.GridView1.Columns[55].Name = "Col_txtcut_id";
 
 
             this.GridView1.Columns[0].HeaderText = "No";
@@ -776,6 +785,9 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[51].HeaderText = "จำนวนเหลือ";  //กก
             this.GridView1.Columns[52].HeaderText = "เลขที่ส่งตัด";  //
 
+            this.GridView1.Columns[53].HeaderText = "จำนวนส่งตัด";  //กก
+            this.GridView1.Columns[54].HeaderText = "จำนวนเหลือ";  //กก
+            this.GridView1.Columns[55].HeaderText = "เลขที่ส่งตัด";  //
 
             this.GridView1.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
             this.GridView1.Columns["Col_Auto_num"].Width = 60;
@@ -1114,6 +1126,24 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtqty_berg_cut_shirt_balance"].ReadOnly = false;
             this.GridView1.Columns["Col_txtqty_berg_cut_shirt_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty_berg_cut_shirt_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].Visible = false;  //"Col_txtqty_cut_yokma";
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].Visible = false;  //"Col_txtqty_cut_yokpai";
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Visible = false;  //"Col_txtqty_after_cut_yokpai";
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.GridView1.Columns["Col_txtqty_cut"].Visible = true;  //"Col_txtqty_cut";
             this.GridView1.Columns["Col_txtqty_cut"].Width = 140;
@@ -1750,6 +1780,10 @@ namespace kondate.soft.HOME03_Production
             double Sum_R_rib2 = 0;
             double Sum_B_rib2 = 0;
 
+            double Sum_Qty_CUT_Yokpai = 0;
+            double Sum_Qty_AF_CUT_Yokpai = 0;
+
+
             int k = 0;
 
             for (int i = 0; i < this.GridView1.Rows.Count; i++)
@@ -1998,6 +2032,17 @@ namespace kondate.soft.HOME03_Production
                         this.txtsum2_qty.Text = Sum2_Qty.ToString("N", new CultureInfo("en-US"));
                     }
 
+                    //300 - 300 =   0  "txtqty_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive_yokpai"].Value.ToString())) + "'," +
+                    //"txtqty_after_cut = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty_after_receive_yokpai"].Value.ToString())) + "'" +
+
+                    //Sum_Qty_CUT_Yokpai       300 - 300 =   0 =================================================
+                    Sum_Qty_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
+                    this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value = Sum_Qty_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
+
+                    //Sum_Qty_AF_CUT_Yokpai    0 + 300 = 300 =================================================
+                    Sum_Qty_AF_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
+                    this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value = Sum_Qty_AF_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
+
 
                 }
                 else
@@ -2099,6 +2144,16 @@ namespace kondate.soft.HOME03_Production
                         this.txtsum2_qty.Text = Sum2_Qty.ToString("N", new CultureInfo("en-US"));
                     }
 
+                    //300 - 300 =   0  "txtqty_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive_yokpai"].Value.ToString())) + "'," +
+                    //"txtqty_after_cut = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty_after_receive_yokpai"].Value.ToString())) + "'" +
+
+                    //Sum_Qty_CUT_Yokpai       300 - 300 =   0 =================================================
+                    Sum_Qty_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
+                    this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value = Sum_Qty_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
+
+                    //Sum_Qty_AF_CUT_Yokpai    0 + 300 = 300 =================================================
+                    Sum_Qty_AF_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
+                    this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value = Sum_Qty_AF_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
 
 
                 }
@@ -2176,6 +2231,8 @@ namespace kondate.soft.HOME03_Production
             Sum_R_rib2 = 0;
             Sum_B_rib2 = 0;
 
+             Sum_Qty_CUT_Yokpai = 0;
+             Sum_Qty_AF_CUT_Yokpai = 0;
 
         }
         private void GridView1_Up_Status()

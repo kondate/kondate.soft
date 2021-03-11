@@ -82,7 +82,7 @@ namespace kondate.soft.HOME03_Production
             CHECK_USER_RULE();
 
             this.iblword_top.Text = W_ID_Select.WORD_TOP.Trim();
-            this.iblword_status.Text = "ระเบียนสต๊อคสินค้า / วัตถุดิบ";
+            this.iblword_status.Text = "คลิ๊ก ดูสต๊อค รายการวัตถุดิบ ด้าย";
             this.iblstatus.Text = "Version : " + W_ID_Select.GetVersion() + "      |       User name (ชื่อผู้ใช้) : " + W_ID_Select.M_EMP_OFFICE_NAME.ToString() + "       |       กิจการ : " + W_ID_Select.M_CONAME.ToString() + "      |      สาขา : " + W_ID_Select.M_BRANCHNAME.ToString() + "      |     วันที่ : " + DateTime.Now.ToString("dd/MM/yyyy") + "";
 
 
@@ -1784,8 +1784,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView3.Columns["Col_txtqty_receive_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_txtqty_receive_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView3.Columns["Col_txtqty_cut"].Visible = true;  //"Col_txtqty_cut";
-            this.GridView3.Columns["Col_txtqty_cut"].Width = 140;
+            this.GridView3.Columns["Col_txtqty_cut"].Visible = false;  //"Col_txtqty_cut";
+            this.GridView3.Columns["Col_txtqty_cut"].Width = 0;
             this.GridView3.Columns["Col_txtqty_cut"].ReadOnly = true;
             this.GridView3.Columns["Col_txtqty_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_txtqty_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -1796,8 +1796,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView3.Columns["Col_txtqty_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView3.Columns["Col_txtcut_id"].Visible = true;  //"Col_txtcut_id";
-            this.GridView3.Columns["Col_txtcut_id"].Width = 140;
+            this.GridView3.Columns["Col_txtcut_id"].Visible = false;  //"Col_txtcut_id";
+            this.GridView3.Columns["Col_txtcut_id"].Width = 0;
             this.GridView3.Columns["Col_txtcut_id"].ReadOnly = true;
             this.GridView3.Columns["Col_txtcut_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_txtcut_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

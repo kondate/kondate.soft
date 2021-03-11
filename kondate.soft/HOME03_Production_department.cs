@@ -235,5 +235,13 @@ namespace kondate.soft
             kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record();
             frm2.Show();
         }
+
+        private void HOME03_Production_06_ST_GR_Click(object sender, EventArgs e)
+        {
+            
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06_ST_GR.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_GR frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_GR();
+            frm2.Show();
+        }
     }
 }

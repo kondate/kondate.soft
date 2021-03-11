@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>135</ApplicationRevision>
+    <ApplicationRevision>136</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -980,6 +980,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Report_c002_05Send_dye_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_07Send_Cut_shirt_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_c002_07Send_Cut_shirt_record.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.cs">
@@ -2039,6 +2045,10 @@
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_05Send_dye_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_c002_05Send_dye_record.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_07Send_Cut_shirt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_07Send_Cut_shirt_record.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

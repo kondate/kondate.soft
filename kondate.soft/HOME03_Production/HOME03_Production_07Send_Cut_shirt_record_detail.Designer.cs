@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_05Send_Dye_record_detail));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_07Send_Cut_shirt_record_detail));
             this.panel_top = new System.Windows.Forms.Panel();
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize_full = new System.Windows.Forms.PictureBox();
@@ -45,6 +45,10 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.PANEL0105_FACE_BAKING_txtface_baking_id = new System.Windows.Forms.TextBox();
+            this.PANEL0105_FACE_BAKING_btnface_baking = new System.Windows.Forms.Button();
+            this.PANEL0105_FACE_BAKING_txtface_baking_name = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtdtpdate_send_mat = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -153,7 +157,7 @@
             this.txtyear = new System.Windows.Forms.TextBox();
             this.dtpdate_record = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPPT_record_remark = new System.Windows.Forms.TextBox();
+            this.txtSPT_record_remark = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PANEL1306_WH_txtwherehouse_id = new System.Windows.Forms.TextBox();
             this.PANEL1306_WH_btnwherehouse = new System.Windows.Forms.Button();
@@ -172,14 +176,10 @@
             this.PANEL161_SUP_txtsupplier_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.iblword_status = new System.Windows.Forms.Label();
-            this.txtPPT_id = new System.Windows.Forms.TextBox();
+            this.txtSPT_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
-            this.PANEL0105_FACE_BAKING_txtface_baking_id = new System.Windows.Forms.TextBox();
-            this.PANEL0105_FACE_BAKING_btnface_baking = new System.Windows.Forms.Button();
-            this.PANEL0105_FACE_BAKING_txtface_baking_name = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -495,7 +495,7 @@
             this.panel1_contens.Controls.Add(this.txtyear);
             this.panel1_contens.Controls.Add(this.dtpdate_record);
             this.panel1_contens.Controls.Add(this.label7);
-            this.panel1_contens.Controls.Add(this.txtPPT_record_remark);
+            this.panel1_contens.Controls.Add(this.txtSPT_record_remark);
             this.panel1_contens.Controls.Add(this.label3);
             this.panel1_contens.Controls.Add(this.PANEL1306_WH_txtwherehouse_id);
             this.panel1_contens.Controls.Add(this.PANEL1306_WH_btnwherehouse);
@@ -514,7 +514,7 @@
             this.panel1_contens.Controls.Add(this.PANEL161_SUP_txtsupplier_name);
             this.panel1_contens.Controls.Add(this.label2);
             this.panel1_contens.Controls.Add(this.iblword_status);
-            this.panel1_contens.Controls.Add(this.txtPPT_id);
+            this.panel1_contens.Controls.Add(this.txtSPT_id);
             this.panel1_contens.Controls.Add(this.label1);
             this.panel1_contens.Controls.Add(this.button_low_right);
             this.panel1_contens.Controls.Add(this.iblstatus);
@@ -524,6 +524,50 @@
             this.panel1_contens.Size = new System.Drawing.Size(1483, 622);
             this.panel1_contens.TabIndex = 16;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
+            // 
+            // PANEL0105_FACE_BAKING_txtface_baking_id
+            // 
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.BackColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Location = new System.Drawing.Point(851, 97);
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Name = "PANEL0105_FACE_BAKING_txtface_baking_id";
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Size = new System.Drawing.Size(88, 21);
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.TabIndex = 1146;
+            // 
+            // PANEL0105_FACE_BAKING_btnface_baking
+            // 
+            this.PANEL0105_FACE_BAKING_btnface_baking.BackColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_btnface_baking.FlatAppearance.BorderSize = 0;
+            this.PANEL0105_FACE_BAKING_btnface_baking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL0105_FACE_BAKING_btnface_baking.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_btnface_baking.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnface_baking.Image")));
+            this.PANEL0105_FACE_BAKING_btnface_baking.Location = new System.Drawing.Point(820, 99);
+            this.PANEL0105_FACE_BAKING_btnface_baking.Name = "PANEL0105_FACE_BAKING_btnface_baking";
+            this.PANEL0105_FACE_BAKING_btnface_baking.Size = new System.Drawing.Size(22, 16);
+            this.PANEL0105_FACE_BAKING_btnface_baking.TabIndex = 1145;
+            this.PANEL0105_FACE_BAKING_btnface_baking.UseVisualStyleBackColor = false;
+            // 
+            // PANEL0105_FACE_BAKING_txtface_baking_name
+            // 
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.BackColor = System.Drawing.Color.White;
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Location = new System.Drawing.Point(608, 97);
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Name = "PANEL0105_FACE_BAKING_txtface_baking_name";
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Size = new System.Drawing.Size(235, 21);
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.TabIndex = 1144;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(539, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 21);
+            this.label6.TabIndex = 1143;
+            this.label6.Text = "อบหน้า :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtdtpdate_send_mat
             // 
@@ -1856,15 +1900,15 @@
             this.label7.Text = "วันที่ :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtPPT_record_remark
+            // txtSPT_record_remark
             // 
-            this.txtPPT_record_remark.BackColor = System.Drawing.Color.White;
-            this.txtPPT_record_remark.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtPPT_record_remark.Location = new System.Drawing.Point(608, 121);
-            this.txtPPT_record_remark.Multiline = true;
-            this.txtPPT_record_remark.Name = "txtPPT_record_remark";
-            this.txtPPT_record_remark.Size = new System.Drawing.Size(332, 46);
-            this.txtPPT_record_remark.TabIndex = 1095;
+            this.txtSPT_record_remark.BackColor = System.Drawing.Color.White;
+            this.txtSPT_record_remark.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSPT_record_remark.Location = new System.Drawing.Point(608, 121);
+            this.txtSPT_record_remark.Multiline = true;
+            this.txtSPT_record_remark.Name = "txtSPT_record_remark";
+            this.txtSPT_record_remark.Size = new System.Drawing.Size(332, 46);
+            this.txtSPT_record_remark.TabIndex = 1095;
             // 
             // label3
             // 
@@ -2067,15 +2111,15 @@
             this.iblword_status.TabIndex = 1078;
             this.iblword_status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtPPT_id
+            // txtSPT_id
             // 
-            this.txtPPT_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtPPT_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtPPT_id.Location = new System.Drawing.Point(113, 50);
-            this.txtPPT_id.Name = "txtPPT_id";
-            this.txtPPT_id.ReadOnly = true;
-            this.txtPPT_id.Size = new System.Drawing.Size(380, 21);
-            this.txtPPT_id.TabIndex = 1076;
+            this.txtSPT_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtSPT_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSPT_id.Location = new System.Drawing.Point(113, 50);
+            this.txtSPT_id.Name = "txtSPT_id";
+            this.txtSPT_id.ReadOnly = true;
+            this.txtSPT_id.Size = new System.Drawing.Size(380, 21);
+            this.txtSPT_id.TabIndex = 1076;
             // 
             // label1
             // 
@@ -2125,51 +2169,7 @@
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // PANEL0105_FACE_BAKING_txtface_baking_id
-            // 
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.BackColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Location = new System.Drawing.Point(851, 97);
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Name = "PANEL0105_FACE_BAKING_txtface_baking_id";
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.ReadOnly = true;
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Size = new System.Drawing.Size(88, 21);
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.TabIndex = 1146;
-            // 
-            // PANEL0105_FACE_BAKING_btnface_baking
-            // 
-            this.PANEL0105_FACE_BAKING_btnface_baking.BackColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_btnface_baking.FlatAppearance.BorderSize = 0;
-            this.PANEL0105_FACE_BAKING_btnface_baking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL0105_FACE_BAKING_btnface_baking.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_btnface_baking.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnface_baking.Image")));
-            this.PANEL0105_FACE_BAKING_btnface_baking.Location = new System.Drawing.Point(820, 99);
-            this.PANEL0105_FACE_BAKING_btnface_baking.Name = "PANEL0105_FACE_BAKING_btnface_baking";
-            this.PANEL0105_FACE_BAKING_btnface_baking.Size = new System.Drawing.Size(22, 16);
-            this.PANEL0105_FACE_BAKING_btnface_baking.TabIndex = 1145;
-            this.PANEL0105_FACE_BAKING_btnface_baking.UseVisualStyleBackColor = false;
-            // 
-            // PANEL0105_FACE_BAKING_txtface_baking_name
-            // 
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.BackColor = System.Drawing.Color.White;
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Location = new System.Drawing.Point(608, 97);
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Name = "PANEL0105_FACE_BAKING_txtface_baking_name";
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.ReadOnly = true;
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Size = new System.Drawing.Size(235, 21);
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.TabIndex = 1144;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(539, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 21);
-            this.label6.TabIndex = 1143;
-            this.label6.Text = "อบหน้า :";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // HOME03_Production_05Send_Dye_record_detail
+            // HOME03_Production_07Send_Cut_shirt_record_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2181,7 +2181,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HOME03_Production_05Send_Dye_record_detail";
+            this.Name = "HOME03_Production_07Send_Cut_shirt_record_detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ข้อมูลใบส่งย้อม";
             this.Load += new System.EventHandler(this.HOME03_Production_05Send_Dye_record_detail_Load);
@@ -2242,7 +2242,7 @@
         private System.Windows.Forms.TextBox PANEL161_SUP_txtsupplier_name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label iblword_status;
-        private System.Windows.Forms.TextBox txtPPT_id;
+        private System.Windows.Forms.TextBox txtSPT_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox PANEL0106_NUMBER_MAT_txtnumber_mat_id;
         private System.Windows.Forms.Button PANEL0106_NUMBER_MAT_btnnumber_mat;
@@ -2259,7 +2259,7 @@
         private System.Windows.Forms.TextBox txtyear;
         public System.Windows.Forms.DateTimePicker dtpdate_record;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPPT_record_remark;
+        private System.Windows.Forms.TextBox txtSPT_record_remark;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView GridView1;
         private System.Windows.Forms.Panel panel1;
