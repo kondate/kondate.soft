@@ -271,6 +271,36 @@
     <Compile Include="HOME03_Production\HOME03_Production_01RG_record.Designer.cs">
       <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.Designer.cs">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_GR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record.Designer.cs">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt.Designer.cs">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_GR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1648,6 +1678,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record.resx">
       <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.resx">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_GR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record.resx">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_detail.resx">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_print.resx">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt.resx">
+      <DependentUpon>HOME03_Production_07Send_Cut_shirt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye_GR.resx">
       <DependentUpon>HOME03_Production_05Send_Dye_GR.cs</DependentUpon>

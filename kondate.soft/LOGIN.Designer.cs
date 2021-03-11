@@ -283,7 +283,7 @@
             this.panel4_low.Controls.Add(this.iblName_Company);
             this.panel4_low.Controls.Add(this.pictureBox3_low);
             this.panel4_low.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4_low.Location = new System.Drawing.Point(0, 490);
+            this.panel4_low.Location = new System.Drawing.Point(0, 493);
             this.panel4_low.Name = "panel4_low";
             this.panel4_low.Size = new System.Drawing.Size(738, 31);
             this.panel4_low.TabIndex = 5;
@@ -1133,7 +1133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(738, 521);
+            this.ClientSize = new System.Drawing.Size(738, 524);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnCaption);
             this.Controls.Add(this.btnEncrypt);

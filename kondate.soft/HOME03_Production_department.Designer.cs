@@ -296,6 +296,7 @@
             this.HOME03_Production_06_ST.Text = "เบิกผ้าพับ ส่งตัด";
             this.HOME03_Production_06_ST.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_ST.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_ST.Click += new System.EventHandler(this.HOME03_Production_06_ST_Click);
             // 
             // HOME03_Production_21_room_collect
             // 

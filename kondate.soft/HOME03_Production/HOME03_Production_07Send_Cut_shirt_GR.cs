@@ -32,7 +32,7 @@ using CrystalDecisions.Shared;
 
 namespace kondate.soft.HOME03_Production
 {
-    public partial class HOME03_Production_05Send_Dye_GR : Form
+    public partial class HOME03_Production_07Send_Cut_shirt_GR : Form
     {
         //Move Form ====================================
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -64,7 +64,7 @@ namespace kondate.soft.HOME03_Production
         }
 
 
-        public HOME03_Production_05Send_Dye_GR()
+        public HOME03_Production_07Send_Cut_shirt_GR()
         {
             InitializeComponent();
         }
@@ -104,7 +104,7 @@ namespace kondate.soft.HOME03_Production
             CHECK_USER_RULE();
 
             this.iblword_top.Text = W_ID_Select.WORD_TOP.Trim();
-            this.iblword_status.Text = "ตรวจใบส่งผ้าย้อม ค้างรับ";
+            this.iblword_status.Text = "ตรวจใบส่งตัด ค้างรับ";
             this.iblstatus.Text = "Version : " + W_ID_Select.GetVersion() + "      |       User name (ชื่อผู้ใช้) : " + W_ID_Select.M_EMP_OFFICE_NAME.ToString() + "       |       กิจการ : " + W_ID_Select.M_CONAME.ToString() + "      |      สาขา : " + W_ID_Select.M_BRANCHNAME.ToString() + "      |     วันที่ : " + DateTime.Now.ToString("dd/MM/yyyy") + "";
 
 
@@ -128,8 +128,8 @@ namespace kondate.soft.HOME03_Production
             this.dtpstart.CustomFormat = this.dtpstart.Value.ToString("dd-MM-yyyy", UsaCulture);
 
             //========================================
-            this.cboSearch.Items.Add("เลขที่ใบส่งผ้าย้อม");
-            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งผ้าย้อม");
+            this.cboSearch.Items.Add("เลขที่ใบส่งตัด");
+            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งตัด");
 
             //========================================
             PANEL2_BRANCH_GridView1_branch();
@@ -186,9 +186,9 @@ namespace kondate.soft.HOME03_Production
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Connection = conn;
 
-                cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                    "k016db_1supplier.*," +
-                                   "c002_05Send_dye_record_detail.*," +
+                                   "c002_07Send_Cut_shirt_record_detail.*," +
                                    "c001_05face_baking.*," +
                                    //"c001_06number_mat.*," +
                                    "c001_07number_color.*," +
@@ -198,46 +198,46 @@ namespace kondate.soft.HOME03_Production
 
                                    "k013_1db_acc_06wherehouse.*" +
 
-                                   " FROM c002_05Send_dye_record" +
+                                   " FROM c002_07Send_Cut_shirt_record" +
 
                                    " INNER JOIN k016db_1supplier" +
-                                   " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                   " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                   " INNER JOIN c002_05Send_dye_record_detail" +
-                                   " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                   " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                   " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                   " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                   " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                    " INNER JOIN c001_05face_baking" +
-                                   " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                    //" INNER JOIN c001_06number_mat" +
-                                   //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                    " INNER JOIN c001_07number_color" +
-                                   " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                   " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                   " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                   " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                    " INNER JOIN k013_1db_acc_13group_tax" +
-                                   " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
-                                   " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                   " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                   " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                   " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                   " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                   " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                   " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                   " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                   " AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                  " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id,c002_07Send_Cut_shirt_record_detail.txtnumber_in_year,c002_07Send_Cut_shirt_record_detail.txtLot_no ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -260,7 +260,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -410,9 +410,9 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
                 if (this.ch_all_branch.Checked == true)
                 {
-                    cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                    cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_05Send_dye_record_detail.*," +
+                                       "c002_07Send_Cut_shirt_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
@@ -422,53 +422,53 @@ namespace kondate.soft.HOME03_Production
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_05Send_dye_record" +
+                                       " FROM c002_07Send_Cut_shirt_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_05Send_dye_record_detail" +
-                                       " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                       " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                        " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       //" AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                           " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                       //" AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id,c002_07Send_Cut_shirt_record_detail.txtnumber_in_year,c002_07Send_Cut_shirt_record_detail.txtLot_no ASC";
 
                 }
                 else
                 {
-                    cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                    cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_05Send_dye_record_detail.*," +
+                                       "c002_07Send_Cut_shirt_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
@@ -478,46 +478,46 @@ namespace kondate.soft.HOME03_Production
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_05Send_dye_record" +
+                                       " FROM c002_07Send_Cut_shirt_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_05Send_dye_record_detail" +
-                                       " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                       " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                        " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                           " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id,c002_07Send_Cut_shirt_record_detail.txtnumber_in_year,c002_07Send_Cut_shirt_record_detail.txtLot_no ASC";
 
 
                 }
@@ -542,7 +542,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -656,7 +656,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
-            this.GridView1.Columns[3].Name = "Col_txtPPT_id";
+            this.GridView1.Columns[3].Name = "Col_txtSPT_id";
             this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
             this.GridView1.Columns[5].Name = "Col_txttrans_time";
             this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
@@ -743,7 +743,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[14].HeaderText = "Lot No";
             this.GridView1.Columns[15].HeaderText = "พับที่";
 
-            this.GridView1.Columns[16].HeaderText = "ส่งย้อม (กก.)";
+            this.GridView1.Columns[16].HeaderText = "ส่งตัด (กก.)";
 
             this.GridView1.Columns[17].HeaderText = "ลำดับ";
             this.GridView1.Columns[18].HeaderText = "รหัส";
@@ -755,7 +755,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[23].HeaderText = " หน่วย(ปอนด์)";
             this.GridView1.Columns[24].HeaderText = " หน่วย";
 
-            this.GridView1.Columns[25].HeaderText = "ส่งย้อม(ปอนด์)";
+            this.GridView1.Columns[25].HeaderText = "ส่งตัด(ปอนด์)";
 
             this.GridView1.Columns[26].HeaderText = "ราคา";
             this.GridView1.Columns[27].HeaderText = "ส่วนลด(%)";
@@ -782,24 +782,24 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[44].HeaderText = "Col_txtsum_qty_pub_kg";
             this.GridView1.Columns[45].HeaderText = "Col_txtsum_qty_rib_kg";
 
-            this.GridView1.Columns[46].HeaderText = "ส่งย้อมแล้วยกมา";
-            this.GridView1.Columns[47].HeaderText = "ส่งย้อมแล้วยกไป";
-            this.GridView1.Columns[48].HeaderText = "เหลือรอส่งย้อม อีก กก.";
+            this.GridView1.Columns[46].HeaderText = "ส่งตัดแล้วยกมา";
+            this.GridView1.Columns[47].HeaderText = "ส่งตัดแล้วยกไป";
+            this.GridView1.Columns[48].HeaderText = "เหลือรอส่งตัด อีก กก.";
 
             this.GridView1.Columns[49].HeaderText = "รับแล้ว";  //กก
             this.GridView1.Columns[50].HeaderText = "รอรับ";  //กก
-            this.GridView1.Columns[51].HeaderText = "เลขที่รับคืนย้อม";  //
+            this.GridView1.Columns[51].HeaderText = "เลขที่รับคืน";  //
             this.GridView1.Columns[52].HeaderText = "1";  //
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
             this.GridView1.Columns["Col_txtbranch_id"].Visible = false;  //""Col_txtbranch_id"";
 
-            this.GridView1.Columns["Col_txtPPT_id"].Visible = true;  //"Col_txtPPT_id";
-            this.GridView1.Columns["Col_txtPPT_id"].Width = 140;
-            this.GridView1.Columns["Col_txtPPT_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtPPT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtPPT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtSPT_id"].Visible = true;  //"Col_txtSPT_id";
+            this.GridView1.Columns["Col_txtSPT_id"].Width = 140;
+            this.GridView1.Columns["Col_txtSPT_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtSPT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtSPT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txttrans_date_server"].Visible = true;  //""Col_txttrans_date_server"";
             this.GridView1.Columns["Col_txttrans_date_server"].Width = 90;
@@ -877,7 +877,7 @@ namespace kondate.soft.HOME03_Production
             dgvCmb_SELECT.Name = "Col_Chk_SELECT";
             dgvCmb_SELECT.Width = 0;  //70
             dgvCmb_SELECT.DisplayIndex = 8;
-            dgvCmb_SELECT.HeaderText = "เลือกส่งย้อม";
+            dgvCmb_SELECT.HeaderText = "เลือกส่งตัด";
             dgvCmb_SELECT.ValueType = typeof(bool);
             dgvCmb_SELECT.ReadOnly = false;
             dgvCmb_SELECT.Visible = false;
@@ -1306,7 +1306,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งผ้าย้อม";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งตัด";
                 kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_record_detail();
                 frm2.Show();
 
@@ -1440,7 +1440,7 @@ namespace kondate.soft.HOME03_Production
                 W_ID_Select.LOG_NAME = "ใหม่";
                 TRANS_LOG();
 
-                W_ID_Select.WORD_TOP = "บันทึกใบส่งผ้าย้อม";
+                W_ID_Select.WORD_TOP = "บันทึกใบส่งตัด";
                 kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_05Send_Dye_record();
                 frm2.Show();
                 //this.Close();
@@ -1461,7 +1461,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งผ้าย้อม";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งตัด";
                 kondate.soft.HOME03_Production.HOME03_Production_03Produce_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_03Produce_record_detail();
                 frm2.Show();
 
@@ -1539,9 +1539,9 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
                 if (this.ch_all_branch.Checked == true)
                 {
-                    cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                    cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_05Send_dye_record_detail.*," +
+                                       "c002_07Send_Cut_shirt_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
@@ -1551,53 +1551,53 @@ namespace kondate.soft.HOME03_Production
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_05Send_dye_record" +
+                                       " FROM c002_07Send_Cut_shirt_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_05Send_dye_record_detail" +
-                                       " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                       " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                        " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       //" AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                           " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                       //" AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id,c002_07Send_Cut_shirt_record_detail.txtnumber_in_year,c002_07Send_Cut_shirt_record_detail.txtLot_no ASC";
 
                 }
                 if (this.ch_all_branch.Checked == false)
                 {
-                    cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                    cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_05Send_dye_record_detail.*," +
+                                       "c002_07Send_Cut_shirt_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
@@ -1607,46 +1607,46 @@ namespace kondate.soft.HOME03_Production
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_05Send_dye_record" +
+                                       " FROM c002_07Send_Cut_shirt_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_05Send_dye_record_detail" +
-                                       " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                       " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                        " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                           " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id,c002_07Send_Cut_shirt_record_detail.txtnumber_in_year,c002_07Send_Cut_shirt_record_detail.txtLot_no ASC";
 
 
                 }
@@ -1672,7 +1672,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -1827,9 +1827,9 @@ namespace kondate.soft.HOME03_Production
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Connection = conn;
 
-                cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                    "k016db_1supplier.*," +
-                                   "c002_05Send_dye_record_detail.*," +
+                                   "c002_07Send_Cut_shirt_record_detail.*," +
                                    "c001_05face_baking.*," +
                                    //"c001_06number_mat.*," +
                                    "c001_07number_color.*," +
@@ -1839,46 +1839,46 @@ namespace kondate.soft.HOME03_Production
 
                                    "k013_1db_acc_06wherehouse.*" +
 
-                                   " FROM c002_05Send_dye_record" +
+                                   " FROM c002_07Send_Cut_shirt_record" +
 
                                    " INNER JOIN k016db_1supplier" +
-                                   " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                   " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                   " INNER JOIN c002_05Send_dye_record_detail" +
-                                   " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                   " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                   " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                   " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                   " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                    " INNER JOIN c001_05face_baking" +
-                                   " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                    //" INNER JOIN c001_06number_mat" +
-                                   //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                    " INNER JOIN c001_07number_color" +
-                                   " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                   " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                   " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                   " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                    " INNER JOIN k013_1db_acc_13group_tax" +
-                                   " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
-                                   " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                   " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                   " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                   " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                   " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                   " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                   " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                   " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                   " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                   " AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                  " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id,c002_07Send_Cut_shirt_record_detail.txtnumber_in_year,c002_07Send_Cut_shirt_record_detail.txtLot_no ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -1901,7 +1901,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -2051,13 +2051,13 @@ namespace kondate.soft.HOME03_Production
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Connection = conn;
 
-                //this.cboSearch.Items.Add("เลขที่ใบส่งผ้าย้อม");
-                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งผ้าย้อม");
-                if (this.cboSearch.Text == "เลขที่ใบส่งผ้าย้อม")
+                //this.cboSearch.Items.Add("เลขที่ใบส่งตัด");
+                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งตัด");
+                if (this.cboSearch.Text == "เลขที่ใบส่งตัด")
                 {
-                    cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                    cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_05Send_dye_record_detail.*," +
+                                       "c002_07Send_Cut_shirt_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
@@ -2067,54 +2067,54 @@ namespace kondate.soft.HOME03_Production
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_05Send_dye_record" +
+                                       " FROM c002_07Send_Cut_shirt_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_05Send_dye_record_detail" +
-                                       " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                       " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                        " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                        //" AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                        //" AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                        " AND (c002_05Send_dye_record.txtPPT_id = '" + this.txtsearch.Text.Trim() + "')" +
-                                        " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                           " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                        //" AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                        //" AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                        " AND (c002_07Send_Cut_shirt_record.txtSPT_id = '" + this.txtsearch.Text.Trim() + "')" +
+                                        " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id,c002_07Send_Cut_shirt_record_detail.txtnumber_in_year,c002_07Send_Cut_shirt_record_detail.txtLot_no ASC";
 
                 }
-                if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งผ้าย้อม")
+                if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งตัด")
                 {
-                    cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                    cmd2.CommandText = "SELECT c002_07Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_05Send_dye_record_detail.*," +
+                                       "c002_07Send_Cut_shirt_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
@@ -2124,47 +2124,47 @@ namespace kondate.soft.HOME03_Production
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_05Send_dye_record" +
+                                       " FROM c002_07Send_Cut_shirt_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_05Send_dye_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_05Send_dye_record_detail" +
-                                       " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
-                                       " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
-                                       " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+                                       " INNER JOIN c002_07Send_Cut_shirt_record_detail" +
+                                       " ON c002_07Send_Cut_shirt_record.cdkey = c002_07Send_Cut_shirt_record_detail.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record.txtco_id = c002_07Send_Cut_shirt_record_detail.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record.txtSPT_id = c002_07Send_Cut_shirt_record_detail.txtSPT_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_05Send_dye_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_05Send_dye_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_05Send_dye_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_07Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                        " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_05Send_dye_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " ON c002_07Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_05Send_dye_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_05Send_dye_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_05Send_dye_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_07Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_07Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                        //" AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                        " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                       " AND (c002_05Send_dye_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id ASC";
+                                           " WHERE (c002_07Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                        //" AND (c002_07Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                        " AND (c002_07Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_07Send_Cut_shirt_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
+                                      " ORDER BY c002_07Send_Cut_shirt_record.txtSPT_id ASC";
 
                 }
 
@@ -2189,7 +2189,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
