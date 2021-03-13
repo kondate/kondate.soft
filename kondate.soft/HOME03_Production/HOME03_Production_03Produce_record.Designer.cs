@@ -53,6 +53,20 @@
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PANEL0102_MACHINE = new System.Windows.Forms.Panel();
+            this.PANEL0102_MACHINE_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL0102_MACHINE_btnnew = new System.Windows.Forms.PictureBox();
+            this.PANEL0102_MACHINE_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL0102_MACHINE_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL0102_MACHINE_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL0102_MACHINE_dataGridView1_machine = new System.Windows.Forms.DataGridView();
+            this.btnGo_M = new System.Windows.Forms.PictureBox();
+            this.GridView1_Machine = new System.Windows.Forms.DataGridView();
+            this.btnGo1_RIB = new System.Windows.Forms.PictureBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtfold_amount_RIB = new System.Windows.Forms.TextBox();
+            this.txtnumber_in_year = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.ch_yokma = new System.Windows.Forms.CheckBox();
             this.txtsum_qty_change_rate = new System.Windows.Forms.TextBox();
@@ -74,13 +88,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.PANEL0102_MACHINE = new System.Windows.Forms.Panel();
-            this.PANEL0102_MACHINE_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL0102_MACHINE_btnnew = new System.Windows.Forms.PictureBox();
-            this.PANEL0102_MACHINE_btnclose = new System.Windows.Forms.PictureBox();
-            this.PANEL0102_MACHINE_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL0102_MACHINE_txtsearch = new System.Windows.Forms.TextBox();
-            this.PANEL0102_MACHINE_dataGridView1_machine = new System.Windows.Forms.DataGridView();
             this.PANEL_MAT = new System.Windows.Forms.Panel();
             this.PANEL_MAT_btnrefresh = new System.Windows.Forms.PictureBox();
             this.PANEL_MAT_panel_top = new System.Windows.Forms.Panel();
@@ -236,13 +243,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView66)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGo_txtic_id)).BeginInit();
             this.PANEL0102_MACHINE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_dataGridView1_machine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo_M)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView1_Machine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo1_RIB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView66)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo_txtic_id)).BeginInit();
             this.PANEL_MAT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_MAT_btnrefresh)).BeginInit();
             this.PANEL_MAT_panel_top.SuspendLayout();
@@ -654,6 +664,14 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.PANEL0102_MACHINE);
+            this.panel1.Controls.Add(this.btnGo_M);
+            this.panel1.Controls.Add(this.GridView1_Machine);
+            this.panel1.Controls.Add(this.btnGo1_RIB);
+            this.panel1.Controls.Add(this.label53);
+            this.panel1.Controls.Add(this.txtfold_amount_RIB);
+            this.panel1.Controls.Add(this.txtnumber_in_year);
+            this.panel1.Controls.Add(this.label40);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.ch_yokma);
             this.panel1.Controls.Add(this.txtsum_qty_change_rate);
@@ -675,7 +693,6 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.PANEL0102_MACHINE);
             this.panel1.Controls.Add(this.PANEL_MAT);
             this.panel1.Controls.Add(this.PANEL_MAT_txtmat_id);
             this.panel1.Controls.Add(this.PANEL_MAT_btnmat);
@@ -725,255 +742,6 @@
             this.panel1.Size = new System.Drawing.Size(1424, 665);
             this.panel1.TabIndex = 1043;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(897, 3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(636, 43);
-            this.label20.TabIndex = 1071;
-            this.label20.Text = "ดับเบิ้ลคลิ๊ก รายการเบิกด้ายเข้าเครื่องจักร เพื่อบันทึกเป็นผ้าดิบ..";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ch_yokma
-            // 
-            this.ch_yokma.AutoSize = true;
-            this.ch_yokma.Location = new System.Drawing.Point(6, 6);
-            this.ch_yokma.Name = "ch_yokma";
-            this.ch_yokma.Size = new System.Drawing.Size(97, 17);
-            this.ch_yokma.TabIndex = 1070;
-            this.ch_yokma.Text = "บัญชี ยอดยกมา";
-            this.ch_yokma.UseVisualStyleBackColor = true;
-            // 
-            // txtsum_qty_change_rate
-            // 
-            this.txtsum_qty_change_rate.BackColor = System.Drawing.Color.Black;
-            this.txtsum_qty_change_rate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_change_rate.ForeColor = System.Drawing.Color.Lime;
-            this.txtsum_qty_change_rate.Location = new System.Drawing.Point(814, 200);
-            this.txtsum_qty_change_rate.Name = "txtsum_qty_change_rate";
-            this.txtsum_qty_change_rate.ReadOnly = true;
-            this.txtsum_qty_change_rate.Size = new System.Drawing.Size(77, 21);
-            this.txtsum_qty_change_rate.TabIndex = 1069;
-            this.txtsum_qty_change_rate.Text = ".00";
-            this.txtsum_qty_change_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(774, 200);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 21);
-            this.label11.TabIndex = 1068;
-            this.label11.Text = "% :";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtsum_qty_change
-            // 
-            this.txtsum_qty_change.BackColor = System.Drawing.Color.Black;
-            this.txtsum_qty_change.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_change.ForeColor = System.Drawing.Color.Lime;
-            this.txtsum_qty_change.Location = new System.Drawing.Point(648, 200);
-            this.txtsum_qty_change.Name = "txtsum_qty_change";
-            this.txtsum_qty_change.ReadOnly = true;
-            this.txtsum_qty_change.Size = new System.Drawing.Size(120, 21);
-            this.txtsum_qty_change.TabIndex = 1066;
-            this.txtsum_qty_change.Text = ".00";
-            this.txtsum_qty_change.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(518, 200);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 21);
-            this.label7.TabIndex = 1067;
-            this.label7.Text = "ส่วนต่าง Kg :";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtsum_qty_yes
-            // 
-            this.txtsum_qty_yes.BackColor = System.Drawing.Color.Black;
-            this.txtsum_qty_yes.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_yes.ForeColor = System.Drawing.Color.Lime;
-            this.txtsum_qty_yes.Location = new System.Drawing.Point(648, 176);
-            this.txtsum_qty_yes.Name = "txtsum_qty_yes";
-            this.txtsum_qty_yes.ReadOnly = true;
-            this.txtsum_qty_yes.Size = new System.Drawing.Size(120, 21);
-            this.txtsum_qty_yes.TabIndex = 1064;
-            this.txtsum_qty_yes.Text = ".00";
-            this.txtsum_qty_yes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(518, 176);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 21);
-            this.label9.TabIndex = 1065;
-            this.label9.Text = "ผลิตได้ Kg :";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtsum_qty_ic
-            // 
-            this.txtsum_qty_ic.BackColor = System.Drawing.Color.Black;
-            this.txtsum_qty_ic.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_ic.ForeColor = System.Drawing.Color.Lime;
-            this.txtsum_qty_ic.Location = new System.Drawing.Point(648, 153);
-            this.txtsum_qty_ic.Name = "txtsum_qty_ic";
-            this.txtsum_qty_ic.ReadOnly = true;
-            this.txtsum_qty_ic.Size = new System.Drawing.Size(120, 21);
-            this.txtsum_qty_ic.TabIndex = 1062;
-            this.txtsum_qty_ic.Text = ".00";
-            this.txtsum_qty_ic.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(518, 153);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(124, 21);
-            this.label10.TabIndex = 1063;
-            this.label10.Text = "เบิกเข้าเครื่องจักร Kg :";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // GridView66
-            // 
-            this.GridView66.AllowUserToAddRows = false;
-            this.GridView66.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridView66.BackgroundColor = System.Drawing.Color.White;
-            this.GridView66.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView66.Location = new System.Drawing.Point(897, 49);
-            this.GridView66.Name = "GridView66";
-            this.GridView66.Size = new System.Drawing.Size(515, 170);
-            this.GridView66.TabIndex = 1061;
-            this.GridView66.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView66_CellMouseClick);
-            this.GridView66.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView66_CellMouseLeave);
-            this.GridView66.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView66_CellMouseMove);
-            // 
-            // btn_txtic_id
-            // 
-            this.btn_txtic_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btn_txtic_id.FlatAppearance.BorderSize = 0;
-            this.btn_txtic_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btn_txtic_id.Image = ((System.Drawing.Image)(resources.GetObject("btn_txtic_id.Image")));
-            this.btn_txtic_id.Location = new System.Drawing.Point(320, 79);
-            this.btn_txtic_id.Name = "btn_txtic_id";
-            this.btn_txtic_id.Size = new System.Drawing.Size(22, 16);
-            this.btn_txtic_id.TabIndex = 1060;
-            this.btn_txtic_id.UseVisualStyleBackColor = false;
-            this.btn_txtic_id.Click += new System.EventHandler(this.btn_txtic_id_Click);
-            // 
-            // label21
-            // 
-            this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(514, 99);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(20, 23);
-            this.label21.TabIndex = 1019;
-            this.label21.Text = "*";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // PANEL1306_WH_txtwherehouse_id
-            // 
-            this.PANEL1306_WH_txtwherehouse_id.BackColor = System.Drawing.Color.White;
-            this.PANEL1306_WH_txtwherehouse_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1306_WH_txtwherehouse_id.Location = new System.Drawing.Point(352, 100);
-            this.PANEL1306_WH_txtwherehouse_id.Name = "PANEL1306_WH_txtwherehouse_id";
-            this.PANEL1306_WH_txtwherehouse_id.ReadOnly = true;
-            this.PANEL1306_WH_txtwherehouse_id.Size = new System.Drawing.Size(156, 21);
-            this.PANEL1306_WH_txtwherehouse_id.TabIndex = 1022;
-            // 
-            // btnGo_txtic_id
-            // 
-            this.btnGo_txtic_id.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGo_txtic_id.Image = ((System.Drawing.Image)(resources.GetObject("btnGo_txtic_id.Image")));
-            this.btnGo_txtic_id.Location = new System.Drawing.Point(351, 77);
-            this.btnGo_txtic_id.Name = "btnGo_txtic_id";
-            this.btnGo_txtic_id.Size = new System.Drawing.Size(30, 22);
-            this.btnGo_txtic_id.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnGo_txtic_id.TabIndex = 1059;
-            this.btnGo_txtic_id.TabStop = false;
-            this.btnGo_txtic_id.Visible = false;
-            this.btnGo_txtic_id.Click += new System.EventHandler(this.btnGo_txtic_id_Click);
-            // 
-            // PANEL1306_WH_btnwherehouse
-            // 
-            this.PANEL1306_WH_btnwherehouse.BackColor = System.Drawing.Color.White;
-            this.PANEL1306_WH_btnwherehouse.FlatAppearance.BorderSize = 0;
-            this.PANEL1306_WH_btnwherehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL1306_WH_btnwherehouse.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1306_WH_btnwherehouse.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1306_WH_btnwherehouse.Image")));
-            this.PANEL1306_WH_btnwherehouse.Location = new System.Drawing.Point(320, 103);
-            this.PANEL1306_WH_btnwherehouse.Name = "PANEL1306_WH_btnwherehouse";
-            this.PANEL1306_WH_btnwherehouse.Size = new System.Drawing.Size(22, 16);
-            this.PANEL1306_WH_btnwherehouse.TabIndex = 1021;
-            this.PANEL1306_WH_btnwherehouse.UseVisualStyleBackColor = false;
-            this.PANEL1306_WH_btnwherehouse.Click += new System.EventHandler(this.PANEL1306_WH_btnwherehouse_Click);
-            // 
-            // txtic_id
-            // 
-            this.txtic_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtic_id.Location = new System.Drawing.Point(111, 77);
-            this.txtic_id.Name = "txtic_id";
-            this.txtic_id.Size = new System.Drawing.Size(234, 21);
-            this.txtic_id.TabIndex = 1057;
-            // 
-            // PANEL1306_WH_txtwherehouse_name
-            // 
-            this.PANEL1306_WH_txtwherehouse_name.BackColor = System.Drawing.Color.White;
-            this.PANEL1306_WH_txtwherehouse_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1306_WH_txtwherehouse_name.Location = new System.Drawing.Point(110, 102);
-            this.PANEL1306_WH_txtwherehouse_name.Name = "PANEL1306_WH_txtwherehouse_name";
-            this.PANEL1306_WH_txtwherehouse_name.ReadOnly = true;
-            this.PANEL1306_WH_txtwherehouse_name.Size = new System.Drawing.Size(234, 21);
-            this.PANEL1306_WH_txtwherehouse_name.TabIndex = 1020;
-            this.PANEL1306_WH_txtwherehouse_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PANEL1306_WH_txtwherehouse_name_KeyDown);
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(8, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 23);
-            this.label6.TabIndex = 1056;
-            this.label6.Text = "เลขที่เบิกด้าย :";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(516, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 23);
-            this.label4.TabIndex = 1055;
-            this.label4.Text = "*";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(8, 101);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(96, 23);
-            this.label19.TabIndex = 1018;
-            this.label19.Text = "เก็บเข้าคลัง :";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PANEL0102_MACHINE
             // 
@@ -1076,6 +844,347 @@
             this.PANEL0102_MACHINE_dataGridView1_machine.Size = new System.Drawing.Size(491, 262);
             this.PANEL0102_MACHINE_dataGridView1_machine.TabIndex = 0;
             this.PANEL0102_MACHINE_dataGridView1_machine.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL0102_MACHINE_dataGridView1_machine_CellMouseClick);
+            // 
+            // btnGo_M
+            // 
+            this.btnGo_M.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGo_M.Image = ((System.Drawing.Image)(resources.GetObject("btnGo_M.Image")));
+            this.btnGo_M.Location = new System.Drawing.Point(476, 229);
+            this.btnGo_M.Name = "btnGo_M";
+            this.btnGo_M.Size = new System.Drawing.Size(30, 22);
+            this.btnGo_M.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnGo_M.TabIndex = 1124;
+            this.btnGo_M.TabStop = false;
+            this.btnGo_M.Visible = false;
+            this.btnGo_M.Click += new System.EventHandler(this.btnGo_M_Click);
+            // 
+            // GridView1_Machine
+            // 
+            this.GridView1_Machine.AllowUserToAddRows = false;
+            this.GridView1_Machine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.GridView1_Machine.BackgroundColor = System.Drawing.Color.White;
+            this.GridView1_Machine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView1_Machine.Location = new System.Drawing.Point(14, 258);
+            this.GridView1_Machine.Name = "GridView1_Machine";
+            this.GridView1_Machine.Size = new System.Drawing.Size(551, 236);
+            this.GridView1_Machine.TabIndex = 1123;
+            this.GridView1_Machine.Visible = false;
+            // 
+            // btnGo1_RIB
+            // 
+            this.btnGo1_RIB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGo1_RIB.Image = ((System.Drawing.Image)(resources.GetObject("btnGo1_RIB.Image")));
+            this.btnGo1_RIB.Location = new System.Drawing.Point(323, 228);
+            this.btnGo1_RIB.Name = "btnGo1_RIB";
+            this.btnGo1_RIB.Size = new System.Drawing.Size(30, 22);
+            this.btnGo1_RIB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnGo1_RIB.TabIndex = 1122;
+            this.btnGo1_RIB.TabStop = false;
+            this.btnGo1_RIB.Visible = false;
+            this.btnGo1_RIB.Click += new System.EventHandler(this.btnGo1_RIB_Click);
+            // 
+            // label53
+            // 
+            this.label53.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label53.ForeColor = System.Drawing.Color.Black;
+            this.label53.Location = new System.Drawing.Point(185, 227);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(92, 21);
+            this.label53.TabIndex = 1121;
+            this.label53.Text = "ได้ผ้าดิบ (RIB) :";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtfold_amount_RIB
+            // 
+            this.txtfold_amount_RIB.BackColor = System.Drawing.Color.White;
+            this.txtfold_amount_RIB.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtfold_amount_RIB.Location = new System.Drawing.Point(283, 228);
+            this.txtfold_amount_RIB.Name = "txtfold_amount_RIB";
+            this.txtfold_amount_RIB.Size = new System.Drawing.Size(34, 21);
+            this.txtfold_amount_RIB.TabIndex = 1120;
+            this.txtfold_amount_RIB.Text = "RIB";
+            this.txtfold_amount_RIB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtnumber_in_year
+            // 
+            this.txtnumber_in_year.BackColor = System.Drawing.Color.White;
+            this.txtnumber_in_year.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtnumber_in_year.ForeColor = System.Drawing.Color.Blue;
+            this.txtnumber_in_year.Location = new System.Drawing.Point(111, 102);
+            this.txtnumber_in_year.Name = "txtnumber_in_year";
+            this.txtnumber_in_year.Size = new System.Drawing.Size(232, 23);
+            this.txtnumber_in_year.TabIndex = 1119;
+            this.txtnumber_in_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label40
+            // 
+            this.label40.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label40.ForeColor = System.Drawing.Color.Blue;
+            this.label40.Location = new System.Drawing.Point(60, 102);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(44, 23);
+            this.label40.TabIndex = 1118;
+            this.label40.Text = "ชุดที่ :";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(897, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(636, 43);
+            this.label20.TabIndex = 1071;
+            this.label20.Text = "ดับเบิ้ลคลิ๊ก รายการเบิกด้ายเข้าเครื่องจักร เพื่อบันทึกเป็นผ้าดิบ..";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ch_yokma
+            // 
+            this.ch_yokma.AutoSize = true;
+            this.ch_yokma.Location = new System.Drawing.Point(6, 6);
+            this.ch_yokma.Name = "ch_yokma";
+            this.ch_yokma.Size = new System.Drawing.Size(97, 17);
+            this.ch_yokma.TabIndex = 1070;
+            this.ch_yokma.Text = "บัญชี ยอดยกมา";
+            this.ch_yokma.UseVisualStyleBackColor = true;
+            this.ch_yokma.CheckedChanged += new System.EventHandler(this.ch_yokma_CheckedChanged);
+            // 
+            // txtsum_qty_change_rate
+            // 
+            this.txtsum_qty_change_rate.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_change_rate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_change_rate.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_change_rate.Location = new System.Drawing.Point(814, 200);
+            this.txtsum_qty_change_rate.Name = "txtsum_qty_change_rate";
+            this.txtsum_qty_change_rate.ReadOnly = true;
+            this.txtsum_qty_change_rate.Size = new System.Drawing.Size(77, 21);
+            this.txtsum_qty_change_rate.TabIndex = 1069;
+            this.txtsum_qty_change_rate.Text = ".00";
+            this.txtsum_qty_change_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_change_rate.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(774, 200);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 21);
+            this.label11.TabIndex = 1068;
+            this.label11.Text = "% :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label11.Visible = false;
+            // 
+            // txtsum_qty_change
+            // 
+            this.txtsum_qty_change.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_change.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_change.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_change.Location = new System.Drawing.Point(648, 200);
+            this.txtsum_qty_change.Name = "txtsum_qty_change";
+            this.txtsum_qty_change.ReadOnly = true;
+            this.txtsum_qty_change.Size = new System.Drawing.Size(120, 21);
+            this.txtsum_qty_change.TabIndex = 1066;
+            this.txtsum_qty_change.Text = ".00";
+            this.txtsum_qty_change.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_change.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(518, 200);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 21);
+            this.label7.TabIndex = 1067;
+            this.label7.Text = "ส่วนต่าง Kg :";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Visible = false;
+            // 
+            // txtsum_qty_yes
+            // 
+            this.txtsum_qty_yes.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_yes.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_yes.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_yes.Location = new System.Drawing.Point(648, 176);
+            this.txtsum_qty_yes.Name = "txtsum_qty_yes";
+            this.txtsum_qty_yes.ReadOnly = true;
+            this.txtsum_qty_yes.Size = new System.Drawing.Size(120, 21);
+            this.txtsum_qty_yes.TabIndex = 1064;
+            this.txtsum_qty_yes.Text = ".00";
+            this.txtsum_qty_yes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_yes.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(518, 176);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 21);
+            this.label9.TabIndex = 1065;
+            this.label9.Text = "ผลิตได้ Kg :";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Visible = false;
+            // 
+            // txtsum_qty_ic
+            // 
+            this.txtsum_qty_ic.BackColor = System.Drawing.Color.Black;
+            this.txtsum_qty_ic.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_ic.ForeColor = System.Drawing.Color.Lime;
+            this.txtsum_qty_ic.Location = new System.Drawing.Point(648, 153);
+            this.txtsum_qty_ic.Name = "txtsum_qty_ic";
+            this.txtsum_qty_ic.ReadOnly = true;
+            this.txtsum_qty_ic.Size = new System.Drawing.Size(120, 21);
+            this.txtsum_qty_ic.TabIndex = 1062;
+            this.txtsum_qty_ic.Text = ".00";
+            this.txtsum_qty_ic.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtsum_qty_ic.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(518, 153);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 21);
+            this.label10.TabIndex = 1063;
+            this.label10.Text = "เบิกเข้าเครื่องจักร Kg :";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Visible = false;
+            // 
+            // GridView66
+            // 
+            this.GridView66.AllowUserToAddRows = false;
+            this.GridView66.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView66.BackgroundColor = System.Drawing.Color.White;
+            this.GridView66.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView66.Location = new System.Drawing.Point(897, 49);
+            this.GridView66.Name = "GridView66";
+            this.GridView66.Size = new System.Drawing.Size(515, 203);
+            this.GridView66.TabIndex = 1061;
+            this.GridView66.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView66_CellMouseClick);
+            this.GridView66.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView66_CellMouseLeave);
+            this.GridView66.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView66_CellMouseMove);
+            // 
+            // btn_txtic_id
+            // 
+            this.btn_txtic_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btn_txtic_id.FlatAppearance.BorderSize = 0;
+            this.btn_txtic_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btn_txtic_id.Image = ((System.Drawing.Image)(resources.GetObject("btn_txtic_id.Image")));
+            this.btn_txtic_id.Location = new System.Drawing.Point(320, 79);
+            this.btn_txtic_id.Name = "btn_txtic_id";
+            this.btn_txtic_id.Size = new System.Drawing.Size(22, 16);
+            this.btn_txtic_id.TabIndex = 1060;
+            this.btn_txtic_id.UseVisualStyleBackColor = false;
+            this.btn_txtic_id.Click += new System.EventHandler(this.btn_txtic_id_Click);
+            // 
+            // label21
+            // 
+            this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(353, 101);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(20, 23);
+            this.label21.TabIndex = 1019;
+            this.label21.Text = "*";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // PANEL1306_WH_txtwherehouse_id
+            // 
+            this.PANEL1306_WH_txtwherehouse_id.BackColor = System.Drawing.Color.White;
+            this.PANEL1306_WH_txtwherehouse_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1306_WH_txtwherehouse_id.Location = new System.Drawing.Point(351, 127);
+            this.PANEL1306_WH_txtwherehouse_id.Name = "PANEL1306_WH_txtwherehouse_id";
+            this.PANEL1306_WH_txtwherehouse_id.ReadOnly = true;
+            this.PANEL1306_WH_txtwherehouse_id.Size = new System.Drawing.Size(156, 21);
+            this.PANEL1306_WH_txtwherehouse_id.TabIndex = 1022;
+            // 
+            // btnGo_txtic_id
+            // 
+            this.btnGo_txtic_id.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGo_txtic_id.Image = ((System.Drawing.Image)(resources.GetObject("btnGo_txtic_id.Image")));
+            this.btnGo_txtic_id.Location = new System.Drawing.Point(351, 77);
+            this.btnGo_txtic_id.Name = "btnGo_txtic_id";
+            this.btnGo_txtic_id.Size = new System.Drawing.Size(30, 22);
+            this.btnGo_txtic_id.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnGo_txtic_id.TabIndex = 1059;
+            this.btnGo_txtic_id.TabStop = false;
+            this.btnGo_txtic_id.Visible = false;
+            this.btnGo_txtic_id.Click += new System.EventHandler(this.btnGo_txtic_id_Click);
+            // 
+            // PANEL1306_WH_btnwherehouse
+            // 
+            this.PANEL1306_WH_btnwherehouse.BackColor = System.Drawing.Color.White;
+            this.PANEL1306_WH_btnwherehouse.FlatAppearance.BorderSize = 0;
+            this.PANEL1306_WH_btnwherehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL1306_WH_btnwherehouse.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1306_WH_btnwherehouse.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1306_WH_btnwherehouse.Image")));
+            this.PANEL1306_WH_btnwherehouse.Location = new System.Drawing.Point(319, 130);
+            this.PANEL1306_WH_btnwherehouse.Name = "PANEL1306_WH_btnwherehouse";
+            this.PANEL1306_WH_btnwherehouse.Size = new System.Drawing.Size(22, 16);
+            this.PANEL1306_WH_btnwherehouse.TabIndex = 1021;
+            this.PANEL1306_WH_btnwherehouse.UseVisualStyleBackColor = false;
+            this.PANEL1306_WH_btnwherehouse.Click += new System.EventHandler(this.PANEL1306_WH_btnwherehouse_Click);
+            // 
+            // txtic_id
+            // 
+            this.txtic_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtic_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtic_id.Location = new System.Drawing.Point(111, 77);
+            this.txtic_id.Name = "txtic_id";
+            this.txtic_id.Size = new System.Drawing.Size(234, 21);
+            this.txtic_id.TabIndex = 1057;
+            // 
+            // PANEL1306_WH_txtwherehouse_name
+            // 
+            this.PANEL1306_WH_txtwherehouse_name.BackColor = System.Drawing.Color.White;
+            this.PANEL1306_WH_txtwherehouse_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1306_WH_txtwherehouse_name.Location = new System.Drawing.Point(110, 129);
+            this.PANEL1306_WH_txtwherehouse_name.Name = "PANEL1306_WH_txtwherehouse_name";
+            this.PANEL1306_WH_txtwherehouse_name.ReadOnly = true;
+            this.PANEL1306_WH_txtwherehouse_name.Size = new System.Drawing.Size(233, 21);
+            this.PANEL1306_WH_txtwherehouse_name.TabIndex = 1020;
+            this.PANEL1306_WH_txtwherehouse_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PANEL1306_WH_txtwherehouse_name_KeyDown);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(8, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 23);
+            this.label6.TabIndex = 1056;
+            this.label6.Text = "เลขที่เบิกด้าย :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(516, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 23);
+            this.label4.TabIndex = 1055;
+            this.label4.Text = "*";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(7, 128);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(96, 23);
+            this.label19.TabIndex = 1018;
+            this.label19.Text = "เก็บเข้าคลัง :";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PANEL_MAT
             // 
@@ -1259,7 +1368,7 @@
             // 
             this.PANEL_MAT_txtmat_id.BackColor = System.Drawing.Color.White;
             this.PANEL_MAT_txtmat_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL_MAT_txtmat_id.Location = new System.Drawing.Point(351, 175);
+            this.PANEL_MAT_txtmat_id.Location = new System.Drawing.Point(350, 202);
             this.PANEL_MAT_txtmat_id.Name = "PANEL_MAT_txtmat_id";
             this.PANEL_MAT_txtmat_id.ReadOnly = true;
             this.PANEL_MAT_txtmat_id.Size = new System.Drawing.Size(156, 21);
@@ -1272,7 +1381,7 @@
             this.PANEL_MAT_btnmat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL_MAT_btnmat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL_MAT_btnmat.Image = ((System.Drawing.Image)(resources.GetObject("PANEL_MAT_btnmat.Image")));
-            this.PANEL_MAT_btnmat.Location = new System.Drawing.Point(320, 177);
+            this.PANEL_MAT_btnmat.Location = new System.Drawing.Point(319, 204);
             this.PANEL_MAT_btnmat.Name = "PANEL_MAT_btnmat";
             this.PANEL_MAT_btnmat.Size = new System.Drawing.Size(22, 16);
             this.PANEL_MAT_btnmat.TabIndex = 1048;
@@ -1283,7 +1392,7 @@
             // 
             this.PANEL_MAT_txtmat_name.BackColor = System.Drawing.Color.White;
             this.PANEL_MAT_txtmat_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL_MAT_txtmat_name.Location = new System.Drawing.Point(110, 175);
+            this.PANEL_MAT_txtmat_name.Location = new System.Drawing.Point(109, 202);
             this.PANEL_MAT_txtmat_name.Name = "PANEL_MAT_txtmat_name";
             this.PANEL_MAT_txtmat_name.ReadOnly = true;
             this.PANEL_MAT_txtmat_name.Size = new System.Drawing.Size(235, 21);
@@ -1556,7 +1665,7 @@
             // 
             this.PANEL0105_FACE_BAKING_txtface_baking_id.BackColor = System.Drawing.Color.White;
             this.PANEL0105_FACE_BAKING_txtface_baking_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_txtface_baking_id.Location = new System.Drawing.Point(351, 151);
+            this.PANEL0105_FACE_BAKING_txtface_baking_id.Location = new System.Drawing.Point(350, 178);
             this.PANEL0105_FACE_BAKING_txtface_baking_id.Name = "PANEL0105_FACE_BAKING_txtface_baking_id";
             this.PANEL0105_FACE_BAKING_txtface_baking_id.ReadOnly = true;
             this.PANEL0105_FACE_BAKING_txtface_baking_id.Size = new System.Drawing.Size(156, 21);
@@ -1569,7 +1678,7 @@
             this.PANEL0105_FACE_BAKING_btnface_baking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL0105_FACE_BAKING_btnface_baking.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL0105_FACE_BAKING_btnface_baking.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0105_FACE_BAKING_btnface_baking.Image")));
-            this.PANEL0105_FACE_BAKING_btnface_baking.Location = new System.Drawing.Point(320, 153);
+            this.PANEL0105_FACE_BAKING_btnface_baking.Location = new System.Drawing.Point(319, 180);
             this.PANEL0105_FACE_BAKING_btnface_baking.Name = "PANEL0105_FACE_BAKING_btnface_baking";
             this.PANEL0105_FACE_BAKING_btnface_baking.Size = new System.Drawing.Size(22, 16);
             this.PANEL0105_FACE_BAKING_btnface_baking.TabIndex = 1032;
@@ -1591,7 +1700,7 @@
             // 
             this.PANEL0105_FACE_BAKING_txtface_baking_name.BackColor = System.Drawing.Color.White;
             this.PANEL0105_FACE_BAKING_txtface_baking_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0105_FACE_BAKING_txtface_baking_name.Location = new System.Drawing.Point(110, 151);
+            this.PANEL0105_FACE_BAKING_txtface_baking_name.Location = new System.Drawing.Point(109, 178);
             this.PANEL0105_FACE_BAKING_txtface_baking_name.Name = "PANEL0105_FACE_BAKING_txtface_baking_name";
             this.PANEL0105_FACE_BAKING_txtface_baking_name.ReadOnly = true;
             this.PANEL0105_FACE_BAKING_txtface_baking_name.Size = new System.Drawing.Size(235, 21);
@@ -1634,7 +1743,7 @@
             // 
             this.label42.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label42.ForeColor = System.Drawing.Color.Black;
-            this.label42.Location = new System.Drawing.Point(41, 151);
+            this.label42.Location = new System.Drawing.Point(40, 178);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(60, 21);
             this.label42.TabIndex = 1029;
@@ -1645,19 +1754,20 @@
             // 
             this.btnGo1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGo1.Image = ((System.Drawing.Image)(resources.GetObject("btnGo1.Image")));
-            this.btnGo1.Location = new System.Drawing.Point(150, 199);
+            this.btnGo1.Location = new System.Drawing.Point(149, 226);
             this.btnGo1.Name = "btnGo1";
             this.btnGo1.Size = new System.Drawing.Size(30, 22);
             this.btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnGo1.TabIndex = 1032;
             this.btnGo1.TabStop = false;
+            this.btnGo1.Visible = false;
             this.btnGo1.Click += new System.EventHandler(this.btnGo1_Click);
             // 
             // PANEL0102_MACHINE_txtmachine_id
             // 
             this.PANEL0102_MACHINE_txtmachine_id.BackColor = System.Drawing.Color.White;
             this.PANEL0102_MACHINE_txtmachine_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE_txtmachine_id.Location = new System.Drawing.Point(351, 127);
+            this.PANEL0102_MACHINE_txtmachine_id.Location = new System.Drawing.Point(350, 154);
             this.PANEL0102_MACHINE_txtmachine_id.Name = "PANEL0102_MACHINE_txtmachine_id";
             this.PANEL0102_MACHINE_txtmachine_id.ReadOnly = true;
             this.PANEL0102_MACHINE_txtmachine_id.Size = new System.Drawing.Size(156, 21);
@@ -1670,7 +1780,7 @@
             this.PANEL0102_MACHINE_btnmachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL0102_MACHINE_btnmachine.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL0102_MACHINE_btnmachine.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0102_MACHINE_btnmachine.Image")));
-            this.PANEL0102_MACHINE_btnmachine.Location = new System.Drawing.Point(320, 129);
+            this.PANEL0102_MACHINE_btnmachine.Location = new System.Drawing.Point(319, 156);
             this.PANEL0102_MACHINE_btnmachine.Name = "PANEL0102_MACHINE_btnmachine";
             this.PANEL0102_MACHINE_btnmachine.Size = new System.Drawing.Size(22, 16);
             this.PANEL0102_MACHINE_btnmachine.TabIndex = 1025;
@@ -1681,7 +1791,7 @@
             // 
             this.PANEL0102_MACHINE_txtmachine_name.BackColor = System.Drawing.Color.White;
             this.PANEL0102_MACHINE_txtmachine_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0102_MACHINE_txtmachine_name.Location = new System.Drawing.Point(111, 127);
+            this.PANEL0102_MACHINE_txtmachine_name.Location = new System.Drawing.Point(110, 154);
             this.PANEL0102_MACHINE_txtmachine_name.Name = "PANEL0102_MACHINE_txtmachine_name";
             this.PANEL0102_MACHINE_txtmachine_name.ReadOnly = true;
             this.PANEL0102_MACHINE_txtmachine_name.Size = new System.Drawing.Size(234, 21);
@@ -1692,7 +1802,7 @@
             // 
             this.label39.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(9, 125);
+            this.label39.Location = new System.Drawing.Point(8, 152);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(96, 23);
             this.label39.TabIndex = 1023;
@@ -2301,7 +2411,7 @@
             // 
             this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(186, 197);
+            this.label12.Location = new System.Drawing.Point(185, 224);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(24, 23);
             this.label12.TabIndex = 1007;
@@ -2312,7 +2422,7 @@
             // 
             this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(12, 198);
+            this.label14.Location = new System.Drawing.Point(11, 225);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(92, 21);
             this.label14.TabIndex = 996;
@@ -2816,7 +2926,7 @@
             // 
             this.label54.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label54.ForeColor = System.Drawing.Color.Black;
-            this.label54.Location = new System.Drawing.Point(3, 176);
+            this.label54.Location = new System.Drawing.Point(2, 203);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(99, 21);
             this.label54.TabIndex = 997;
@@ -2827,7 +2937,7 @@
             // 
             this.txtfold_amount.BackColor = System.Drawing.Color.White;
             this.txtfold_amount.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtfold_amount.Location = new System.Drawing.Point(110, 199);
+            this.txtfold_amount.Location = new System.Drawing.Point(109, 226);
             this.txtfold_amount.Name = "txtfold_amount";
             this.txtfold_amount.Size = new System.Drawing.Size(34, 21);
             this.txtfold_amount.TabIndex = 995;
@@ -2933,9 +3043,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView1.BackgroundColor = System.Drawing.Color.White;
             this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView1.Location = new System.Drawing.Point(11, 226);
+            this.GridView1.Location = new System.Drawing.Point(14, 258);
             this.GridView1.Name = "GridView1";
-            this.GridView1.Size = new System.Drawing.Size(1403, 268);
+            this.GridView1.Size = new System.Drawing.Size(1400, 236);
             this.GridView1.TabIndex = 994;
             this.GridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView1_CellMouseLeave);
             this.GridView1.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView1_CellMouseMove);
@@ -2981,14 +3091,17 @@
             this.panel1_contens.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView66)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGo_txtic_id)).EndInit();
             this.PANEL0102_MACHINE.ResumeLayout(false);
             this.PANEL0102_MACHINE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnnew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0102_MACHINE_dataGridView1_machine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo_M)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView1_Machine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo1_RIB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView66)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo_txtic_id)).EndInit();
             this.PANEL_MAT.ResumeLayout(false);
             this.PANEL_MAT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_MAT_btnrefresh)).EndInit();
@@ -3232,5 +3345,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox ch_yokma;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtnumber_in_year;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.PictureBox btnGo1_RIB;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox txtfold_amount_RIB;
+        private System.Windows.Forms.DataGridView GridView1_Machine;
+        private System.Windows.Forms.PictureBox btnGo_M;
     }
 }

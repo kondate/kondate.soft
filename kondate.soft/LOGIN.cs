@@ -313,7 +313,7 @@ namespace kondate.soft
                 this.txtuser_name.Text = "admin";
                 this.txtuser_pass.Text = "1234";
                 this.txtsleep.Text = "50";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n0}", this.txtsleep.Text.ToString()));
+                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
                 this.check_version.Checked = false;
             }
             else
@@ -321,7 +321,7 @@ namespace kondate.soft
                 this.txtuser_name.Text = "";
                 this.txtuser_pass.Text = "";
                 this.txtsleep.Text = "10000";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n0}", this.txtsleep.Text.ToString()));
+                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
                 this.check_version.Checked = true;
 
             }
@@ -509,7 +509,7 @@ namespace kondate.soft
                 this.txtuser_name.Text = "admin";
                 this.txtuser_pass.Text = "1234";
                 this.txtsleep.Text = "50";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n0}", this.txtsleep.Text.ToString()));
+                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
                 this.check_version.Checked = false;
             }
             else
@@ -517,7 +517,7 @@ namespace kondate.soft
                 this.txtuser_name.Text = "";
                 this.txtuser_pass.Text = "";
                 this.txtsleep.Text = "10000";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n0}", this.txtsleep.Text.ToString()));
+                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
                 this.check_version.Checked = true;
 
             }
@@ -597,12 +597,12 @@ namespace kondate.soft
             if (W_ID_Select.M_COID.Trim() == "KD")
             {
                 this.txtsleep.Text = "50";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n0}", this.txtsleep.Text.ToString()));
+                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
             }
             else
             {
                 this.txtsleep.Text = "10000";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n0}", this.txtsleep.Text.ToString()));
+                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
 
             }
             //CHECK_VERSION
@@ -1911,7 +1911,7 @@ namespace kondate.soft
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

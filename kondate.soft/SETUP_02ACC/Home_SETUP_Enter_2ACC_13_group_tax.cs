@@ -918,7 +918,7 @@ namespace kondate.soft.SETUP_2ACC
                         cmd2.Parameters.Add("@txtacc_group_tax_id", SqlDbType.NVarChar).Value = this.txtacc_group_tax_id.Text.ToString();
                         cmd2.Parameters.Add("@txtacc_group_tax_name", SqlDbType.NVarChar).Value = this.txtacc_group_tax_name.Text.ToString();
                         cmd2.Parameters.Add("@txtacc_group_tax_name_eng", SqlDbType.NVarChar).Value = this.txtacc_group_tax_name_eng.Text.ToString();
-                        cmd2.Parameters.Add("@txtacc_group_tax_vat_rate", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtacc_group_tax_vat_rate.Text));
+                        cmd2.Parameters.Add("@txtacc_group_tax_vat_rate", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtacc_group_tax_vat_rate.Text));
                         cmd2.Parameters.Add("@txtacc_group_tax_remark", SqlDbType.NVarChar).Value = this.txtacc_group_tax_remark.Text.ToString();
                         cmd2.Parameters.Add("@txtacc_group_tax_status", SqlDbType.NChar).Value = "0";
                         //==============================
@@ -932,7 +932,7 @@ namespace kondate.soft.SETUP_2ACC
                                                                      "txtacc_group_tax_no = '" + this.txtacc_group_tax_no.Text.Trim() + "'," +
                                                                      "txtacc_group_tax_name = '" + this.txtacc_group_tax_name.Text.Trim() + "'," +
                                                                      "txtacc_group_tax_name_eng = '" + this.txtacc_group_tax_name_eng.Text.Trim() + "'," +
-                                                                     "txtacc_group_tax_vat_rate = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtacc_group_tax_vat_rate.Text)) + "'," +
+                                                                     "txtacc_group_tax_vat_rate = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtacc_group_tax_vat_rate.Text)) + "'," +
                                                                      "txtacc_group_tax_remark = '" + this.txtacc_group_tax_remark.Text.ToString() + "'" +
                                                                    // " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                    //" AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
@@ -1131,7 +1131,7 @@ namespace kondate.soft.SETUP_2ACC
                         cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                         cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                         cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
                         cmd2.Parameters.Add("@cancel_id", SqlDbType.NVarChar).Value = Cancel_ID.ToString();
 
                         //==============================
@@ -1156,7 +1156,7 @@ namespace kondate.soft.SETUP_2ACC
                         cmd2.Parameters.Add("@txtacc_group_tax_id", SqlDbType.NVarChar).Value = this.txtacc_group_tax_id.Text.ToString();
                         cmd2.Parameters.Add("@txtacc_group_tax_name", SqlDbType.NVarChar).Value = this.txtacc_group_tax_name.Text.ToString();
                         cmd2.Parameters.Add("@txtacc_group_tax_name_eng", SqlDbType.NVarChar).Value = this.txtacc_group_tax_name_eng.Text.ToString();
-                        cmd2.Parameters.Add("@txtacc_group_tax_vat_rate", SqlDbType.NVarChar).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtacc_group_tax_vat_rate.Text));
+                        cmd2.Parameters.Add("@txtacc_group_tax_vat_rate", SqlDbType.NVarChar).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtacc_group_tax_vat_rate.Text));
                         cmd2.Parameters.Add("@txtacc_group_tax_remark", SqlDbType.NVarChar).Value = this.txtacc_group_tax_remark.Text.ToString();
                         cmd2.Parameters.Add("@txtacc_group_tax_status", SqlDbType.NChar).Value = "0";
                         cmd2.Parameters.Add("@cancel_id2", SqlDbType.NVarChar).Value = Cancel_ID.ToString();
@@ -1467,7 +1467,7 @@ namespace kondate.soft.SETUP_2ACC
                         cmd2.Parameters.Add("@txtacc_group_tax_id", SqlDbType.NVarChar).Value = "";
                         cmd2.Parameters.Add("@txtacc_group_tax_name", SqlDbType.NVarChar).Value = "";
                         cmd2.Parameters.Add("@txtacc_group_tax_name_eng", SqlDbType.NVarChar).Value = "";
-                        cmd2.Parameters.Add("@txtacc_group_tax_vat_rate", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 0));
+                        cmd2.Parameters.Add("@txtacc_group_tax_vat_rate", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));
                         cmd2.Parameters.Add("@txtacc_group_tax_remark", SqlDbType.NVarChar).Value = "";
                         cmd2.Parameters.Add("@txtacc_group_tax_status", SqlDbType.NChar).Value = "0";
                         //==============================
@@ -1922,7 +1922,7 @@ namespace kondate.soft.SETUP_2ACC
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

@@ -683,7 +683,7 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtmat_brand_id", SqlDbType.NVarChar).Value = this.PANEL104_MAT_BRAND_txtmat_brand_id.Text.ToString();
 
                         cmd2.Parameters.Add("@txtmat_unit1_id", SqlDbType.NVarChar).Value = this.PANEL105_MAT_UNIT1_txtmat_unit1_id.Text.ToString();
-                        cmd2.Parameters.Add("@txtmat_unit1_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_unit1_qty.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_unit1_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_unit1_qty.Text.ToString()));
 
                         //if (this.chmat_unit_status.Checked == true)
                         //{
@@ -707,9 +707,9 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtmat_tax_id", SqlDbType.NVarChar).Value = this.txtmat_tax_id.Text.ToString();
                         cmd2.Parameters.Add("@txtmat_credit_charge_id", SqlDbType.NVarChar).Value = this.txtmat_credit_charge_id.Text.ToString();
                         cmd2.Parameters.Add("@txtmat_type_with_acc_id", SqlDbType.NVarChar).Value = this.txtmat_type_with_acc_id.Text.ToString();
-                        cmd2.Parameters.Add("@txtmat_qty_min", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_min.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_max", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_max.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_per_labor", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_per_labor.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_min", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_min.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_max", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_max.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_per_labor", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_per_labor.Text.ToString()));
                         cmd2.Parameters.Add("@txtmat_remark", SqlDbType.NVarChar).Value = this.txtmat_remark.Text.ToString();
                         //==============================
 
@@ -743,16 +743,16 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtco_id4", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
                         cmd2.Parameters.Add("@txtmat_id4", SqlDbType.NVarChar).Value = this.txtmat_id.Text.ToString();
 
-                        cmd2.Parameters.Add("@txtmat_price_sale1", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale1.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale2.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale3", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale3.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale4", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale4.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale5", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale5.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale6", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale6.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale7", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale7.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale8", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale8.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale9", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale9.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale10", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale10.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale1", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale1.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale2.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale3", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale3.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale4", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale4.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale5", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale5.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale6", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale6.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale7", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale7.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale8", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale8.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale9", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale9.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale10", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale10.Text.ToString()));
                         //==============================
 
                         cmd2.ExecuteNonQuery();
@@ -771,12 +771,12 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtco_id5", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
                         cmd2.Parameters.Add("@txtmat_id5", SqlDbType.NVarChar).Value = this.txtmat_id.Text.ToString();
 
-                        cmd2.Parameters.Add("@txtmat_qty_width", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_width.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_long", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_long.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_high", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_high.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_width", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_width.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_long", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_long.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_high", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_high.Text.ToString()));
                         cmd2.Parameters.Add("@txtlength_measurement_unit", SqlDbType.NVarChar).Value = this.txtlength_measurement_unit.Text.ToString();
 
-                        cmd2.Parameters.Add("@txtmat_qty_weight", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_weight.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_weight", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_weight.Text.ToString()));
                         cmd2.Parameters.Add("@txtlength_weight_unit", SqlDbType.NVarChar).Value = this.txtlength_weight_unit.Text.ToString();
                         //==============================
 
@@ -952,7 +952,7 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtco_id8", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
                         cmd2.Parameters.Add("@txtmat_id8", SqlDbType.NVarChar).Value = this.txtmat_id.Text.ToString();
 
-                        cmd2.Parameters.Add("@txtmat_amount_phurchase",SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_amount_phurchase.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_amount_phurchase",SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_amount_phurchase.Text.ToString()));
                         //==============================
                         cmd2.ExecuteNonQuery();
 
@@ -1000,7 +1000,7 @@ namespace kondate.soft.SETUP_4WH
                                                                      "txtmat_group_id = '" + this.PANEL103_MAT_GROUP_txtmat_group_id.Text.Trim() + "'," +
                                                                      "txtmat_brand_id = '" + this.PANEL104_MAT_BRAND_txtmat_brand_id.Text.Trim() + "'," +
                                                                       "txtmat_unit1_id = '" + this.PANEL105_MAT_UNIT1_txtmat_unit1_id.Text.Trim() + "'," +
-                                                                     "txtmat_unit1_qty = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_unit1_qty.Text.ToString())) + "'," +
+                                                                     "txtmat_unit1_qty = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_unit1_qty.Text.ToString())) + "'," +
                                                                      //"chmat_unit_status = '" + CHM.Trim() + "'," +
                                                                      "chmat_unit_status = '" + this.txtchmat_unit_status.Text.Trim() + "'," +
                                                                      "txtmat_unit2_id = '" + this.PANEL105_MAT_UNIT2_txtmat_unit2_id.Text.Trim() + "'," +
@@ -1015,9 +1015,9 @@ namespace kondate.soft.SETUP_4WH
                                                                      "txtmat_credit_charge_id = '" + this.txtmat_credit_charge_id.Text.Trim() + "'," +
                                                                      "txtmat_type_with_acc_id = '" + this.txtmat_type_with_acc_id.Text.Trim() + "'," +
 
-                                                                     "txtmat_qty_min = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_min.Text.ToString())) + "'," +
-                                                                     "txtmat_qty_max = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_max.Text.ToString())) + "'," +
-                                                                     "txtmat_qty_per_labor = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_per_labor.Text.ToString())) + "'," +
+                                                                     "txtmat_qty_min = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_min.Text.ToString())) + "'," +
+                                                                     "txtmat_qty_max = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_max.Text.ToString())) + "'," +
+                                                                     "txtmat_qty_per_labor = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_per_labor.Text.ToString())) + "'," +
                                                                      "txtmat_remark = '" + this.txtmat_remark.Text.ToString() + "'" +
 
                                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
@@ -1036,16 +1036,16 @@ namespace kondate.soft.SETUP_4WH
 
                         //4
                         cmd2.CommandText = "UPDATE b001mat_06price_sale SET " +
-                                                                     "txtmat_price_sale1 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale1.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale2 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale2.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale3 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale3.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale4 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale4.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale5 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale5.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale6 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale6.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale7 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale7.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale8 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale8.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale9 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale9.Text.ToString())) + "'," +
-                                                                     "txtmat_price_sale10 = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale10.Text.ToString())) + "'" +
+                                                                     "txtmat_price_sale1 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale1.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale2 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale2.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale3 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale3.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale4 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale4.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale5 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale5.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale6 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale6.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale7 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale7.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale8 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale8.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale9 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale9.Text.ToString())) + "'," +
+                                                                     "txtmat_price_sale10 = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale10.Text.ToString())) + "'" +
                                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                                                    " AND (txtmat_id = '" + this.txtmat_id.Text.Trim() + "')";
@@ -1053,11 +1053,11 @@ namespace kondate.soft.SETUP_4WH
 
                         //5
                         cmd2.CommandText = "UPDATE b001mat_10shipment SET " +
-                                                                     "txtmat_qty_width = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_width.Text.ToString())) + "'," +
-                                                                     "txtmat_qty_long = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_long.Text.ToString())) + "'," +
-                                                                     "txtmat_qty_high = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_high.Text.ToString())) + "'," +
+                                                                     "txtmat_qty_width = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_width.Text.ToString())) + "'," +
+                                                                     "txtmat_qty_long = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_long.Text.ToString())) + "'," +
+                                                                     "txtmat_qty_high = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_high.Text.ToString())) + "'," +
                                                                      "txtlength_measurement_unit = '" + this.txtlength_measurement_unit.Text.Trim() + "'," +
-                                                                     "txtmat_qty_weight = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_weight.Text.ToString())) + "'," +
+                                                                     "txtmat_qty_weight = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_weight.Text.ToString())) + "'," +
                                                                      "txtlength_weight_unit = '" + this.txtlength_weight_unit.Text.Trim() + "'" +
                                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
@@ -1119,7 +1119,7 @@ namespace kondate.soft.SETUP_4WH
                         }
                         //7
                         cmd2.CommandText = "UPDATE b001mat_13point_phurchase SET " +
-                                                                     "txtmat_amount_phurchase = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_amount_phurchase.Text.ToString())) + "'" +
+                                                                     "txtmat_amount_phurchase = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_amount_phurchase.Text.ToString())) + "'" +
                                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                                                    " AND (txtmat_id = '" + this.txtmat_id.Text.Trim() + "')";
@@ -1346,7 +1346,7 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                         cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                         cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
                         cmd2.Parameters.Add("@cancel_id", SqlDbType.NVarChar).Value = Cancel_ID.ToString();
 
                         //==============================
@@ -10672,7 +10672,7 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtmat_brand_id", SqlDbType.NVarChar).Value = this.PANEL104_MAT_BRAND_txtmat_brand_id.Text.ToString();
 
                         cmd2.Parameters.Add("@txtmat_unit1_id", SqlDbType.NVarChar).Value = this.PANEL105_MAT_UNIT1_txtmat_unit1_id.Text.ToString();
-                        cmd2.Parameters.Add("@txtmat_unit1_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_unit1_qty.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_unit1_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_unit1_qty.Text.ToString()));
                         if (this.chmat_unit_status.Checked == true)
                         {
                             cmd2.Parameters.Add("@chmat_unit_status", SqlDbType.NVarChar).Value = "Y";
@@ -10689,9 +10689,9 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtmat_tax_id", SqlDbType.NVarChar).Value = this.txtmat_tax_id.Text.ToString();
                         cmd2.Parameters.Add("@txtmat_credit_charge_id", SqlDbType.NVarChar).Value = this.txtmat_credit_charge_id.Text.ToString();
                         cmd2.Parameters.Add("@txtmat_type_with_acc_id", SqlDbType.NVarChar).Value = this.txtmat_type_with_acc_id.Text.ToString();
-                        cmd2.Parameters.Add("@txtmat_qty_min", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_min.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_max", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_max.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_per_labor", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_per_labor.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_min", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_min.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_max", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_max.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_per_labor", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_per_labor.Text.ToString()));
                         cmd2.Parameters.Add("@txtmat_remark", SqlDbType.NVarChar).Value = this.txtmat_remark.Text.ToString();
                         //==============================
 
@@ -10725,16 +10725,16 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtco_id4", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
                         cmd2.Parameters.Add("@txtmat_id4", SqlDbType.NVarChar).Value = this.txtmat_id.Text.ToString();
 
-                        cmd2.Parameters.Add("@txtmat_price_sale1", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale1.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale2.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale3", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale3.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale4", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale4.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale5", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale5.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale6", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale6.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale7", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale7.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale8", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale8.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale9", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale9.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_price_sale10", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_price_sale10.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale1", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale1.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale2.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale3", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale3.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale4", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale4.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale5", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale5.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale6", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale6.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale7", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale7.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale8", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale8.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale9", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale9.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_price_sale10", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_price_sale10.Text.ToString()));
                         //==============================
 
                         cmd2.ExecuteNonQuery();
@@ -10753,12 +10753,12 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtco_id5", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
                         cmd2.Parameters.Add("@txtmat_id5", SqlDbType.NVarChar).Value = "";
 
-                        cmd2.Parameters.Add("@txtmat_qty_width", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_width.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_long", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_long.Text.ToString()));
-                        cmd2.Parameters.Add("@txtmat_qty_high", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_high.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_width", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_width.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_long", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_long.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_high", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_high.Text.ToString()));
                         cmd2.Parameters.Add("@txtlength_measurement_unit", SqlDbType.NVarChar).Value = this.txtlength_measurement_unit.Text.ToString();
 
-                        cmd2.Parameters.Add("@txtmat_qty_weight", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmat_qty_weight.Text.ToString()));
+                        cmd2.Parameters.Add("@txtmat_qty_weight", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_weight.Text.ToString()));
                         cmd2.Parameters.Add("@txtlength_weight_unit", SqlDbType.NVarChar).Value = this.txtlength_weight_unit.Text.ToString();
                         //==============================
 
@@ -10934,7 +10934,7 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtco_id8", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
                         cmd2.Parameters.Add("@txtmat_id8", SqlDbType.NVarChar).Value = "";
 
-                        cmd2.Parameters.Add("@txtmat_amount_phurchase", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 0));
+                        cmd2.Parameters.Add("@txtmat_amount_phurchase", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));
                         //==============================
                         cmd2.ExecuteNonQuery();
 
@@ -11373,7 +11373,7 @@ namespace kondate.soft.SETUP_4WH
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

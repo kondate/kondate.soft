@@ -1138,14 +1138,14 @@ namespace kondate.soft.HOME04_Warehouse
         {
             for (int i = 0; i < this.GridView2.Rows.Count - 0; i++)
             {
-                if (Convert.ToDouble(string.Format("{0:n0}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) < Convert.ToDouble(string.Format("{0:n0}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
+                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) < Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
                 {
                     GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                     GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
 
                 }
-               else if (Convert.ToDouble(string.Format("{0:n0}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) == Convert.ToDouble(string.Format("{0:n0}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
+               else if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) == Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
                 {
                     GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
@@ -2215,7 +2215,7 @@ namespace kondate.soft.HOME04_Warehouse
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

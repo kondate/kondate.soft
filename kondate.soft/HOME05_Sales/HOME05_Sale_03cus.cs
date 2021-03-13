@@ -648,7 +648,7 @@ namespace kondate.soft.HOME05_Sales
                         cmd2.Parameters.Add("@txtcus_birth_day", SqlDbType.NVarChar).Value = this.Paneldate_txtdate.Text.ToString();
                         cmd2.Parameters.Add("@txtcus_card_id", SqlDbType.NVarChar).Value = this.txtcus_card_id.Text.ToString();
                         cmd2.Parameters.Add("@txtcus_registered_id", SqlDbType.NVarChar).Value = this.txtcus_registered_id.Text.ToString();
-                        cmd2.Parameters.Add("@txtcus_registered_capital", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtcus_registered_capital.Text.ToString()));
+                        cmd2.Parameters.Add("@txtcus_registered_capital", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtcus_registered_capital.Text.ToString()));
                         cmd2.Parameters.Add("@txtcus_tax_id", SqlDbType.NVarChar).Value = this.txtcus_tax_id.Text.ToString();
                         cmd2.Parameters.Add("@txtcus_kind_id", SqlDbType.NVarChar).Value = "";
                         //==============================
@@ -904,7 +904,7 @@ namespace kondate.soft.HOME05_Sales
                                                                      "txtcus_birth_day = '" + this.Paneldate_txtdate.Text.Trim() + "'," +
                                                                      "txtcus_card_id = '" + this.txtcus_card_id.Text.Trim() + "'," +
                                                                      "txtcus_registered_id = '" + this.txtcus_registered_id.Text.Trim() + "'," +
-                                                                     "txtcus_registered_capital = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtcus_registered_capital.Text.ToString())) + "'," +
+                                                                     "txtcus_registered_capital = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcus_registered_capital.Text.ToString())) + "'," +
                                                                      "txtcus_tax_id = '" + this.txtcus_tax_id.Text.Trim() + "'," +
                                                                      "txtcus_kind_id = ''" +
                                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
@@ -1092,7 +1092,7 @@ namespace kondate.soft.HOME05_Sales
                         cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                         cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                         cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
                         cmd2.Parameters.Add("@cancel_id", SqlDbType.NVarChar).Value = Cancel_ID.ToString();
 
                         //==============================
@@ -4558,7 +4558,7 @@ namespace kondate.soft.HOME05_Sales
                         cmd2.Parameters.Add("@txtcus_birth_day", SqlDbType.NVarChar).Value = this.Paneldate_txtdate.Text.ToString();
                         cmd2.Parameters.Add("@txtcus_card_id", SqlDbType.NVarChar).Value = this.txtcus_card_id.Text.ToString();
                         cmd2.Parameters.Add("@txtcus_registered_id", SqlDbType.NVarChar).Value = this.txtcus_registered_id.Text.ToString();
-                        cmd2.Parameters.Add("@txtcus_registered_capital", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtcus_registered_capital.Text.ToString()));
+                        cmd2.Parameters.Add("@txtcus_registered_capital", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtcus_registered_capital.Text.ToString()));
                         cmd2.Parameters.Add("@txtcus_tax_id", SqlDbType.NVarChar).Value = this.txtcus_tax_id.Text.ToString();
                         cmd2.Parameters.Add("@txtcus_kind_id", SqlDbType.NVarChar).Value = "";
                         //==============================
@@ -5165,7 +5165,7 @@ namespace kondate.soft.HOME05_Sales
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

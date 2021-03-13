@@ -581,19 +581,19 @@ namespace kondate.soft.HOME02_Purchasing
 
                         cmd2.Parameters.Add("@txtcurrency_id", SqlDbType.NVarChar).Value = this.txtcurrency_id.Text.Trim();  //28
                         cmd2.Parameters.Add("@txtcurrency_date", SqlDbType.NVarChar).Value = this.Paneldate_txtcurrency_date.Text.Trim();  //29
-                        cmd2.Parameters.Add("@txtcurrency_rate", SqlDbType.NVarChar).Value = Convert.ToDouble(string.Format("{0:n0}", txtcurrency_rate.Text.ToString()));  //30
+                        cmd2.Parameters.Add("@txtcurrency_rate", SqlDbType.NVarChar).Value = Convert.ToDouble(string.Format("{0:n4}", txtcurrency_rate.Text.ToString()));  //30
 
 
                         cmd2.Parameters.Add("@txtacc_group_tax_id", SqlDbType.NVarChar).Value = this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim();  //31
 
-                        cmd2.Parameters.Add("@txtsum_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtsum_qty.Text.ToString()));  //32
-                        cmd2.Parameters.Add("@txtsum_price", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtsum_price.Text.ToString()));  //33
-                        cmd2.Parameters.Add("@txtsum_discount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtsum_discount.Text.ToString()));  //34
-                        cmd2.Parameters.Add("@txtmoney_sum", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmoney_sum.Text.ToString()));  //35
-                        cmd2.Parameters.Add("@txtmoney_tax_base", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmoney_tax_base.Text.ToString()));  //36
-                        cmd2.Parameters.Add("@txtvat_rate", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtvat_rate.Text.ToString()));  //37
-                        cmd2.Parameters.Add("@txtvat_money", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtvat_money.Text.ToString()));  //38
-                        cmd2.Parameters.Add("@txtmoney_after_vat", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmoney_after_vat.Text.ToString()));  //39
+                        cmd2.Parameters.Add("@txtsum_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString()));  //32
+                        cmd2.Parameters.Add("@txtsum_price", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_price.Text.ToString()));  //33
+                        cmd2.Parameters.Add("@txtsum_discount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_discount.Text.ToString()));  //34
+                        cmd2.Parameters.Add("@txtmoney_sum", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_sum.Text.ToString()));  //35
+                        cmd2.Parameters.Add("@txtmoney_tax_base", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_tax_base.Text.ToString()));  //36
+                        cmd2.Parameters.Add("@txtvat_rate", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtvat_rate.Text.ToString()));  //37
+                        cmd2.Parameters.Add("@txtvat_money", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtvat_money.Text.ToString()));  //38
+                        cmd2.Parameters.Add("@txtmoney_after_vat", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_after_vat.Text.ToString()));  //39
 
                         cmd2.Parameters.Add("@txtpr_status", SqlDbType.NVarChar).Value = "0";  //40
                         cmd2.Parameters.Add("@txtpo_status", SqlDbType.NVarChar).Value = "0";  //41
@@ -614,9 +614,9 @@ namespace kondate.soft.HOME02_Purchasing
                         //                      "txtpo_date = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture) + "'," +
                         //                       "txtsupplier_id = '" + PANEL161_SUP_txtsupplier_id.Text.Trim() + "'," +
                         //                       "txtsupplier_name = '" + PANEL161_SUP_txtsupplier_name.Text.Trim() + "'," +
-                        //                       "txtsum_qty = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtsum_qty.Text.ToString())) + "'," +
-                        //                       "txtsum_qty_receive = '" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +
-                        //                       "txtsum_qty_balance = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtsum_qty.Text.ToString())) + "'," +
+                        //                       "txtsum_qty = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) + "'," +
+                        //                       "txtsum_qty_receive = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
+                        //                       "txtsum_qty_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) + "'," +
                         //                       "txtpo_status = '0'" +
                         //                       " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                         //                       " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
@@ -750,7 +750,7 @@ namespace kondate.soft.HOME02_Purchasing
 
                             cmd2.Parameters.Add("@txtwherehouse_id2", SqlDbType.NVarChar).Value = "";  //22
                             cmd2.Parameters.Add("@txtwherehouse_name2", SqlDbType.NVarChar).Value = "";  //23
-                            cmd2.Parameters.Add("@txtmoney_after_vat2", SqlDbType.NVarChar).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtmoney_after_vat.Text.ToString()));  //24
+                            cmd2.Parameters.Add("@txtmoney_after_vat2", SqlDbType.NVarChar).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_after_vat.Text.ToString()));  //24
 
                             cmd2.Parameters.Add("@txtpr_status2", SqlDbType.NVarChar).Value = "0";  //25
                             cmd2.Parameters.Add("@txtpo_status2", SqlDbType.NVarChar).Value = "0";  //26
@@ -758,9 +758,9 @@ namespace kondate.soft.HOME02_Purchasing
                             cmd2.Parameters.Add("@txtRG_status2", SqlDbType.NVarChar).Value = "";  //28
                             cmd2.Parameters.Add("@txtreceive_status2", SqlDbType.NVarChar).Value = "";  //29
 
-                            cmd2.Parameters.Add("@txtsum_qty2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtsum_qty.Text.ToString()));  //32
-                            cmd2.Parameters.Add("@txtsum_qty_receive2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 0));  //32
-                            cmd2.Parameters.Add("@txtsum_qty_balance2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", this.txtsum_qty.Text.ToString()));  //32
+                            cmd2.Parameters.Add("@txtsum_qty2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString()));  //32
+                            cmd2.Parameters.Add("@txtsum_qty_receive2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //32
+                            cmd2.Parameters.Add("@txtsum_qty_balance2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString()));  //32
 
                             cmd2.Parameters.Add("@txtemp_print2", SqlDbType.NVarChar).Value = W_ID_Select.M_EMP_OFFICE_NAME.Trim();   //30
                             cmd2.Parameters.Add("@txtemp_print_datetime2", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture);  //31
@@ -791,7 +791,7 @@ namespace kondate.soft.HOME02_Purchasing
                             if (this.GridView1.Rows[i].Cells[2].Value != null)
                             {
                                 this.GridView1.Rows[i].Cells[0].Value = s.ToString();
-                                if (Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) > 0)
+                                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) > 0)
                                 {
                                     //3 k018db_po_record_detail
 
@@ -830,13 +830,13 @@ namespace kondate.soft.HOME02_Purchasing
                                 "'" + this.GridView1.Rows[i].Cells[2].Value.ToString() + "'," +  //4
                                 "'" + this.GridView1.Rows[i].Cells[3].Value.ToString() + "'," +    //5
                                 "'" + this.GridView1.Rows[i].Cells[4].Value.ToString() + "'," +  //6
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //7
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //7
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //8
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //9
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //10
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //11
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //12
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //7
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //7
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //8
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //9
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //10
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //11
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //12
                                "'" + want_date + "'," +  //13
                                "'" + this.GridView1.Rows[i].Cells[0].Value.ToString() + "','')";   //14
 
@@ -851,16 +851,16 @@ namespace kondate.soft.HOME02_Purchasing
                                     //{
                                     //    cmd2.CommandText = "UPDATE k017db_pr_all_detail SET txtPo_id = '" + this.txtPo_id.Text.Trim() + "'," +
                                     //                       "txtwant_receive_date = '" + want_date + "'," +
-                                    //                       "txtprice = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +
-                                    //                        "txtdiscount_rate = '" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +
-                                    //                       "txtdiscount_money = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +
-                                    //                       "txtsum_total = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +
+                                    //                       "txtprice = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +
+                                    //                        "txtdiscount_rate = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
+                                    //                       "txtdiscount_money = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +
+                                    //                       "txtsum_total = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +
 
-                                    //                       "txtqty_approve = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +
-                                    //                       "txtqty_rg = '" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +
-                                    //                       "txtqty_balance = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +
+                                    //                       "txtqty_approve = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +
+                                    //                       "txtqty_rg = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
+                                    //                       "txtqty_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +
 
-                                    //                       "txtqty_po = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'" +
+                                    //                       "txtqty_po = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'" +
                                     //                       " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                     //                       " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     //                       " AND (txtpr_id = '" + this.txtPr_id.Text.Trim() + "')" +
@@ -927,18 +927,18 @@ namespace kondate.soft.HOME02_Purchasing
                                     "'" + this.GridView1.Rows[i].Cells[2].Value.ToString() + "'," +  //15
                                     "'" + this.GridView1.Rows[i].Cells[3].Value.ToString() + "'," +    //16
                                     "'" + this.GridView1.Rows[i].Cells[4].Value.ToString() + "'," +  //17
-                                   "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //18
-                                  "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //19
-                                   "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //20
-                                   "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //21
+                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //18
+                                  "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //19
+                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //20
+                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //21
                                     "'" + this.GridView1.Rows[i].Cells[0].Value.ToString() + "'," +  //22
 
-                                  "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //23
-                                   "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //24
-                                   "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //25
-                                  "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //26
-                                   "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //27
-                                   "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "')";   //28
+                                  "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //23
+                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //24
+                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //25
+                                  "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //26
+                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //27
+                                   "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "')";   //28
 
                                         cmd2.ExecuteNonQuery();
 
@@ -1014,21 +1014,21 @@ namespace kondate.soft.HOME02_Purchasing
                                 "'" + this.GridView1.Rows[i].Cells[2].Value.ToString() + "'," +  //15
                                 "'" + this.GridView1.Rows[i].Cells[3].Value.ToString() + "'," +    //16
                                 "'" + this.GridView1.Rows[i].Cells[4].Value.ToString() + "'," +  //17
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //18
-                              "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //19
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //20
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //21
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //18
+                              "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //19
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //20
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //21
                                 "'" + this.GridView1.Rows[i].Cells[0].Value.ToString() + "'," +  //22
 
-                              "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //23
+                              "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //23
 
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //24
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //24
 
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //25
-                              "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //26
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //27
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //25
+                              "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //26
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //27
 
-                               "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "')";   //28
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "')";   //28
 
                                     cmd2.ExecuteNonQuery();
 
@@ -3804,7 +3804,7 @@ namespace kondate.soft.HOME02_Purchasing
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

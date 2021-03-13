@@ -326,18 +326,18 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = dt2.Rows[j]["txtqty_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = dt2.Rows[j]["txtqty_after_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //37
+                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
 
                             GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
@@ -610,18 +610,18 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = dt2.Rows[j]["txtqty_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = dt2.Rows[j]["txtqty_after_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //37
+                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
                             GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
@@ -716,13 +716,13 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[44].Name = "Col_txtsum_qty_pub_kg";
             this.GridView1.Columns[45].Name = "Col_txtsum_qty_rib_kg";
 
-            this.GridView1.Columns[46].Name = "Col_txtqty_receive_yokma";
-            this.GridView1.Columns[47].Name = "Col_txtqty_receive_yokpai";
-            this.GridView1.Columns[48].Name = "Col_txtqty_after_receive_yokpai";
+            this.GridView1.Columns[46].Name = "Col_txtqty_cut_yokma";
+            this.GridView1.Columns[47].Name = "Col_txtqty_cut_yokpai";
+            this.GridView1.Columns[48].Name = "Col_txtqty_after_cut_yokpai";
 
-            this.GridView1.Columns[49].Name = "Col_txtqty_receive";
-            this.GridView1.Columns[50].Name = "Col_txtqty_after_receive";
-            this.GridView1.Columns[51].Name = "Col_txtreceive_id";
+            this.GridView1.Columns[49].Name = "Col_txtqty_cut";
+            this.GridView1.Columns[50].Name = "Col_txtqty_after_cut";
+            this.GridView1.Columns[51].Name = "Col_txtcut_id";
             this.GridView1.Columns[52].Name = "Col_1";
 
 
@@ -1093,42 +1093,42 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtsum_qty_rib_kg"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_rib_kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtqty_receive_yokma"].Visible = false;  //"Col_txtqty_receive_yokma";
-            this.GridView1.Columns["Col_txtqty_receive_yokma"].Width = 0;
-            this.GridView1.Columns["Col_txtqty_receive_yokma"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_receive_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_receive_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].Visible = false;  //"Col_txtqty_cut_yokma";
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_cut_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtqty_receive_yokpai"].Visible = false;  //"Col_txtqty_receive_yokpai";
-            this.GridView1.Columns["Col_txtqty_receive_yokpai"].Width = 0;
-            this.GridView1.Columns["Col_txtqty_receive_yokpai"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_receive_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_receive_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].Visible = false;  //"Col_txtqty_cut_yokpai";
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
-            this.GridView1.Columns["Col_txtqty_after_receive_yokpai"].Visible = false;  //"Col_txtqty_after_receive_yokpai";
-            this.GridView1.Columns["Col_txtqty_after_receive_yokpai"].Width = 0;
-            this.GridView1.Columns["Col_txtqty_after_receive_yokpai"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_after_receive_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_after_receive_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Visible = false;  //"Col_txtqty_after_cut_yokpai";
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtqty_receive"].Visible = true;  //"Col_txtqty_receive";
-            this.GridView1.Columns["Col_txtqty_receive"].Width = 100;
-            this.GridView1.Columns["Col_txtqty_receive"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_receive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_receive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_cut"].Visible = true;  //"Col_txtqty_cut";
+            this.GridView1.Columns["Col_txtqty_cut"].Width = 100;
+            this.GridView1.Columns["Col_txtqty_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtqty_after_receive"].Visible = true;  //"Col_txtqty_after_receive";
-            this.GridView1.Columns["Col_txtqty_after_receive"].Width = 100;
-            this.GridView1.Columns["Col_txtqty_after_receive"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_after_receive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_after_receive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_after_cut"].Visible = true;  //"Col_txtqty_after_cut";
+            this.GridView1.Columns["Col_txtqty_after_cut"].Width = 100;
+            this.GridView1.Columns["Col_txtqty_after_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtreceive_id"].Visible = true;  //"Col_txtreceive_id";
-            this.GridView1.Columns["Col_txtreceive_id"].Width = 160;
-            this.GridView1.Columns["Col_txtreceive_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtreceive_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtreceive_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtcut_id"].Visible = true;  //"Col_txtcut_id";
+            this.GridView1.Columns["Col_txtcut_id"].Width = 160;
+            this.GridView1.Columns["Col_txtcut_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcut_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcut_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_1"].Visible = false;  //"Col_1";
             this.GridView1.Columns["Col_1"].Width = 0;
@@ -1155,13 +1155,13 @@ namespace kondate.soft.HOME03_Production
         {
             for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
             {
-                if (Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty_after_receive"].Value.ToString())) == 0)
+                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) == 0)
                 {
                     GridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
                     GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                     GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
                 }
-                if (Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtqty_after_receive"].Value.ToString())) > 0)
+                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) > 0)
                 {
                     GridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
@@ -1191,36 +1191,36 @@ namespace kondate.soft.HOME03_Production
                 {
 
 
-                    if (this.GridView1.Rows[i].Cells["Col_txtqty_after_receive"].Value == null)
+                    if (this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value == null)
                     {
-                        this.GridView1.Rows[i].Cells["Col_txtqty_after_receive"].Value = ".00";
+                        this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value = ".00";
                     }
 
-                    if (Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty_after_receive"].Value.ToString())) > 0)
+                    if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) > 0)
                     {
                         //Sum_Qty  จำนวนเบิก (กก)=================================================
-                        Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty_after_receive"].Value.ToString()));
+                        Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString()));
                         this.txtsum_qty.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
 
                         //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
                         if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
                         {
-                            Sum_Qty2 = Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
+                            Sum_Qty2 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
                             this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Sum_Qty2.ToString("N", new CultureInfo("en-US"));
                             //Sum2_Qty_Yokpai  =================================================
-                            Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n}", Sum2_Qty_Yokpai)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
+                            Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n4}", Sum2_Qty_Yokpai)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
                             this.txtsum2_qty.Text = Sum2_Qty_Yokpai.ToString("N", new CultureInfo("en-US"));
                         }
 
                         //
                         if (this.GridView1.Rows[i].Cells["Col_txtfold_number"].Value.ToString() == "RIB")
                         {
-                            Sum11 = Convert.ToDouble(string.Format("{0:n}", Sum11)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_1"].Value.ToString()));
+                            Sum11 = Convert.ToDouble(string.Format("{0:n4}", Sum11)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_1"].Value.ToString()));
                             this.txtsum_qty_rib.Text = Sum11.ToString("N", new CultureInfo("en-US"));
                         }
                         if (this.GridView1.Rows[i].Cells["Col_txtfold_number"].Value.ToString() != "RIB")
                         {
-                            Sum12 = Convert.ToDouble(string.Format("{0:n}", Sum12)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_1"].Value.ToString()));
+                            Sum12 = Convert.ToDouble(string.Format("{0:n4}", Sum12)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_1"].Value.ToString()));
                             this.txtsum_qty_roll.Text = Sum12.ToString("N", new CultureInfo("en-US"));
                         }
                         //======================================================
@@ -1742,18 +1742,18 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = dt2.Rows[j]["txtqty_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = dt2.Rows[j]["txtqty_after_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //37
+                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
                             GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
@@ -1972,18 +1972,18 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = dt2.Rows[j]["txtqty_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = dt2.Rows[j]["txtqty_after_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //37
+                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
                             GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
@@ -2262,18 +2262,18 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = dt2.Rows[j]["txtqty_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = dt2.Rows[j]["txtqty_after_receive"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
+                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_receive"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_receive"]).ToString("###,###.00");      //36
+                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            GridView1.Rows[index].Cells["Col_txtreceive_id"].Value = dt2.Rows[j]["txtreceive_id"].ToString();      //37
+                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
                             GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
@@ -3494,7 +3494,7 @@ namespace kondate.soft.HOME03_Production
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

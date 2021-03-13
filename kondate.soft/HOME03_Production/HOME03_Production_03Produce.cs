@@ -161,6 +161,7 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
 
                 cmd2.CommandText = "SELECT c002_02produce_record.*," +
+                                   "c002_02produce_record_machine.*," +
                                    "c001_04produce_type.*," +
                                    "c001_02machine.*," +
                                    "c001_05face_baking.*," +
@@ -170,15 +171,20 @@ namespace kondate.soft.HOME03_Production
 
                                    " FROM c002_02produce_record" +
 
+                                   " INNER JOIN c002_02produce_record_machine" +
+                                   " ON c002_02produce_record.cdkey = c002_02produce_record_machine.cdkey" +
+                                   " AND c002_02produce_record.txtco_id = c002_02produce_record_machine.txtco_id" +
+                                   " AND c002_02produce_record.txticrf_id = c002_02produce_record_machine.txticrf_id" +
+
                                    " INNER JOIN c001_04produce_type" +
                                    " ON c002_02produce_record.cdkey = c001_04produce_type.cdkey" +
                                    " AND c002_02produce_record.txtco_id = c001_04produce_type.txtco_id" +
                                    " AND c002_02produce_record.txtproduce_type_id = c001_04produce_type.txtproduce_type_id" +
 
                                    " INNER JOIN c001_02machine" +
-                                   " ON c002_02produce_record.cdkey = c001_02machine.cdkey" +
-                                   " AND c002_02produce_record.txtco_id = c001_02machine.txtco_id" +
-                                   " AND c002_02produce_record.txtmachine_id = c001_02machine.txtmachine_id" +
+                                   " ON c002_02produce_record_machine.cdkey = c001_02machine.cdkey" +
+                                   " AND c002_02produce_record_machine.txtco_id = c001_02machine.txtco_id" +
+                                   " AND c002_02produce_record_machine.txtmachine_id = c001_02machine.txtmachine_id" +
 
                                    " INNER JOIN c001_05face_baking" +
                                    " ON c002_02produce_record.cdkey = c001_05face_baking.cdkey" +
@@ -236,10 +242,11 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[15].Name = "Col_txticrf_status";
 
                             var index = this.GridView1.Rows.Add();
-                            this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString(); //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txticrf_id"].Value = dt2.Rows[j]["txticrf_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtic_id"].Value = dt2.Rows[j]["txtic_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtproduce_type_name"].Value = dt2.Rows[j]["txtproduce_type_name"].ToString();      //6
@@ -251,7 +258,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtface_baking_name"].Value = dt2.Rows[j]["txtface_baking_name"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_ic"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_ic"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_yes"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_yes"]).ToString("###,###.00");      //13
                             this.GridView1.Rows[index].Cells["Col_txtsum2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum2_qty"]).ToString("###,###.00");      //14
 
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_change"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_change"]).ToString("###,###.00");      //14
@@ -338,6 +345,7 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
 
                 cmd2.CommandText = "SELECT c002_02produce_record.*," +
+                                   "c002_02produce_record_machine.*," +
                                    "c001_04produce_type.*," +
                                    "c001_02machine.*," +
                                    "c001_05face_baking.*," +
@@ -347,15 +355,20 @@ namespace kondate.soft.HOME03_Production
 
                                    " FROM c002_02produce_record" +
 
+                                   " INNER JOIN c002_02produce_record_machine" +
+                                   " ON c002_02produce_record.cdkey = c002_02produce_record_machine.cdkey" +
+                                   " AND c002_02produce_record.txtco_id = c002_02produce_record_machine.txtco_id" +
+                                   " AND c002_02produce_record.txticrf_id = c002_02produce_record_machine.txticrf_id" +
+
                                    " INNER JOIN c001_04produce_type" +
                                    " ON c002_02produce_record.cdkey = c001_04produce_type.cdkey" +
                                    " AND c002_02produce_record.txtco_id = c001_04produce_type.txtco_id" +
                                    " AND c002_02produce_record.txtproduce_type_id = c001_04produce_type.txtproduce_type_id" +
 
                                    " INNER JOIN c001_02machine" +
-                                   " ON c002_02produce_record.cdkey = c001_02machine.cdkey" +
-                                   " AND c002_02produce_record.txtco_id = c001_02machine.txtco_id" +
-                                   " AND c002_02produce_record.txtmachine_id = c001_02machine.txtmachine_id" +
+                                   " ON c002_02produce_record_machine.cdkey = c001_02machine.cdkey" +
+                                   " AND c002_02produce_record_machine.txtco_id = c001_02machine.txtco_id" +
+                                   " AND c002_02produce_record_machine.txtmachine_id = c001_02machine.txtmachine_id" +
 
                                    " INNER JOIN c001_05face_baking" +
                                    " ON c002_02produce_record.cdkey = c001_05face_baking.cdkey" +
@@ -396,10 +409,11 @@ namespace kondate.soft.HOME03_Production
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
                             var index = this.GridView1.Rows.Add();
-                            this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString(); //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txticrf_id"].Value = dt2.Rows[j]["txticrf_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtic_id"].Value = dt2.Rows[j]["txtic_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtproduce_type_name"].Value = dt2.Rows[j]["txtproduce_type_name"].ToString();      //6
@@ -411,7 +425,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtface_baking_name"].Value = dt2.Rows[j]["txtface_baking_name"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_ic"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_ic"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_yes"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_yes"]).ToString("###,###.00");      //13
                             this.GridView1.Rows[index].Cells["Col_txtsum2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum2_qty"]).ToString("###,###.00");      //14
 
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_change"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_change"]).ToString("###,###.00");      //14
@@ -460,49 +474,56 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 19;
-            this.GridView1.Columns[0].Name = "Col_Auto_num";
+            this.GridView1.ColumnCount = 20;
+            this.GridView1.Columns[0].Name = "Col_txtnumber_in_year";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
             this.GridView1.Columns[3].Name = "Col_txticrf_id";
-            this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
-            this.GridView1.Columns[5].Name = "Col_txttrans_time";
-            this.GridView1.Columns[6].Name = "Col_txtproduce_type_name";
-            this.GridView1.Columns[7].Name = "Col_txtwherehouse_name";
-            this.GridView1.Columns[8].Name = "Col_txtmat_id";
-            this.GridView1.Columns[9].Name = "Col_txtmat_name";
-            this.GridView1.Columns[10].Name = "Col_txtnumber_mat_name";
-            this.GridView1.Columns[11].Name = "Col_txtmachine_name";
-            this.GridView1.Columns[12].Name = "Col_txtface_baking_name";
-            this.GridView1.Columns[13].Name = "Col_txtsum_qty_ic";
-            this.GridView1.Columns[14].Name = "Col_txtsum_qty";
-            this.GridView1.Columns[15].Name = "Col_txtsum2_qty";
-            this.GridView1.Columns[16].Name = "Col_txtsum_qty_change";
-            this.GridView1.Columns[17].Name = "Col_txtsum_qty_change_rate";
-            this.GridView1.Columns[18].Name = "Col_txticrf_status";
+            this.GridView1.Columns[4].Name = "Col_txtic_id";
+            this.GridView1.Columns[5].Name = "Col_txttrans_date_server";
+            this.GridView1.Columns[6].Name = "Col_txttrans_time";
+            this.GridView1.Columns[7].Name = "Col_txtproduce_type_name";
+            this.GridView1.Columns[8].Name = "Col_txtwherehouse_name";
+            this.GridView1.Columns[9].Name = "Col_txtmat_id";
+            this.GridView1.Columns[10].Name = "Col_txtmat_name";
+            this.GridView1.Columns[11].Name = "Col_txtnumber_mat_name";
+            this.GridView1.Columns[12].Name = "Col_txtmachine_name";
+            this.GridView1.Columns[13].Name = "Col_txtface_baking_name";
+            this.GridView1.Columns[14].Name = "Col_txtsum_qty_ic";
+            this.GridView1.Columns[15].Name = "Col_txtsum_qty_yes";
+            this.GridView1.Columns[16].Name = "Col_txtsum2_qty";
+            this.GridView1.Columns[17].Name = "Col_txtsum_qty_change";
+            this.GridView1.Columns[18].Name = "Col_txtsum_qty_change_rate";
+            this.GridView1.Columns[19].Name = "Col_txticrf_status";
 
-            this.GridView1.Columns[0].HeaderText = "No";
+            this.GridView1.Columns[0].HeaderText = "เลขที่ชุด";
             this.GridView1.Columns[1].HeaderText = "txtco_id";
             this.GridView1.Columns[2].HeaderText = " txtbranch_id";
-            this.GridView1.Columns[3].HeaderText = " เลขที่";
-            this.GridView1.Columns[4].HeaderText = " วันที่";
-            this.GridView1.Columns[5].HeaderText = " เวลา";
-            this.GridView1.Columns[6].HeaderText = "ประเภทผลิต";
-            this.GridView1.Columns[7].HeaderText = "คลัง";
-            this.GridView1.Columns[8].HeaderText = "รหัสวัตถุดิบ";
-            this.GridView1.Columns[9].HeaderText = "ชื่อวัตถุดิบ";
-            this.GridView1.Columns[10].HeaderText = "เบอร์วัตถุดิบ";
-            this.GridView1.Columns[11].HeaderText = "เครื่องจักร";
-            this.GridView1.Columns[12].HeaderText = "อบหน้า";
+            this.GridView1.Columns[3].HeaderText = " เลขที่ FG1";
+            this.GridView1.Columns[4].HeaderText = " เลขที่เบิกด้าย";
+            this.GridView1.Columns[5].HeaderText = " วันที่";
+            this.GridView1.Columns[6].HeaderText = " เวลา";
+            this.GridView1.Columns[7].HeaderText = "ประเภทผลิต";
+            this.GridView1.Columns[8].HeaderText = "คลัง";
+            this.GridView1.Columns[9].HeaderText = "รหัสวัตถุดิบ";
+            this.GridView1.Columns[10].HeaderText = "ชื่อวัตถุดิบ";
+            this.GridView1.Columns[11].HeaderText = "เบอร์วัตถุดิบ";
+            this.GridView1.Columns[12].HeaderText = "เครื่องจักร";
+            this.GridView1.Columns[13].HeaderText = "อบหน้า";
 
-            this.GridView1.Columns[13].HeaderText = "เบิกด้ายเข้า กก";
-            this.GridView1.Columns[14].HeaderText = "ผลิตผ้าดิบได้ กก.";
-            this.GridView1.Columns[15].HeaderText = "ผลิตผ้าดิบได้ ปอนด์";
-            this.GridView1.Columns[16].HeaderText = "ส่วนต่าง กก";
-            this.GridView1.Columns[17].HeaderText = "% ส่วนต่าง";
-            this.GridView1.Columns[18].HeaderText = " สถานะ";
+            this.GridView1.Columns[14].HeaderText = "เบิกด้ายเข้า กก";
+            this.GridView1.Columns[15].HeaderText = "ผลิตผ้าดิบได้ กก.";
+            this.GridView1.Columns[16].HeaderText = "ผลิตผ้าดิบได้ ปอนด์";
+            this.GridView1.Columns[17].HeaderText = "ส่วนต่าง กก";
+            this.GridView1.Columns[18].HeaderText = "% ส่วนต่าง";
+            this.GridView1.Columns[19].HeaderText = " สถานะ";
 
-            this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
+            this.GridView1.Columns["Col_txtnumber_in_year"].Visible = true;  //"Col_txtnumber_in_year";
+            this.GridView1.Columns["Col_txtnumber_in_year"].Width = 80;
+            this.GridView1.Columns["Col_txtnumber_in_year"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtnumber_in_year"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtnumber_in_year"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
             this.GridView1.Columns["Col_txtbranch_id"].Visible = false;  //"Col_txtbranch_id";
 
@@ -511,6 +532,12 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txticrf_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txticrf_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txticrf_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtic_id"].Visible = true;  //"Col_txtic_id";
+            this.GridView1.Columns["Col_txtic_id"].Width = 140;
+            this.GridView1.Columns["Col_txtic_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtic_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtic_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txttrans_date_server"].Visible = true;  //"Col_txttrans_date_server";
             this.GridView1.Columns["Col_txttrans_date_server"].Width = 100;
@@ -572,14 +599,14 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtsum_qty_ic"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_ic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtsum_qty"].Visible = true;  //"Col_txtsum_qty";
-            this.GridView1.Columns["Col_txtsum_qty"].Width = 120;
-            this.GridView1.Columns["Col_txtsum_qty"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtsum_qty_yes"].Visible = true;  //"Col_txtsum_qty_yes";
+            this.GridView1.Columns["Col_txtsum_qty_yes"].Width = 120;
+            this.GridView1.Columns["Col_txtsum_qty_yes"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_qty_yes"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_qty_yes"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtsum2_qty"].Visible = true;  //"Col_txtsum2_qty";
-            this.GridView1.Columns["Col_txtsum2_qty"].Width = 120;
+            this.GridView1.Columns["Col_txtsum2_qty"].Visible = false;  //"Col_txtsum2_qty";
+            this.GridView1.Columns["Col_txtsum2_qty"].Width = 0;
             this.GridView1.Columns["Col_txtsum2_qty"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsum2_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum2_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -624,7 +651,7 @@ namespace kondate.soft.HOME03_Production
             for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
             {
 
-                //if (Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtmoney_after_vat_creditor"].Value.ToString())) > 0)
+                //if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmoney_after_vat_creditor"].Value.ToString())) > 0)
                 //{
                 //    GridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                 //    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
@@ -640,7 +667,7 @@ namespace kondate.soft.HOME03_Production
             {
                 GridView1.Rows[i].Cells["Col_txtmachine_name"].Style.BackColor = Color.LightGreen;
                 GridView1.Rows[i].Cells["Col_txtsum_qty_ic"].Style.BackColor = Color.LightSkyBlue;
-                GridView1.Rows[i].Cells["Col_txtsum_qty"].Style.BackColor = Color.LightGreen;
+                GridView1.Rows[i].Cells["Col_txtsum_qty_yes"].Style.BackColor = Color.LightGreen;
                 GridView1.Rows[i].Cells["Col_txtsum_qty_change"].Style.BackColor = Color.LightSkyBlue;
                 GridView1.Rows[i].Cells["Col_txtsum_qty_change_rate"].Style.BackColor = Color.LightGreen;
 
@@ -987,6 +1014,7 @@ namespace kondate.soft.HOME03_Production
                 if (this.cboSearch.Text.Trim() == "เลขที่FG1 ผ้าดิบ")
                 {
                     cmd2.CommandText = "SELECT c002_02produce_record.*," +
+                                       "c002_02produce_record_machine.*," +
                                        "c001_04produce_type.*," +
                                        "c001_02machine.*," +
                                        "c001_05face_baking.*," +
@@ -996,15 +1024,20 @@ namespace kondate.soft.HOME03_Production
 
                                        " FROM c002_02produce_record" +
 
+                                       " INNER JOIN c002_02produce_record_machine" +
+                                       " ON c002_02produce_record.cdkey = c002_02produce_record_machine.cdkey" +
+                                       " AND c002_02produce_record.txtco_id = c002_02produce_record_machine.txtco_id" +
+                                       " AND c002_02produce_record.txticrf_id = c002_02produce_record_machine.txticrf_id" +
+
                                        " INNER JOIN c001_04produce_type" +
                                        " ON c002_02produce_record.cdkey = c001_04produce_type.cdkey" +
                                        " AND c002_02produce_record.txtco_id = c001_04produce_type.txtco_id" +
                                        " AND c002_02produce_record.txtproduce_type_id = c001_04produce_type.txtproduce_type_id" +
 
-                                       " INNER JOIN c001_02machine" +
-                                       " ON c002_02produce_record.cdkey = c001_02machine.cdkey" +
-                                       " AND c002_02produce_record.txtco_id = c001_02machine.txtco_id" +
-                                       " AND c002_02produce_record.txtmachine_id = c001_02machine.txtmachine_id" +
+                                   " INNER JOIN c001_02machine" +
+                                   " ON c002_02produce_record_machine.cdkey = c001_02machine.cdkey" +
+                                   " AND c002_02produce_record_machine.txtco_id = c001_02machine.txtco_id" +
+                                   " AND c002_02produce_record_machine.txtmachine_id = c001_02machine.txtmachine_id" +
 
                                        " INNER JOIN c001_05face_baking" +
                                        " ON c002_02produce_record.cdkey = c001_05face_baking.cdkey" +
@@ -1033,6 +1066,7 @@ namespace kondate.soft.HOME03_Production
                 if (this.cboSearch.Text.Trim() == "ชื่อสินค้าผลิต")
                 {
                     cmd2.CommandText = "SELECT c002_02produce_record.*," +
+                                       "c002_02produce_record_machine.*," +
                                        "c001_04produce_type.*," +
                                        "c001_02machine.*," +
                                        "c001_05face_baking.*," +
@@ -1042,15 +1076,20 @@ namespace kondate.soft.HOME03_Production
 
                                        " FROM c002_02produce_record" +
 
+                                       " INNER JOIN c002_02produce_record_machine" +
+                                       " ON c002_02produce_record.cdkey = c002_02produce_record_machine.cdkey" +
+                                       " AND c002_02produce_record.txtco_id = c002_02produce_record_machine.txtco_id" +
+                                       " AND c002_02produce_record.txticrf_id = c002_02produce_record_machine.txticrf_id" +
+
                                        " INNER JOIN c001_04produce_type" +
                                        " ON c002_02produce_record.cdkey = c001_04produce_type.cdkey" +
                                        " AND c002_02produce_record.txtco_id = c001_04produce_type.txtco_id" +
                                        " AND c002_02produce_record.txtproduce_type_id = c001_04produce_type.txtproduce_type_id" +
 
-                                       " INNER JOIN c001_02machine" +
-                                       " ON c002_02produce_record.cdkey = c001_02machine.cdkey" +
-                                       " AND c002_02produce_record.txtco_id = c001_02machine.txtco_id" +
-                                       " AND c002_02produce_record.txtmachine_id = c001_02machine.txtmachine_id" +
+                                   " INNER JOIN c001_02machine" +
+                                   " ON c002_02produce_record_machine.cdkey = c001_02machine.cdkey" +
+                                   " AND c002_02produce_record_machine.txtco_id = c001_02machine.txtco_id" +
+                                   " AND c002_02produce_record_machine.txtmachine_id = c001_02machine.txtmachine_id" +
 
                                        " INNER JOIN c001_05face_baking" +
                                        " ON c002_02produce_record.cdkey = c001_05face_baking.cdkey" +
@@ -1094,10 +1133,11 @@ namespace kondate.soft.HOME03_Production
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
                             var index = this.GridView1.Rows.Add();
-                            this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString(); //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txticrf_id"].Value = dt2.Rows[j]["txticrf_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtic_id"].Value = dt2.Rows[j]["txtic_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtproduce_type_name"].Value = dt2.Rows[j]["txtproduce_type_name"].ToString();      //6
@@ -1109,7 +1149,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtface_baking_name"].Value = dt2.Rows[j]["txtface_baking_name"].ToString();      //12
 
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_ic"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_ic"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_yes"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_yes"]).ToString("###,###.00");      //13
                             this.GridView1.Rows[index].Cells["Col_txtsum2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum2_qty"]).ToString("###,###.00");      //14
 
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty_change"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_change"]).ToString("###,###.00");      //14
@@ -1894,7 +1934,7 @@ namespace kondate.soft.HOME03_Production
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

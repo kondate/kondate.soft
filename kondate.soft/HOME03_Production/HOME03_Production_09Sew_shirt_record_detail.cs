@@ -437,13 +437,13 @@ namespace kondate.soft.HOME03_Production
                     this.GridView1.Rows[i].Cells["Col_txtsum_total"].Value = ".00";
 
                 }
-                Sum_Qty1 = Convert.ToDouble(string.Format("{0:n}", Sum_Qty1)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty_amount"].Value.ToString()));
+                Sum_Qty1 = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty1)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_amount"].Value.ToString()));
                 this.txtsum_qty_amount.Text = Sum_Qty1.ToString("N", new CultureInfo("en-US"));
 
-                Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_Col_txtsum_qty_amount_all"].Value.ToString()));
+                Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_Col_txtsum_qty_amount_all"].Value.ToString()));
                 this.txtsum_qty_amount_all.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
 
-                Sum_Qty2 = Convert.ToDouble(string.Format("{0:n}", Sum_Qty2)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty_Difference"].Value.ToString()));
+                Sum_Qty2 = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty2)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_Difference"].Value.ToString()));
                 this.txtsum_qty_amount_Difference.Text = Sum_Qty2.ToString("N", new CultureInfo("en-US"));
 
             }
@@ -735,7 +735,7 @@ namespace kondate.soft.HOME03_Production
                         cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                         cmd2.Parameters.Add("@txtcancel_remark", SqlDbType.NVarChar).Value = this.txtword_cancel2.Text.Trim();
                         cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
                         cmd2.Parameters.Add("@cancel_id", SqlDbType.NVarChar).Value = Cancel_ID.ToString();
 
                         //==============================
@@ -1468,7 +1468,7 @@ namespace kondate.soft.HOME03_Production
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

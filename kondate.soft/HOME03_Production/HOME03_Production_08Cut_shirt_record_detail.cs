@@ -926,7 +926,7 @@ namespace kondate.soft.HOME03_Production
                 {
                     this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value = ".00";
                 }
-                if (double.Parse(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
+                if (double.Parse(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
                 {
 
                     this.GridView1.Rows[i].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(this.GridView1.Rows[i].Cells["Col_txtmat_unit1_qty"].Value).ToString("###,###.00");     //7
@@ -971,24 +971,24 @@ namespace kondate.soft.HOME03_Production
                     //if (this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString() == "1")
                     //{
                     //Sum_Qty  จำนวนเบิก (กก)=================================================
-                    Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
+                    Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
                     this.txtsum_qty.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub  จำนวนพับ=================================================
-                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
+                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
                     this.txtsum_qty_pub.Text = Sum_Qty_Pub.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub_kg  จำนวนพับ=================================================
-                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
+                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
                     this.txtsum_qty_pub_kg.Text = Sum_Qty_Pub_kg.ToString("N", new CultureInfo("en-US"));
 
 
                     //Sum_Qty_RIB จำนวนพับ=================================================
-                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
+                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
                     this.txtsum_qty_rib.Text = Sum_Qty_RIB.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_RIB_kg จำนวนพับ=================================================
-                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
+                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
                     this.txtsum_qty_rib_kg.Text = Sum_Qty_RIB_kg.ToString("N", new CultureInfo("en-US"));
 
 
@@ -996,7 +996,7 @@ namespace kondate.soft.HOME03_Production
                     //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
                     if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
                     {
-                        Con_QTY = Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
+                        Con_QTY = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
                         this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Con_QTY.ToString("N", new CultureInfo("en-US"));
                         //Sum2_Qty_Yokpai  =================================================
                         Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtcost_qty2_balance_yokma"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
@@ -1026,30 +1026,30 @@ namespace kondate.soft.HOME03_Production
                     //if (this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString() == "1")
                     //{
                     //Sum_Qty  จำนวนเบิก (กก)=================================================
-                    Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
+                    Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
                     this.txtsum_qty.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub  จำนวนพับ=================================================
-                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
+                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
                     this.txtsum_qty_pub.Text = Sum_Qty_Pub.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub_kg  จำนวนพับ=================================================
-                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
+                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
                     this.txtsum_qty_pub_kg.Text = Sum_Qty_Pub_kg.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_RIB จำนวนพับ=================================================
-                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
+                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
                     this.txtsum_qty_rib.Text = Sum_Qty_RIB.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_RIB_kg จำนวนพับ=================================================
-                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
+                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
                     this.txtsum_qty_rib_kg.Text = Sum_Qty_RIB_kg.ToString("N", new CultureInfo("en-US"));
 
                     //============================================================================================================
                     //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
                     if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
                     {
-                        Con_QTY = Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
+                        Con_QTY = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
                         this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Con_QTY.ToString("N", new CultureInfo("en-US"));
                         //Sum2_Qty_Yokpai  =================================================
                         Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtcost_qty2_balance_yokma"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
@@ -1063,7 +1063,7 @@ namespace kondate.soft.HOME03_Production
 
                 }
 
-                //if (double.Parse(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString())) == 1)
+                //if (double.Parse(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString())) == 1)
                 //{
 
                 //}
@@ -1077,25 +1077,25 @@ namespace kondate.soft.HOME03_Production
 
                 //คำนวณต้นทุนถัวเฉลี่ย =================================================================
                 //มูลค่าต้นทุนถัวเฉลี่ยยกมา
-                QAbyma = Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_balance_yokma.Text.ToString())) * Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_price_average_yokma.Text.ToString()));
+                QAbyma = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokma.Text.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokma.Text.ToString()));
                 this.txtcost_money_sum_yokma.Text = QAbyma.ToString("N", new CultureInfo("en-US"));
 
                 //มูลค่าต้นทุนเบิก ใช้ราคาถัวเฉลี่ยยกมา
                 this.txtprice.Text = txtcost_qty_price_average_yokma.Text;
-                QAbyma2 = Convert.ToDouble(string.Format("{0:n}", this.txtsum_qty.Text.ToString())) * Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_price_average_yokma.Text.ToString()));
+                QAbyma2 = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokma.Text.ToString()));
                 this.txtsum_total.Text = QAbyma2.ToString("N", new CultureInfo("en-US"));
 
 
                 //1.เหลือยกมา - เบิก = จำนวนเหลือทั้งสิ้น
-                Qbypai = Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n}", this.txtsum_qty.Text.ToString()));
+                Qbypai = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString()));
                 this.txtcost_qty_balance_yokpai.Text = Qbypai.ToString("N", new CultureInfo("en-US"));
                 //2.มูลค่าเหลือยกมา - มูลค่าเบิก = มูลค่ารวมทั้งสิ้น
-                Mbypai = Convert.ToDouble(string.Format("{0:n}", this.txtcost_money_sum_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n}", this.txtsum_total.Text.ToString()));
+                Mbypai = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtsum_total.Text.ToString()));
                 this.txtcost_money_sum_yokpai.Text = Mbypai.ToString("N", new CultureInfo("en-US"));
                 //3.มูลค่ารวมทั้งสิ้น / จำนวนเหลือทั้งสิ้น = ราคาต่อหน่วยเฉลี่ย
-                if (Convert.ToDouble(string.Format("{0:n}", this.txtcost_money_sum_yokpai.Text.ToString())) > 0)
+                if (Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) > 0)
                 {
-                    QAbypai = Convert.ToDouble(string.Format("{0:n}", this.txtcost_money_sum_yokpai.Text.ToString())) / Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_balance_yokpai.Text.ToString()));
+                    QAbypai = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) / Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokpai.Text.ToString()));
                     this.txtcost_qty_price_average_yokpai.Text = QAbypai.ToString("N", new CultureInfo("en-US"));
                 }
                 else
@@ -1104,7 +1104,7 @@ namespace kondate.soft.HOME03_Production
                 }
 
                 //1.เหลือ(2)ยกมา - เบิก(2) = จำนวนเหลือ(2)ทั้งสิ้น
-                Qbypai2 = Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty2_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n}", this.txtsum2_qty.Text.ToString()));
+                Qbypai2 = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty2_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtsum2_qty.Text.ToString()));
                 this.txtcost_qty2_balance_yokpai.Text = Qbypai2.ToString("N", new CultureInfo("en-US"));
 
                 //END คำนวณต้นทุนถัวเฉลี่ย==================================================================
@@ -1339,7 +1339,7 @@ namespace kondate.soft.HOME03_Production
                 {
                     this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value = ".00";
                 }
-                if (double.Parse(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
+                if (double.Parse(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
                 {
 
                     this.GridView1.Rows[i].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(this.GridView1.Rows[i].Cells["Col_txtmat_unit1_qty"].Value).ToString("###,###.00");     //7
@@ -1384,24 +1384,24 @@ namespace kondate.soft.HOME03_Production
                     //if (this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString() == "1")
                     //{
                     //Sum_Qty  จำนวนเบิก (กก)=================================================
-                    Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
+                    Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
                     this.txtsum_qty.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub  จำนวนพับ=================================================
-                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
+                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
                     this.txtsum_qty_pub.Text = Sum_Qty_Pub.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub_kg  จำนวนพับ=================================================
-                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
+                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
                     this.txtsum_qty_pub_kg.Text = Sum_Qty_Pub_kg.ToString("N", new CultureInfo("en-US"));
 
 
                     //Sum_Qty_RIB จำนวนพับ=================================================
-                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
+                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
                     this.txtsum_qty_rib.Text = Sum_Qty_RIB.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_RIB_kg จำนวนพับ=================================================
-                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
+                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
                     this.txtsum_qty_rib_kg.Text = Sum_Qty_RIB_kg.ToString("N", new CultureInfo("en-US"));
 
 
@@ -1409,7 +1409,7 @@ namespace kondate.soft.HOME03_Production
                     //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
                     if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
                     {
-                        Con_QTY = Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
+                        Con_QTY = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
                         this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Con_QTY.ToString("N", new CultureInfo("en-US"));
                         //Sum2_Qty_Yokpai  =================================================
                         Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtcost_qty2_balance_yokma"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
@@ -1439,30 +1439,30 @@ namespace kondate.soft.HOME03_Production
                     //if (this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString() == "1")
                     //{
                     //Sum_Qty  จำนวนเบิก (กก)=================================================
-                    Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
+                    Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_qty_Cal"].Value.ToString()));
                     this.txtsum_qty.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub  จำนวนพับ=================================================
-                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
+                    Sum_Qty_Pub = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString()));
                     this.txtsum_qty_pub.Text = Sum_Qty_Pub.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_Pub_kg  จำนวนพับ=================================================
-                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
+                    Sum_Qty_Pub_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_Pub_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub_kg"].Value.ToString()));
                     this.txtsum_qty_pub_kg.Text = Sum_Qty_Pub_kg.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_RIB จำนวนพับ=================================================
-                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
+                    Sum_Qty_RIB = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib"].Value.ToString()));
                     this.txtsum_qty_rib.Text = Sum_Qty_RIB.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty_RIB_kg จำนวนพับ=================================================
-                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
+                    Sum_Qty_RIB_kg = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty_RIB_kg)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_rib_kg"].Value.ToString()));
                     this.txtsum_qty_rib_kg.Text = Sum_Qty_RIB_kg.ToString("N", new CultureInfo("en-US"));
 
                     //============================================================================================================
                     //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
                     if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
                     {
-                        Con_QTY = Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
+                        Con_QTY = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
                         this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Con_QTY.ToString("N", new CultureInfo("en-US"));
                         //Sum2_Qty_Yokpai  =================================================
                         Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtcost_qty2_balance_yokma"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
@@ -1476,7 +1476,7 @@ namespace kondate.soft.HOME03_Production
 
                 }
 
-                //if (double.Parse(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString())) == 1)
+                //if (double.Parse(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString())) == 1)
                 //{
 
                 //}
@@ -1490,25 +1490,25 @@ namespace kondate.soft.HOME03_Production
 
                 //คำนวณต้นทุนถัวเฉลี่ย =================================================================
                 //มูลค่าต้นทุนถัวเฉลี่ยยกมา
-                QAbyma = Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_balance_yokma.Text.ToString())) * Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_price_average_yokma.Text.ToString()));
+                QAbyma = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokma.Text.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokma.Text.ToString()));
                 this.txtcost_money_sum_yokma.Text = QAbyma.ToString("N", new CultureInfo("en-US"));
 
                 //มูลค่าต้นทุนเบิก ใช้ราคาถัวเฉลี่ยยกมา
                 this.txtprice.Text = txtcost_qty_price_average_yokma.Text;
-                QAbyma2 = Convert.ToDouble(string.Format("{0:n}", this.txtsum_qty.Text.ToString())) * Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_price_average_yokma.Text.ToString()));
+                QAbyma2 = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokma.Text.ToString()));
                 this.txtsum_total.Text = QAbyma2.ToString("N", new CultureInfo("en-US"));
 
 
                 //1.เหลือยกมา + เบิก = จำนวนเหลือทั้งสิ้น
-                Qbypai = Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_balance_yokma.Text.ToString())) + Convert.ToDouble(string.Format("{0:n}", this.txtsum_qty.Text.ToString()));
+                Qbypai = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokma.Text.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString()));
                 this.txtcost_qty_balance_yokpai.Text = Qbypai.ToString("N", new CultureInfo("en-US"));
                 //2.มูลค่าเหลือยกมา + มูลค่าเบิก = มูลค่ารวมทั้งสิ้น
-                Mbypai = Convert.ToDouble(string.Format("{0:n}", this.txtcost_money_sum_yokma.Text.ToString())) + Convert.ToDouble(string.Format("{0:n}", this.txtsum_total.Text.ToString()));
+                Mbypai = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokma.Text.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_total.Text.ToString()));
                 this.txtcost_money_sum_yokpai.Text = Mbypai.ToString("N", new CultureInfo("en-US"));
                 //3.มูลค่ารวมทั้งสิ้น / จำนวนเหลือทั้งสิ้น = ราคาต่อหน่วยเฉลี่ย
-                if (Convert.ToDouble(string.Format("{0:n}", this.txtcost_money_sum_yokpai.Text.ToString())) > 0)
+                if (Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) > 0)
                 {
-                    QAbypai = Convert.ToDouble(string.Format("{0:n}", this.txtcost_money_sum_yokpai.Text.ToString())) / Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty_balance_yokpai.Text.ToString()));
+                    QAbypai = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) / Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokpai.Text.ToString()));
                     this.txtcost_qty_price_average_yokpai.Text = QAbypai.ToString("N", new CultureInfo("en-US"));
                 }
                 else
@@ -1517,7 +1517,7 @@ namespace kondate.soft.HOME03_Production
                 }
 
                 //1.เหลือ(2)ยกมา + เบิก(2) = จำนวนเหลือ(2)ทั้งสิ้น
-                Qbypai2 = Convert.ToDouble(string.Format("{0:n}", this.txtcost_qty2_balance_yokma.Text.ToString())) + Convert.ToDouble(string.Format("{0:n}", this.txtsum2_qty.Text.ToString()));
+                Qbypai2 = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty2_balance_yokma.Text.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.txtsum2_qty.Text.ToString()));
                 this.txtcost_qty2_balance_yokpai.Text = Qbypai2.ToString("N", new CultureInfo("en-US"));
 
                 //END คำนวณต้นทุนถัวเฉลี่ย==================================================================
@@ -1570,15 +1570,15 @@ namespace kondate.soft.HOME03_Production
                 double MONeyAF_VAT = 0;
 
                 //ฐานภาษี
-                DisCount = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_sum.Text)) - Convert.ToDouble(string.Format("{0:n}", this.txtsum_discount.Text));
+                DisCount = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_sum.Text)) - Convert.ToDouble(string.Format("{0:n4}", this.txtsum_discount.Text));
                 this.txtmoney_tax_base.Text = DisCount.ToString("N", new CultureInfo("en-US"));
 
                 //ภาษีเงิน
-                VATMONey = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_tax_base.Text)) * Convert.ToDouble(string.Format("{0:n}", this.txtvat_rate.Text)) / 100;
+                VATMONey = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_tax_base.Text)) * Convert.ToDouble(string.Format("{0:n4}", this.txtvat_rate.Text)) / 100;
                 this.txtvat_money.Text = VATMONey.ToString("N", new CultureInfo("en-US"));
 
                 //รวมทั้งสิ้น
-                MONeyAF_VAT = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_tax_base.Text)) + Convert.ToDouble(string.Format("{0:n}", this.txtvat_money.Text));
+                MONeyAF_VAT = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_tax_base.Text)) + Convert.ToDouble(string.Format("{0:n4}", this.txtvat_money.Text));
                 this.txtmoney_after_vat.Text = MONeyAF_VAT.ToString("N", new CultureInfo("en-US"));
 
             }
@@ -1590,17 +1590,17 @@ namespace kondate.soft.HOME03_Production
                 double VATA = 0;
 
                 //รวมทั้งสิ้น
-                DisCount = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_sum.Text)) - Convert.ToDouble(string.Format("{0:n}", this.txtsum_discount.Text));
+                DisCount = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_sum.Text)) - Convert.ToDouble(string.Format("{0:n4}", this.txtsum_discount.Text));
                 this.txtmoney_after_vat.Text = DisCount.ToString("N", new CultureInfo("en-US"));
 
-                VATA = Convert.ToDouble(string.Format("{0:n}", this.txtvat_rate.Text)) + 100;
+                VATA = Convert.ToDouble(string.Format("{0:n4}", this.txtvat_rate.Text)) + 100;
 
                 //ภาษีเงิน
-                VATMONey = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_after_vat.Text)) * Convert.ToDouble(string.Format("{0:n}", this.txtvat_rate.Text)) / Convert.ToDouble(string.Format("{0:n}", VATA));
+                VATMONey = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_after_vat.Text)) * Convert.ToDouble(string.Format("{0:n4}", this.txtvat_rate.Text)) / Convert.ToDouble(string.Format("{0:n4}", VATA));
                 this.txtvat_money.Text = VATMONey.ToString("N", new CultureInfo("en-US"));
 
                 //ฐานภาษี
-                VATBASE = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_after_vat.Text)) - Convert.ToDouble(string.Format("{0:n}", this.txtvat_money.Text));
+                VATBASE = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_after_vat.Text)) - Convert.ToDouble(string.Format("{0:n4}", this.txtvat_money.Text));
                 this.txtmoney_tax_base.Text = VATBASE.ToString("N", new CultureInfo("en-US"));
 
 
@@ -1614,15 +1614,15 @@ namespace kondate.soft.HOME03_Production
                 this.txtvat_rate.Text = "0";
 
                 //ฐานภาษี
-                DisCount = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_sum.Text)) - Convert.ToDouble(string.Format("{0:n}", this.txtsum_discount.Text));
+                DisCount = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_sum.Text)) - Convert.ToDouble(string.Format("{0:n4}", this.txtsum_discount.Text));
                 this.txtmoney_tax_base.Text = DisCount.ToString("N", new CultureInfo("en-US"));
 
                 //ภาษีเงิน
-                VATMONey = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_tax_base.Text)) * Convert.ToDouble(string.Format("{0:n}", this.txtvat_rate.Text)) / 100;
+                VATMONey = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_tax_base.Text)) * Convert.ToDouble(string.Format("{0:n4}", this.txtvat_rate.Text)) / 100;
                 this.txtvat_money.Text = VATMONey.ToString("N", new CultureInfo("en-US"));
 
                 //รวมทั้งสิ้น
-                MONeyAF_VAT = Convert.ToDouble(string.Format("{0:n}", this.txtmoney_tax_base.Text)) + Convert.ToDouble(string.Format("{0:n}", this.txtvat_money.Text));
+                MONeyAF_VAT = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_tax_base.Text)) + Convert.ToDouble(string.Format("{0:n4}", this.txtvat_money.Text));
                 this.txtmoney_after_vat.Text = MONeyAF_VAT.ToString("N", new CultureInfo("en-US"));
 
 
@@ -1917,7 +1917,7 @@ namespace kondate.soft.HOME03_Production
                         cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                         cmd2.Parameters.Add("@txtcancel_remark", SqlDbType.NVarChar).Value = this.txtword_cancel2.Text.Trim();
                         cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                        cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
                         cmd2.Parameters.Add("@cancel_id", SqlDbType.NVarChar).Value = Cancel_ID.ToString();
 
                         //==============================
@@ -1927,10 +1927,10 @@ namespace kondate.soft.HOME03_Production
                         //2
                         cmd2.CommandText = "UPDATE c002_08Cut_shirt_record" +
                                                                     " SET txtcs_status = '1'," +
-                                                                     "txtsum_qty_pub = '" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +
-                                                                     "txtsum_qty_pub_balance = '" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +
-                                                                     "txtsum_qty = '" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +
-                                                                     "txtsum_qty_balance = '" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'" +
+                                                                     "txtsum_qty_pub = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
+                                                                     "txtsum_qty_pub_balance = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
+                                                                     "txtsum_qty = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
+                                                                     "txtsum_qty_balance = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'" +
                                                                      " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                      " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                                                      " AND (txtCS_id = '" + this.txtCS_id.Text.Trim() + "')";
@@ -1962,11 +1962,11 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value = "0";
                             }
 
-                            if (Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString())) > 0)
+                            if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_pub"].Value.ToString())) > 0)
                             {
 
                                 cmd2.CommandText = "UPDATE c002_07Receive_Send_dye_record_detail SET " +
-                                                   "txtqty_berg_cut_shirt_balance = '" + Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtsum_qty"].Value.ToString())) + "'," +
+                                                   "txtqty_berg_cut_shirt_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty"].Value.ToString())) + "'," +
                                                    "txtCS_id = ''" +
                                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
@@ -1999,10 +1999,10 @@ namespace kondate.soft.HOME03_Production
 
                     //1.k021_mat_average
                     cmd2.CommandText = "UPDATE k021_mat_average SET " +
-                                       "txtcost_qty_balance = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_qty_balance_yokpai.Text.ToString())) + "'," +
-                                       "txtcost_qty_price_average = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_qty_price_average_yokpai.Text.ToString())) + "'," +
-                                        "txtcost_money_sum = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_money_sum_yokpai.Text.ToString())) + "'," +
-                                       "txtcost_qty2_balance = '" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_qty2_balance_yokpai.Text.ToString())) + "'" +
+                                       "txtcost_qty_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokpai.Text.ToString())) + "'," +
+                                       "txtcost_qty_price_average = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokpai.Text.ToString())) + "'," +
+                                        "txtcost_money_sum = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) + "'," +
+                                       "txtcost_qty2_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty2_balance_yokpai.Text.ToString())) + "'" +
                                        " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        " AND (txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
@@ -2075,26 +2075,26 @@ namespace kondate.soft.HOME03_Production
                             "'" + this.PANEL_MAT_txtmat_name.Text.ToString() + "'," +    //12
 
                             "'" + this.txtmat_unit1_name.Text.ToString() + "'," +  //13
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtmat_unit1_qty.Text.ToString())) + "'," +  //14
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_unit1_qty.Text.ToString())) + "'," +  //14
                             "'" + this.chmat_unit_status.Text.ToString() + "'," +  //15
                             "'" + this.txtmat_unit2_name.Text.ToString() + "'," +  //16
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_unit2_qty.Text.ToString())) + "'," +  //17
 
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtsum_qty.Text.ToString())) + "'," +  //22 txtqty_out
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtsum2_qty.Text.ToString())) + "'," +  //23 txtqty2_out
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtprice.Text.ToString())) + "'," +  //24 txtprice_out
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtsum_total.Text.ToString())) + "'," +  //25   // **** เป็นราคาที่ยังไม่หักส่วนลด มาคิดต้นทุนถัวเฉลี่ย txtsum_total_out
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) + "'," +  //22 txtqty_out
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum2_qty.Text.ToString())) + "'," +  //23 txtqty2_out
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtprice.Text.ToString())) + "'," +  //24 txtprice_out
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_total.Text.ToString())) + "'," +  //25   // **** เป็นราคาที่ยังไม่หักส่วนลด มาคิดต้นทุนถัวเฉลี่ย txtsum_total_out
 
 
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //18  txtqty_in
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //19 txtqty2_in
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //20 txtprice_in
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", 0)) + "'," +  //21 txtsum_total_in
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //18  txtqty_in
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //19 txtqty2_in
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //20 txtprice_in
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //21 txtsum_total_in
 
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_qty_balance_yokpai.Text.ToString())) + "'," +  //26
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_qty2_balance_yokpai.Text.ToString())) + "'," +  //27
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_qty_price_average_yokpai.Text.ToString())) + "'," +  //28
-                           "'" + Convert.ToDouble(string.Format("{0:n0}", this.txtcost_money_sum_yokpai.Text.ToString())) + "'," +  //29
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokpai.Text.ToString())) + "'," +  //26
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty2_balance_yokpai.Text.ToString())) + "'," +  //27
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokpai.Text.ToString())) + "'," +  //28
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) + "'," +  //29
 
                            "'1')";   //30
 
@@ -2803,7 +2803,7 @@ namespace kondate.soft.HOME03_Production
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

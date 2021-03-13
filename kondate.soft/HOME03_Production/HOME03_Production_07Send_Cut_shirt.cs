@@ -836,13 +836,13 @@ namespace kondate.soft.HOME03_Production
         {
             for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
             {
-                if (Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_balance"].Value.ToString())) == 0)
+                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_balance"].Value.ToString())) == 0)
                 {
                     GridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
                     GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                     GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
                 }
-                if (Convert.ToDouble(string.Format("{0:n0}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_balance"].Value.ToString())) > 0)
+                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_balance"].Value.ToString())) > 0)
                 {
                     GridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
@@ -3055,7 +3055,7 @@ namespace kondate.soft.HOME03_Production
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login

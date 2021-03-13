@@ -309,7 +309,7 @@ namespace kondate.soft.SETUP_2ACC
                         {
                             if (this.GridView1.Rows[i].Cells[1].Value != null)
                             {
-                                //if (Convert.ToDouble(string.Format("{0:n0}", this.PANEL_FORM1_dataGridView1_acc.Rows[i].Cells[4].Value.ToString())) > 0)
+                                //if (Convert.ToDouble(string.Format("{0:n4}", this.PANEL_FORM1_dataGridView1_acc.Rows[i].Cells[4].Value.ToString())) > 0)
                                 //{
                                 cmd2.CommandText = "INSERT INTO k013db_1acc(cdkey,txtco_id,txtbranch_id," +  //1
                                        "txtacc_id," +  //2
@@ -1637,7 +1637,7 @@ namespace kondate.soft.SETUP_2ACC
                     cmd2.Parameters.Add("@txtlog_name", SqlDbType.NVarChar).Value = W_ID_Select.LOG_NAME.Trim();
                     cmd2.Parameters.Add("@txtdocument_id", SqlDbType.NVarChar).Value = W_ID_Select.DOCUMENT_ID.Trim();
                     cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();
-                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n0}", 1));
+                    cmd2.Parameters.Add("@txtcount", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 1));
 
                     //==============================
                     //1 Login
