@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>140</ApplicationRevision>
+    <ApplicationRevision>161</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -271,6 +271,12 @@
     <Compile Include="HOME03_Production\HOME03_Production_01RG_record.Designer.cs">
       <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.Designer.cs">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_Stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,12 +312,6 @@
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_GR.Designer.cs">
       <DependentUpon>HOME03_Production_05Send_Dye_GR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.Designer.cs">
-      <DependentUpon>HOME03_Production_07Receive_Send_Dye_Stock.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_03Produce_Stock.cs">
       <SubType>Form</SubType>
@@ -1685,6 +1685,9 @@
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record.resx">
       <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.resx">
+      <DependentUpon>HOME03_Production_07Receive_Send_Dye_Stock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.resx">
       <DependentUpon>HOME03_Production_07Send_Cut_shirt_GR.cs</DependentUpon>
     </EmbeddedResource>
@@ -1702,9 +1705,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye_GR.resx">
       <DependentUpon>HOME03_Production_05Send_Dye_GR.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.resx">
-      <DependentUpon>HOME03_Production_07Receive_Send_Dye_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_03Produce_Stock.resx">
       <DependentUpon>HOME03_Production_03Produce_Stock.cs</DependentUpon>

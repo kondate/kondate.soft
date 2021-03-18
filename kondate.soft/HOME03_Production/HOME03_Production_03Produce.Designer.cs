@@ -45,6 +45,7 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.GridView5 = new System.Windows.Forms.DataGridView();
             this.PANEL2_BRANCH = new System.Windows.Forms.Panel();
             this.PANEL2_BRANCH_btnresize_low = new System.Windows.Forms.Button();
             this.PANEL2_BRANCH_btnnew = new System.Windows.Forms.PictureBox();
@@ -52,6 +53,9 @@
             this.PANEL2_BRANCH_txtsearch = new System.Windows.Forms.TextBox();
             this.PANEL2_BRANCH_btnclose = new System.Windows.Forms.PictureBox();
             this.PANEL2_BRANCH_dataGridView1_branch = new System.Windows.Forms.DataGridView();
+            this.GridView4 = new System.Windows.Forms.DataGridView();
+            this.btng1 = new System.Windows.Forms.Button();
+            this.btng2 = new System.Windows.Forms.Button();
             this.btnGo1 = new System.Windows.Forms.PictureBox();
             this.iblword_status = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -74,6 +78,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
@@ -82,15 +87,18 @@
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView5)).BeginInit();
             this.PANEL2_BRANCH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_dataGridView1_branch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_top
@@ -348,7 +356,12 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.pictureBox1);
+            this.panel1_contens.Controls.Add(this.GridView5);
             this.panel1_contens.Controls.Add(this.PANEL2_BRANCH);
+            this.panel1_contens.Controls.Add(this.GridView4);
+            this.panel1_contens.Controls.Add(this.btng1);
+            this.panel1_contens.Controls.Add(this.btng2);
             this.panel1_contens.Controls.Add(this.btnGo1);
             this.panel1_contens.Controls.Add(this.iblword_status);
             this.panel1_contens.Controls.Add(this.label4);
@@ -377,6 +390,20 @@
             this.panel1_contens.Size = new System.Drawing.Size(1426, 667);
             this.panel1_contens.TabIndex = 14;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
+            // 
+            // GridView5
+            // 
+            this.GridView5.AllowUserToAddRows = false;
+            this.GridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView5.BackgroundColor = System.Drawing.Color.White;
+            this.GridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView5.Location = new System.Drawing.Point(5, 313);
+            this.GridView5.Name = "GridView5";
+            this.GridView5.Size = new System.Drawing.Size(1412, 290);
+            this.GridView5.TabIndex = 1023;
+            this.GridView5.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView5_CellMouseLeave);
+            this.GridView5.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView5_CellMouseMove);
             // 
             // PANEL2_BRANCH
             // 
@@ -477,6 +504,63 @@
             this.PANEL2_BRANCH_dataGridView1_branch.Size = new System.Drawing.Size(491, 262);
             this.PANEL2_BRANCH_dataGridView1_branch.TabIndex = 0;
             this.PANEL2_BRANCH_dataGridView1_branch.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL2_BRANCH_dataGridView1_branch_CellMouseClick);
+            // 
+            // GridView4
+            // 
+            this.GridView4.AllowUserToAddRows = false;
+            this.GridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView4.BackgroundColor = System.Drawing.Color.White;
+            this.GridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView4.Location = new System.Drawing.Point(5, 175);
+            this.GridView4.Name = "GridView4";
+            this.GridView4.Size = new System.Drawing.Size(1412, 132);
+            this.GridView4.TabIndex = 1022;
+            this.GridView4.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseClick);
+            this.GridView4.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView4_CellMouseLeave);
+            this.GridView4.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseMove);
+            this.GridView4.DoubleClick += new System.EventHandler(this.GridView4_DoubleClick);
+            // 
+            // btng1
+            // 
+            this.btng1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btng1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btng1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btng1.FlatAppearance.BorderSize = 0;
+            this.btng1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btng1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btng1.ForeColor = System.Drawing.Color.Black;
+            this.btng1.Image = ((System.Drawing.Image)(resources.GetObject("btng1.Image")));
+            this.btng1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btng1.Location = new System.Drawing.Point(5, 130);
+            this.btng1.Name = "btng1";
+            this.btng1.Size = new System.Drawing.Size(143, 39);
+            this.btng1.TabIndex = 1021;
+            this.btng1.Text = "เรียงเลขที่ชุดทั้งหมด";
+            this.btng1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btng1.UseVisualStyleBackColor = false;
+            this.btng1.Click += new System.EventHandler(this.btng1_Click);
+            // 
+            // btng2
+            // 
+            this.btng2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btng2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btng2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btng2.FlatAppearance.BorderSize = 0;
+            this.btng2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btng2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btng2.ForeColor = System.Drawing.Color.Black;
+            this.btng2.Image = ((System.Drawing.Image)(resources.GetObject("btng2.Image")));
+            this.btng2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btng2.Location = new System.Drawing.Point(153, 130);
+            this.btng2.Name = "btng2";
+            this.btng2.Size = new System.Drawing.Size(234, 39);
+            this.btng2.TabIndex = 1020;
+            this.btng2.Text = "เปรียบเทียบ เบิกเข้าเครื่องจักร / ผลิตได้";
+            this.btng2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btng2.UseVisualStyleBackColor = false;
+            this.btng2.Click += new System.EventHandler(this.btng2_Click);
             // 
             // btnGo1
             // 
@@ -600,9 +684,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView1.BackgroundColor = System.Drawing.Color.White;
             this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView1.Location = new System.Drawing.Point(5, 128);
+            this.GridView1.Location = new System.Drawing.Point(5, 175);
             this.GridView1.Name = "GridView1";
-            this.GridView1.Size = new System.Drawing.Size(1412, 472);
+            this.GridView1.Size = new System.Drawing.Size(1412, 132);
             this.GridView1.TabIndex = 821;
             this.GridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView1_CellMouseClick);
             this.GridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView1_CellMouseLeave);
@@ -749,6 +833,18 @@
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(610, 76);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1024;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // HOME03_Production_03Produce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -774,16 +870,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView5)).EndInit();
             this.PANEL2_BRANCH.ResumeLayout(false);
             this.PANEL2_BRANCH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_btnnew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL2_BRANCH_dataGridView1_branch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -835,5 +934,10 @@
         private System.Windows.Forms.TextBox PANEL2_BRANCH_txtsearch;
         private System.Windows.Forms.PictureBox PANEL2_BRANCH_btnclose;
         private System.Windows.Forms.DataGridView PANEL2_BRANCH_dataGridView1_branch;
+        private System.Windows.Forms.Button btng1;
+        private System.Windows.Forms.Button btng2;
+        private System.Windows.Forms.DataGridView GridView4;
+        private System.Windows.Forms.DataGridView GridView5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

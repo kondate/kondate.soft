@@ -281,6 +281,18 @@
         VUXsPnOnAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnUpdate_number_in_year.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAWVJREFUWEdj
+        GAWjgNrAdNYtF9MZtzsMJ12eodtx9Dgyzlx09G7V8qNPCeHOTWePI+P05ZdXgMwE4jqH+fc5oFYRB0ym
+        324wmXH7v+GkS/81G3ai4L51h/5v2HeUZFy0+sJ/kJkgbDrjziHtqVd5oNYRBpQ4KLui7r+akQUYg9gw
+        cWQHQfCtw0Q7ij4OgjjKeu4NXqi1uAH9HASKvtuVUGtxA3o6CGQX1FrcYNRBhADMQUZTr2M4qHrpQRQH
+        EIvjl16h3EEgbDj58n/93tNwbNp/6n/qopP/s5ecwIlzV5z/n7fqIhzHLb0MSryYjgFhUh1EczzqIEJ4
+        SDvIf9mD/59+/v1PbfDxx1+w2SQ7KH3TE6gR1Acgsyly0LcfP/7ffvSUIgwyAwaGn4OoDYZfCI1GGTIY
+        EiE0GmXIAOYgUPH+9Rf1qw6QmWRVHXTBxDjIeOZdG+MZt8vpgoF2Qa0dBaOASoCBAQChWTvp9La2GQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <data name="PANEL_MAT_btnmat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAEVJREFUKFNj

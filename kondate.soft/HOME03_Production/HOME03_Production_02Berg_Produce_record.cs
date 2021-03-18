@@ -357,10 +357,16 @@ namespace kondate.soft.HOME03_Production
                     myDateTime2 = DateTime.ParseExact(myString2, "HH:mm:ss", null);
                     //MessageBox.Show("ok1");
 
+                    //=================================================================================
+                    string D1 = Convert.ToDateTime(this.dtpdate_record.Value.Date).ToString("yyyy-MM-dd", UsaCulture);          //4
+                    String stringDateRecord = D1.ToString(); // get value from text field
+                    DateTime myDateTime_DateRecord = new DateTime();
+                    myDateTime_DateRecord = DateTime.ParseExact(stringDateRecord, "yyyy-MM-dd", UsaCulture);
+                    //=================================================================================
 
 
-                        //1 k020db_receive_record_trans
-                        if (W_ID_Select.TRANS_BILL_STATUS.Trim() == "N")
+                    //1 k020db_receive_record_trans
+                    if (W_ID_Select.TRANS_BILL_STATUS.Trim() == "N")
                         {
                             cmd2.CommandText = "INSERT INTO c002_01berg_produce_record_trans(cdkey," +
                                                "txtco_id,txtbranch_id," +
@@ -1456,7 +1462,7 @@ namespace kondate.soft.HOME03_Production
 
             this.GridView1.Columns["Col_txtmachine_id"].Visible = true;  //"Col_txtmachine_id";
             this.GridView1.Columns["Col_txtmachine_id"].Width = 80;
-            this.GridView1.Columns["Col_txtmachine_id"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtmachine_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtmachine_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtmachine_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 

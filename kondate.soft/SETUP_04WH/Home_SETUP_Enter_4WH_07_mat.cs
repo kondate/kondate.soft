@@ -973,7 +973,7 @@ namespace kondate.soft.SETUP_4WH
                         }
                         cmd2.CommandText = "UPDATE b001mat SET " +
                                                                      "txtmat_no = '" + this.txtmat_no.Text.Trim() + "'," +
-                                                                     "txtmat_name = '" + this.txtmat_name.Text.Trim() + "'," +
+                                                                    "txtmat_name = '" + this.txtmat_name.Text.Trim() + "'," +
                                                                      "txtmat_name_eng = '" + this.txtmat_name_eng.Text.Trim() + "'," +
                                                                      "txtmat_name_market = '" + this.txtmat_name_market.Text.Trim() + "'," +
                                                                      "txtmat_name_bill = '" + this.txtmat_name_bill.Text.Trim() + "'," +
@@ -1053,7 +1053,7 @@ namespace kondate.soft.SETUP_4WH
 
                         //5
                         cmd2.CommandText = "UPDATE b001mat_10shipment SET " +
-                                                                     "txtmat_qty_width = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_width.Text.ToString())) + "'," +
+                                                                    "txtmat_qty_width = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_width.Text.ToString())) + "'," +
                                                                      "txtmat_qty_long = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_long.Text.ToString())) + "'," +
                                                                      "txtmat_qty_high = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_high.Text.ToString())) + "'," +
                                                                      "txtlength_measurement_unit = '" + this.txtlength_measurement_unit.Text.Trim() + "'," +
@@ -1119,7 +1119,7 @@ namespace kondate.soft.SETUP_4WH
                         }
                         //7
                         cmd2.CommandText = "UPDATE b001mat_13point_phurchase SET " +
-                                                                     "txtmat_amount_phurchase = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_amount_phurchase.Text.ToString())) + "'" +
+                                                                    "txtmat_amount_phurchase = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_amount_phurchase.Text.ToString())) + "'" +
                                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                                                    " AND (txtmat_id = '" + this.txtmat_id.Text.Trim() + "')";
@@ -1142,7 +1142,25 @@ namespace kondate.soft.SETUP_4WH
                             W_ID_Select.LOG_NAME = "บันทึกใหม่";
                             TRANS_LOG();
 
-                            Fill_PANEL_FORM1_dataGridView1();
+
+                            var index = GridView1.Rows.Add();
+                            GridView1.Rows[index].Cells["Col_txtmat_no"].Value = this.txtmat_no.Text.ToString();      //1
+                            GridView1.Rows[index].Cells["Col_txtmat_id"].Value = this.txtmat_id.Text.ToString();      //2
+                            GridView1.Rows[index].Cells["Col_txtmat_name"].Value = this.txtmat_name.Text.ToString();      //3
+                            GridView1.Rows[index].Cells["Col_txtmat_name_eng"].Value = this.txtmat_name_eng.Text.ToString();      //4
+                            GridView1.Rows[index].Cells["Col_txtmat_name_market"].Value = this.txtmat_name_market.Text.ToString();      //5
+                            GridView1.Rows[index].Cells["Col_txtmat_name_bill"].Value = this.txtmat_name_bill.Text.ToString();      //6
+                            GridView1.Rows[index].Cells["Col_txtmat_remark"].Value = this.txtmat_remark.Text.ToString();      //7
+                            if (this.check_mat_status.Checked == true)
+                            {
+                                GridView1.Rows[index].Cells["Col_txtmat_status"].Value = true;      //8
+                            }
+                            else
+                            {
+                                GridView1.Rows[index].Cells["Col_txtmat_status"].Value = false;      //8
+                            }
+
+                            //Fill_PANEL_FORM1_dataGridView1();
                             this.iblword_status.Text = "เพิ่มรหัสสินค้าใหม่";
                             this.txtmat_id.ReadOnly = false;
 
@@ -9685,6 +9703,7 @@ namespace kondate.soft.SETUP_4WH
                                 for (int j = 0; j < dt2.Rows.Count; j++)
                                 {
                                     this.txtmat_id.Text = dt2.Rows[j]["txtmat_id"].ToString();      //1
+                                    this.txtmat_id.Text = dt2.Rows[j]["txtmat_id2"].ToString();      //1
                                     this.txtmat_no.Text = dt2.Rows[j]["txtmat_no"].ToString();      //2
                                     this.txtmat_name.Text = dt2.Rows[j]["txtmat_name"].ToString();      //3
                                     this.txtmat_name_eng.Text = dt2.Rows[j]["txtmat_name_eng"].ToString();      //4

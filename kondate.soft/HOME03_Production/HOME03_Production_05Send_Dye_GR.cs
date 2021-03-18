@@ -238,7 +238,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
                                   " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                  " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -463,7 +463,7 @@ namespace kondate.soft.HOME03_Production
                                     //" AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
                                        " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.ID ASC";
 
                 }
                 else
@@ -520,7 +520,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                        " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
                                     " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.ID ASC";
 
 
                 }
@@ -963,8 +963,8 @@ namespace kondate.soft.HOME03_Production
 
 
 
-            this.GridView1.Columns["Col_txtqty2"].Visible = true;  //"Col_txtqty2";
-            this.GridView1.Columns["Col_txtqty2"].Width = 110;
+            this.GridView1.Columns["Col_txtqty2"].Visible = false;  //"Col_txtqty2";
+            this.GridView1.Columns["Col_txtqty2"].Width = 0;
             this.GridView1.Columns["Col_txtqty2"].ReadOnly = true;
             this.GridView1.Columns["Col_txtqty2"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty2"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -1061,8 +1061,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtsum_qty_pub"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty_pub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_date"].Visible = true;  //"Col_date";
-            this.GridView1.Columns["Col_date"].Width = 150;
+            this.GridView1.Columns["Col_date"].Visible = false;  //"Col_date";
+            this.GridView1.Columns["Col_date"].Width = 0;
             this.GridView1.Columns["Col_date"].ReadOnly = false;
             this.GridView1.Columns["Col_date"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -1594,7 +1594,7 @@ namespace kondate.soft.HOME03_Production
                                     //" AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
                                        " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.ID ASC";
 
                 }
                 if (this.ch_all_branch.Checked == false)
@@ -1651,7 +1651,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                      " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
                                       " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                      " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.ID ASC";
 
 
                 }
@@ -1884,7 +1884,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (c002_05Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                       " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
                                  " AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                  " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -2114,7 +2114,7 @@ namespace kondate.soft.HOME03_Production
                                     //" AND (c002_05Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
                                     " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
                                         " AND (c002_05Send_dye_record.txtPPT_id = '" + this.txtsearch.Text.Trim() + "')" +
-                                        " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.txtnumber_in_year,c002_05Send_dye_record_detail.txtLot_no ASC";
+                                        " ORDER BY c002_05Send_dye_record.txtPPT_id,c002_05Send_dye_record_detail.ID ASC";
 
                 }
                 if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งผ้าย้อม")

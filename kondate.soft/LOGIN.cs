@@ -307,32 +307,41 @@ namespace kondate.soft
             PANEL2_BRANCH_Fill_branch();
 
 
+            CHECK_VERSION();
+  
+        }
+
+        private void CHECK_VERSION()
+        {
+
+            //END เชื่อมต่อฐานข้อมูล=======================================================
 
             if (W_ID_Select.M_COID.Trim() == "KD")
             {
                 this.txtuser_name.Text = "admin";
                 this.txtuser_pass.Text = "1234";
-                this.txtsleep.Text = "50";
+                this.txtsleep.Text = "100";
                 W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
                 this.check_version.Checked = false;
             }
             else
             {
-                this.txtuser_name.Text = "";
+                //this.txtuser_name.Text = "admin";
+                //this.txtuser_pass.Text = "1234";
+                //this.txtsleep.Text = "100";
+                //W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
+
                 this.txtuser_pass.Text = "";
                 this.txtsleep.Text = "10000";
                 W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
+
                 this.check_version.Checked = true;
 
             }
 
+       }
 
-
-
-        }
-
-
-         private void LOGIN_Shown(object sender, EventArgs e)
+        private void LOGIN_Shown(object sender, EventArgs e)
         {
 
 
@@ -504,23 +513,7 @@ namespace kondate.soft
         }
         private void checkBox1_TEST_File_CheckedChanged(object sender, EventArgs e)
         {
-            if (W_ID_Select.M_COID.Trim() == "KD")
-            {
-                this.txtuser_name.Text = "admin";
-                this.txtuser_pass.Text = "1234";
-                this.txtsleep.Text = "50";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
-                this.check_version.Checked = false;
-            }
-            else
-            {
-                this.txtuser_name.Text = "";
-                this.txtuser_pass.Text = "";
-                this.txtsleep.Text = "10000";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
-                this.check_version.Checked = true;
-
-            }
+            CHECK_VERSION();
 
             if (this.checkBox1_TEST_File.Checked == true)
             {
@@ -594,17 +587,7 @@ namespace kondate.soft
                 MessageBox.Show("เลือก สาขา เพื่อเข้าระบบก่อน !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (W_ID_Select.M_COID.Trim() == "KD")
-            {
-                this.txtsleep.Text = "50";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
-            }
-            else
-            {
-                this.txtsleep.Text = "10000";
-                W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
 
-            }
             //CHECK_VERSION
             //เชื่อมต่อฐานข้อมูล=======================================================
             //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
@@ -687,6 +670,13 @@ namespace kondate.soft
             }
             //================================
 
+
+            //
+            conn.Close();
+
+
+
+            //CHECK_VERSION
             conn.Open();
             if (conn.State == System.Data.ConnectionState.Open)
             {
@@ -716,9 +706,12 @@ namespace kondate.soft
 
                         if (this.check_version.Checked == true)
                         {
+                            //////==================================================
                             MessageBox.Show("โปรด Update Version ปัจจุบัน  :  " + dt.Rows[0]["txtversion_id"].ToString() + "  ก่อนใช้งาน !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             conn.Close();
                             Application.Exit();
+                            //////==================================================
+
                         }
 
                     }
@@ -727,10 +720,6 @@ namespace kondate.soft
 
             //
             conn.Close();
-
-
-
-            //CHECK_VERSION
 
 
 

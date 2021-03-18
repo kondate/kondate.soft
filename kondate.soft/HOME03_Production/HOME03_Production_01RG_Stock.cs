@@ -1375,12 +1375,15 @@ namespace kondate.soft.HOME03_Production
                     {
 
 
+                        Int32 k = 0;
 
 
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
+                            k = j + 1;
+
                             var index = GridView3.Rows.Add();
-                            GridView3.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            GridView3.Rows[index].Cells["Col_Auto_num"].Value = k.ToString("000"); //0
                             GridView3.Rows[index].Cells["Col_txtLot_no"].Value = dt2.Rows[j]["txtLot_no"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //2
@@ -1557,8 +1560,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView3.Columns[34].HeaderText = "เลขที่เบิกด้าย";  //
 
 
-            this.GridView3.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
-            this.GridView3.Columns["Col_Auto_num"].Width = 0;
+            this.GridView3.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
+            this.GridView3.Columns["Col_Auto_num"].Width = 60;
             this.GridView3.Columns["Col_Auto_num"].ReadOnly = true;
             this.GridView3.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -1998,49 +2001,15 @@ namespace kondate.soft.HOME03_Production
                     {
 
 
+                        Int32 k = 0;
 
 
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
-                            //this.GridView4.ColumnCount = 26;
-                            //this.GridView4.Columns[0].Name = "Col_Auto_num";
-
-                            //this.GridView4.Columns[1].Name = "Col_txttrans_date_server";
-                            //this.GridView4.Columns[2].Name = "Col_txttrans_time";
-
-                            //this.GridView4.Columns[3].Name = "Col_txtbill_id";
-                            //this.GridView4.Columns[4].Name = "Col_txtbill_type";
-                            //this.GridView4.Columns[5].Name = "Col_txtbill_remark";
-
-                            //this.GridView4.Columns[6].Name = "Col_txtwherehouse_id";
-                            //this.GridView4.Columns[7].Name = "Col_txtmat_no";
-                            //this.GridView4.Columns[8].Name = "Col_txtmat_id";
-                            //this.GridView4.Columns[9].Name = "Col_txtmat_name";
-                            //this.GridView4.Columns[10].Name = "Col_txtmat_unit1_name";
-                            //this.GridView4.Columns[11].Name = "Col_txtmat_unit1_qty";
-
-                            //this.GridView4.Columns[12].Name = "Col_chmat_unit_status";
-
-                            //this.GridView4.Columns[13].Name = "Col_txtmat_unit2_name";
-                            //this.GridView4.Columns[14].Name = "Col_txtmat_unit2_qty";
-
-                            //this.GridView4.Columns[15].Name = "Col_txtqty_in";
-                            //this.GridView4.Columns[16].Name = "Col_txtqty2_in";
-                            //this.GridView4.Columns[17].Name = "Col_txtprice_in";
-                            //this.GridView4.Columns[18].Name = "Col_txtsum_total_in";
-
-                            //this.GridView4.Columns[19].Name = "Col_txtqty_out";
-                            //this.GridView4.Columns[20].Name = "Col_txtprice_out";
-                            //this.GridView4.Columns[21].Name = "Col_txtsum_total_out";
-
-                            //this.GridView4.Columns[22].Name = "Col_txtqty_balance";
-                            //this.GridView4.Columns[23].Name = "Col_txtprice_balance";
-                            //this.GridView4.Columns[24].Name = "Col_txtsum_total_balance";
-
-                            //this.GridView4.Columns[25].Name = "Col_txtitem_no";
+                            k = j + 1;
 
                             var index = GridView4.Rows.Add();
-                            GridView4.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            GridView4.Rows[index].Cells["Col_Auto_num"].Value = k.ToString("000"); //0
                             GridView4.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);      //1
                             GridView4.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //2
 
@@ -2188,7 +2157,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView4.Columns[27].HeaderText = "ลำดับ";
 
 
-            this.GridView4.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
+            this.GridView4.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
+            this.GridView4.Columns["Col_Auto_num"].Width = 60;
+            this.GridView4.Columns["Col_Auto_num"].ReadOnly = true;
+            this.GridView4.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView4.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView4.Columns["Col_txttrans_date_server"].Visible = true;  //"วันที่";
             this.GridView4.Columns["Col_txttrans_date_server"].Width = 80;
@@ -2438,30 +2411,14 @@ namespace kondate.soft.HOME03_Production
         }
         private void btnbalance_lot_Click(object sender, EventArgs e)
         {
-            if (this.GridView3.Visible == false)
-            {
                 this.GridView3.Visible = true;
                 this.GridView4.Visible = false;
-            }
-            else
-            {
-                this.GridView3.Visible = false;
-                this.GridView4.Visible = true;
-            }
         }
 
         private void btnbalance_mat_Click(object sender, EventArgs e)
         {
-            if (this.GridView4.Visible == false)
-            {
                 this.GridView4.Visible = true;
                 this.GridView3.Visible = false;
-            }
-            else
-            {
-                this.GridView4.Visible = false;
-                this.GridView3.Visible = true;
-            }
         }
         //===========================================================
 

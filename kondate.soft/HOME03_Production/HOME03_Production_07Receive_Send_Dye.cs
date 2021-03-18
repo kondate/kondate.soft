@@ -228,8 +228,11 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
                             this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
 
-                            this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat_creditor"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat_creditor"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_kg"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib_kg"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
 
                             //RG ==============================
                             if (dt2.Rows[j]["txtRG_status"].ToString() == "")
@@ -245,19 +248,6 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = "ยกเลิก"; //21
                             }
 
-
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_want"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub"]).ToString("###,###.00");      //20
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_receive"]).ToString("###,###.00");      //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_balance"]).ToString("###,###.00");      //22
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_want"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //23
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_receive"]).ToString("###,###.00");      //24
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_balance"]).ToString("###,###.00");      //25
-                            //this.GridView1.Columns[20].Name = "Col_txtsum_qty_pub_want";
-                            //this.GridView1.Columns[21].Name = "Col_txtsum_qty_pub_receive";
-                            //this.GridView1.Columns[22].Name = "Col_txtsum_qty_pub_balance";
-                            //this.GridView1.Columns[23].Name = "Col_txtsum_qty_want";
-                            //this.GridView1.Columns[24].Name = "Col_txtsum_qty_receive";
-                            //this.GridView1.Columns[25].Name = "Col_txtsum_qty_balance";
 
                         }
                         //=======================================================
@@ -380,7 +370,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = "";     //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -388,8 +378,11 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
                             this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
 
-                            this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat_creditor"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat_creditor"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_kg"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib_kg"]).ToString("###,###.00");      //13
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
 
                             //RG ==============================
                             if (dt2.Rows[j]["txtRG_status"].ToString() == "")
@@ -405,19 +398,6 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = "ยกเลิก"; //21
                             }
 
-
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_want"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub"]).ToString("###,###.00");      //20
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_receive"]).ToString("###,###.00");      //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_balance"]).ToString("###,###.00");      //22
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_want"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //23
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_receive"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_receive"]).ToString("###,###.00");      //24
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_balance"]).ToString("###,###.00");      //25
-                            //this.GridView1.Columns[20].Name = "Col_txtsum_qty_pub_want";
-                            //this.GridView1.Columns[21].Name = "Col_txtsum_qty_pub_receive";
-                            //this.GridView1.Columns[22].Name = "Col_txtsum_qty_pub_balance";
-                            //this.GridView1.Columns[23].Name = "Col_txtsum_qty_want";
-                            //this.GridView1.Columns[24].Name = "Col_txtsum_qty_receive";
-                            //this.GridView1.Columns[25].Name = "Col_txtsum_qty_balance";
 
                         }
                         //=======================================================
@@ -449,7 +429,7 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 19;
+            this.GridView1.ColumnCount = 16;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
@@ -460,17 +440,13 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[7].Name = "Col_txtsupplier_id";
             this.GridView1.Columns[8].Name = "Col_txtsupplier_name";
             this.GridView1.Columns[9].Name = "Col_txtemp_office_name";
-            this.GridView1.Columns[10].Name = "Col_txtmoney_after_vat";
-            this.GridView1.Columns[11].Name = "Col_txtmoney_after_vat_creditor";
-            this.GridView1.Columns[12].Name = "Col_txtRG_status";
 
-            this.GridView1.Columns[13].Name = "Col_txtsum_qty_pub_want";
-            this.GridView1.Columns[14].Name = "Col_txtsum_qty_pub_receive";
-            this.GridView1.Columns[15].Name = "Col_txtsum_qty_pub_balance";
-
-            this.GridView1.Columns[16].Name = "Col_txtsum_qty_want";
-            this.GridView1.Columns[17].Name = "Col_txtsum_qty_receive";
-            this.GridView1.Columns[18].Name = "Col_txtsum_qty_balance";
+            this.GridView1.Columns[10].Name = "Col_txtsum_qty_pub";
+            this.GridView1.Columns[11].Name = "Col_txtsum_qty_pub_kg";
+            this.GridView1.Columns[12].Name = "Col_txtsum_qty_rib";
+            this.GridView1.Columns[13].Name = "Col_txtsum_qty_rib_kg";
+            this.GridView1.Columns[14].Name = "Col_txtsum_qty";
+            this.GridView1.Columns[15].Name = "Col_txtRG_status";
 
 
             this.GridView1.Columns[0].HeaderText = "No";
@@ -484,17 +460,12 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[8].HeaderText = " ชื่อ Supplier";
             this.GridView1.Columns[9].HeaderText = " ผู้บันทึก";
 
-            this.GridView1.Columns[10].HeaderText = " จำนวนเงิน(บาท)";
-            this.GridView1.Columns[11].HeaderText = " ยอดค้างจ่าย";
-            this.GridView1.Columns[12].HeaderText = " สถานะ";
-
-            this.GridView1.Columns[13].HeaderText = "ส่งย้อม(พับ)";
-            this.GridView1.Columns[14].HeaderText = "รับแล้ว(พับ)";
-            this.GridView1.Columns[15].HeaderText = "ค้างรับ(พับ)";
-
-            this.GridView1.Columns[16].HeaderText = "ส่งย้อม(Kg)";
-            this.GridView1.Columns[17].HeaderText = "รับแล้ว(Kg)";
-            this.GridView1.Columns[18].HeaderText = "ค้างรับ(Kg)";
+            this.GridView1.Columns[10].HeaderText = " พับ";
+            this.GridView1.Columns[11].HeaderText = "พับ กก";
+            this.GridView1.Columns[12].HeaderText = "RIB";
+            this.GridView1.Columns[13].HeaderText = "RIB กก";
+            this.GridView1.Columns[14].HeaderText = "พับรวม กก";
+            this.GridView1.Columns[15].HeaderText = " สถานะ";
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
@@ -538,62 +509,41 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtemp_office_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtemp_office_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtmoney_after_vat"].Visible = true;  //"Col_txtmoney_after_vat";
-            this.GridView1.Columns["Col_txtmoney_after_vat"].Width = 130;
-            this.GridView1.Columns["Col_txtmoney_after_vat"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtmoney_after_vat"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtmoney_after_vat"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtsum_qty_pub"].Visible = true;  //"Col_txtsum_qty_pub";
+            this.GridView1.Columns["Col_txtsum_qty_pub"].Width = 90;
+            this.GridView1.Columns["Col_txtsum_qty_pub"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_qty_pub"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_qty_pub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtmoney_after_vat_creditor"].Visible = true;  //"Col_txtmoney_after_vat_creditor";
-            this.GridView1.Columns["Col_txtmoney_after_vat_creditor"].Width = 130;
-            this.GridView1.Columns["Col_txtmoney_after_vat_creditor"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtmoney_after_vat_creditor"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtmoney_after_vat_creditor"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].Visible = true;  //"Col_txtsum_qty_pub_kg";
+            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].Width = 90;
+            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            this.GridView1.Columns["Col_txtsum_qty_rib"].Visible = true;  //"Col_txtsum_qty_rib";
+            this.GridView1.Columns["Col_txtsum_qty_rib"].Width = 90;
+            this.GridView1.Columns["Col_txtsum_qty_rib"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_qty_rib"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_qty_rib"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].Visible = true;  //"Col_txtsum_qty_rib_kg";
+            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].Width = 90;
+            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtsum_qty"].Visible = true;  //"Col_txtsum_qty";
+            this.GridView1.Columns["Col_txtsum_qty"].Width = 90;
+            this.GridView1.Columns["Col_txtsum_qty"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView1.Columns["Col_txtRG_status"].Visible = true;  //"Col_txtRG_status";
             this.GridView1.Columns["Col_txtRG_status"].Width = 100;
             this.GridView1.Columns["Col_txtRG_status"].ReadOnly = true;
             this.GridView1.Columns["Col_txtRG_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtRG_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtsum_qty_pub_want"].Visible = false;  //"Col_txtsum_qty_pub_want";
-            this.GridView1.Columns["Col_txtsum_qty_pub_want"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_pub_want"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_pub_want"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_pub_want"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].Visible = false;  //"Col_txtsum_qty_pub_receive";
-            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_pub_receive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].Visible = false;  //"Col_txtsum_qty_pub_balance";
-            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_pub_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_want"].Visible = false;  //"Col_txtsum_qty_want";
-            this.GridView1.Columns["Col_txtsum_qty_want"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_want"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_want"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_want"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_receive"].Visible = false;  //"Col_txtsum_qty_receive";
-            this.GridView1.Columns["Col_txtsum_qty_receive"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_receive"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_receive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_receive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_balance"].Visible = false;  //"Col_txtsum_qty_balance";
-            this.GridView1.Columns["Col_txtsum_qty_balance"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_balance"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-
 
             this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
             this.GridView1.GridColor = Color.FromArgb(227, 227, 227);
@@ -611,21 +561,21 @@ namespace kondate.soft.HOME03_Production
         }
         private void GridView1_Color()
         {
-            for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
-            {
-                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmoney_after_vat_creditor"].Value.ToString())) == 0)
-                {
-                    GridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
-                    GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-                }
-                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmoney_after_vat_creditor"].Value.ToString())) > 0)
-                {
-                    GridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-                }
-            }
+            //for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
+            //{
+            //    if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmoney_after_vat_creditor"].Value.ToString())) == 0)
+            //    {
+            //        GridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
+            //        GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+            //        GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+            //    }
+            //    if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmoney_after_vat_creditor"].Value.ToString())) > 0)
+            //    {
+            //        GridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            //        GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+            //        GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+            //    }
+            //}
         }
         private void GridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

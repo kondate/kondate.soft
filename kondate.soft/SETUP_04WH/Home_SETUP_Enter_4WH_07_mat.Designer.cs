@@ -117,6 +117,25 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.PANEL105_MAT_UNIT2 = new System.Windows.Forms.Panel();
+            this.PANEL105_MAT_UNIT2_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL105_MAT_UNIT2_btnnew = new System.Windows.Forms.PictureBox();
+            this.PANEL105_MAT_UNIT2_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL105_MAT_UNIT2_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL105_MAT_UNIT2_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit = new System.Windows.Forms.DataGridView();
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id = new System.Windows.Forms.TextBox();
+            this.PANEL105_MAT_UNIT5_btnmat_brand = new System.Windows.Forms.Button();
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id = new System.Windows.Forms.TextBox();
+            this.PANEL105_MAT_UNIT4_btnmat_brand = new System.Windows.Forms.Button();
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id = new System.Windows.Forms.TextBox();
+            this.PANEL105_MAT_UNIT3_btnmat_brand = new System.Windows.Forms.Button();
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.txtchmat_unit_status = new System.Windows.Forms.TextBox();
             this.Cbomat_detail_group_name = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -131,13 +150,6 @@
             this.txtmat_incentive_id = new System.Windows.Forms.TextBox();
             this.Cbomat_incentive_name = new System.Windows.Forms.ComboBox();
             this.txtmat_detail_group_id = new System.Windows.Forms.TextBox();
-            this.PANEL105_MAT_UNIT2 = new System.Windows.Forms.Panel();
-            this.PANEL105_MAT_UNIT2_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL105_MAT_UNIT2_btnnew = new System.Windows.Forms.PictureBox();
-            this.PANEL105_MAT_UNIT2_btnclose = new System.Windows.Forms.PictureBox();
-            this.PANEL105_MAT_UNIT2_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL105_MAT_UNIT2_txtsearch = new System.Windows.Forms.TextBox();
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit = new System.Windows.Forms.DataGridView();
             this.PANEL105_MAT_UNIT2_txtmat_unit2_id = new System.Windows.Forms.TextBox();
             this.PANEL105_MAT_UNIT2_btnmat_brand = new System.Windows.Forms.Button();
             this.PANEL105_MAT_UNIT2_txtmat_unit2_name = new System.Windows.Forms.TextBox();
@@ -318,18 +330,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtmat_name = new System.Windows.Forms.TextBox();
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id = new System.Windows.Forms.TextBox();
-            this.PANEL105_MAT_UNIT3_btnmat_brand = new System.Windows.Forms.Button();
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id = new System.Windows.Forms.TextBox();
-            this.PANEL105_MAT_UNIT4_btnmat_brand = new System.Windows.Forms.Button();
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id = new System.Windows.Forms.TextBox();
-            this.PANEL105_MAT_UNIT5_btnmat_brand = new System.Windows.Forms.Button();
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -1760,6 +1760,246 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "รายละเอียด";
             // 
+            // PANEL105_MAT_UNIT2
+            // 
+            this.PANEL105_MAT_UNIT2.AutoScroll = true;
+            this.PANEL105_MAT_UNIT2.AutoSize = true;
+            this.PANEL105_MAT_UNIT2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PANEL105_MAT_UNIT2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btnresize_low);
+            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btnnew);
+            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btnclose);
+            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btn_search);
+            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_txtsearch);
+            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit);
+            this.PANEL105_MAT_UNIT2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT2.Location = new System.Drawing.Point(3, 263);
+            this.PANEL105_MAT_UNIT2.Name = "PANEL105_MAT_UNIT2";
+            this.PANEL105_MAT_UNIT2.Size = new System.Drawing.Size(502, 337);
+            this.PANEL105_MAT_UNIT2.TabIndex = 578;
+            this.PANEL105_MAT_UNIT2.Visible = false;
+            // 
+            // PANEL105_MAT_UNIT2_btnresize_low
+            // 
+            this.PANEL105_MAT_UNIT2_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL105_MAT_UNIT2_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL105_MAT_UNIT2_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.BorderSize = 0;
+            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL105_MAT_UNIT2_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL105_MAT_UNIT2_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT2_btnresize_low.ForeColor = System.Drawing.Color.Black;
+            this.PANEL105_MAT_UNIT2_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btnresize_low.Image")));
+            this.PANEL105_MAT_UNIT2_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PANEL105_MAT_UNIT2_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL105_MAT_UNIT2_btnresize_low.Name = "PANEL105_MAT_UNIT2_btnresize_low";
+            this.PANEL105_MAT_UNIT2_btnresize_low.Size = new System.Drawing.Size(23, 22);
+            this.PANEL105_MAT_UNIT2_btnresize_low.TabIndex = 438;
+            this.PANEL105_MAT_UNIT2_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PANEL105_MAT_UNIT2_btnresize_low.UseVisualStyleBackColor = false;
+            this.PANEL105_MAT_UNIT2_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL105_MAT_UNIT2_btnresize_low_MouseDown);
+            this.PANEL105_MAT_UNIT2_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL105_MAT_UNIT2_btnresize_low_MouseMove);
+            this.PANEL105_MAT_UNIT2_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL105_MAT_UNIT2_btnresize_low_MouseUp);
+            // 
+            // PANEL105_MAT_UNIT2_btnnew
+            // 
+            this.PANEL105_MAT_UNIT2_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL105_MAT_UNIT2_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btnnew.Image")));
+            this.PANEL105_MAT_UNIT2_btnnew.Location = new System.Drawing.Point(3, 3);
+            this.PANEL105_MAT_UNIT2_btnnew.Name = "PANEL105_MAT_UNIT2_btnnew";
+            this.PANEL105_MAT_UNIT2_btnnew.Size = new System.Drawing.Size(30, 22);
+            this.PANEL105_MAT_UNIT2_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL105_MAT_UNIT2_btnnew.TabIndex = 437;
+            this.PANEL105_MAT_UNIT2_btnnew.TabStop = false;
+            this.PANEL105_MAT_UNIT2_btnnew.Visible = false;
+            this.PANEL105_MAT_UNIT2_btnnew.Click += new System.EventHandler(this.PANEL105_MAT_UNIT2_btnnew_Click);
+            // 
+            // PANEL105_MAT_UNIT2_btnclose
+            // 
+            this.PANEL105_MAT_UNIT2_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL105_MAT_UNIT2_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL105_MAT_UNIT2_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btnclose.Image")));
+            this.PANEL105_MAT_UNIT2_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL105_MAT_UNIT2_btnclose.Name = "PANEL105_MAT_UNIT2_btnclose";
+            this.PANEL105_MAT_UNIT2_btnclose.Size = new System.Drawing.Size(30, 22);
+            this.PANEL105_MAT_UNIT2_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL105_MAT_UNIT2_btnclose.TabIndex = 436;
+            this.PANEL105_MAT_UNIT2_btnclose.TabStop = false;
+            this.PANEL105_MAT_UNIT2_btnclose.Click += new System.EventHandler(this.PANEL105_MAT_UNIT2_btnclose_Click);
+            // 
+            // PANEL105_MAT_UNIT2_btn_search
+            // 
+            this.PANEL105_MAT_UNIT2_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL105_MAT_UNIT2_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btn_search.Image")));
+            this.PANEL105_MAT_UNIT2_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL105_MAT_UNIT2_btn_search.Name = "PANEL105_MAT_UNIT2_btn_search";
+            this.PANEL105_MAT_UNIT2_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL105_MAT_UNIT2_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL105_MAT_UNIT2_btn_search.TabIndex = 433;
+            this.PANEL105_MAT_UNIT2_btn_search.TabStop = false;
+            this.PANEL105_MAT_UNIT2_btn_search.Click += new System.EventHandler(this.PANEL105_MAT_UNIT2_btn_search_Click);
+            // 
+            // PANEL105_MAT_UNIT2_txtsearch
+            // 
+            this.PANEL105_MAT_UNIT2_txtsearch.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT2_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT2_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL105_MAT_UNIT2_txtsearch.Name = "PANEL105_MAT_UNIT2_txtsearch";
+            this.PANEL105_MAT_UNIT2_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL105_MAT_UNIT2_txtsearch.TabIndex = 432;
+            this.PANEL105_MAT_UNIT2_txtsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PANEL105_MAT_UNIT2_txtsearch_KeyPress);
+            // 
+            // PANEL105_MAT_UNIT2_dataGridView1_mat_unit
+            // 
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.AllowUserToAddRows = false;
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Location = new System.Drawing.Point(3, 42);
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Name = "PANEL105_MAT_UNIT2_dataGridView1_mat_unit";
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Size = new System.Drawing.Size(491, 262);
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.TabIndex = 0;
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit_CellMouseClick);
+            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit_PreviewKeyDown);
+            // 
+            // PANEL105_MAT_UNIT5_txtmat_unit5_id
+            // 
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Location = new System.Drawing.Point(292, 239);
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Name = "PANEL105_MAT_UNIT5_txtmat_unit5_id";
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.ReadOnly = true;
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Size = new System.Drawing.Size(111, 21);
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.TabIndex = 607;
+            // 
+            // PANEL105_MAT_UNIT5_btnmat_brand
+            // 
+            this.PANEL105_MAT_UNIT5_btnmat_brand.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT5_btnmat_brand.FlatAppearance.BorderSize = 0;
+            this.PANEL105_MAT_UNIT5_btnmat_brand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL105_MAT_UNIT5_btnmat_brand.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT5_btnmat_brand.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT5_btnmat_brand.Image")));
+            this.PANEL105_MAT_UNIT5_btnmat_brand.Location = new System.Drawing.Point(263, 241);
+            this.PANEL105_MAT_UNIT5_btnmat_brand.Name = "PANEL105_MAT_UNIT5_btnmat_brand";
+            this.PANEL105_MAT_UNIT5_btnmat_brand.Size = new System.Drawing.Size(22, 16);
+            this.PANEL105_MAT_UNIT5_btnmat_brand.TabIndex = 606;
+            this.PANEL105_MAT_UNIT5_btnmat_brand.UseVisualStyleBackColor = false;
+            this.PANEL105_MAT_UNIT5_btnmat_brand.Click += new System.EventHandler(this.PANEL105_MAT_UNIT5_btnmat_brand_Click);
+            // 
+            // PANEL105_MAT_UNIT5_txtmat_unit5_name
+            // 
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Location = new System.Drawing.Point(103, 239);
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Name = "PANEL105_MAT_UNIT5_txtmat_unit5_name";
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.ReadOnly = true;
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Size = new System.Drawing.Size(187, 21);
+            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.TabIndex = 605;
+            // 
+            // label59
+            // 
+            this.label59.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label59.ForeColor = System.Drawing.Color.Black;
+            this.label59.Location = new System.Drawing.Point(15, 238);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(85, 20);
+            this.label59.TabIndex = 604;
+            this.label59.Text = "หน่วยนับ(5) :";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PANEL105_MAT_UNIT4_txtmat_unit4_id
+            // 
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Location = new System.Drawing.Point(292, 215);
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Name = "PANEL105_MAT_UNIT4_txtmat_unit4_id";
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.ReadOnly = true;
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Size = new System.Drawing.Size(111, 21);
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.TabIndex = 603;
+            // 
+            // PANEL105_MAT_UNIT4_btnmat_brand
+            // 
+            this.PANEL105_MAT_UNIT4_btnmat_brand.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT4_btnmat_brand.FlatAppearance.BorderSize = 0;
+            this.PANEL105_MAT_UNIT4_btnmat_brand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL105_MAT_UNIT4_btnmat_brand.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT4_btnmat_brand.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT4_btnmat_brand.Image")));
+            this.PANEL105_MAT_UNIT4_btnmat_brand.Location = new System.Drawing.Point(263, 217);
+            this.PANEL105_MAT_UNIT4_btnmat_brand.Name = "PANEL105_MAT_UNIT4_btnmat_brand";
+            this.PANEL105_MAT_UNIT4_btnmat_brand.Size = new System.Drawing.Size(22, 16);
+            this.PANEL105_MAT_UNIT4_btnmat_brand.TabIndex = 602;
+            this.PANEL105_MAT_UNIT4_btnmat_brand.UseVisualStyleBackColor = false;
+            this.PANEL105_MAT_UNIT4_btnmat_brand.Click += new System.EventHandler(this.PANEL105_MAT_UNIT4_btnmat_brand_Click);
+            // 
+            // PANEL105_MAT_UNIT4_txtmat_unit4_name
+            // 
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Location = new System.Drawing.Point(103, 215);
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Name = "PANEL105_MAT_UNIT4_txtmat_unit4_name";
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.ReadOnly = true;
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Size = new System.Drawing.Size(187, 21);
+            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.TabIndex = 601;
+            // 
+            // label58
+            // 
+            this.label58.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label58.ForeColor = System.Drawing.Color.Black;
+            this.label58.Location = new System.Drawing.Point(15, 214);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(85, 20);
+            this.label58.TabIndex = 600;
+            this.label58.Text = "หน่วยนับ(4) :";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PANEL105_MAT_UNIT3_txtmat_unit3_id
+            // 
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Location = new System.Drawing.Point(292, 191);
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Name = "PANEL105_MAT_UNIT3_txtmat_unit3_id";
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.ReadOnly = true;
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Size = new System.Drawing.Size(111, 21);
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.TabIndex = 599;
+            // 
+            // PANEL105_MAT_UNIT3_btnmat_brand
+            // 
+            this.PANEL105_MAT_UNIT3_btnmat_brand.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT3_btnmat_brand.FlatAppearance.BorderSize = 0;
+            this.PANEL105_MAT_UNIT3_btnmat_brand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL105_MAT_UNIT3_btnmat_brand.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT3_btnmat_brand.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT3_btnmat_brand.Image")));
+            this.PANEL105_MAT_UNIT3_btnmat_brand.Location = new System.Drawing.Point(263, 193);
+            this.PANEL105_MAT_UNIT3_btnmat_brand.Name = "PANEL105_MAT_UNIT3_btnmat_brand";
+            this.PANEL105_MAT_UNIT3_btnmat_brand.Size = new System.Drawing.Size(22, 16);
+            this.PANEL105_MAT_UNIT3_btnmat_brand.TabIndex = 598;
+            this.PANEL105_MAT_UNIT3_btnmat_brand.UseVisualStyleBackColor = false;
+            this.PANEL105_MAT_UNIT3_btnmat_brand.Click += new System.EventHandler(this.PANEL105_MAT_UNIT3_btnmat_brand_Click);
+            // 
+            // PANEL105_MAT_UNIT3_txtmat_unit3_name
+            // 
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.BackColor = System.Drawing.Color.White;
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Location = new System.Drawing.Point(103, 191);
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Name = "PANEL105_MAT_UNIT3_txtmat_unit3_name";
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.ReadOnly = true;
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Size = new System.Drawing.Size(187, 21);
+            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.TabIndex = 597;
+            // 
+            // label57
+            // 
+            this.label57.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label57.ForeColor = System.Drawing.Color.Black;
+            this.label57.Location = new System.Drawing.Point(15, 190);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(85, 20);
+            this.label57.TabIndex = 596;
+            this.label57.Text = "หน่วยนับ(3) :";
+            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtchmat_unit_status
             // 
             this.txtchmat_unit_status.BackColor = System.Drawing.Color.White;
@@ -1899,111 +2139,6 @@
             this.txtmat_detail_group_id.Name = "txtmat_detail_group_id";
             this.txtmat_detail_group_id.Size = new System.Drawing.Size(38, 21);
             this.txtmat_detail_group_id.TabIndex = 580;
-            // 
-            // PANEL105_MAT_UNIT2
-            // 
-            this.PANEL105_MAT_UNIT2.AutoScroll = true;
-            this.PANEL105_MAT_UNIT2.AutoSize = true;
-            this.PANEL105_MAT_UNIT2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PANEL105_MAT_UNIT2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btnresize_low);
-            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btnnew);
-            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btnclose);
-            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_btn_search);
-            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_txtsearch);
-            this.PANEL105_MAT_UNIT2.Controls.Add(this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit);
-            this.PANEL105_MAT_UNIT2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT2.Location = new System.Drawing.Point(3, 263);
-            this.PANEL105_MAT_UNIT2.Name = "PANEL105_MAT_UNIT2";
-            this.PANEL105_MAT_UNIT2.Size = new System.Drawing.Size(502, 337);
-            this.PANEL105_MAT_UNIT2.TabIndex = 578;
-            this.PANEL105_MAT_UNIT2.Visible = false;
-            // 
-            // PANEL105_MAT_UNIT2_btnresize_low
-            // 
-            this.PANEL105_MAT_UNIT2_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL105_MAT_UNIT2_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL105_MAT_UNIT2_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.BorderSize = 0;
-            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL105_MAT_UNIT2_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL105_MAT_UNIT2_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL105_MAT_UNIT2_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT2_btnresize_low.ForeColor = System.Drawing.Color.Black;
-            this.PANEL105_MAT_UNIT2_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btnresize_low.Image")));
-            this.PANEL105_MAT_UNIT2_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL105_MAT_UNIT2_btnresize_low.Location = new System.Drawing.Point(475, 309);
-            this.PANEL105_MAT_UNIT2_btnresize_low.Name = "PANEL105_MAT_UNIT2_btnresize_low";
-            this.PANEL105_MAT_UNIT2_btnresize_low.Size = new System.Drawing.Size(23, 22);
-            this.PANEL105_MAT_UNIT2_btnresize_low.TabIndex = 438;
-            this.PANEL105_MAT_UNIT2_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.PANEL105_MAT_UNIT2_btnresize_low.UseVisualStyleBackColor = false;
-            this.PANEL105_MAT_UNIT2_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL105_MAT_UNIT2_btnresize_low_MouseDown);
-            this.PANEL105_MAT_UNIT2_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL105_MAT_UNIT2_btnresize_low_MouseMove);
-            this.PANEL105_MAT_UNIT2_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL105_MAT_UNIT2_btnresize_low_MouseUp);
-            // 
-            // PANEL105_MAT_UNIT2_btnnew
-            // 
-            this.PANEL105_MAT_UNIT2_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL105_MAT_UNIT2_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btnnew.Image")));
-            this.PANEL105_MAT_UNIT2_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL105_MAT_UNIT2_btnnew.Name = "PANEL105_MAT_UNIT2_btnnew";
-            this.PANEL105_MAT_UNIT2_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL105_MAT_UNIT2_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL105_MAT_UNIT2_btnnew.TabIndex = 437;
-            this.PANEL105_MAT_UNIT2_btnnew.TabStop = false;
-            this.PANEL105_MAT_UNIT2_btnnew.Visible = false;
-            this.PANEL105_MAT_UNIT2_btnnew.Click += new System.EventHandler(this.PANEL105_MAT_UNIT2_btnnew_Click);
-            // 
-            // PANEL105_MAT_UNIT2_btnclose
-            // 
-            this.PANEL105_MAT_UNIT2_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL105_MAT_UNIT2_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL105_MAT_UNIT2_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btnclose.Image")));
-            this.PANEL105_MAT_UNIT2_btnclose.Location = new System.Drawing.Point(465, 3);
-            this.PANEL105_MAT_UNIT2_btnclose.Name = "PANEL105_MAT_UNIT2_btnclose";
-            this.PANEL105_MAT_UNIT2_btnclose.Size = new System.Drawing.Size(30, 22);
-            this.PANEL105_MAT_UNIT2_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL105_MAT_UNIT2_btnclose.TabIndex = 436;
-            this.PANEL105_MAT_UNIT2_btnclose.TabStop = false;
-            this.PANEL105_MAT_UNIT2_btnclose.Click += new System.EventHandler(this.PANEL105_MAT_UNIT2_btnclose_Click);
-            // 
-            // PANEL105_MAT_UNIT2_btn_search
-            // 
-            this.PANEL105_MAT_UNIT2_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL105_MAT_UNIT2_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT2_btn_search.Image")));
-            this.PANEL105_MAT_UNIT2_btn_search.Location = new System.Drawing.Point(319, 15);
-            this.PANEL105_MAT_UNIT2_btn_search.Name = "PANEL105_MAT_UNIT2_btn_search";
-            this.PANEL105_MAT_UNIT2_btn_search.Size = new System.Drawing.Size(30, 22);
-            this.PANEL105_MAT_UNIT2_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL105_MAT_UNIT2_btn_search.TabIndex = 433;
-            this.PANEL105_MAT_UNIT2_btn_search.TabStop = false;
-            this.PANEL105_MAT_UNIT2_btn_search.Click += new System.EventHandler(this.PANEL105_MAT_UNIT2_btn_search_Click);
-            // 
-            // PANEL105_MAT_UNIT2_txtsearch
-            // 
-            this.PANEL105_MAT_UNIT2_txtsearch.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT2_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT2_txtsearch.Location = new System.Drawing.Point(87, 15);
-            this.PANEL105_MAT_UNIT2_txtsearch.Name = "PANEL105_MAT_UNIT2_txtsearch";
-            this.PANEL105_MAT_UNIT2_txtsearch.Size = new System.Drawing.Size(231, 21);
-            this.PANEL105_MAT_UNIT2_txtsearch.TabIndex = 432;
-            this.PANEL105_MAT_UNIT2_txtsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PANEL105_MAT_UNIT2_txtsearch_KeyPress);
-            // 
-            // PANEL105_MAT_UNIT2_dataGridView1_mat_unit
-            // 
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.AllowUserToAddRows = false;
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Location = new System.Drawing.Point(3, 42);
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Name = "PANEL105_MAT_UNIT2_dataGridView1_mat_unit";
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.Size = new System.Drawing.Size(491, 262);
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.TabIndex = 0;
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit_CellMouseClick);
-            this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL105_MAT_UNIT2_dataGridView1_mat_unit_PreviewKeyDown);
             // 
             // PANEL105_MAT_UNIT2_txtmat_unit2_id
             // 
@@ -4241,141 +4376,6 @@
             this.txtmat_name.Size = new System.Drawing.Size(266, 21);
             this.txtmat_name.TabIndex = 511;
             this.txtmat_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmat_name_KeyDown);
-            // 
-            // PANEL105_MAT_UNIT3_txtmat_unit3_id
-            // 
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Location = new System.Drawing.Point(292, 191);
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Name = "PANEL105_MAT_UNIT3_txtmat_unit3_id";
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.ReadOnly = true;
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.Size = new System.Drawing.Size(111, 21);
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_id.TabIndex = 599;
-            // 
-            // PANEL105_MAT_UNIT3_btnmat_brand
-            // 
-            this.PANEL105_MAT_UNIT3_btnmat_brand.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT3_btnmat_brand.FlatAppearance.BorderSize = 0;
-            this.PANEL105_MAT_UNIT3_btnmat_brand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL105_MAT_UNIT3_btnmat_brand.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT3_btnmat_brand.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT3_btnmat_brand.Image")));
-            this.PANEL105_MAT_UNIT3_btnmat_brand.Location = new System.Drawing.Point(263, 193);
-            this.PANEL105_MAT_UNIT3_btnmat_brand.Name = "PANEL105_MAT_UNIT3_btnmat_brand";
-            this.PANEL105_MAT_UNIT3_btnmat_brand.Size = new System.Drawing.Size(22, 16);
-            this.PANEL105_MAT_UNIT3_btnmat_brand.TabIndex = 598;
-            this.PANEL105_MAT_UNIT3_btnmat_brand.UseVisualStyleBackColor = false;
-            this.PANEL105_MAT_UNIT3_btnmat_brand.Click += new System.EventHandler(this.PANEL105_MAT_UNIT3_btnmat_brand_Click);
-            // 
-            // PANEL105_MAT_UNIT3_txtmat_unit3_name
-            // 
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Location = new System.Drawing.Point(103, 191);
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Name = "PANEL105_MAT_UNIT3_txtmat_unit3_name";
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.ReadOnly = true;
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Size = new System.Drawing.Size(187, 21);
-            this.PANEL105_MAT_UNIT3_txtmat_unit3_name.TabIndex = 597;
-            // 
-            // label57
-            // 
-            this.label57.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label57.ForeColor = System.Drawing.Color.Black;
-            this.label57.Location = new System.Drawing.Point(15, 190);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(85, 20);
-            this.label57.TabIndex = 596;
-            this.label57.Text = "หน่วยนับ(3) :";
-            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PANEL105_MAT_UNIT4_txtmat_unit4_id
-            // 
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Location = new System.Drawing.Point(292, 215);
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Name = "PANEL105_MAT_UNIT4_txtmat_unit4_id";
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.ReadOnly = true;
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.Size = new System.Drawing.Size(111, 21);
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_id.TabIndex = 603;
-            // 
-            // PANEL105_MAT_UNIT4_btnmat_brand
-            // 
-            this.PANEL105_MAT_UNIT4_btnmat_brand.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT4_btnmat_brand.FlatAppearance.BorderSize = 0;
-            this.PANEL105_MAT_UNIT4_btnmat_brand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL105_MAT_UNIT4_btnmat_brand.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT4_btnmat_brand.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT4_btnmat_brand.Image")));
-            this.PANEL105_MAT_UNIT4_btnmat_brand.Location = new System.Drawing.Point(263, 217);
-            this.PANEL105_MAT_UNIT4_btnmat_brand.Name = "PANEL105_MAT_UNIT4_btnmat_brand";
-            this.PANEL105_MAT_UNIT4_btnmat_brand.Size = new System.Drawing.Size(22, 16);
-            this.PANEL105_MAT_UNIT4_btnmat_brand.TabIndex = 602;
-            this.PANEL105_MAT_UNIT4_btnmat_brand.UseVisualStyleBackColor = false;
-            this.PANEL105_MAT_UNIT4_btnmat_brand.Click += new System.EventHandler(this.PANEL105_MAT_UNIT4_btnmat_brand_Click);
-            // 
-            // PANEL105_MAT_UNIT4_txtmat_unit4_name
-            // 
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Location = new System.Drawing.Point(103, 215);
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Name = "PANEL105_MAT_UNIT4_txtmat_unit4_name";
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.ReadOnly = true;
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Size = new System.Drawing.Size(187, 21);
-            this.PANEL105_MAT_UNIT4_txtmat_unit4_name.TabIndex = 601;
-            // 
-            // label58
-            // 
-            this.label58.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label58.ForeColor = System.Drawing.Color.Black;
-            this.label58.Location = new System.Drawing.Point(15, 214);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(85, 20);
-            this.label58.TabIndex = 600;
-            this.label58.Text = "หน่วยนับ(4) :";
-            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PANEL105_MAT_UNIT5_txtmat_unit5_id
-            // 
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Location = new System.Drawing.Point(292, 239);
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Name = "PANEL105_MAT_UNIT5_txtmat_unit5_id";
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.ReadOnly = true;
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.Size = new System.Drawing.Size(111, 21);
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_id.TabIndex = 607;
-            // 
-            // PANEL105_MAT_UNIT5_btnmat_brand
-            // 
-            this.PANEL105_MAT_UNIT5_btnmat_brand.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT5_btnmat_brand.FlatAppearance.BorderSize = 0;
-            this.PANEL105_MAT_UNIT5_btnmat_brand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL105_MAT_UNIT5_btnmat_brand.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT5_btnmat_brand.Image = ((System.Drawing.Image)(resources.GetObject("PANEL105_MAT_UNIT5_btnmat_brand.Image")));
-            this.PANEL105_MAT_UNIT5_btnmat_brand.Location = new System.Drawing.Point(263, 241);
-            this.PANEL105_MAT_UNIT5_btnmat_brand.Name = "PANEL105_MAT_UNIT5_btnmat_brand";
-            this.PANEL105_MAT_UNIT5_btnmat_brand.Size = new System.Drawing.Size(22, 16);
-            this.PANEL105_MAT_UNIT5_btnmat_brand.TabIndex = 606;
-            this.PANEL105_MAT_UNIT5_btnmat_brand.UseVisualStyleBackColor = false;
-            this.PANEL105_MAT_UNIT5_btnmat_brand.Click += new System.EventHandler(this.PANEL105_MAT_UNIT5_btnmat_brand_Click);
-            // 
-            // PANEL105_MAT_UNIT5_txtmat_unit5_name
-            // 
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.BackColor = System.Drawing.Color.White;
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Location = new System.Drawing.Point(103, 239);
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Name = "PANEL105_MAT_UNIT5_txtmat_unit5_name";
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.ReadOnly = true;
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Size = new System.Drawing.Size(187, 21);
-            this.PANEL105_MAT_UNIT5_txtmat_unit5_name.TabIndex = 605;
-            // 
-            // label59
-            // 
-            this.label59.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label59.ForeColor = System.Drawing.Color.Black;
-            this.label59.Location = new System.Drawing.Point(15, 238);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(85, 20);
-            this.label59.TabIndex = 604;
-            this.label59.Text = "หน่วยนับ(5) :";
-            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Home_SETUP_Enter_4WH_07_mat
             // 

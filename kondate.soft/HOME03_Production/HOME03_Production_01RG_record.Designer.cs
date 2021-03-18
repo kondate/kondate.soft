@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_01RG_record));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_top = new System.Windows.Forms.Panel();
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize_full = new System.Windows.Forms.PictureBox();
@@ -49,6 +46,7 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.btnPo_id = new System.Windows.Forms.Button();
             this.txtLot_end = new System.Windows.Forms.TextBox();
             this.txtLot_start = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
@@ -263,7 +261,6 @@
             this.PANEL161_SUP_txtsupplier_id = new System.Windows.Forms.TextBox();
             this.PANEL161_SUP_btnsupplier = new System.Windows.Forms.Button();
             this.PANEL161_SUP_txtsupplier_name = new System.Windows.Forms.TextBox();
-            this.btnPo_id = new System.Windows.Forms.Button();
             this.txtCPo_id = new System.Windows.Forms.TextBox();
             this.iblPo_id = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -728,6 +725,20 @@
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             this.panel1_contens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseMove);
+            // 
+            // btnPo_id
+            // 
+            this.btnPo_id.BackColor = System.Drawing.Color.White;
+            this.btnPo_id.FlatAppearance.BorderSize = 0;
+            this.btnPo_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPo_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPo_id.Image = ((System.Drawing.Image)(resources.GetObject("btnPo_id.Image")));
+            this.btnPo_id.Location = new System.Drawing.Point(355, 127);
+            this.btnPo_id.Name = "btnPo_id";
+            this.btnPo_id.Size = new System.Drawing.Size(22, 16);
+            this.btnPo_id.TabIndex = 829;
+            this.btnPo_id.UseVisualStyleBackColor = false;
+            this.btnPo_id.Click += new System.EventHandler(this.btnPo_id_Click);
             // 
             // txtLot_end
             // 
@@ -1734,14 +1745,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL1306_WH_dataGridView1_wherehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PANEL1306_WH_dataGridView1_wherehouse.DefaultCellStyle = dataGridViewCellStyle1;
             this.PANEL1306_WH_dataGridView1_wherehouse.Location = new System.Drawing.Point(3, 42);
             this.PANEL1306_WH_dataGridView1_wherehouse.Name = "PANEL1306_WH_dataGridView1_wherehouse";
             this.PANEL1306_WH_dataGridView1_wherehouse.Size = new System.Drawing.Size(491, 262);
@@ -2020,14 +2023,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL_MAT_dataGridView1_mat.BackgroundColor = System.Drawing.Color.White;
             this.PANEL_MAT_dataGridView1_mat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PANEL_MAT_dataGridView1_mat.DefaultCellStyle = dataGridViewCellStyle2;
             this.PANEL_MAT_dataGridView1_mat.Location = new System.Drawing.Point(3, 62);
             this.PANEL_MAT_dataGridView1_mat.Name = "PANEL_MAT_dataGridView1_mat";
             this.PANEL_MAT_dataGridView1_mat.Size = new System.Drawing.Size(1264, 568);
@@ -3187,14 +3182,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView1.BackgroundColor = System.Drawing.Color.White;
             this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.GridView1.Location = new System.Drawing.Point(5, 250);
             this.GridView1.Name = "GridView1";
             this.GridView1.Size = new System.Drawing.Size(1559, 85);
@@ -3229,6 +3216,7 @@
             this.btnremove_row.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnremove_row.UseVisualStyleBackColor = false;
             this.btnremove_row.Visible = false;
+            this.btnremove_row.Click += new System.EventHandler(this.btnremove_row_Click);
             // 
             // dtpdate_vat
             // 
@@ -3498,20 +3486,6 @@
             this.PANEL161_SUP_txtsupplier_name.ReadOnly = true;
             this.PANEL161_SUP_txtsupplier_name.Size = new System.Drawing.Size(235, 21);
             this.PANEL161_SUP_txtsupplier_name.TabIndex = 831;
-            // 
-            // btnPo_id
-            // 
-            this.btnPo_id.BackColor = System.Drawing.Color.White;
-            this.btnPo_id.FlatAppearance.BorderSize = 0;
-            this.btnPo_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPo_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPo_id.Image = ((System.Drawing.Image)(resources.GetObject("btnPo_id.Image")));
-            this.btnPo_id.Location = new System.Drawing.Point(355, 127);
-            this.btnPo_id.Name = "btnPo_id";
-            this.btnPo_id.Size = new System.Drawing.Size(22, 16);
-            this.btnPo_id.TabIndex = 829;
-            this.btnPo_id.UseVisualStyleBackColor = false;
-            this.btnPo_id.Click += new System.EventHandler(this.btnPo_id_Click);
             // 
             // txtCPo_id
             // 

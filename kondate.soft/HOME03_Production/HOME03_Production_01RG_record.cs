@@ -1930,6 +1930,14 @@ namespace kondate.soft.HOME03_Production
                     myDateTime2 = DateTime.ParseExact(myString2, "HH:mm:ss", UsaCulture);
                     //MessageBox.Show("ok1");
 
+                    //=================================================================================
+                    string D1 = Convert.ToDateTime(this.dtpdate_record.Value.Date).ToString("yyyy-MM-dd", UsaCulture);          //4
+                    String stringDateRecord = D1.ToString(); // get value from text field
+                    DateTime myDateTime_DateRecord = new DateTime();
+                    myDateTime_DateRecord = DateTime.ParseExact(stringDateRecord, "yyyy-MM-dd", UsaCulture);
+                    //=================================================================================
+
+
                     if (this.iblword_status.Text.Trim() == "ออกใบรับสินค้า หรือ วัตถุดิบ")
                     {
 
@@ -2072,6 +2080,7 @@ namespace kondate.soft.HOME03_Production
 
 
                         cmd2.Parameters.Add("@txttrans_date_server", SqlDbType.NVarChar).Value = myDateTime.ToString("yyyy-MM-dd", UsaCulture);
+
                         cmd2.Parameters.Add("@txttrans_time", SqlDbType.NVarChar).Value = myDateTime2.ToString("HH:mm:ss", UsaCulture);
                         cmd2.Parameters.Add("@txttrans_year", SqlDbType.NVarChar).Value = myDateTime.ToString("yyyy", UsaCulture);
                         cmd2.Parameters.Add("@txttrans_month", SqlDbType.NVarChar).Value = myDateTime.ToString("MM", UsaCulture);
@@ -7040,6 +7049,11 @@ namespace kondate.soft.HOME03_Production
 
         private void brnrun_Click(object sender, EventArgs e)
         {
+            if (this.txtwidth_per_lot.Text == "")
+            {
+                this.txtwidth_per_lot.Text = "0";
+            }
+
             if (this.PANEL_MAT_txtmat_name.Text == "")
             {
                 MessageBox.Show("โปรด เลือกรหัสด้าย ที่จะรับเข้า ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -7399,6 +7413,12 @@ namespace kondate.soft.HOME03_Production
                 return;
             }
         }
+
+        private void btnremove_row_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
