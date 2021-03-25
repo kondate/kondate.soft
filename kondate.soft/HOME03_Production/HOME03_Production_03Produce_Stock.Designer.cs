@@ -39,6 +39,7 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.ibllabel_lot_no = new System.Windows.Forms.Label();
             this.GridView3 = new System.Windows.Forms.DataGridView();
             this.btnLot_all = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -79,7 +80,8 @@
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.panel_top = new System.Windows.Forms.Panel();
-            this.ibllabel_lot_no = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.txtmat_sac_id = new System.Windows.Forms.TextBox();
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
@@ -267,6 +269,8 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.label61);
+            this.panel1_contens.Controls.Add(this.txtmat_sac_id);
             this.panel1_contens.Controls.Add(this.ibllabel_lot_no);
             this.panel1_contens.Controls.Add(this.GridView3);
             this.panel1_contens.Controls.Add(this.btnLot_all);
@@ -308,6 +312,20 @@
             this.panel1_contens.Size = new System.Drawing.Size(1442, 620);
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
+            // 
+            // ibllabel_lot_no
+            // 
+            this.ibllabel_lot_no.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ibllabel_lot_no.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ibllabel_lot_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ibllabel_lot_no.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ibllabel_lot_no.ForeColor = System.Drawing.Color.Black;
+            this.ibllabel_lot_no.Location = new System.Drawing.Point(429, 121);
+            this.ibllabel_lot_no.Name = "ibllabel_lot_no";
+            this.ibllabel_lot_no.Size = new System.Drawing.Size(633, 39);
+            this.ibllabel_lot_no.TabIndex = 1072;
+            this.ibllabel_lot_no.Text = "ดับเบิ้ลคลิ๊ก ตาราง Lot No ข้างล่างนี้ ถ้าต้องการแก้ไขเลขที่ชุด..";
+            this.ibllabel_lot_no.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GridView3
             // 
@@ -851,19 +869,29 @@
             this.panel_top.TabIndex = 9;
             this.panel_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseDown);
             // 
-            // ibllabel_lot_no
+            // label61
             // 
-            this.ibllabel_lot_no.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ibllabel_lot_no.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ibllabel_lot_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ibllabel_lot_no.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ibllabel_lot_no.ForeColor = System.Drawing.Color.Black;
-            this.ibllabel_lot_no.Location = new System.Drawing.Point(429, 121);
-            this.ibllabel_lot_no.Name = "ibllabel_lot_no";
-            this.ibllabel_lot_no.Size = new System.Drawing.Size(633, 39);
-            this.ibllabel_lot_no.TabIndex = 1072;
-            this.ibllabel_lot_no.Text = "ดับเบิ้ลคลิ๊ก ตาราง Lot No ข้างล่างนี้ ถ้าต้องการแก้ไขเลขที่ชุด..";
-            this.ibllabel_lot_no.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label61.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label61.ForeColor = System.Drawing.Color.Black;
+            this.label61.Location = new System.Drawing.Point(335, 74);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(84, 23);
+            this.label61.TabIndex = 1239;
+            this.label61.Text = "หมวดสินค้า :";
+            this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label61.Visible = false;
+            // 
+            // txtmat_sac_id
+            // 
+            this.txtmat_sac_id.BackColor = System.Drawing.Color.White;
+            this.txtmat_sac_id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtmat_sac_id.ForeColor = System.Drawing.Color.Blue;
+            this.txtmat_sac_id.Location = new System.Drawing.Point(428, 74);
+            this.txtmat_sac_id.Name = "txtmat_sac_id";
+            this.txtmat_sac_id.Size = new System.Drawing.Size(56, 27);
+            this.txtmat_sac_id.TabIndex = 1238;
+            this.txtmat_sac_id.Text = "006";
+            this.txtmat_sac_id.Visible = false;
             // 
             // HOME03_Production_03Produce_Stock
             // 
@@ -953,5 +981,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLot_all;
         private System.Windows.Forms.Label ibllabel_lot_no;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox txtmat_sac_id;
     }
 }

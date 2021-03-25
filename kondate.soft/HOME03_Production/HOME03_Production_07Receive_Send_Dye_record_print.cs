@@ -126,7 +126,7 @@ namespace kondate.soft.HOME03_Production
 
             rpt.SetParameterValue("cdkey", W_ID_Select.CDKEY.Trim());
             rpt.SetParameterValue("txtco_id", W_ID_Select.M_COID.Trim());
-            rpt.SetParameterValue("txtrg_id", W_ID_Select.TRANS_ID.Trim());
+            rpt.SetParameterValue("txtFG2_id", W_ID_Select.TRANS_ID.Trim());
 
             this.crystalReportViewer1.ReportSource = rpt;
 

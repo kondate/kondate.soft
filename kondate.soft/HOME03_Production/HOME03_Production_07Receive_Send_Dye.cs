@@ -103,7 +103,7 @@ namespace kondate.soft.HOME03_Production
             CHECK_USER_RULE();
 
             this.iblword_top.Text = W_ID_Select.WORD_TOP.Trim();
-            this.iblword_status.Text = "ระเบียนใบรับผ้าย้อม";
+            this.iblword_status.Text = "ระเบียนใบรับผ้าพับ";
             this.iblstatus.Text = "Version : " + W_ID_Select.GetVersion() + "      |       User name (ชื่อผู้ใช้) : " + W_ID_Select.M_EMP_OFFICE_NAME.ToString() + "       |       กิจการ : " + W_ID_Select.M_CONAME.ToString() + "      |      สาขา : " + W_ID_Select.M_BRANCHNAME.ToString() + "      |     วันที่ : " + DateTime.Now.ToString("dd/MM/yyyy") + "";
 
 
@@ -127,8 +127,8 @@ namespace kondate.soft.HOME03_Production
             this.dtpstart.CustomFormat = this.dtpstart.Value.ToString("dd-MM-yyyy", UsaCulture);
 
             //========================================
-            this.cboSearch.Items.Add("เลขที่ใบรับผ้าย้อม");
-            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบรับผ้าย้อม");
+            this.cboSearch.Items.Add("เลขที่ใบรับผ้าพับ");
+            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบรับผ้าพับ");
 
             //========================================
             PANEL2_BRANCH_GridView1_branch();
@@ -195,8 +195,8 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (c002_07Receive_Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_07Receive_Send_dye_record.txtRG_id ASC";
+                                   " AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                  " ORDER BY c002_07Receive_Send_dye_record.txtFG2_id ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -219,9 +219,9 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtFG2_id"].Value = dt2.Rows[j]["txtFG2_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = "";     //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -235,17 +235,17 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
 
                             //RG ==============================
-                            if (dt2.Rows[j]["txtRG_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtFG2_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                             }
-                            else if (dt2.Rows[j]["txtRG_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtFG2_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                             }
-                            else if (dt2.Rows[j]["txtRG_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtFG2_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = "ยกเลิก"; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = "ยกเลิก"; //21
                             }
 
 
@@ -328,8 +328,8 @@ namespace kondate.soft.HOME03_Production
                                    " AND c002_07Receive_Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
                                    " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                   " AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_07Receive_Send_dye_record.txtRG_id ASC";
+                                   " AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                  " ORDER BY c002_07Receive_Send_dye_record.txtFG2_id ASC";
                 }
                 else
                 {
@@ -344,8 +344,8 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     " AND (c002_07Receive_Send_dye_record.txtbranch_id = '" + this.txtbranch_id.Text.Trim() + "')" +
-                                  " AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_07Receive_Send_dye_record.txtRG_id ASC";
+                                  " AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                  " ORDER BY c002_07Receive_Send_dye_record.txtFG2_id ASC";
 
                 }
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -369,9 +369,9 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtFG2_id"].Value = dt2.Rows[j]["txtFG2_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = "";     //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -385,17 +385,17 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
 
                             //RG ==============================
-                            if (dt2.Rows[j]["txtRG_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtFG2_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                             }
-                            else if (dt2.Rows[j]["txtRG_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtFG2_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                             }
-                            else if (dt2.Rows[j]["txtRG_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtFG2_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = "ยกเลิก"; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = "ยกเลิก"; //21
                             }
 
 
@@ -433,9 +433,9 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
-            this.GridView1.Columns[3].Name = "Col_txtRG_id";
+            this.GridView1.Columns[3].Name = "Col_txtFG2_id";
             this.GridView1.Columns[4].Name = "Col_txtPPT_id";
-            this.GridView1.Columns[5].Name = "Col_txttrans_date_server";
+            this.GridView1.Columns[5].Name = "Col_txttrans_date_client";
             this.GridView1.Columns[6].Name = "Col_txttrans_time";
             this.GridView1.Columns[7].Name = "Col_txtsupplier_id";
             this.GridView1.Columns[8].Name = "Col_txtsupplier_name";
@@ -446,7 +446,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[12].Name = "Col_txtsum_qty_rib";
             this.GridView1.Columns[13].Name = "Col_txtsum_qty_rib_kg";
             this.GridView1.Columns[14].Name = "Col_txtsum_qty";
-            this.GridView1.Columns[15].Name = "Col_txtRG_status";
+            this.GridView1.Columns[15].Name = "Col_txtFG2_status";
 
 
             this.GridView1.Columns[0].HeaderText = "No";
@@ -471,11 +471,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
             this.GridView1.Columns["Col_txtbranch_id"].Visible = false;  //""Col_txtbranch_id"";
 
-            this.GridView1.Columns["Col_txtRG_id"].Visible = true;  //"Col_txtRG_id";
-            this.GridView1.Columns["Col_txtRG_id"].Width = 180;
-            this.GridView1.Columns["Col_txtRG_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtRG_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtRG_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtFG2_id"].Visible = true;  //"Col_txtFG2_id";
+            this.GridView1.Columns["Col_txtFG2_id"].Width = 180;
+            this.GridView1.Columns["Col_txtFG2_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtFG2_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtFG2_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txtPPT_id"].Visible = false;  //"Col_txtPPT_id";
             this.GridView1.Columns["Col_txtPPT_id"].Width = 0;
@@ -483,11 +483,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtPPT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtPPT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txttrans_date_server"].Visible = true;  //""Col_txttrans_date_server"";
-            this.GridView1.Columns["Col_txttrans_date_server"].Width = 90;
-            this.GridView1.Columns["Col_txttrans_date_server"].ReadOnly = true;
-            this.GridView1.Columns["Col_txttrans_date_server"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txttrans_date_server"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txttrans_date_client"].Visible = true;  //""Col_txttrans_date_client"";
+            this.GridView1.Columns["Col_txttrans_date_client"].Width = 90;
+            this.GridView1.Columns["Col_txttrans_date_client"].ReadOnly = true;
+            this.GridView1.Columns["Col_txttrans_date_client"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txttrans_date_client"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txttrans_time"].Visible = true;  //"Col_txttrans_time";
             this.GridView1.Columns["Col_txttrans_time"].Width = 70;
@@ -539,11 +539,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtsum_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsum_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtRG_status"].Visible = true;  //"Col_txtRG_status";
-            this.GridView1.Columns["Col_txtRG_status"].Width = 100;
-            this.GridView1.Columns["Col_txtRG_status"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtRG_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtRG_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtFG2_status"].Visible = true;  //"Col_txtFG2_status";
+            this.GridView1.Columns["Col_txtFG2_status"].Width = 100;
+            this.GridView1.Columns["Col_txtFG2_status"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtFG2_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtFG2_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
             this.GridView1.GridColor = Color.FromArgb(227, 227, 227);
@@ -584,22 +584,22 @@ namespace kondate.soft.HOME03_Production
 
                 DataGridViewRow row = this.GridView1.Rows[e.RowIndex];
 
-                //this.cboSearch.Items.Add("เลขที่ใบรับผ้าย้อม");
-                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบรับผ้าย้อม");
+                //this.cboSearch.Items.Add("เลขที่ใบรับผ้าพับ");
+                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบรับผ้าพับ");
 
                 var cell = row.Cells[1].Value;
                 if (cell != null)
                 {
                     W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
-                    this.cboSearch.Text = "เลขที่ใบรับผ้าย้อม";
+                    this.cboSearch.Text = "เลขที่ใบรับผ้าพับ";
 
-                    if (this.cboSearch.Text == "เลขที่ใบรับผ้าย้อม")
+                    if (this.cboSearch.Text == "เลขที่ใบรับผ้าพับ")
                     {
                         this.txtsearch.Text = row.Cells[3].Value.ToString();
                         W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
 
                     }
-                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบรับผ้าย้อม")
+                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบรับผ้าพับ")
                     {
                         this.txtsearch.Text = row.Cells[8].Value.ToString();
 
@@ -659,7 +659,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบรับผ้าย้อม";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบรับผ้าพับ";
                 kondate.soft.HOME03_Production.HOME03_Production_07Receive_Send_Dye_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Receive_Send_Dye_record_detail();
                 frm2.Show();
 
@@ -746,9 +746,9 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    //" AND (c002_07Receive_Send_dye_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                   " AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                    " AND (c002_07Receive_Send_dye_record.txtsupplier_id = '" + this.PANEL161_SUP_txtsupplier_id.Text.Trim() + "')" +
-                                   " ORDER BY c002_07Receive_Send_dye_record.txtRG_id ASC";
+                                   " ORDER BY c002_07Receive_Send_dye_record.txtFG2_id ASC";
 
 
 
@@ -773,9 +773,9 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtFG2_id"].Value = dt2.Rows[j]["txtFG2_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -786,17 +786,17 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat_creditor"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat_creditor"]).ToString("###,###.00");      //13
 
                             //RG ==============================
-                            if (dt2.Rows[j]["txtRG_status"].ToString() == "")
+                            if (dt2.Rows[j]["txtFG2_status"].ToString() == "")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                             }
-                            else if (dt2.Rows[j]["txtRG_status"].ToString() == "0")
+                            else if (dt2.Rows[j]["txtFG2_status"].ToString() == "0")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                             }
-                            else if (dt2.Rows[j]["txtRG_status"].ToString() == "1")
+                            else if (dt2.Rows[j]["txtFG2_status"].ToString() == "1")
                             {
-                                this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = "ยกเลิก"; //21
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = "ยกเลิก"; //21
                             }
 
 
@@ -884,10 +884,10 @@ namespace kondate.soft.HOME03_Production
                     cmd2.CommandType = CommandType.Text;
                     cmd2.Connection = conn;
 
-                //this.cboSearch.Items.Add("เลขที่ใบรับผ้าย้อม");
-                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบรับผ้าย้อม");
+                //this.cboSearch.Items.Add("เลขที่ใบรับผ้าพับ");
+                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบรับผ้าพับ");
 
-                if (this.cboSearch.Text.Trim()  == "เลขที่ใบรับผ้าย้อม")
+                if (this.cboSearch.Text.Trim()  == "เลขที่ใบรับผ้าพับ")
                 {
                         cmd2.CommandText = "SELECT c002_07Receive_Send_dye_record.*," +
                                        "k016db_1supplier.*" +
@@ -899,11 +899,11 @@ namespace kondate.soft.HOME03_Production
                                        " AND c002_07Receive_Send_dye_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
                                        " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       " AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
-                                       " AND (c002_07Receive_Send_dye_record.txtRG_id = '" + this.txtsearch.Text.Trim() + "')" +
-                                      " ORDER BY c002_07Receive_Send_dye_record.txtRG_id ASC";
+                                       " AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_07Receive_Send_dye_record.txtFG2_id = '" + this.txtsearch.Text.Trim() + "')" +
+                                      " ORDER BY c002_07Receive_Send_dye_record.txtFG2_id ASC";
                 }
-                else if (this.cboSearch.Text.Trim() == "ชื่อผู้บันทึกใบรับผ้าย้อม")
+                else if (this.cboSearch.Text.Trim() == "ชื่อผู้บันทึกใบรับผ้าพับ")
                 {
                         cmd2.CommandText = "SELECT c002_07Receive_Send_dye_record.*," +
                                         "k016db_1supplier.*" +
@@ -916,9 +916,9 @@ namespace kondate.soft.HOME03_Production
                                         " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                         " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                         " AND (c002_07Receive_Send_dye_record.txtbranch_id = '" + this.txtbranch_id.Text.Trim() + "')" +
-                                        " AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                        " AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                         " AND (c002_07Receive_Send_dye_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
-                                        " ORDER BY c002_07Receive_Send_dye_record.txtRG_id ASC";
+                                        " ORDER BY c002_07Receive_Send_dye_record.txtFG2_id ASC";
                 }
                     cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                     cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -941,9 +941,9 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                                 this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                                 this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                                this.GridView1.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //3
+                                this.GridView1.Rows[index].Cells["Col_txtFG2_id"].Value = dt2.Rows[j]["txtFG2_id"].ToString();      //3
                                 this.GridView1.Rows[index].Cells["Col_txtPPT_id"].Value = dt2.Rows[j]["txtPPT_id"].ToString();      //3
-                                this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                                this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                                 this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                                 this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -954,17 +954,17 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_txtmoney_after_vat_creditor"].Value = Convert.ToSingle(dt2.Rows[j]["txtmoney_after_vat_creditor"]).ToString("###,###.00");      //13
 
                                 //RG ==============================
-                                if (dt2.Rows[j]["txtRG_status"].ToString() == "")
+                                if (dt2.Rows[j]["txtFG2_status"].ToString() == "")
                                 {
-                                    this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                    this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                                 }
-                                else if (dt2.Rows[j]["txtRG_status"].ToString() == "0")
+                                else if (dt2.Rows[j]["txtFG2_status"].ToString() == "0")
                                 {
-                                    this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = ""; //21
+                                    this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = ""; //21
                                 }
-                                else if (dt2.Rows[j]["txtRG_status"].ToString() == "1")
+                                else if (dt2.Rows[j]["txtFG2_status"].ToString() == "1")
                                 {
-                                    this.GridView1.Rows[index].Cells["Col_txtRG_status"].Value = "ยกเลิก"; //21
+                                    this.GridView1.Rows[index].Cells["Col_txtFG2_status"].Value = "ยกเลิก"; //21
                                 }
 
 
@@ -1143,7 +1143,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบรับผ้าย้อม";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบรับผ้าพับ";
                 kondate.soft.HOME03_Production.HOME03_Production_07Receive_Send_Dye_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Receive_Send_Dye_record_detail();
                 frm2.Show();
 

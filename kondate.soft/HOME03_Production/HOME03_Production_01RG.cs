@@ -189,7 +189,7 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c003_receive_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c003_receive_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (c003_receive_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c003_receive_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                   " AND (c003_receive_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c003_receive_record.txtCRG_id ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -215,7 +215,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[4].Name = "Col_txtreceive_type_name";
 
                             //this.GridView1.Columns[3].Name = "Col_txtCRG_id";
-                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
+                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_client";
                             //this.GridView1.Columns[5].Name = "Col_txttrans_time";
                             //this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
                             //this.GridView1.Columns[7].Name = "Col_txtsupplier_name";
@@ -233,7 +233,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtreceive_type_name"].Value = dt2.Rows[j]["txtreceive_type_name"].ToString();      //2
 
                             this.GridView1.Rows[index].Cells["Col_txtCRG_id"].Value = dt2.Rows[j]["txtCRG_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
@@ -346,7 +346,7 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c003_receive_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c003_receive_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    //" AND (c003_receive_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c003_receive_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                   " AND (c003_receive_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c003_receive_record.txtCRG_id ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -369,7 +369,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[1].Name = "Col_txtco_id";
                             //this.GridView1.Columns[2].Name = "Col_txtbranch_id";
                             //this.GridView1.Columns[3].Name = "Col_txtCRG_id";
-                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
+                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_client";
                             //this.GridView1.Columns[5].Name = "Col_txttrans_time";
                             //this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
                             //this.GridView1.Columns[7].Name = "Col_txtsupplier_name";
@@ -386,7 +386,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtreceive_type_name"].Value = dt2.Rows[j]["txtreceive_type_name"].ToString();      //2
 
                             this.GridView1.Rows[index].Cells["Col_txtCRG_id"].Value = dt2.Rows[j]["txtCRG_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
@@ -445,7 +445,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[4].Name = "Col_txtreceive_type_name";
 
             this.GridView1.Columns[5].Name = "Col_txtCRG_id";
-            this.GridView1.Columns[6].Name = "Col_txttrans_date_server";
+            this.GridView1.Columns[6].Name = "Col_txttrans_date_client";
             this.GridView1.Columns[7].Name = "Col_txttrans_time";
             this.GridView1.Columns[8].Name = "Col_txtsupplier_id";
             this.GridView1.Columns[9].Name = "Col_txtsupplier_name";
@@ -491,11 +491,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtCRG_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtCRG_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txttrans_date_server"].Visible = true;  //"Col_txttrans_date_server";
-            this.GridView1.Columns["Col_txttrans_date_server"].Width = 100;
-            this.GridView1.Columns["Col_txttrans_date_server"].ReadOnly = true;
-            this.GridView1.Columns["Col_txttrans_date_server"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txttrans_date_server"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txttrans_date_client"].Visible = true;  //"Col_txttrans_date_client";
+            this.GridView1.Columns["Col_txttrans_date_client"].Width = 100;
+            this.GridView1.Columns["Col_txttrans_date_client"].ReadOnly = true;
+            this.GridView1.Columns["Col_txttrans_date_client"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txttrans_date_client"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txttrans_time"].Visible = true;  //"Col_txttrans_time";
             this.GridView1.Columns["Col_txttrans_time"].Width = 80;
@@ -948,7 +948,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c003_receive_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        //" AND (c003_receive_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                        " AND (c003_receive_record.txtCRG_id = '" + this.txtsearch.Text.Trim() + "')" +
-                                       " AND (c003_receive_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c003_receive_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c003_receive_record.txtCRG_id ASC";
 
                 }
@@ -979,7 +979,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c003_receive_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        //" AND (c003_receive_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                        " AND (c003_receive_record.txtemp_id = '" + this.txtsearch.Text.Trim() + "')" +
-                                       " AND (c003_receive_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c003_receive_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c003_receive_record.txtCRG_id ASC";
 
                 }
@@ -1003,7 +1003,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[1].Name = "Col_txtco_id";
                             //this.GridView1.Columns[2].Name = "Col_txtbranch_id";
                             //this.GridView1.Columns[3].Name = "Col_txtCRG_id";
-                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
+                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_client";
                             //this.GridView1.Columns[5].Name = "Col_txttrans_time";
                             //this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
                             //this.GridView1.Columns[7].Name = "Col_txtsupplier_name";
@@ -1020,7 +1020,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtreceive_type_name"].Value = dt2.Rows[j]["txtreceive_type_name"].ToString();      //2
 
                             this.GridView1.Rows[index].Cells["Col_txtCRG_id"].Value = dt2.Rows[j]["txtCRG_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
@@ -1142,7 +1142,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c003_receive_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        //" AND (c003_receive_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                        " AND (c003_receive_record.txtsupplier_id = '" + this.PANEL161_SUP_txtsupplier_id.Text.Trim() + "')" +
-                                       " AND (c003_receive_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c003_receive_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c003_receive_record.txtCRG_id ASC";
 
 
@@ -1167,7 +1167,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[1].Name = "Col_txtco_id";
                             //this.GridView1.Columns[2].Name = "Col_txtbranch_id";
                             //this.GridView1.Columns[3].Name = "Col_txtCRG_id";
-                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
+                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_client";
                             //this.GridView1.Columns[5].Name = "Col_txttrans_time";
                             //this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
                             //this.GridView1.Columns[7].Name = "Col_txtsupplier_name";
@@ -1184,7 +1184,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtreceive_type_name"].Value = dt2.Rows[j]["txtreceive_type_name"].ToString();      //2
 
                             this.GridView1.Rows[index].Cells["Col_txtCRG_id"].Value = dt2.Rows[j]["txtCRG_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
@@ -1304,7 +1304,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (c003_receive_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    //" AND (c003_receive_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                    " AND (c003_receive_record.txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
-                                   " AND (c003_receive_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                   " AND (c003_receive_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c003_receive_record.txtCRG_id ASC";
 
 
@@ -1329,7 +1329,7 @@ namespace kondate.soft.HOME03_Production
                             //this.GridView1.Columns[1].Name = "Col_txtco_id";
                             //this.GridView1.Columns[2].Name = "Col_txtbranch_id";
                             //this.GridView1.Columns[3].Name = "Col_txtCRG_id";
-                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
+                            //this.GridView1.Columns[4].Name = "Col_txttrans_date_client";
                             //this.GridView1.Columns[5].Name = "Col_txttrans_time";
                             //this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
                             //this.GridView1.Columns[7].Name = "Col_txtsupplier_name";
@@ -1346,7 +1346,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtreceive_type_name"].Value = dt2.Rows[j]["txtreceive_type_name"].ToString();      //2
 
                             this.GridView1.Rows[index].Cells["Col_txtCRG_id"].Value = dt2.Rows[j]["txtCRG_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7

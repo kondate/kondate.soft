@@ -240,7 +240,7 @@ namespace kondate.soft.HOME03_Production
 
 
 
-                        this.dtpdate_record.Value = Convert.ToDateTime(dt2.Rows[0]["txttrans_date_server"].ToString());
+                        this.dtpdate_record.Value = Convert.ToDateTime(dt2.Rows[0]["txttrans_date_client"].ToString());
                         this.dtpdate_record.Format = DateTimePickerFormat.Custom;
                         this.dtpdate_record.CustomFormat = this.dtpdate_record.Value.ToString("dd-MM-yyyy", UsaCulture);
 
@@ -357,6 +357,7 @@ namespace kondate.soft.HOME03_Production
 
                             GridView1.Rows[index].Cells["Col_txtic_id"].Value = dt2.Rows[j]["txtic_id"].ToString();      //37
 
+                            GridView1.Rows[index].Cells["Col_2"].Value = "0";
 
                         }
                         //=======================================================
@@ -401,7 +402,7 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 50;
+            this.GridView1.ColumnCount = 51;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtnumber_in_year";
             this.GridView1.Columns[2].Name = "Col_txtwherehouse_id";
@@ -474,10 +475,12 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[47].Name = "Col_txtqty_after_cut";
             this.GridView1.Columns[48].Name = "Col_txtcut_id";
             this.GridView1.Columns[49].Name = "Col_txtic_id";
+            this.GridView1.Columns[50].Name = "Col_2";
             this.GridView1.Columns[46].Visible = false;
             this.GridView1.Columns[47].Visible = false;
             this.GridView1.Columns[48].Visible = false;
             this.GridView1.Columns[49].Visible = false;
+            this.GridView1.Columns[50].Visible = true;
 
             this.GridView1.Columns[0].HeaderText = "No";
             this.GridView1.Columns[1].HeaderText = "เลขที่ชุด";
@@ -886,6 +889,8 @@ namespace kondate.soft.HOME03_Production
             double Mbypai = 0;
             double QAbypai = 0;
 
+            double C1 = 0;
+            double C1YP = 0;
 
 
             int k = 0;
@@ -1059,6 +1064,25 @@ namespace kondate.soft.HOME03_Production
 
                     //END คำนวณต้นทุนถัวเฉลี่ย==================================================================
                     //  ===========================================================================================================
+                    //C2==================================
+                    if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
+                    {
+                        this.GridView1.Rows[i].Cells["Col_2"].Value = "1";
+                        C1 = Convert.ToDouble(string.Format("{0:n4}", C1)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_2"].Value.ToString()));
+                        this.txtcost_qty1_balance.Text = C1.ToString("N", new CultureInfo("en-US"));
+                        C1YP = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance.Text.ToString()));
+                        this.txtcost_qty1_balance_yokpai.Text = C1YP.ToString("N", new CultureInfo("en-US"));
+                    }
+                    else
+                    {
+                        this.GridView1.Rows[i].Cells["Col_2"].Value = "0";
+                        C1 = Convert.ToDouble(string.Format("{0:n4}", C1)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_2"].Value.ToString()));
+                        this.txtcost_qty1_balance.Text = C1.ToString("N", new CultureInfo("en-US"));
+                        C1YP = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance.Text.ToString()));
+                        this.txtcost_qty1_balance_yokpai.Text = C1YP.ToString("N", new CultureInfo("en-US"));
+
+                    }
+                    //==================================            
                 }
             }
 
@@ -1074,6 +1098,8 @@ namespace kondate.soft.HOME03_Production
             Mbypai = 0;
             QAbypai = 0;
 
+             C1 = 0;
+             C1YP = 0;
 
         }
         private void GridView1_Cal_Sum_For_Cancel()
@@ -1091,6 +1117,8 @@ namespace kondate.soft.HOME03_Production
             double Mbypai = 0;
             double QAbypai = 0;
 
+            double C1 = 0;
+            double C1YP = 0;
 
             int k = 0;
 
@@ -1263,6 +1291,26 @@ namespace kondate.soft.HOME03_Production
 
                     //END คำนวณต้นทุนถัวเฉลี่ย==================================================================
                     //  ===========================================================================================================
+                    //  ===========================================================================================================
+                    //C2==================================
+                    if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
+                    {
+                        this.GridView1.Rows[i].Cells["Col_2"].Value = "1";
+                        C1 = Convert.ToDouble(string.Format("{0:n4}", C1)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_2"].Value.ToString()));
+                        this.txtcost_qty1_balance.Text = C1.ToString("N", new CultureInfo("en-US"));
+                        C1YP = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance.Text.ToString()));
+                        this.txtcost_qty1_balance_yokpai.Text = C1YP.ToString("N", new CultureInfo("en-US"));
+                    }
+                    else
+                    {
+                        this.GridView1.Rows[i].Cells["Col_2"].Value = "0";
+                        C1 = Convert.ToDouble(string.Format("{0:n4}", C1)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_2"].Value.ToString()));
+                        this.txtcost_qty1_balance.Text = C1.ToString("N", new CultureInfo("en-US"));
+                        C1YP = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance_yokma.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance.Text.ToString()));
+                        this.txtcost_qty1_balance_yokpai.Text = C1YP.ToString("N", new CultureInfo("en-US"));
+
+                    }
+                    //==================================            
                 }
             }
 
@@ -1279,6 +1327,8 @@ namespace kondate.soft.HOME03_Production
             Mbypai = 0;
             QAbypai = 0;
 
+             C1 = 0;
+             C1YP = 0;
 
 
         }
@@ -1358,6 +1408,7 @@ namespace kondate.soft.HOME03_Production
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
 
+                            this.txtcost_qty1_balance_yokma.Text = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,###.00");        //18
                             this.txtcost_qty_balance_yokma.Text = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_balance"]).ToString("###,###.00");        //18
                             this.txtcost_qty_price_average_yokma.Text = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_price_average"]).ToString("###,###.00");        //19
                             this.txtcost_money_sum_yokma.Text = Convert.ToSingle(dt2.Rows[j]["txtcost_money_sum"]).ToString("###,###.00");        //20
@@ -1929,6 +1980,7 @@ namespace kondate.soft.HOME03_Production
 
         //1.k021_mat_average
         cmd2.CommandText = "UPDATE k021_mat_average SET " +
+                                       "txtcost_qty1_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance_yokpai.Text.ToString())) + "'," +
                                        "txtcost_qty_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokpai.Text.ToString())) + "'," +
                                        "txtcost_qty_price_average = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokpai.Text.ToString())) + "'," +
                                         "txtcost_money_sum = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) + "'," +
@@ -1969,17 +2021,20 @@ namespace kondate.soft.HOME03_Production
                                    "txtmat_unit2_name," +  //16
                                    "txtmat_unit2_qty," +  //17
 
-                                  "txtqty_in," +  //18
+                                   "txtqty1_in," +  //18
+                                 "txtqty_in," +  //18
                                    "txtqty2_in," +  //19
                                   "txtprice_in," +   //20
                                    "txtsum_total_in," +  //21
 
-                                  "txtqty_out," +  //22
+                                    "txtqty1_out," +  //22
+                                "txtqty_out," +  //22
                                   "txtqty2_out," +  //23
                                   "txtprice_out," +  //24
                                    "txtsum_total_out," +  //25
 
-                                   "txtqty_balance," +  //26
+                                     "txtqty1_balance," +  //26
+                                 "txtqty_balance," +  //26
                                    "txtqty2_balance," +  //27
                                   "txtprice_balance," +  //28
                                    "txtsum_total_balance," +  //29
@@ -1988,7 +2043,8 @@ namespace kondate.soft.HOME03_Production
 
                             "VALUES ('" + W_ID_Select.CDKEY.Trim() + "','" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +  //1
                             "'" + myDateTime.ToString("yyyy-MM-dd", UsaCulture) + "','" + myDateTime2.ToString("HH:mm:ss", UsaCulture) + "'," +  //2
-                            "'" + myDateTime.ToString("yyyy", UsaCulture) + "','" + myDateTime.ToString("MM", UsaCulture) + "','" + myDateTime.ToString("dd", UsaCulture) + "','" + DateTime.Now.ToString("yyyy-MM-dd", UsaCulture) + "'," +  //3
+                            "'" + myDateTime.ToString("yyyy", UsaCulture) + "','" + myDateTime.ToString("MM", UsaCulture) + "','" + myDateTime.ToString("dd", UsaCulture) + "'," +
+                            "'" + DateTime.Now.ToString("yyyy-MM-dd", UsaCulture) + "'," +  //3
                             "'" + W_ID_Select.COMPUTER_IP.Trim() + "','" + W_ID_Select.COMPUTER_NAME.Trim() + "'," +  //4
                             "'" + W_ID_Select.M_USERNAME.Trim() + "','" + W_ID_Select.M_EMP_OFFICE_NAME.Trim() + "'," +  //5
                             "'" + W_ID_Select.VERSION_ID.Trim() + "'," +  //6
@@ -2010,17 +2066,20 @@ namespace kondate.soft.HOME03_Production
                             "'" + this.txtmat_unit2_name.Text.ToString() + "'," +  //16
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_unit2_qty.Text.ToString())) + "'," +  //17
 
+                           "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //18  txtqty1_in
                            "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //18  txtqty_in
                            "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //19 txtqty2_in
                            "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //20 txtprice_in
                            "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //21 txtsum_total_in
 
-                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) + "'," +  //22 txtqty_out
+                             "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance.Text.ToString())) + "'," +  //22 txtqty1_out
+                         "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) + "'," +  //22 txtqty_out
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum2_qty.Text.ToString())) + "'," +  //23 txtqty2_out
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtprice.Text.ToString())) + "'," +  //24 txtprice_out
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_total.Text.ToString())) + "'," +  //25   // **** เป็นราคาที่ยังไม่หักส่วนลด มาคิดต้นทุนถัวเฉลี่ย txtsum_total_out
 
-                           "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokpai.Text.ToString())) + "'," +  //26
+                              "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty1_balance_yokpai.Text.ToString())) + "'," +  //26
+                        "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_balance_yokpai.Text.ToString())) + "'," +  //26
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty2_balance_yokpai.Text.ToString())) + "'," +  //27
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty_price_average_yokpai.Text.ToString())) + "'," +  //28
                            "'" + Convert.ToDouble(string.Format("{0:n4}", this.txtcost_money_sum_yokpai.Text.ToString())) + "'," +  //29

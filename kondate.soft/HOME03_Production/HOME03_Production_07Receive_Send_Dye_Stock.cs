@@ -612,7 +612,7 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (k021_mat_average.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (k021_mat_average.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (k021_mat_average.txtwherehouse_id = '" + W_ID_Select.TRANS_ID.Trim() + "')" +
-                                    " AND (b001mat_02detail.txtmat_sac_id = '007')" +  //ผ้าพับ
+                                    " AND (b001mat_02detail.txtmat_sac_id = '" + this.txtmat_sac_id.Text.Trim() + "')" +   //ผ้าพับ
                                     " AND (b001mat.txtmat_id <> '')" +
                                    " ORDER BY k021_mat_average.txtmat_no ASC";
 
@@ -666,6 +666,7 @@ namespace kondate.soft.HOME03_Production
                             GridView2.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();     //8
                             GridView2.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //9
 
+                            GridView2.Rows[index].Cells["Col_txtcost_qty1_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,###.00");      //10
                             GridView2.Rows[index].Cells["Col_txtcost_qty_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_balance"]).ToString("###,###.00");      //10
                             GridView2.Rows[index].Cells["Col_txtcost_qty_price_average"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_price_average"]).ToString("###,###.00");      //11
                             GridView2.Rows[index].Cells["Col_txtcost_money_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_money_sum"]).ToString("###,###.00");      //12
@@ -892,14 +893,14 @@ namespace kondate.soft.HOME03_Production
                             GridView2.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();     //8
                             GridView2.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //9
 
+                            GridView2.Rows[index].Cells["Col_txtcost_qty1_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,###.00");      //10
                             GridView2.Rows[index].Cells["Col_txtcost_qty_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_balance"]).ToString("###,###.00");      //10
                             GridView2.Rows[index].Cells["Col_txtcost_qty_price_average"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_price_average"]).ToString("###,###.00");      //11
                             GridView2.Rows[index].Cells["Col_txtcost_money_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_money_sum"]).ToString("###,###.00");      //12
+
                             GridView2.Rows[index].Cells["Col_txtcost_qty2_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty2_balance"]).ToString("###,###.00");      //13
                             GridView2.Rows[index].Cells["Col_txtmat_amount_phurchase"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_amount_phurchase"]).ToString("###,###.00");      //14
                             GridView2.Rows[index].Cells["Col_txtmat_status"].Value = dt2.Rows[j]["txtmat_status"].ToString();      //15
-
-
 
                         }
                         //=======================================================
@@ -938,7 +939,7 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView2()
         {
-            this.GridView2.ColumnCount = 16;
+            this.GridView2.ColumnCount = 17;
             this.GridView2.Columns[0].Name = "Col_Auto_num";
             this.GridView2.Columns[1].Name = "Col_txtwherehouse_id";
 
@@ -954,14 +955,15 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns[9].Name = "Col_txtmat_unit2_qty";
 
 
-            this.GridView2.Columns[10].Name = "Col_txtcost_qty_balance";
-            this.GridView2.Columns[11].Name = "Col_txtcost_qty_price_average";
-            this.GridView2.Columns[12].Name = "Col_txtcost_money_sum";
-            this.GridView2.Columns[13].Name = "Col_txtcost_qty2_balance";
+            this.GridView2.Columns[10].Name = "Col_txtcost_qty1_balance";
+            this.GridView2.Columns[11].Name = "Col_txtcost_qty_balance";
+            this.GridView2.Columns[12].Name = "Col_txtcost_qty_price_average";
+            this.GridView2.Columns[13].Name = "Col_txtcost_money_sum";
+            this.GridView2.Columns[14].Name = "Col_txtcost_qty2_balance";
 
 
-            this.GridView2.Columns[14].Name = "Col_txtmat_amount_phurchase";
-            this.GridView2.Columns[15].Name = "Col_txtmat_status";
+            this.GridView2.Columns[15].Name = "Col_txtmat_amount_phurchase";
+            this.GridView2.Columns[16].Name = "Col_txtmat_status";
 
             this.GridView2.Columns[0].HeaderText = "No";
             this.GridView2.Columns[1].HeaderText = "รหัสคลัง";
@@ -976,13 +978,14 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns[9].HeaderText = " หน่วย";
 
 
-            this.GridView2.Columns[10].HeaderText = "คงเหลือ";
-            this.GridView2.Columns[11].HeaderText = "ราคาเฉลี่ย";
-            this.GridView2.Columns[12].HeaderText = "มูลค่าเฉลี่ย";
-            this.GridView2.Columns[13].HeaderText = "คงเหลือ(หน่วย2)";
+            this.GridView2.Columns[10].HeaderText = "คงเหลือ(พับ)";
+            this.GridView2.Columns[11].HeaderText = "คงเหลือ(kg)";
+            this.GridView2.Columns[12].HeaderText = "ราคาเฉลี่ย";
+            this.GridView2.Columns[13].HeaderText = "มูลค่าเฉลี่ย";
+            this.GridView2.Columns[14].HeaderText = "คงเหลือ(ปอนด์)";
 
-            this.GridView2.Columns[14].HeaderText = "จุดสั่งซื้อ";
-            this.GridView2.Columns[15].HeaderText = "สถานะ";
+            this.GridView2.Columns[15].HeaderText = "จุดสั่งซื้อ";
+            this.GridView2.Columns[16].HeaderText = "สถานะ";
 
             this.GridView2.Columns[0].Visible = false;  //"Col_Auto_num";
 
@@ -1000,8 +1003,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns["Col_txtwherehouse_id"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView2.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView2.Columns["Col_txtmat_no"].Visible = true;  //"Col_txtmat_no"";
-            this.GridView2.Columns["Col_txtmat_no"].Width = 60;
+            this.GridView2.Columns["Col_txtmat_no"].Visible = false;  //"Col_txtmat_no"";
+            this.GridView2.Columns["Col_txtmat_no"].Width = 0;
             this.GridView2.Columns["Col_txtmat_no"].ReadOnly = true;
             this.GridView2.Columns["Col_txtmat_no"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView2.Columns["Col_txtmat_no"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -1021,8 +1024,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns["Col_txtmat_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView2.Columns["Col_txtmat_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView2.Columns["Col_txtmat_unit1_name"].Visible = true;  //"Col_txtmat_unit1_name";
-            this.GridView2.Columns["Col_txtmat_unit1_name"].Width = 80;
+            this.GridView2.Columns["Col_txtmat_unit1_name"].Visible = false;  //"Col_txtmat_unit1_name";
+            this.GridView2.Columns["Col_txtmat_unit1_name"].Width = 0;
             this.GridView2.Columns["Col_txtmat_unit1_name"].ReadOnly = true;
             this.GridView2.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView2.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -1042,8 +1045,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns["Col_chmat_unit_status"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView2.Columns["Col_chmat_unit_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView2.Columns["Col_txtmat_unit2_name"].Visible = true;  //Col_txtmat_unit2_name";
-            this.GridView2.Columns["Col_txtmat_unit2_name"].Width = 80;
+            this.GridView2.Columns["Col_txtmat_unit2_name"].Visible = false;  //Col_txtmat_unit2_name";
+            this.GridView2.Columns["Col_txtmat_unit2_name"].Width = 0;
             this.GridView2.Columns["Col_txtmat_unit2_name"].ReadOnly = true;
             this.GridView2.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView2.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -1056,22 +1059,29 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns["Col_txtmat_unit2_qty"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView2.Columns["Col_txtmat_unit2_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            this.GridView2.Columns["Col_txtcost_qty1_balance"].Visible = true;  //"Col_txtcost_qty1_balance";
+            this.GridView2.Columns["Col_txtcost_qty1_balance"].Width = 120;
+            this.GridView2.Columns["Col_txtcost_qty1_balance"].ReadOnly = true;
+            this.GridView2.Columns["Col_txtcost_qty1_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView2.Columns["Col_txtcost_qty1_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView2.Columns["Col_txtcost_qty1_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             this.GridView2.Columns["Col_txtcost_qty_balance"].Visible = true;  //"Col_txtcost_qty_balance";
-            this.GridView2.Columns["Col_txtcost_qty_balance"].Width = 90;
+            this.GridView2.Columns["Col_txtcost_qty_balance"].Width = 120;
             this.GridView2.Columns["Col_txtcost_qty_balance"].ReadOnly = true;
             this.GridView2.Columns["Col_txtcost_qty_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView2.Columns["Col_txtcost_qty_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView2.Columns["Col_txtcost_qty_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView2.Columns["Col_txtcost_qty_price_average"].Visible = true;  //"Col_txtcost_qty_price_average";
-            this.GridView2.Columns["Col_txtcost_qty_price_average"].Width = 90;
+            this.GridView2.Columns["Col_txtcost_qty_price_average"].Visible = false;  //"Col_txtcost_qty_price_average";
+            this.GridView2.Columns["Col_txtcost_qty_price_average"].Width = 0;
             this.GridView2.Columns["Col_txtcost_qty_price_average"].ReadOnly = true;
             this.GridView2.Columns["Col_txtcost_qty_price_average"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView2.Columns["Col_txtcost_qty_price_average"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView2.Columns["Col_txtcost_qty_price_average"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView2.Columns["Col_txtcost_money_sum"].Visible = true;  //"Col_txtcost_money_sum";
-            this.GridView2.Columns["Col_txtcost_money_sum"].Width =90;
+            this.GridView2.Columns["Col_txtcost_money_sum"].Visible = false;  //"Col_txtcost_money_sum";
+            this.GridView2.Columns["Col_txtcost_money_sum"].Width = 0;
             this.GridView2.Columns["Col_txtcost_money_sum"].ReadOnly = true;
             this.GridView2.Columns["Col_txtcost_money_sum"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView2.Columns["Col_txtcost_money_sum"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -1100,11 +1110,12 @@ namespace kondate.soft.HOME03_Production
 
             DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
             dgvCmb.Name = "Col_Chk1";
-            dgvCmb.Width = 70;
+            dgvCmb.Width = 0;
             dgvCmb.DisplayIndex = 7;
             dgvCmb.HeaderText = "แปลงหน่วย?";
             dgvCmb.ValueType = typeof(bool);
             dgvCmb.ReadOnly = true;
+            dgvCmb.Visible = false;
             dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCmb.DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
@@ -1330,7 +1341,7 @@ namespace kondate.soft.HOME03_Production
                                    " INNER JOIN c002_07Receive_Send_dye_record_detail" +
                                    " ON c002_07Receive_Send_dye_record.cdkey = c002_07Receive_Send_dye_record_detail.cdkey" +
                                    " AND c002_07Receive_Send_dye_record.txtco_id = c002_07Receive_Send_dye_record_detail.txtco_id" +
-                                   " AND c002_07Receive_Send_dye_record.txtRG_id = c002_07Receive_Send_dye_record_detail.txtRG_id" +
+                                   " AND c002_07Receive_Send_dye_record.txtFG2_id = c002_07Receive_Send_dye_record_detail.txtFG2_id" +
 
                                    //" INNER JOIN c001_04produce_type" +
                                    //" ON c002_07Receive_Send_dye_record.cdkey = c001_04produce_type.cdkey" +
@@ -1364,16 +1375,16 @@ namespace kondate.soft.HOME03_Production
 
                                     " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                     " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    " AND (c002_07Receive_Send_dye_record.txtrg_status = '0')" +
+                                    " AND (c002_07Receive_Send_dye_record.txtFG2_status = '0')" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtmat_id = '" + W_ID_Select.MAT_ID + "')" +
 
                                     //" AND (c002_07Receive_Send_dye_record.txticrf_id = '" + W_ID_Select.TRANS_ID.Trim() + "')" +
-                                    //" AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                    //" AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtqty_after_cut > 0)" +
                                     " ORDER BY c002_07Receive_Send_dye_record_detail.txtLot_no ASC";
 
-                // " AND (k021_mat_average_balance.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                // " AND (k021_mat_average_balance.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                 //" ORDER BY k021_mat_average_balance.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -1398,7 +1409,8 @@ namespace kondate.soft.HOME03_Production
                             k = j + 1;
                             var index = GridView3.Rows.Add();
                             GridView3.Rows[index].Cells["Col_Auto_num"].Value = k.ToString("000"); //0
-                            GridView3.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //1
+                            GridView3.Rows[index].Cells["Col_txtFG2_id"].Value = dt2.Rows[j]["txtFG2_id"].ToString();      //1
+                            GridView3.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //1
@@ -1485,105 +1497,107 @@ namespace kondate.soft.HOME03_Production
 
         private void Show_GridView3()
         {
-            this.GridView3.ColumnCount = 39;
+            this.GridView3.ColumnCount = 40;
             this.GridView3.Columns[0].Name = "Col_Auto_num";
-            this.GridView3.Columns[1].Name = "Col_txtRG_id";
-            this.GridView3.Columns[2].Name = "Col_txtnumber_in_year";
-            this.GridView3.Columns[3].Name = "Col_txtsupplier_id";
-            this.GridView3.Columns[4].Name = "Col_txtsupplier_name";
-            this.GridView3.Columns[5].Name = "Col_txtwherehouse_id";
-            this.GridView3.Columns[6].Name = "Col_txtmachine_id";
-            this.GridView3.Columns[7].Name = "Col_txtfold_number";
-            this.GridView3.Columns[8].Name = "Col_txtnumber_mat_id";
-            this.GridView3.Columns[9].Name = "Col_txtface_baking_id";
-            this.GridView3.Columns[10].Name = "Col_txtlot_no";
+            this.GridView3.Columns[1].Name = "Col_txtFG2_id";
+            this.GridView3.Columns[2].Name = "Col_txtnumber_dyed";
+            this.GridView3.Columns[3].Name = "Col_txtnumber_in_year";
+            this.GridView3.Columns[4].Name = "Col_txtsupplier_id";
+            this.GridView3.Columns[5].Name = "Col_txtsupplier_name";
+            this.GridView3.Columns[6].Name = "Col_txtwherehouse_id";
+            this.GridView3.Columns[7].Name = "Col_txtmachine_id";
+            this.GridView3.Columns[8].Name = "Col_txtfold_number";
+            this.GridView3.Columns[9].Name = "Col_txtnumber_mat_id";
+            this.GridView3.Columns[10].Name = "Col_txtface_baking_id";
+            this.GridView3.Columns[11].Name = "Col_txtlot_no";
 
-            this.GridView3.Columns[11].Name = "Col_txtmat_no";
-            this.GridView3.Columns[12].Name = "Col_txtmat_id";
-            this.GridView3.Columns[13].Name = "Col_txtmat_name";
+            this.GridView3.Columns[12].Name = "Col_txtmat_no";
+            this.GridView3.Columns[13].Name = "Col_txtmat_id";
+            this.GridView3.Columns[14].Name = "Col_txtmat_name";
 
-            this.GridView3.Columns[14].Name = "Col_txtmat_unit1_name";
-            this.GridView3.Columns[15].Name = "Col_txtmat_unit1_qty";
-            this.GridView3.Columns[16].Name = "Col_chmat_unit_status";
-            this.GridView3.Columns[17].Name = "Col_txtmat_unit2_name";
-            this.GridView3.Columns[18].Name = "Col_txtmat_unit2_qty";
+            this.GridView3.Columns[15].Name = "Col_txtmat_unit1_name";
+            this.GridView3.Columns[16].Name = "Col_txtmat_unit1_qty";
+            this.GridView3.Columns[17].Name = "Col_chmat_unit_status";
+            this.GridView3.Columns[18].Name = "Col_txtmat_unit2_name";
+            this.GridView3.Columns[19].Name = "Col_txtmat_unit2_qty";
 
-            this.GridView3.Columns[19].Name = "Col_txtqty";
-            this.GridView3.Columns[20].Name = "Col_txtqty2";
+            this.GridView3.Columns[20].Name = "Col_txtqty";
+            this.GridView3.Columns[21].Name = "Col_txtqty2";
 
-            this.GridView3.Columns[21].Name = "Col_txtprice";
-            this.GridView3.Columns[22].Name = "Col_txtdiscount_rate";
-            this.GridView3.Columns[23].Name = "Col_txtdiscount_money";
-            this.GridView3.Columns[24].Name = "Col_txtsum_total";
+            this.GridView3.Columns[22].Name = "Col_txtprice";
+            this.GridView3.Columns[23].Name = "Col_txtdiscount_rate";
+            this.GridView3.Columns[24].Name = "Col_txtdiscount_money";
+            this.GridView3.Columns[25].Name = "Col_txtsum_total";
 
-            this.GridView3.Columns[25].Name = "Col_txtcost_qty_balance_yokma";
-            this.GridView3.Columns[26].Name = "Col_txtcost_qty_price_average_yokma";
-            this.GridView3.Columns[27].Name = "Col_txtcost_money_sum_yokma";
+            this.GridView3.Columns[26].Name = "Col_txtcost_qty_balance_yokma";
+            this.GridView3.Columns[27].Name = "Col_txtcost_qty_price_average_yokma";
+            this.GridView3.Columns[28].Name = "Col_txtcost_money_sum_yokma";
 
-            this.GridView3.Columns[28].Name = "Col_txtcost_qty_balance_yokpai";
-            this.GridView3.Columns[29].Name = "Col_txtcost_qty_price_average_yokpai";
-            this.GridView3.Columns[30].Name = "Col_txtcost_money_sum_yokpai";
+            this.GridView3.Columns[29].Name = "Col_txtcost_qty_balance_yokpai";
+            this.GridView3.Columns[30].Name = "Col_txtcost_qty_price_average_yokpai";
+            this.GridView3.Columns[31].Name = "Col_txtcost_money_sum_yokpai";
 
-            this.GridView3.Columns[31].Name = "Col_txtcost_qty2_balance_yokma";
-            this.GridView3.Columns[32].Name = "Col_txtcost_qty2_balance_yokpai";
+            this.GridView3.Columns[32].Name = "Col_txtcost_qty2_balance_yokma";
+            this.GridView3.Columns[33].Name = "Col_txtcost_qty2_balance_yokpai";
 
-            this.GridView3.Columns[33].Name = "Col_txtqty_after_cut";
-            this.GridView3.Columns[34].Name = "Col_txtqty_cut_yokma";
-            this.GridView3.Columns[35].Name = "Col_txtqty_cut_yokpai";
-            this.GridView3.Columns[36].Name = "Col_txtqty_after_cut_yokpai";
+            this.GridView3.Columns[34].Name = "Col_txtqty_after_cut";
+            this.GridView3.Columns[35].Name = "Col_txtqty_cut_yokma";
+            this.GridView3.Columns[36].Name = "Col_txtqty_cut_yokpai";
+            this.GridView3.Columns[37].Name = "Col_txtqty_after_cut_yokpai";
 
-            this.GridView3.Columns[37].Name = "Col_1";
-            this.GridView3.Columns[38].Name = "Col_txtnumber_color_id";
+            this.GridView3.Columns[38].Name = "Col_1";
+            this.GridView3.Columns[39].Name = "Col_txtnumber_color_id";
 
 
             this.GridView3.Columns[0].HeaderText = "No";
             this.GridView3.Columns[1].HeaderText = "เลขที่ FG2";
-            this.GridView3.Columns[2].HeaderText = "เลขชุดที่";
-            this.GridView3.Columns[3].HeaderText = "รหัส Sup";
-            this.GridView3.Columns[4].HeaderText = "Supplier";
-            this.GridView3.Columns[5].HeaderText = "คลัง";
-            this.GridView3.Columns[6].HeaderText = "เครื่องจักร";
-            this.GridView3.Columns[7].HeaderText = "ม้วนที่";
-            this.GridView3.Columns[8].HeaderText = "เบอร์ด้าย";
-            this.GridView3.Columns[9].HeaderText = "อบหน้า";
-            this.GridView3.Columns[10].HeaderText = "Lot No";
+            this.GridView3.Columns[2].HeaderText = "เบอร์กอง";
+            this.GridView3.Columns[3].HeaderText = "เลขชุดที่";
+            this.GridView3.Columns[4].HeaderText = "รหัส Sup";
+            this.GridView3.Columns[5].HeaderText = "Supplier";
+            this.GridView3.Columns[6].HeaderText = "คลัง";
+            this.GridView3.Columns[7].HeaderText = "เครื่องจักร";
+            this.GridView3.Columns[8].HeaderText = "ม้วนที่";
+            this.GridView3.Columns[9].HeaderText = "เบอร์ด้าย";
+            this.GridView3.Columns[10].HeaderText = "อบหน้า";
+            this.GridView3.Columns[11].HeaderText = "Lot No";
 
-            this.GridView3.Columns[11].HeaderText = "ลำดับ";
-            this.GridView3.Columns[12].HeaderText = "รหัส";
-            this.GridView3.Columns[13].HeaderText = "ชื่อสินค้า";
+            this.GridView3.Columns[12].HeaderText = "ลำดับ";
+            this.GridView3.Columns[13].HeaderText = "รหัส";
+            this.GridView3.Columns[14].HeaderText = "ชื่อสินค้า";
 
-            this.GridView3.Columns[14].HeaderText = " หน่วยหลัก";
-            this.GridView3.Columns[15].HeaderText = " หน่วย";
-            this.GridView3.Columns[16].HeaderText = "แปลง";
-            this.GridView3.Columns[17].HeaderText = " หน่วย(ปอนด์)";
-            this.GridView3.Columns[18].HeaderText = " หน่วย2";
+            this.GridView3.Columns[15].HeaderText = " หน่วยหลัก";
+            this.GridView3.Columns[16].HeaderText = " หน่วย";
+            this.GridView3.Columns[17].HeaderText = "แปลง";
+            this.GridView3.Columns[18].HeaderText = " หน่วย(ปอนด์)";
+            this.GridView3.Columns[19].HeaderText = " หน่วย2";
 
-            this.GridView3.Columns[19].HeaderText = "น้ำหนัก(กก.)";
-            this.GridView3.Columns[20].HeaderText = "น้ำหนัก/ม้วน(ปอนด์)";
+            this.GridView3.Columns[20].HeaderText = "น้ำหนัก(กก.)";
+            this.GridView3.Columns[21].HeaderText = "น้ำหนัก/ม้วน(ปอนด์)";
 
-            this.GridView3.Columns[21].HeaderText = "ราคา";
-            this.GridView3.Columns[22].HeaderText = "ส่วนลด(%)";
-            this.GridView3.Columns[23].HeaderText = "ส่วนลด(บาท)";
-            this.GridView3.Columns[24].HeaderText = "จำนวนเงิน(บาท)";
+            this.GridView3.Columns[22].HeaderText = "ราคา";
+            this.GridView3.Columns[23].HeaderText = "ส่วนลด(%)";
+            this.GridView3.Columns[24].HeaderText = "ส่วนลด(บาท)";
+            this.GridView3.Columns[25].HeaderText = "จำนวนเงิน(บาท)";
 
-            this.GridView3.Columns[25].HeaderText = "จำนวนยกมา";
-            this.GridView3.Columns[26].HeaderText = "ราคาเฉลี่ยยกมา";
-            this.GridView3.Columns[27].HeaderText = "จำนวนเงิน";
+            this.GridView3.Columns[26].HeaderText = "จำนวนยกมา";
+            this.GridView3.Columns[27].HeaderText = "ราคาเฉลี่ยยกมา";
+            this.GridView3.Columns[28].HeaderText = "จำนวนเงิน";
 
-            this.GridView3.Columns[28].HeaderText = "จำนวนยกไป";
-            this.GridView3.Columns[29].HeaderText = "ราคาเฉลี่ยยกไป";
-            this.GridView3.Columns[30].HeaderText = "จำนวนเงิน";
+            this.GridView3.Columns[29].HeaderText = "จำนวนยกไป";
+            this.GridView3.Columns[30].HeaderText = "ราคาเฉลี่ยยกไป";
+            this.GridView3.Columns[31].HeaderText = "จำนวนเงิน";
 
-            this.GridView3.Columns[31].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";
-            this.GridView3.Columns[32].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";
+            this.GridView3.Columns[32].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";
+            this.GridView3.Columns[33].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";
 
-            this.GridView3.Columns[33].HeaderText = "Col_txtqty_after_cut";
-            this.GridView3.Columns[34].HeaderText = "Col_txtqty_cut_yokma";
-            this.GridView3.Columns[35].HeaderText = "Col_txtqty_cut_yokpai";
-            this.GridView3.Columns[36].HeaderText = "Col_txtqty_after_cut_yokpai";
+            this.GridView3.Columns[34].HeaderText = "Col_txtqty_after_cut";
+            this.GridView3.Columns[35].HeaderText = "Col_txtqty_cut_yokma";
+            this.GridView3.Columns[36].HeaderText = "Col_txtqty_cut_yokpai";
+            this.GridView3.Columns[37].HeaderText = "Col_txtqty_after_cut_yokpai";
 
-            this.GridView3.Columns[37].HeaderText = "1";  //ไว้นับจำนวน
-            this.GridView3.Columns[38].HeaderText = "รหัสสี";
+            this.GridView3.Columns[38].HeaderText = "1";  //ไว้นับจำนวน
+            this.GridView3.Columns[39].HeaderText = "รหัสสี";
 
             this.GridView3.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
             this.GridView3.Columns["Col_Auto_num"].Width = 40;
@@ -1591,11 +1605,17 @@ namespace kondate.soft.HOME03_Production
             this.GridView3.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView3.Columns["Col_txtRG_id"].Visible = true;  //"Col_txtRG_id";
-            this.GridView3.Columns["Col_txtRG_id"].Width = 140;
-            this.GridView3.Columns["Col_txtRG_id"].ReadOnly = true;
-            this.GridView3.Columns["Col_txtRG_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView3.Columns["Col_txtRG_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView3.Columns["Col_txtFG2_id"].Visible = true;  //"Col_txtFG2_id";
+            this.GridView3.Columns["Col_txtFG2_id"].Width = 140;
+            this.GridView3.Columns["Col_txtFG2_id"].ReadOnly = true;
+            this.GridView3.Columns["Col_txtFG2_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView3.Columns["Col_txtFG2_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView3.Columns["Col_txtnumber_dyed"].Visible = true;  //"Col_txtnumber_dyed";
+            this.GridView3.Columns["Col_txtnumber_dyed"].Width = 90;
+            this.GridView3.Columns["Col_txtnumber_dyed"].ReadOnly = true;
+            this.GridView3.Columns["Col_txtnumber_dyed"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView3.Columns["Col_txtnumber_dyed"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView3.Columns["Col_txtnumber_in_year"].Visible = true;  //"Col_txtnumber_in_year";
             this.GridView3.Columns["Col_txtnumber_in_year"].Width = 90;
@@ -1610,7 +1630,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView3.Columns["Col_txtsupplier_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView3.Columns["Col_txtsupplier_name"].Visible = true;  //"Col_txtsupplier_name";
-            this.GridView3.Columns["Col_txtsupplier_name"].Width = 100;
+            this.GridView3.Columns["Col_txtsupplier_name"].Width = 150;
             this.GridView3.Columns["Col_txtsupplier_name"].ReadOnly = true;
             this.GridView3.Columns["Col_txtsupplier_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_txtsupplier_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -1665,7 +1685,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView3.Columns["Col_txtmat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.GridView3.Columns["Col_txtmat_name"].Visible = true;  //"Col_txtmat_name";
-            this.GridView3.Columns["Col_txtmat_name"].Width = 120;
+            this.GridView3.Columns["Col_txtmat_name"].Width = 160;
             this.GridView3.Columns["Col_txtmat_name"].ReadOnly = true;
             this.GridView3.Columns["Col_txtmat_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_txtmat_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -1833,7 +1853,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView3.Columns["Col_1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView3.Columns["Col_txtnumber_color_id"].Visible = true;  //"Col_txtnumber_color_id";
-            this.GridView3.Columns["Col_txtnumber_color_id"].Width = 90;
+            this.GridView3.Columns["Col_txtnumber_color_id"].Width = 100;
             this.GridView3.Columns["Col_txtnumber_color_id"].ReadOnly = true;
             this.GridView3.Columns["Col_txtnumber_color_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView3.Columns["Col_txtnumber_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -1858,6 +1878,7 @@ namespace kondate.soft.HOME03_Production
 
             for (int i = 0; i < this.GridView3.Rows.Count - 0; i++)
             {
+                GridView3.Rows[i].Cells["Col_txtnumber_dyed"].Style.BackColor = Color.GreenYellow;
                 GridView3.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.LightGoldenrodYellow;
                 GridView3.Rows[i].Cells["Col_txtqty"].Style.BackColor = Color.LightSkyBlue;
                 GridView3.Rows[i].Cells["Col_txtqty_after_cut"].Style.BackColor = Color.LightSkyBlue;
@@ -1955,13 +1976,13 @@ namespace kondate.soft.HOME03_Production
                 var cell = row.Cells["Col_txtmat_id"].Value;
                 if (cell != null)
                 {
-                    W_ID_Select.TRANS_ID = row.Cells["Col_txticrf_id"].Value.ToString();
+                    W_ID_Select.TRANS_ID = row.Cells["Col_txtFG2_id"].Value.ToString();
                     this.cboSearch.Text = "เลขที่FG2 ผ้าพับ";
 
                     if (this.cboSearch.Text == "เลขที่FG2 ผ้าพับ")
                     {
-                        this.txtsearch.Text = row.Cells["Col_txticrf_id"].Value.ToString();
-                        W_ID_Select.TRANS_ID = row.Cells["Col_txticrf_id"].Value.ToString();
+                        this.txtsearch.Text = row.Cells["Col_txtFG2_id"].Value.ToString();
+                        W_ID_Select.TRANS_ID = row.Cells["Col_txtFG2_id"].Value.ToString();
 
                     }
                     else if (this.cboSearch.Text == "รหัสสินค้า")
@@ -1971,8 +1992,8 @@ namespace kondate.soft.HOME03_Production
                     }
                     else
                     {
-                        this.txtsearch.Text = row.Cells["Col_txticrf_id"].Value.ToString();
-                        W_ID_Select.TRANS_ID = row.Cells["Col_txticrf_id"].Value.ToString();
+                        this.txtsearch.Text = row.Cells["Col_txtFG2_id"].Value.ToString();
+                        W_ID_Select.TRANS_ID = row.Cells["Col_txtFG2_id"].Value.ToString();
 
                     }
                 }
@@ -2068,7 +2089,7 @@ namespace kondate.soft.HOME03_Production
                                    " INNER JOIN c002_07Receive_Send_dye_record_detail" +
                                    " ON c002_07Receive_Send_dye_record.cdkey = c002_07Receive_Send_dye_record_detail.cdkey" +
                                    " AND c002_07Receive_Send_dye_record.txtco_id = c002_07Receive_Send_dye_record_detail.txtco_id" +
-                                   " AND c002_07Receive_Send_dye_record.txtRG_id = c002_07Receive_Send_dye_record_detail.txtRG_id" +
+                                   " AND c002_07Receive_Send_dye_record.txtFG2_id = c002_07Receive_Send_dye_record_detail.txtFG2_id" +
 
                                     //" INNER JOIN c001_04produce_type" +
                                     //" ON c002_07Receive_Send_dye_record.cdkey = c001_04produce_type.cdkey" +
@@ -2102,16 +2123,16 @@ namespace kondate.soft.HOME03_Production
 
                                     " WHERE (c002_07Receive_Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                     " AND (c002_07Receive_Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    " AND (c002_07Receive_Send_dye_record.txtrg_status = '0')" +
+                                    " AND (c002_07Receive_Send_dye_record.txtFG2_status = '0')" +
                                     //" AND (c002_07Receive_Send_dye_record_detail.txtmat_id = '" + W_ID_Select.MAT_ID + "')" +
 
                                     //" AND (c002_07Receive_Send_dye_record.txticrf_id = '" + W_ID_Select.TRANS_ID.Trim() + "')" +
-                                    //" AND (c002_07Receive_Send_dye_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                    //" AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtqty_after_cut > 0)" +
                                     " ORDER BY c002_07Receive_Send_dye_record_detail.txtLot_no ASC";
 
-                // " AND (k021_mat_average_balance.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                // " AND (k021_mat_average_balance.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                 //" ORDER BY k021_mat_average_balance.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -2136,7 +2157,7 @@ namespace kondate.soft.HOME03_Production
                             k = j + 1;
                             var index = GridView3.Rows.Add();
                             GridView3.Rows[index].Cells["Col_Auto_num"].Value = k.ToString("000"); //0
-                            GridView3.Rows[index].Cells["Col_txtRG_id"].Value = dt2.Rows[j]["txtRG_id"].ToString();      //1
+                            GridView3.Rows[index].Cells["Col_txtFG2_id"].Value = dt2.Rows[j]["txtFG2_id"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //1
@@ -2298,7 +2319,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (k021_mat_average_balance.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (k021_mat_average_balance.txtwherehouse_id = '" + W_ID_Select.TRANS_ID.Trim() + "')" +
                                     " AND (k021_mat_average_balance.txtmat_id = '" + W_ID_Select.MAT_ID.Trim() + "')" +
-                                  " AND (k021_mat_average_balance.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                  " AND (k021_mat_average_balance.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY k021_mat_average_balance.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -2324,7 +2345,7 @@ namespace kondate.soft.HOME03_Production
 
                             var index = GridView4.Rows.Add();
                             GridView4.Rows[index].Cells["Col_Auto_num"].Value = k.ToString("000"); //0
-                            GridView4.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);      //1
+                            GridView4.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);      //1
                             GridView4.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //2
 
                             GridView4.Rows[index].Cells["Col_txtbill_id"].Value = dt2.Rows[j]["txtbill_id"].ToString();      //3
@@ -2341,16 +2362,19 @@ namespace kondate.soft.HOME03_Production
                             GridView4.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //13
                             GridView4.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.00");        //14
 
+                            GridView4.Rows[index].Cells["Col_txtqty1_in"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty1_in"]).ToString("###,###.00");      //15
                             GridView4.Rows[index].Cells["Col_txtqty_in"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_in"]).ToString("###,###.00");      //15
                             GridView4.Rows[index].Cells["Col_txtqty2_in"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2_in"]).ToString("###,###.00");      //16
                             GridView4.Rows[index].Cells["Col_txtprice_in"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice_in"]).ToString("###,###.00");      //17
                             GridView4.Rows[index].Cells["Col_txtsum_total_in"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_total_in"]).ToString("###,###.00");      //18
 
+                            GridView4.Rows[index].Cells["Col_txtqty1_out"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty1_out"]).ToString("###,###.00");      //19
                             GridView4.Rows[index].Cells["Col_txtqty_out"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_out"]).ToString("###,###.00");      //19
                             GridView4.Rows[index].Cells["Col_txtqty2_out"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2_out"]).ToString("###,###.00");      //19
                             GridView4.Rows[index].Cells["Col_txtprice_out"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice_out"]).ToString("###,###.00");      //20
                             GridView4.Rows[index].Cells["Col_txtsum_total_out"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_total_out"]).ToString("###,###.00");      //21
 
+                            GridView4.Rows[index].Cells["Col_txtqty1_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty1_balance"]).ToString("###,###.00");      //22
                             GridView4.Rows[index].Cells["Col_txtqty_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_balance"]).ToString("###,###.00");      //22
                             GridView4.Rows[index].Cells["Col_txtqty2_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2_balance"]).ToString("###,###.00");      //22
                             GridView4.Rows[index].Cells["Col_txtprice_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice_balance"]).ToString("###,###.00");      //23
@@ -2394,10 +2418,10 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView4()
         {
-            this.GridView4.ColumnCount = 28;
+            this.GridView4.ColumnCount = 31;
             this.GridView4.Columns[0].Name = "Col_Auto_num";
 
-            this.GridView4.Columns[1].Name = "Col_txttrans_date_server";
+            this.GridView4.Columns[1].Name = "Col_txttrans_date_client";
             this.GridView4.Columns[2].Name = "Col_txttrans_time";
 
             this.GridView4.Columns[3].Name = "Col_txtbill_id";
@@ -2416,22 +2440,25 @@ namespace kondate.soft.HOME03_Production
             this.GridView4.Columns[13].Name = "Col_txtmat_unit2_name";
             this.GridView4.Columns[14].Name = "Col_txtmat_unit2_qty";
 
-            this.GridView4.Columns[15].Name = "Col_txtqty_in";
-            this.GridView4.Columns[16].Name = "Col_txtqty2_in";
-            this.GridView4.Columns[17].Name = "Col_txtprice_in";
-            this.GridView4.Columns[18].Name = "Col_txtsum_total_in";
+            this.GridView4.Columns[15].Name = "Col_txtqty1_in";
+            this.GridView4.Columns[16].Name = "Col_txtqty_in";
+            this.GridView4.Columns[17].Name = "Col_txtqty2_in";
+            this.GridView4.Columns[18].Name = "Col_txtprice_in";
+            this.GridView4.Columns[19].Name = "Col_txtsum_total_in";
 
-            this.GridView4.Columns[19].Name = "Col_txtqty_out";
-            this.GridView4.Columns[20].Name = "Col_txtqty2_out";
-            this.GridView4.Columns[21].Name = "Col_txtprice_out";
-            this.GridView4.Columns[22].Name = "Col_txtsum_total_out";
+            this.GridView4.Columns[20].Name = "Col_txtqty1_out";
+            this.GridView4.Columns[21].Name = "Col_txtqty_out";
+            this.GridView4.Columns[22].Name = "Col_txtqty2_out";
+            this.GridView4.Columns[23].Name = "Col_txtprice_out";
+            this.GridView4.Columns[24].Name = "Col_txtsum_total_out";
 
-            this.GridView4.Columns[23].Name = "Col_txtqty_balance";
-            this.GridView4.Columns[24].Name = "Col_txtqty2_balance";
-            this.GridView4.Columns[25].Name = "Col_txtprice_balance";
-            this.GridView4.Columns[26].Name = "Col_txtsum_total_balance";
+            this.GridView4.Columns[25].Name = "Col_txtqty1_balance";
+            this.GridView4.Columns[26].Name = "Col_txtqty_balance";
+            this.GridView4.Columns[27].Name = "Col_txtqty2_balance";
+            this.GridView4.Columns[28].Name = "Col_txtprice_balance";
+            this.GridView4.Columns[29].Name = "Col_txtsum_total_balance";
 
-            this.GridView4.Columns[27].Name = "Col_txtitem_no";
+            this.GridView4.Columns[30].Name = "Col_txtitem_no";
 
 
             this.GridView4.Columns[0].HeaderText = "No";
@@ -2453,38 +2480,39 @@ namespace kondate.soft.HOME03_Production
             this.GridView4.Columns[14].HeaderText = "หน่วย";
 
 
-            this.GridView4.Columns[15].HeaderText = "รับ";
-            this.GridView4.Columns[16].HeaderText = "รับ(2)";
-            this.GridView4.Columns[17].HeaderText = "ราคา";
-            this.GridView4.Columns[18].HeaderText = "จำนวนเงิน";
+            this.GridView4.Columns[15].HeaderText = "รับ (พับ)";
+            this.GridView4.Columns[16].HeaderText = "รับ (kg)";
+            this.GridView4.Columns[17].HeaderText = "รับ(ปอนด์)";
+            this.GridView4.Columns[18].HeaderText = "ราคา";
+            this.GridView4.Columns[19].HeaderText = "จำนวนเงิน";
 
-            this.GridView4.Columns[19].HeaderText = "จ่าย";
-            this.GridView4.Columns[20].HeaderText = "จ่าย(2)";
-            this.GridView4.Columns[21].HeaderText = "ราคา";
-            this.GridView4.Columns[22].HeaderText = "จำนวนเงิน";
+            this.GridView4.Columns[20].HeaderText = "จ่าย(พับ)";
+            this.GridView4.Columns[21].HeaderText = "จ่าย(kg)";
+            this.GridView4.Columns[22].HeaderText = "จ่าย(ปอนด์)";
+            this.GridView4.Columns[23].HeaderText = "ราคา";
+            this.GridView4.Columns[24].HeaderText = "จำนวนเงิน";
 
-            this.GridView4.Columns[23].HeaderText = "คงเหลือ";
-            this.GridView4.Columns[24].HeaderText = "คงเหลือ(2)";
-            this.GridView4.Columns[25].HeaderText = "ราคา";
-            this.GridView4.Columns[26].HeaderText = "จำนวนเงิน";
+            this.GridView4.Columns[25].HeaderText = "คงเหลือ(พับ)";
+            this.GridView4.Columns[26].HeaderText = "คงเหลือ(Kg)";
+            this.GridView4.Columns[27].HeaderText = "คงเหลือ(ปอนด์)";
+            this.GridView4.Columns[28].HeaderText = "ราคา";
+            this.GridView4.Columns[29].HeaderText = "จำนวนเงิน";
 
-            this.GridView4.Columns[27].HeaderText = "ลำดับ";
+            this.GridView4.Columns[30].HeaderText = "ลำดับ";
 
 
-            //this.GridView4.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
-            this.GridView4.Columns["Col_Auto_num"].Visible = true;  //"No";
-            this.GridView4.Columns["Col_Auto_num"].Width = 40;
+            this.GridView4.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
+            this.GridView4.Columns["Col_Auto_num"].Width = 60;
             this.GridView4.Columns["Col_Auto_num"].ReadOnly = true;
             this.GridView4.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView4.Columns["Col_Auto_num"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView4.Columns["Col_txttrans_date_server"].Visible = true;  //"วันที่";
-            this.GridView4.Columns["Col_txttrans_date_server"].Width = 80;
-            this.GridView4.Columns["Col_txttrans_date_server"].ReadOnly = true;
-            this.GridView4.Columns["Col_txttrans_date_server"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView4.Columns["Col_txttrans_date_server"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
-            this.GridView4.Columns["Col_txttrans_date_server"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView4.Columns["Col_txttrans_date_client"].Visible = true;  //"วันที่";
+            this.GridView4.Columns["Col_txttrans_date_client"].Width = 80;
+            this.GridView4.Columns["Col_txttrans_date_client"].ReadOnly = true;
+            this.GridView4.Columns["Col_txttrans_date_client"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView4.Columns["Col_txttrans_date_client"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView4.Columns["Col_txttrans_date_client"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
 
             this.GridView4.Columns["Col_txttrans_time"].Visible = true;  //"เวลา";
@@ -2510,14 +2538,14 @@ namespace kondate.soft.HOME03_Production
             this.GridView4.Columns["Col_txtbill_type"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView4.Columns["Col_txtbill_remark"].Visible = true;  //"Col_txtbill_remark";
-            this.GridView4.Columns["Col_txtbill_remark"].Width = 120;
+            this.GridView4.Columns["Col_txtbill_remark"].Width = 180;
             this.GridView4.Columns["Col_txtbill_remark"].ReadOnly = true;
             this.GridView4.Columns["Col_txtbill_remark"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtbill_remark"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtbill_remark"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView4.Columns["Col_txtwherehouse_id"].Visible = true;  //"Col_txtwherehouse_id";
-            this.GridView4.Columns["Col_txtwherehouse_id"].Width = 80;
+            this.GridView4.Columns["Col_txtwherehouse_id"].Visible = false;  //"Col_txtwherehouse_id";
+            this.GridView4.Columns["Col_txtwherehouse_id"].Width = 0;
             this.GridView4.Columns["Col_txtwherehouse_id"].ReadOnly = true;
             this.GridView4.Columns["Col_txtwherehouse_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtwherehouse_id"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -2545,8 +2573,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView4.Columns["Col_txtmat_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtmat_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView4.Columns["Col_txtmat_unit1_name"].Visible = true;  //"Col_txtmat_unit1_name";
-            this.GridView4.Columns["Col_txtmat_unit1_name"].Width = 80;
+            this.GridView4.Columns["Col_txtmat_unit1_name"].Visible = false;  //"Col_txtmat_unit1_name";
+            this.GridView4.Columns["Col_txtmat_unit1_name"].Width = 0;
             this.GridView4.Columns["Col_txtmat_unit1_name"].ReadOnly = true;
             this.GridView4.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -2566,8 +2594,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView4.Columns["Col_chmat_unit_status"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_chmat_unit_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView4.Columns["Col_txtmat_unit2_name"].Visible = true;  //"Col_txtmat_unit2_name";
-            this.GridView4.Columns["Col_txtmat_unit2_name"].Width = 60;
+            this.GridView4.Columns["Col_txtmat_unit2_name"].Visible = false;  //"Col_txtmat_unit2_name";
+            this.GridView4.Columns["Col_txtmat_unit2_name"].Width = 0;
             this.GridView4.Columns["Col_txtmat_unit2_name"].ReadOnly = true;
             this.GridView4.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -2580,85 +2608,107 @@ namespace kondate.soft.HOME03_Production
             this.GridView4.Columns["Col_txtmat_unit2_qty"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtmat_unit2_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            this.GridView4.Columns["Col_txtqty1_in"].Visible = true;  //"Col_txtqty1_in";
+            this.GridView4.Columns["Col_txtqty1_in"].Width = 100;
+            this.GridView4.Columns["Col_txtqty1_in"].ReadOnly = true;
+            this.GridView4.Columns["Col_txtqty1_in"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView4.Columns["Col_txtqty1_in"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView4.Columns["Col_txtqty1_in"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             this.GridView4.Columns["Col_txtqty_in"].Visible = true;  //"Col_txtqty_in";
-            this.GridView4.Columns["Col_txtqty_in"].Width = 60;
+            this.GridView4.Columns["Col_txtqty_in"].Width = 100;
             this.GridView4.Columns["Col_txtqty_in"].ReadOnly = true;
             this.GridView4.Columns["Col_txtqty_in"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtqty_in"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtqty_in"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+
             this.GridView4.Columns["Col_txtqty2_in"].Visible = true;  //"Col_txtqty2_in";
-            this.GridView4.Columns["Col_txtqty2_in"].Width = 60;
+            this.GridView4.Columns["Col_txtqty2_in"].Width = 100;
             this.GridView4.Columns["Col_txtqty2_in"].ReadOnly = true;
             this.GridView4.Columns["Col_txtqty2_in"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtqty2_in"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtqty2_in"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView4.Columns["Col_txtprice_in"].Visible = true;  //"Col_txtprice_in";
-            this.GridView4.Columns["Col_txtprice_in"].Width = 60;
+            this.GridView4.Columns["Col_txtprice_in"].Visible = false;  //"Col_txtprice_in";
+            this.GridView4.Columns["Col_txtprice_in"].Width = 0;
             this.GridView4.Columns["Col_txtprice_in"].ReadOnly = true;
             this.GridView4.Columns["Col_txtprice_in"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtprice_in"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtprice_in"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView4.Columns["Col_txtsum_total_in"].Visible = true;  //"Col_txtsum_total_in";
-            this.GridView4.Columns["Col_txtsum_total_in"].Width = 80;
+            this.GridView4.Columns["Col_txtsum_total_in"].Visible = false;  //"Col_txtsum_total_in";
+            this.GridView4.Columns["Col_txtsum_total_in"].Width = 0;
             this.GridView4.Columns["Col_txtsum_total_in"].ReadOnly = true;
             this.GridView4.Columns["Col_txtsum_total_in"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtsum_total_in"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtsum_total_in"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            this.GridView4.Columns["Col_txtqty1_out"].Visible = true;  //"Col_txtqty1_out";
+            this.GridView4.Columns["Col_txtqty1_out"].Width = 100;
+            this.GridView4.Columns["Col_txtqty1_out"].ReadOnly = true;
+            this.GridView4.Columns["Col_txtqty1_out"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView4.Columns["Col_txtqty1_out"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView4.Columns["Col_txtqty1_out"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             this.GridView4.Columns["Col_txtqty_out"].Visible = true;  //"Col_txtqty_out";
-            this.GridView4.Columns["Col_txtqty_out"].Width = 60;
+            this.GridView4.Columns["Col_txtqty_out"].Width = 100;
             this.GridView4.Columns["Col_txtqty_out"].ReadOnly = true;
             this.GridView4.Columns["Col_txtqty_out"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtqty_out"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtqty_out"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView4.Columns["Col_txtqty2_out"].Visible = true;  //"Col_txtqty2_out";
-            this.GridView4.Columns["Col_txtqty2_out"].Width = 60;
+            this.GridView4.Columns["Col_txtqty2_out"].Width = 100;
             this.GridView4.Columns["Col_txtqty2_out"].ReadOnly = true;
             this.GridView4.Columns["Col_txtqty2_out"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtqty2_out"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtqty2_out"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView4.Columns["Col_txtprice_out"].Visible = true;  //"Col_txtprice_out";
-            this.GridView4.Columns["Col_txtprice_out"].Width = 60;
+            this.GridView4.Columns["Col_txtprice_out"].Visible = false;  //"Col_txtprice_out";
+            this.GridView4.Columns["Col_txtprice_out"].Width = 0;
             this.GridView4.Columns["Col_txtprice_out"].ReadOnly = true;
             this.GridView4.Columns["Col_txtprice_out"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtprice_out"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtprice_out"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView4.Columns["Col_txtsum_total_out"].Visible = true;  //"Col_txtsum_total_out";
-            this.GridView4.Columns["Col_txtsum_total_out"].Width = 80;
+            this.GridView4.Columns["Col_txtsum_total_out"].Visible = false;  //"Col_txtsum_total_out";
+            this.GridView4.Columns["Col_txtsum_total_out"].Width = 0;
             this.GridView4.Columns["Col_txtsum_total_out"].ReadOnly = true;
             this.GridView4.Columns["Col_txtsum_total_out"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtsum_total_out"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtsum_total_out"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            this.GridView4.Columns["Col_txtqty1_balance"].Visible = true;  //"Col_txtqty1_balance";
+            this.GridView4.Columns["Col_txtqty1_balance"].Width = 120;
+            this.GridView4.Columns["Col_txtqty1_balance"].ReadOnly = true;
+            this.GridView4.Columns["Col_txtqty1_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView4.Columns["Col_txtqty1_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView4.Columns["Col_txtqty1_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             this.GridView4.Columns["Col_txtqty_balance"].Visible = true;  //"Col_txtqty_balance";
-            this.GridView4.Columns["Col_txtqty_balance"].Width = 100;
+            this.GridView4.Columns["Col_txtqty_balance"].Width = 120;
             this.GridView4.Columns["Col_txtqty_balance"].ReadOnly = true;
             this.GridView4.Columns["Col_txtqty_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtqty_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtqty_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView4.Columns["Col_txtqty2_balance"].Visible = true;  //"Col_txtqty2_balance";
-            this.GridView4.Columns["Col_txtqty2_balance"].Width = 100;
+            this.GridView4.Columns["Col_txtqty2_balance"].Width = 120;
             this.GridView4.Columns["Col_txtqty2_balance"].ReadOnly = true;
             this.GridView4.Columns["Col_txtqty2_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtqty2_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtqty2_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView4.Columns["Col_txtprice_balance"].Visible = true;  //"Col_txtprice_balance";
-            this.GridView4.Columns["Col_txtprice_balance"].Width = 60;
+            this.GridView4.Columns["Col_txtprice_balance"].Visible = false;  //"Col_txtprice_balance";
+            this.GridView4.Columns["Col_txtprice_balance"].Width = 0;
             this.GridView4.Columns["Col_txtprice_balance"].ReadOnly = true;
             this.GridView4.Columns["Col_txtprice_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtprice_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
             this.GridView4.Columns["Col_txtprice_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView4.Columns["Col_txtsum_total_balance"].Visible = true;  //"Col_txtsum_total_balance";
-            this.GridView4.Columns["Col_txtsum_total_balance"].Width = 80;
+            this.GridView4.Columns["Col_txtsum_total_balance"].Visible = false;  //"Col_txtsum_total_balance";
+            this.GridView4.Columns["Col_txtsum_total_balance"].Width = 0;
             this.GridView4.Columns["Col_txtsum_total_balance"].ReadOnly = true;
             this.GridView4.Columns["Col_txtsum_total_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView4.Columns["Col_txtsum_total_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
@@ -2694,12 +2744,15 @@ namespace kondate.soft.HOME03_Production
                 GridView4.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.LightSkyBlue;//Color.FromArgb(62, 123, 241);
                 GridView4.Rows[i].Cells["Col_txtmat_name"].Style.ForeColor = Color.FromArgb(0, 0, 0);
 
+                GridView4.Rows[i].Cells["Col_txtqty1_in"].Style.BackColor = Color.GreenYellow;//Color.FromArgb(0, 195, 0);
                 GridView4.Rows[i].Cells["Col_txtqty_in"].Style.BackColor = Color.LightSkyBlue;//Color.FromArgb(0, 195, 0);
                 GridView4.Rows[i].Cells["Col_txtqty_in"].Style.ForeColor = Color.FromArgb(0, 0, 0);
 
+                GridView4.Rows[i].Cells["Col_txtqty1_out"].Style.BackColor = Color.GreenYellow;//Color.FromArgb(0, 195, 0);
                 GridView4.Rows[i].Cells["Col_txtqty_out"].Style.BackColor = Color.LightSkyBlue;//Color.FromArgb(0, 195, 0);
                 GridView4.Rows[i].Cells["Col_txtqty_out"].Style.ForeColor = Color.FromArgb(0, 0, 0);
 
+                GridView4.Rows[i].Cells["Col_txtqty1_balance"].Style.BackColor = Color.GreenYellow;//Color.FromArgb(0, 195, 0);
                 GridView4.Rows[i].Cells["Col_txtqty_balance"].Style.BackColor = Color.LightSkyBlue;//Color.FromArgb(0, 195, 0);
                 GridView4.Rows[i].Cells["Col_txtqty_balance"].Style.ForeColor = Color.FromArgb(0, 0, 0);
 

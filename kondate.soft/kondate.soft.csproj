@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>161</ApplicationRevision>
+    <ApplicationRevision>172</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -271,41 +271,131 @@
     <Compile Include="HOME03_Production\HOME03_Production_01RG_record.Designer.cs">
       <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew.Designer.cs">
+      <DependentUpon>HOME03_Production_09Send_Sew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_GR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_GR.Designer.cs">
+      <DependentUpon>HOME03_Production_09Send_Sew_GR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_record.Designer.cs">
+      <DependentUpon>HOME03_Production_09Send_Sew_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_09Send_Sew_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_09Send_Sew_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_09Send_Sew_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4.Designer.cs">
+      <DependentUpon>HOME03_Production_10Receive_FG4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3.Designer.cs">
+      <DependentUpon>HOME03_Production_08Receive_FG3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record.Designer.cs">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record.Designer.cs">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_Stock.Designer.cs">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_Stock.Designer.cs">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut.Designer.cs">
+      <DependentUpon>HOME03_Production_081Send_Cut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_GR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_GR.Designer.cs">
+      <DependentUpon>HOME03_Production_081Send_Cut_GR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_record.Designer.cs">
+      <DependentUpon>HOME03_Production_081Send_Cut_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_record_detail.Designer.cs">
+      <DependentUpon>HOME03_Production_081Send_Cut_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_081Send_Cut_record_print.Designer.cs">
+      <DependentUpon>HOME03_Production_081Send_Cut_record_print.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.Designer.cs">
       <DependentUpon>HOME03_Production_07Receive_Send_Dye_Stock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.Designer.cs">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_GR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record.Designer.cs">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_detail.Designer.cs">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_print.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt.Designer.cs">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye_GR.cs">
       <SubType>Form</SubType>
@@ -367,30 +457,6 @@
     <Compile Include="HOME03_Production\HOME03_Production_03Produce_record_print.Designer.cs">
       <DependentUpon>HOME03_Production_03Produce_record_print.cs</DependentUpon>
     </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC.Designer.cs">
-      <DependentUpon>HOME03_Production_04QC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC_record.Designer.cs">
-      <DependentUpon>HOME03_Production_04QC_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_detail.Designer.cs">
-      <DependentUpon>HOME03_Production_04QC_record_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_04QC_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_04QC_record_print.cs</DependentUpon>
-    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_05Send_Dye.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,126 +505,6 @@
     <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_print.Designer.cs">
       <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_print.cs</DependentUpon>
     </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt.Designer.cs">
-      <DependentUpon>HOME03_Production_08Cut_shirt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record.Designer.cs">
-      <DependentUpon>HOME03_Production_08Cut_shirt_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_detail.Designer.cs">
-      <DependentUpon>HOME03_Production_08Cut_shirt_record_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_08Cut_shirt_record_print.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt.Designer.cs">
-      <DependentUpon>HOME03_Production_09Sew_shirt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record.Designer.cs">
-      <DependentUpon>HOME03_Production_09Sew_shirt_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_detail.Designer.cs">
-      <DependentUpon>HOME03_Production_09Sew_shirt_record_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_09Sew_shirt_record_print.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt.Designer.cs">
-      <DependentUpon>HOME03_Production_10Rolled_shirt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record.Designer.cs">
-      <DependentUpon>HOME03_Production_10Rolled_shirt_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_detail.Designer.cs">
-      <DependentUpon>HOME03_Production_10Rolled_shirt_record_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_10Rolled_shirt_record_print.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt.Designer.cs">
-      <DependentUpon>HOME03_Production_11QCS_shirt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record.Designer.cs">
-      <DependentUpon>HOME03_Production_11QCS_shirt_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_detail.Designer.cs">
-      <DependentUpon>HOME03_Production_11QCS_shirt_record_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_11QCS_shirt_record_print.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt.Designer.cs">
-      <DependentUpon>HOME03_Production_12FG_shirt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record.Designer.cs">
-      <DependentUpon>HOME03_Production_12FG_shirt_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_detail.Designer.cs">
-      <DependentUpon>HOME03_Production_12FG_shirt_record_detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_print.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HOME03_Production\HOME03_Production_12FG_shirt_record_print.Designer.cs">
-      <DependentUpon>HOME03_Production_12FG_shirt_record_print.cs</DependentUpon>
-    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_13Type_Machine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -588,6 +534,12 @@
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_17Number_mat.Designer.cs">
       <DependentUpon>HOME03_Production_17Number_mat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_18Number_Sup_Color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_18Number_Sup_Color.Designer.cs">
+      <DependentUpon>HOME03_Production_18Number_Sup_Color.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_18Number_Color.cs">
       <SubType>Form</SubType>
@@ -1685,23 +1637,68 @@
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_01RG_record.resx">
       <DependentUpon>HOME03_Production_01RG_record.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Send_Sew.resx">
+      <DependentUpon>HOME03_Production_09Send_Sew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Send_Sew_GR.resx">
+      <DependentUpon>HOME03_Production_09Send_Sew_GR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Send_Sew_record.resx">
+      <DependentUpon>HOME03_Production_09Send_Sew_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Send_Sew_record_detail.resx">
+      <DependentUpon>HOME03_Production_09Send_Sew_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Send_Sew_record_print.resx">
+      <DependentUpon>HOME03_Production_09Send_Sew_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Receive_FG4.resx">
+      <DependentUpon>HOME03_Production_10Receive_FG4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Receive_FG3.resx">
+      <DependentUpon>HOME03_Production_08Receive_FG3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Receive_FG4_record.resx">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Receive_FG3_record.resx">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_detail.resx">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_detail.resx">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_print.resx">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_print.resx">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Receive_FG4_record_Stock.resx">
+      <DependentUpon>HOME03_Production_10Receive_FG4_record_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Receive_FG3_record_Stock.resx">
+      <DependentUpon>HOME03_Production_08Receive_FG3_record_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_081Send_Cut.resx">
+      <DependentUpon>HOME03_Production_081Send_Cut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_081Send_Cut_GR.resx">
+      <DependentUpon>HOME03_Production_081Send_Cut_GR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_081Send_Cut_record.resx">
+      <DependentUpon>HOME03_Production_081Send_Cut_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_081Send_Cut_record_detail.resx">
+      <DependentUpon>HOME03_Production_081Send_Cut_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_081Send_Cut_record_print.resx">
+      <DependentUpon>HOME03_Production_081Send_Cut_record_print.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_Stock.resx">
       <DependentUpon>HOME03_Production_07Receive_Send_Dye_Stock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_GR.resx">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_GR.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record.resx">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_detail.resx">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt_record_print.resx">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt_record_print.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Send_Cut_shirt.resx">
-      <DependentUpon>HOME03_Production_07Send_Cut_shirt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye_GR.resx">
       <DependentUpon>HOME03_Production_05Send_Dye_GR.cs</DependentUpon>
@@ -1733,18 +1730,6 @@
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_03Produce_record_print.resx">
       <DependentUpon>HOME03_Production_03Produce_record_print.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC.resx">
-      <DependentUpon>HOME03_Production_04QC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC_record.resx">
-      <DependentUpon>HOME03_Production_04QC_record.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC_record_detail.resx">
-      <DependentUpon>HOME03_Production_04QC_record_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_04QC_record_print.resx">
-      <DependentUpon>HOME03_Production_04QC_record_print.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_05Send_Dye.resx">
       <DependentUpon>HOME03_Production_05Send_Dye.cs</DependentUpon>
     </EmbeddedResource>
@@ -1769,66 +1754,6 @@
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_print.resx">
       <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_print.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt.resx">
-      <DependentUpon>HOME03_Production_08Cut_shirt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt_record.resx">
-      <DependentUpon>HOME03_Production_08Cut_shirt_record.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_detail.resx">
-      <DependentUpon>HOME03_Production_08Cut_shirt_record_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_08Cut_shirt_record_print.resx">
-      <DependentUpon>HOME03_Production_08Cut_shirt_record_print.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt.resx">
-      <DependentUpon>HOME03_Production_09Sew_shirt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt_record.resx">
-      <DependentUpon>HOME03_Production_09Sew_shirt_record.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_detail.resx">
-      <DependentUpon>HOME03_Production_09Sew_shirt_record_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_09Sew_shirt_record_print.resx">
-      <DependentUpon>HOME03_Production_09Sew_shirt_record_print.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt.resx">
-      <DependentUpon>HOME03_Production_10Rolled_shirt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record.resx">
-      <DependentUpon>HOME03_Production_10Rolled_shirt_record.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_detail.resx">
-      <DependentUpon>HOME03_Production_10Rolled_shirt_record_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_10Rolled_shirt_record_print.resx">
-      <DependentUpon>HOME03_Production_10Rolled_shirt_record_print.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt.resx">
-      <DependentUpon>HOME03_Production_11QCS_shirt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt_record.resx">
-      <DependentUpon>HOME03_Production_11QCS_shirt_record.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_detail.resx">
-      <DependentUpon>HOME03_Production_11QCS_shirt_record_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11QCS_shirt_record_print.resx">
-      <DependentUpon>HOME03_Production_11QCS_shirt_record_print.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt.resx">
-      <DependentUpon>HOME03_Production_12FG_shirt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt_record.resx">
-      <DependentUpon>HOME03_Production_12FG_shirt_record.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt_record_detail.resx">
-      <DependentUpon>HOME03_Production_12FG_shirt_record_detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12FG_shirt_record_print.resx">
-      <DependentUpon>HOME03_Production_12FG_shirt_record_print.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_13Type_Machine.resx">
       <DependentUpon>HOME03_Production_13Type_Machine.cs</DependentUpon>
     </EmbeddedResource>
@@ -1843,6 +1768,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_17Number_mat.resx">
       <DependentUpon>HOME03_Production_17Number_mat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_18Number_Sup_Color.resx">
+      <DependentUpon>HOME03_Production_18Number_Sup_Color.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_18Number_Color.resx">
       <DependentUpon>HOME03_Production_18Number_Color.cs</DependentUpon>

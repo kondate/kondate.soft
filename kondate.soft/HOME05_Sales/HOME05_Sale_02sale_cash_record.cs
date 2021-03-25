@@ -7070,6 +7070,7 @@ namespace kondate.soft.HOME05_Sales
                                "txtmat_unit1_qty," +  //6
                                "chmat_unit_status," +  //7
                                "txtmat_unit2_qty," +  //8
+                              "txtcost_qty1_balance," +  //9
                                "txtcost_qty_balance," +  //9
                                "txtcost_qty_price_average," +  //10
                                "txtcost_money_sum," +  //11
@@ -7082,6 +7083,7 @@ namespace kondate.soft.HOME05_Sales
                                "@txtmat_unit1_qty," +  //6
                                "@chmat_unit_status," +  //7
                                "@txtmat_unit2_qty," +  //8
+                               "@txtcost_qty1_balance," +  //9
                                "@txtcost_qty_balance," +  //9
                                "@txtcost_qty_price_average," +  //10
                                "@txtcost_money_sum," +  //11
@@ -7098,6 +7100,7 @@ namespace kondate.soft.HOME05_Sales
                                 cmd2.Parameters.Add("@chmat_unit_status", SqlDbType.NVarChar).Value = this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString();  //7
                                 cmd2.Parameters.Add("@txtmat_unit2_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));  //8
 
+                                cmd2.Parameters.Add("@txtcost_qty1_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //9
                                 cmd2.Parameters.Add("@txtcost_qty_balance", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //9
                                 cmd2.Parameters.Add("@txtcost_qty_price_average", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //10
                                 cmd2.Parameters.Add("@txtcost_money_sum", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //11

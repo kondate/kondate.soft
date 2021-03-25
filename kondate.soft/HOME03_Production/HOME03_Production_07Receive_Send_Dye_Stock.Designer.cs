@@ -30,9 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_07Receive_Send_Dye_Stock));
             this.panel_button_top = new System.Windows.Forms.Panel();
+            this.btnPreview = new System.Windows.Forms.Button();
+            this.BtnPrint = new System.Windows.Forms.Button();
+            this.btnopen = new System.Windows.Forms.Button();
+            this.BtnClose_Form = new System.Windows.Forms.Button();
+            this.BtnCancel_Doc = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.BtnNew = new System.Windows.Forms.Button();
+            this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
             this.GridView3 = new System.Windows.Forms.DataGridView();
+            this.btnLot_all = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GridView4 = new System.Windows.Forms.DataGridView();
+            this.btnbalance_lot = new System.Windows.Forms.Button();
+            this.btnbalance_mat = new System.Windows.Forms.Button();
             this.txtsum_qty_roll = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtsum_qty_rib = new System.Windows.Forms.TextBox();
@@ -48,48 +60,38 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnGo1 = new System.Windows.Forms.PictureBox();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.GridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.PANEL1306_WH_dataGridView1_wherehouse = new System.Windows.Forms.DataGridView();
             this.PANEL1306_WH_txtwherehouse_id = new System.Windows.Forms.TextBox();
+            this.PANEL1306_WH_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL1306_WH_btnwherehouse = new System.Windows.Forms.Button();
             this.PANEL1306_WH_txtsearch = new System.Windows.Forms.TextBox();
             this.PANEL1306_WH_txtwherehouse_name = new System.Windows.Forms.TextBox();
+            this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
             this.iblword_top = new System.Windows.Forms.Label();
             this.panel_top = new System.Windows.Forms.Panel();
-            this.btnLot_all = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnbalance_lot = new System.Windows.Forms.Button();
-            this.btnbalance_mat = new System.Windows.Forms.Button();
-            this.btnGo1 = new System.Windows.Forms.PictureBox();
-            this.PANEL1306_WH_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL1306_WH_btnwherehouse = new System.Windows.Forms.Button();
-            this.button_low_right = new System.Windows.Forms.Button();
-            this.btnPreview = new System.Windows.Forms.Button();
-            this.BtnPrint = new System.Windows.Forms.Button();
-            this.btnopen = new System.Windows.Forms.Button();
-            this.BtnClose_Form = new System.Windows.Forms.Button();
-            this.BtnCancel_Doc = new System.Windows.Forms.Button();
-            this.BtnSave = new System.Windows.Forms.Button();
-            this.BtnNew = new System.Windows.Forms.Button();
-            this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.btnmaximize_full = new System.Windows.Forms.PictureBox();
             this.btnminimize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtmat_sac_id = new System.Windows.Forms.TextBox();
             this.panel_button_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_dataGridView1_wherehouse)).BeginInit();
-            this.panel_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btn_search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
+            this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -112,10 +114,162 @@
             this.panel_button_top.Size = new System.Drawing.Size(1442, 61);
             this.panel_button_top.TabIndex = 12;
             // 
+            // btnPreview
+            // 
+            this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnPreview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreview.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPreview.FlatAppearance.BorderSize = 0;
+            this.btnPreview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnPreview.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPreview.ForeColor = System.Drawing.Color.Black;
+            this.btnPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.Image")));
+            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPreview.Location = new System.Drawing.Point(260, 3);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(67, 55);
+            this.btnPreview.TabIndex = 48;
+            this.btnPreview.Text = "ปริ๊น";
+            this.btnPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPreview.UseVisualStyleBackColor = false;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
+            // 
+            // BtnPrint
+            // 
+            this.BtnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPrint.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnPrint.FlatAppearance.BorderSize = 0;
+            this.BtnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnPrint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnPrint.ForeColor = System.Drawing.Color.Black;
+            this.BtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrint.Image")));
+            this.BtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnPrint.Location = new System.Drawing.Point(333, 3);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(67, 55);
+            this.BtnPrint.TabIndex = 47;
+            this.BtnPrint.Text = "ปริ๊น";
+            this.BtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnPrint.UseVisualStyleBackColor = false;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
+            // 
+            // btnopen
+            // 
+            this.btnopen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnopen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnopen.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnopen.FlatAppearance.BorderSize = 0;
+            this.btnopen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnopen.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnopen.ForeColor = System.Drawing.Color.Black;
+            this.btnopen.Image = ((System.Drawing.Image)(resources.GetObject("btnopen.Image")));
+            this.btnopen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnopen.Location = new System.Drawing.Point(58, 3);
+            this.btnopen.Name = "btnopen";
+            this.btnopen.Size = new System.Drawing.Size(52, 55);
+            this.btnopen.TabIndex = 46;
+            this.btnopen.Text = "เปิด";
+            this.btnopen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnopen.UseVisualStyleBackColor = false;
+            // 
+            // BtnClose_Form
+            // 
+            this.BtnClose_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnClose_Form.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnClose_Form.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnClose_Form.FlatAppearance.BorderSize = 0;
+            this.BtnClose_Form.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnClose_Form.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnClose_Form.ForeColor = System.Drawing.Color.Black;
+            this.BtnClose_Form.Image = ((System.Drawing.Image)(resources.GetObject("BtnClose_Form.Image")));
+            this.BtnClose_Form.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnClose_Form.Location = new System.Drawing.Point(406, 3);
+            this.BtnClose_Form.Name = "BtnClose_Form";
+            this.BtnClose_Form.Size = new System.Drawing.Size(66, 55);
+            this.BtnClose_Form.TabIndex = 45;
+            this.BtnClose_Form.Text = "ปิดหน้าจอ";
+            this.BtnClose_Form.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnClose_Form.UseVisualStyleBackColor = false;
+            this.BtnClose_Form.Click += new System.EventHandler(this.BtnClose_Form_Click);
+            // 
+            // BtnCancel_Doc
+            // 
+            this.BtnCancel_Doc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnCancel_Doc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCancel_Doc.Enabled = false;
+            this.BtnCancel_Doc.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnCancel_Doc.FlatAppearance.BorderSize = 0;
+            this.BtnCancel_Doc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnCancel_Doc.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnCancel_Doc.ForeColor = System.Drawing.Color.Black;
+            this.BtnCancel_Doc.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancel_Doc.Image")));
+            this.BtnCancel_Doc.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnCancel_Doc.Location = new System.Drawing.Point(169, 3);
+            this.BtnCancel_Doc.Name = "BtnCancel_Doc";
+            this.BtnCancel_Doc.Size = new System.Drawing.Size(85, 55);
+            this.BtnCancel_Doc.TabIndex = 43;
+            this.BtnCancel_Doc.Text = "ยกเลิกเอกสาร";
+            this.BtnCancel_Doc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnCancel_Doc.UseVisualStyleBackColor = false;
+            // 
+            // BtnSave
+            // 
+            this.BtnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnSave.FlatAppearance.BorderSize = 0;
+            this.BtnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnSave.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnSave.ForeColor = System.Drawing.Color.Black;
+            this.BtnSave.Image = ((System.Drawing.Image)(resources.GetObject("BtnSave.Image")));
+            this.BtnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnSave.Location = new System.Drawing.Point(114, 3);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(52, 55);
+            this.BtnSave.TabIndex = 42;
+            this.BtnSave.Text = "บันทึก";
+            this.BtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnSave.UseVisualStyleBackColor = false;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // BtnNew
+            // 
+            this.BtnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnNew.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnNew.FlatAppearance.BorderSize = 0;
+            this.BtnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnNew.ForeColor = System.Drawing.Color.Black;
+            this.BtnNew.Image = ((System.Drawing.Image)(resources.GetObject("BtnNew.Image")));
+            this.BtnNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnNew.Location = new System.Drawing.Point(3, 3);
+            this.BtnNew.Name = "BtnNew";
+            this.BtnNew.Size = new System.Drawing.Size(52, 55);
+            this.BtnNew.TabIndex = 41;
+            this.BtnNew.Text = "ใหม่";
+            this.BtnNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnNew.UseVisualStyleBackColor = false;
+            // 
+            // panel_button_top_pictureBox
+            // 
+            this.panel_button_top_pictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_button_top_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("panel_button_top_pictureBox.Image")));
+            this.panel_button_top_pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.panel_button_top_pictureBox.Name = "panel_button_top_pictureBox";
+            this.panel_button_top_pictureBox.Size = new System.Drawing.Size(1442, 66);
+            this.panel_button_top_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.panel_button_top_pictureBox.TabIndex = 49;
+            this.panel_button_top_pictureBox.TabStop = false;
+            this.panel_button_top_pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_button_top_pictureBox_MouseDown);
+            // 
             // panel1_contens
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.label35);
+            this.panel1_contens.Controls.Add(this.txtmat_sac_id);
             this.panel1_contens.Controls.Add(this.GridView3);
             this.panel1_contens.Controls.Add(this.btnLot_all);
             this.panel1_contens.Controls.Add(this.pictureBox1);
@@ -173,6 +327,40 @@
             this.GridView3.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView3_CellMouseMove);
             this.GridView3.DoubleClick += new System.EventHandler(this.GridView3_DoubleClick);
             // 
+            // btnLot_all
+            // 
+            this.btnLot_all.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLot_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnLot_all.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLot_all.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLot_all.FlatAppearance.BorderSize = 0;
+            this.btnLot_all.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnLot_all.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnLot_all.ForeColor = System.Drawing.Color.Black;
+            this.btnLot_all.Image = ((System.Drawing.Image)(resources.GetObject("btnLot_all.Image")));
+            this.btnLot_all.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLot_all.Location = new System.Drawing.Point(228, 121);
+            this.btnLot_all.Name = "btnLot_all";
+            this.btnLot_all.Size = new System.Drawing.Size(185, 39);
+            this.btnLot_all.TabIndex = 1025;
+            this.btnLot_all.Text = "ดู Lot No ผ้าพับที่เหลือทั้งหมด";
+            this.btnLot_all.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLot_all.UseVisualStyleBackColor = false;
+            this.btnLot_all.Click += new System.EventHandler(this.btnLot_all_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(369, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1024;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // GridView4
             // 
             this.GridView4.AllowUserToAddRows = false;
@@ -188,6 +376,48 @@
             this.GridView4.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseClick);
             this.GridView4.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView4_CellMouseLeave);
             this.GridView4.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseMove);
+            // 
+            // btnbalance_lot
+            // 
+            this.btnbalance_lot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnbalance_lot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnbalance_lot.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbalance_lot.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnbalance_lot.FlatAppearance.BorderSize = 0;
+            this.btnbalance_lot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnbalance_lot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnbalance_lot.ForeColor = System.Drawing.Color.Black;
+            this.btnbalance_lot.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_lot.Image")));
+            this.btnbalance_lot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbalance_lot.Location = new System.Drawing.Point(1, 121);
+            this.btnbalance_lot.Name = "btnbalance_lot";
+            this.btnbalance_lot.Size = new System.Drawing.Size(119, 39);
+            this.btnbalance_lot.TabIndex = 1022;
+            this.btnbalance_lot.Text = "Lot No คงเหลือ";
+            this.btnbalance_lot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbalance_lot.UseVisualStyleBackColor = false;
+            this.btnbalance_lot.Click += new System.EventHandler(this.btnbalance_lot_Click);
+            // 
+            // btnbalance_mat
+            // 
+            this.btnbalance_mat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnbalance_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnbalance_mat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbalance_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnbalance_mat.FlatAppearance.BorderSize = 0;
+            this.btnbalance_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnbalance_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnbalance_mat.ForeColor = System.Drawing.Color.Black;
+            this.btnbalance_mat.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_mat.Image")));
+            this.btnbalance_mat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbalance_mat.Location = new System.Drawing.Point(126, 121);
+            this.btnbalance_mat.Name = "btnbalance_mat";
+            this.btnbalance_mat.Size = new System.Drawing.Size(98, 39);
+            this.btnbalance_mat.TabIndex = 1021;
+            this.btnbalance_mat.Text = "กระทบยอด";
+            this.btnbalance_mat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbalance_mat.UseVisualStyleBackColor = false;
+            this.btnbalance_mat.Click += new System.EventHandler(this.btnbalance_mat_Click);
             // 
             // txtsum_qty_roll
             // 
@@ -377,6 +607,18 @@
             this.label2.Text = "ค้นหา :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnGo1
+            // 
+            this.btnGo1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGo1.Image = ((System.Drawing.Image)(resources.GetObject("btnGo1.Image")));
+            this.btnGo1.Location = new System.Drawing.Point(1046, 39);
+            this.btnGo1.Name = "btnGo1";
+            this.btnGo1.Size = new System.Drawing.Size(30, 22);
+            this.btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnGo1.TabIndex = 770;
+            this.btnGo1.TabStop = false;
+            this.btnGo1.Click += new System.EventHandler(this.btnGo1_Click);
+            // 
             // txtsearch
             // 
             this.txtsearch.BackColor = System.Drawing.Color.White;
@@ -448,6 +690,31 @@
             this.PANEL1306_WH_txtwherehouse_id.Size = new System.Drawing.Size(67, 21);
             this.PANEL1306_WH_txtwherehouse_id.TabIndex = 653;
             // 
+            // PANEL1306_WH_btn_search
+            // 
+            this.PANEL1306_WH_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1306_WH_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1306_WH_btn_search.Image")));
+            this.PANEL1306_WH_btn_search.Location = new System.Drawing.Point(329, 36);
+            this.PANEL1306_WH_btn_search.Name = "PANEL1306_WH_btn_search";
+            this.PANEL1306_WH_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1306_WH_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1306_WH_btn_search.TabIndex = 433;
+            this.PANEL1306_WH_btn_search.TabStop = false;
+            this.PANEL1306_WH_btn_search.Click += new System.EventHandler(this.PANEL1306_WH_btn_search_Click);
+            // 
+            // PANEL1306_WH_btnwherehouse
+            // 
+            this.PANEL1306_WH_btnwherehouse.BackColor = System.Drawing.Color.White;
+            this.PANEL1306_WH_btnwherehouse.FlatAppearance.BorderSize = 0;
+            this.PANEL1306_WH_btnwherehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL1306_WH_btnwherehouse.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1306_WH_btnwherehouse.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1306_WH_btnwherehouse.Image")));
+            this.PANEL1306_WH_btnwherehouse.Location = new System.Drawing.Point(304, 12);
+            this.PANEL1306_WH_btnwherehouse.Name = "PANEL1306_WH_btnwherehouse";
+            this.PANEL1306_WH_btnwherehouse.Size = new System.Drawing.Size(22, 16);
+            this.PANEL1306_WH_btnwherehouse.TabIndex = 651;
+            this.PANEL1306_WH_btnwherehouse.UseVisualStyleBackColor = false;
+            // 
             // PANEL1306_WH_txtsearch
             // 
             this.PANEL1306_WH_txtsearch.BackColor = System.Drawing.Color.White;
@@ -466,6 +733,30 @@
             this.PANEL1306_WH_txtwherehouse_name.ReadOnly = true;
             this.PANEL1306_WH_txtwherehouse_name.Size = new System.Drawing.Size(235, 21);
             this.PANEL1306_WH_txtwherehouse_name.TabIndex = 650;
+            // 
+            // button_low_right
+            // 
+            this.button_low_right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_low_right.BackColor = System.Drawing.Color.White;
+            this.button_low_right.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.button_low_right.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_low_right.FlatAppearance.BorderSize = 0;
+            this.button_low_right.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button_low_right.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button_low_right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_low_right.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button_low_right.ForeColor = System.Drawing.Color.Black;
+            this.button_low_right.Image = ((System.Drawing.Image)(resources.GetObject("button_low_right.Image")));
+            this.button_low_right.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_low_right.Location = new System.Drawing.Point(1414, 591);
+            this.button_low_right.Name = "button_low_right";
+            this.button_low_right.Size = new System.Drawing.Size(23, 24);
+            this.button_low_right.TabIndex = 649;
+            this.button_low_right.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_low_right.UseVisualStyleBackColor = false;
+            this.button_low_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_low_right_MouseDown);
+            this.button_low_right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button_low_right_MouseMove);
+            this.button_low_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_low_right_MouseUp);
             // 
             // iblstatus
             // 
@@ -506,293 +797,6 @@
             this.panel_top.Size = new System.Drawing.Size(1442, 28);
             this.panel_top.TabIndex = 9;
             this.panel_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseDown);
-            // 
-            // btnLot_all
-            // 
-            this.btnLot_all.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLot_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnLot_all.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLot_all.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLot_all.FlatAppearance.BorderSize = 0;
-            this.btnLot_all.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnLot_all.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnLot_all.ForeColor = System.Drawing.Color.Black;
-            this.btnLot_all.Image = ((System.Drawing.Image)(resources.GetObject("btnLot_all.Image")));
-            this.btnLot_all.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLot_all.Location = new System.Drawing.Point(228, 121);
-            this.btnLot_all.Name = "btnLot_all";
-            this.btnLot_all.Size = new System.Drawing.Size(185, 39);
-            this.btnLot_all.TabIndex = 1025;
-            this.btnLot_all.Text = "ดู Lot No ผ้าพับที่เหลือทั้งหมด";
-            this.btnLot_all.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLot_all.UseVisualStyleBackColor = false;
-            this.btnLot_all.Click += new System.EventHandler(this.btnLot_all_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(369, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 1024;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnbalance_lot
-            // 
-            this.btnbalance_lot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnbalance_lot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnbalance_lot.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbalance_lot.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnbalance_lot.FlatAppearance.BorderSize = 0;
-            this.btnbalance_lot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnbalance_lot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnbalance_lot.ForeColor = System.Drawing.Color.Black;
-            this.btnbalance_lot.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_lot.Image")));
-            this.btnbalance_lot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbalance_lot.Location = new System.Drawing.Point(1, 121);
-            this.btnbalance_lot.Name = "btnbalance_lot";
-            this.btnbalance_lot.Size = new System.Drawing.Size(119, 39);
-            this.btnbalance_lot.TabIndex = 1022;
-            this.btnbalance_lot.Text = "Lot No คงเหลือ";
-            this.btnbalance_lot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbalance_lot.UseVisualStyleBackColor = false;
-            this.btnbalance_lot.Click += new System.EventHandler(this.btnbalance_lot_Click);
-            // 
-            // btnbalance_mat
-            // 
-            this.btnbalance_mat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnbalance_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnbalance_mat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbalance_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnbalance_mat.FlatAppearance.BorderSize = 0;
-            this.btnbalance_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnbalance_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnbalance_mat.ForeColor = System.Drawing.Color.Black;
-            this.btnbalance_mat.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_mat.Image")));
-            this.btnbalance_mat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbalance_mat.Location = new System.Drawing.Point(126, 121);
-            this.btnbalance_mat.Name = "btnbalance_mat";
-            this.btnbalance_mat.Size = new System.Drawing.Size(98, 39);
-            this.btnbalance_mat.TabIndex = 1021;
-            this.btnbalance_mat.Text = "กระทบยอด";
-            this.btnbalance_mat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbalance_mat.UseVisualStyleBackColor = false;
-            this.btnbalance_mat.Click += new System.EventHandler(this.btnbalance_mat_Click);
-            // 
-            // btnGo1
-            // 
-            this.btnGo1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGo1.Image = ((System.Drawing.Image)(resources.GetObject("btnGo1.Image")));
-            this.btnGo1.Location = new System.Drawing.Point(1046, 39);
-            this.btnGo1.Name = "btnGo1";
-            this.btnGo1.Size = new System.Drawing.Size(30, 22);
-            this.btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnGo1.TabIndex = 770;
-            this.btnGo1.TabStop = false;
-            this.btnGo1.Click += new System.EventHandler(this.btnGo1_Click);
-            // 
-            // PANEL1306_WH_btn_search
-            // 
-            this.PANEL1306_WH_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL1306_WH_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1306_WH_btn_search.Image")));
-            this.PANEL1306_WH_btn_search.Location = new System.Drawing.Point(329, 36);
-            this.PANEL1306_WH_btn_search.Name = "PANEL1306_WH_btn_search";
-            this.PANEL1306_WH_btn_search.Size = new System.Drawing.Size(30, 22);
-            this.PANEL1306_WH_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL1306_WH_btn_search.TabIndex = 433;
-            this.PANEL1306_WH_btn_search.TabStop = false;
-            this.PANEL1306_WH_btn_search.Click += new System.EventHandler(this.PANEL1306_WH_btn_search_Click);
-            // 
-            // PANEL1306_WH_btnwherehouse
-            // 
-            this.PANEL1306_WH_btnwherehouse.BackColor = System.Drawing.Color.White;
-            this.PANEL1306_WH_btnwherehouse.FlatAppearance.BorderSize = 0;
-            this.PANEL1306_WH_btnwherehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL1306_WH_btnwherehouse.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1306_WH_btnwherehouse.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1306_WH_btnwherehouse.Image")));
-            this.PANEL1306_WH_btnwherehouse.Location = new System.Drawing.Point(304, 12);
-            this.PANEL1306_WH_btnwherehouse.Name = "PANEL1306_WH_btnwherehouse";
-            this.PANEL1306_WH_btnwherehouse.Size = new System.Drawing.Size(22, 16);
-            this.PANEL1306_WH_btnwherehouse.TabIndex = 651;
-            this.PANEL1306_WH_btnwherehouse.UseVisualStyleBackColor = false;
-            // 
-            // button_low_right
-            // 
-            this.button_low_right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_low_right.BackColor = System.Drawing.Color.White;
-            this.button_low_right.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.button_low_right.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_low_right.FlatAppearance.BorderSize = 0;
-            this.button_low_right.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button_low_right.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button_low_right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_low_right.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button_low_right.ForeColor = System.Drawing.Color.Black;
-            this.button_low_right.Image = ((System.Drawing.Image)(resources.GetObject("button_low_right.Image")));
-            this.button_low_right.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_low_right.Location = new System.Drawing.Point(1414, 591);
-            this.button_low_right.Name = "button_low_right";
-            this.button_low_right.Size = new System.Drawing.Size(23, 24);
-            this.button_low_right.TabIndex = 649;
-            this.button_low_right.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_low_right.UseVisualStyleBackColor = false;
-            this.button_low_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button_low_right_MouseDown);
-            this.button_low_right.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button_low_right_MouseMove);
-            this.button_low_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button_low_right_MouseUp);
-            // 
-            // btnPreview
-            // 
-            this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnPreview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPreview.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPreview.FlatAppearance.BorderSize = 0;
-            this.btnPreview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnPreview.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPreview.ForeColor = System.Drawing.Color.Black;
-            this.btnPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.Image")));
-            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPreview.Location = new System.Drawing.Point(260, 3);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(67, 55);
-            this.btnPreview.TabIndex = 48;
-            this.btnPreview.Text = "ปริ๊น";
-            this.btnPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPreview.UseVisualStyleBackColor = false;
-            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
-            // 
-            // BtnPrint
-            // 
-            this.BtnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPrint.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnPrint.FlatAppearance.BorderSize = 0;
-            this.BtnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnPrint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnPrint.ForeColor = System.Drawing.Color.Black;
-            this.BtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrint.Image")));
-            this.BtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnPrint.Location = new System.Drawing.Point(333, 3);
-            this.BtnPrint.Name = "BtnPrint";
-            this.BtnPrint.Size = new System.Drawing.Size(67, 55);
-            this.BtnPrint.TabIndex = 47;
-            this.BtnPrint.Text = "ปริ๊น";
-            this.BtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnPrint.UseVisualStyleBackColor = false;
-            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
-            // 
-            // btnopen
-            // 
-            this.btnopen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnopen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnopen.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnopen.FlatAppearance.BorderSize = 0;
-            this.btnopen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnopen.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnopen.ForeColor = System.Drawing.Color.Black;
-            this.btnopen.Image = ((System.Drawing.Image)(resources.GetObject("btnopen.Image")));
-            this.btnopen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnopen.Location = new System.Drawing.Point(58, 3);
-            this.btnopen.Name = "btnopen";
-            this.btnopen.Size = new System.Drawing.Size(52, 55);
-            this.btnopen.TabIndex = 46;
-            this.btnopen.Text = "เปิด";
-            this.btnopen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnopen.UseVisualStyleBackColor = false;
-            // 
-            // BtnClose_Form
-            // 
-            this.BtnClose_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnClose_Form.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnClose_Form.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnClose_Form.FlatAppearance.BorderSize = 0;
-            this.BtnClose_Form.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnClose_Form.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnClose_Form.ForeColor = System.Drawing.Color.Black;
-            this.BtnClose_Form.Image = ((System.Drawing.Image)(resources.GetObject("BtnClose_Form.Image")));
-            this.BtnClose_Form.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnClose_Form.Location = new System.Drawing.Point(406, 3);
-            this.BtnClose_Form.Name = "BtnClose_Form";
-            this.BtnClose_Form.Size = new System.Drawing.Size(66, 55);
-            this.BtnClose_Form.TabIndex = 45;
-            this.BtnClose_Form.Text = "ปิดหน้าจอ";
-            this.BtnClose_Form.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnClose_Form.UseVisualStyleBackColor = false;
-            this.BtnClose_Form.Click += new System.EventHandler(this.BtnClose_Form_Click);
-            // 
-            // BtnCancel_Doc
-            // 
-            this.BtnCancel_Doc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnCancel_Doc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCancel_Doc.Enabled = false;
-            this.BtnCancel_Doc.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnCancel_Doc.FlatAppearance.BorderSize = 0;
-            this.BtnCancel_Doc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnCancel_Doc.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnCancel_Doc.ForeColor = System.Drawing.Color.Black;
-            this.BtnCancel_Doc.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancel_Doc.Image")));
-            this.BtnCancel_Doc.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCancel_Doc.Location = new System.Drawing.Point(169, 3);
-            this.BtnCancel_Doc.Name = "BtnCancel_Doc";
-            this.BtnCancel_Doc.Size = new System.Drawing.Size(85, 55);
-            this.BtnCancel_Doc.TabIndex = 43;
-            this.BtnCancel_Doc.Text = "ยกเลิกเอกสาร";
-            this.BtnCancel_Doc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnCancel_Doc.UseVisualStyleBackColor = false;
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnSave.FlatAppearance.BorderSize = 0;
-            this.BtnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnSave.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnSave.ForeColor = System.Drawing.Color.Black;
-            this.BtnSave.Image = ((System.Drawing.Image)(resources.GetObject("BtnSave.Image")));
-            this.BtnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnSave.Location = new System.Drawing.Point(114, 3);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(52, 55);
-            this.BtnSave.TabIndex = 42;
-            this.BtnSave.Text = "บันทึก";
-            this.BtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnSave.UseVisualStyleBackColor = false;
-            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
-            // BtnNew
-            // 
-            this.BtnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnNew.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnNew.FlatAppearance.BorderSize = 0;
-            this.BtnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnNew.ForeColor = System.Drawing.Color.Black;
-            this.BtnNew.Image = ((System.Drawing.Image)(resources.GetObject("BtnNew.Image")));
-            this.BtnNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnNew.Location = new System.Drawing.Point(3, 3);
-            this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(52, 55);
-            this.BtnNew.TabIndex = 41;
-            this.BtnNew.Text = "ใหม่";
-            this.BtnNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnNew.UseVisualStyleBackColor = false;
-            // 
-            // panel_button_top_pictureBox
-            // 
-            this.panel_button_top_pictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_button_top_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("panel_button_top_pictureBox.Image")));
-            this.panel_button_top_pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.panel_button_top_pictureBox.Name = "panel_button_top_pictureBox";
-            this.panel_button_top_pictureBox.Size = new System.Drawing.Size(1442, 66);
-            this.panel_button_top_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.panel_button_top_pictureBox.TabIndex = 49;
-            this.panel_button_top_pictureBox.TabStop = false;
-            this.panel_button_top_pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_button_top_pictureBox_MouseDown);
             // 
             // btnmaximize
             // 
@@ -849,6 +853,30 @@
             this.btnclose.TabStop = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
+            // label35
+            // 
+            this.label35.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(435, 121);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(84, 23);
+            this.label35.TabIndex = 1327;
+            this.label35.Text = "หมวดสินค้า :";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label35.Visible = false;
+            // 
+            // txtmat_sac_id
+            // 
+            this.txtmat_sac_id.BackColor = System.Drawing.Color.White;
+            this.txtmat_sac_id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtmat_sac_id.ForeColor = System.Drawing.Color.Blue;
+            this.txtmat_sac_id.Location = new System.Drawing.Point(528, 121);
+            this.txtmat_sac_id.Name = "txtmat_sac_id";
+            this.txtmat_sac_id.Size = new System.Drawing.Size(56, 27);
+            this.txtmat_sac_id.TabIndex = 1326;
+            this.txtmat_sac_id.Text = "007";
+            this.txtmat_sac_id.Visible = false;
+            // 
             // HOME03_Production_07Receive_Send_Dye_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -866,17 +894,17 @@
             this.Text = "เช็คสต๊อค";
             this.Load += new System.EventHandler(this.HOME04_Warehouse_01Mat_Average_Load);
             this.panel_button_top.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_dataGridView1_wherehouse)).EndInit();
-            this.panel_top.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1306_WH_btn_search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
+            this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();
@@ -936,5 +964,7 @@
         private System.Windows.Forms.Button btnbalance_mat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLot_all;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtmat_sac_id;
     }
 }

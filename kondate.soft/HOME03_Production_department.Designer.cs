@@ -65,6 +65,7 @@
             this.HOME03_Production_01FG = new System.Windows.Forms.Button();
             this.HOME03_Production_06_ST_GR = new System.Windows.Forms.Button();
             this.HOME03_Production_06SY_GR = new System.Windows.Forms.Button();
+            this.HOME03_Production_18_color_sup = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
@@ -142,9 +143,10 @@
             this.HOME03_Production_06FG4_G.Name = "HOME03_Production_06FG4_G";
             this.HOME03_Production_06FG4_G.Size = new System.Drawing.Size(142, 54);
             this.HOME03_Production_06FG4_G.TabIndex = 44;
-            this.HOME03_Production_06FG4_G.Text = "สต๊อคเสื้อ";
+            this.HOME03_Production_06FG4_G.Text = "สต๊อคเสื้อสำเร็จรูป";
             this.HOME03_Production_06FG4_G.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06FG4_G.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06FG4_G.Click += new System.EventHandler(this.HOME03_Production_06FG4_G_Click);
             // 
             // HOME03_Production_06_FG3_G
             // 
@@ -164,6 +166,7 @@
             this.HOME03_Production_06_FG3_G.Text = "สต๊อคผ้าตัด";
             this.HOME03_Production_06_FG3_G.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_FG3_G.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_FG3_G.Click += new System.EventHandler(this.HOME03_Production_06_FG3_G_Click);
             // 
             // HOME03_Production_06_G
             // 
@@ -227,7 +230,7 @@
             // 
             // HOME03_Production_06FG4
             // 
-            this.HOME03_Production_06FG4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_06FG4.BackColor = System.Drawing.Color.White;
             this.HOME03_Production_06FG4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HOME03_Production_06FG4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HOME03_Production_06FG4.FlatAppearance.BorderSize = 0;
@@ -239,13 +242,14 @@
             this.HOME03_Production_06FG4.Name = "HOME03_Production_06FG4";
             this.HOME03_Production_06FG4.Size = new System.Drawing.Size(142, 75);
             this.HOME03_Production_06FG4.TabIndex = 39;
-            this.HOME03_Production_06FG4.Text = "บันทึก FG4 เสื้อ";
+            this.HOME03_Production_06FG4.Text = "บันทึก FG4 เสื้อยืดสำเร็จรูป";
             this.HOME03_Production_06FG4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06FG4.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06FG4.Click += new System.EventHandler(this.HOME03_Production_06FG4_Click);
             // 
             // HOME03_Production_06SY
             // 
-            this.HOME03_Production_06SY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_06SY.BackColor = System.Drawing.Color.White;
             this.HOME03_Production_06SY.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HOME03_Production_06SY.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HOME03_Production_06SY.FlatAppearance.BorderSize = 0;
@@ -260,10 +264,11 @@
             this.HOME03_Production_06SY.Text = "เบิกผ้าตัด ส่งเย็บ";
             this.HOME03_Production_06SY.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06SY.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06SY.Click += new System.EventHandler(this.HOME03_Production_06SY_Click);
             // 
             // HOME03_Production_06_FG3
             // 
-            this.HOME03_Production_06_FG3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_06_FG3.BackColor = System.Drawing.Color.White;
             this.HOME03_Production_06_FG3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HOME03_Production_06_FG3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HOME03_Production_06_FG3.FlatAppearance.BorderSize = 0;
@@ -278,10 +283,11 @@
             this.HOME03_Production_06_FG3.Text = "บันทึก FG3 ผ้าตัด";
             this.HOME03_Production_06_FG3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_FG3.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_FG3.Click += new System.EventHandler(this.HOME03_Production_06_FG3_Click);
             // 
             // HOME03_Production_06_ST
             // 
-            this.HOME03_Production_06_ST.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_06_ST.BackColor = System.Drawing.Color.White;
             this.HOME03_Production_06_ST.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HOME03_Production_06_ST.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HOME03_Production_06_ST.FlatAppearance.BorderSize = 0;
@@ -311,7 +317,7 @@
             this.HOME03_Production_21_room_collect.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.HOME03_Production_21_room_collect.Location = new System.Drawing.Point(341, 633);
             this.HOME03_Production_21_room_collect.Name = "HOME03_Production_21_room_collect";
-            this.HOME03_Production_21_room_collect.Size = new System.Drawing.Size(175, 75);
+            this.HOME03_Production_21_room_collect.Size = new System.Drawing.Size(142, 75);
             this.HOME03_Production_21_room_collect.TabIndex = 35;
             this.HOME03_Production_21_room_collect.Text = "21.กำหนดรหัสห้องเก็บ";
             this.HOME03_Production_21_room_collect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -369,7 +375,7 @@
             this.HOME03_Production_18.ForeColor = System.Drawing.Color.Black;
             this.HOME03_Production_18.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_18.Image")));
             this.HOME03_Production_18.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HOME03_Production_18.Location = new System.Drawing.Point(818, 714);
+            this.HOME03_Production_18.Location = new System.Drawing.Point(489, 714);
             this.HOME03_Production_18.Name = "HOME03_Production_18";
             this.HOME03_Production_18.Size = new System.Drawing.Size(142, 75);
             this.HOME03_Production_18.TabIndex = 32;
@@ -389,7 +395,7 @@
             this.HOME03_Production_17.ForeColor = System.Drawing.Color.Black;
             this.HOME03_Production_17.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_17.Image")));
             this.HOME03_Production_17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HOME03_Production_17.Location = new System.Drawing.Point(670, 714);
+            this.HOME03_Production_17.Location = new System.Drawing.Point(341, 714);
             this.HOME03_Production_17.Name = "HOME03_Production_17";
             this.HOME03_Production_17.Size = new System.Drawing.Size(142, 75);
             this.HOME03_Production_17.TabIndex = 31;
@@ -409,7 +415,7 @@
             this.HOME03_Production_16.ForeColor = System.Drawing.Color.Black;
             this.HOME03_Production_16.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_16.Image")));
             this.HOME03_Production_16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HOME03_Production_16.Location = new System.Drawing.Point(522, 714);
+            this.HOME03_Production_16.Location = new System.Drawing.Point(193, 714);
             this.HOME03_Production_16.Name = "HOME03_Production_16";
             this.HOME03_Production_16.Size = new System.Drawing.Size(142, 75);
             this.HOME03_Production_16.TabIndex = 30;
@@ -429,7 +435,7 @@
             this.HOME03_Production_15.ForeColor = System.Drawing.Color.Black;
             this.HOME03_Production_15.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_15.Image")));
             this.HOME03_Production_15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HOME03_Production_15.Location = new System.Drawing.Point(341, 714);
+            this.HOME03_Production_15.Location = new System.Drawing.Point(12, 714);
             this.HOME03_Production_15.Name = "HOME03_Production_15";
             this.HOME03_Production_15.Size = new System.Drawing.Size(175, 75);
             this.HOME03_Production_15.TabIndex = 29;
@@ -449,7 +455,7 @@
             this.HOME03_Production_13.ForeColor = System.Drawing.Color.Black;
             this.HOME03_Production_13.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_13.Image")));
             this.HOME03_Production_13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HOME03_Production_13.Location = new System.Drawing.Point(12, 714);
+            this.HOME03_Production_13.Location = new System.Drawing.Point(489, 633);
             this.HOME03_Production_13.Name = "HOME03_Production_13";
             this.HOME03_Production_13.Size = new System.Drawing.Size(175, 75);
             this.HOME03_Production_13.TabIndex = 28;
@@ -469,7 +475,7 @@
             this.HOME03_Production_14.ForeColor = System.Drawing.Color.Black;
             this.HOME03_Production_14.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_14.Image")));
             this.HOME03_Production_14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HOME03_Production_14.Location = new System.Drawing.Point(193, 714);
+            this.HOME03_Production_14.Location = new System.Drawing.Point(670, 633);
             this.HOME03_Production_14.Name = "HOME03_Production_14";
             this.HOME03_Production_14.Size = new System.Drawing.Size(142, 75);
             this.HOME03_Production_14.TabIndex = 27;
@@ -600,7 +606,7 @@
             // 
             // HOME03_Production_06
             // 
-            this.HOME03_Production_06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_06.BackColor = System.Drawing.Color.White;
             this.HOME03_Production_06.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HOME03_Production_06.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HOME03_Production_06.FlatAppearance.BorderSize = 0;
@@ -619,7 +625,7 @@
             // 
             // HOME03_Production_05
             // 
-            this.HOME03_Production_05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_05.BackColor = System.Drawing.Color.White;
             this.HOME03_Production_05.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HOME03_Production_05.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HOME03_Production_05.FlatAppearance.BorderSize = 0;
@@ -751,6 +757,27 @@
             this.HOME03_Production_06SY_GR.Text = "ผ้าส่งเย็บ ค้างรับ";
             this.HOME03_Production_06SY_GR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06SY_GR.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06SY_GR.Click += new System.EventHandler(this.HOME03_Production_06SY_GR_Click);
+            // 
+            // HOME03_Production_18_color_sup
+            // 
+            this.HOME03_Production_18_color_sup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_18_color_sup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_18_color_sup.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_18_color_sup.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_18_color_sup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_18_color_sup.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_18_color_sup.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_18_color_sup.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_18_color_sup.Image")));
+            this.HOME03_Production_18_color_sup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.HOME03_Production_18_color_sup.Location = new System.Drawing.Point(637, 714);
+            this.HOME03_Production_18_color_sup.Name = "HOME03_Production_18_color_sup";
+            this.HOME03_Production_18_color_sup.Size = new System.Drawing.Size(175, 75);
+            this.HOME03_Production_18_color_sup.TabIndex = 48;
+            this.HOME03_Production_18_color_sup.Text = "19.กำหนดรหัส สีย้อม Supplier";
+            this.HOME03_Production_18_color_sup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_18_color_sup.UseVisualStyleBackColor = false;
+            this.HOME03_Production_18_color_sup.Click += new System.EventHandler(this.HOME03_Production_18_color_sup_Click);
             // 
             // HOME03_Production_department
             // 
@@ -758,6 +785,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(981, 801);
+            this.Controls.Add(this.HOME03_Production_18_color_sup);
             this.Controls.Add(this.HOME03_Production_06SY_GR);
             this.Controls.Add(this.HOME03_Production_06_ST_GR);
             this.Controls.Add(this.HOME03_Production_05_GR);
@@ -843,5 +871,6 @@
         private System.Windows.Forms.Button HOME03_Production_05_GR;
         private System.Windows.Forms.Button HOME03_Production_06_ST_GR;
         private System.Windows.Forms.Button HOME03_Production_06SY_GR;
+        private System.Windows.Forms.Button HOME03_Production_18_color_sup;
     }
 }

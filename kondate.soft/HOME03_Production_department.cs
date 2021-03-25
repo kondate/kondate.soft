@@ -105,9 +105,6 @@ namespace kondate.soft
         private void HOME03_Production_04_Click(object sender, EventArgs e)
         {
             
-            W_ID_Select.WORD_TOP = this.HOME03_Production_04.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_04QC_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_04QC_record();
-            frm2.Show();
         }
 
         private void HOME03_Production_05_Click(object sender, EventArgs e)
@@ -164,37 +161,25 @@ namespace kondate.soft
         private void HOME03_Production_08_Click(object sender, EventArgs e)
         {
             W_ID_Select.WORD_TOP = this.HOME03_Production_08.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_08Cut_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_08Cut_shirt_record();
-            frm2.Show();
+            //kondate.soft.HOME03_Production.HOME03_Production_08Cut_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_08Cut_shirt_record();
+            //frm2.Show();
 
         }
 
         private void HOME03_Production_09_Click(object sender, EventArgs e)
         {
-            W_ID_Select.WORD_TOP = this.HOME03_Production_09.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_09Sew_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_09Sew_shirt_record();
-            frm2.Show();
         }
 
         private void HOME03_Production_10_Click(object sender, EventArgs e)
         {
-            W_ID_Select.WORD_TOP = this.HOME03_Production_10.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_10Rolled_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_10Rolled_shirt_record();
-            frm2.Show();
         }
 
         private void HOME03_Production_11_Click(object sender, EventArgs e)
         {
-            W_ID_Select.WORD_TOP = this.HOME03_Production_11.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_11QCS_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11QCS_shirt_record();
-            frm2.Show();
         }
 
         private void HOME03_Production_12_Click(object sender, EventArgs e)
         {
-             W_ID_Select.WORD_TOP = this.HOME03_Production_12.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_12FG_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_12FG_shirt_record();
-            frm2.Show();
         }
 
         private void HOME03_Production_02_BG_G_Click(object sender, EventArgs e)
@@ -232,7 +217,7 @@ namespace kondate.soft
         private void HOME03_Production_06_ST_Click(object sender, EventArgs e)
         {
             W_ID_Select.WORD_TOP = this.HOME03_Production_06_ST.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_record();
+            kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record();
             frm2.Show();
         }
 
@@ -240,8 +225,63 @@ namespace kondate.soft
         {
             
             W_ID_Select.WORD_TOP = this.HOME03_Production_06_ST_GR.Text.Trim();
-            kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_GR frm2 = new kondate.soft.HOME03_Production.HOME03_Production_07Send_Cut_shirt_GR();
+            kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_GR frm2 = new kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_GR();
             frm2.Show();
+        }
+
+        private void HOME03_Production_18_color_sup_Click(object sender, EventArgs e)
+        {
+            
+            W_ID_Select.WORD_TOP = this.HOME03_Production_18_color_sup.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_18Number_Sup_Color frm2 = new kondate.soft.HOME03_Production.HOME03_Production_18Number_Sup_Color();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06_FG3_G_Click(object sender, EventArgs e)
+        {
+            
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06_FG3_G.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_08Receive_FG3_record_Stock frm2 = new kondate.soft.HOME03_Production.HOME03_Production_08Receive_FG3_record_Stock();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06_FG3_Click(object sender, EventArgs e)
+        {
+            
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06_FG3.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_08Receive_FG3_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_08Receive_FG3_record();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06SY_Click(object sender, EventArgs e)
+        {
+            
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06SY.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_09Send_Sew_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_09Send_Sew_record();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06SY_GR_Click(object sender, EventArgs e)
+        {
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06SY_GR.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_09Send_Sew_GR frm2 = new kondate.soft.HOME03_Production.HOME03_Production_09Send_Sew_GR();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06FG4_Click(object sender, EventArgs e)
+        {
+            
+             W_ID_Select.WORD_TOP = this.HOME03_Production_06FG4.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4_record();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06FG4_G_Click(object sender, EventArgs e)
+        {
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06FG4_G.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4_record_Stock frm2 = new kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4_record_Stock();
+            frm2.Show();
+
         }
     }
 }

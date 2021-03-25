@@ -277,13 +277,13 @@
             // 
             // panel4_low
             // 
+            this.panel4_low.Controls.Add(this.iblName_Company);
             this.panel4_low.Controls.Add(this.pictureBox1);
             this.panel4_low.Controls.Add(this.iblVersion_id);
             this.panel4_low.Controls.Add(this.iblVersion);
-            this.panel4_low.Controls.Add(this.iblName_Company);
             this.panel4_low.Controls.Add(this.pictureBox3_low);
             this.panel4_low.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4_low.Location = new System.Drawing.Point(0, 493);
+            this.panel4_low.Location = new System.Drawing.Point(0, 593);
             this.panel4_low.Name = "panel4_low";
             this.panel4_low.Size = new System.Drawing.Size(738, 31);
             this.panel4_low.TabIndex = 5;
@@ -327,11 +327,11 @@
             this.iblName_Company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.iblName_Company.BackColor = System.Drawing.Color.White;
             this.iblName_Company.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.iblName_Company.Location = new System.Drawing.Point(38, 4);
+            this.iblName_Company.Location = new System.Drawing.Point(39, 4);
             this.iblName_Company.Name = "iblName_Company";
-            this.iblName_Company.Size = new System.Drawing.Size(533, 23);
+            this.iblName_Company.Size = new System.Drawing.Size(532, 23);
             this.iblName_Company.TabIndex = 427;
-            this.iblName_Company.Text = "กรเดช ซอฟท์  ยินดีให้คำปรึกษา โปรแกรมระบบฐานข้อมูล สายตรง : 094-794-4366";
+            this.iblName_Company.Text = "ไม่สะดวกในการใช้งาน สายตรง : 094-794-4366";
             this.iblName_Company.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox3_low
@@ -339,9 +339,9 @@
             this.pictureBox3_low.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3_low.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3_low.Image")));
-            this.pictureBox3_low.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox3_low.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3_low.Name = "pictureBox3_low";
-            this.pictureBox3_low.Size = new System.Drawing.Size(738, 30);
+            this.pictureBox3_low.Size = new System.Drawing.Size(738, 31);
             this.pictureBox3_low.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3_low.TabIndex = 7;
             this.pictureBox3_low.TabStop = false;
@@ -1133,7 +1133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(738, 524);
+            this.ClientSize = new System.Drawing.Size(738, 624);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnCaption);
             this.Controls.Add(this.btnEncrypt);

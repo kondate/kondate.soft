@@ -39,9 +39,14 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.label61 = new System.Windows.Forms.Label();
+            this.txtmat_sac_id = new System.Windows.Forms.TextBox();
+            this.GridView4 = new System.Windows.Forms.DataGridView();
+            this.btnbalance_lot = new System.Windows.Forms.Button();
+            this.btnbalance_mat = new System.Windows.Forms.Button();
             this.txtlod_per_krasob = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtwight_per_krasob = new System.Windows.Forms.TextBox();
+            this.txtwight_lot_all = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtsum_qty_krasob = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -78,12 +83,10 @@
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.panel_top = new System.Windows.Forms.Panel();
-            this.btnbalance_lot = new System.Windows.Forms.Button();
-            this.btnbalance_mat = new System.Windows.Forms.Button();
-            this.GridView4 = new System.Windows.Forms.DataGridView();
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView2)).BeginInit();
@@ -94,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).BeginInit();
             this.panel_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_button_top
@@ -267,12 +269,15 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.txtsum_qty);
+            this.panel1_contens.Controls.Add(this.label61);
+            this.panel1_contens.Controls.Add(this.txtmat_sac_id);
             this.panel1_contens.Controls.Add(this.GridView4);
             this.panel1_contens.Controls.Add(this.btnbalance_lot);
             this.panel1_contens.Controls.Add(this.btnbalance_mat);
             this.panel1_contens.Controls.Add(this.txtlod_per_krasob);
             this.panel1_contens.Controls.Add(this.label8);
-            this.panel1_contens.Controls.Add(this.txtwight_per_krasob);
+            this.panel1_contens.Controls.Add(this.txtwight_lot_all);
             this.panel1_contens.Controls.Add(this.label6);
             this.panel1_contens.Controls.Add(this.txtsum_qty_krasob);
             this.panel1_contens.Controls.Add(this.label5);
@@ -280,7 +285,6 @@
             this.panel1_contens.Controls.Add(this.label4);
             this.panel1_contens.Controls.Add(this.txtsum2_qty);
             this.panel1_contens.Controls.Add(this.label34);
-            this.panel1_contens.Controls.Add(this.txtsum_qty);
             this.panel1_contens.Controls.Add(this.label13);
             this.panel1_contens.Controls.Add(this.iblword_status);
             this.panel1_contens.Controls.Add(this.dtpend);
@@ -310,6 +314,88 @@
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             // 
+            // label61
+            // 
+            this.label61.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label61.ForeColor = System.Drawing.Color.Black;
+            this.label61.Location = new System.Drawing.Point(245, 180);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(84, 23);
+            this.label61.TabIndex = 1241;
+            this.label61.Text = "หมวดสินค้า :";
+            this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label61.Visible = false;
+            // 
+            // txtmat_sac_id
+            // 
+            this.txtmat_sac_id.BackColor = System.Drawing.Color.White;
+            this.txtmat_sac_id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtmat_sac_id.ForeColor = System.Drawing.Color.Blue;
+            this.txtmat_sac_id.Location = new System.Drawing.Point(338, 180);
+            this.txtmat_sac_id.Name = "txtmat_sac_id";
+            this.txtmat_sac_id.Size = new System.Drawing.Size(56, 27);
+            this.txtmat_sac_id.TabIndex = 1240;
+            this.txtmat_sac_id.Text = "005";
+            this.txtmat_sac_id.Visible = false;
+            // 
+            // GridView4
+            // 
+            this.GridView4.AllowUserToAddRows = false;
+            this.GridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView4.BackgroundColor = System.Drawing.Color.White;
+            this.GridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView4.Location = new System.Drawing.Point(2, 209);
+            this.GridView4.Name = "GridView4";
+            this.GridView4.Size = new System.Drawing.Size(1427, 348);
+            this.GridView4.TabIndex = 1020;
+            this.GridView4.Visible = false;
+            this.GridView4.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseClick);
+            this.GridView4.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView4_CellMouseLeave);
+            this.GridView4.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseMove);
+            // 
+            // btnbalance_lot
+            // 
+            this.btnbalance_lot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnbalance_lot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnbalance_lot.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbalance_lot.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnbalance_lot.FlatAppearance.BorderSize = 0;
+            this.btnbalance_lot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnbalance_lot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnbalance_lot.ForeColor = System.Drawing.Color.Black;
+            this.btnbalance_lot.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_lot.Image")));
+            this.btnbalance_lot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbalance_lot.Location = new System.Drawing.Point(2, 164);
+            this.btnbalance_lot.Name = "btnbalance_lot";
+            this.btnbalance_lot.Size = new System.Drawing.Size(119, 39);
+            this.btnbalance_lot.TabIndex = 1019;
+            this.btnbalance_lot.Text = "Lot No คงเหลือ";
+            this.btnbalance_lot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbalance_lot.UseVisualStyleBackColor = false;
+            this.btnbalance_lot.Click += new System.EventHandler(this.btnbalance_lot_Click);
+            // 
+            // btnbalance_mat
+            // 
+            this.btnbalance_mat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnbalance_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnbalance_mat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbalance_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnbalance_mat.FlatAppearance.BorderSize = 0;
+            this.btnbalance_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnbalance_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnbalance_mat.ForeColor = System.Drawing.Color.Black;
+            this.btnbalance_mat.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_mat.Image")));
+            this.btnbalance_mat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbalance_mat.Location = new System.Drawing.Point(127, 164);
+            this.btnbalance_mat.Name = "btnbalance_mat";
+            this.btnbalance_mat.Size = new System.Drawing.Size(98, 39);
+            this.btnbalance_mat.TabIndex = 1018;
+            this.btnbalance_mat.Text = "กระทบยอด";
+            this.btnbalance_mat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbalance_mat.UseVisualStyleBackColor = false;
+            this.btnbalance_mat.Click += new System.EventHandler(this.btnbalance_mat_Click);
+            // 
             // txtlod_per_krasob
             // 
             this.txtlod_per_krasob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -337,32 +423,31 @@
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label8.Visible = false;
             // 
-            // txtwight_per_krasob
+            // txtwight_lot_all
             // 
-            this.txtwight_per_krasob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtwight_per_krasob.BackColor = System.Drawing.Color.Black;
-            this.txtwight_per_krasob.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtwight_per_krasob.ForeColor = System.Drawing.Color.Lime;
-            this.txtwight_per_krasob.Location = new System.Drawing.Point(143, 562);
-            this.txtwight_per_krasob.Name = "txtwight_per_krasob";
-            this.txtwight_per_krasob.Size = new System.Drawing.Size(70, 21);
-            this.txtwight_per_krasob.TabIndex = 1014;
-            this.txtwight_per_krasob.Text = "29.555";
-            this.txtwight_per_krasob.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtwight_per_krasob.Visible = false;
+            this.txtwight_lot_all.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtwight_lot_all.BackColor = System.Drawing.Color.Black;
+            this.txtwight_lot_all.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtwight_lot_all.ForeColor = System.Drawing.Color.Lime;
+            this.txtwight_lot_all.Location = new System.Drawing.Point(620, 561);
+            this.txtwight_lot_all.Name = "txtwight_lot_all";
+            this.txtwight_lot_all.Size = new System.Drawing.Size(118, 21);
+            this.txtwight_lot_all.TabIndex = 1014;
+            this.txtwight_lot_all.Text = ".00";
+            this.txtwight_lot_all.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtwight_lot_all.Visible = false;
             // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(36, 562);
+            this.label6.Location = new System.Drawing.Point(895, 561);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 21);
+            this.label6.Size = new System.Drawing.Size(154, 21);
             this.label6.TabIndex = 1015;
-            this.label6.Text = "นน/กระสอบ (กก) :";
+            this.label6.Text = "รวม นน Lot ทั้งหมด (กก) :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Visible = false;
             // 
             // txtsum_qty_krasob
             // 
@@ -449,13 +534,12 @@
             this.txtsum_qty.BackColor = System.Drawing.Color.Black;
             this.txtsum_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtsum_qty.ForeColor = System.Drawing.Color.Lime;
-            this.txtsum_qty.Location = new System.Drawing.Point(143, 505);
+            this.txtsum_qty.Location = new System.Drawing.Point(1053, 562);
             this.txtsum_qty.Name = "txtsum_qty";
             this.txtsum_qty.Size = new System.Drawing.Size(120, 21);
             this.txtsum_qty.TabIndex = 1000;
             this.txtsum_qty.Text = ".00";
             this.txtsum_qty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtsum_qty.Visible = false;
             // 
             // label13
             // 
@@ -812,64 +896,6 @@
             this.panel_top.TabIndex = 9;
             this.panel_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseDown);
             // 
-            // btnbalance_lot
-            // 
-            this.btnbalance_lot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnbalance_lot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnbalance_lot.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbalance_lot.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnbalance_lot.FlatAppearance.BorderSize = 0;
-            this.btnbalance_lot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnbalance_lot.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnbalance_lot.ForeColor = System.Drawing.Color.Black;
-            this.btnbalance_lot.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_lot.Image")));
-            this.btnbalance_lot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbalance_lot.Location = new System.Drawing.Point(2, 164);
-            this.btnbalance_lot.Name = "btnbalance_lot";
-            this.btnbalance_lot.Size = new System.Drawing.Size(119, 39);
-            this.btnbalance_lot.TabIndex = 1019;
-            this.btnbalance_lot.Text = "Lot No คงเหลือ";
-            this.btnbalance_lot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbalance_lot.UseVisualStyleBackColor = false;
-            this.btnbalance_lot.Click += new System.EventHandler(this.btnbalance_lot_Click);
-            // 
-            // btnbalance_mat
-            // 
-            this.btnbalance_mat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnbalance_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnbalance_mat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbalance_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnbalance_mat.FlatAppearance.BorderSize = 0;
-            this.btnbalance_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnbalance_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnbalance_mat.ForeColor = System.Drawing.Color.Black;
-            this.btnbalance_mat.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_mat.Image")));
-            this.btnbalance_mat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbalance_mat.Location = new System.Drawing.Point(127, 164);
-            this.btnbalance_mat.Name = "btnbalance_mat";
-            this.btnbalance_mat.Size = new System.Drawing.Size(98, 39);
-            this.btnbalance_mat.TabIndex = 1018;
-            this.btnbalance_mat.Text = "กระทบยอด";
-            this.btnbalance_mat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbalance_mat.UseVisualStyleBackColor = false;
-            this.btnbalance_mat.Click += new System.EventHandler(this.btnbalance_mat_Click);
-            // 
-            // GridView4
-            // 
-            this.GridView4.AllowUserToAddRows = false;
-            this.GridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridView4.BackgroundColor = System.Drawing.Color.White;
-            this.GridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView4.Location = new System.Drawing.Point(2, 209);
-            this.GridView4.Name = "GridView4";
-            this.GridView4.Size = new System.Drawing.Size(1427, 348);
-            this.GridView4.TabIndex = 1020;
-            this.GridView4.Visible = false;
-            this.GridView4.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseClick);
-            this.GridView4.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView4_CellMouseLeave);
-            this.GridView4.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseMove);
-            // 
             // HOME03_Production_01RG_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -890,6 +916,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView2)).EndInit();
@@ -900,7 +927,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).EndInit();
             this.panel_top.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -949,7 +975,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtlod_per_krasob;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtwight_per_krasob;
+        private System.Windows.Forms.TextBox txtwight_lot_all;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtsum_qty_krasob;
         private System.Windows.Forms.Label label5;
@@ -958,5 +984,7 @@
         private System.Windows.Forms.Button btnbalance_lot;
         private System.Windows.Forms.Button btnbalance_mat;
         private System.Windows.Forms.DataGridView GridView4;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox txtmat_sac_id;
     }
 }

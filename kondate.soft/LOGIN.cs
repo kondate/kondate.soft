@@ -326,245 +326,20 @@ namespace kondate.soft
             }
             else
             {
-                //this.txtuser_name.Text = "admin";
-                //this.txtuser_pass.Text = "1234";
-                //this.txtsleep.Text = "100";
-                //W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
-
-                this.txtuser_pass.Text = "";
-                this.txtsleep.Text = "10000";
+                this.txtuser_name.Text = "admin";
+                this.txtuser_pass.Text = "1234";
+                this.txtsleep.Text = "100";
                 W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
+
+                //this.txtuser_pass.Text = "";
+                //this.txtsleep.Text = "10000";
+                //W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
 
                 this.check_version.Checked = true;
 
             }
 
        }
-
-        private void LOGIN_Shown(object sender, EventArgs e)
-        {
-
-
-
-
-        }
-
-        private void FillDATE_FROM_SERVER()
-        {
-            //เชื่อมต่อฐานข้อมูล=======================================================
-            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
-            SqlConnection conn = new SqlConnection(
-                new SqlConnectionStringBuilder()
-                {
-                    DataSource = W_ID_Select.ADATASOURCE,
-                    InitialCatalog = W_ID_Select.DATABASE_NAME,
-                    UserID = W_ID_Select.Crytal_USER,
-                    Password = W_ID_Select.Crytal_Pass
-                }
-                .ConnectionString
-            );
-            try
-            {
-                //conn.Open();
-                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
-
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            //END เชื่อมต่อฐานข้อมูล=======================================================
-
-            conn.Open();
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-
-                SqlCommand cmd2 = conn.CreateCommand();
-                cmd2.CommandType = CommandType.Text;
-                cmd2.Connection = conn;
-
-                SqlTransaction trans;
-                trans = conn.BeginTransaction();
-                cmd2.Transaction = trans;
-                try
-                {
-
-                    cmd2.CommandText = "UPDATE A001_date_now SET " +
-                                                                 "datetime_now = GETDATE()";
-                        cmd2.ExecuteNonQuery();
-
-
-
-                        Cursor.Current = Cursors.WaitCursor;
-                        trans.Commit();
-                        conn.Close();
-                        Cursor.Current = Cursors.Default;
-
-                }
-                catch (Exception ex)
-                {
-                    conn.Close();
-                    MessageBox.Show("kondate.soft", ex.Message);
-                    return;
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-            //=============================================================
-
-
-
-
-            conn.Open();
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-
-                SqlCommand cmd1 = conn.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.Connection = conn;
-
-                cmd1.CommandText = "SELECT datetime_now" +
-                                  " FROM A001_date_now";
-                try
-                {
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd1);
-                    da.Fill(dt);
-                    if (dt.Rows.Count > 0)
-                    {
-                        this.txtdate_from_server.Text = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("dd-MM-yyyy", UsaCulture);          //4
-                        this.txttime_from_server.Text = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("HH:mm:ss", UsaCulture);          //4
-
-                        string D1  = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("yyyy-MM-dd", UsaCulture);          //4
-                        string T1 = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("HH:mm:ss", UsaCulture);          //4
-                        W_ID_Select.DATE_FROM_SERVER = D1.ToString();
-                        W_ID_Select.TIME_FROM_SERVER = T1.ToString();
-
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("kondate.soft", ex.Message);
-                    return;
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
-            }
-            //จบเชื่อมต่อฐานข้อมูล=======================================================
-            conn.Close();
-        }
-   
-
-        private void Ch_Config_db_server_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.Ch_Config_db_server.Checked == true)
-            {
-                this.groupBox3_config.Visible = true;
-                if (this.txtuser_name.Text == "admin")
-                {
-                    this.checkBox1_TEST_File.Visible = true;
-                }
-                else
-                {
-                    this.checkBox1_TEST_File.Visible = false;
-                }
-            }
-            else
-            {
-                this.groupBox3_config.Visible = false;
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.Invoke(new EventHandler(delegate
-            {
-                //    this.txttime_from_server.Text = DateTime.Now.ToString();
-                this.txttime_from_server.Text = DateTime.Now.ToString("HH:mm:ss");
-            }));
-        }
-
-        private void checkBox1_Copy_file_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.checkBox1_Copy_file.Checked == true)
-            {
-                string SourcePath = @"\\192.168.0.3\\Update_Krest\\Samn\\KD_ERP\\KD_REPORT";
-                string DestinationPath = @"C:\\KD_ERP\\KD_REPORT";
-
-
-                foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
-                                SearchOption.AllDirectories))
-                    Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
-
-                //Copy all the files & Replaces any files with the same name
-                foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
-                                SearchOption.AllDirectories))
-                    File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
-
-            }
-        }
-        private void checkBox1_TEST_File_CheckedChanged(object sender, EventArgs e)
-        {
-            CHECK_VERSION();
-
-            if (this.checkBox1_TEST_File.Checked == true)
-            {
-                PANEL1_CO_Fill_CO();
-
-                this.iblEnrypt.Visible = true;
-                this.iblCaption.Visible = true;
-                this.txtCaption.Visible = true;
-                this.txtEncrypt.Visible = true;
-                this.btnCaption.Visible = true;
-                this.btnEncrypt.Visible = true;
-                this.Height = 606;
-            }
-            else
-            {
-                PANEL1_CO_Fill_CO();
-
-                this.iblEnrypt.Visible = false;
-                this.iblCaption.Visible = false;
-                this.txtCaption.Visible = false;
-                this.txtEncrypt.Visible = false;
-                this.btnCaption.Visible = false;
-                this.btnEncrypt.Visible = false;
-                this.Height = 521;
-
-            }
-        }
-
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
-        {
-                if (e.Button == MouseButtons.Left)
-                {
-                    ReleaseCapture();
-                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-                }
-        }
-        private void btnOK_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up)
-            {
-                this.txtuser_pass.Focus();
-            }
-            if (e.KeyCode == Keys.Down)
-            {
-                this.BtnCancel.Focus();
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-            }
-        }
-
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (this.PANEL1_CO_txtco_id.Text == "")
@@ -645,7 +420,7 @@ namespace kondate.soft
 
                     if (dt2.Rows.Count > 0)
                     {
-                            W_ID_Select.M_BRANCHNAME_SHORT = dt2.Rows[0]["txtbranch_name_short"].ToString();      //1
+                        W_ID_Select.M_BRANCHNAME_SHORT = dt2.Rows[0]["txtbranch_name_short"].ToString();      //1
 
                     }
                     else
@@ -707,9 +482,9 @@ namespace kondate.soft
                         if (this.check_version.Checked == true)
                         {
                             //////==================================================
-                            MessageBox.Show("โปรด Update Version ปัจจุบัน  :  " + dt.Rows[0]["txtversion_id"].ToString() + "  ก่อนใช้งาน !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            conn.Close();
-                            Application.Exit();
+                            //MessageBox.Show("โปรด Update Version ปัจจุบัน  :  " + dt.Rows[0]["txtversion_id"].ToString() + "  ก่อนใช้งาน !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            //conn.Close();
+                            //Application.Exit();
                             //////==================================================
 
                         }
@@ -920,6 +695,229 @@ namespace kondate.soft
             }
             //จบเชื่อมต่อฐานข้อมูล=======================================================
 
+        }
+
+        private void LOGIN_Shown(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        private void FillDATE_FROM_SERVER()
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+                SqlTransaction trans;
+                trans = conn.BeginTransaction();
+                cmd2.Transaction = trans;
+                try
+                {
+
+                    cmd2.CommandText = "UPDATE A001_date_now SET " +
+                                                                 "datetime_now = GETDATE()";
+                        cmd2.ExecuteNonQuery();
+
+
+
+                        Cursor.Current = Cursors.WaitCursor;
+                        trans.Commit();
+                        conn.Close();
+                        Cursor.Current = Cursors.Default;
+
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            //=============================================================
+
+
+
+
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd1 = conn.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.Connection = conn;
+
+                cmd1.CommandText = "SELECT datetime_now" +
+                                  " FROM A001_date_now";
+                try
+                {
+                    cmd1.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd1);
+                    da.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        this.txtdate_from_server.Text = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("dd-MM-yyyy", UsaCulture);          //4
+                        this.txttime_from_server.Text = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("HH:mm:ss", UsaCulture);          //4
+
+                        string D1  = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("yyyy-MM-dd", UsaCulture);          //4
+                        string T1 = Convert.ToDateTime(dt.Rows[0]["datetime_now"]).ToString("HH:mm:ss", UsaCulture);          //4
+                        W_ID_Select.DATE_FROM_SERVER = D1.ToString();
+                        W_ID_Select.TIME_FROM_SERVER = T1.ToString();
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+            //จบเชื่อมต่อฐานข้อมูล=======================================================
+            conn.Close();
+        }
+   
+        private void Ch_Config_db_server_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.Ch_Config_db_server.Checked == true)
+            {
+                this.groupBox3_config.Visible = true;
+                if (this.txtuser_name.Text == "admin")
+                {
+                    this.checkBox1_TEST_File.Visible = true;
+                }
+                else
+                {
+                    this.checkBox1_TEST_File.Visible = false;
+                }
+            }
+            else
+            {
+                this.groupBox3_config.Visible = false;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Invoke(new EventHandler(delegate
+            {
+                //    this.txttime_from_server.Text = DateTime.Now.ToString();
+                this.txttime_from_server.Text = DateTime.Now.ToString("HH:mm:ss");
+            }));
+        }
+
+        private void checkBox1_Copy_file_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox1_Copy_file.Checked == true)
+            {
+                string SourcePath = @"\\192.168.0.3\\Update_Krest\\Samn\\KD_ERP\\KD_REPORT";
+                string DestinationPath = @"C:\\KD_ERP\\KD_REPORT";
+
+
+                foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
+                                SearchOption.AllDirectories))
+                    Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
+
+                //Copy all the files & Replaces any files with the same name
+                foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
+                                SearchOption.AllDirectories))
+                    File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
+
+            }
+        }
+        private void checkBox1_TEST_File_CheckedChanged(object sender, EventArgs e)
+        {
+            CHECK_VERSION();
+
+            if (this.checkBox1_TEST_File.Checked == true)
+            {
+                PANEL1_CO_Fill_CO();
+
+                this.iblEnrypt.Visible = true;
+                this.iblCaption.Visible = true;
+                this.txtCaption.Visible = true;
+                this.txtEncrypt.Visible = true;
+                this.btnCaption.Visible = true;
+                this.btnEncrypt.Visible = true;
+                this.Height = 606;
+            }
+            else
+            {
+                PANEL1_CO_Fill_CO();
+
+                this.iblEnrypt.Visible = false;
+                this.iblCaption.Visible = false;
+                this.txtCaption.Visible = false;
+                this.txtEncrypt.Visible = false;
+                this.btnCaption.Visible = false;
+                this.btnEncrypt.Visible = false;
+                this.Height = 521;
+
+            }
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+                if (e.Button == MouseButtons.Left)
+                {
+                    ReleaseCapture();
+                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                }
+        }
+        private void btnOK_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                this.txtuser_pass.Focus();
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                this.BtnCancel.Focus();
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+            }
         }
 
         private void btnTest_Connect_Click(object sender, EventArgs e)

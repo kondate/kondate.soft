@@ -190,6 +190,7 @@ namespace kondate.soft.HOME03_Production
                                    "k016db_1supplier.*" +
 
                                    " FROM c002_07Send_Cut_shirt_record" +
+
                                    " INNER JOIN k016db_1supplier" +
                                    " ON c002_07Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
                                    " AND c002_07Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
