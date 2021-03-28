@@ -39,10 +39,10 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.txtmat_sac_id = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.GridView4 = new System.Windows.Forms.DataGridView();
             this.label35 = new System.Windows.Forms.Label();
-            this.txtmat_sac_id = new System.Windows.Forms.TextBox();
             this.GridView3 = new System.Windows.Forms.DataGridView();
             this.btnLot_all = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -313,6 +313,18 @@
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             // 
+            // txtmat_sac_id
+            // 
+            this.txtmat_sac_id.BackColor = System.Drawing.Color.White;
+            this.txtmat_sac_id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtmat_sac_id.ForeColor = System.Drawing.Color.Blue;
+            this.txtmat_sac_id.Location = new System.Drawing.Point(1055, 10);
+            this.txtmat_sac_id.Name = "txtmat_sac_id";
+            this.txtmat_sac_id.Size = new System.Drawing.Size(56, 27);
+            this.txtmat_sac_id.TabIndex = 1326;
+            this.txtmat_sac_id.Text = "001";
+            this.txtmat_sac_id.Visible = false;
+            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -352,18 +364,6 @@
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label35.Visible = false;
             // 
-            // txtmat_sac_id
-            // 
-            this.txtmat_sac_id.BackColor = System.Drawing.Color.White;
-            this.txtmat_sac_id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_sac_id.ForeColor = System.Drawing.Color.Blue;
-            this.txtmat_sac_id.Location = new System.Drawing.Point(504, 36);
-            this.txtmat_sac_id.Name = "txtmat_sac_id";
-            this.txtmat_sac_id.Size = new System.Drawing.Size(56, 27);
-            this.txtmat_sac_id.TabIndex = 1326;
-            this.txtmat_sac_id.Text = "001";
-            this.txtmat_sac_id.Visible = false;
-            // 
             // GridView3
             // 
             this.GridView3.AllowUserToAddRows = false;
@@ -376,10 +376,6 @@
             this.GridView3.Size = new System.Drawing.Size(1425, 391);
             this.GridView3.TabIndex = 768;
             this.GridView3.Visible = false;
-            this.GridView3.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView3_CellMouseClick_1);
-            this.GridView3.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView3_CellMouseLeave);
-            this.GridView3.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView3_CellMouseMove);
-            this.GridView3.DoubleClick += new System.EventHandler(this.GridView3_DoubleClick);
             // 
             // btnLot_all
             // 
@@ -401,7 +397,6 @@
             this.btnLot_all.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLot_all.UseVisualStyleBackColor = false;
             this.btnLot_all.Visible = false;
-            this.btnLot_all.Click += new System.EventHandler(this.btnLot_all_Click);
             // 
             // pictureBox1
             // 

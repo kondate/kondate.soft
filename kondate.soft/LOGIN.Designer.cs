@@ -42,10 +42,10 @@
             this.iblPoint = new System.Windows.Forms.Label();
             this.pictureBox1_logo = new System.Windows.Forms.PictureBox();
             this.panel4_low = new System.Windows.Forms.Panel();
+            this.iblName_Company = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iblVersion_id = new System.Windows.Forms.Label();
             this.iblVersion = new System.Windows.Forms.Label();
-            this.iblName_Company = new System.Windows.Forms.Label();
             this.pictureBox3_low = new System.Windows.Forms.PictureBox();
             this.groupBox1_User_Login = new System.Windows.Forms.GroupBox();
             this.panel2_User_Login = new System.Windows.Forms.Panel();
@@ -283,10 +283,22 @@
             this.panel4_low.Controls.Add(this.iblVersion);
             this.panel4_low.Controls.Add(this.pictureBox3_low);
             this.panel4_low.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4_low.Location = new System.Drawing.Point(0, 593);
+            this.panel4_low.Location = new System.Drawing.Point(0, 492);
             this.panel4_low.Name = "panel4_low";
             this.panel4_low.Size = new System.Drawing.Size(738, 31);
             this.panel4_low.TabIndex = 5;
+            // 
+            // iblName_Company
+            // 
+            this.iblName_Company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.iblName_Company.BackColor = System.Drawing.Color.White;
+            this.iblName_Company.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.iblName_Company.Location = new System.Drawing.Point(39, 4);
+            this.iblName_Company.Name = "iblName_Company";
+            this.iblName_Company.Size = new System.Drawing.Size(532, 23);
+            this.iblName_Company.TabIndex = 427;
+            this.iblName_Company.Text = "ไม่สะดวกในการใช้งาน สายตรง : 094-794-4366";
+            this.iblName_Company.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -321,18 +333,6 @@
             this.iblVersion.TabIndex = 428;
             this.iblVersion.Text = "Version : ";
             this.iblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // iblName_Company
-            // 
-            this.iblName_Company.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.iblName_Company.BackColor = System.Drawing.Color.White;
-            this.iblName_Company.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.iblName_Company.Location = new System.Drawing.Point(39, 4);
-            this.iblName_Company.Name = "iblName_Company";
-            this.iblName_Company.Size = new System.Drawing.Size(532, 23);
-            this.iblName_Company.TabIndex = 427;
-            this.iblName_Company.Text = "ไม่สะดวกในการใช้งาน สายตรง : 094-794-4366";
-            this.iblName_Company.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox3_low
             // 
@@ -1133,7 +1133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(738, 624);
+            this.ClientSize = new System.Drawing.Size(738, 523);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnCaption);
             this.Controls.Add(this.btnEncrypt);

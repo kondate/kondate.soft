@@ -127,21 +127,6 @@
         VUXsPnOnAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PANEL0105_FACE_BAKING_btnnew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAGZJREFUOE9j
-        GAVHgPgBiRikBycAKZgDxAlEYpBakB6cACQJUkgsAKkly0ARKEYHZBu4AIrRwcAaCPIizKA7UAzjw7w/
-        sAYiA5hB6GDwGAjyIsybyIBsA3EBogykatajeuEw7AEDAwDhO0yRjOHqyAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="PANEL0105_FACE_BAKING_btnclose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAHNJREFUOE9j
-        GGYgJCQkJTQ0dHtwcLASVAgOwsPDlUFyIDVQIUwAVLADiP8D8UNkQ6CaH0HldkCFMQGaQrAhaGKPsLkO
-        BaAbgsQmrBkG0AwhTTMIADVoAfELJANAbC2oNH5AkRcoDkSgAsqikeKENBQBAwMAlHN7ZqtNwpsAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
   <data name="PANEL0105_FACE_BAKING_btn_search.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAihJREFUOE+9
@@ -155,6 +140,14 @@
         xj+G9kye6KbKZtAjaNjX0jpk2PZijv5VdRjYj1UU8PqRIeN4n0NvoPlYvOXW1l27YVtT7B3u//JqbB4K
         BoP14Ujz+JadTRCOxj4YRmolT/276GQg9A1BQ5HmhYEaRmZZKBKbaGjcM9NoGBv58fy0wzRXROPxTXy7
         0AoEfgFoIL6/3Ev5JgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="PANEL0105_FACE_BAKING_btnclose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAHNJREFUOE9j
+        GGYgJCQkJTQ0dHtwcLASVAgOwsPDlUFyIDVQIUwAVLADiP8D8UNkQ6CaH0HldkCFMQGaQrAhaGKPsLkO
+        BaAbgsQmrBkG0AwhTTMIADVoAfELJANAbC2oNH5AkRcoDkSgAsqikeKENBQBAwMAlHN7ZqtNwpsAAAAA
+        SUVORK5CYII=
 </value>
   </data>
   <data name="PANEL0105_FACE_BAKING_btnface_baking.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

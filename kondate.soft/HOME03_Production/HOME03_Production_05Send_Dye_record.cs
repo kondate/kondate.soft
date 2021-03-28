@@ -122,6 +122,10 @@ namespace kondate.soft.HOME03_Production
             this.btnPreview.Enabled = false;
             this.BtnPrint.Enabled = false;
 
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Text = "ซื้อไม่มีvat";
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text = "PUR_NOvat";
+
+
             //1.ส่วนหน้าหลัก======================================================================
             this.dtpdate_record.Value = DateTime.Now;
             this.dtpdate_record.Format = DateTimePickerFormat.Custom;
@@ -1754,9 +1758,9 @@ namespace kondate.soft.HOME03_Production
         }
         private void GridView1_SelectionChanged(object sender, EventArgs e)
         {
-            curRow = GridView1.CurrentRow.Index;
-            int rowscount = GridView1.Rows.Count;
-            DataGridViewCellStyle CellStyle = new DataGridViewCellStyle();
+            //curRow = GridView1.CurrentRow.Index;
+            //int rowscount = GridView1.Rows.Count;
+            //DataGridViewCellStyle CellStyle = new DataGridViewCellStyle();
             //===============================================================
             //===============================================================
 
@@ -1820,8 +1824,6 @@ namespace kondate.soft.HOME03_Production
             double Sum_Qty3 = 0;
             double Sum_Qty4 = 0;
             double Sum_Qty5 = 0;
-            double C1 = 0;
-            double C1YP = 0;
 
 
             int k = 0;
@@ -1996,8 +1998,6 @@ namespace kondate.soft.HOME03_Production
              Sum_Qty3 = 0;
              Sum_Qty4 = 0;
              Sum_Qty5 = 0;
-             C1 = 0;
-             C1YP = 0;
 
 
         }
@@ -2316,7 +2316,7 @@ namespace kondate.soft.HOME03_Production
 
 
             }
-            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_ONvat")  //ซื้อไม่มีvat
+            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_NOvat")  //ซื้อไม่มีvat
             {
                 double DisCount = 0;
                 double VATMONey = 0;
@@ -3123,6 +3123,38 @@ namespace kondate.soft.HOME03_Production
             }
 
             //====================
+        }
+        private void GridView2_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor == Color.Green)
+                {
+
+                }
+                else
+                {
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                }
+            }
+        }
+        private void GridView2_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor == Color.Green)
+                {
+
+                }
+                else
+                {
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                }
+            }
         }
         private void GridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

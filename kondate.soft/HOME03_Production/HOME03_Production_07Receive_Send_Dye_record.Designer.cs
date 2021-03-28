@@ -1227,6 +1227,9 @@
             this.GridView2.Name = "GridView2";
             this.GridView2.Size = new System.Drawing.Size(681, 51);
             this.GridView2.TabIndex = 1214;
+            this.GridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView2_CellMouseClick);
+            this.GridView2.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView2_CellMouseLeave);
+            this.GridView2.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView2_CellMouseMove);
             // 
             // label22
             // 

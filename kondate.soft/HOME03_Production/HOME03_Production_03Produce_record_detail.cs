@@ -1014,8 +1014,8 @@ namespace kondate.soft.HOME03_Production
 
                         //============================================================================================================
                         //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
-                        if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
-                        {
+                        //if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
+                        //{
                             Con_QTY = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
                             this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Con_QTY.ToString("N", new CultureInfo("en-US"));
                             //Sum2_Qty_Yokpai  =================================================
@@ -1026,7 +1026,7 @@ namespace kondate.soft.HOME03_Production
                             Sum2_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum2_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
                             this.txtsum2_qty.Text = Sum2_Qty.ToString("N", new CultureInfo("en-US"));
 
-                        }
+                        //}
 
                     }
 
@@ -1241,8 +1241,8 @@ namespace kondate.soft.HOME03_Production
 
                         //============================================================================================================
                         //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
-                        if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
-                        {
+                        //if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
+                        //{
                             Con_QTY = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
                             this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Con_QTY.ToString("N", new CultureInfo("en-US"));
                             //Sum2_Qty_Yokpai  =================================================
@@ -1253,7 +1253,7 @@ namespace kondate.soft.HOME03_Production
                             Sum2_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum2_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
                             this.txtsum2_qty.Text = Sum2_Qty.ToString("N", new CultureInfo("en-US"));
 
-                        }
+                        //}
 
                     }
 
@@ -1508,7 +1508,7 @@ namespace kondate.soft.HOME03_Production
 
 
             }
-            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_ONvat")  //ซื้อไม่มีvat
+            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_NOvat")  //ซื้อไม่มีvat
             {
                 double DisCount = 0;
                 double VATMONey = 0;
@@ -3021,6 +3021,7 @@ namespace kondate.soft.HOME03_Production
                 if (cell != null)
                 {
                     this.txtnumber_in_year.Text  = row.Cells["Col_txtnumber_in_year"].Value.ToString();
+                    this.txtfold_number.Text = row.Cells["Col_txtfold_number"].Value.ToString();
                     this.txtlot_no.Text = row.Cells["Col_txtlot_no"].Value.ToString();
                 }
 
@@ -3031,6 +3032,206 @@ namespace kondate.soft.HOME03_Production
         {
             selectedRowIndex = GridView1.CurrentRow.Index;
 
+        }
+
+        private void btnUpdate_fold_number_Click(object sender, EventArgs e)
+        {
+
+            if (this.txtlot_no.Text == "")
+            {
+                MessageBox.Show("ไม่ พบ Lot no โปรดคลิ๊กแถว ในตารางที่ต้องการบันทึก เลขที่ชุดก่อน !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (this.txtnumber_in_year.Text == "")
+            {
+                MessageBox.Show("ไม่ พบ เลขที่ชุดให้บันทึก !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+
+                cmd2.CommandText = "SELECT c002_05Send_dye_record.*," +
+                                   "c002_05Send_dye_record_detail.*" +
+
+                                   " FROM c002_05Send_dye_record" +
+                                   " INNER JOIN c002_05Send_dye_record_detail" +
+                                   " ON c002_05Send_dye_record.cdkey = c002_05Send_dye_record_detail.cdkey" +
+                                   " AND c002_05Send_dye_record.txtco_id = c002_05Send_dye_record_detail.txtco_id" +
+                                   " AND c002_05Send_dye_record.txtPPT_id = c002_05Send_dye_record_detail.txtPPT_id" +
+
+                                   " WHERE (c002_05Send_dye_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_05Send_dye_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (c002_05Send_dye_record.txtPPT_status = '0')" +
+                                   " AND (c002_05Send_dye_record_detail.txtnumber_in_year = '" + this.txtnumber_in_year.Text.ToString() + "')" +
+                                   " ORDER BY c002_05Send_dye_record_detail.txtmat_no ASC";
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+
+                            MessageBox.Show("เลขชุดนี้ :   " + dt2.Rows[j]["txtnumber_in_year"].ToString() + "    นี้ มีการเบิก ส่งย้อม ไปแล้ว ไม่สามารถแก้ไขรายการได้ !!! ");
+                            return;
+                            //GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");          //21
+                            //GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");    //36
+                            //GridView1.Rows[j].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //37
+                            //GridView1.Rows[j].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //37
+                        }
+                        //=======================================================
+                        //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
+                    }
+                    else
+                    {
+
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        Cursor.Current = Cursors.Default;
+                        conn.Close();
+                        // return;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //MessageBox.Show("ok1");
+
+            //จบเชื่อมต่อฐานข้อมูล=======================================================
+
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd3 = conn.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.Connection = conn;
+
+                SqlTransaction trans;
+                trans = conn.BeginTransaction();
+                cmd3.Transaction = trans;
+                try
+                {
+
+
+                    //5
+                    //MessageBox.Show("ok43");
+
+                    //cmd3.CommandText = "UPDATE c002_02produce_record SET " +
+                    //                                             "txtnumber_in_year = '" + this.txtnumber_in_year.Text.ToString() + "'" +
+                    //                                            " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                    //                                           " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                    //                                           " AND (txticrf_id = '" + this.txticrf_id.Text.Trim() + "')";
+                    //cmd3.ExecuteNonQuery();
+
+
+                    cmd3.CommandText = "UPDATE c002_02produce_record_detail SET " +
+                                                                 "txtfold_number = '" + this.txtfold_number.Text.ToString() + "'" +
+                                                                " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                                               " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                                               " AND (txticrf_id = '" + this.txticrf_id.Text.Trim() + "')" +
+                                                               " AND (txtlot_no = '" + this.txtlot_no.Text.Trim() + "')";
+
+                    cmd3.ExecuteNonQuery();
+
+
+
+
+
+                    //MessageBox.Show("ok4");
+
+
+                    DialogResult dialogResult = MessageBox.Show("คุณต้องการ บันทึก ม้วนที่ ในเอกสารเลขที่  " + this.txticrf_id.Text.ToString() + " ใช่หรือไม่่ ?", "โปรดยืนยัน", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+
+                        trans.Commit();
+                        conn.Close();
+
+                        // int selectedRowIndex;
+                        this.GridView1.Rows[selectedRowIndex].Cells["Col_txtfold_number"].Value = this.txtfold_number.Text.ToString();
+
+                        MessageBox.Show("บันทึก เรียบร้อย", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //do something else
+                        trans.Rollback();
+                        conn.Close();
+                        MessageBox.Show("ยังไม่ได้ บันทึก", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (dialogResult == DialogResult.Cancel)
+                    {
+                        //do something else
+                        trans.Rollback();
+                        conn.Close();
+                        MessageBox.Show("ไม่ได้ บันทึกเอกสาร", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
 
 

@@ -42,7 +42,6 @@
             this.PANEL161_SUP_txtsupplier_id = new System.Windows.Forms.TextBox();
             this.PANEL161_SUP = new System.Windows.Forms.Panel();
             this.PANEL161_SUP_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL161_SUP_btnnew = new System.Windows.Forms.PictureBox();
             this.PANEL161_SUP_btnclose = new System.Windows.Forms.PictureBox();
             this.PANEL161_SUP_btn_search = new System.Windows.Forms.PictureBox();
             this.PANEL161_SUP_txtsearch = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             this.PANEL161_SUP_btnsupplier = new System.Windows.Forms.Button();
             this.PANEL161_SUP_txtsupplier_name = new System.Windows.Forms.TextBox();
             this.PANEL161_SUP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_dataGridView1)).BeginInit();
@@ -167,7 +165,6 @@
             this.PANEL161_SUP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PANEL161_SUP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_btnresize_low);
-            this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_btnnew);
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_btnclose);
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_btn_search);
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_txtsearch);
@@ -175,7 +172,7 @@
             this.PANEL161_SUP.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL161_SUP.Location = new System.Drawing.Point(124, 153);
             this.PANEL161_SUP.Name = "PANEL161_SUP";
-            this.PANEL161_SUP.Size = new System.Drawing.Size(502, 337);
+            this.PANEL161_SUP.Size = new System.Drawing.Size(214, 94);
             this.PANEL161_SUP.TabIndex = 479;
             this.PANEL161_SUP.Visible = false;
             // 
@@ -193,7 +190,7 @@
             this.PANEL161_SUP_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL161_SUP_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL161_SUP_btnresize_low.Image")));
             this.PANEL161_SUP_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL161_SUP_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL161_SUP_btnresize_low.Location = new System.Drawing.Point(187, 66);
             this.PANEL161_SUP_btnresize_low.Name = "PANEL161_SUP_btnresize_low";
             this.PANEL161_SUP_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL161_SUP_btnresize_low.TabIndex = 438;
@@ -203,25 +200,12 @@
             this.PANEL161_SUP_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL161_SUP_btnresize_low_MouseMove);
             this.PANEL161_SUP_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL161_SUP_btnresize_low_MouseUp);
             // 
-            // PANEL161_SUP_btnnew
-            // 
-            this.PANEL161_SUP_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL161_SUP_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL161_SUP_btnnew.Image")));
-            this.PANEL161_SUP_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL161_SUP_btnnew.Name = "PANEL161_SUP_btnnew";
-            this.PANEL161_SUP_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL161_SUP_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL161_SUP_btnnew.TabIndex = 437;
-            this.PANEL161_SUP_btnnew.TabStop = false;
-            this.PANEL161_SUP_btnnew.Visible = false;
-            this.PANEL161_SUP_btnnew.Click += new System.EventHandler(this.PANEL161_SUP_btnnew_Click);
-            // 
             // PANEL161_SUP_btnclose
             // 
             this.PANEL161_SUP_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL161_SUP_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL161_SUP_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL161_SUP_btnclose.Image")));
-            this.PANEL161_SUP_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL161_SUP_btnclose.Location = new System.Drawing.Point(177, 3);
             this.PANEL161_SUP_btnclose.Name = "PANEL161_SUP_btnclose";
             this.PANEL161_SUP_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL161_SUP_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -233,7 +217,7 @@
             // 
             this.PANEL161_SUP_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL161_SUP_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL161_SUP_btn_search.Image")));
-            this.PANEL161_SUP_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL161_SUP_btn_search.Location = new System.Drawing.Point(147, 3);
             this.PANEL161_SUP_btn_search.Name = "PANEL161_SUP_btn_search";
             this.PANEL161_SUP_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL161_SUP_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -245,9 +229,9 @@
             // 
             this.PANEL161_SUP_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL161_SUP_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL161_SUP_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL161_SUP_txtsearch.Location = new System.Drawing.Point(3, 4);
             this.PANEL161_SUP_txtsearch.Name = "PANEL161_SUP_txtsearch";
-            this.PANEL161_SUP_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL161_SUP_txtsearch.Size = new System.Drawing.Size(138, 21);
             this.PANEL161_SUP_txtsearch.TabIndex = 432;
             this.PANEL161_SUP_txtsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PANEL161_SUP_txtsearch_KeyPress);
             // 
@@ -260,7 +244,7 @@
             this.PANEL161_SUP_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PANEL161_SUP_dataGridView1.Location = new System.Drawing.Point(3, 42);
             this.PANEL161_SUP_dataGridView1.Name = "PANEL161_SUP_dataGridView1";
-            this.PANEL161_SUP_dataGridView1.Size = new System.Drawing.Size(491, 262);
+            this.PANEL161_SUP_dataGridView1.Size = new System.Drawing.Size(203, 19);
             this.PANEL161_SUP_dataGridView1.TabIndex = 0;
             this.PANEL161_SUP_dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL161_SUP_dataGridView1_supplier_CellMouseClick);
             this.PANEL161_SUP_dataGridView1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL161_SUP_dataGridView1_supplier_PreviewKeyDown);
@@ -314,7 +298,6 @@
             this.Load += new System.EventHandler(this.Form_k016db_1supplier_Load);
             this.PANEL161_SUP.ResumeLayout(false);
             this.PANEL161_SUP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_btnnew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_dataGridView1)).EndInit();
@@ -338,7 +321,6 @@
         private System.Windows.Forms.TextBox PANEL161_SUP_txtsupplier_id;
         private System.Windows.Forms.Panel PANEL161_SUP;
         private System.Windows.Forms.Button PANEL161_SUP_btnresize_low;
-        private System.Windows.Forms.PictureBox PANEL161_SUP_btnnew;
         private System.Windows.Forms.PictureBox PANEL161_SUP_btnclose;
         private System.Windows.Forms.PictureBox PANEL161_SUP_btn_search;
         private System.Windows.Forms.TextBox PANEL161_SUP_txtsearch;

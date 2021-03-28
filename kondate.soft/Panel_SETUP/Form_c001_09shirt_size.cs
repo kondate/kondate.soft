@@ -78,6 +78,7 @@ namespace kondate.soft.Panel_SETUP
             PANEL0109_SHIRT_SIZE_Fill_shirt_size();
 
         }
+        bool allowResize = false;
 
         //txtshirt_size ไซส์เสื้อ  =======================================================================
         private void PANEL0109_SHIRT_SIZE_Fill_shirt_size()
@@ -465,7 +466,6 @@ namespace kondate.soft.Panel_SETUP
             //================================
 
         }
-        bool allowResize = false;
         private void PANEL0109_SHIRT_SIZE_btnresize_low_MouseDown(object sender, MouseEventArgs e)
         {
             allowResize = true;

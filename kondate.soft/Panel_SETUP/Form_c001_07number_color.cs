@@ -80,6 +80,7 @@ namespace kondate.soft.Panel_SETUP
             PANEL0107_NUMBER_COLOR_Fill_number_color();
 
         }
+        bool allowResize = false;
 
         //txtnumber_color รหัสสี  =======================================================================
         private void PANEL0107_NUMBER_COLOR_Fill_number_color()
@@ -467,7 +468,6 @@ namespace kondate.soft.Panel_SETUP
             //================================
 
         }
-        bool allowResize = false;
         private void PANEL0107_NUMBER_COLOR_btnresize_low_MouseDown(object sender, MouseEventArgs e)
         {
             allowResize = true;

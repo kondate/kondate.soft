@@ -90,7 +90,7 @@ namespace kondate.soft.HOME03_Production
             //C:\KD_ERP\KD_REPORT
 
 
-            rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_07Receive_Send_dye_record.rpt");
+            rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_08Receive_FG3_record.rpt");
             //rpt.Load("E:\\01_Project_ERP_Kondate.Soft\\kondate.soft\\kondate.soft\\KONDATE_REPORT\\Report_c002_01berg_produce_record.rpt");
 
 
@@ -126,7 +126,7 @@ namespace kondate.soft.HOME03_Production
 
             rpt.SetParameterValue("cdkey", W_ID_Select.CDKEY.Trim());
             rpt.SetParameterValue("txtco_id", W_ID_Select.M_COID.Trim());
-            rpt.SetParameterValue("txtFG2_id", W_ID_Select.TRANS_ID.Trim());
+            rpt.SetParameterValue("txtFG3_id", W_ID_Select.TRANS_ID.Trim());
 
             this.crystalReportViewer1.ReportSource = rpt;
 

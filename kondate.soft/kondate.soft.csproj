@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>172</ApplicationRevision>
+    <ApplicationRevision>178</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -934,10 +934,28 @@
       <DependentUpon>Report_c002_05Send_dye_record.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="KONDATE_REPORT\Report_c002_07Send_Cut_shirt_record.cs">
+    <Compile Include="KONDATE_REPORT\Report_c002_081Send_Cut_shirt_record.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Report_c002_07Send_Cut_shirt_record.rpt</DependentUpon>
+      <DependentUpon>Report_c002_081Send_Cut_shirt_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_08Receive_FG3_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_c002_08Receive_FG3_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_09Sew_shirt_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_c002_09Sew_shirt_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_10Receive_FG4_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_c002_10Receive_FG4_record.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.cs">
@@ -956,13 +974,6 @@
     </Compile>
     <Compile Include="KONDATE_REPORT\Report_c002_10Rolled_shirt_record.cs">
       <DependentUpon>Report_c002_10Rolled_shirt_record.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="KONDATE_REPORT\Report_c002_09Sew_shirt_record.cs">
-      <DependentUpon>Report_c002_09Sew_shirt_record.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1974,9 +1985,21 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_c002_05Send_dye_record.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_07Send_Cut_shirt_record.rpt">
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_081Send_Cut_shirt_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_c002_07Send_Cut_shirt_record.cs</LastGenOutput>
+      <LastGenOutput>Report_c002_081Send_Cut_shirt_record.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_08Receive_FG3_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_08Receive_FG3_record.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_09Sew_shirt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_09Sew_shirt_record.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_10Receive_FG4_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_10Receive_FG4_record.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1991,11 +2014,6 @@
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_10Rolled_shirt_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_c002_10Rolled_shirt_record.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_09Sew_shirt_record.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_c002_09Sew_shirt_record.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_08Cut_shirt_record.rpt">

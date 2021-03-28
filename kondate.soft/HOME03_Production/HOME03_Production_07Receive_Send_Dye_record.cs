@@ -102,6 +102,9 @@ namespace kondate.soft.HOME03_Production
             this.cbotxtreceive_send_dye_type_name.Text = "รับตามใบส่งย้อม";
             this.txtreceive_send_dye_type_id.Text = "01";
 
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Text = "ซื้อไม่มีvat";
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text = "PUR_NOvat";
+
             //ส่วนของ ระเบียน PR =================================================================            
 
             PANEL1306_WH_GridView1_wherehouse();
@@ -2068,7 +2071,55 @@ namespace kondate.soft.HOME03_Production
 
             //====================
         }
+        private void GridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
 
+                DataGridViewRow row = this.GridView2.Rows[e.RowIndex];
+
+                var cell = row.Cells["Col_txtmat_id"].Value;
+                if (cell != null)
+                {
+                    //======================================================
+                    this.PANEL_MAT_txtmat_id.Text = row.Cells["Col_txtmat_id"].Value.ToString();
+                    this.PANEL_MAT_txtmat_name.Text = row.Cells["Col_txtmat_name"].Value.ToString();
+                }
+                //=====================
+            }
+        }
+        private void GridView2_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor == Color.Green)
+                {
+
+                }
+                else
+                {
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                }
+            }
+        }
+        private void GridView2_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor == Color.Green)
+                {
+
+                }
+                else
+                {
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                    GridView2.Rows[e.RowIndex].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                }
+            }
+        }
         DataTable table = new DataTable();
         int selectedRowIndex;
         int curRow = 0;
@@ -2461,9 +2512,9 @@ namespace kondate.soft.HOME03_Production
         }
         private void GridView1_SelectionChanged(object sender, EventArgs e)
         {
-            curRow = GridView1.CurrentRow.Index;
-            int rowscount = GridView1.Rows.Count;
-            DataGridViewCellStyle CellStyle = new DataGridViewCellStyle();
+            //curRow = GridView1.CurrentRow.Index;
+            //int rowscount = GridView1.Rows.Count;
+            //DataGridViewCellStyle CellStyle = new DataGridViewCellStyle();
             //===============================================================
             //===============================================================
 
@@ -3050,7 +3101,7 @@ namespace kondate.soft.HOME03_Production
 
 
             }
-            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_ONvat")  //ซื้อไม่มีvat
+            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_NOvat")  //ซื้อไม่มีvat
             {
                 double DisCount = 0;
                 double VATMONey = 0;
@@ -7052,6 +7103,8 @@ namespace kondate.soft.HOME03_Production
             MessageBox.Show("บันทึกเรียบร้อย");
 
         }
+
+
 
 
 

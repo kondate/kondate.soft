@@ -42,7 +42,6 @@
             this.PANEL102_MAT_SAC2_txtmat_sac_id = new System.Windows.Forms.TextBox();
             this.PANEL102_MAT_SAC2 = new System.Windows.Forms.Panel();
             this.PANEL102_MAT_SAC2_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL102_MAT_SAC2_btnnew = new System.Windows.Forms.PictureBox();
             this.PANEL102_MAT_SAC2_btnclose = new System.Windows.Forms.PictureBox();
             this.PANEL102_MAT_SAC2_btn_search = new System.Windows.Forms.PictureBox();
             this.PANEL102_MAT_SAC2_txtsearch = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             this.PANEL102_MAT_SAC2_txtmat_sac_name = new System.Windows.Forms.TextBox();
             this.PANEL102_MAT_SAC2_btnmat_sac = new System.Windows.Forms.Button();
             this.PANEL102_MAT_SAC2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_dataGridView1_mat_sac)).BeginInit();
@@ -167,7 +165,6 @@
             this.PANEL102_MAT_SAC2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PANEL102_MAT_SAC2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PANEL102_MAT_SAC2.Controls.Add(this.PANEL102_MAT_SAC2_btnresize_low);
-            this.PANEL102_MAT_SAC2.Controls.Add(this.PANEL102_MAT_SAC2_btnnew);
             this.PANEL102_MAT_SAC2.Controls.Add(this.PANEL102_MAT_SAC2_btnclose);
             this.PANEL102_MAT_SAC2.Controls.Add(this.PANEL102_MAT_SAC2_btn_search);
             this.PANEL102_MAT_SAC2.Controls.Add(this.PANEL102_MAT_SAC2_txtsearch);
@@ -175,7 +172,7 @@
             this.PANEL102_MAT_SAC2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL102_MAT_SAC2.Location = new System.Drawing.Point(109, 150);
             this.PANEL102_MAT_SAC2.Name = "PANEL102_MAT_SAC2";
-            this.PANEL102_MAT_SAC2.Size = new System.Drawing.Size(502, 337);
+            this.PANEL102_MAT_SAC2.Size = new System.Drawing.Size(188, 102);
             this.PANEL102_MAT_SAC2.TabIndex = 479;
             this.PANEL102_MAT_SAC2.Visible = false;
             // 
@@ -193,7 +190,7 @@
             this.PANEL102_MAT_SAC2_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL102_MAT_SAC2_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL102_MAT_SAC2_btnresize_low.Image")));
             this.PANEL102_MAT_SAC2_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL102_MAT_SAC2_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL102_MAT_SAC2_btnresize_low.Location = new System.Drawing.Point(161, 74);
             this.PANEL102_MAT_SAC2_btnresize_low.Name = "PANEL102_MAT_SAC2_btnresize_low";
             this.PANEL102_MAT_SAC2_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL102_MAT_SAC2_btnresize_low.TabIndex = 438;
@@ -203,25 +200,12 @@
             this.PANEL102_MAT_SAC2_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL102_MAT_SAC2_btnresize_low_MouseMove);
             this.PANEL102_MAT_SAC2_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL102_MAT_SAC2_btnresize_low_MouseUp);
             // 
-            // PANEL102_MAT_SAC2_btnnew
-            // 
-            this.PANEL102_MAT_SAC2_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL102_MAT_SAC2_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL102_MAT_SAC2_btnnew.Image")));
-            this.PANEL102_MAT_SAC2_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL102_MAT_SAC2_btnnew.Name = "PANEL102_MAT_SAC2_btnnew";
-            this.PANEL102_MAT_SAC2_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL102_MAT_SAC2_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL102_MAT_SAC2_btnnew.TabIndex = 437;
-            this.PANEL102_MAT_SAC2_btnnew.TabStop = false;
-            this.PANEL102_MAT_SAC2_btnnew.Visible = false;
-            this.PANEL102_MAT_SAC2_btnnew.Click += new System.EventHandler(this.PANEL102_MAT_SAC2_btnnew_Click);
-            // 
             // PANEL102_MAT_SAC2_btnclose
             // 
             this.PANEL102_MAT_SAC2_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL102_MAT_SAC2_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL102_MAT_SAC2_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL102_MAT_SAC2_btnclose.Image")));
-            this.PANEL102_MAT_SAC2_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL102_MAT_SAC2_btnclose.Location = new System.Drawing.Point(151, 3);
             this.PANEL102_MAT_SAC2_btnclose.Name = "PANEL102_MAT_SAC2_btnclose";
             this.PANEL102_MAT_SAC2_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL102_MAT_SAC2_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -233,7 +217,7 @@
             // 
             this.PANEL102_MAT_SAC2_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL102_MAT_SAC2_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL102_MAT_SAC2_btn_search.Image")));
-            this.PANEL102_MAT_SAC2_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL102_MAT_SAC2_btn_search.Location = new System.Drawing.Point(119, 3);
             this.PANEL102_MAT_SAC2_btn_search.Name = "PANEL102_MAT_SAC2_btn_search";
             this.PANEL102_MAT_SAC2_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL102_MAT_SAC2_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -245,9 +229,9 @@
             // 
             this.PANEL102_MAT_SAC2_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL102_MAT_SAC2_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL102_MAT_SAC2_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL102_MAT_SAC2_txtsearch.Location = new System.Drawing.Point(3, 4);
             this.PANEL102_MAT_SAC2_txtsearch.Name = "PANEL102_MAT_SAC2_txtsearch";
-            this.PANEL102_MAT_SAC2_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL102_MAT_SAC2_txtsearch.Size = new System.Drawing.Size(110, 21);
             this.PANEL102_MAT_SAC2_txtsearch.TabIndex = 432;
             this.PANEL102_MAT_SAC2_txtsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PANEL102_MAT_SAC2_txtsearch_KeyPress);
             // 
@@ -260,7 +244,7 @@
             this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.Location = new System.Drawing.Point(3, 42);
             this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.Name = "PANEL102_MAT_SAC2_dataGridView1_mat_sac";
-            this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.Size = new System.Drawing.Size(491, 262);
+            this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.Size = new System.Drawing.Size(177, 27);
             this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.TabIndex = 0;
             this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL102_MAT_SAC2_dataGridView1_mat_sac_CellMouseClick);
             this.PANEL102_MAT_SAC2_dataGridView1_mat_sac.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL102_MAT_SAC2_dataGridView1_mat_sac_PreviewKeyDown);
@@ -314,7 +298,6 @@
             this.Load += new System.EventHandler(this.Form_b001_02mat_sac2_Load);
             this.PANEL102_MAT_SAC2.ResumeLayout(false);
             this.PANEL102_MAT_SAC2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btnnew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_dataGridView1_mat_sac)).EndInit();
@@ -338,7 +321,6 @@
         private System.Windows.Forms.TextBox PANEL102_MAT_SAC2_txtmat_sac_id;
         private System.Windows.Forms.Panel PANEL102_MAT_SAC2;
         private System.Windows.Forms.Button PANEL102_MAT_SAC2_btnresize_low;
-        private System.Windows.Forms.PictureBox PANEL102_MAT_SAC2_btnnew;
         private System.Windows.Forms.PictureBox PANEL102_MAT_SAC2_btnclose;
         private System.Windows.Forms.PictureBox PANEL102_MAT_SAC2_btn_search;
         private System.Windows.Forms.TextBox PANEL102_MAT_SAC2_txtsearch;

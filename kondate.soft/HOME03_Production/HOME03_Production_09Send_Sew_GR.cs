@@ -187,46 +187,68 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
 
                 cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                   "k016db_1supplier.*," +
                                    "c002_09Send_Sew_shirt_record_detail.*," +
-                                   "c001_05face_baking.*," +
-                                   //"c001_06number_mat.*," +
+                                   //"c001_05face_baking.*," +
+                                   "c001_06number_mat.*," +
                                    "c001_07number_color.*," +
+                                   "c001_07number_sup_color.*," +
+
+                                   "c001_08shirt_type.*," +
+                                   "c001_09shirt_size.*," +
 
                                    "k016db_1supplier.*," +
-                                   "k013_1db_acc_13group_tax.*," +
+                                   //"k013_1db_acc_13group_tax.*," +
+                                   "c002_09Send_Sew_shirt_record_type.*," +
 
                                    "k013_1db_acc_06wherehouse.*" +
 
                                    " FROM c002_09Send_Sew_shirt_record" +
-
-                                   " INNER JOIN k016db_1supplier" +
-                                   " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                    " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                    " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                    " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                    " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                   " INNER JOIN c001_05face_baking" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   //" INNER JOIN c001_05face_baking" +
+                                   //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                   //" INNER JOIN c001_06number_mat" +
-                                   //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   " INNER JOIN c001_06number_mat" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                   " INNER JOIN c001_08shirt_type" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                   " INNER JOIN c001_09shirt_size" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                    " INNER JOIN c001_07number_color" +
                                    " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                    " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                    " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                   " INNER JOIN k013_1db_acc_13group_tax" +
-                                   " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   " INNER JOIN c001_07number_sup_color" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                   " INNER JOIN k016db_1supplier" +
+                                   " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                   " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                   " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                   //" INNER JOIN k013_1db_acc_13group_tax" +
+                                   //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
                                    " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
@@ -237,7 +259,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                  " AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                  " AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id,c002_09Send_Sew_shirt_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -254,52 +276,50 @@ namespace kondate.soft.HOME03_Production
                     {
                         this.txtcount_rows.Text = dt2.Rows.Count.ToString();
 
+                        Int32 k = 0;
+
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
+                            k = j + 1;
 
                             var index = this.GridView1.Rows.Add();
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSWT_id"].Value = dt2.Rows[j]["txtSWT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
-                            this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
+                            this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtqc_id"].ToString();      //1
 
-                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_tier"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_body_per_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body_per_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body_per_tier"].ToString();       //16
+                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body"].ToString();       //16
+
+                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();     //7
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
-                            this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
-
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();        //4
-                            this.GridView1.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();       //5
+
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_type_id"].Value = dt2.Rows[j]["txtshirt_type_id"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txttable_name"].Value = dt2.Rows[j]["txttable_name"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();        //7
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();         //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_sup_color_id"].Value = dt2.Rows[j]["txtnumber_sup_color_id"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();        //3
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //15
+                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //17
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //19
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
+                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //21
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //22
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //23
+
+                            //this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty"].Value.ToString()));    //8
+                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));    //17
 
 
-                            this.GridView1.Rows[index].Cells["Col_txtlot_no"].Value = dt2.Rows[j]["txtlot_no"].ToString();      //6
-                            this.GridView1.Rows[index].Cells["Col_txtfold_number"].Value = dt2.Rows[j]["txtfold_number"].ToString();      //7
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_want"]).ToString("###,###.00");     //8
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //9
-                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //11
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //13
-
-                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //14
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //15
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //16
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2"]).ToString("###,###.00");     //17
-
-
-                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice"]).ToString("###,###.00");        //18
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_rate"]).ToString("###,###.00");      //19
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_money"]).ToString("###,###.00");      //20
-                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_total"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));       //18
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //19
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //20
+                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));     //21
 
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = ".00";      //22
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = ".00";       //23
@@ -312,37 +332,27 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = ".00";        //28
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = ".00";        //29
 
-                            this.GridView1.Rows[index].Cells["Col_txtitem_no"].Value = dt2.Rows[j]["txtitem_no"].ToString();      //30
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = "0";      //31
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtqc_id"].Value = "";      //31
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = "0";      //32
+                            this.GridView1.Rows[index].Cells["Col_1"].Value = "1";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_pub"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            //GridView1.Rows[index].Cells["Col_date"].Value = Convert.ToDateTime(dt2.Rows[j]["txtwant_receive_date"]).ToString("yyyy-MM-dd", UsaCulture);     //9
-                            GridView1.Rows[index].Cells["Col_date"].Value = dt2.Rows[j]["txtwant_receive_date"].ToString();     //9
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_rib"]).ToString("###,###.00");      //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
-
-                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
-
-                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
-
-                            GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
+                            this.GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
 
                         }
                         //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
                     }
                     else
                     {
@@ -368,6 +378,7 @@ namespace kondate.soft.HOME03_Production
             //================================
             GridView1_Color();
             GridView1_Cal_Sum();
+            GridView1_Color_Column();
         }
         private void Fill_Show_BRANCH_DATA_GridView1()
         {
@@ -412,114 +423,158 @@ namespace kondate.soft.HOME03_Production
                 if (this.ch_all_branch.Checked == true)
                 {
                     cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                       "k016db_1supplier.*," +
                                        "c002_09Send_Sew_shirt_record_detail.*," +
-                                       "c001_05face_baking.*," +
-                                       //"c001_06number_mat.*," +
+                                       //"c001_05face_baking.*," +
+                                       "c001_06number_mat.*," +
                                        "c001_07number_color.*," +
+                                       "c001_07number_sup_color.*," +
+
+                                       "c001_08shirt_type.*," +
+                                       "c001_09shirt_size.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
+                                       "c002_09Send_Sew_shirt_record_type.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
                                        " FROM c002_09Send_Sew_shirt_record" +
-
-                                       " INNER JOIN k016db_1supplier" +
-                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                        " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                        " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                       " INNER JOIN c001_05face_baking" +
-                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       //" INNER JOIN c001_05face_baking" +
+                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                       //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       " INNER JOIN c001_06number_mat" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                       " INNER JOIN c001_08shirt_type" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                       " INNER JOIN c001_09shirt_size" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                        " INNER JOIN c001_07number_color" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " INNER JOIN c001_07number_sup_color" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                       " INNER JOIN k016db_1supplier" +
+                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                       " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                       " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                               " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     //" AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                       " AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id,c002_09Send_Sew_shirt_record_detail.ID ASC";
 
                 }
                 else
                 {
                     cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                       "k016db_1supplier.*," +
                                        "c002_09Send_Sew_shirt_record_detail.*," +
-                                       "c001_05face_baking.*," +
-                                       //"c001_06number_mat.*," +
+                                       //"c001_05face_baking.*," +
+                                       "c001_06number_mat.*," +
                                        "c001_07number_color.*," +
+                                       "c001_07number_sup_color.*," +
+
+                                       "c001_08shirt_type.*," +
+                                       "c001_09shirt_size.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
+                                       "c002_09Send_Sew_shirt_record_type.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
                                        " FROM c002_09Send_Sew_shirt_record" +
-
-                                       " INNER JOIN k016db_1supplier" +
-                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                        " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                        " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                       " INNER JOIN c001_05face_baking" +
-                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       //" INNER JOIN c001_05face_baking" +
+                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                       //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       " INNER JOIN c001_06number_mat" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                       " INNER JOIN c001_08shirt_type" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                       " INNER JOIN c001_09shirt_size" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                        " INNER JOIN c001_07number_color" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " INNER JOIN c001_07number_sup_color" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                       " INNER JOIN k016db_1supplier" +
+                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                       " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                       " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                               " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                    " AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                    " AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id,c002_09Send_Sew_shirt_record_detail.ID ASC";
 
 
@@ -538,52 +593,50 @@ namespace kondate.soft.HOME03_Production
                     {
                         this.txtcount_rows.Text = dt2.Rows.Count.ToString();
 
+                        Int32 k = 0;
+
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
+                            k = j + 1;
 
                             var index = this.GridView1.Rows.Add();
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSWT_id"].Value = dt2.Rows[j]["txtSWT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
-                            this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
+                            this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtqc_id"].ToString();      //1
 
-                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_tier"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_body_per_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body_per_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body_per_tier"].ToString();       //16
+                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body"].ToString();       //16
+
+                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();     //7
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
-                            this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
-
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();        //4
-                            this.GridView1.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();       //5
+
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_type_id"].Value = dt2.Rows[j]["txtshirt_type_id"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txttable_name"].Value = dt2.Rows[j]["txttable_name"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();        //7
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();         //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_sup_color_id"].Value = dt2.Rows[j]["txtnumber_sup_color_id"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();        //3
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //15
+                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //17
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //19
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
+                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //21
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //22
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //23
+
+                            //this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty"].Value.ToString()));    //8
+                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));    //17
 
 
-                            this.GridView1.Rows[index].Cells["Col_txtlot_no"].Value = dt2.Rows[j]["txtlot_no"].ToString();      //6
-                            this.GridView1.Rows[index].Cells["Col_txtfold_number"].Value = dt2.Rows[j]["txtfold_number"].ToString();      //7
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_want"]).ToString("###,###.00");     //8
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //9
-                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //11
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //13
-
-                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //14
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //15
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //16
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2"]).ToString("###,###.00");     //17
-
-
-                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice"]).ToString("###,###.00");        //18
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_rate"]).ToString("###,###.00");      //19
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_money"]).ToString("###,###.00");      //20
-                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_total"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));       //18
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //19
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //20
+                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));     //21
 
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = ".00";      //22
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = ".00";       //23
@@ -596,36 +649,28 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = ".00";        //28
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = ".00";        //29
 
-                            this.GridView1.Rows[index].Cells["Col_txtitem_no"].Value = dt2.Rows[j]["txtitem_no"].ToString();      //30
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = "0";      //31
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtqc_id"].Value = "";      //31
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = "0";      //32
+                            this.GridView1.Rows[index].Cells["Col_1"].Value = "1";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_pub"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            //GridView1.Rows[index].Cells["Col_date"].Value = Convert.ToDateTime(dt2.Rows[j]["txtwant_receive_date"]).ToString("yyyy-MM-dd", UsaCulture);     //9
-                            GridView1.Rows[index].Cells["Col_date"].Value = dt2.Rows[j]["txtwant_receive_date"].ToString();     //9
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_rib"]).ToString("###,###.00");      //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
+                            this.GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
-
-                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
-                            GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
                         //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
                     }
                     else
                     {
@@ -651,250 +696,201 @@ namespace kondate.soft.HOME03_Production
             //================================
             GridView1_Color();
             GridView1_Cal_Sum();
+            GridView1_Color_Column();
 
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 53;
+            this.GridView1.ColumnCount = 43;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
-            this.GridView1.Columns[1].Name = "Col_txtco_id";
-            this.GridView1.Columns[2].Name = "Col_txtbranch_id";
-            this.GridView1.Columns[3].Name = "Col_txtSWT_id";
-            this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
-            this.GridView1.Columns[5].Name = "Col_txttrans_time";
-            this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
-            this.GridView1.Columns[7].Name = "Col_txtsupplier_name";
-            this.GridView1.Columns[8].Name = "Col_txtemp_office_name";
+            this.GridView1.Columns[1].Name = "Col_txtFG3_id";
 
-            this.GridView1.Columns[9].Name = "Col_txtwherehouse_id";
-            this.GridView1.Columns[10].Name = "Col_txtnumber_in_year";
-            this.GridView1.Columns[11].Name = "Col_txtnumber_mat_id";
-            this.GridView1.Columns[12].Name = "Col_txtnumber_color_id";
-            this.GridView1.Columns[13].Name = "Col_txtface_baking_id";
+            this.GridView1.Columns[2].Name = "Col_txtsum_qty_tier";
+            this.GridView1.Columns[3].Name = "Col_txtsum_qty_body_per_tier";
+            this.GridView1.Columns[4].Name = "Col_txtqty";
+            this.GridView1.Columns[2].Visible = false;
+            this.GridView1.Columns[3].Visible = false;
 
+            this.GridView1.Columns[5].Name = "Col_txtsupplier_id";
+            this.GridView1.Columns[6].Name = "Col_txtsupplier_name";
+            this.GridView1.Columns[7].Name = "Col_txtwherehouse_id";
 
-            this.GridView1.Columns[14].Name = "Col_txtlot_no";
-            this.GridView1.Columns[15].Name = "Col_txtfold_number";
+            this.GridView1.Columns[8].Name = "Col_txtshirt_type_id";
+            this.GridView1.Columns[9].Name = "Col_txttable_name";
+            this.GridView1.Columns[10].Name = "Col_txtshirt_size_id";
+            this.GridView1.Columns[11].Name = "Col_txtnumber_color_id";
+            this.GridView1.Columns[12].Name = "Col_txtnumber_sup_color_id";
+            this.GridView1.Columns[13].Name = "Col_txtnumber_dyed";
+            this.GridView1.Columns[14].Name = "Col_txtnumber_mat_id";
 
-            this.GridView1.Columns[16].Name = "Col_txtqty";
+            this.GridView1.Columns[15].Name = "Col_txtmat_no";
+            this.GridView1.Columns[16].Name = "Col_txtmat_id";
+            this.GridView1.Columns[17].Name = "Col_txtmat_name";
 
-            this.GridView1.Columns[17].Name = "Col_txtmat_no";
-            this.GridView1.Columns[18].Name = "Col_txtmat_id";
-            this.GridView1.Columns[19].Name = "Col_txtmat_name";
+            this.GridView1.Columns[18].Name = "Col_txtmat_unit1_name";
+            this.GridView1.Columns[19].Name = "Col_txtmat_unit1_qty";
+            this.GridView1.Columns[20].Name = "Col_chmat_unit_status";
+            this.GridView1.Columns[21].Name = "Col_txtmat_unit2_name";
+            this.GridView1.Columns[22].Name = "Col_txtmat_unit2_qty";
 
-            this.GridView1.Columns[20].Name = "Col_txtmat_unit1_name";
-            this.GridView1.Columns[21].Name = "Col_txtmat_unit1_qty";
-            this.GridView1.Columns[22].Name = "Col_chmat_unit_status";
-            this.GridView1.Columns[23].Name = "Col_txtmat_unit2_name";
-            this.GridView1.Columns[24].Name = "Col_txtmat_unit2_qty";
+            this.GridView1.Columns[23].Name = "Col_txtqty2";
 
-            this.GridView1.Columns[25].Name = "Col_txtqty2";
+            this.GridView1.Columns[24].Name = "Col_txtprice";
+            this.GridView1.Columns[25].Name = "Col_txtdiscount_rate";
+            this.GridView1.Columns[26].Name = "Col_txtdiscount_money";
+            this.GridView1.Columns[27].Name = "Col_txtsum_total";
 
-            this.GridView1.Columns[26].Name = "Col_txtprice";
-            this.GridView1.Columns[27].Name = "Col_txtdiscount_rate";
-            this.GridView1.Columns[28].Name = "Col_txtdiscount_money";
-            this.GridView1.Columns[29].Name = "Col_txtsum_total";
+            this.GridView1.Columns[28].Name = "Col_txtcost_qty_balance_yokma";
+            this.GridView1.Columns[29].Name = "Col_txtcost_qty_price_average_yokma";
+            this.GridView1.Columns[30].Name = "Col_txtcost_money_sum_yokma";
 
-            this.GridView1.Columns[30].Name = "Col_txtcost_qty_balance_yokma";
-            this.GridView1.Columns[31].Name = "Col_txtcost_qty_price_average_yokma";
-            this.GridView1.Columns[32].Name = "Col_txtcost_money_sum_yokma";
+            this.GridView1.Columns[31].Name = "Col_txtcost_qty_balance_yokpai";
+            this.GridView1.Columns[32].Name = "Col_txtcost_qty_price_average_yokpai";
+            this.GridView1.Columns[33].Name = "Col_txtcost_money_sum_yokpai";
 
-            this.GridView1.Columns[33].Name = "Col_txtcost_qty_balance_yokpai";
-            this.GridView1.Columns[34].Name = "Col_txtcost_qty_price_average_yokpai";
-            this.GridView1.Columns[35].Name = "Col_txtcost_money_sum_yokpai";
+            this.GridView1.Columns[34].Name = "Col_txtcost_qty2_balance_yokma";
+            this.GridView1.Columns[35].Name = "Col_txtcost_qty2_balance_yokpai";
 
-            this.GridView1.Columns[36].Name = "Col_txtcost_qty2_balance_yokma";
-            this.GridView1.Columns[37].Name = "Col_txtcost_qty2_balance_yokpai";
+            this.GridView1.Columns[36].Name = "Col_1";
 
-            this.GridView1.Columns[38].Name = "Col_txtitem_no";
+            this.GridView1.Columns[37].Name = "Col_txtqty_cut_yokma";
+            this.GridView1.Columns[38].Name = "Col_txtqty_cut_yokpai";
+            this.GridView1.Columns[39].Name = "Col_txtqty_after_cut_yokpai";
 
-            this.GridView1.Columns[39].Name = "Col_txtqc_id";
-            this.GridView1.Columns[40].Name = "Col_txtsum_qty_pub";
-            this.GridView1.Columns[41].Name = "Col_date";
-            this.GridView1.Columns[42].Name = "Col_qty_Cal";  //
-            this.GridView1.Columns[43].Name = "Col_txtsum_qty_rib";
-            this.GridView1.Columns[44].Name = "Col_txtsum_qty_pub_kg";
-            this.GridView1.Columns[45].Name = "Col_txtsum_qty_rib_kg";
+            this.GridView1.Columns[40].Name = "Col_txtqty_cut";
+            this.GridView1.Columns[41].Name = "Col_txtqty_after_cut";
 
-            this.GridView1.Columns[46].Name = "Col_txtqty_cut_yokma";
-            this.GridView1.Columns[47].Name = "Col_txtqty_cut_yokpai";
-            this.GridView1.Columns[48].Name = "Col_txtqty_after_cut_yokpai";
-
-            this.GridView1.Columns[49].Name = "Col_txtqty_cut";
-            this.GridView1.Columns[50].Name = "Col_txtqty_after_cut";
-            this.GridView1.Columns[51].Name = "Col_txtcut_id";
-            this.GridView1.Columns[52].Name = "Col_1";
+            this.GridView1.Columns[42].Name = "Col_txtcut_id";
 
 
             this.GridView1.Columns[0].HeaderText = "No";
-            this.GridView1.Columns[1].HeaderText = "txtco_id";
-            this.GridView1.Columns[2].HeaderText = " txtbranch_id";
-            this.GridView1.Columns[3].HeaderText = " เลขที่";
-            this.GridView1.Columns[4].HeaderText = " วันที่";
-            this.GridView1.Columns[5].HeaderText = " เวลา";
-            this.GridView1.Columns[6].HeaderText = " รหัส Supplier";
-            this.GridView1.Columns[7].HeaderText = " ชื่อ Supplier";
-            this.GridView1.Columns[8].HeaderText = " ผู้บันทึก";
+            this.GridView1.Columns[1].HeaderText = "เลขที่ ส่งเย็บ";
 
-            this.GridView1.Columns[9].HeaderText = "คลัง";
-            this.GridView1.Columns[10].HeaderText = "ชุดที่";
-            this.GridView1.Columns[11].HeaderText = "รหัสผ้า";
-            this.GridView1.Columns[12].HeaderText = "รหัสสี";
-            this.GridView1.Columns[13].HeaderText = "อบหน้า";
+            this.GridView1.Columns[2].HeaderText = "จำนวนชั้น";
+            this.GridView1.Columns[3].HeaderText = "จำนวนตัว/ชั้น";
+            this.GridView1.Columns[4].HeaderText = "จำนวนส่งเย็บ(ตัว)";
+
+            this.GridView1.Columns[5].HeaderText = "รหัส Sup";
+            this.GridView1.Columns[6].HeaderText = "Supplier";
+            this.GridView1.Columns[7].HeaderText = "รหัสคลัง";
 
 
-            this.GridView1.Columns[14].HeaderText = "Lot No";
-            this.GridView1.Columns[15].HeaderText = "พับที่";
+            this.GridView1.Columns[8].HeaderText = " ชนิดงาน";
+            this.GridView1.Columns[9].HeaderText = " คิวงาน/โต๊ะที่";
+            this.GridView1.Columns[10].HeaderText = " ไซส์";
+            this.GridView1.Columns[11].HeaderText = " รหัสสี";
+            this.GridView1.Columns[12].HeaderText = " รหัสสีซัพ";
+            this.GridView1.Columns[13].HeaderText = " เบอร์กอง";
+            this.GridView1.Columns[14].HeaderText = " เบอร์ด้าย";
 
-            this.GridView1.Columns[16].HeaderText = "ส่งเย็บ (กก.)";
+            this.GridView1.Columns[15].HeaderText = "ลำดับ";
+            this.GridView1.Columns[16].HeaderText = "รหัส";
+            this.GridView1.Columns[17].HeaderText = "ชื่อสินค้า";
 
-            this.GridView1.Columns[17].HeaderText = "ลำดับ";
-            this.GridView1.Columns[18].HeaderText = "รหัส";
-            this.GridView1.Columns[19].HeaderText = "ชื่อสินค้า";
+            this.GridView1.Columns[18].HeaderText = " หน่วยหลัก";
+            this.GridView1.Columns[19].HeaderText = " หน่วย";
+            this.GridView1.Columns[20].HeaderText = "แปลง";
+            this.GridView1.Columns[21].HeaderText = " หน่วย(ปอนด์)";
+            this.GridView1.Columns[22].HeaderText = " หน่วย2";
 
-            this.GridView1.Columns[20].HeaderText = " หน่วยหลัก";
-            this.GridView1.Columns[21].HeaderText = " หน่วย";
-            this.GridView1.Columns[22].HeaderText = "แปลง";
-            this.GridView1.Columns[23].HeaderText = " หน่วย(ปอนด์)";
-            this.GridView1.Columns[24].HeaderText = " หน่วย";
+            this.GridView1.Columns[23].HeaderText = "น้ำหนัก/ม้วน(ปอนด์)";
 
-            this.GridView1.Columns[25].HeaderText = "ส่งเย็บ(ปอนด์)";
+            this.GridView1.Columns[24].HeaderText = "ราคา";
+            this.GridView1.Columns[25].HeaderText = "ส่วนลด(%)";
+            this.GridView1.Columns[26].HeaderText = "ส่วนลด(บาท)";
+            this.GridView1.Columns[27].HeaderText = "จำนวนเงิน(บาท)";
 
-            this.GridView1.Columns[26].HeaderText = "ราคา";
-            this.GridView1.Columns[27].HeaderText = "ส่วนลด(%)";
-            this.GridView1.Columns[28].HeaderText = "ส่วนลด(บาท)";
-            this.GridView1.Columns[29].HeaderText = "จำนวนเงิน(บาท)";
+            this.GridView1.Columns[28].HeaderText = "จำนวนยกมา";
+            this.GridView1.Columns[29].HeaderText = "ราคาเฉลี่ยยกมา";
+            this.GridView1.Columns[30].HeaderText = "จำนวนเงิน";
 
-            this.GridView1.Columns[30].HeaderText = "จำนวนยกมา";
-            this.GridView1.Columns[31].HeaderText = "ราคาเฉลี่ยยกมา";
-            this.GridView1.Columns[32].HeaderText = "จำนวนเงิน";
+            this.GridView1.Columns[31].HeaderText = "จำนวนยกไป";
+            this.GridView1.Columns[32].HeaderText = "ราคาเฉลี่ยยกไป";
+            this.GridView1.Columns[33].HeaderText = "จำนวนเงิน";
 
-            this.GridView1.Columns[33].HeaderText = "จำนวนยกไป";
-            this.GridView1.Columns[34].HeaderText = "ราคาเฉลี่ยยกไป";
-            this.GridView1.Columns[35].HeaderText = "จำนวนเงิน";
+            this.GridView1.Columns[34].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";
+            this.GridView1.Columns[35].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";
 
-            this.GridView1.Columns[36].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";
-            this.GridView1.Columns[37].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";
 
-            this.GridView1.Columns[38].HeaderText = "item_no";
-            this.GridView1.Columns[39].HeaderText = "txtqc_id";
-            this.GridView1.Columns[40].HeaderText = "Col_txtsum_qty_pub";
-            this.GridView1.Columns[41].HeaderText = " วันที่ต้องการ";
-            this.GridView1.Columns[42].HeaderText = "Col_qty_Cal";
-            this.GridView1.Columns[43].HeaderText = "Col_txtsum_qty_rib";
-            this.GridView1.Columns[44].HeaderText = "Col_txtsum_qty_pub_kg";
-            this.GridView1.Columns[45].HeaderText = "Col_txtsum_qty_rib_kg";
 
-            this.GridView1.Columns[46].HeaderText = "ส่งเย็บแล้วยกมา";
-            this.GridView1.Columns[47].HeaderText = "ส่งเย็บแล้วยกไป";
-            this.GridView1.Columns[48].HeaderText = "เหลือรอส่งเย็บ อีก กก.";
+            this.GridView1.Columns[36].HeaderText = "1";  //ไว้นับจำนวน
 
-            this.GridView1.Columns[49].HeaderText = "รับแล้ว";  //กก
-            this.GridView1.Columns[50].HeaderText = "รอรับ";  //กก
-            this.GridView1.Columns[51].HeaderText = "เลขที่รับคืนส่งเย็บ";  //
-            this.GridView1.Columns[52].HeaderText = "1";  //
+            this.GridView1.Columns[37].HeaderText = "Col_txtqty_cut_yokma";
+            this.GridView1.Columns[38].HeaderText = "Col_txtqty_cut_yokpai";
+            this.GridView1.Columns[39].HeaderText = "Col_txtqty_after_cut_yokpai";
+
+            this.GridView1.Columns[40].HeaderText = "Col_txtqty_cut";
+            this.GridView1.Columns[41].HeaderText = "ยอดค้างรับ(ตัว)"; //"Col_txtqty_after_cut";
+
+            this.GridView1.Columns[42].HeaderText = "เลขที่ FG4 รับเสื้อ";
+
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
-            this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
-            this.GridView1.Columns["Col_txtbranch_id"].Visible = false;  //""Col_txtbranch_id"";
+            this.GridView1.Columns["Col_Auto_num"].Width = 0;
+            this.GridView1.Columns["Col_Auto_num"].ReadOnly = true;
+            this.GridView1.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtSWT_id"].Visible = true;  //"Col_txtSWT_id";
-            this.GridView1.Columns["Col_txtSWT_id"].Width = 140;
-            this.GridView1.Columns["Col_txtSWT_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtSWT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtSWT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtFG3_id"].Visible = true;  //"Col_txtFG3_id";
+            this.GridView1.Columns["Col_txtFG3_id"].Width = 140;
+            this.GridView1.Columns["Col_txtFG3_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtFG3_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtFG3_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txttrans_date_server"].Visible = true;  //""Col_txttrans_date_server"";
-            this.GridView1.Columns["Col_txttrans_date_server"].Width = 90;
-            this.GridView1.Columns["Col_txttrans_date_server"].ReadOnly = true;
-            this.GridView1.Columns["Col_txttrans_date_server"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txttrans_date_server"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txttable_name"].Visible = true;  //"Col_txttable_name";
+            this.GridView1.Columns["Col_txttable_name"].Width = 100;
+            this.GridView1.Columns["Col_txttable_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txttable_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txttable_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txttrans_time"].Visible = true;  //"Col_txttrans_time";
-            this.GridView1.Columns["Col_txttrans_time"].Width = 70;
-            this.GridView1.Columns["Col_txttrans_time"].ReadOnly = true;
-            this.GridView1.Columns["Col_txttrans_time"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txttrans_time"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = true;  //"Col_txtshirt_size_id";
+            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 100;
+            this.GridView1.Columns["Col_txtshirt_size_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtshirt_size_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtshirt_size_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtnumber_color_id"].Visible = true;  //"Col_txtnumber_color_id";
+            this.GridView1.Columns["Col_txtnumber_color_id"].Width = 100;
+            this.GridView1.Columns["Col_txtnumber_color_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtnumber_color_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtnumber_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtnumber_sup_color_id"].Visible = true;  //"Col_txtnumber_sup_color_id";
+            this.GridView1.Columns["Col_txtnumber_sup_color_id"].Width = 100;
+            this.GridView1.Columns["Col_txtnumber_sup_color_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtnumber_sup_color_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtnumber_sup_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtnumber_dyed"].Visible = true;  //"Col_txtnumber_dyed";
+            this.GridView1.Columns["Col_txtnumber_dyed"].Width = 100;
+            this.GridView1.Columns["Col_txtnumber_dyed"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtnumber_dyed"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtnumber_dyed"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtnumber_mat_id"].Visible = true;  //"Col_txtnumber_mat_id";
+            this.GridView1.Columns["Col_txtnumber_mat_id"].Width = 100;
+            this.GridView1.Columns["Col_txtnumber_mat_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtnumber_mat_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtnumber_mat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
 
             this.GridView1.Columns["Col_txtsupplier_id"].Visible = false;  //"Col_txtsupplier_id";
+            this.GridView1.Columns["Col_txtsupplier_id"].Width = 0;
+            this.GridView1.Columns["Col_txtsupplier_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsupplier_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsupplier_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txtsupplier_name"].Visible = true;  //"Col_txtsupplier_name";
-            this.GridView1.Columns["Col_txtsupplier_name"].Width = 150;
+            this.GridView1.Columns["Col_txtsupplier_name"].Width = 200;
             this.GridView1.Columns["Col_txtsupplier_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsupplier_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsupplier_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtemp_office_name"].Visible = true;  //"Col_txtemp_office_name";
-            this.GridView1.Columns["Col_txtemp_office_name"].Width = 120;
-            this.GridView1.Columns["Col_txtemp_office_name"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtemp_office_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtemp_office_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txtwherehouse_id"].Visible = false;  //"Col_txtwherehouse_id";
             this.GridView1.Columns["Col_txtwherehouse_id"].Width = 0;
             this.GridView1.Columns["Col_txtwherehouse_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtwherehouse_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-
-
-            this.GridView1.Columns["Col_txtnumber_in_year"].Visible = true;  //"Col_txtnumber_in_year";
-            this.GridView1.Columns["Col_txtnumber_in_year"].Width = 80;
-            this.GridView1.Columns["Col_txtnumber_in_year"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtnumber_in_year"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtnumber_in_year"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            this.GridView1.Columns["Col_txtnumber_mat_id"].Visible = false;  //"Col_txtnumber_mat_id";
-            this.GridView1.Columns["Col_txtnumber_mat_id"].Width = 0;
-            this.GridView1.Columns["Col_txtnumber_mat_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtnumber_mat_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtnumber_mat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtnumber_color_id"].Visible = true;  //"Col_txtnumber_color_id";
-            this.GridView1.Columns["Col_txtnumber_color_id"].Width = 80;
-            this.GridView1.Columns["Col_txtnumber_color_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtnumber_color_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtnumber_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtface_baking_id"].Visible = true;  //"Col_txtface_baking_id";
-            this.GridView1.Columns["Col_txtface_baking_id"].Width = 80;
-            this.GridView1.Columns["Col_txtface_baking_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtface_baking_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtface_baking_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
-            this.GridView1.Columns["Col_txtlot_no"].Visible = true;  //"Col_txtlot_no";
-            this.GridView1.Columns["Col_txtlot_no"].Width = 180;
-            this.GridView1.Columns["Col_txtlot_no"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtlot_no"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtlot_no"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtfold_number"].Visible = true;  //"Col_txtfold_number";
-            this.GridView1.Columns["Col_txtfold_number"].Width = 60;
-            this.GridView1.Columns["Col_txtfold_number"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtfold_number"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtfold_number"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            this.GridView1.Columns[8].Visible = false;
-            DataGridViewCheckBoxColumn dgvCmb_SELECT = new DataGridViewCheckBoxColumn();
-            dgvCmb_SELECT.Name = "Col_Chk_SELECT";
-            dgvCmb_SELECT.Width = 0;  //70
-            dgvCmb_SELECT.DisplayIndex = 8;
-            dgvCmb_SELECT.HeaderText = "เลือกส่งเย็บ";
-            dgvCmb_SELECT.ValueType = typeof(bool);
-            dgvCmb_SELECT.ReadOnly = false;
-            dgvCmb_SELECT.Visible = false;
-            dgvCmb_SELECT.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCmb_SELECT.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCmb_SELECT.DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
-            GridView1.Columns.Add(dgvCmb_SELECT);
-
-            this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
-            this.GridView1.Columns["Col_txtqty"].Width = 100;
-            this.GridView1.Columns["Col_txtqty"].ReadOnly = false;
-            this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
 
             this.GridView1.Columns["Col_txtmat_no"].Visible = false;  //"Col_txtmat_no";
             this.GridView1.Columns["Col_txtmat_no"].Width = 0;
@@ -909,11 +905,10 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtmat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.GridView1.Columns["Col_txtmat_name"].Visible = true;  //"Col_txtmat_name";
-            this.GridView1.Columns["Col_txtmat_name"].Width = 150;
+            this.GridView1.Columns["Col_txtmat_name"].Width = 120;
             this.GridView1.Columns["Col_txtmat_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txtmat_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtmat_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
 
             this.GridView1.Columns["Col_txtmat_unit1_name"].Visible = false;  //"Col_txtmat_unit1_name";
             this.GridView1.Columns["Col_txtmat_unit1_name"].Width = 0;
@@ -960,8 +955,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtmat_unit2_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtmat_unit2_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-
-
+            this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
+            this.GridView1.Columns["Col_txtqty"].Width = 120;
+            this.GridView1.Columns["Col_txtqty"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView1.Columns["Col_txtqty2"].Visible = false;  //"Col_txtqty2";
             this.GridView1.Columns["Col_txtqty2"].Width = 0;
@@ -1042,56 +1040,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtcost_qty2_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtcost_qty2_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtitem_no"].Visible = false;  //"Col_txtitem_no";
-            this.GridView1.Columns["Col_txtitem_no"].Width = 0;
-            this.GridView1.Columns["Col_txtitem_no"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtitem_no"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtitem_no"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-
-            this.GridView1.Columns["Col_txtqc_id"].Visible = false;  //"Col_txtqc_id";
-            //this.GridView1.Columns["Col_txtqc_id"].Width = 0;
-            this.GridView1.Columns["Col_txtqc_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqc_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqc_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtsum_qty_pub"].Visible = false;  //"Col_txtsum_qty_pub";
-            this.GridView1.Columns["Col_txtsum_qty_pub"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_pub"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_pub"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_pub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_date"].Visible = false;  //"Col_date";
-            this.GridView1.Columns["Col_date"].Width = 0;
-            this.GridView1.Columns["Col_date"].ReadOnly = false;
-            this.GridView1.Columns["Col_date"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            //this.GridView1.Columns[35].HeaderText = " Col_qty_Cal";
-            this.GridView1.Columns["Col_qty_Cal"].Visible = false;  //"Col_qty_Cal";
-            this.GridView1.Columns["Col_qty_Cal"].Width = 0;
-            this.GridView1.Columns["Col_qty_Cal"].ReadOnly = false;
-            this.GridView1.Columns["Col_qty_Cal"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_qty_Cal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            //this.GridView1.Columns[35].HeaderText = " Col_txtsum_qty_rib";
-            this.GridView1.Columns["Col_txtsum_qty_rib"].Visible = false;  //"Col_txtsum_qty_rib";
-            this.GridView1.Columns["Col_txtsum_qty_rib"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_rib"].ReadOnly = false;
-            this.GridView1.Columns["Col_txtsum_qty_rib"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_rib"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].Visible = false;  //"Col_txtsum_qty_pub_kg";
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].Visible = false;  //"Col_txtsum_qty_rib_kg";
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].ReadOnly = false;
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_after_cut"].Visible = false;  //"Col_txtqty_after_cut";
+            this.GridView1.Columns["Col_txtqty_after_cut"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_after_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView1.Columns["Col_txtqty_cut_yokma"].Visible = false;  //"Col_txtqty_cut_yokma";
             this.GridView1.Columns["Col_txtqty_cut_yokma"].Width = 0;
@@ -1103,17 +1056,22 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtqty_cut_yokpai"].Width = 0;
             this.GridView1.Columns["Col_txtqty_cut_yokpai"].ReadOnly = true;
             this.GridView1.Columns["Col_txtqty_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
+            this.GridView1.Columns["Col_txtqty_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Visible = false;  //"Col_txtqty_after_cut_yokpai";
             this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Width = 0;
             this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].ReadOnly = true;
             this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtqty_cut"].Visible = true;  //"Col_txtqty_cut";
-            this.GridView1.Columns["Col_txtqty_cut"].Width = 100;
+            this.GridView1.Columns["Col_1"].Visible = false;  //"Col_1";
+            this.GridView1.Columns["Col_1"].Width = 0;
+            this.GridView1.Columns["Col_1"].ReadOnly = true;
+            this.GridView1.Columns["Col_1"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtqty_cut"].Visible = false;  //"Col_txtqty_cut";
+            this.GridView1.Columns["Col_txtqty_cut"].Width = 0;
             this.GridView1.Columns["Col_txtqty_cut"].ReadOnly = true;
             this.GridView1.Columns["Col_txtqty_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtqty_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -1125,16 +1083,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView1.Columns["Col_txtcut_id"].Visible = true;  //"Col_txtcut_id";
-            this.GridView1.Columns["Col_txtcut_id"].Width = 160;
+            this.GridView1.Columns["Col_txtcut_id"].Width = 140;
             this.GridView1.Columns["Col_txtcut_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtcut_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtcut_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_1"].Visible = false;  //"Col_1";
-            this.GridView1.Columns["Col_1"].Width = 0;
-            this.GridView1.Columns["Col_1"].ReadOnly = true;
-            this.GridView1.Columns["Col_1"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
             this.GridView1.GridColor = Color.FromArgb(227, 227, 227);
@@ -1155,18 +1108,18 @@ namespace kondate.soft.HOME03_Production
         {
             for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
             {
-                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) == 0)
-                {
-                    GridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
-                    GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-                }
-                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) > 0)
-                {
-                    GridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-                }
+                //if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) == 0)
+                //{
+                //    GridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                //    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                //    GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+                //}
+                //if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) > 0)
+                //{
+                //    GridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                //    GridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                //    GridView1.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+                //}
             }
         }
         private void GridView1_Cal_Sum()
@@ -1189,45 +1142,32 @@ namespace kondate.soft.HOME03_Production
 
                 if (valu != "")
                 {
-
-
                     if (this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value == null)
                     {
                         this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value = ".00";
                     }
 
-                    if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) > 0)
-                    {
-                        //Sum_Qty  จำนวนเบิก (กก)=================================================
-                        Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString()));
-                        this.txtsum_qty.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
-
-                        //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
-                        if (this.GridView1.Rows[i].Cells["Col_chmat_unit_status"].Value.ToString() == "Y")  //
-                        {
-                            Sum_Qty2 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtmat_unit2_qty"].Value.ToString()));
-                            this.GridView1.Rows[i].Cells["Col_txtqty2"].Value = Sum_Qty2.ToString("N", new CultureInfo("en-US"));
-                            //Sum2_Qty_Yokpai  =================================================
-                            Sum2_Qty_Yokpai = Convert.ToDouble(string.Format("{0:n4}", Sum2_Qty_Yokpai)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty2"].Value.ToString()));
-                            this.txtsum2_qty.Text = Sum2_Qty_Yokpai.ToString("N", new CultureInfo("en-US"));
-                        }
-
-                        //
-                        if (this.GridView1.Rows[i].Cells["Col_txtfold_number"].Value.ToString() == "RIB")
-                        {
-                            Sum11 = Convert.ToDouble(string.Format("{0:n4}", Sum11)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_1"].Value.ToString()));
-                            this.txtsum_qty_rib.Text = Sum11.ToString("N", new CultureInfo("en-US"));
-                        }
-                        if (this.GridView1.Rows[i].Cells["Col_txtfold_number"].Value.ToString() != "RIB")
-                        {
-                            Sum12 = Convert.ToDouble(string.Format("{0:n4}", Sum12)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_1"].Value.ToString()));
-                            this.txtsum_qty_roll.Text = Sum12.ToString("N", new CultureInfo("en-US"));
-                        }
-                        //======================================================
-                    }
-
-
                 }
+            }
+        }
+        private void GridView1_Color_Column()
+        {
+
+            for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
+            {
+
+                //GridView1.Rows[i].Cells["Col_txtqty"].Style.BackColor = Color.GreenYellow;
+                //GridView1.Rows[i].Cells["Col_txtqty"].Style.ForeColor = Color.Black;
+
+                //GridView1.Rows[i].Cells["Col_txtnumber_dyed"].Style.BackColor = Color.GreenYellow;
+                //GridView1.Rows[i].Cells["Col_txtnumber_dyed"].Style.ForeColor = Color.Black;
+
+                GridView1.Rows[i].Cells["Col_txttable_name"].Style.BackColor = Color.GreenYellow;
+                GridView1.Rows[i].Cells["Col_txttable_name"].Style.ForeColor = Color.Black;
+
+                GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Style.BackColor = Color.GreenYellow;
+                GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Style.ForeColor = Color.Black;
+
             }
         }
         private void GridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -1543,114 +1483,158 @@ namespace kondate.soft.HOME03_Production
                 if (this.ch_all_branch.Checked == true)
                 {
                     cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                       "k016db_1supplier.*," +
                                        "c002_09Send_Sew_shirt_record_detail.*," +
-                                       "c001_05face_baking.*," +
-                                       //"c001_06number_mat.*," +
+                                       //"c001_05face_baking.*," +
+                                       "c001_06number_mat.*," +
                                        "c001_07number_color.*," +
+                                       "c001_07number_sup_color.*," +
+
+                                       "c001_08shirt_type.*," +
+                                       "c001_09shirt_size.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
+                                       "c002_09Send_Sew_shirt_record_type.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
                                        " FROM c002_09Send_Sew_shirt_record" +
-
-                                       " INNER JOIN k016db_1supplier" +
-                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                        " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                        " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                       " INNER JOIN c001_05face_baking" +
-                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       //" INNER JOIN c001_05face_baking" +
+                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                       //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       " INNER JOIN c001_06number_mat" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                       " INNER JOIN c001_08shirt_type" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                       " INNER JOIN c001_09shirt_size" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                        " INNER JOIN c001_07number_color" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " INNER JOIN c001_07number_sup_color" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                       " INNER JOIN k016db_1supplier" +
+                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                       " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                       " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                               " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     //" AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                       " AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id,c002_09Send_Sew_shirt_record_detail.ID ASC";
 
                 }
                 if (this.ch_all_branch.Checked == false)
                 {
                     cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                       "k016db_1supplier.*," +
                                        "c002_09Send_Sew_shirt_record_detail.*," +
-                                       "c001_05face_baking.*," +
-                                       //"c001_06number_mat.*," +
+                                       //"c001_05face_baking.*," +
+                                       "c001_06number_mat.*," +
                                        "c001_07number_color.*," +
+                                       "c001_07number_sup_color.*," +
+
+                                       "c001_08shirt_type.*," +
+                                       "c001_09shirt_size.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
+                                       "c002_09Send_Sew_shirt_record_type.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
                                        " FROM c002_09Send_Sew_shirt_record" +
-
-                                       " INNER JOIN k016db_1supplier" +
-                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                        " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                        " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                       " INNER JOIN c001_05face_baking" +
-                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       //" INNER JOIN c001_05face_baking" +
+                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                       //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       " INNER JOIN c001_06number_mat" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                       " INNER JOIN c001_08shirt_type" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                       " INNER JOIN c001_09shirt_size" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                        " INNER JOIN c001_07number_color" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " INNER JOIN c001_07number_sup_color" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                       " INNER JOIN k016db_1supplier" +
+                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                       " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                       " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                               " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                      " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                      " AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id,c002_09Send_Sew_shirt_record_detail.ID ASC";
 
 
@@ -1670,52 +1654,50 @@ namespace kondate.soft.HOME03_Production
                     {
                         this.txtcount_rows.Text = dt2.Rows.Count.ToString();
 
+                        Int32 k = 0;
+
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
+                            k = j + 1;
 
                             var index = this.GridView1.Rows.Add();
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSWT_id"].Value = dt2.Rows[j]["txtSWT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
-                            this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
+                            this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtqc_id"].ToString();      //1
 
-                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_tier"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_body_per_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body_per_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body_per_tier"].ToString();       //16
+                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body"].ToString();       //16
+
+                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();     //7
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
-                            this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
-
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();        //4
-                            this.GridView1.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();       //5
+
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_type_id"].Value = dt2.Rows[j]["txtshirt_type_id"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txttable_name"].Value = dt2.Rows[j]["txttable_name"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();        //7
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();         //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_sup_color_id"].Value = dt2.Rows[j]["txtnumber_sup_color_id"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();        //3
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //15
+                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //17
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //19
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
+                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //21
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //22
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //23
+
+                            //this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty"].Value.ToString()));    //8
+                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));    //17
 
 
-                            this.GridView1.Rows[index].Cells["Col_txtlot_no"].Value = dt2.Rows[j]["txtlot_no"].ToString();      //6
-                            this.GridView1.Rows[index].Cells["Col_txtfold_number"].Value = dt2.Rows[j]["txtfold_number"].ToString();      //7
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_want"]).ToString("###,###.00");     //8
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //9
-                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //11
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //13
-
-                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //14
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //15
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //16
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2"]).ToString("###,###.00");     //17
-
-
-                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice"]).ToString("###,###.00");        //18
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_rate"]).ToString("###,###.00");      //19
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_money"]).ToString("###,###.00");      //20
-                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_total"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));       //18
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //19
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //20
+                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));     //21
 
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = ".00";      //22
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = ".00";       //23
@@ -1728,36 +1710,28 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = ".00";        //28
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = ".00";        //29
 
-                            this.GridView1.Rows[index].Cells["Col_txtitem_no"].Value = dt2.Rows[j]["txtitem_no"].ToString();      //30
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = "0";      //31
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtqc_id"].Value = "";      //31
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = "0";      //32
+                            this.GridView1.Rows[index].Cells["Col_1"].Value = "1";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_pub"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            //GridView1.Rows[index].Cells["Col_date"].Value = Convert.ToDateTime(dt2.Rows[j]["txtwant_receive_date"]).ToString("yyyy-MM-dd", UsaCulture);     //9
-                            GridView1.Rows[index].Cells["Col_date"].Value = dt2.Rows[j]["txtwant_receive_date"].ToString();     //9
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_rib"]).ToString("###,###.00");      //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
+                            this.GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
-
-                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
-                            GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
                         //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
                     }
                     else
                     {
@@ -1783,6 +1757,7 @@ namespace kondate.soft.HOME03_Production
             //================================
             GridView1_Color();
             GridView1_Cal_Sum();
+            GridView1_Color_Column();
 
         }
 
@@ -1833,46 +1808,68 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
 
                 cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                   "k016db_1supplier.*," +
                                    "c002_09Send_Sew_shirt_record_detail.*," +
-                                   "c001_05face_baking.*," +
-                                   //"c001_06number_mat.*," +
+                                   //"c001_05face_baking.*," +
+                                   "c001_06number_mat.*," +
                                    "c001_07number_color.*," +
+                                   "c001_07number_sup_color.*," +
+
+                                   "c001_08shirt_type.*," +
+                                   "c001_09shirt_size.*," +
 
                                    "k016db_1supplier.*," +
-                                   "k013_1db_acc_13group_tax.*," +
+                                   //"k013_1db_acc_13group_tax.*," +
+                                   "c002_09Send_Sew_shirt_record_type.*," +
 
                                    "k013_1db_acc_06wherehouse.*" +
 
                                    " FROM c002_09Send_Sew_shirt_record" +
-
-                                   " INNER JOIN k016db_1supplier" +
-                                   " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                    " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                    " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                    " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                    " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                   " INNER JOIN c001_05face_baking" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   //" INNER JOIN c001_05face_baking" +
+                                   //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                   //" INNER JOIN c001_06number_mat" +
-                                   //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   " INNER JOIN c001_06number_mat" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                   " INNER JOIN c001_08shirt_type" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                   " INNER JOIN c001_09shirt_size" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                    " INNER JOIN c001_07number_color" +
                                    " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                    " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                    " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                   " INNER JOIN k013_1db_acc_13group_tax" +
-                                   " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   " INNER JOIN c001_07number_sup_color" +
+                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                   " INNER JOIN k016db_1supplier" +
+                                   " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                   " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                   " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                   //" INNER JOIN k013_1db_acc_13group_tax" +
+                                   //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
                                    " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
@@ -1883,7 +1880,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                       " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                 " AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                 " AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id,c002_09Send_Sew_shirt_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -1900,52 +1897,50 @@ namespace kondate.soft.HOME03_Production
                     {
                         this.txtcount_rows.Text = dt2.Rows.Count.ToString();
 
+                        Int32 k = 0;
+
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
+                            k = j + 1;
 
                             var index = this.GridView1.Rows.Add();
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSWT_id"].Value = dt2.Rows[j]["txtSWT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
-                            this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
+                            this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtqc_id"].ToString();      //1
 
-                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_tier"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_body_per_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body_per_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body_per_tier"].ToString();       //16
+                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body"].ToString();       //16
+
+                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();     //7
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
-                            this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
-
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();        //4
-                            this.GridView1.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();       //5
+
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_type_id"].Value = dt2.Rows[j]["txtshirt_type_id"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txttable_name"].Value = dt2.Rows[j]["txttable_name"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();        //7
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();         //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_sup_color_id"].Value = dt2.Rows[j]["txtnumber_sup_color_id"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();        //3
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //15
+                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //17
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //19
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
+                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //21
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //22
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //23
+
+                            //this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty"].Value.ToString()));    //8
+                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));    //17
 
 
-                            this.GridView1.Rows[index].Cells["Col_txtlot_no"].Value = dt2.Rows[j]["txtlot_no"].ToString();      //6
-                            this.GridView1.Rows[index].Cells["Col_txtfold_number"].Value = dt2.Rows[j]["txtfold_number"].ToString();      //7
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_want"]).ToString("###,###.00");     //8
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //9
-                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //11
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //13
-
-                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //14
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //15
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //16
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2"]).ToString("###,###.00");     //17
-
-
-                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice"]).ToString("###,###.00");        //18
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_rate"]).ToString("###,###.00");      //19
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_money"]).ToString("###,###.00");      //20
-                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_total"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));       //18
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //19
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //20
+                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));     //21
 
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = ".00";      //22
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = ".00";       //23
@@ -1958,36 +1953,28 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = ".00";        //28
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = ".00";        //29
 
-                            this.GridView1.Rows[index].Cells["Col_txtitem_no"].Value = dt2.Rows[j]["txtitem_no"].ToString();      //30
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = "0";      //31
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtqc_id"].Value = "";      //31
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = "0";      //32
+                            this.GridView1.Rows[index].Cells["Col_1"].Value = "1";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_pub"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            //GridView1.Rows[index].Cells["Col_date"].Value = Convert.ToDateTime(dt2.Rows[j]["txtwant_receive_date"]).ToString("yyyy-MM-dd", UsaCulture);     //9
-                            GridView1.Rows[index].Cells["Col_date"].Value = dt2.Rows[j]["txtwant_receive_date"].ToString();     //9
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_rib"]).ToString("###,###.00");      //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
+                            this.GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
-
-                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
-                            GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
                         //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
                     }
                     else
                     {
@@ -2013,6 +2000,7 @@ namespace kondate.soft.HOME03_Production
             //================================
             GridView1_Color();
             GridView1_Cal_Sum();
+            GridView1_Color_Column();
 
         }
 
@@ -2062,56 +2050,78 @@ namespace kondate.soft.HOME03_Production
                 if (this.cboSearch.Text == "เลขที่ใบส่งเย็บ")
                 {
                     cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                       "k016db_1supplier.*," +
                                        "c002_09Send_Sew_shirt_record_detail.*," +
-                                       "c001_05face_baking.*," +
-                                       //"c001_06number_mat.*," +
+                                       //"c001_05face_baking.*," +
+                                       "c001_06number_mat.*," +
                                        "c001_07number_color.*," +
+                                       "c001_07number_sup_color.*," +
+
+                                       "c001_08shirt_type.*," +
+                                       "c001_09shirt_size.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
+                                       "c002_09Send_Sew_shirt_record_type.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
                                        " FROM c002_09Send_Sew_shirt_record" +
-
-                                       " INNER JOIN k016db_1supplier" +
-                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                        " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                        " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                       " INNER JOIN c001_05face_baking" +
-                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       //" INNER JOIN c001_05face_baking" +
+                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                       //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       " INNER JOIN c001_06number_mat" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                       " INNER JOIN c001_08shirt_type" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                       " INNER JOIN c001_09shirt_size" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                        " INNER JOIN c001_07number_color" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " INNER JOIN c001_07number_sup_color" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                       " INNER JOIN k016db_1supplier" +
+                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                       " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                       " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                               " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     //" AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                    //" AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                    //" AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                     " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
                                         " AND (c002_09Send_Sew_shirt_record.txtSWT_id = '" + this.txtsearch.Text.Trim() + "')" +
                                         " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id,c002_09Send_Sew_shirt_record_detail.ID ASC";
@@ -2120,57 +2130,79 @@ namespace kondate.soft.HOME03_Production
                 if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งเย็บ")
                 {
                     cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                       "k016db_1supplier.*," +
                                        "c002_09Send_Sew_shirt_record_detail.*," +
-                                       "c001_05face_baking.*," +
-                                       //"c001_06number_mat.*," +
+                                       //"c001_05face_baking.*," +
+                                       "c001_06number_mat.*," +
                                        "c001_07number_color.*," +
+                                       "c001_07number_sup_color.*," +
+
+                                       "c001_08shirt_type.*," +
+                                       "c001_09shirt_size.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
+                                       "c002_09Send_Sew_shirt_record_type.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
                                        " FROM c002_09Send_Sew_shirt_record" +
-
-                                       " INNER JOIN k016db_1supplier" +
-                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                        " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
                                        " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
 
-                                       " INNER JOIN c001_05face_baking" +
-                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       //" INNER JOIN c001_05face_baking" +
+                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
-                                       //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       " INNER JOIN c001_06number_mat" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                       " INNER JOIN c001_08shirt_type" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                       " INNER JOIN c001_09shirt_size" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                        " INNER JOIN c001_07number_color" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       " INNER JOIN c001_07number_sup_color" +
+                                       " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                       " INNER JOIN k016db_1supplier" +
+                                       " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                       " INNER JOIN c002_09Send_Sew_shirt_record_type" +
+                                       " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
                                        " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
                                        " AND c002_09Send_Sew_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                               " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                       //" AND (c002_09Send_Sew_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                       " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                      " AND (c002_09Send_Sew_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " AND (c002_09Send_Sew_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                        " AND (c002_09Send_Sew_shirt_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
                                       " ORDER BY c002_09Send_Sew_shirt_record.txtSWT_id ASC";
 
@@ -2190,52 +2222,50 @@ namespace kondate.soft.HOME03_Production
                     {
                         this.txtcount_rows.Text = dt2.Rows.Count.ToString();
 
+                        Int32 k = 0;
+
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
+                            k = j + 1;
 
                             var index = this.GridView1.Rows.Add();
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSWT_id"].Value = dt2.Rows[j]["txtSWT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
-                            this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
+                            this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtqc_id"].ToString();      //1
 
-                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_tier"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_body_per_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body_per_tier"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body_per_tier"].ToString();       //16
+                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body"]).ToString("###,###.0000");//dt2.Rows[j]["txtsum_qty_body"].ToString();       //16
+
+                            this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();     //7
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
-                            this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
-
                             this.GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();        //4
-                            this.GridView1.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();       //5
+
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_type_id"].Value = dt2.Rows[j]["txtshirt_type_id"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txttable_name"].Value = dt2.Rows[j]["txttable_name"].ToString();        //2
+                            this.GridView1.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();        //7
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();         //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_sup_color_id"].Value = dt2.Rows[j]["txtnumber_sup_color_id"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();        //3
+                            this.GridView1.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();        //3
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //15
+                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //16
+                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //17
+
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //19
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
+                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //21
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //22
+                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //23
+
+                            //this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty"].Value.ToString()));    //8
+                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));    //17
 
 
-                            this.GridView1.Rows[index].Cells["Col_txtlot_no"].Value = dt2.Rows[j]["txtlot_no"].ToString();      //6
-                            this.GridView1.Rows[index].Cells["Col_txtfold_number"].Value = dt2.Rows[j]["txtfold_number"].ToString();      //7
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_want"]).ToString("###,###.00");     //8
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //9
-                            this.GridView1.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //10
-                            this.GridView1.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //11
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //12
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //13
-
-                            this.GridView1.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //14
-
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //15
-                            this.GridView1.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //16
-
-                            this.GridView1.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty2"]).ToString("###,###.00");     //17
-
-
-                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToSingle(dt2.Rows[j]["txtprice"]).ToString("###,###.00");        //18
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_rate"]).ToString("###,###.00");      //19
-                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToSingle(dt2.Rows[j]["txtdiscount_money"]).ToString("###,###.00");      //20
-                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_total"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtprice"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));       //18
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //19
+                            this.GridView1.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //20
+                            this.GridView1.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));     //21
 
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = ".00";      //22
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = ".00";       //23
@@ -2248,36 +2278,28 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = ".00";        //28
                             this.GridView1.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = ".00";        //29
 
-                            this.GridView1.Rows[index].Cells["Col_txtitem_no"].Value = dt2.Rows[j]["txtitem_no"].ToString();      //30
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = "0";      //31
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //32
+                            //this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtqc_id"].Value = "";      //31
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = "0";      //32
+                            this.GridView1.Rows[index].Cells["Col_1"].Value = "1";      //32
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_pub"]).ToString("###,###.00");      //21
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            //GridView1.Rows[index].Cells["Col_date"].Value = Convert.ToDateTime(dt2.Rows[j]["txtwant_receive_date"]).ToString("yyyy-MM-dd", UsaCulture);     //9
-                            GridView1.Rows[index].Cells["Col_date"].Value = dt2.Rows[j]["txtwant_receive_date"].ToString();     //9
+                            this.GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
+                            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_rib"]).ToString("###,###.00");      //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = "0";       //21
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = "0";       //21
+                            this.GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
 
-                            //GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = dt2.Rows[j]["txtqty_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = dt2.Rows[j]["txtqty_after_cut"].ToString();  //17
-                            //GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();  //17
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
-                            GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
-
-                            GridView1.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
-                            GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
-
-                            GridView1.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
-                            GridView1.Rows[index].Cells["Col_1"].Value = "1";      //37
 
                         }
                         //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
                     }
                     else
                     {
@@ -2303,6 +2325,7 @@ namespace kondate.soft.HOME03_Production
             //================================
             GridView1_Color();
             GridView1_Cal_Sum();
+            GridView1_Color_Column();
 
         }
 

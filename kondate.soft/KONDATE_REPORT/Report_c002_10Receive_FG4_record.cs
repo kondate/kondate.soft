@@ -16,14 +16,14 @@ namespace kondate.soft.KONDATE_REPORT {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Report_c002_07Receive_Send_dye_record : ReportClass {
+    public class Report_c002_10Receive_FG4_record : ReportClass {
         
-        public Report_c002_07Receive_Send_dye_record() {
+        public Report_c002_10Receive_FG4_record() {
         }
         
         public override string ResourceName {
             get {
-                return "Report_c002_07Receive_Send_dye_record.rpt";
+                return "Report_c002_10Receive_FG4_record.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace kondate.soft.KONDATE_REPORT {
         
         public override string FullResourceName {
             get {
-                return "kondate.soft.KONDATE_REPORT.Report_c002_07Receive_Send_dye_record.rpt";
+                return "kondate.soft.KONDATE_REPORT.Report_c002_10Receive_FG4_record.rpt";
             }
             set {
                 // Do nothing
@@ -106,7 +106,7 @@ namespace kondate.soft.KONDATE_REPORT {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_txtFG2_id {
+        public CrystalDecisions.Shared.IParameterField Parameter_txtFG4_id {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -114,9 +114,9 @@ namespace kondate.soft.KONDATE_REPORT {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReport_c002_07Receive_Send_dye_record : Component, ICachedReport {
+    public class CachedReport_c002_10Receive_FG4_record : Component, ICachedReport {
         
-        public CachedReport_c002_07Receive_Send_dye_record() {
+        public CachedReport_c002_10Receive_FG4_record() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace kondate.soft.KONDATE_REPORT {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Report_c002_07Receive_Send_dye_record rpt = new Report_c002_07Receive_Send_dye_record();
+            Report_c002_10Receive_FG4_record rpt = new Report_c002_10Receive_FG4_record();
             rpt.Site = this.Site;
             return rpt;
         }

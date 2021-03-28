@@ -195,7 +195,7 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c002_08Receive_FG3_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_08Receive_FG3_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (c002_08Receive_FG3_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c002_08Receive_FG3_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                   " AND (c002_08Receive_FG3_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c002_08Receive_FG3_record.txtFG3_id ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -221,17 +221,13 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtFG3_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = "";     //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
                             this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_kg"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib_kg"]).ToString("###,###.00");      //13
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
 
                             //RG ==============================
@@ -328,7 +324,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND c002_08Receive_FG3_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
                                    " WHERE (c002_08Receive_FG3_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_08Receive_FG3_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                   " AND (c002_08Receive_FG3_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                   " AND (c002_08Receive_FG3_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c002_08Receive_FG3_record.txtFG3_id ASC";
                 }
                 else
@@ -344,7 +340,7 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c002_08Receive_FG3_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_08Receive_FG3_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     " AND (c002_08Receive_FG3_record.txtbranch_id = '" + this.txtbranch_id.Text.Trim() + "')" +
-                                  " AND (c002_08Receive_FG3_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                  " AND (c002_08Receive_FG3_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c002_08Receive_FG3_record.txtFG3_id ASC";
 
                 }
@@ -371,17 +367,13 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtFG3_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = "";     //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
                             this.GridView1.Rows[index].Cells["Col_txtemp_office_name"].Value = dt2.Rows[j]["txtemp_office_name"].ToString();      //8
 
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_pub_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_pub_kg"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib"]).ToString("###,###.00");      //13
-                            this.GridView1.Rows[index].Cells["Col_txtsum_qty_rib_kg"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_rib_kg"]).ToString("###,###.00");      //13
                             this.GridView1.Rows[index].Cells["Col_txtsum_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty"]).ToString("###,###.00");      //13
 
                             //RG ==============================
@@ -429,24 +421,20 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 16;
+            this.GridView1.ColumnCount = 12;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
             this.GridView1.Columns[3].Name = "Col_txtFG3_id";
             this.GridView1.Columns[4].Name = "Col_txtSPT_id";
-            this.GridView1.Columns[5].Name = "Col_txttrans_date_server";
+            this.GridView1.Columns[5].Name = "Col_txttrans_date_client";
             this.GridView1.Columns[6].Name = "Col_txttrans_time";
             this.GridView1.Columns[7].Name = "Col_txtsupplier_id";
             this.GridView1.Columns[8].Name = "Col_txtsupplier_name";
             this.GridView1.Columns[9].Name = "Col_txtemp_office_name";
 
-            this.GridView1.Columns[10].Name = "Col_txtsum_qty_pub";
-            this.GridView1.Columns[11].Name = "Col_txtsum_qty_pub_kg";
-            this.GridView1.Columns[12].Name = "Col_txtsum_qty_rib";
-            this.GridView1.Columns[13].Name = "Col_txtsum_qty_rib_kg";
-            this.GridView1.Columns[14].Name = "Col_txtsum_qty";
-            this.GridView1.Columns[15].Name = "Col_txtFG3_status";
+            this.GridView1.Columns[10].Name = "Col_txtsum_qty";
+            this.GridView1.Columns[11].Name = "Col_txtFG3_status";
 
 
             this.GridView1.Columns[0].HeaderText = "No";
@@ -460,12 +448,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[8].HeaderText = " ชื่อ Supplier";
             this.GridView1.Columns[9].HeaderText = " ผู้บันทึก";
 
-            this.GridView1.Columns[10].HeaderText = " พับ";
-            this.GridView1.Columns[11].HeaderText = "พับ กก";
-            this.GridView1.Columns[12].HeaderText = "RIB";
-            this.GridView1.Columns[13].HeaderText = "RIB กก";
-            this.GridView1.Columns[14].HeaderText = "จำนวน (ตัว)";
-            this.GridView1.Columns[15].HeaderText = " สถานะ";
+            this.GridView1.Columns[10].HeaderText = "จำนวน (ตัว)";
+            this.GridView1.Columns[11].HeaderText = " สถานะ";
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
@@ -483,11 +467,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtSPT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtSPT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txttrans_date_server"].Visible = true;  //""Col_txttrans_date_server"";
-            this.GridView1.Columns["Col_txttrans_date_server"].Width = 90;
-            this.GridView1.Columns["Col_txttrans_date_server"].ReadOnly = true;
-            this.GridView1.Columns["Col_txttrans_date_server"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txttrans_date_server"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txttrans_date_client"].Visible = true;  //""Col_txttrans_date_client"";
+            this.GridView1.Columns["Col_txttrans_date_client"].Width = 90;
+            this.GridView1.Columns["Col_txttrans_date_client"].ReadOnly = true;
+            this.GridView1.Columns["Col_txttrans_date_client"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txttrans_date_client"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txttrans_time"].Visible = true;  //"Col_txttrans_time";
             this.GridView1.Columns["Col_txttrans_time"].Width = 70;
@@ -508,30 +492,6 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtemp_office_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txtemp_office_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtemp_office_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtsum_qty_pub"].Visible = false;  //"Col_txtsum_qty_pub";
-            this.GridView1.Columns["Col_txtsum_qty_pub"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_pub"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_pub"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_pub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].Visible = false;  //"Col_txtsum_qty_pub_kg";
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_pub_kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_rib"].Visible = false;  //"Col_txtsum_qty_rib";
-            this.GridView1.Columns["Col_txtsum_qty_rib"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_rib"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_rib"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_rib"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].Visible = false;  //"Col_txtsum_qty_rib_kg";
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_rib_kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView1.Columns["Col_txtsum_qty"].Visible = true;  //"Col_txtsum_qty";
             this.GridView1.Columns["Col_txtsum_qty"].Width = 90;
@@ -746,7 +706,7 @@ namespace kondate.soft.HOME03_Production
                                    " WHERE (c002_08Receive_FG3_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                    " AND (c002_08Receive_FG3_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    //" AND (c002_08Receive_FG3_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                   " AND (c002_08Receive_FG3_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                   " AND (c002_08Receive_FG3_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                    " AND (c002_08Receive_FG3_record.txtsupplier_id = '" + this.PANEL161_SUP_txtsupplier_id.Text.Trim() + "')" +
                                    " ORDER BY c002_08Receive_FG3_record.txtFG3_id ASC";
 
@@ -775,7 +735,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtFG3_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -899,7 +859,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND c002_08Receive_FG3_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
                                        " WHERE (c002_08Receive_FG3_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_08Receive_FG3_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       " AND (c002_08Receive_FG3_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_08Receive_FG3_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                        " AND (c002_08Receive_FG3_record.txtFG3_id = '" + this.txtsearch.Text.Trim() + "')" +
                                       " ORDER BY c002_08Receive_FG3_record.txtFG3_id ASC";
                 }
@@ -916,7 +876,7 @@ namespace kondate.soft.HOME03_Production
                                         " WHERE (c002_08Receive_FG3_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                         " AND (c002_08Receive_FG3_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                         " AND (c002_08Receive_FG3_record.txtbranch_id = '" + this.txtbranch_id.Text.Trim() + "')" +
-                                        " AND (c002_08Receive_FG3_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                        " AND (c002_08Receive_FG3_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                         " AND (c002_08Receive_FG3_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
                                         " ORDER BY c002_08Receive_FG3_record.txtFG3_id ASC";
                 }
@@ -943,7 +903,7 @@ namespace kondate.soft.HOME03_Production
                                 this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                                 this.GridView1.Rows[index].Cells["Col_txtFG3_id"].Value = dt2.Rows[j]["txtFG3_id"].ToString();      //3
                                 this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
-                                this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                                this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                                 this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                                 this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6

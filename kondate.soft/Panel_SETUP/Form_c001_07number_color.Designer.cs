@@ -42,7 +42,6 @@
             this.PANEL0107_NUMBER_COLOR_txtnumber_color_id = new System.Windows.Forms.TextBox();
             this.PANEL0107_NUMBER_COLOR = new System.Windows.Forms.Panel();
             this.PANEL0107_NUMBER_COLOR_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL0107_NUMBER_COLOR_btnnew = new System.Windows.Forms.PictureBox();
             this.PANEL0107_NUMBER_COLOR_btnclose = new System.Windows.Forms.PictureBox();
             this.PANEL0107_NUMBER_COLOR_btn_search = new System.Windows.Forms.PictureBox();
             this.PANEL0107_NUMBER_COLOR_txtsearch = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             this.PANEL0107_NUMBER_COLOR_btnnumber_color = new System.Windows.Forms.Button();
             this.PANEL0107_NUMBER_COLOR_txtnumber_color_name = new System.Windows.Forms.TextBox();
             this.PANEL0107_NUMBER_COLOR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color)).BeginInit();
@@ -167,7 +165,6 @@
             this.PANEL0107_NUMBER_COLOR.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PANEL0107_NUMBER_COLOR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PANEL0107_NUMBER_COLOR.Controls.Add(this.PANEL0107_NUMBER_COLOR_btnresize_low);
-            this.PANEL0107_NUMBER_COLOR.Controls.Add(this.PANEL0107_NUMBER_COLOR_btnnew);
             this.PANEL0107_NUMBER_COLOR.Controls.Add(this.PANEL0107_NUMBER_COLOR_btnclose);
             this.PANEL0107_NUMBER_COLOR.Controls.Add(this.PANEL0107_NUMBER_COLOR_btn_search);
             this.PANEL0107_NUMBER_COLOR.Controls.Add(this.PANEL0107_NUMBER_COLOR_txtsearch);
@@ -175,7 +172,7 @@
             this.PANEL0107_NUMBER_COLOR.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL0107_NUMBER_COLOR.Location = new System.Drawing.Point(139, 176);
             this.PANEL0107_NUMBER_COLOR.Name = "PANEL0107_NUMBER_COLOR";
-            this.PANEL0107_NUMBER_COLOR.Size = new System.Drawing.Size(502, 337);
+            this.PANEL0107_NUMBER_COLOR.Size = new System.Drawing.Size(211, 114);
             this.PANEL0107_NUMBER_COLOR.TabIndex = 591;
             this.PANEL0107_NUMBER_COLOR.Visible = false;
             // 
@@ -193,7 +190,7 @@
             this.PANEL0107_NUMBER_COLOR_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL0107_NUMBER_COLOR_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0107_NUMBER_COLOR_btnresize_low.Image")));
             this.PANEL0107_NUMBER_COLOR_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL0107_NUMBER_COLOR_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL0107_NUMBER_COLOR_btnresize_low.Location = new System.Drawing.Point(183, 87);
             this.PANEL0107_NUMBER_COLOR_btnresize_low.Name = "PANEL0107_NUMBER_COLOR_btnresize_low";
             this.PANEL0107_NUMBER_COLOR_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL0107_NUMBER_COLOR_btnresize_low.TabIndex = 438;
@@ -203,25 +200,12 @@
             this.PANEL0107_NUMBER_COLOR_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL0107_NUMBER_COLOR_btnresize_low_MouseMove);
             this.PANEL0107_NUMBER_COLOR_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL0107_NUMBER_COLOR_btnresize_low_MouseUp);
             // 
-            // PANEL0107_NUMBER_COLOR_btnnew
-            // 
-            this.PANEL0107_NUMBER_COLOR_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0107_NUMBER_COLOR_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0107_NUMBER_COLOR_btnnew.Image")));
-            this.PANEL0107_NUMBER_COLOR_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL0107_NUMBER_COLOR_btnnew.Name = "PANEL0107_NUMBER_COLOR_btnnew";
-            this.PANEL0107_NUMBER_COLOR_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0107_NUMBER_COLOR_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0107_NUMBER_COLOR_btnnew.TabIndex = 437;
-            this.PANEL0107_NUMBER_COLOR_btnnew.TabStop = false;
-            this.PANEL0107_NUMBER_COLOR_btnnew.Visible = false;
-            this.PANEL0107_NUMBER_COLOR_btnnew.Click += new System.EventHandler(this.PANEL0107_NUMBER_COLOR_btnnew_Click);
-            // 
             // PANEL0107_NUMBER_COLOR_btnclose
             // 
             this.PANEL0107_NUMBER_COLOR_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL0107_NUMBER_COLOR_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL0107_NUMBER_COLOR_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0107_NUMBER_COLOR_btnclose.Image")));
-            this.PANEL0107_NUMBER_COLOR_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL0107_NUMBER_COLOR_btnclose.Location = new System.Drawing.Point(176, 3);
             this.PANEL0107_NUMBER_COLOR_btnclose.Name = "PANEL0107_NUMBER_COLOR_btnclose";
             this.PANEL0107_NUMBER_COLOR_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL0107_NUMBER_COLOR_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -233,7 +217,7 @@
             // 
             this.PANEL0107_NUMBER_COLOR_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL0107_NUMBER_COLOR_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0107_NUMBER_COLOR_btn_search.Image")));
-            this.PANEL0107_NUMBER_COLOR_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL0107_NUMBER_COLOR_btn_search.Location = new System.Drawing.Point(141, 4);
             this.PANEL0107_NUMBER_COLOR_btn_search.Name = "PANEL0107_NUMBER_COLOR_btn_search";
             this.PANEL0107_NUMBER_COLOR_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL0107_NUMBER_COLOR_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -245,9 +229,9 @@
             // 
             this.PANEL0107_NUMBER_COLOR_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL0107_NUMBER_COLOR_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0107_NUMBER_COLOR_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL0107_NUMBER_COLOR_txtsearch.Location = new System.Drawing.Point(3, 4);
             this.PANEL0107_NUMBER_COLOR_txtsearch.Name = "PANEL0107_NUMBER_COLOR_txtsearch";
-            this.PANEL0107_NUMBER_COLOR_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL0107_NUMBER_COLOR_txtsearch.Size = new System.Drawing.Size(132, 21);
             this.PANEL0107_NUMBER_COLOR_txtsearch.TabIndex = 432;
             // 
             // PANEL0107_NUMBER_COLOR_dataGridView1_number_color
@@ -257,9 +241,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Location = new System.Drawing.Point(3, 42);
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Location = new System.Drawing.Point(3, 31);
             this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Name = "PANEL0107_NUMBER_COLOR_dataGridView1_number_color";
-            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Size = new System.Drawing.Size(491, 262);
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Size = new System.Drawing.Size(203, 53);
             this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.TabIndex = 0;
             this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color_CellMouseClick);
             // 
@@ -312,7 +296,6 @@
             this.Load += new System.EventHandler(this.Form_c001_07number_color_Load);
             this.PANEL0107_NUMBER_COLOR.ResumeLayout(false);
             this.PANEL0107_NUMBER_COLOR.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_btnnew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color)).EndInit();
@@ -336,7 +319,6 @@
         private System.Windows.Forms.TextBox PANEL0107_NUMBER_COLOR_txtnumber_color_id;
         private System.Windows.Forms.Panel PANEL0107_NUMBER_COLOR;
         private System.Windows.Forms.Button PANEL0107_NUMBER_COLOR_btnresize_low;
-        private System.Windows.Forms.PictureBox PANEL0107_NUMBER_COLOR_btnnew;
         private System.Windows.Forms.PictureBox PANEL0107_NUMBER_COLOR_btnclose;
         private System.Windows.Forms.PictureBox PANEL0107_NUMBER_COLOR_btn_search;
         private System.Windows.Forms.TextBox PANEL0107_NUMBER_COLOR_txtsearch;

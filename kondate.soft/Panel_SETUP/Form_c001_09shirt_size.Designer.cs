@@ -42,7 +42,6 @@
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_id = new System.Windows.Forms.TextBox();
             this.PANEL0109_SHIRT_SIZE = new System.Windows.Forms.Panel();
             this.PANEL0109_SHIRT_SIZE_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL0109_SHIRT_SIZE_btnnew = new System.Windows.Forms.PictureBox();
             this.PANEL0109_SHIRT_SIZE_btnclose = new System.Windows.Forms.PictureBox();
             this.PANEL0109_SHIRT_SIZE_btn_search = new System.Windows.Forms.PictureBox();
             this.PANEL0109_SHIRT_SIZE_txtsearch = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             this.PANEL0109_SHIRT_SIZE_btnshirt_size = new System.Windows.Forms.Button();
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_name = new System.Windows.Forms.TextBox();
             this.PANEL0109_SHIRT_SIZE.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size)).BeginInit();
@@ -154,10 +152,10 @@
             // 
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.BackColor = System.Drawing.Color.White;
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Location = new System.Drawing.Point(350, 104);
+            this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Location = new System.Drawing.Point(266, 104);
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Name = "PANEL0109_SHIRT_SIZE_txtshirt_size_id";
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.ReadOnly = true;
-            this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Size = new System.Drawing.Size(144, 21);
+            this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Size = new System.Drawing.Size(54, 21);
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.TabIndex = 606;
             // 
             // PANEL0109_SHIRT_SIZE
@@ -167,7 +165,6 @@
             this.PANEL0109_SHIRT_SIZE.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PANEL0109_SHIRT_SIZE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PANEL0109_SHIRT_SIZE.Controls.Add(this.PANEL0109_SHIRT_SIZE_btnresize_low);
-            this.PANEL0109_SHIRT_SIZE.Controls.Add(this.PANEL0109_SHIRT_SIZE_btnnew);
             this.PANEL0109_SHIRT_SIZE.Controls.Add(this.PANEL0109_SHIRT_SIZE_btnclose);
             this.PANEL0109_SHIRT_SIZE.Controls.Add(this.PANEL0109_SHIRT_SIZE_btn_search);
             this.PANEL0109_SHIRT_SIZE.Controls.Add(this.PANEL0109_SHIRT_SIZE_txtsearch);
@@ -175,7 +172,7 @@
             this.PANEL0109_SHIRT_SIZE.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL0109_SHIRT_SIZE.Location = new System.Drawing.Point(114, 164);
             this.PANEL0109_SHIRT_SIZE.Name = "PANEL0109_SHIRT_SIZE";
-            this.PANEL0109_SHIRT_SIZE.Size = new System.Drawing.Size(502, 337);
+            this.PANEL0109_SHIRT_SIZE.Size = new System.Drawing.Size(221, 112);
             this.PANEL0109_SHIRT_SIZE.TabIndex = 605;
             this.PANEL0109_SHIRT_SIZE.Visible = false;
             // 
@@ -193,7 +190,7 @@
             this.PANEL0109_SHIRT_SIZE_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL0109_SHIRT_SIZE_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0109_SHIRT_SIZE_btnresize_low.Image")));
             this.PANEL0109_SHIRT_SIZE_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL0109_SHIRT_SIZE_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL0109_SHIRT_SIZE_btnresize_low.Location = new System.Drawing.Point(194, 84);
             this.PANEL0109_SHIRT_SIZE_btnresize_low.Name = "PANEL0109_SHIRT_SIZE_btnresize_low";
             this.PANEL0109_SHIRT_SIZE_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL0109_SHIRT_SIZE_btnresize_low.TabIndex = 438;
@@ -203,24 +200,12 @@
             this.PANEL0109_SHIRT_SIZE_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL0109_SHIRT_SIZE_btnresize_low_MouseMove);
             this.PANEL0109_SHIRT_SIZE_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL0109_SHIRT_SIZE_btnresize_low_MouseUp);
             // 
-            // PANEL0109_SHIRT_SIZE_btnnew
-            // 
-            this.PANEL0109_SHIRT_SIZE_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0109_SHIRT_SIZE_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0109_SHIRT_SIZE_btnnew.Image")));
-            this.PANEL0109_SHIRT_SIZE_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL0109_SHIRT_SIZE_btnnew.Name = "PANEL0109_SHIRT_SIZE_btnnew";
-            this.PANEL0109_SHIRT_SIZE_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0109_SHIRT_SIZE_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0109_SHIRT_SIZE_btnnew.TabIndex = 437;
-            this.PANEL0109_SHIRT_SIZE_btnnew.TabStop = false;
-            this.PANEL0109_SHIRT_SIZE_btnnew.Visible = false;
-            // 
             // PANEL0109_SHIRT_SIZE_btnclose
             // 
             this.PANEL0109_SHIRT_SIZE_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL0109_SHIRT_SIZE_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL0109_SHIRT_SIZE_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0109_SHIRT_SIZE_btnclose.Image")));
-            this.PANEL0109_SHIRT_SIZE_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL0109_SHIRT_SIZE_btnclose.Location = new System.Drawing.Point(184, 3);
             this.PANEL0109_SHIRT_SIZE_btnclose.Name = "PANEL0109_SHIRT_SIZE_btnclose";
             this.PANEL0109_SHIRT_SIZE_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL0109_SHIRT_SIZE_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -232,7 +217,7 @@
             // 
             this.PANEL0109_SHIRT_SIZE_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL0109_SHIRT_SIZE_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0109_SHIRT_SIZE_btn_search.Image")));
-            this.PANEL0109_SHIRT_SIZE_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL0109_SHIRT_SIZE_btn_search.Location = new System.Drawing.Point(151, 2);
             this.PANEL0109_SHIRT_SIZE_btn_search.Name = "PANEL0109_SHIRT_SIZE_btn_search";
             this.PANEL0109_SHIRT_SIZE_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL0109_SHIRT_SIZE_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -244,9 +229,9 @@
             // 
             this.PANEL0109_SHIRT_SIZE_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL0109_SHIRT_SIZE_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0109_SHIRT_SIZE_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL0109_SHIRT_SIZE_txtsearch.Location = new System.Drawing.Point(3, 3);
             this.PANEL0109_SHIRT_SIZE_txtsearch.Name = "PANEL0109_SHIRT_SIZE_txtsearch";
-            this.PANEL0109_SHIRT_SIZE_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL0109_SHIRT_SIZE_txtsearch.Size = new System.Drawing.Size(142, 21);
             this.PANEL0109_SHIRT_SIZE_txtsearch.TabIndex = 432;
             // 
             // PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size
@@ -258,7 +243,7 @@
             this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Location = new System.Drawing.Point(3, 42);
             this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Name = "PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size";
-            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Size = new System.Drawing.Size(491, 262);
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Size = new System.Drawing.Size(210, 37);
             this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.TabIndex = 0;
             this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size_CellMouseClick);
             // 
@@ -269,7 +254,7 @@
             this.PANEL0109_SHIRT_SIZE_btnshirt_size.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL0109_SHIRT_SIZE_btnshirt_size.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL0109_SHIRT_SIZE_btnshirt_size.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0109_SHIRT_SIZE_btnshirt_size.Image")));
-            this.PANEL0109_SHIRT_SIZE_btnshirt_size.Location = new System.Drawing.Point(324, 106);
+            this.PANEL0109_SHIRT_SIZE_btnshirt_size.Location = new System.Drawing.Point(238, 106);
             this.PANEL0109_SHIRT_SIZE_btnshirt_size.Name = "PANEL0109_SHIRT_SIZE_btnshirt_size";
             this.PANEL0109_SHIRT_SIZE_btnshirt_size.Size = new System.Drawing.Size(22, 16);
             this.PANEL0109_SHIRT_SIZE_btnshirt_size.TabIndex = 604;
@@ -283,7 +268,7 @@
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Location = new System.Drawing.Point(114, 104);
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Name = "PANEL0109_SHIRT_SIZE_txtshirt_size_name";
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.ReadOnly = true;
-            this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Size = new System.Drawing.Size(235, 21);
+            this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Size = new System.Drawing.Size(148, 21);
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.TabIndex = 603;
             this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PANEL0109_SHIRT_SIZE_txtshirt_size_name_KeyDown);
             // 
@@ -311,7 +296,6 @@
             this.Load += new System.EventHandler(this.Form_c001_09shirt_size_Load);
             this.PANEL0109_SHIRT_SIZE.ResumeLayout(false);
             this.PANEL0109_SHIRT_SIZE.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_btnnew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size)).EndInit();
@@ -335,7 +319,6 @@
         private System.Windows.Forms.TextBox PANEL0109_SHIRT_SIZE_txtshirt_size_id;
         private System.Windows.Forms.Panel PANEL0109_SHIRT_SIZE;
         private System.Windows.Forms.Button PANEL0109_SHIRT_SIZE_btnresize_low;
-        private System.Windows.Forms.PictureBox PANEL0109_SHIRT_SIZE_btnnew;
         private System.Windows.Forms.PictureBox PANEL0109_SHIRT_SIZE_btnclose;
         private System.Windows.Forms.PictureBox PANEL0109_SHIRT_SIZE_btn_search;
         private System.Windows.Forms.TextBox PANEL0109_SHIRT_SIZE_txtsearch;

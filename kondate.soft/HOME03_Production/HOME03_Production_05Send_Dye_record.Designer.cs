@@ -1036,7 +1036,7 @@
             this.PANEL0107_NUMBER_COLOR.Controls.Add(this.PANEL0107_NUMBER_COLOR_txtsearch);
             this.PANEL0107_NUMBER_COLOR.Controls.Add(this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color);
             this.PANEL0107_NUMBER_COLOR.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0107_NUMBER_COLOR.Location = new System.Drawing.Point(14, 301);
+            this.PANEL0107_NUMBER_COLOR.Location = new System.Drawing.Point(14, 337);
             this.PANEL0107_NUMBER_COLOR.Name = "PANEL0107_NUMBER_COLOR";
             this.PANEL0107_NUMBER_COLOR.Size = new System.Drawing.Size(502, 337);
             this.PANEL0107_NUMBER_COLOR.TabIndex = 1070;
@@ -1470,6 +1470,8 @@
             this.GridView2.Size = new System.Drawing.Size(687, 67);
             this.GridView2.TabIndex = 1130;
             this.GridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView2_CellMouseClick);
+            this.GridView2.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView2_CellMouseLeave);
+            this.GridView2.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView2_CellMouseMove);
             // 
             // PANEL_MAT_txtmat_id
             // 

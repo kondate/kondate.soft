@@ -106,6 +106,15 @@ namespace kondate.soft.SETUP_4WH
             this.BtnPrint.Enabled = true;
             this.BtnCancel_Doc.Enabled = false;
 
+            PANEL0107_NUMBER_COLOR_GridView1_number_color();
+            PANEL0107_NUMBER_COLOR_Fill_number_color();
+
+            PANEL0105_FACE_BAKING_GridView1_face_baking();
+            PANEL0105_FACE_BAKING_Fill_face_baking();
+
+            PANEL0109_SHIRT_SIZE_GridView1_shirt_size();
+            PANEL0109_SHIRT_SIZE_Fill_shirt_size();
+
             PANEL101_MAT_TYPE_GridView1_mat_type();
             PANEL101_MAT_TYPE_Fill_mat_type();
 
@@ -656,7 +665,10 @@ namespace kondate.soft.SETUP_4WH
                                            "txtmat_type_with_acc_id," +  //9
                                             "txtmat_qty_min,txtmat_qty_max," +  //10
                                            "txtmat_qty_per_labor," +  //11
-                                           "txtmat_remark) " +  //12
+                                           "txtmat_remark," +  //12
+                                           "txtnumber_color_id," +  //13
+                                           "txtface_baking_id," +  //14
+                                           "txtshirt_size_id) " +  //15
                                            "VALUES (@cdkey2,@txtco_id2,@txtmat_id2," +  //13
                                           "@txtmat_type_id,@txtmat_sac_id," +  //2
                                            "@txtmat_group_id,@txtmat_brand_id," +  //3
@@ -671,7 +683,10 @@ namespace kondate.soft.SETUP_4WH
                                            "@txtmat_type_with_acc_id," +  //9
                                             "@txtmat_qty_min,@txtmat_qty_max," +  //10
                                            "@txtmat_qty_per_labor," +  //11
-                                           "@txtmat_remark)";   //12
+                                           "@txtmat_remark," +  //12
+                                           "@txtnumber_color_id," +  //13
+                                           "@txtface_baking_id," +  //14
+                                           "@txtshirt_size_id)";   //12
 
                         cmd2.Parameters.Add("@cdkey2", SqlDbType.NVarChar).Value = W_ID_Select.CDKEY.Trim();
                         cmd2.Parameters.Add("@txtco_id2", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
@@ -711,6 +726,11 @@ namespace kondate.soft.SETUP_4WH
                         cmd2.Parameters.Add("@txtmat_qty_max", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_max.Text.ToString()));
                         cmd2.Parameters.Add("@txtmat_qty_per_labor", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_per_labor.Text.ToString()));
                         cmd2.Parameters.Add("@txtmat_remark", SqlDbType.NVarChar).Value = this.txtmat_remark.Text.ToString();
+
+                        cmd2.Parameters.Add("@txtnumber_color_id", SqlDbType.NVarChar).Value = this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text.ToString();
+                        cmd2.Parameters.Add("@txtface_baking_id", SqlDbType.NVarChar).Value = this.PANEL0105_FACE_BAKING_txtface_baking_id.Text.ToString();
+                        cmd2.Parameters.Add("@txtshirt_size_id", SqlDbType.NVarChar).Value = this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Text.ToString();
+
                         //==============================
 
                         cmd2.ExecuteNonQuery();
@@ -1018,7 +1038,11 @@ namespace kondate.soft.SETUP_4WH
                                                                      "txtmat_qty_min = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_min.Text.ToString())) + "'," +
                                                                      "txtmat_qty_max = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_max.Text.ToString())) + "'," +
                                                                      "txtmat_qty_per_labor = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtmat_qty_per_labor.Text.ToString())) + "'," +
-                                                                     "txtmat_remark = '" + this.txtmat_remark.Text.ToString() + "'" +
+                                                                     "txtmat_remark = '" + this.txtmat_remark.Text.ToString() + "'," +
+
+                                                                     "txtnumber_color_id = '" + this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text.ToString() + "'," +
+                                                                     "txtface_baking_id = '" + this.PANEL0105_FACE_BAKING_txtface_baking_id.Text.ToString() + "'," +
+                                                                     "txtshirt_size_id = '" + this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Text.ToString() + "'" +
 
                                                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
@@ -1635,6 +1659,1263 @@ namespace kondate.soft.SETUP_4WH
         }
 
 
+        //txtshirt_size ไซส์เสื้อ  =======================================================================
+        private void PANEL0109_SHIRT_SIZE_Fill_shirt_size()
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            PANEL0109_SHIRT_SIZE_Clear_GridView1_shirt_size();
+
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+                cmd2.CommandText = "SELECT *" +
+                                    " FROM c001_09shirt_size" +
+                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    " AND (txtshirt_size_id <> '')" +
+                                    " ORDER BY txtshirt_size_no ASC";
+
+
+                //  " AND (k004db_foods_order_1total.txtsupplier_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
+
+                //   " AND (k011db_receipt.daily_status = '0')";
+
+                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
+                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            //this.PANEL_FORM1_dataGridView1.Columns[0].Name = "Col_Auto_num";
+                            //this.PANEL_FORM1_dataGridView1.Columns[1].Name = "Col_txtshirt_size_no";
+                            //this.PANEL_FORM1_dataGridView1.Columns[2].Name = "Col_txtshirt_size_id";
+                            //this.PANEL_FORM1_dataGridView1.Columns[3].Name = "Col_txtshirt_size_name";
+                            //this.PANEL_FORM1_dataGridView1.Columns[4].Name = "Col_txtshirt_size_name_eng";
+                            //this.PANEL_FORM1_dataGridView1.Columns[5].Name = "Col_txtshirt_size_name_remark";
+                            //this.PANEL_FORM1_dataGridView1.Columns[6].Name = "Col_txtshirt_size_status";
+
+                            var index = PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows.Add();
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_no"].Value = dt2.Rows[j]["txtshirt_size_no"].ToString();      //1
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();      //2
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_name"].Value = dt2.Rows[j]["txtshirt_size_name"].ToString();      //3
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_name_eng"].Value = dt2.Rows[j]["txtshirt_size_name_eng"].ToString();      //4
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_remark"].Value = dt2.Rows[j]["txtshirt_size_remark"].ToString();      //5
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_status"].Value = dt2.Rows[j]["txtshirt_size_status"].ToString();      //8
+                        }
+                        //=======================================================
+                    }
+                    else
+                    {
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        conn.Close();
+                        // return;
+                    }
+                    PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size_Up_Status();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+
+        }
+        private void PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size_Up_Status()
+        {
+            //สถานะ Checkbox =======================================================
+            for (int i = 0; i < this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows.Count; i++)
+            {
+                if (this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[i].Cells[6].Value.ToString() == "0")  //Active
+                {
+                    this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[i].Cells[7].Value = true;
+                }
+                else
+                {
+                    this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[i].Cells[7].Value = false;
+
+                }
+            }
+
+        }
+        private void PANEL0109_SHIRT_SIZE_GridView1_shirt_size()
+        {
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.ColumnCount = 7;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[0].Name = "Col_Auto_num";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[1].Name = "Col_txtshirt_size_no";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[2].Name = "Col_txtshirt_size_id";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[3].Name = "Col_txtshirt_size_name";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[4].Name = "Col_txtshirt_size_name_eng";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[5].Name = "Col_txtshirt_size_remark";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[6].Name = "Col_txtshirt_size_status";
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[0].HeaderText = "No";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[1].HeaderText = "ลำดับ";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[2].HeaderText = " รหัส";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[3].HeaderText = " ชื่อรหัสสี";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[4].HeaderText = "ชื่อรหัสสี Eng";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[5].HeaderText = " หมายเหตุ";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[6].HeaderText = " สถานะ";
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[0].Visible = false;  //"No";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[1].Visible = true;  //"Col_txtshirt_size_no";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[1].Width = 90;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[1].ReadOnly = true;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[2].Visible = true;  //"Col_txtshirt_size_id";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[2].Width = 80;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[2].ReadOnly = true;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[3].Visible = true;  //"Col_txtshirt_size_name";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[3].Width = 150;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[3].ReadOnly = true;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[4].Visible = false;  //"Col_txtshirt_size_name_eng";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[4].Width = 0;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[4].ReadOnly = true;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[5].Visible = false;  //"Col_txtshirt_size_name_remark";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[5].Width = 0;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[5].ReadOnly = true;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[6].Visible = false;  //"Col_txtshirt_size_status";
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[6].Width = 0;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.DefaultCellStyle.Font = new Font("Tahoma", 8F);
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.GridColor = Color.FromArgb(227, 227, 227);
+
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Pixel); //Segoe UI, 11pt
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.EnableHeadersVisualStyles = false;
+
+            DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
+            dgvCmb.ValueType = typeof(bool);
+            dgvCmb.Name = "Col_Chk";
+            dgvCmb.HeaderText = "สถานะ";
+            dgvCmb.ReadOnly = true;
+            dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Columns.Add(dgvCmb);
+
+        }
+        private void PANEL0109_SHIRT_SIZE_Clear_GridView1_shirt_size()
+        {
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows.Clear();
+            this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Refresh();
+        }
+        private void PANEL0109_SHIRT_SIZE_txtshirt_size_name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+
+                if (this.PANEL0109_SHIRT_SIZE.Visible == false)
+                {
+                    this.PANEL0109_SHIRT_SIZE.Visible = true;
+                    this.PANEL0109_SHIRT_SIZE.Location = new Point(this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Location.X, this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Location.Y + 22);
+                    this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Focus();
+                }
+                else
+                {
+                    this.PANEL0109_SHIRT_SIZE.Visible = false;
+                }
+        }
+        private void PANEL0109_SHIRT_SIZE_btnshirt_size_Click(object sender, EventArgs e)
+        {
+
+            this.PANEL0109_SHIRT_SIZE.Width = 502;
+            this.PANEL0109_SHIRT_SIZE.Height = 337;
+
+
+            if (this.PANEL0109_SHIRT_SIZE.Visible == false)
+            {
+                int xLocation = PANEL0109_SHIRT_SIZE_txtshirt_size_name.Location.X;
+                int yLocation = PANEL0109_SHIRT_SIZE_txtshirt_size_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
+                this.PANEL0109_SHIRT_SIZE.Visible = true;
+                this.PANEL0109_SHIRT_SIZE.BringToFront();
+                this.PANEL0109_SHIRT_SIZE.Location = new Point(xx + 9, yy + 32);
+            }
+            else
+            {
+                this.PANEL0109_SHIRT_SIZE.Visible = false;
+            }
+        }
+        private void PANEL0109_SHIRT_SIZE_btnclose_Click(object sender, EventArgs e)
+        {
+            if (this.PANEL0109_SHIRT_SIZE.Visible == false)
+            {
+                this.PANEL0109_SHIRT_SIZE.Visible = true;
+            }
+            else
+            {
+                this.PANEL0109_SHIRT_SIZE.Visible = false;
+            }
+        }
+        private void PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[e.RowIndex];
+
+                var cell = row.Cells[1].Value;
+                if (cell != null)
+                {
+                    this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Text = row.Cells[2].Value.ToString();
+                    this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Text = row.Cells[3].Value.ToString();
+                }
+            }
+        }
+        private void PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int i = PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.CurrentRow.Index;
+
+                this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Text = PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.CurrentRow.Cells[1].Value.ToString();
+                this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Text = PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.CurrentRow.Cells[2].Value.ToString();
+                this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Focus();
+                this.PANEL0109_SHIRT_SIZE.Visible = false;
+            }
+        }
+        private void PANEL0109_SHIRT_SIZE_txtsearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void PANEL0109_SHIRT_SIZE_btn_search_Click(object sender, EventArgs e)
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            PANEL0109_SHIRT_SIZE_Clear_GridView1_shirt_size();
+
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+                cmd2.CommandText = "SELECT *" +
+                                    " FROM c001_09shirt_size" +
+                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    " AND (txtshirt_size_name LIKE '%" + this.PANEL0109_SHIRT_SIZE_txtsearch.Text.Trim() + "%')" +
+                                    " ORDER BY txtshirt_size_no ASC";
+
+
+                //  " AND (k004db_foods_order_1total.txtsupplier_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
+
+                //   " AND (k011db_receipt.daily_status = '0')";
+
+                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
+                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            //this.PANEL_FORM1_dataGridView1.Columns[0].Name = "Col_Auto_num";
+                            //this.PANEL_FORM1_dataGridView1.Columns[1].Name = "Col_txtshirt_size_no";
+                            //this.PANEL_FORM1_dataGridView1.Columns[2].Name = "Col_txtshirt_size_id";
+                            //this.PANEL_FORM1_dataGridView1.Columns[3].Name = "Col_txtshirt_size_name";
+                            //this.PANEL_FORM1_dataGridView1.Columns[4].Name = "Col_txtshirt_size_name_eng";
+                            //this.PANEL_FORM1_dataGridView1.Columns[5].Name = "Col_txtshirt_size_name_remark";
+                            //this.PANEL_FORM1_dataGridView1.Columns[6].Name = "Col_txtshirt_size_status";
+
+                            var index = PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows.Add();
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_no"].Value = dt2.Rows[j]["txtshirt_size_no"].ToString();      //1
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();      //2
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_name"].Value = dt2.Rows[j]["txtshirt_size_name"].ToString();      //3
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_name_eng"].Value = dt2.Rows[j]["txtshirt_size_name_eng"].ToString();      //4
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_remark"].Value = dt2.Rows[j]["txtshirt_size_remark"].ToString();      //5
+                            PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size.Rows[index].Cells["Col_txtshirt_size_status"].Value = dt2.Rows[j]["txtshirt_size_status"].ToString();      //8
+                        }
+                        //=======================================================
+                    }
+                    else
+                    {
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        conn.Close();
+                        // return;
+                    }
+                    PANEL0109_SHIRT_SIZE_dataGridView1_shirt_size_Up_Status();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+
+        }
+        private void PANEL0109_SHIRT_SIZE_btnresize_low_MouseDown(object sender, MouseEventArgs e)
+        {
+            allowResize = true;
+        }
+        private void PANEL0109_SHIRT_SIZE_btnresize_low_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (allowResize)
+            {
+                this.PANEL0109_SHIRT_SIZE.Height = PANEL0109_SHIRT_SIZE_btnresize_low.Top + e.Y;
+                this.PANEL0109_SHIRT_SIZE.Width = PANEL0109_SHIRT_SIZE_btnresize_low.Left + e.X;
+            }
+        }
+        private void PANEL0109_SHIRT_SIZE_btnresize_low_MouseUp(object sender, MouseEventArgs e)
+        {
+            allowResize = false;
+        }
+        private void PANEL0109_SHIRT_SIZE_btnnew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //END txtshirt_size ไซส์เสื้อ =======================================================================
+
+
+
+
+        //txtface_baking ประเภท อบหน้า  =======================================================================
+        private void PANEL0105_FACE_BAKING_Fill_face_baking()
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            PANEL0105_FACE_BAKING_Clear_GridView1_face_baking();
+
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+                cmd2.CommandText = "SELECT *" +
+                                    " FROM c001_05face_baking" +
+                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    " AND (txtface_baking_id <> '')" +
+                                    " ORDER BY txtface_baking_no ASC";
+
+
+                //  " AND (k004db_foods_order_1total.txtsupplier_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
+
+                //   " AND (k011db_receipt.daily_status = '0')";
+
+                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
+                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            //this.PANEL_FORM1_dataGridView1.Columns[0].Name = "Col_Auto_num";
+                            //this.PANEL_FORM1_dataGridView1.Columns[1].Name = "Col_txtface_baking_no";
+                            //this.PANEL_FORM1_dataGridView1.Columns[2].Name = "Col_txtface_baking_id";
+                            //this.PANEL_FORM1_dataGridView1.Columns[3].Name = "Col_txtface_baking_name";
+                            //this.PANEL_FORM1_dataGridView1.Columns[4].Name = "Col_txtface_baking_name_eng";
+                            //this.PANEL_FORM1_dataGridView1.Columns[5].Name = "Col_txtface_baking_name_remark";
+                            //this.PANEL_FORM1_dataGridView1.Columns[6].Name = "Col_txtface_baking_status";
+
+                            var index = PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows.Add();
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_no"].Value = dt2.Rows[j]["txtface_baking_no"].ToString();      //1
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();      //2
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_name"].Value = dt2.Rows[j]["txtface_baking_name"].ToString();      //3
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_name_eng"].Value = dt2.Rows[j]["txtface_baking_name_eng"].ToString();      //4
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_remark"].Value = dt2.Rows[j]["txtface_baking_remark"].ToString();      //5
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_status"].Value = dt2.Rows[j]["txtface_baking_status"].ToString();      //8
+                        }
+                        //=======================================================
+                    }
+                    else
+                    {
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        conn.Close();
+                        // return;
+                    }
+                    PANEL0105_FACE_BAKING_dataGridView1_face_baking_Up_Status();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+
+        }
+        private void PANEL0105_FACE_BAKING_dataGridView1_face_baking_Up_Status()
+        {
+            //สถานะ Checkbox =======================================================
+            for (int i = 0; i < this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows.Count; i++)
+            {
+                if (this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[i].Cells[6].Value.ToString() == "0")  //Active
+                {
+                    this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[i].Cells[7].Value = true;
+                }
+                else
+                {
+                    this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[i].Cells[7].Value = false;
+
+                }
+            }
+
+        }
+        private void PANEL0105_FACE_BAKING_GridView1_face_baking()
+        {
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.ColumnCount = 7;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[0].Name = "Col_Auto_num";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[1].Name = "Col_txtface_baking_no";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[2].Name = "Col_txtface_baking_id";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[3].Name = "Col_txtface_baking_name";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[4].Name = "Col_txtface_baking_name_eng";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[5].Name = "Col_txtface_baking_remark";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[6].Name = "Col_txtface_baking_status";
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[0].HeaderText = "No";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[1].HeaderText = "ลำดับ";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[2].HeaderText = " รหัส";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[3].HeaderText = " ชื่อรหัสอบหน้า";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[4].HeaderText = "ชื่อรหัสอบหน้า Eng";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[5].HeaderText = " หมายเหตุ";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[6].HeaderText = " สถานะ";
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[0].Visible = false;  //"No";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[1].Visible = true;  //"Col_txtface_baking_no";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[1].Width = 90;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[1].ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[2].Visible = true;  //"Col_txtface_baking_id";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[2].Width = 80;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[2].ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[3].Visible = true;  //"Col_txtface_baking_name";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[3].Width = 150;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[3].ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[4].Visible = false;  //"Col_txtface_baking_name_eng";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[4].Width = 0;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[4].ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[5].Visible = false;  //"Col_txtface_baking_name_remark";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[5].Width = 0;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[5].ReadOnly = true;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[6].Visible = false;  //"Col_txtface_baking_status";
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[6].Width = 0;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.DefaultCellStyle.Font = new Font("Tahoma", 8F);
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.GridColor = Color.FromArgb(227, 227, 227);
+
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Pixel); //Segoe UI, 11pt
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.EnableHeadersVisualStyles = false;
+
+            DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
+            dgvCmb.ValueType = typeof(bool);
+            dgvCmb.Name = "Col_Chk";
+            dgvCmb.HeaderText = "สถานะ";
+            dgvCmb.ReadOnly = true;
+            dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Columns.Add(dgvCmb);
+
+        }
+        private void PANEL0105_FACE_BAKING_Clear_GridView1_face_baking()
+        {
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows.Clear();
+            this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Refresh();
+        }
+        private void PANEL0105_FACE_BAKING_txtface_baking_name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+
+                if (this.PANEL0105_FACE_BAKING.Visible == false)
+                {
+                    this.PANEL0105_FACE_BAKING.Visible = true;
+                    this.PANEL0105_FACE_BAKING.Location = new Point(this.PANEL0105_FACE_BAKING_txtface_baking_name.Location.X, this.PANEL0105_FACE_BAKING_txtface_baking_name.Location.Y + 22);
+                    this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Focus();
+                }
+                else
+                {
+                    this.PANEL0105_FACE_BAKING.Visible = false;
+                }
+        }
+        private void PANEL0105_FACE_BAKING_btnface_baking_Click(object sender, EventArgs e)
+        {
+            if (this.PANEL0105_FACE_BAKING.Visible == false)
+            {
+                this.PANEL0105_FACE_BAKING.Width = 502;
+                this.PANEL0105_FACE_BAKING.Height = 337;
+
+                int xLocation = PANEL0105_FACE_BAKING_txtface_baking_name.Location.X;
+                int yLocation = PANEL0105_FACE_BAKING_txtface_baking_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
+                this.PANEL0105_FACE_BAKING.Visible = true;
+                this.PANEL0105_FACE_BAKING.BringToFront();
+                this.PANEL0105_FACE_BAKING.Location = new Point(xx + 9, yy + 32);
+
+            }
+            else
+            {
+                this.PANEL0105_FACE_BAKING.Visible = false;
+            }
+        }
+        private void PANEL0105_FACE_BAKING_btnclose_Click(object sender, EventArgs e)
+        {
+            if (this.PANEL0105_FACE_BAKING.Visible == false)
+            {
+                this.PANEL0105_FACE_BAKING.Visible = true;
+            }
+            else
+            {
+                this.PANEL0105_FACE_BAKING.Visible = false;
+            }
+        }
+        private void PANEL0105_FACE_BAKING_dataGridView1_face_baking_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[e.RowIndex];
+
+                var cell = row.Cells[1].Value;
+                if (cell != null)
+                {
+                    this.PANEL0105_FACE_BAKING_txtface_baking_id.Text = row.Cells[2].Value.ToString();
+                    this.PANEL0105_FACE_BAKING_txtface_baking_name.Text = row.Cells[3].Value.ToString();
+                }
+            }
+        }
+        private void PANEL0105_FACE_BAKING_dataGridView1_face_baking_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int i = PANEL0105_FACE_BAKING_dataGridView1_face_baking.CurrentRow.Index;
+
+                this.PANEL0105_FACE_BAKING_txtface_baking_id.Text = PANEL0105_FACE_BAKING_dataGridView1_face_baking.CurrentRow.Cells[1].Value.ToString();
+                this.PANEL0105_FACE_BAKING_txtface_baking_name.Text = PANEL0105_FACE_BAKING_dataGridView1_face_baking.CurrentRow.Cells[2].Value.ToString();
+                this.PANEL0105_FACE_BAKING_txtface_baking_name.Focus();
+                this.PANEL0105_FACE_BAKING.Visible = false;
+            }
+        }
+        private void PANEL0105_FACE_BAKING_txtsearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void PANEL0105_FACE_BAKING_btn_search_Click(object sender, EventArgs e)
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            PANEL0105_FACE_BAKING_Clear_GridView1_face_baking();
+
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+                cmd2.CommandText = "SELECT *" +
+                                    " FROM c001_05face_baking" +
+                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    " AND (txtface_baking_name LIKE '%" + this.PANEL0105_FACE_BAKING_txtsearch.Text.Trim() + "%')" +
+                                    " ORDER BY txtface_baking_no ASC";
+
+
+                //  " AND (k004db_foods_order_1total.txtsupplier_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
+
+                //   " AND (k011db_receipt.daily_status = '0')";
+
+                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
+                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            //this.PANEL_FORM1_dataGridView1.Columns[0].Name = "Col_Auto_num";
+                            //this.PANEL_FORM1_dataGridView1.Columns[1].Name = "Col_txtface_baking_no";
+                            //this.PANEL_FORM1_dataGridView1.Columns[2].Name = "Col_txtface_baking_id";
+                            //this.PANEL_FORM1_dataGridView1.Columns[3].Name = "Col_txtface_baking_name";
+                            //this.PANEL_FORM1_dataGridView1.Columns[4].Name = "Col_txtface_baking_name_eng";
+                            //this.PANEL_FORM1_dataGridView1.Columns[5].Name = "Col_txtface_baking_name_remark";
+                            //this.PANEL_FORM1_dataGridView1.Columns[6].Name = "Col_txtface_baking_status";
+
+                            var index = PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows.Add();
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_no"].Value = dt2.Rows[j]["txtface_baking_no"].ToString();      //1
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_id"].Value = dt2.Rows[j]["txtface_baking_id"].ToString();      //2
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_name"].Value = dt2.Rows[j]["txtface_baking_name"].ToString();      //3
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_name_eng"].Value = dt2.Rows[j]["txtface_baking_name_eng"].ToString();      //4
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_remark"].Value = dt2.Rows[j]["txtface_baking_remark"].ToString();      //5
+                            PANEL0105_FACE_BAKING_dataGridView1_face_baking.Rows[index].Cells["Col_txtface_baking_status"].Value = dt2.Rows[j]["txtface_baking_status"].ToString();      //8
+                        }
+                        //=======================================================
+                    }
+                    else
+                    {
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        conn.Close();
+                        // return;
+                    }
+                    PANEL0105_FACE_BAKING_dataGridView1_face_baking_Up_Status();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+
+        }
+        private void PANEL0105_FACE_BAKING_btnresize_low_MouseDown(object sender, MouseEventArgs e)
+        {
+            allowResize = true;
+        }
+        private void PANEL0105_FACE_BAKING_btnresize_low_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (allowResize)
+            {
+                this.PANEL0105_FACE_BAKING.Height = PANEL0105_FACE_BAKING_btnresize_low.Top + e.Y;
+                this.PANEL0105_FACE_BAKING.Width = PANEL0105_FACE_BAKING_btnresize_low.Left + e.X;
+            }
+        }
+        private void PANEL0105_FACE_BAKING_btnresize_low_MouseUp(object sender, MouseEventArgs e)
+        {
+            allowResize = false;
+        }
+        private void PANEL0105_FACE_BAKING_btnnew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //END txtface_baking ประเภท อบหน้า =======================================================================
+
+
+
+        //txtnumber_color รหัสสี  =======================================================================
+        private void PANEL0107_NUMBER_COLOR_Fill_number_color()
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            PANEL0107_NUMBER_COLOR_Clear_GridView1_number_color();
+
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+                cmd2.CommandText = "SELECT *" +
+                                    " FROM c001_07number_color" +
+                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    " AND (txtnumber_color_id <> '')" +
+                                    " ORDER BY txtnumber_color_no ASC";
+
+
+                //  " AND (k004db_foods_order_1total.txtsupplier_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
+
+                //   " AND (k011db_receipt.daily_status = '0')";
+
+                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
+                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            //this.PANEL_FORM1_dataGridView1.Columns[0].Name = "Col_Auto_num";
+                            //this.PANEL_FORM1_dataGridView1.Columns[1].Name = "Col_txtnumber_color_no";
+                            //this.PANEL_FORM1_dataGridView1.Columns[2].Name = "Col_txtnumber_color_id";
+                            //this.PANEL_FORM1_dataGridView1.Columns[3].Name = "Col_txtnumber_color_name";
+                            //this.PANEL_FORM1_dataGridView1.Columns[4].Name = "Col_txtnumber_color_name_eng";
+                            //this.PANEL_FORM1_dataGridView1.Columns[5].Name = "Col_txtnumber_color_name_remark";
+                            //this.PANEL_FORM1_dataGridView1.Columns[6].Name = "Col_txtnumber_color_status";
+
+                            var index = PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows.Add();
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_no"].Value = dt2.Rows[j]["txtnumber_color_no"].ToString();      //1
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();      //2
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_name"].Value = dt2.Rows[j]["txtnumber_color_name"].ToString();      //3
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_name_eng"].Value = dt2.Rows[j]["txtnumber_color_name_eng"].ToString();      //4
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_remark"].Value = dt2.Rows[j]["txtnumber_color_remark"].ToString();      //5
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_status"].Value = dt2.Rows[j]["txtnumber_color_status"].ToString();      //8
+                        }
+                        //=======================================================
+                    }
+                    else
+                    {
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        conn.Close();
+                        // return;
+                    }
+                    PANEL0107_NUMBER_COLOR_dataGridView1_number_color_Up_Status();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+
+        }
+        private void PANEL0107_NUMBER_COLOR_dataGridView1_number_color_Up_Status()
+        {
+            //สถานะ Checkbox =======================================================
+            for (int i = 0; i < this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows.Count; i++)
+            {
+                if (this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[i].Cells[6].Value.ToString() == "0")  //Active
+                {
+                    this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[i].Cells[7].Value = true;
+                }
+                else
+                {
+                    this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[i].Cells[7].Value = false;
+
+                }
+            }
+
+        }
+        private void PANEL0107_NUMBER_COLOR_GridView1_number_color()
+        {
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.ColumnCount = 7;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[0].Name = "Col_Auto_num";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[1].Name = "Col_txtnumber_color_no";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[2].Name = "Col_txtnumber_color_id";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[3].Name = "Col_txtnumber_color_name";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[4].Name = "Col_txtnumber_color_name_eng";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[5].Name = "Col_txtnumber_color_remark";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[6].Name = "Col_txtnumber_color_status";
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[0].HeaderText = "No";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[1].HeaderText = "ลำดับ";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[2].HeaderText = " รหัส";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[3].HeaderText = " ชื่อรหัสสี";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[4].HeaderText = "ชื่อรหัสสี Eng";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[5].HeaderText = " หมายเหตุ";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[6].HeaderText = " สถานะ";
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[0].Visible = false;  //"No";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[1].Visible = true;  //"Col_txtnumber_color_no";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[1].Width = 90;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[1].ReadOnly = true;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[2].Visible = true;  //"Col_txtnumber_color_id";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[2].Width = 80;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[2].ReadOnly = true;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[3].Visible = true;  //"Col_txtnumber_color_name";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[3].Width = 150;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[3].ReadOnly = true;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[4].Visible = false;  //"Col_txtnumber_color_name_eng";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[4].Width = 0;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[4].ReadOnly = true;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[5].Visible = false;  //"Col_txtnumber_color_name_remark";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[5].Width = 0;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[5].ReadOnly = true;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[6].Visible = false;  //"Col_txtnumber_color_status";
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[6].Width = 0;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.DefaultCellStyle.Font = new Font("Tahoma", 8F);
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.GridColor = Color.FromArgb(227, 227, 227);
+
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Pixel); //Segoe UI, 11pt
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.EnableHeadersVisualStyles = false;
+
+            DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
+            dgvCmb.ValueType = typeof(bool);
+            dgvCmb.Name = "Col_Chk";
+            dgvCmb.HeaderText = "สถานะ";
+            dgvCmb.ReadOnly = true;
+            dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Columns.Add(dgvCmb);
+
+        }
+        private void PANEL0107_NUMBER_COLOR_Clear_GridView1_number_color()
+        {
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows.Clear();
+            this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Refresh();
+        }
+        private void PANEL0107_NUMBER_COLOR_txtnumber_color_name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+
+                if (this.PANEL0107_NUMBER_COLOR.Visible == false)
+                {
+                    this.PANEL0107_NUMBER_COLOR.Visible = true;
+                    this.PANEL0107_NUMBER_COLOR.Location = new Point(this.PANEL0107_NUMBER_COLOR_txtnumber_color_name.Location.X, this.PANEL0107_NUMBER_COLOR_txtnumber_color_name.Location.Y + 22);
+                    this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Focus();
+                }
+                else
+                {
+                    this.PANEL0107_NUMBER_COLOR.Visible = false;
+                }
+        }
+        private void PANEL0107_NUMBER_COLOR_btnnumber_color_Click(object sender, EventArgs e)
+        {
+            if (this.PANEL0107_NUMBER_COLOR.Visible == false)
+            {
+                this.PANEL0107_NUMBER_COLOR.Width = 502;
+                this.PANEL0107_NUMBER_COLOR.Height = 337;
+
+                int xLocation = PANEL0107_NUMBER_COLOR_txtnumber_color_name.Location.X;
+                int yLocation = PANEL0107_NUMBER_COLOR_txtnumber_color_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
+                this.PANEL0107_NUMBER_COLOR.Visible = true;
+                this.PANEL0107_NUMBER_COLOR.BringToFront();
+                this.PANEL0107_NUMBER_COLOR.Location = new Point(xx + 9, yy + 32);
+
+            }
+            else
+            {
+                this.PANEL0107_NUMBER_COLOR.Visible = false;
+            }
+        }
+        private void PANEL0107_NUMBER_COLOR_btnclose_Click(object sender, EventArgs e)
+        {
+            if (this.PANEL0107_NUMBER_COLOR.Visible == false)
+            {
+                this.PANEL0107_NUMBER_COLOR.Visible = true;
+            }
+            else
+            {
+                this.PANEL0107_NUMBER_COLOR.Visible = false;
+            }
+        }
+        private void PANEL0107_NUMBER_COLOR_dataGridView1_number_color_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[e.RowIndex];
+
+                var cell = row.Cells[1].Value;
+                if (cell != null)
+                {
+                    this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text = row.Cells[2].Value.ToString();
+                    this.PANEL0107_NUMBER_COLOR_txtnumber_color_name.Text = row.Cells[3].Value.ToString();
+                }
+            }
+        }
+        private void PANEL0107_NUMBER_COLOR_dataGridView1_number_color_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int i = PANEL0107_NUMBER_COLOR_dataGridView1_number_color.CurrentRow.Index;
+
+                this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text = PANEL0107_NUMBER_COLOR_dataGridView1_number_color.CurrentRow.Cells[1].Value.ToString();
+                this.PANEL0107_NUMBER_COLOR_txtnumber_color_name.Text = PANEL0107_NUMBER_COLOR_dataGridView1_number_color.CurrentRow.Cells[2].Value.ToString();
+                this.PANEL0107_NUMBER_COLOR_txtnumber_color_name.Focus();
+                this.PANEL0107_NUMBER_COLOR.Visible = false;
+            }
+        }
+        private void PANEL0107_NUMBER_COLOR_txtsearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void PANEL0107_NUMBER_COLOR_btn_search_Click(object sender, EventArgs e)
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            PANEL0107_NUMBER_COLOR_Clear_GridView1_number_color();
+
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+                cmd2.CommandText = "SELECT *" +
+                                    " FROM c001_07number_color" +
+                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    " AND (txtnumber_color_name LIKE '%" + this.PANEL0107_NUMBER_COLOR_txtsearch.Text.Trim() + "%')" +
+                                    " ORDER BY txtnumber_color_no ASC";
+
+
+                //  " AND (k004db_foods_order_1total.txtsupplier_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
+
+                //   " AND (k011db_receipt.daily_status = '0')";
+
+                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
+                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            //this.PANEL_FORM1_dataGridView1.Columns[0].Name = "Col_Auto_num";
+                            //this.PANEL_FORM1_dataGridView1.Columns[1].Name = "Col_txtnumber_color_no";
+                            //this.PANEL_FORM1_dataGridView1.Columns[2].Name = "Col_txtnumber_color_id";
+                            //this.PANEL_FORM1_dataGridView1.Columns[3].Name = "Col_txtnumber_color_name";
+                            //this.PANEL_FORM1_dataGridView1.Columns[4].Name = "Col_txtnumber_color_name_eng";
+                            //this.PANEL_FORM1_dataGridView1.Columns[5].Name = "Col_txtnumber_color_name_remark";
+                            //this.PANEL_FORM1_dataGridView1.Columns[6].Name = "Col_txtnumber_color_status";
+
+                            var index = PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows.Add();
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_no"].Value = dt2.Rows[j]["txtnumber_color_no"].ToString();      //1
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();      //2
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_name"].Value = dt2.Rows[j]["txtnumber_color_name"].ToString();      //3
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_name_eng"].Value = dt2.Rows[j]["txtnumber_color_name_eng"].ToString();      //4
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_remark"].Value = dt2.Rows[j]["txtnumber_color_remark"].ToString();      //5
+                            PANEL0107_NUMBER_COLOR_dataGridView1_number_color.Rows[index].Cells["Col_txtnumber_color_status"].Value = dt2.Rows[j]["txtnumber_color_status"].ToString();      //8
+                        }
+                        //=======================================================
+                    }
+                    else
+                    {
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        conn.Close();
+                        // return;
+                    }
+                    PANEL0107_NUMBER_COLOR_dataGridView1_number_color_Up_Status();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+
+        }
+        private void PANEL0107_NUMBER_COLOR_btnresize_low_MouseDown(object sender, MouseEventArgs e)
+        {
+            allowResize = true;
+        }
+        private void PANEL0107_NUMBER_COLOR_btnresize_low_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (allowResize)
+            {
+                this.PANEL0107_NUMBER_COLOR.Height = PANEL0107_NUMBER_COLOR_btnresize_low.Top + e.Y;
+                this.PANEL0107_NUMBER_COLOR.Width = PANEL0107_NUMBER_COLOR_btnresize_low.Left + e.X;
+            }
+        }
+        private void PANEL0107_NUMBER_COLOR_btnresize_low_MouseUp(object sender, MouseEventArgs e)
+        {
+            allowResize = false;
+        }
+
+        //END txtnumber_color รหัสสี =======================================================================
+
+
         //txtmat_type ประเภทสินค้า =======================================================================
         private void PANEL101_MAT_TYPE_Fill_mat_type()
         {
@@ -1797,12 +3078,21 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL101_MAT_TYPE_btnmat_type_Click(object sender, EventArgs e)
         {
+            this.PANEL101_MAT_TYPE.Width = 502;
+            this.PANEL101_MAT_TYPE.Height = 337;
+
             if (this.PANEL101_MAT_TYPE.Visible == false)
             {
+                int xLocation = PANEL101_MAT_TYPE_txtmat_type_name.Location.X;
+                int yLocation = PANEL101_MAT_TYPE_txtmat_type_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL101_MAT_TYPE.Visible = true;
                 this.PANEL101_MAT_TYPE.BringToFront();
-                this.PANEL101_MAT_TYPE.Location = new Point(103, this.PANEL101_MAT_TYPE_txtmat_type_name.Location.Y + 22);
-            }
+                this.PANEL101_MAT_TYPE.Location = new Point(xx + 7, yy + 32);
+
+           }
             else
             {
                 this.PANEL101_MAT_TYPE.Visible = false;
@@ -2220,11 +3510,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL101_MAT_TYPE2_btnmat_type_Click(object sender, EventArgs e)
         {
+            this.PANEL101_MAT_TYPE2.Width = 502;
+            this.PANEL101_MAT_TYPE2.Height = 337;
+
             if (this.PANEL101_MAT_TYPE2.Visible == false)
             {
+                int xLocation = PANEL101_MAT_TYPE2_txtmat_type_name.Location.X;
+                int yLocation = PANEL101_MAT_TYPE2_txtmat_type_name.Location.Y;
+                int xx = xLocation + PANEL_FORM1.Location.X;
+                int yy = yLocation + PANEL_FORM1.Location.Y;
+
                 this.PANEL101_MAT_TYPE2.Visible = true;
                 this.PANEL101_MAT_TYPE2.BringToFront();
-                this.PANEL101_MAT_TYPE2.Location = new Point(this.PANEL101_MAT_TYPE2_txtmat_type_name.Location.X, this.PANEL101_MAT_TYPE2_txtmat_type_name.Location.Y + 22);
+                this.PANEL101_MAT_TYPE2.Location = new Point(xx  , yy +24);
+
             }
             else
             {
@@ -2557,11 +3856,21 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL102_MAT_SAC_btnmat_sac_Click(object sender, EventArgs e)
         {
+            this.PANEL102_MAT_SAC.Width = 502;
+            this.PANEL102_MAT_SAC.Height = 337;
+
             if (this.PANEL102_MAT_SAC.Visible == false)
             {
+                int xLocation = PANEL102_MAT_SAC_txtmat_sac_name.Location.X;
+                int yLocation = PANEL102_MAT_SAC_txtmat_sac_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL102_MAT_SAC.Visible = true;
                 this.PANEL102_MAT_SAC.BringToFront();
-                this.PANEL102_MAT_SAC.Location = new Point(103, this.PANEL102_MAT_SAC_txtmat_sac_name.Location.Y + 22);
+                this.PANEL102_MAT_SAC.Location = new Point(xx + 7, yy + 32);
+
+
             }
             else
             {
@@ -2981,11 +4290,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL102_MAT_SAC2_btnmat_sac_Click(object sender, EventArgs e)
         {
+            this.PANEL102_MAT_SAC2.Width = 502;
+            this.PANEL102_MAT_SAC2.Height = 337;
+
             if (this.PANEL102_MAT_SAC2.Visible == false)
             {
+                int xLocation = PANEL102_MAT_SAC2_txtmat_sac_name.Location.X;
+                int yLocation = PANEL102_MAT_SAC2_txtmat_sac_name.Location.Y;
+                int xx = xLocation + PANEL_FORM1.Location.X;
+                int yy = yLocation + PANEL_FORM1.Location.Y;
+
                 this.PANEL102_MAT_SAC2.Visible = true;
                 this.PANEL102_MAT_SAC2.BringToFront();
-                this.PANEL102_MAT_SAC2.Location = new Point(this.PANEL102_MAT_SAC2_txtmat_sac_name.Location.X, this.PANEL102_MAT_SAC2_txtmat_sac_name.Location.Y + 22);
+                this.PANEL102_MAT_SAC2.Location = new Point(xx, yy + 24);
+
             }
             else
             {
@@ -3028,10 +4346,6 @@ namespace kondate.soft.SETUP_4WH
                 this.PANEL102_MAT_SAC2_txtmat_sac_name.Focus();
                 this.PANEL102_MAT_SAC2.Visible = false;
             }
-        }
-        private void PANEL102_MAT_SAC2_txtsearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
         private void PANEL102_MAT_SAC2_btn_search_Click(object sender, EventArgs e)
         {
@@ -3316,11 +4630,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL103_MAT_GROUP_btnmat_group_Click(object sender, EventArgs e)
         {
+            this.PANEL103_MAT_GROUP.Width = 502;
+            this.PANEL103_MAT_GROUP.Height = 337;
+
             if (this.PANEL103_MAT_GROUP.Visible == false)
             {
+                int xLocation = PANEL103_MAT_GROUP_txtmat_group_name.Location.X;
+                int yLocation = PANEL103_MAT_GROUP_txtmat_group_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL103_MAT_GROUP.Visible = true;
                 this.PANEL103_MAT_GROUP.BringToFront();
-                this.PANEL103_MAT_GROUP.Location = new Point(103, this.PANEL103_MAT_GROUP_txtmat_group_name.Location.Y + 22);
+                this.PANEL103_MAT_GROUP.Location = new Point(xx + 7, yy + 32);
+
             }
             else
             {
@@ -3740,11 +5063,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL103_MAT_GROUP2_btnmat_group_Click(object sender, EventArgs e)
         {
+            this.PANEL103_MAT_GROUP2.Width = 502;
+            this.PANEL103_MAT_GROUP2.Height = 337;
+
             if (this.PANEL103_MAT_GROUP2.Visible == false)
             {
+                int xLocation = PANEL103_MAT_GROUP2_txtmat_group_name.Location.X;
+                int yLocation = PANEL103_MAT_GROUP2_txtmat_group_name.Location.Y;
+                int xx = xLocation + PANEL_FORM1.Location.X;
+                int yy = yLocation + PANEL_FORM1.Location.Y;
+
                 this.PANEL103_MAT_GROUP2.Visible = true;
                 this.PANEL103_MAT_GROUP2.BringToFront();
-                this.PANEL103_MAT_GROUP2.Location = new Point(this.PANEL103_MAT_GROUP2_txtmat_group_name.Location.X, this.PANEL103_MAT_GROUP2_txtmat_group_name.Location.Y + 22);
+                this.PANEL103_MAT_GROUP2.Location = new Point(xx, yy + 24);
+
             }
             else
             {
@@ -4075,11 +5407,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL104_MAT_BRAND_btnmat_brand_Click(object sender, EventArgs e)
         {
+            this.PANEL104_MAT_BRAND.Width = 502;
+            this.PANEL104_MAT_BRAND.Height = 337;
+
             if (this.PANEL104_MAT_BRAND.Visible == false)
             {
+                int xLocation = PANEL104_MAT_BRAND_txtmat_brand_name.Location.X;
+                int yLocation = PANEL104_MAT_BRAND_txtmat_brand_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL104_MAT_BRAND.Visible = true;
                 this.PANEL104_MAT_BRAND.BringToFront();
-                this.PANEL104_MAT_BRAND.Location = new Point(103, this.PANEL104_MAT_BRAND_txtmat_brand_name.Location.Y + 22);
+                this.PANEL104_MAT_BRAND.Location = new Point(xx + 7, yy + 32);
+
             }
             else
             {
@@ -4590,11 +5931,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL104_MAT_BRAND2_btnmat_brand_Click(object sender, EventArgs e)
         {
+            this.PANEL104_MAT_BRAND2.Width = 502;
+            this.PANEL104_MAT_BRAND2.Height = 337;
+
             if (this.PANEL104_MAT_BRAND2.Visible == false)
             {
+                int xLocation = PANEL104_MAT_BRAND2_txtmat_brand_name.Location.X;
+                int yLocation = PANEL104_MAT_BRAND2_txtmat_brand_name.Location.Y;
+                int xx = xLocation + PANEL_FORM1.Location.X;
+                int yy = yLocation + PANEL_FORM1.Location.Y;
+
                 this.PANEL104_MAT_BRAND2.Visible = true;
                 this.PANEL104_MAT_BRAND2.BringToFront();
-                this.PANEL104_MAT_BRAND2.Location = new Point(this.PANEL104_MAT_BRAND2_txtmat_brand_name.Location.X, this.PANEL104_MAT_BRAND2_txtmat_brand_name.Location.Y + 22);
+                this.PANEL104_MAT_BRAND2.Location = new Point(xx, yy + 24);
+
             }
             else
             {
@@ -5018,11 +6368,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL105_MAT_UNIT1_btnmat_unit_Click(object sender, EventArgs e)
         {
+            this.PANEL105_MAT_UNIT1.Width = 502;
+            this.PANEL105_MAT_UNIT1.Height = 337;
+
             if (this.PANEL105_MAT_UNIT1.Visible == false)
             {
+                int xLocation = PANEL105_MAT_UNIT1_txtmat_unit1_name.Location.X;
+                int yLocation = PANEL105_MAT_UNIT1_txtmat_unit1_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL105_MAT_UNIT1.Visible = true;
                 this.PANEL105_MAT_UNIT1.BringToFront();
-                this.PANEL105_MAT_UNIT1.Location = new Point(103, this.PANEL105_MAT_UNIT1_txtmat_unit1_name.Location.Y + 22);
+                this.PANEL105_MAT_UNIT1.Location = new Point(xx + 9, yy + 32);
+
             }
             else
             {
@@ -5442,11 +6801,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL105_MAT_UNIT2_btnmat_unit_Click(object sender, EventArgs e)
         {
+            this.PANEL105_MAT_UNIT2.Width = 502;
+            this.PANEL105_MAT_UNIT2.Height = 337;
+
             if (this.PANEL105_MAT_UNIT2.Visible == false)
             {
+                int xLocation = PANEL105_MAT_UNIT2_txtmat_unit2_name.Location.X;
+                int yLocation = PANEL105_MAT_UNIT2_txtmat_unit2_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL105_MAT_UNIT2.Visible = true;
                 this.PANEL105_MAT_UNIT2.BringToFront();
-                this.PANEL105_MAT_UNIT2.Location = new Point(103, this.PANEL105_MAT_UNIT2_txtmat_unit2_name.Location.Y + 22);
+                this.PANEL105_MAT_UNIT2.Location = new Point(xx + 9, yy + 32);
+
                 SL = "2";
             }
             else
@@ -6245,11 +7613,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL161_SUP_btnsupplier_Click(object sender, EventArgs e)
         {
+            this.PANEL161_SUP.Width = 502;
+            this.PANEL161_SUP.Height = 337;
+
             if (this.PANEL161_SUP.Visible == false)
             {
+                int xLocation = PANEL161_SUP_txtsupplier_name.Location.X;
+                int yLocation = PANEL161_SUP_txtsupplier_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL161_SUP.Visible = true;
                 this.PANEL161_SUP.BringToFront();
-                this.PANEL161_SUP.Location = new Point(this.PANEL161_SUP_txtsupplier_name.Location.X+21, this.PANEL161_SUP_txtsupplier_name.Location.Y + 159);
+                this.PANEL161_SUP.Location = new Point(xx + 9, yy + 32);
+
             }
             else
             {
@@ -9652,6 +11029,11 @@ namespace kondate.soft.SETUP_4WH
                                             "b001mat_04barcode.*," +
                                             "b001mat_06price_sale.*," +
                                             "b001mat_10shipment.*," +
+
+                                            "c001_07number_color.*," +
+                                            "c001_05face_baking.*," +
+                                            "c001_09shirt_size.*," +
+
                                             "b001mat_12picture.*," +
                                              "b001mat_13point_phurchase.*" +
                                            " FROM b001mat" +
@@ -9675,6 +11057,21 @@ namespace kondate.soft.SETUP_4WH
                                             " ON b001mat.cdkey = b001mat_10shipment.cdkey" +
                                             " AND b001mat.txtco_id = b001mat_10shipment.txtco_id" +
                                             " AND b001mat.txtmat_id = b001mat_10shipment.txtmat_id" +
+
+                                             " INNER JOIN c001_07number_color" +
+                                            " ON b001mat_02detail.cdkey = c001_07number_color.cdkey" +
+                                            " AND b001mat_02detail.txtco_id = c001_07number_color.txtco_id" +
+                                            " AND b001mat_02detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+
+                                             " INNER JOIN c001_05face_baking" +
+                                            " ON b001mat_02detail.cdkey = c001_05face_baking.cdkey" +
+                                            " AND b001mat_02detail.txtco_id = c001_05face_baking.txtco_id" +
+                                            " AND b001mat_02detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+
+                                             " INNER JOIN c001_09shirt_size" +
+                                            " ON b001mat_02detail.cdkey = c001_09shirt_size.cdkey" +
+                                            " AND b001mat_02detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                            " AND b001mat_02detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                             " INNER JOIN b001mat_12picture" +
                                             " ON b001mat.cdkey = b001mat_12picture.cdkey" +
@@ -9727,6 +11124,15 @@ namespace kondate.soft.SETUP_4WH
                                     //this.PANEL103_MAT_GROUP_txtmat_group_name.Text = dt2.Rows[j]["txtmat_group_name"].ToString();      //11
                                     this.PANEL104_MAT_BRAND_txtmat_brand_id.Text = dt2.Rows[j]["txtmat_brand_id"].ToString();      //12
                                     //this.PANEL104_MAT_BRAND_txtmat_brand_name.Text = dt2.Rows[j]["txtmat_brand_name"].ToString();      //13
+
+                                    this.PANEL0107_NUMBER_COLOR_txtnumber_color_id.Text = dt2.Rows[j]["txtnumber_color_id"].ToString();      //12
+                                    this.PANEL0107_NUMBER_COLOR_txtnumber_color_name.Text = dt2.Rows[j]["txtnumber_color_name"].ToString();      //12
+
+                                    this.PANEL0105_FACE_BAKING_txtface_baking_id.Text = dt2.Rows[j]["txtface_baking_id"].ToString();      //12
+                                    this.PANEL0105_FACE_BAKING_txtface_baking_name.Text = dt2.Rows[j]["txtface_baking_name"].ToString();      //12
+
+                                    this.PANEL0109_SHIRT_SIZE_txtshirt_size_id.Text = dt2.Rows[j]["txtshirt_size_id"].ToString();      //12
+                                    this.PANEL0109_SHIRT_SIZE_txtshirt_size_name.Text = dt2.Rows[j]["txtshirt_size_name"].ToString();      //12
 
                                     this.PANEL105_MAT_UNIT1_txtmat_unit1_id.Text = dt2.Rows[j]["txtmat_unit1_id"].ToString();      //14
                                     //this.PANEL105_MAT_UNIT1_txtmat_unit1_name.Text = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //15
@@ -11442,11 +12848,21 @@ namespace kondate.soft.SETUP_4WH
 
         private void PANEL105_MAT_UNIT3_btnmat_brand_Click(object sender, EventArgs e)
         {
+            this.PANEL105_MAT_UNIT2.Width = 502;
+            this.PANEL105_MAT_UNIT2.Height = 337;
+
             if (this.PANEL105_MAT_UNIT2.Visible == false)
             {
+                int xLocation = PANEL105_MAT_UNIT3_txtmat_unit3_name.Location.X;
+                int yLocation = PANEL105_MAT_UNIT3_txtmat_unit3_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL105_MAT_UNIT2.Visible = true;
                 this.PANEL105_MAT_UNIT2.BringToFront();
-                this.PANEL105_MAT_UNIT2.Location = new Point(103, this.PANEL105_MAT_UNIT3_txtmat_unit3_name.Location.Y + 22);
+                this.PANEL105_MAT_UNIT2.Location = new Point(xx + 9, yy + 32);
+
+
                 SL = "3";
 
             }
@@ -11458,11 +12874,20 @@ namespace kondate.soft.SETUP_4WH
 
         private void PANEL105_MAT_UNIT4_btnmat_brand_Click(object sender, EventArgs e)
         {
+            this.PANEL105_MAT_UNIT2.Width = 502;
+            this.PANEL105_MAT_UNIT2.Height = 337;
+
             if (this.PANEL105_MAT_UNIT2.Visible == false)
             {
+                int xLocation = PANEL105_MAT_UNIT4_txtmat_unit4_name.Location.X;
+                int yLocation = PANEL105_MAT_UNIT4_txtmat_unit4_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL105_MAT_UNIT2.Visible = true;
                 this.PANEL105_MAT_UNIT2.BringToFront();
-                this.PANEL105_MAT_UNIT2.Location = new Point(103, this.PANEL105_MAT_UNIT4_txtmat_unit4_name.Location.Y + 22);
+                this.PANEL105_MAT_UNIT2.Location = new Point(xx + 9, yy + 32);
+
                 SL = "4";
 
             }
@@ -11474,11 +12899,20 @@ namespace kondate.soft.SETUP_4WH
 
         private void PANEL105_MAT_UNIT5_btnmat_brand_Click(object sender, EventArgs e)
         {
+            this.PANEL105_MAT_UNIT2.Width = 502;
+            this.PANEL105_MAT_UNIT2.Height = 337;
+
             if (this.PANEL105_MAT_UNIT2.Visible == false)
             {
+                int xLocation = PANEL105_MAT_UNIT5_txtmat_unit5_name.Location.X;
+                int yLocation = PANEL105_MAT_UNIT5_txtmat_unit5_name.Location.Y;
+                int xx = xLocation + panel1.Location.X;
+                int yy = yLocation + panel1.Location.Y;
+
                 this.PANEL105_MAT_UNIT2.Visible = true;
                 this.PANEL105_MAT_UNIT2.BringToFront();
-                this.PANEL105_MAT_UNIT2.Location = new Point(103, this.PANEL105_MAT_UNIT5_txtmat_unit5_name.Location.Y + 22);
+                this.PANEL105_MAT_UNIT2.Location = new Point(xx + 9, yy + 32);
+
                 SL = "5";
 
             }

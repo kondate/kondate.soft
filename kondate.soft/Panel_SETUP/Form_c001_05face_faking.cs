@@ -81,6 +81,7 @@ namespace kondate.soft.Panel_SETUP
 
         }
 
+        bool allowResize = false;
         //txtface_baking ประเภท อบหน้า  =======================================================================
         private void PANEL0105_FACE_BAKING_Fill_face_baking()
         {
@@ -467,7 +468,6 @@ namespace kondate.soft.Panel_SETUP
             //================================
 
         }
-        bool allowResize = false;
         private void PANEL0105_FACE_BAKING_btnresize_low_MouseDown(object sender, MouseEventArgs e)
         {
             allowResize = true;

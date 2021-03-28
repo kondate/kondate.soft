@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_05Send_Dye_record_print));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_081Send_Cut_record_print));
             this.panel_top = new System.Windows.Forms.Panel();
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize_full = new System.Windows.Forms.PictureBox();
@@ -206,7 +206,7 @@
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // HOME03_Production_06Send_Dye_record_print
+            // HOME03_Production_081Send_Cut_record_print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,9 +217,9 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HOME03_Production_06Send_Dye_record_print";
+            this.Name = "HOME03_Production_081Send_Cut_record_print";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "พิมพ์ใบส่งย้อม";
+            this.Text = "พิมพ์ใบสั่งปูผ้า";
             this.Load += new System.EventHandler(this.HOME03_Production_05Send_Dye_record_print_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();

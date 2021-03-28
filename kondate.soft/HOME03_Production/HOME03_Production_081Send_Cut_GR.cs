@@ -104,7 +104,7 @@ namespace kondate.soft.HOME03_Production
             CHECK_USER_RULE();
 
             this.iblword_top.Text = W_ID_Select.WORD_TOP.Trim();
-            this.iblword_status.Text = "ตรวจใบส่งตัด ค้างรับ";
+            this.iblword_status.Text = "ตรวจใบสั่งปูผ้า ค้างรับ";
             this.iblstatus.Text = "Version : " + W_ID_Select.GetVersion() + "      |       User name (ชื่อผู้ใช้) : " + W_ID_Select.M_EMP_OFFICE_NAME.ToString() + "       |       กิจการ : " + W_ID_Select.M_CONAME.ToString() + "      |      สาขา : " + W_ID_Select.M_BRANCHNAME.ToString() + "      |     วันที่ : " + DateTime.Now.ToString("dd/MM/yyyy") + "";
 
 
@@ -128,8 +128,8 @@ namespace kondate.soft.HOME03_Production
             this.dtpstart.CustomFormat = this.dtpstart.Value.ToString("dd-MM-yyyy", UsaCulture);
 
             //========================================
-            this.cboSearch.Items.Add("เลขที่ใบส่งตัด");
-            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งตัด");
+            this.cboSearch.Items.Add("เลขที่ใบสั่งปูผ้า");
+            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบสั่งปูผ้า");
 
             //========================================
             PANEL2_BRANCH_GridView1_branch();
@@ -237,7 +237,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                  " AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                  " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -262,7 +262,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -462,7 +462,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
 
                 }
@@ -519,7 +519,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                        " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                    " AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                    " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
 
 
@@ -546,7 +546,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -655,75 +655,81 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 53;
+            this.GridView1.ColumnCount = 56;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
             this.GridView1.Columns[3].Name = "Col_txtSPT_id";
-            this.GridView1.Columns[4].Name = "Col_txttrans_date_server";
+            this.GridView1.Columns[4].Name = "Col_txttrans_date_client";
             this.GridView1.Columns[5].Name = "Col_txttrans_time";
             this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
             this.GridView1.Columns[7].Name = "Col_txtsupplier_name";
             this.GridView1.Columns[8].Name = "Col_txtemp_office_name";
 
             this.GridView1.Columns[9].Name = "Col_txtwherehouse_id";
-            this.GridView1.Columns[10].Name = "Col_txtnumber_in_year";
-            this.GridView1.Columns[11].Name = "Col_txtnumber_mat_id";
-            this.GridView1.Columns[12].Name = "Col_txtnumber_color_id";
-            this.GridView1.Columns[13].Name = "Col_txtface_baking_id";
+
+            this.GridView1.Columns[10].Name = "Col_txtshirt_type_id";
+            this.GridView1.Columns[11].Name = "Col_txtshirt_size_id";
+            this.GridView1.Columns[12].Name = "Col_txttable_name";
 
 
-            this.GridView1.Columns[14].Name = "Col_txtlot_no";
-            this.GridView1.Columns[15].Name = "Col_txtfold_number";
+            this.GridView1.Columns[13].Name = "Col_txtnumber_in_year";
+            this.GridView1.Columns[14].Name = "Col_txtnumber_mat_id";
+            this.GridView1.Columns[15].Name = "Col_txtnumber_color_id";
+            this.GridView1.Columns[16].Name = "Col_txtface_baking_id";
 
-            this.GridView1.Columns[16].Name = "Col_txtqty";
 
-            this.GridView1.Columns[17].Name = "Col_txtmat_no";
-            this.GridView1.Columns[18].Name = "Col_txtmat_id";
-            this.GridView1.Columns[19].Name = "Col_txtmat_name";
+            this.GridView1.Columns[17].Name = "Col_txtlot_no";
+            this.GridView1.Columns[18].Name = "Col_txtfold_number";
 
-            this.GridView1.Columns[20].Name = "Col_txtmat_unit1_name";
-            this.GridView1.Columns[21].Name = "Col_txtmat_unit1_qty";
-            this.GridView1.Columns[22].Name = "Col_chmat_unit_status";
-            this.GridView1.Columns[23].Name = "Col_txtmat_unit2_name";
-            this.GridView1.Columns[24].Name = "Col_txtmat_unit2_qty";
+            this.GridView1.Columns[19].Name = "Col_txtqty";
 
-            this.GridView1.Columns[25].Name = "Col_txtqty2";
+            this.GridView1.Columns[20].Name = "Col_txtmat_no";
+            this.GridView1.Columns[21].Name = "Col_txtmat_id";
+            this.GridView1.Columns[22].Name = "Col_txtmat_name";
 
-            this.GridView1.Columns[26].Name = "Col_txtprice";
-            this.GridView1.Columns[27].Name = "Col_txtdiscount_rate";
-            this.GridView1.Columns[28].Name = "Col_txtdiscount_money";
-            this.GridView1.Columns[29].Name = "Col_txtsum_total";
+            this.GridView1.Columns[23].Name = "Col_txtmat_unit1_name";
+            this.GridView1.Columns[24].Name = "Col_txtmat_unit1_qty";
+            this.GridView1.Columns[25].Name = "Col_chmat_unit_status";
+            this.GridView1.Columns[26].Name = "Col_txtmat_unit2_name";
+            this.GridView1.Columns[27].Name = "Col_txtmat_unit2_qty";
 
-            this.GridView1.Columns[30].Name = "Col_txtcost_qty_balance_yokma";
-            this.GridView1.Columns[31].Name = "Col_txtcost_qty_price_average_yokma";
-            this.GridView1.Columns[32].Name = "Col_txtcost_money_sum_yokma";
+            this.GridView1.Columns[28].Name = "Col_txtqty2";
 
-            this.GridView1.Columns[33].Name = "Col_txtcost_qty_balance_yokpai";
-            this.GridView1.Columns[34].Name = "Col_txtcost_qty_price_average_yokpai";
-            this.GridView1.Columns[35].Name = "Col_txtcost_money_sum_yokpai";
+            this.GridView1.Columns[29].Name = "Col_txtprice";
+            this.GridView1.Columns[30].Name = "Col_txtdiscount_rate";
+            this.GridView1.Columns[31].Name = "Col_txtdiscount_money";
+            this.GridView1.Columns[32].Name = "Col_txtsum_total";
 
-            this.GridView1.Columns[36].Name = "Col_txtcost_qty2_balance_yokma";
-            this.GridView1.Columns[37].Name = "Col_txtcost_qty2_balance_yokpai";
+            this.GridView1.Columns[33].Name = "Col_txtcost_qty_balance_yokma";
+            this.GridView1.Columns[34].Name = "Col_txtcost_qty_price_average_yokma";
+            this.GridView1.Columns[35].Name = "Col_txtcost_money_sum_yokma";
 
-            this.GridView1.Columns[38].Name = "Col_txtitem_no";
+            this.GridView1.Columns[36].Name = "Col_txtcost_qty_balance_yokpai";
+            this.GridView1.Columns[37].Name = "Col_txtcost_qty_price_average_yokpai";
+            this.GridView1.Columns[38].Name = "Col_txtcost_money_sum_yokpai";
 
-            this.GridView1.Columns[39].Name = "Col_txtqc_id";
-            this.GridView1.Columns[40].Name = "Col_txtsum_qty_pub";
-            this.GridView1.Columns[41].Name = "Col_date";
-            this.GridView1.Columns[42].Name = "Col_qty_Cal";  //
-            this.GridView1.Columns[43].Name = "Col_txtsum_qty_rib";
-            this.GridView1.Columns[44].Name = "Col_txtsum_qty_pub_kg";
-            this.GridView1.Columns[45].Name = "Col_txtsum_qty_rib_kg";
+            this.GridView1.Columns[39].Name = "Col_txtcost_qty2_balance_yokma";
+            this.GridView1.Columns[40].Name = "Col_txtcost_qty2_balance_yokpai";
 
-            this.GridView1.Columns[46].Name = "Col_txtqty_cut_yokma";
-            this.GridView1.Columns[47].Name = "Col_txtqty_cut_yokpai";
-            this.GridView1.Columns[48].Name = "Col_txtqty_after_cut_yokpai";
+            this.GridView1.Columns[41].Name = "Col_txtitem_no";
 
-            this.GridView1.Columns[49].Name = "Col_txtqty_cut";
-            this.GridView1.Columns[50].Name = "Col_txtqty_after_cut";
-            this.GridView1.Columns[51].Name = "Col_txtcut_id";
-            this.GridView1.Columns[52].Name = "Col_1";
+            this.GridView1.Columns[42].Name = "Col_txtqc_id";
+            this.GridView1.Columns[43].Name = "Col_txtsum_qty_pub";
+            this.GridView1.Columns[44].Name = "Col_date";
+            this.GridView1.Columns[45].Name = "Col_qty_Cal";  //
+            this.GridView1.Columns[46].Name = "Col_txtsum_qty_rib";
+            this.GridView1.Columns[47].Name = "Col_txtsum_qty_pub_kg";
+            this.GridView1.Columns[48].Name = "Col_txtsum_qty_rib_kg";
+
+            this.GridView1.Columns[49].Name = "Col_txtqty_cut_yokma";
+            this.GridView1.Columns[50].Name = "Col_txtqty_cut_yokpai";
+            this.GridView1.Columns[51].Name = "Col_txtqty_after_cut_yokpai";
+
+            this.GridView1.Columns[52].Name = "Col_txtqty_cut";
+            this.GridView1.Columns[53].Name = "Col_txtqty_after_cut";
+            this.GridView1.Columns[54].Name = "Col_txtcut_id";
+            this.GridView1.Columns[55].Name = "Col_1";
 
 
             this.GridView1.Columns[0].HeaderText = "No";
@@ -737,62 +743,67 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[8].HeaderText = " ผู้บันทึก";
 
             this.GridView1.Columns[9].HeaderText = "คลัง";
-            this.GridView1.Columns[10].HeaderText = "ชุดที่";
-            this.GridView1.Columns[11].HeaderText = "รหัสผ้า";
-            this.GridView1.Columns[12].HeaderText = "รหัสสี";
-            this.GridView1.Columns[13].HeaderText = "อบหน้า";
+
+            this.GridView1.Columns[10].HeaderText = "ชนิดงาน";
+            this.GridView1.Columns[11].HeaderText = "ไซส์";
+            this.GridView1.Columns[12].HeaderText = "คิวงาน/โต๊ะที่";
+
+            this.GridView1.Columns[13].HeaderText = "ชุดที่";
+            this.GridView1.Columns[14].HeaderText = "รหัสผ้า";
+            this.GridView1.Columns[15].HeaderText = "รหัสสี";
+            this.GridView1.Columns[16].HeaderText = "อบหน้า";
 
 
-            this.GridView1.Columns[14].HeaderText = "Lot No";
-            this.GridView1.Columns[15].HeaderText = "พับที่";
+            this.GridView1.Columns[17].HeaderText = "Lot No";
+            this.GridView1.Columns[18].HeaderText = "พับที่";
 
-            this.GridView1.Columns[16].HeaderText = "ส่งตัด (กก.)";
+            this.GridView1.Columns[19].HeaderText = "สั่งปูผ้า (กก.)";
 
-            this.GridView1.Columns[17].HeaderText = "ลำดับ";
-            this.GridView1.Columns[18].HeaderText = "รหัส";
-            this.GridView1.Columns[19].HeaderText = "ชื่อสินค้า";
+            this.GridView1.Columns[20].HeaderText = "ลำดับ";
+            this.GridView1.Columns[21].HeaderText = "รหัส";
+            this.GridView1.Columns[22].HeaderText = "ชื่อสินค้า";
 
-            this.GridView1.Columns[20].HeaderText = " หน่วยหลัก";
-            this.GridView1.Columns[21].HeaderText = " หน่วย";
-            this.GridView1.Columns[22].HeaderText = "แปลง";
-            this.GridView1.Columns[23].HeaderText = " หน่วย(ปอนด์)";
+            this.GridView1.Columns[23].HeaderText = " หน่วยหลัก";
             this.GridView1.Columns[24].HeaderText = " หน่วย";
+            this.GridView1.Columns[25].HeaderText = "แปลง";
+            this.GridView1.Columns[26].HeaderText = " หน่วย(ปอนด์)";
+            this.GridView1.Columns[27].HeaderText = " หน่วย";
 
-            this.GridView1.Columns[25].HeaderText = "ส่งตัด(ปอนด์)";
+            this.GridView1.Columns[28].HeaderText = "สั่งปูผ้า(ปอนด์)";
 
-            this.GridView1.Columns[26].HeaderText = "ราคา";
-            this.GridView1.Columns[27].HeaderText = "ส่วนลด(%)";
-            this.GridView1.Columns[28].HeaderText = "ส่วนลด(บาท)";
-            this.GridView1.Columns[29].HeaderText = "จำนวนเงิน(บาท)";
+            this.GridView1.Columns[29].HeaderText = "ราคา";
+            this.GridView1.Columns[30].HeaderText = "ส่วนลด(%)";
+            this.GridView1.Columns[31].HeaderText = "ส่วนลด(บาท)";
+            this.GridView1.Columns[32].HeaderText = "จำนวนเงิน(บาท)";
 
-            this.GridView1.Columns[30].HeaderText = "จำนวนยกมา";
-            this.GridView1.Columns[31].HeaderText = "ราคาเฉลี่ยยกมา";
-            this.GridView1.Columns[32].HeaderText = "จำนวนเงิน";
-
-            this.GridView1.Columns[33].HeaderText = "จำนวนยกไป";
-            this.GridView1.Columns[34].HeaderText = "ราคาเฉลี่ยยกไป";
+            this.GridView1.Columns[33].HeaderText = "จำนวนยกมา";
+            this.GridView1.Columns[34].HeaderText = "ราคาเฉลี่ยยกมา";
             this.GridView1.Columns[35].HeaderText = "จำนวนเงิน";
 
-            this.GridView1.Columns[36].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";
-            this.GridView1.Columns[37].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";
+            this.GridView1.Columns[36].HeaderText = "จำนวนยกไป";
+            this.GridView1.Columns[37].HeaderText = "ราคาเฉลี่ยยกไป";
+            this.GridView1.Columns[38].HeaderText = "จำนวนเงิน";
 
-            this.GridView1.Columns[38].HeaderText = "item_no";
-            this.GridView1.Columns[39].HeaderText = "txtqc_id";
-            this.GridView1.Columns[40].HeaderText = "Col_txtsum_qty_pub";
-            this.GridView1.Columns[41].HeaderText = " วันที่ต้องการ";
-            this.GridView1.Columns[42].HeaderText = "Col_qty_Cal";
-            this.GridView1.Columns[43].HeaderText = "Col_txtsum_qty_rib";
-            this.GridView1.Columns[44].HeaderText = "Col_txtsum_qty_pub_kg";
-            this.GridView1.Columns[45].HeaderText = "Col_txtsum_qty_rib_kg";
+            this.GridView1.Columns[39].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";
+            this.GridView1.Columns[40].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";
 
-            this.GridView1.Columns[46].HeaderText = "ส่งตัดแล้วยกมา";
-            this.GridView1.Columns[47].HeaderText = "ส่งตัดแล้วยกไป";
-            this.GridView1.Columns[48].HeaderText = "เหลือรอส่งตัด อีก กก.";
+            this.GridView1.Columns[41].HeaderText = "item_no";
+            this.GridView1.Columns[42].HeaderText = "txtqc_id";
+            this.GridView1.Columns[43].HeaderText = "Col_txtsum_qty_pub";
+            this.GridView1.Columns[44].HeaderText = " วันที่ต้องการ";
+            this.GridView1.Columns[45].HeaderText = "Col_qty_Cal";
+            this.GridView1.Columns[46].HeaderText = "Col_txtsum_qty_rib";
+            this.GridView1.Columns[47].HeaderText = "Col_txtsum_qty_pub_kg";
+            this.GridView1.Columns[48].HeaderText = "Col_txtsum_qty_rib_kg";
 
-            this.GridView1.Columns[49].HeaderText = "รับแล้ว";  //กก
-            this.GridView1.Columns[50].HeaderText = "รอรับ";  //กก
-            this.GridView1.Columns[51].HeaderText = "เลขที่รับคืนส่งตัด";  //
-            this.GridView1.Columns[52].HeaderText = "1";  //
+            this.GridView1.Columns[49].HeaderText = "สั่งปูผ้าแล้วยกมา";
+            this.GridView1.Columns[50].HeaderText = "สั่งปูผ้าแล้วยกไป";
+            this.GridView1.Columns[51].HeaderText = "เหลือรอสั่งปูผ้า อีก กก.";
+
+            this.GridView1.Columns[52].HeaderText = "รับแล้ว";  //กก
+            this.GridView1.Columns[53].HeaderText = "รอรับ";  //กก
+            this.GridView1.Columns[54].HeaderText = "เลขที่รับคืนสั่งปูผ้า";  //
+            this.GridView1.Columns[55].HeaderText = "1";  //
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
@@ -804,11 +815,11 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtSPT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtSPT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txttrans_date_server"].Visible = true;  //""Col_txttrans_date_server"";
-            this.GridView1.Columns["Col_txttrans_date_server"].Width = 90;
-            this.GridView1.Columns["Col_txttrans_date_server"].ReadOnly = true;
-            this.GridView1.Columns["Col_txttrans_date_server"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txttrans_date_server"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txttrans_date_client"].Visible = true;  //""Col_txttrans_date_client"";
+            this.GridView1.Columns["Col_txttrans_date_client"].Width = 90;
+            this.GridView1.Columns["Col_txttrans_date_client"].ReadOnly = true;
+            this.GridView1.Columns["Col_txttrans_date_client"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txttrans_date_client"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txttrans_time"].Visible = true;  //"Col_txttrans_time";
             this.GridView1.Columns["Col_txttrans_time"].Width = 70;
@@ -836,7 +847,23 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtwherehouse_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+            this.GridView1.Columns["Col_txtshirt_type_id"].Visible = true;  //"Col_txtshirt_type_id";
+            this.GridView1.Columns["Col_txtshirt_type_id"].Width = 80;
+            this.GridView1.Columns["Col_txtshirt_type_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtshirt_type_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtshirt_type_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = true;  //"Col_txtshirt_size_id";
+            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 80;
+            this.GridView1.Columns["Col_txtshirt_size_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtshirt_size_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtshirt_size_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView1.Columns["Col_txttable_name"].Visible = true;  //"Col_txttable_name";
+            this.GridView1.Columns["Col_txttable_name"].Width = 80;
+            this.GridView1.Columns["Col_txttable_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txttable_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txttable_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.GridView1.Columns["Col_txtnumber_in_year"].Visible = true;  //"Col_txtnumber_in_year";
             this.GridView1.Columns["Col_txtnumber_in_year"].Width = 80;
@@ -880,7 +907,7 @@ namespace kondate.soft.HOME03_Production
             dgvCmb_SELECT.Name = "Col_Chk_SELECT";
             dgvCmb_SELECT.Width = 0;  //70
             dgvCmb_SELECT.DisplayIndex = 8;
-            dgvCmb_SELECT.HeaderText = "เลือกส่งตัด";
+            dgvCmb_SELECT.HeaderText = "เลือกสั่งปูผ้า";
             dgvCmb_SELECT.ValueType = typeof(bool);
             dgvCmb_SELECT.ReadOnly = false;
             dgvCmb_SELECT.Visible = false;
@@ -1241,15 +1268,15 @@ namespace kondate.soft.HOME03_Production
                 if (cell != null)
                 {
                     W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
-                    this.cboSearch.Text = "เลขที่ใบส่งตัด";
+                    this.cboSearch.Text = "เลขที่ใบสั่งปูผ้า";
 
-                    if (this.cboSearch.Text == "เลขที่ใบส่งตัด")
+                    if (this.cboSearch.Text == "เลขที่ใบสั่งปูผ้า")
                     {
                         this.txtsearch.Text = row.Cells[3].Value.ToString();
                         W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
 
                     }
-                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งตัด")
+                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบสั่งปูผ้า")
                     {
                         this.txtsearch.Text = row.Cells[8].Value.ToString();
 
@@ -1309,7 +1336,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งตัด";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบสั่งปูผ้า";
                 kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record_detail();
                 frm2.Show();
 
@@ -1443,7 +1470,7 @@ namespace kondate.soft.HOME03_Production
                 W_ID_Select.LOG_NAME = "ใหม่";
                 TRANS_LOG();
 
-                W_ID_Select.WORD_TOP = "บันทึกใบส่งตัด";
+                W_ID_Select.WORD_TOP = "บันทึกใบสั่งปูผ้า";
                 kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record();
                 frm2.Show();
                 //this.Close();
@@ -1464,7 +1491,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งตัด";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบสั่งปูผ้า";
                 kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_081Send_Cut_record_detail();
                 frm2.Show();
 
@@ -1593,7 +1620,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                     " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
 
                 }
@@ -1650,7 +1677,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                        " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                      " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                      " AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                       " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
 
 
@@ -1678,7 +1705,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -1883,7 +1910,7 @@ namespace kondate.soft.HOME03_Production
                                    " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                    " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                       " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                 " AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                 " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                   " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
@@ -1908,7 +1935,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6
@@ -2057,9 +2084,9 @@ namespace kondate.soft.HOME03_Production
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Connection = conn;
 
-                //this.cboSearch.Items.Add("เลขที่ใบส่งตัด");
-                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งตัด");
-                if (this.cboSearch.Text == "เลขที่ใบส่งตัด")
+                //this.cboSearch.Items.Add("เลขที่ใบสั่งปูผ้า");
+                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบสั่งปูผ้า");
+                if (this.cboSearch.Text == "เลขที่ใบสั่งปูผ้า")
                 {
                     cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
@@ -2111,13 +2138,13 @@ namespace kondate.soft.HOME03_Production
                                            " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                     //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                    //" AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                    //" AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                     " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
                                         " AND (c002_081Send_Cut_shirt_record.txtSPT_id = '" + this.txtsearch.Text.Trim() + "')" +
                                         " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
 
                 }
-                if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งตัด")
+                if (this.cboSearch.Text == "ชื่อผู้บันทึกใบสั่งปูผ้า")
                 {
                     cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
                                        "k016db_1supplier.*," +
@@ -2170,7 +2197,7 @@ namespace kondate.soft.HOME03_Production
                                        " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                       //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
                                       " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                      " AND (c002_081Send_Cut_shirt_record.txttrans_date_server BETWEEN @datestart AND @dateend)" +
+                                      " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                        " AND (c002_081Send_Cut_shirt_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
                                       " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id ASC";
 
@@ -2198,7 +2225,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
                             this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
-                            this.GridView1.Rows[index].Cells["Col_txttrans_date_server"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_server"]).ToString("dd-MM-yyyy", UsaCulture);     //4
+                            this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
                             this.GridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //6

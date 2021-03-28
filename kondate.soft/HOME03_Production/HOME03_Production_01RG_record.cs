@@ -119,6 +119,9 @@ namespace kondate.soft.HOME03_Production
             this.cbotxtreceive_type_name.Text = "รับไม่มีใบสั่งซื้อ";
             this.txtreceive_type_id.Text = "02";
 
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Text = "ซื้อไม่มีvat";
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text = "PUR_NOvat";
+
             //1.ส่วนหน้าหลัก=====================================================================
             PANEL161_SUP_GridView1_supplier();
             PANEL161_SUP_Fill_supplier();
@@ -1713,7 +1716,7 @@ namespace kondate.soft.HOME03_Production
 
 
             }
-            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_ONvat")  //ซื้อไม่มีvat
+            if (this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text.Trim() == "PUR_NOvat")  //ซื้อไม่มีvat
             {
                 double DisCount = 0;
                 double VATMONey = 0;

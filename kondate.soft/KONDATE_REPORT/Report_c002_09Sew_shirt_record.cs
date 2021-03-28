@@ -106,7 +106,7 @@ namespace kondate.soft.KONDATE_REPORT {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_txtsew_id {
+        public CrystalDecisions.Shared.IParameterField Parameter_txtSWT_id {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
