@@ -822,6 +822,7 @@
             this.HOME03_Production_06_cliem_gr.Text = "ส่งเคลม ค้างรับ";
             this.HOME03_Production_06_cliem_gr.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_cliem_gr.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_cliem_gr.Click += new System.EventHandler(this.HOME03_Production_06_cliem_gr_Click);
             // 
             // HOME03_Production_06_cliem_return
             // 
@@ -840,6 +841,7 @@
             this.HOME03_Production_06_cliem_return.Text = "รับคืน เคลม ผ้าพับ";
             this.HOME03_Production_06_cliem_return.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_cliem_return.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_cliem_return.Click += new System.EventHandler(this.HOME03_Production_06_cliem_return_Click);
             // 
             // HOME03_Production_06_cliem_discount
             // 
@@ -858,6 +860,7 @@
             this.HOME03_Production_06_cliem_discount.Text = "ขอลดหนี้ ผ้าพับ";
             this.HOME03_Production_06_cliem_discount.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_cliem_discount.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_cliem_discount.Click += new System.EventHandler(this.HOME03_Production_06_cliem_discount_Click);
             // 
             // HOME03_Production_06FG42
             // 

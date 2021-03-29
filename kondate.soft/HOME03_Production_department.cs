@@ -291,5 +291,29 @@ namespace kondate.soft
             frm2.Show();
 
         }
+
+        private void HOME03_Production_06_cliem_gr_Click(object sender, EventArgs e)
+        {
+            
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06_cliem_gr.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_GR frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_GR();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06_cliem_return_Click(object sender, EventArgs e)
+        {
+            
+             W_ID_Select.WORD_TOP = this.HOME03_Production_06_cliem_return.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_12Receive_FG2_Claim_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_12Receive_FG2_Claim_record();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06_cliem_discount_Click(object sender, EventArgs e)
+        {
+            
+             W_ID_Select.WORD_TOP = this.HOME03_Production_06_cliem_discount.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record();
+            frm2.Show();
+        }
     }
 }

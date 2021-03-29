@@ -33,7 +33,7 @@ using System.Collections;
 
 namespace kondate.soft.HOME03_Production
 {
-    public partial class HOME03_Production_11send_FG2_Claim_record : Form
+    public partial class HOME03_Production_13send_FG2_Reduce_Debt_record : Form
     {
         //Move Form ====================================
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -64,13 +64,13 @@ namespace kondate.soft.HOME03_Production
             }
         }
 
-        public HOME03_Production_11send_FG2_Claim_record()
+        public HOME03_Production_13send_FG2_Reduce_Debt_record()
         {
             InitializeComponent();
 
         }
 
-        private void HOME03_Production_11send_FG2_Claim_record_Load(object sender, EventArgs e)
+        private void HOME03_Production_13send_FG2_Reduce_Debt_record_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.btnmaximize.Visible = false;
@@ -99,7 +99,7 @@ namespace kondate.soft.HOME03_Production
             //FillDATE_FROM_SERVER();
             ////สำหรับทดสอบระบบ =====================================================================================================================
 
-            W_ID_Select.M_FORM_NUMBER = "H0311CLMRD";
+            W_ID_Select.M_FORM_NUMBER = "H0313RCDRD";
             CHECK_ADD_FORM();
             CHECK_USER_RULE();
 
@@ -112,9 +112,9 @@ namespace kondate.soft.HOME03_Production
 
             this.iblword_top.Text = W_ID_Select.WORD_TOP.Trim();
             this.iblstatus.Text = "Version : " + W_ID_Select.GetVersion() + "      |       User name (ชื่อผู้ใช้) : " + W_ID_Select.M_EMP_OFFICE_NAME.ToString() + "       |       กิจการ : " + W_ID_Select.M_CONAME.ToString() + "      |      สาขา : " + W_ID_Select.M_BRANCHNAME.ToString() + "      |     วันที่ : " + DateTime.Now.ToString("dd/MM/yyyy") + "";
-            this.iblword_status.Text = "บันทึกใบส่งเคลม";
+            this.iblword_status.Text = "บันทึกใบขอลดหนี้";
 
-            this.ActiveControl = this.txtCLM_record_remark;
+            this.ActiveControl = this.txtRCD_record_remark;
             this.BtnNew.Enabled = false;
             this.BtnSave.Enabled = true;
             this.btnopen.Enabled = false;
@@ -519,8 +519,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView66.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
 
-            this.GridView66.Columns["Col_txtmachine_id"].Visible = true;  //"Col_txtmachine_id";
-            this.GridView66.Columns["Col_txtmachine_id"].Width = 80;
+            this.GridView66.Columns["Col_txtmachine_id"].Visible = false;  //"Col_txtmachine_id";
+            this.GridView66.Columns["Col_txtmachine_id"].Width = 0;
             this.GridView66.Columns["Col_txtmachine_id"].ReadOnly = true;
             this.GridView66.Columns["Col_txtmachine_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView66.Columns["Col_txtmachine_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -1278,7 +1278,7 @@ namespace kondate.soft.HOME03_Production
                 //}
                 //else
                 //{
-                //    MessageBox.Show("ระบบจะให้ส่งเคลมผ้าพับ ได้ที่ละ 1 รหัสผ้าพับ ต่อ 1 ใส่งเคลม เท่านั้น !! ");
+                //    MessageBox.Show("ระบบจะให้ขอลดหนี้ผ้าพับ ได้ที่ละ 1 รหัสผ้าพับ ต่อ 1 ใขอลดหนี้ เท่านั้น !! ");
                 //    return;
                 //}
             }
@@ -1547,20 +1547,20 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtnumber_in_year"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtnumber_in_year"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtshirt_type_id"].Visible = true;  //"Col_txtshirt_type_id";
-            this.GridView1.Columns["Col_txtshirt_type_id"].Width = 100;
+            this.GridView1.Columns["Col_txtshirt_type_id"].Visible = false;  //"Col_txtshirt_type_id";
+            this.GridView1.Columns["Col_txtshirt_type_id"].Width = 0;
             this.GridView1.Columns["Col_txtshirt_type_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtshirt_type_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtshirt_type_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = true;  //"Col_txtshirt_size_id";
-            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 100;
+            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = false;  //"Col_txtshirt_size_id";
+            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 0;
             this.GridView1.Columns["Col_txtshirt_size_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtshirt_size_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtshirt_size_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txttable_name"].Visible = true;  //"Col_txttable_name";
-            this.GridView1.Columns["Col_txttable_name"].Width = 100;
+            this.GridView1.Columns["Col_txttable_name"].Visible = false;  //"Col_txttable_name";
+            this.GridView1.Columns["Col_txttable_name"].Width = 0;
             this.GridView1.Columns["Col_txttable_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txttable_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txttable_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -1602,8 +1602,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtmat_no"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtmat_no"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtmat_id"].Visible = false;  //"Col_txtmat_id";
-            this.GridView1.Columns["Col_txtmat_id"].Width = 0;
+            this.GridView1.Columns["Col_txtmat_id"].Visible = true;  //"Col_txtmat_id";
+            this.GridView1.Columns["Col_txtmat_id"].Width = 70;
             this.GridView1.Columns["Col_txtmat_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtmat_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtmat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -2155,7 +2155,7 @@ namespace kondate.soft.HOME03_Production
                 //}
                 //else
                 //{
-                //    MessageBox.Show("ระบบจะให้ส่งเคลมผ้าพับ ได้ที่ละ 1 รหัสผ้าพับ ต่อ 1 ใบส่งเคลม เท่านั้น !! ");
+                //    MessageBox.Show("ระบบจะให้ขอลดหนี้ผ้าพับ ได้ที่ละ 1 รหัสผ้าพับ ต่อ 1 ใบขอลดหนี้ เท่านั้น !! ");
                 //    return;
                 //}
                 conn.Open();
@@ -2618,8 +2618,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns[14].HeaderText = "มูลค่าเฉลี่ย";
             this.GridView2.Columns[15].HeaderText = "คงเหลือ(หน่วย2)";
 
-            this.GridView2.Columns[16].HeaderText = "ส่งเคลม(พับ) ";
-            this.GridView2.Columns[17].HeaderText = "ส่งเคลม(กก) ";
+            this.GridView2.Columns[16].HeaderText = "ขอลดหนี้(พับ) ";
+            this.GridView2.Columns[17].HeaderText = "ขอลดหนี้(กก) ";
 
             this.GridView2.Columns[18].HeaderText = "ราคา";
             this.GridView2.Columns[19].HeaderText = "ส่วน";
@@ -2633,12 +2633,12 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns[26].HeaderText = "ราคาเฉี่ยยกไป";
             this.GridView2.Columns[27].HeaderText = "จำนวนเงินยกไป";
 
-            this.GridView2.Columns[28].HeaderText = "ส่งเคลม ยกมา";
-            this.GridView2.Columns[29].HeaderText = "ส่งเคลม ปอนด์";
-            this.GridView2.Columns[30].HeaderText = "ส่งเคลม2 ยกไป";
+            this.GridView2.Columns[28].HeaderText = "ขอลดหนี้ ยกมา";
+            this.GridView2.Columns[29].HeaderText = "ขอลดหนี้ ปอนด์";
+            this.GridView2.Columns[30].HeaderText = "ขอลดหนี้2 ยกไป";
 
-            this.GridView2.Columns[31].HeaderText = "ส่งเคลม พับ ยกมา";
-            this.GridView2.Columns[32].HeaderText = "ส่งเคลม พับ ยกไป";
+            this.GridView2.Columns[31].HeaderText = "ขอลดหนี้ พับ ยกมา";
+            this.GridView2.Columns[32].HeaderText = "ขอลดหนี้ พับ ยกไป";
 
             this.GridView2.Columns[33].HeaderText = "1";
 
@@ -3299,12 +3299,12 @@ namespace kondate.soft.HOME03_Production
             TRANS_LOG();
 
             this.Hide();
-            var frm2 = new HOME03_Production.HOME03_Production_11send_FG2_Claim_record();
+            var frm2 = new HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record();
             frm2.Closed += (s, args) => this.Close();
             frm2.Show();
 
-            this.iblword_status.Text = "บันทึกใบส่งเคลม";
-            this.txtCLM_id.ReadOnly = true;
+            this.iblword_status.Text = "บันทึกใบขอลดหนี้";
+            this.txtRCD_id.ReadOnly = true;
         }
 
         private void btnopen_Click(object sender, EventArgs e)
@@ -3408,12 +3408,12 @@ namespace kondate.soft.HOME03_Production
                     //1 k020db_receive_record_trans
                     if (W_ID_Select.TRANS_BILL_STATUS.Trim() == "N")
                     {
-                        cmd2.CommandText = "INSERT INTO c002_11send_FG2_Claim_record_trans(cdkey," +
+                        cmd2.CommandText = "INSERT INTO c002_13send_FG2_Reduce_Debt_record_trans(cdkey," +
                                            "txtco_id,txtbranch_id," +
                                            "txttrans_id)" +
                                            "VALUES ('" + W_ID_Select.CDKEY.Trim() + "'," +
                                            "'" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +
-                                           "'" + this.txtCLM_id.Text.Trim() + "')";
+                                           "'" + this.txtRCD_id.Text.Trim() + "')";
 
                         cmd2.ExecuteNonQuery();
 
@@ -3421,7 +3421,7 @@ namespace kondate.soft.HOME03_Production
                     }
                     else
                     {
-                        cmd2.CommandText = "UPDATE c002_11send_FG2_Claim_record_trans SET txttrans_id = '" + this.txtCLM_id.Text.Trim() + "'" +
+                        cmd2.CommandText = "UPDATE c002_13send_FG2_Reduce_Debt_record_trans SET txttrans_id = '" + this.txtRCD_id.Text.Trim() + "'" +
                                            " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                            " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                            " AND (txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')";
@@ -3431,8 +3431,8 @@ namespace kondate.soft.HOME03_Production
                     }
                     //MessageBox.Show("ok1");
 
-                    //2 c002_11send_FG2_Claim_record
-                    cmd2.CommandText = "INSERT INTO c002_11send_FG2_Claim_record(cdkey,txtco_id,txtbranch_id," +  //1
+                    //2 c002_13send_FG2_Reduce_Debt_record
+                    cmd2.CommandText = "INSERT INTO c002_13send_FG2_Reduce_Debt_record(cdkey,txtco_id,txtbranch_id," +  //1
                                            "txttrans_date_server,txttrans_time," +  //2
                                            "txttrans_year,txttrans_month,txttrans_day,txttrans_date_client," +  //3
                                            "txtcomputer_ip,txtcomputer_name," +  //4
@@ -3440,7 +3440,7 @@ namespace kondate.soft.HOME03_Production
                                            "txtversion_id," +  //6
                                                                //====================================================
 
-                                           "txtCLM_id," + // 7
+                                           "txtRCD_id," + // 7
 
                                            "txtshirt_type_id," + // 8.1
                                             "txttable_name," + // 8.2
@@ -3463,7 +3463,7 @@ namespace kondate.soft.HOME03_Production
                                           "txtwant_mat_in_day," + // 17
                                           "txtdate_send_mat," + // 18
                                           "txtcredit_in_day," + // 19
-                                          "txtCLM_record_remark," + // 20
+                                          "txtRCD_record_remark," + // 20
                                           "txtemp_office_name_receive," + // 21
 
                                            "txtemp_office_name_audit," + // 21
@@ -3526,7 +3526,7 @@ namespace kondate.soft.HOME03_Production
                                            "txtsum2_qty," + // 47
                                            "txtcost_qty2_balance_yokpai," + // 48
 
-                                           "txtCLM_status," +  //49
+                                           "txtRCD_status," +  //49
 
                                            "txtsum_qty_tier," +  //49.1
                                            "txtsum_qty_body_per_tier," +  //49.2
@@ -3548,7 +3548,7 @@ namespace kondate.soft.HOME03_Production
                                                                 //=========================================================
 
 
-                                           "@txtCLM_id," + // 7
+                                           "@txtRCD_id," + // 7
 
                                            "@txtshirt_type_id," + // 8.1
                                             "@txttable_name," + // 8.2
@@ -3571,7 +3571,7 @@ namespace kondate.soft.HOME03_Production
                                           "@txtwant_mat_in_day," + // 17
                                           "@txtdate_send_mat," + // 18
                                           "@txtcredit_in_day," + // 19
-                                          "@txtCLM_record_remark," + // 20
+                                          "@txtRCD_record_remark," + // 20
                                           "@txtemp_office_name_receive," + // 21
 
                                            "@txtemp_office_name_audit," + // 21
@@ -3631,7 +3631,7 @@ namespace kondate.soft.HOME03_Production
                                            "@txtsum2_qty," + // 47
                                            "@txtcost_qty2_balance_yokpai," + // 48
 
-                                           "@txtCLM_status," +  //49
+                                           "@txtRCD_status," +  //49
 
                                            "@txtsum_qty_tier," +  //49.1
                                            "@txtsum_qty_body_per_tier," +  //49.2
@@ -3669,7 +3669,7 @@ namespace kondate.soft.HOME03_Production
 
 
 
-                    cmd2.Parameters.Add("@txtCLM_id", SqlDbType.NVarChar).Value = this.txtCLM_id.Text.Trim();  //7
+                    cmd2.Parameters.Add("@txtRCD_id", SqlDbType.NVarChar).Value = this.txtRCD_id.Text.Trim();  //7
 
                     cmd2.Parameters.Add("@txtshirt_type_id", SqlDbType.NVarChar).Value = ""; // this.PANEL0108_SHIRT_TYPE_txtshirt_type_id.Text.Trim();  //8.1
                     cmd2.Parameters.Add("@txttable_name", SqlDbType.NVarChar).Value = ""; // this.txttable_name.Text.Trim();  //8.2
@@ -3693,7 +3693,7 @@ namespace kondate.soft.HOME03_Production
                     cmd2.Parameters.Add("@txtwant_mat_in_day", SqlDbType.NVarChar).Value = this.txtwant_mat_in_day.Text.Trim();  //17
                     cmd2.Parameters.Add("@txtdate_send_mat", SqlDbType.NVarChar).Value = this.dtpdate_send_mat.Text.Trim();  //18
                     cmd2.Parameters.Add("@txtcredit_in_day", SqlDbType.NVarChar).Value = this.txtcredit_in_day.Text.Trim();  //19
-                    cmd2.Parameters.Add("@txtCLM_record_remark", SqlDbType.NVarChar).Value = this.txtCLM_record_remark.Text.Trim();  //20
+                    cmd2.Parameters.Add("@txtRCD_record_remark", SqlDbType.NVarChar).Value = this.txtRCD_record_remark.Text.Trim();  //20
 
                     cmd2.Parameters.Add("@txtemp_office_name_receive", SqlDbType.NVarChar).Value = this.txtemp_office_name_receive.Text.Trim();  //21
                     cmd2.Parameters.Add("@txtemp_office_name_audit", SqlDbType.NVarChar).Value = this.txtemp_office_name_audit.Text.Trim();  //21
@@ -3756,7 +3756,7 @@ namespace kondate.soft.HOME03_Production
                     cmd2.Parameters.Add("@txtsum2_qty", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum2_qty.Text.ToString()));  //47
                     cmd2.Parameters.Add("@txtcost_qty2_balance_yokpai", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtcost_qty2_balance_yokpai.Text.ToString()));  //48
 
-                    cmd2.Parameters.Add("@txtCLM_status", SqlDbType.NVarChar).Value = "0";  //49
+                    cmd2.Parameters.Add("@txtRCD_status", SqlDbType.NVarChar).Value = "0";  //49
 
                     cmd2.Parameters.Add("@txtsum_qty_tier", SqlDbType.NVarChar).Value = "0";  //49
                     cmd2.Parameters.Add("@txtsum_qty_body_per_tier", SqlDbType.NVarChar).Value = "0";  //49
@@ -3776,7 +3776,7 @@ namespace kondate.soft.HOME03_Production
 
 
 
-                    //3 c002_11send_FG2_Claim_record_detail
+                    //3 c002_13send_FG2_Reduce_Debt_record_detail
 
                     //cmd2.Parameters.Add("@txttrans_date_client", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyy-MM-dd", UsaCulture);
 
@@ -3793,13 +3793,13 @@ namespace kondate.soft.HOME03_Production
 
 
                                //===================================================================================================================
-                                //3 c002_11send_FG2_Claim_record_detail
+                                //3 c002_13send_FG2_Reduce_Debt_record_detail
 
-                                 cmd2.CommandText = "INSERT INTO c002_11send_FG2_Claim_record_detail(cdkey,txtco_id,txtbranch_id," +  //1
+                                 cmd2.CommandText = "INSERT INTO c002_13send_FG2_Reduce_Debt_record_detail(cdkey,txtco_id,txtbranch_id," +  //1
                                 "txttrans_year,txttrans_month,txttrans_day," +
 
                                 // //=================================================================
-                                "txtCLM_id," +  //6
+                                "txtRCD_id," +  //6
                                  "txtqc_id," +  //7
                                  "txtnumber_dyed," +  //8
                                  "txtnumber_in_year," +  //8
@@ -3876,7 +3876,7 @@ namespace kondate.soft.HOME03_Production
                                 "VALUES ('" + W_ID_Select.CDKEY.Trim() + "','" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +  //1
                                 "'" + myDateTime.ToString("yyyy", UsaCulture) + "','" + myDateTime.ToString("MM", UsaCulture) + "','" + myDateTime.ToString("dd", UsaCulture) + "'," +
 
-                                 "'" + this.txtCLM_id.Text.Trim() + "'," +  //6
+                                 "'" + this.txtRCD_id.Text.Trim() + "'," +  //6
                                  "'" + this.GridView1.Rows[i].Cells["Col_txtFG2_id"].Value.ToString() + "'," +  //7
                                  "'" + this.GridView1.Rows[i].Cells["Col_txtnumber_dyed"].Value.ToString() + "'," +  //8
                                  "'" + this.GridView1.Rows[i].Cells["Col_txtnumber_in_year"].Value.ToString() + "'," +  //8
@@ -3961,7 +3961,7 @@ namespace kondate.soft.HOME03_Production
                             //===================================================================================================================
                             // c002_07Receive_Send_dye_record_detail
                             cmd2.CommandText = "UPDATE c002_07Receive_Send_dye_record_detail SET " +
-                                                   "txtcut_id = '" + this.txtCLM_id.Text.ToString() + "'," +
+                                                   "txtcut_id = '" + this.txtRCD_id.Text.ToString() + "'," +
                                                     "txtqty_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value.ToString())) + "'," +
                                                    "txtqty_after_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value.ToString())) + "'" +
                                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
@@ -4065,9 +4065,9 @@ namespace kondate.soft.HOME03_Production
                                         //=======================================================
 
 
-                                        "'" + this.txtCLM_id.Text.Trim() + "'," +  //7 txtbill_id
-                                        "'CLM'," +  //9 txtbill_type
-                                        "'ส่งเคลม " + this.txtCLM_record_remark.Text.Trim() + "'," +  //9 txtbill_remark
+                                        "'" + this.txtRCD_id.Text.Trim() + "'," +  //7 txtbill_id
+                                        "'RCD'," +  //9 txtbill_type
+                                        "'ขอลดหนี้ " + this.txtRCD_record_remark.Text.Trim() + "'," +  //9 txtbill_remark
 
                                          "'" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "'," +  //7 txtwherehouse_id
                                        "'" + this.GridView2.Rows[i].Cells["Col_txtmat_no"].Value.ToString() + "'," +  //10 
@@ -4128,7 +4128,7 @@ namespace kondate.soft.HOME03_Production
                         trans.Commit();
                         conn.Close();
 
-                        if (this.iblword_status.Text.Trim() == "บันทึกใบส่งเคลม")
+                        if (this.iblword_status.Text.Trim() == "บันทึกใบขอลดหนี้")
                         {
                             W_ID_Select.LOG_ID = "5";
                             W_ID_Select.LOG_NAME = "บันทึกใหม่";
@@ -4203,12 +4203,12 @@ namespace kondate.soft.HOME03_Production
 
             }
             UPDATE_PRINT_BY();
-            W_ID_Select.TRANS_ID = this.txtCLM_id.Text.Trim();
+            W_ID_Select.TRANS_ID = this.txtRCD_id.Text.Trim();
             W_ID_Select.LOG_ID = "8";
             W_ID_Select.LOG_NAME = "ปริ๊น";
             TRANS_LOG();
             //======================================================
-            kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_print();
+            kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record_print();
             frm2.Show();
             frm2.BringToFront();
             //====================
@@ -4224,7 +4224,7 @@ namespace kondate.soft.HOME03_Production
 
             }
             UPDATE_PRINT_BY();
-            W_ID_Select.TRANS_ID = this.txtCLM_id.Text.Trim();
+            W_ID_Select.TRANS_ID = this.txtRCD_id.Text.Trim();
             W_ID_Select.LOG_ID = "8";
             W_ID_Select.LOG_NAME = "ปริ๊น";
             TRANS_LOG();
@@ -4245,7 +4245,7 @@ namespace kondate.soft.HOME03_Production
                 //E:\01_Project_ERP_Kondate.Soft\kondate.soft\kondate.soft\KONDATE_REPORT\Report_Chart_of_accounts.rpt
 
                 //rpt.Load("E:\\01_Project_ERP_Kondate.Soft\\kondate.soft\\kondate.soft\\KONDATE_REPORT\\Report_c002_07Receive_Send_dye_record.rpt");
-                rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_11send_FG2_Claim_record.rpt");
+                rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_13send_FG2_Reduce_Debt_record.rpt");
 
 
                 string cr_server = W_ID_Select.ADATASOURCE.Trim();
@@ -4280,7 +4280,7 @@ namespace kondate.soft.HOME03_Production
 
                 rpt.SetParameterValue("cdkey", W_ID_Select.CDKEY.Trim());
                 rpt.SetParameterValue("txtco_id", W_ID_Select.M_COID.Trim());
-                rpt.SetParameterValue("txtCLM_id", W_ID_Select.TRANS_ID.Trim());
+                rpt.SetParameterValue("txtRCD_id", W_ID_Select.TRANS_ID.Trim());
 
                 //พิมพ์กับเครื่องที่เราต้องการ ระบุชื่อไปเลย=============================================
                 //rpt.PrintOptions.PrinterName = "EPSON TM-T88V Receipt5";
@@ -6494,7 +6494,7 @@ namespace kondate.soft.HOME03_Production
                 cmd1.Connection = conn;
 
                 cmd1.CommandText = "SELECT *" +
-                                  " FROM c002_11send_FG2_Claim_record_trans" +
+                                  " FROM c002_13send_FG2_Reduce_Debt_record_trans" +
                                   " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                   " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                   " AND (txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
@@ -6522,11 +6522,11 @@ namespace kondate.soft.HOME03_Production
 
                         if (year2.Trim() == year_now2.Trim())
                         {
-                            TMP = "CLM" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + trans.Trim();
+                            TMP = "RCD" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + trans.Trim();
                         }
                         else
                         {
-                            TMP = "CLM" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
+                            TMP = "RCD" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
                         }
 
                     }
@@ -6534,7 +6534,7 @@ namespace kondate.soft.HOME03_Production
                     else
                     {
                         W_ID_Select.TRANS_BILL_STATUS = "N";
-                        TMP = "CLM" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
+                        TMP = "RCD" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
 
                     }
                     conn.Close();
@@ -6548,7 +6548,7 @@ namespace kondate.soft.HOME03_Production
                 {
                     conn.Close();
                 }
-                this.txtCLM_id.Text = TMP.Trim();
+                this.txtRCD_id.Text = TMP.Trim();
                 string RN = TMP.Substring(TMP.Length - 3);
             }
             //จบเชื่อมต่อฐานข้อมูล=======================================================
@@ -6601,12 +6601,12 @@ namespace kondate.soft.HOME03_Production
                 try
                 {
 
-                    cmd2.CommandText = "UPDATE c002_11send_FG2_Claim_record SET " +
+                    cmd2.CommandText = "UPDATE c002_13send_FG2_Reduce_Debt_record SET " +
                                                                  "txtemp_print = '" + W_ID_Select.M_EMP_OFFICE_NAME.Trim() + "'," +
                                                                  "txtemp_print_datetime = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture) + "'" +
                                                                 " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                               " AND (txtCLM_id = '" + this.txtCLM_id.Text.Trim() + "')";
+                                                               " AND (txtRCD_id = '" + this.txtRCD_id.Text.Trim() + "')";
                     cmd2.ExecuteNonQuery();
 
 
@@ -7239,8 +7239,8 @@ namespace kondate.soft.HOME03_Production
 
         private void BtnGrid_Click(object sender, EventArgs e)
         {
-            W_ID_Select.WORD_TOP = "ระเบียนใส่งเคลม";
-            kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim();
+            W_ID_Select.WORD_TOP = "ระเบียนใขอลดหนี้";
+            kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt frm2 = new kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt();
             frm2.Show();
 
         }

@@ -1388,7 +1388,7 @@ namespace kondate.soft.HOME03_Production
                                     //" AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtqty_after_cut > 0)" +
-                                    " ORDER BY c002_07Receive_Send_dye_record_detail.txtLot_no ASC";
+                                    " ORDER BY c002_07Receive_Send_dye_record_detail.txtFG2_id ASC";
 
                 // " AND (k021_mat_average_balance.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                 //" ORDER BY k021_mat_average_balance.ID ASC";
@@ -2136,7 +2136,7 @@ namespace kondate.soft.HOME03_Production
                                     //" AND (c002_07Receive_Send_dye_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtwherehouse_id = '" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "')" +
                                     " AND (c002_07Receive_Send_dye_record_detail.txtqty_after_cut > 0)" +
-                                    " ORDER BY c002_07Receive_Send_dye_record_detail.txtLot_no ASC";
+                                    " ORDER BY c002_07Receive_Send_dye_record_detail.txtFG2_id ASC";
 
                 // " AND (k021_mat_average_balance.txttrans_date_client BETWEEN @datestart AND @dateend)" +
                 //" ORDER BY k021_mat_average_balance.ID ASC";
@@ -2164,6 +2164,7 @@ namespace kondate.soft.HOME03_Production
                             var index = GridView3.Rows.Add();
                             GridView3.Rows[index].Cells["Col_Auto_num"].Value = k.ToString("000"); //0
                             GridView3.Rows[index].Cells["Col_txtFG2_id"].Value = dt2.Rows[j]["txtFG2_id"].ToString();      //1
+                            GridView3.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtnumber_in_year"].Value = dt2.Rows[j]["txtnumber_in_year"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //1
                             GridView3.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //1

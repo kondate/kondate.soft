@@ -30,9 +30,10 @@ using System.Runtime.InteropServices;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 
+
 namespace kondate.soft.HOME03_Production
 {
-    public partial class HOME03_Production_11send_FG2_Claim_record_print : Form
+    public partial class HOME03_Production_12Receive_FG2_Claim_record_print : Form
     {
         //Move Form ====================================
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -63,12 +64,12 @@ namespace kondate.soft.HOME03_Production
             }
         }
 
-        public HOME03_Production_11send_FG2_Claim_record_print()
+        public HOME03_Production_12Receive_FG2_Claim_record_print()
         {
             InitializeComponent();
         }
 
-        private void HOME03_Production_11send_FG2_Claim_record_print_Load(object sender, EventArgs e)
+        private void HOME03_Production_12Receive_FG2_Claim_record_print_Load(object sender, EventArgs e)
         {
             //W_ID_Select.TRANS_ID = "PRHO-21-000002";
 
@@ -90,7 +91,7 @@ namespace kondate.soft.HOME03_Production
             //C:\KD_ERP\KD_REPORT
 
 
-            rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_11send_FG2_Claim_record.rpt");
+            rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_12Receive_FG2_Claim_record.rpt");
             //rpt.Load("E:\\01_Project_ERP_Kondate.Soft\\kondate.soft\\kondate.soft\\KONDATE_REPORT\\Report_c002_01berg_produce_record.rpt");
 
 
@@ -126,11 +127,13 @@ namespace kondate.soft.HOME03_Production
 
             rpt.SetParameterValue("cdkey", W_ID_Select.CDKEY.Trim());
             rpt.SetParameterValue("txtco_id", W_ID_Select.M_COID.Trim());
-            rpt.SetParameterValue("txtCLM_id", W_ID_Select.TRANS_ID.Trim());
+            rpt.SetParameterValue("txtFG2RLM_id", W_ID_Select.TRANS_ID.Trim());
 
             this.crystalReportViewer1.ReportSource = rpt;
 
         }
+
+        //=========================================================
 
         private void iblword_top_MouseDown(object sender, MouseEventArgs e)
         {

@@ -1,6 +1,6 @@
 ﻿namespace kondate.soft.HOME03_Production
 {
-    partial class HOME03_Production_11send_FG2_Claim_record_detail
+    partial class HOME03_Production_13send_FG2_Reduce_Debt_record_detail
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_11send_FG2_Claim_record_detail));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOME03_Production_13send_FG2_Reduce_Debt_record_detail));
             this.panel_top = new System.Windows.Forms.Panel();
             this.iblword_top = new System.Windows.Forms.Label();
             this.btnmaximize_full = new System.Windows.Forms.PictureBox();
@@ -89,10 +89,10 @@
             this.dtpdate_record = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCLM_record_remark = new System.Windows.Forms.TextBox();
+            this.txtRCD_record_remark = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtCLM_id = new System.Windows.Forms.TextBox();
+            this.txtRCD_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtsum_qty_pub_rib = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
@@ -508,10 +508,10 @@
             this.panel1_contens.Controls.Add(this.dtpdate_record);
             this.panel1_contens.Controls.Add(this.label7);
             this.panel1_contens.Controls.Add(this.label2);
-            this.panel1_contens.Controls.Add(this.txtCLM_record_remark);
+            this.panel1_contens.Controls.Add(this.txtRCD_record_remark);
             this.panel1_contens.Controls.Add(this.label3);
             this.panel1_contens.Controls.Add(this.label17);
-            this.panel1_contens.Controls.Add(this.txtCLM_id);
+            this.panel1_contens.Controls.Add(this.txtRCD_id);
             this.panel1_contens.Controls.Add(this.label1);
             this.panel1_contens.Controls.Add(this.txtsum_qty_pub_rib);
             this.panel1_contens.Controls.Add(this.label63);
@@ -1042,15 +1042,15 @@
             this.label2.Text = "Supplier :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtCLM_record_remark
+            // txtRCD_record_remark
             // 
-            this.txtCLM_record_remark.BackColor = System.Drawing.Color.White;
-            this.txtCLM_record_remark.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCLM_record_remark.Location = new System.Drawing.Point(113, 340);
-            this.txtCLM_record_remark.Multiline = true;
-            this.txtCLM_record_remark.Name = "txtCLM_record_remark";
-            this.txtCLM_record_remark.Size = new System.Drawing.Size(577, 38);
-            this.txtCLM_record_remark.TabIndex = 1262;
+            this.txtRCD_record_remark.BackColor = System.Drawing.Color.White;
+            this.txtRCD_record_remark.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtRCD_record_remark.Location = new System.Drawing.Point(113, 340);
+            this.txtRCD_record_remark.Multiline = true;
+            this.txtRCD_record_remark.Name = "txtRCD_record_remark";
+            this.txtRCD_record_remark.Size = new System.Drawing.Size(577, 38);
+            this.txtRCD_record_remark.TabIndex = 1262;
             // 
             // label3
             // 
@@ -1074,15 +1074,15 @@
             this.label17.Text = "*";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtCLM_id
+            // txtRCD_id
             // 
-            this.txtCLM_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtCLM_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCLM_id.Location = new System.Drawing.Point(113, 48);
-            this.txtCLM_id.Name = "txtCLM_id";
-            this.txtCLM_id.ReadOnly = true;
-            this.txtCLM_id.Size = new System.Drawing.Size(309, 21);
-            this.txtCLM_id.TabIndex = 1259;
+            this.txtRCD_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtRCD_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtRCD_id.Location = new System.Drawing.Point(113, 48);
+            this.txtRCD_id.Name = "txtRCD_id";
+            this.txtRCD_id.ReadOnly = true;
+            this.txtRCD_id.Size = new System.Drawing.Size(309, 21);
+            this.txtRCD_id.TabIndex = 1259;
             // 
             // label1
             // 
@@ -1092,7 +1092,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 23);
             this.label1.TabIndex = 1260;
-            this.label1.Text = "เลขที่ส่งตัด :";
+            this.label1.Text = "เลขที่ขอลดหนี้ :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtsum_qty_pub_rib
@@ -1117,7 +1117,7 @@
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(91, 21);
             this.label63.TabIndex = 1256;
-            this.label63.Text = "รวมส่งตัด(พับ) :";
+            this.label63.Text = "รวมขอลดหนี้(พับ) :";
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtsum_qty
@@ -1142,7 +1142,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 21);
             this.label13.TabIndex = 1254;
-            this.label13.Text = "รวมส่งตัด (กก) :";
+            this.label13.Text = "รวมขอลดหนี้ (กก) :";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GridView2
@@ -2323,7 +2323,7 @@
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // HOME03_Production_11send_FG2_Claim_record_detail
+            // HOME03_Production_13send_FG2_Reduce_Debt_record_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2335,10 +2335,10 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HOME03_Production_11send_FG2_Claim_record_detail";
+            this.Name = "HOME03_Production_13send_FG2_Reduce_Debt_record_detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ข้อมูลใบส่งเคลม";
-            this.Load += new System.EventHandler(this.HOME03_Production_11send_FG2_Claim_record_detail_Load);
+            this.Text = "ข้อมูลใบขอลดหนี้";
+            this.Load += new System.EventHandler(this.HOME03_Production_13send_FG2_Reduce_Debt_record_detail_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();
@@ -2521,10 +2521,10 @@
         public System.Windows.Forms.DateTimePicker dtpdate_record;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCLM_record_remark;
+        private System.Windows.Forms.TextBox txtRCD_record_remark;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtCLM_id;
+        private System.Windows.Forms.TextBox txtRCD_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtdtpdate_send_mat;
     }

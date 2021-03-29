@@ -98,13 +98,13 @@ namespace kondate.soft.HOME03_Production
             //FillDATE_FROM_SERVER();
             ////สำหรับทดสอบระบบ =====================================================================================================================
 
-            W_ID_Select.M_FORM_NUMBER = "H03081SCGR";
+            W_ID_Select.M_FORM_NUMBER = "H03011CLMGR";
             CHECK_ADD_FORM();
 
             CHECK_USER_RULE();
 
             this.iblword_top.Text = W_ID_Select.WORD_TOP.Trim();
-            this.iblword_status.Text = "ตรวจใบสั่งปูผ้า ค้างรับ";
+            this.iblword_status.Text = "ตรวจใบส่งเคลม ค้างรับ";
             this.iblstatus.Text = "Version : " + W_ID_Select.GetVersion() + "      |       User name (ชื่อผู้ใช้) : " + W_ID_Select.M_EMP_OFFICE_NAME.ToString() + "       |       กิจการ : " + W_ID_Select.M_CONAME.ToString() + "      |      สาขา : " + W_ID_Select.M_BRANCHNAME.ToString() + "      |     วันที่ : " + DateTime.Now.ToString("dd/MM/yyyy") + "";
 
 
@@ -128,8 +128,8 @@ namespace kondate.soft.HOME03_Production
             this.dtpstart.CustomFormat = this.dtpstart.Value.ToString("dd-MM-yyyy", UsaCulture);
 
             //========================================
-            this.cboSearch.Items.Add("เลขที่ใบสั่งปูผ้า");
-            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบสั่งปูผ้า");
+            this.cboSearch.Items.Add("เลขที่ใบส่งเคลม");
+            this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งเคลม");
 
             //========================================
             PANEL2_BRANCH_GridView1_branch();
@@ -186,59 +186,59 @@ namespace kondate.soft.HOME03_Production
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Connection = conn;
 
-                cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                    "k016db_1supplier.*," +
-                                   "c002_081Send_Cut_shirt_record_detail.*," +
+                                   "c002_11send_FG2_Claim_record_detail.*," +
                                    "c001_05face_baking.*," +
                                    //"c001_06number_mat.*," +
                                    "c001_07number_color.*," +
 
                                    "k016db_1supplier.*," +
-                                   "k013_1db_acc_13group_tax.*," +
+                                   //"k013_1db_acc_13group_tax.*," +
 
                                    "k013_1db_acc_06wherehouse.*" +
 
-                                   " FROM c002_081Send_Cut_shirt_record" +
+                                   " FROM c002_11send_FG2_Claim_record" +
 
                                    " INNER JOIN k016db_1supplier" +
-                                   " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                   " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                   " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                   " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                   " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                   " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                    " INNER JOIN c001_05face_baking" +
-                                   " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                    //" INNER JOIN c001_06number_mat" +
-                                   //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                    " INNER JOIN c001_07number_color" +
-                                   " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                   " INNER JOIN k013_1db_acc_13group_tax" +
-                                   " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   //" INNER JOIN k013_1db_acc_13group_tax" +
+                                   //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
-                                   " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                   " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                   " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                   " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                    " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                  " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
+                                   " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                    " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                  " AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                  " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id,c002_11send_FG2_Claim_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -261,7 +261,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtCLM_id"].Value = dt2.Rows[j]["txtCLM_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -411,116 +411,116 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
                 if (this.ch_all_branch.Checked == true)
                 {
-                    cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                    cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_081Send_Cut_shirt_record_detail.*," +
+                                       "c002_11send_FG2_Claim_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_081Send_Cut_shirt_record" +
+                                       " FROM c002_11send_FG2_Claim_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                       " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                    " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
+                                           " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    //" AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                    " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                       " AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id,c002_11send_FG2_Claim_record_detail.ID ASC";
 
                 }
                 else
                 {
-                    cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                    cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_081Send_Cut_shirt_record_detail.*," +
+                                       "c002_11send_FG2_Claim_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_081Send_Cut_shirt_record" +
+                                       " FROM c002_11send_FG2_Claim_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                       " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                    " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
+                                           " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                    " AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id,c002_11send_FG2_Claim_record_detail.ID ASC";
 
 
                 }
@@ -545,7 +545,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtCLM_id"].Value = dt2.Rows[j]["txtCLM_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -659,7 +659,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[0].Name = "Col_Auto_num";
             this.GridView1.Columns[1].Name = "Col_txtco_id";
             this.GridView1.Columns[2].Name = "Col_txtbranch_id";
-            this.GridView1.Columns[3].Name = "Col_txtSPT_id";
+            this.GridView1.Columns[3].Name = "Col_txtCLM_id";
             this.GridView1.Columns[4].Name = "Col_txttrans_date_client";
             this.GridView1.Columns[5].Name = "Col_txttrans_time";
             this.GridView1.Columns[6].Name = "Col_txtsupplier_id";
@@ -757,7 +757,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[17].HeaderText = "Lot No";
             this.GridView1.Columns[18].HeaderText = "พับที่";
 
-            this.GridView1.Columns[19].HeaderText = "สั่งปูผ้า (กก.)";
+            this.GridView1.Columns[19].HeaderText = "ส่งเคลม (กก.)";
 
             this.GridView1.Columns[20].HeaderText = "ลำดับ";
             this.GridView1.Columns[21].HeaderText = "รหัส";
@@ -769,7 +769,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[26].HeaderText = " หน่วย(ปอนด์)";
             this.GridView1.Columns[27].HeaderText = " หน่วย";
 
-            this.GridView1.Columns[28].HeaderText = "สั่งปูผ้า(ปอนด์)";
+            this.GridView1.Columns[28].HeaderText = "ส่งเคลม(ปอนด์)";
 
             this.GridView1.Columns[29].HeaderText = "ราคา";
             this.GridView1.Columns[30].HeaderText = "ส่วนลด(%)";
@@ -796,24 +796,24 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[47].HeaderText = "Col_txtsum_qty_pub_kg";
             this.GridView1.Columns[48].HeaderText = "Col_txtsum_qty_rib_kg";
 
-            this.GridView1.Columns[49].HeaderText = "สั่งปูผ้าแล้วยกมา";
-            this.GridView1.Columns[50].HeaderText = "สั่งปูผ้าแล้วยกไป";
-            this.GridView1.Columns[51].HeaderText = "เหลือรอสั่งปูผ้า อีก กก.";
+            this.GridView1.Columns[49].HeaderText = "ส่งเคลมแล้วยกมา";
+            this.GridView1.Columns[50].HeaderText = "ส่งเคลมแล้วยกไป";
+            this.GridView1.Columns[51].HeaderText = "เหลือรอส่งเคลม อีก กก.";
 
             this.GridView1.Columns[52].HeaderText = "รับแล้ว";  //กก
             this.GridView1.Columns[53].HeaderText = "รอรับ";  //กก
-            this.GridView1.Columns[54].HeaderText = "เลขที่รับคืนสั่งปูผ้า";  //
+            this.GridView1.Columns[54].HeaderText = "เลขที่รับคืนส่งเคลม";  //
             this.GridView1.Columns[55].HeaderText = "1";  //
 
             this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
             this.GridView1.Columns["Col_txtco_id"].Visible = false;  //"Col_txtco_id";
             this.GridView1.Columns["Col_txtbranch_id"].Visible = false;  //""Col_txtbranch_id"";
 
-            this.GridView1.Columns["Col_txtSPT_id"].Visible = true;  //"Col_txtSPT_id";
-            this.GridView1.Columns["Col_txtSPT_id"].Width = 140;
-            this.GridView1.Columns["Col_txtSPT_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtSPT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtSPT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtCLM_id"].Visible = true;  //"Col_txtCLM_id";
+            this.GridView1.Columns["Col_txtCLM_id"].Width = 140;
+            this.GridView1.Columns["Col_txtCLM_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtCLM_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtCLM_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txttrans_date_client"].Visible = true;  //""Col_txttrans_date_client"";
             this.GridView1.Columns["Col_txttrans_date_client"].Width = 90;
@@ -830,7 +830,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtsupplier_id"].Visible = false;  //"Col_txtsupplier_id";
 
             this.GridView1.Columns["Col_txtsupplier_name"].Visible = true;  //"Col_txtsupplier_name";
-            this.GridView1.Columns["Col_txtsupplier_name"].Width = 150;
+            this.GridView1.Columns["Col_txtsupplier_name"].Width = 300;
             this.GridView1.Columns["Col_txtsupplier_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txtsupplier_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtsupplier_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -847,26 +847,26 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtwherehouse_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtshirt_type_id"].Visible = true;  //"Col_txtshirt_type_id";
-            this.GridView1.Columns["Col_txtshirt_type_id"].Width = 80;
+            this.GridView1.Columns["Col_txtshirt_type_id"].Visible = false;  //"Col_txtshirt_type_id";
+            this.GridView1.Columns["Col_txtshirt_type_id"].Width = 0;
             this.GridView1.Columns["Col_txtshirt_type_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtshirt_type_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtshirt_type_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = true;  //"Col_txtshirt_size_id";
-            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 80;
+            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = false;  //"Col_txtshirt_size_id";
+            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 0;
             this.GridView1.Columns["Col_txtshirt_size_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtshirt_size_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtshirt_size_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.GridView1.Columns["Col_txttable_name"].Visible = true;  //"Col_txttable_name";
-            this.GridView1.Columns["Col_txttable_name"].Width = 80;
+            this.GridView1.Columns["Col_txttable_name"].Visible = false;  //"Col_txttable_name";
+            this.GridView1.Columns["Col_txttable_name"].Width = 0;
             this.GridView1.Columns["Col_txttable_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txttable_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txttable_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.GridView1.Columns["Col_txtnumber_in_year"].Visible = true;  //"Col_txtnumber_in_year";
-            this.GridView1.Columns["Col_txtnumber_in_year"].Width = 80;
+            this.GridView1.Columns["Col_txtnumber_in_year"].Visible = false;  //"Col_txtnumber_in_year";
+            this.GridView1.Columns["Col_txtnumber_in_year"].Width = 0;
             this.GridView1.Columns["Col_txtnumber_in_year"].ReadOnly = true;
             this.GridView1.Columns["Col_txtnumber_in_year"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtnumber_in_year"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -907,7 +907,7 @@ namespace kondate.soft.HOME03_Production
             dgvCmb_SELECT.Name = "Col_Chk_SELECT";
             dgvCmb_SELECT.Width = 0;  //70
             dgvCmb_SELECT.DisplayIndex = 8;
-            dgvCmb_SELECT.HeaderText = "เลือกสั่งปูผ้า";
+            dgvCmb_SELECT.HeaderText = "เลือกส่งเคลม";
             dgvCmb_SELECT.ValueType = typeof(bool);
             dgvCmb_SELECT.ReadOnly = false;
             dgvCmb_SELECT.Visible = false;
@@ -1268,15 +1268,15 @@ namespace kondate.soft.HOME03_Production
                 if (cell != null)
                 {
                     W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
-                    this.cboSearch.Text = "เลขที่ใบสั่งปูผ้า";
+                    this.cboSearch.Text = "เลขที่ใบส่งเคลม";
 
-                    if (this.cboSearch.Text == "เลขที่ใบสั่งปูผ้า")
+                    if (this.cboSearch.Text == "เลขที่ใบส่งเคลม")
                     {
                         this.txtsearch.Text = row.Cells[3].Value.ToString();
                         W_ID_Select.TRANS_ID = row.Cells[3].Value.ToString();
 
                     }
-                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบสั่งปูผ้า")
+                    else if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งเคลม")
                     {
                         this.txtsearch.Text = row.Cells[8].Value.ToString();
 
@@ -1336,7 +1336,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบสั่งปูผ้า";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งเคลม";
                 kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_detail();
                 frm2.Show();
 
@@ -1470,7 +1470,7 @@ namespace kondate.soft.HOME03_Production
                 W_ID_Select.LOG_NAME = "ใหม่";
                 TRANS_LOG();
 
-                W_ID_Select.WORD_TOP = "บันทึกใบสั่งปูผ้า";
+                W_ID_Select.WORD_TOP = "บันทึกใบส่งเคลม";
                 kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record();
                 frm2.Show();
                 //this.Close();
@@ -1491,7 +1491,7 @@ namespace kondate.soft.HOME03_Production
             {
                 W_ID_Select.LOG_ID = "4";
                 W_ID_Select.LOG_NAME = "เปิดแก้ไข";
-                W_ID_Select.WORD_TOP = "ดูข้อมูลใบสั่งปูผ้า";
+                W_ID_Select.WORD_TOP = "ดูข้อมูลใบส่งเคลม";
                 kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_detail frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_detail();
                 frm2.Show();
 
@@ -1569,116 +1569,116 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
                 if (this.ch_all_branch.Checked == true)
                 {
-                    cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                    cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_081Send_Cut_shirt_record_detail.*," +
+                                       "c002_11send_FG2_Claim_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_081Send_Cut_shirt_record" +
+                                       " FROM c002_11send_FG2_Claim_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                       " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                    " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
+                                           " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    //" AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                    " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                       " AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id,c002_11send_FG2_Claim_record_detail.ID ASC";
 
                 }
                 if (this.ch_all_branch.Checked == false)
                 {
-                    cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                    cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_081Send_Cut_shirt_record_detail.*," +
+                                       "c002_11send_FG2_Claim_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_081Send_Cut_shirt_record" +
+                                       " FROM c002_11send_FG2_Claim_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                       " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                     " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                      " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                      " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
+                                           " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                     " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                      " AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                      " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id,c002_11send_FG2_Claim_record_detail.ID ASC";
 
 
                 }
@@ -1704,7 +1704,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtCLM_id"].Value = dt2.Rows[j]["txtCLM_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -1859,59 +1859,59 @@ namespace kondate.soft.HOME03_Production
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Connection = conn;
 
-                cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                    "k016db_1supplier.*," +
-                                   "c002_081Send_Cut_shirt_record_detail.*," +
+                                   "c002_11send_FG2_Claim_record_detail.*," +
                                    "c001_05face_baking.*," +
                                    //"c001_06number_mat.*," +
                                    "c001_07number_color.*," +
 
                                    "k016db_1supplier.*," +
-                                   "k013_1db_acc_13group_tax.*," +
+                                   //"k013_1db_acc_13group_tax.*," +
 
                                    "k013_1db_acc_06wherehouse.*" +
 
-                                   " FROM c002_081Send_Cut_shirt_record" +
+                                   " FROM c002_11send_FG2_Claim_record" +
 
                                    " INNER JOIN k016db_1supplier" +
-                                   " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                   " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                   " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                   " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                   " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                   " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                    " INNER JOIN c001_05face_baking" +
-                                   " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                    //" INNER JOIN c001_06number_mat" +
-                                   //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                    " INNER JOIN c001_07number_color" +
-                                   " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                   " INNER JOIN k013_1db_acc_13group_tax" +
-                                   " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   //" INNER JOIN k013_1db_acc_13group_tax" +
+                                   //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
-                                   " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                   " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                   " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                   " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                   " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                   " AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                      " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                 " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                  " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
+                                   " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                      " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                 " AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                  " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id,c002_11send_FG2_Claim_record_detail.ID ASC";
 
                 cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -1934,7 +1934,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtCLM_id"].Value = dt2.Rows[j]["txtCLM_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 
@@ -2084,122 +2084,122 @@ namespace kondate.soft.HOME03_Production
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Connection = conn;
 
-                //this.cboSearch.Items.Add("เลขที่ใบสั่งปูผ้า");
-                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบสั่งปูผ้า");
-                if (this.cboSearch.Text == "เลขที่ใบสั่งปูผ้า")
+                //this.cboSearch.Items.Add("เลขที่ใบส่งเคลม");
+                //this.cboSearch.Items.Add("ชื่อผู้บันทึกใบส่งเคลม");
+                if (this.cboSearch.Text == "เลขที่ใบส่งเคลม")
                 {
-                    cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                    cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_081Send_Cut_shirt_record_detail.*," +
+                                       "c002_11send_FG2_Claim_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_081Send_Cut_shirt_record" +
+                                       " FROM c002_11send_FG2_Claim_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                       " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                    //" AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                    " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                        " AND (c002_081Send_Cut_shirt_record.txtSPT_id = '" + this.txtsearch.Text.Trim() + "')" +
-                                        " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id,c002_081Send_Cut_shirt_record_detail.ID ASC";
+                                           " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                    //" AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                    //" AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                    " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                        " AND (c002_11send_FG2_Claim_record.txtCLM_id = '" + this.txtsearch.Text.Trim() + "')" +
+                                        " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id,c002_11send_FG2_Claim_record_detail.ID ASC";
 
                 }
-                if (this.cboSearch.Text == "ชื่อผู้บันทึกใบสั่งปูผ้า")
+                if (this.cboSearch.Text == "ชื่อผู้บันทึกใบส่งเคลม")
                 {
-                    cmd2.CommandText = "SELECT c002_081Send_Cut_shirt_record.*," +
+                    cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
                                        "k016db_1supplier.*," +
-                                       "c002_081Send_Cut_shirt_record_detail.*," +
+                                       "c002_11send_FG2_Claim_record_detail.*," +
                                        "c001_05face_baking.*," +
                                        //"c001_06number_mat.*," +
                                        "c001_07number_color.*," +
 
                                        "k016db_1supplier.*," +
-                                       "k013_1db_acc_13group_tax.*," +
+                                       //"k013_1db_acc_13group_tax.*," +
 
                                        "k013_1db_acc_06wherehouse.*" +
 
-                                       " FROM c002_081Send_Cut_shirt_record" +
+                                       " FROM c002_11send_FG2_Claim_record" +
 
                                        " INNER JOIN k016db_1supplier" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                       " INNER JOIN c002_081Send_Cut_shirt_record_detail" +
-                                       " ON c002_081Send_Cut_shirt_record.cdkey = c002_081Send_Cut_shirt_record_detail.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record.txtco_id = c002_081Send_Cut_shirt_record_detail.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record.txtSPT_id = c002_081Send_Cut_shirt_record_detail.txtSPT_id" +
+                                       " INNER JOIN c002_11send_FG2_Claim_record_detail" +
+                                       " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
 
                                        " INNER JOIN c001_05face_baking" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                        //" INNER JOIN c001_06number_mat" +
-                                       //" ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                       //" AND c002_081Send_Cut_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                       //" ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                       //" AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                        " INNER JOIN c001_07number_color" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
-                                       " INNER JOIN k013_1db_acc_13group_tax" +
-                                       " ON c002_081Send_Cut_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                       //" INNER JOIN k013_1db_acc_13group_tax" +
+                                       //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                        " INNER JOIN k013_1db_acc_06wherehouse" +
-                                       " ON c002_081Send_Cut_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                       " AND c002_081Send_Cut_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                       " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                       " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                           " WHERE (c002_081Send_Cut_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                      //" AND (c002_081Send_Cut_shirt_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
-                                      " AND (c002_081Send_Cut_shirt_record.txtSPT_status = '0')" +
-                                      " AND (c002_081Send_Cut_shirt_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
-                                       " AND (c002_081Send_Cut_shirt_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
-                                      " ORDER BY c002_081Send_Cut_shirt_record.txtSPT_id ASC";
+                                           " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                       " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                      //" AND (c002_11send_FG2_Claim_record.txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
+                                      " AND (c002_11send_FG2_Claim_record.txtCLM_status = '0')" +
+                                      " AND (c002_11send_FG2_Claim_record.txttrans_date_client BETWEEN @datestart AND @dateend)" +
+                                       " AND (c002_11send_FG2_Claim_record.txtemp_office_name LIKE '%" + this.txtsearch.Text.Trim() + "%')" +
+                                      " ORDER BY c002_11send_FG2_Claim_record.txtCLM_id ASC";
 
                 }
 
@@ -2224,7 +2224,7 @@ namespace kondate.soft.HOME03_Production
                             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
                             this.GridView1.Rows[index].Cells["Col_txtco_id"].Value = dt2.Rows[j]["txtco_id"].ToString();      //1
                             this.GridView1.Rows[index].Cells["Col_txtbranch_id"].Value = dt2.Rows[j]["txtbranch_id"].ToString();      //2
-                            this.GridView1.Rows[index].Cells["Col_txtSPT_id"].Value = dt2.Rows[j]["txtSPT_id"].ToString();      //3
+                            this.GridView1.Rows[index].Cells["Col_txtCLM_id"].Value = dt2.Rows[j]["txtCLM_id"].ToString();      //3
                             this.GridView1.Rows[index].Cells["Col_txttrans_date_client"].Value = Convert.ToDateTime(dt2.Rows[j]["txttrans_date_client"]).ToString("dd-MM-yyyy", UsaCulture);     //4
                             this.GridView1.Rows[index].Cells["Col_txttrans_time"].Value = dt2.Rows[j]["txttrans_time"].ToString();      //5
 

@@ -439,6 +439,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[6].Name = "Col_txttrans_time";
             this.GridView1.Columns[7].Name = "Col_txtsupplier_id";
             this.GridView1.Columns[8].Name = "Col_txtsupplier_name";
+
+
             this.GridView1.Columns[9].Name = "Col_txtemp_office_name";
 
             this.GridView1.Columns[10].Name = "Col_txtsum_qty_pub";
@@ -458,6 +460,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns[6].HeaderText = " เวลา";
             this.GridView1.Columns[7].HeaderText = " รหัส Supplier";
             this.GridView1.Columns[8].HeaderText = " ชื่อ Supplier";
+
+
             this.GridView1.Columns[9].HeaderText = " ผู้บันทึก";
 
             this.GridView1.Columns[10].HeaderText = " พับ";

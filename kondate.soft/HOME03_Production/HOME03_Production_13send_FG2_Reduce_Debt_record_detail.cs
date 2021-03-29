@@ -32,7 +32,7 @@ using CrystalDecisions.Shared;
 
 namespace kondate.soft.HOME03_Production
 {
-    public partial class HOME03_Production_11send_FG2_Claim_record_detail : Form
+    public partial class HOME03_Production_13send_FG2_Reduce_Debt_record_detail : Form
     {
         //Move Form ====================================
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -64,18 +64,18 @@ namespace kondate.soft.HOME03_Production
         }
 
 
-        public HOME03_Production_11send_FG2_Claim_record_detail()
+        public HOME03_Production_13send_FG2_Reduce_Debt_record_detail()
         {
             InitializeComponent();
         }
 
-        private void HOME03_Production_11send_FG2_Claim_record_detail_Load(object sender, EventArgs e)
+        private void HOME03_Production_13send_FG2_Reduce_Debt_record_detail_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.btnmaximize.Visible = false;
             this.btnmaximize_full.Visible = true;
 
-            W_ID_Select.M_FORM_NUMBER = "H0311CLMDL";
+            W_ID_Select.M_FORM_NUMBER = "H0311RCDDL";
             CHECK_ADD_FORM();
 
             CHECK_USER_RULE();
@@ -87,9 +87,9 @@ namespace kondate.soft.HOME03_Production
             W_ID_Select.LOG_NAME = "เปิด";
             TRANS_LOG();
 
-            this.iblword_status.Text = "ดูข้อมูลใบส่งเคลม";
+            this.iblword_status.Text = "ดูข้อมูลใบขอลดหนี้";
 
-            this.ActiveControl = this.txtCLM_record_remark;
+            this.ActiveControl = this.txtRCD_record_remark;
             this.BtnNew.Enabled = false;
             this.btnopen.Enabled = false;
             this.BtnSave.Enabled = false;
@@ -155,8 +155,8 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
 
 
-                cmd2.CommandText = "SELECT c002_11send_FG2_Claim_record.*," +
-                                   "c002_11send_FG2_Claim_record_detail.*," +
+                cmd2.CommandText = "SELECT c002_13send_FG2_Reduce_Debt_record.*," +
+                                   "c002_13send_FG2_Reduce_Debt_record_detail.*," +
                                    "c001_05face_baking.*," +
                                    "c001_06number_mat.*," +
                                    "c001_07number_color.*," +
@@ -167,67 +167,67 @@ namespace kondate.soft.HOME03_Production
 
                                    "k016db_1supplier.*," +
                                    //"k013_1db_acc_13group_tax.*," +
-                                   //"c002_11send_FG2_Claim_record_type.*," +
+                                   //"c002_13send_FG2_Reduce_Debt_record_type.*," +
 
                                    "k013_1db_acc_06wherehouse.*" +
 
-                                   " FROM c002_11send_FG2_Claim_record" +
+                                   " FROM c002_13send_FG2_Reduce_Debt_record" +
 
-                                   " INNER JOIN c002_11send_FG2_Claim_record_detail" +
-                                   " ON c002_11send_FG2_Claim_record.cdkey = c002_11send_FG2_Claim_record_detail.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record.txtco_id = c002_11send_FG2_Claim_record_detail.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record.txtCLM_id = c002_11send_FG2_Claim_record_detail.txtCLM_id" +
+                                   " INNER JOIN c002_13send_FG2_Reduce_Debt_record_detail" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record.cdkey = c002_13send_FG2_Reduce_Debt_record_detail.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record.txtco_id = c002_13send_FG2_Reduce_Debt_record_detail.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record.txtRCD_id = c002_13send_FG2_Reduce_Debt_record_detail.txtRCD_id" +
 
                                    " INNER JOIN c001_05face_baking" +
-                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                    " INNER JOIN c001_06number_mat" +
-                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                    " INNER JOIN c001_08shirt_type" +
-                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_08shirt_type.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
 
                                    " INNER JOIN c001_09shirt_size" +
-                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_09shirt_size.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                    " INNER JOIN c001_07number_color" +
-                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_color.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record_detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                    " INNER JOIN c001_07number_sup_color" +
-                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = c001_07number_sup_color.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
 
                                    " INNER JOIN k016db_1supplier" +
-                                   " ON c002_11send_FG2_Claim_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
                                    //" INNER JOIN k013_1db_acc_13group_tax" +
-                                   //" ON c002_11send_FG2_Claim_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   //" ON c002_13send_FG2_Reduce_Debt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
-                                   //" INNER JOIN c002_11send_FG2_Claim_record_type" +
-                                   //" ON c002_11send_FG2_Claim_record.txtsend_cut_type_id = c002_11send_FG2_Claim_record_type.txtsend_cut_type_id" +
+                                   //" INNER JOIN c002_13send_FG2_Reduce_Debt_record_type" +
+                                   //" ON c002_13send_FG2_Reduce_Debt_record.txtsend_cut_type_id = c002_13send_FG2_Reduce_Debt_record_type.txtsend_cut_type_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
-                                   " ON c002_11send_FG2_Claim_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                   " AND c002_11send_FG2_Claim_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                   " ON c002_13send_FG2_Reduce_Debt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                   " AND c002_13send_FG2_Reduce_Debt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                   " WHERE (c002_11send_FG2_Claim_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                   " AND (c002_11send_FG2_Claim_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                   " AND (c002_11send_FG2_Claim_record.txtCLM_id = '" + W_ID_Select.TRANS_ID.Trim()+ "')" +
-                                   " ORDER BY c002_11send_FG2_Claim_record_detail.txtnumber_in_year,c002_11send_FG2_Claim_record_detail.txtfold_number ASC";
+                                   " WHERE (c002_13send_FG2_Reduce_Debt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_13send_FG2_Reduce_Debt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (c002_13send_FG2_Reduce_Debt_record.txtRCD_id = '" + W_ID_Select.TRANS_ID.Trim()+ "')" +
+                                   " ORDER BY c002_13send_FG2_Reduce_Debt_record_detail.txtnumber_in_year,c002_13send_FG2_Reduce_Debt_record_detail.txtfold_number ASC";
 
                 try
                 {
@@ -239,7 +239,7 @@ namespace kondate.soft.HOME03_Production
                     if (dt2.Rows.Count > 0)
                     {
 
-                        this.txtCLM_id.Text = dt2.Rows[0]["txtCLM_id"].ToString();
+                        this.txtRCD_id.Text = dt2.Rows[0]["txtRCD_id"].ToString();
 
                         this.PANEL161_SUP_txtsupplier_id.Text = dt2.Rows[0]["txtsupplier_id"].ToString();
                         this.PANEL161_SUP_txtsupplier_name.Text = dt2.Rows[0]["txtsupplier_name"].ToString();
@@ -249,7 +249,7 @@ namespace kondate.soft.HOME03_Production
                         this.dtpdate_record.CustomFormat = this.dtpdate_record.Value.ToString("dd-MM-yyyy", UsaCulture);
 
                         this.txtcontact_person.Text = dt2.Rows[0]["txtcontact_person"].ToString();
-                        this.txtCLM_record_remark.Text = dt2.Rows[0]["txtCLM_record_remark"].ToString();
+                        this.txtRCD_record_remark.Text = dt2.Rows[0]["txtRCD_record_remark"].ToString();
 
                         this.txtwant_mat_in_day.Text = dt2.Rows[0]["txtwant_mat_in_day"].ToString();
 
@@ -1712,8 +1712,8 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns[14].HeaderText = "มูลค่าเฉลี่ย";
             this.GridView2.Columns[15].HeaderText = "คงเหลือ(หน่วย2)";
 
-            this.GridView2.Columns[16].HeaderText = "ส่งเคลม(ม้วน) ";
-            this.GridView2.Columns[17].HeaderText = "ส่งเคลม(กก) ";
+            this.GridView2.Columns[16].HeaderText = "ขอลดหนี้(ม้วน) ";
+            this.GridView2.Columns[17].HeaderText = "ขอลดหนี้(กก) ";
 
             this.GridView2.Columns[18].HeaderText = "ราคา";
             this.GridView2.Columns[19].HeaderText = "ส่วน";
@@ -1727,12 +1727,12 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns[26].HeaderText = "ราคาเฉี่ยยกไป";
             this.GridView2.Columns[27].HeaderText = "จำนวนเงินยกไป";
 
-            this.GridView2.Columns[28].HeaderText = "ส่งเคลม ยกมา";
-            this.GridView2.Columns[29].HeaderText = "ส่งเคลม ปอนด์";
-            this.GridView2.Columns[30].HeaderText = "ส่งเคลม2 ยกไป";
+            this.GridView2.Columns[28].HeaderText = "ขอลดหนี้ ยกมา";
+            this.GridView2.Columns[29].HeaderText = "ขอลดหนี้ ปอนด์";
+            this.GridView2.Columns[30].HeaderText = "ขอลดหนี้2 ยกไป";
 
-            this.GridView2.Columns[31].HeaderText = "ส่งเคลม ม้วน ยกมา";
-            this.GridView2.Columns[32].HeaderText = "ส่งเคลม ม้วน ยกไป";
+            this.GridView2.Columns[31].HeaderText = "ขอลดหนี้ ม้วน ยกมา";
+            this.GridView2.Columns[32].HeaderText = "ขอลดหนี้ ม้วน ยกไป";
 
             this.GridView2.Columns[33].HeaderText = "1";
 
@@ -2520,12 +2520,12 @@ namespace kondate.soft.HOME03_Production
             TRANS_LOG();
 
             this.Hide();
-            var frm2 = new HOME03_Production.HOME03_Production_11send_FG2_Claim_record();
+            var frm2 = new HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record();
             frm2.Closed += (s, args) => this.Close();
             frm2.Show();
 
-            this.iblword_status.Text = "บันทึกใบส่งเคลม";
-            this.txtCLM_id.ReadOnly = true;
+            this.iblword_status.Text = "บันทึกใบขอลดหนี้";
+            this.txtRCD_id.ReadOnly = true;
         }
         private void btnopen_Click(object sender, EventArgs e)
         {
@@ -2596,11 +2596,11 @@ namespace kondate.soft.HOME03_Production
                 cmd1.CommandType = CommandType.Text;
                 cmd1.Connection = conn;
 
-                cmd1.CommandText = "SELECT * FROM c002_11send_FG2_Claim_record" +
+                cmd1.CommandText = "SELECT * FROM c002_13send_FG2_Reduce_Debt_record" +
                                     " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                     " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    " AND (txtCLM_id = '" + this.txtCLM_id.Text.Trim() + "')" +
-                                    " AND (txtCLM_status = '1')";
+                                    " AND (txtRCD_id = '" + this.txtRCD_id.Text.Trim() + "')" +
+                                    " AND (txtRCD_status = '1')";
 
                 cmd1.ExecuteNonQuery();
                 DataTable dt = new DataTable();
@@ -2610,7 +2610,7 @@ namespace kondate.soft.HOME03_Production
                 {
                     Cursor.Current = Cursors.Default;
 
-                    MessageBox.Show("เอกสารนี้   : '" + this.txtCLM_id.Text.Trim() + "' ยกเลิกไปแล้ว ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("เอกสารนี้   : '" + this.txtRCD_id.Text.Trim() + "' ยกเลิกไปแล้ว ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     conn.Close();
                     return;
                 }
@@ -2658,7 +2658,7 @@ namespace kondate.soft.HOME03_Production
                     if (this.iblword_status.Text.Trim() == "ยกเลิกเอกสาร")
                     {
 
-                        cmd2.CommandText = "INSERT INTO c002_11send_FG2_Claim_record_cancel(cdkey,txtco_id,txtbranch_id," +  //1
+                        cmd2.CommandText = "INSERT INTO c002_13send_FG2_Reduce_Debt_record_cancel(cdkey,txtco_id,txtbranch_id," +  //1
                                                                                                                            //"txttrans_date," +
                                                "txttrans_date_server,txttrans_time," +  //2
                                                "txttrans_year,txttrans_month,txttrans_day,txttrans_date_client," +  //3
@@ -2709,8 +2709,8 @@ namespace kondate.soft.HOME03_Production
                         //MessageBox.Show("ok1");
 
                         //2
-                        cmd2.CommandText = "UPDATE c002_11send_FG2_Claim_record" +
-                                                                    " SET txtCLM_status = '1'," +
+                        cmd2.CommandText = "UPDATE c002_13send_FG2_Reduce_Debt_record" +
+                                                                    " SET txtRCD_status = '1'," +
                                                                      "txtsum_qty_pub = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
                                                                      "txtsum_qty_pub_kg = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
                                                                      "txtsum_qty_rib = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
@@ -2718,7 +2718,7 @@ namespace kondate.soft.HOME03_Production
                                                                      "txtsum_qty = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'" +
                                                                      " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                      " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                                     " AND (txtCLM_id = '" + this.txtCLM_id.Text.Trim() + "')";
+                                                                     " AND (txtRCD_id = '" + this.txtRCD_id.Text.Trim() + "')";
                         cmd2.ExecuteNonQuery();
                         //MessageBox.Show("ok2");
 
@@ -2840,9 +2840,9 @@ namespace kondate.soft.HOME03_Production
                                                                                       //=======================================================
 
 
-                                        "'" + this.txtCLM_id.Text.Trim() + "'," +  //7 txtbill_id
-                                        "'CLM'," +  //9 txtbill_type
-                                        "'ยกเลิก ส่งเคลม " + this.txtCLM_record_remark.Text.Trim() + "'," +  //9 txtbill_remark
+                                        "'" + this.txtRCD_id.Text.Trim() + "'," +  //7 txtbill_id
+                                        "'RCD'," +  //9 txtbill_type
+                                        "'ยกเลิก ขอลดหนี้ " + this.txtRCD_record_remark.Text.Trim() + "'," +  //9 txtbill_remark
 
                                          "'" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "'," +  //7 txtwherehouse_id
                                        "'" + this.GridView2.Rows[i].Cells["Col_txtmat_no"].Value.ToString() + "'," +  //10 
@@ -2895,7 +2895,7 @@ namespace kondate.soft.HOME03_Production
                     //MessageBox.Show("ok4");
 
 
-                    DialogResult dialogResult = MessageBox.Show("คุณต้องการ ยกเลิกเอกสาร รหัส  " + this.txtCLM_id.Text.ToString() + " ใช่หรือไม่่ ?", "โปรดยืนยัน", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    DialogResult dialogResult = MessageBox.Show("คุณต้องการ ยกเลิกเอกสาร รหัส  " + this.txtRCD_id.Text.ToString() + " ใช่หรือไม่่ ?", "โปรดยืนยัน", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                     {
 
@@ -2954,12 +2954,12 @@ namespace kondate.soft.HOME03_Production
 
             }
             UPDATE_PRINT_BY();
-            W_ID_Select.TRANS_ID = this.txtCLM_id.Text.Trim();
+            W_ID_Select.TRANS_ID = this.txtRCD_id.Text.Trim();
             W_ID_Select.LOG_ID = "8";
             W_ID_Select.LOG_NAME = "ปริ๊น";
             TRANS_LOG();
             //======================================================
-            kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record_print();
+            kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record_print();
             frm2.Show();
             frm2.BringToFront();
             //====================
@@ -2973,7 +2973,7 @@ namespace kondate.soft.HOME03_Production
 
             }
             UPDATE_PRINT_BY();
-            W_ID_Select.TRANS_ID = this.txtCLM_id.Text.Trim();
+            W_ID_Select.TRANS_ID = this.txtRCD_id.Text.Trim();
             W_ID_Select.LOG_ID = "8";
             W_ID_Select.LOG_NAME = "ปริ๊น";
             TRANS_LOG();
@@ -2994,7 +2994,7 @@ namespace kondate.soft.HOME03_Production
                 //E:\01_Project_ERP_Kondate.Soft\kondate.soft\kondate.soft\KONDATE_REPORT\Report_Chart_of_accounts.rpt
 
                 //rpt.Load("E:\\01_Project_ERP_Kondate.Soft\\kondate.soft\\kondate.soft\\KONDATE_REPORT\\Report_c002_02produce_record.rpt");
-                rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_11send_FG2_Claim_record.rpt");
+                rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_13send_FG2_Reduce_Debt_record.rpt");
 
 
                 string cr_server = W_ID_Select.ADATASOURCE.Trim();
@@ -3029,7 +3029,7 @@ namespace kondate.soft.HOME03_Production
 
                 rpt.SetParameterValue("cdkey", W_ID_Select.CDKEY.Trim());
                 rpt.SetParameterValue("txtco_id", W_ID_Select.M_COID.Trim());
-                rpt.SetParameterValue("txtCLM_id", W_ID_Select.TRANS_ID.Trim());
+                rpt.SetParameterValue("txtRCD_id", W_ID_Select.TRANS_ID.Trim());
 
                 //พิมพ์กับเครื่องที่เราต้องการ ระบุชื่อไปเลย=============================================
                 //rpt.PrintOptions.PrinterName = "EPSON TM-T88V Receipt5";
@@ -3121,12 +3121,12 @@ namespace kondate.soft.HOME03_Production
                 try
                 {
 
-                    cmd2.CommandText = "UPDATE c002_11send_FG2_Claim_record SET " +
+                    cmd2.CommandText = "UPDATE c002_13send_FG2_Reduce_Debt_record SET " +
                                                                  "txtemp_print = '" + W_ID_Select.M_EMP_OFFICE_NAME.Trim() + "'," +
                                                                  "txtemp_print_datetime = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture) + "'" +
                                                                 " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                               " AND (txtCLM_id = '" + this.txtCLM_id.Text.Trim() + "')";
+                                                               " AND (txtRCD_id = '" + this.txtRCD_id.Text.Trim() + "')";
                     cmd2.ExecuteNonQuery();
 
 

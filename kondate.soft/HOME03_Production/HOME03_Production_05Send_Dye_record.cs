@@ -3281,7 +3281,7 @@ namespace kondate.soft.HOME03_Production
         {
             if (this.PANEL1306_WH_txtwherehouse_id.Text == "")
             {
-                MessageBox.Show("โปรด เลือกคลังสินค้าที่จะบันทึกเก็บ ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("โปรด เลือกคลังสินค้า ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.PANEL1306_WH_txtwherehouse_id.Focus();
                 return;
             }
@@ -5284,6 +5284,9 @@ namespace kondate.soft.HOME03_Production
         }
         private void PANEL0107_NUMBER_COLOR_btnnumber_color_Click(object sender, EventArgs e)
         {
+            this.PANEL0107_NUMBER_COLOR.Width = 502;
+            this.PANEL0107_NUMBER_COLOR.Height = 337;
+
             if (this.PANEL0107_NUMBER_COLOR.Visible == false)
             {
                 this.PANEL0107_NUMBER_COLOR.Visible = true;

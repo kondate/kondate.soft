@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>178</ApplicationRevision>
+    <ApplicationRevision>181</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -535,6 +535,54 @@
     <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_print.designer.cs">
       <DependentUpon>HOME03_Production_11send_FG2_Claim_record_print.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim.designer.cs">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record.designer.cs">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record_detail.designer.cs">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record_print.designer.cs">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt.designer.cs">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record.designer.cs">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record_detail.designer.cs">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record_print.designer.cs">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt_record_print.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_13Type_Machine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -937,13 +985,6 @@
     <Compile Include="Home_SETUP_Enter_4WH.Designer.cs">
       <DependentUpon>Home_SETUP_Enter_4WH.cs</DependentUpon>
     </Compile>
-    <Compile Include="KONDATE_REPORT\Report_c002_03QC_record.cs">
-      <DependentUpon>Report_c002_03QC_record.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="KONDATE_REPORT\Report_c002_02produce_record.cs">
       <DependentUpon>Report_c002_02produce_record.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -988,33 +1029,11 @@
       <DependentUpon>Report_c002_10Receive_FG4_record.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.cs">
-      <DependentUpon>Report_c002_12FG_shirt_record.rpt</DependentUpon>
+    <Compile Include="KONDATE_REPORT\Report_c002_11send_FG2_Claim_record.cs">
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="KONDATE_REPORT\Report_c002_11QCS_shirt_record.cs">
-      <DependentUpon>Report_c002_11QCS_shirt_record.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
+      <DependentUpon>Report_c002_11send_FG2_Claim_record.rpt</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="KONDATE_REPORT\Report_c002_10Rolled_shirt_record.cs">
-      <DependentUpon>Report_c002_10Rolled_shirt_record.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="KONDATE_REPORT\Report_c002_08Cut_shirt_record.cs">
-      <DependentUpon>Report_c002_08Cut_shirt_record.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="KONDATE_REPORT\Report_c002_07Receive_Send_dye_record.cs">
       <DependentUpon>Report_c002_07Receive_Send_dye_record.rpt</DependentUpon>
@@ -1022,6 +1041,18 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_12Receive_FG2_Claim_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_c002_12Receive_FG2_Claim_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_c002_13send_FG2_Reduce_Debt_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_c002_13send_FG2_Reduce_Debt_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="KONDATE_REPORT\Report_c003_receive_record.cs">
       <DependentUpon>Report_c003_receive_record.rpt</DependentUpon>
@@ -1078,12 +1109,6 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="KONDATE_REPORT\Report_s001_01sale_record_copy.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Report_s001_01sale_record_copy.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="LOGIN.cs">
       <SubType>Form</SubType>
@@ -1810,6 +1835,30 @@
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_print.resx">
       <DependentUpon>HOME03_Production_11send_FG2_Claim_record_print.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim.resx">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record.resx">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record_detail.resx">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_12Receive_FG2_Claim_record_print.resx">
+      <DependentUpon>HOME03_Production_12Receive_FG2_Claim_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt.resx">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record.resx">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record_detail.resx">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_13send_FG2_Reduce_Debt_record_print.resx">
+      <DependentUpon>HOME03_Production_13send_FG2_Reduce_Debt_record_print.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_13Type_Machine.resx">
       <DependentUpon>HOME03_Production_13Type_Machine.cs</DependentUpon>
     </EmbeddedResource>
@@ -2011,11 +2060,6 @@
     <EmbeddedResource Include="Home_SETUP_Enter_4WH.resx">
       <DependentUpon>Home_SETUP_Enter_4WH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_03QC_record.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_c002_03QC_record.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_02produce_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_c002_02produce_record.cs</LastGenOutput>
@@ -2046,30 +2090,22 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_c002_10Receive_FG4_record.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_12FG_shirt_record.rpt">
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_11send_FG2_Claim_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_c002_12FG_shirt_record.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_11QCS_shirt_record.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_c002_11QCS_shirt_record.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_10Rolled_shirt_record.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_c002_10Rolled_shirt_record.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_08Cut_shirt_record.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_c002_08Cut_shirt_record.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <LastGenOutput>Report_c002_11send_FG2_Claim_record.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_07Receive_Send_dye_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_c002_07Receive_Send_dye_record.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_12Receive_FG2_Claim_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_12Receive_FG2_Claim_record.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_c002_13send_FG2_Reduce_Debt_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_c002_13send_FG2_Reduce_Debt_record.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_c003_receive_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -2110,10 +2146,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_Chart_of_accounts.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KONDATE_REPORT\Report_s001_01sale_record_copy.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_s001_01sale_record_copy.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
