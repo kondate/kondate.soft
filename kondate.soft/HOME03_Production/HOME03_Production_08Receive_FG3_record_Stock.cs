@@ -116,7 +116,13 @@ namespace kondate.soft.HOME03_Production
             PANEL1306_WH_GridView1_wherehouse();
             PANEL1306_WH_Fill_wherehouse();
 
+            //=============================================
             Show_GridView2();
+            this.PANEL1306_WH_txtwherehouse_id.Text = "SMN-003";
+            this.PANEL1306_WH_txtwherehouse_name.Text = "คลังผ้าตัด";
+            W_ID_Select.TRANS_ID = this.PANEL1306_WH_txtwherehouse_id.Text.Trim();
+            Fill_Show_DATA_GridView2();
+            //=============================================
             Show_GridView4();
         }
 

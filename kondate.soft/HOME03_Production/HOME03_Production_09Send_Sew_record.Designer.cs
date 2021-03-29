@@ -1407,7 +1407,7 @@
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(99, 21);
             this.label47.TabIndex = 1300;
-            this.label47.Text = "รหัสผ้าพับ :";
+            this.label47.Text = "รหัสผ้าตัด :";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox1

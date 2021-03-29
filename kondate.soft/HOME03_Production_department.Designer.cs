@@ -802,6 +802,7 @@
             this.HOME03_Production_06_cliem.Text = "ส่งเคลมผ้าพับ";
             this.HOME03_Production_06_cliem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06_cliem.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06_cliem.Click += new System.EventHandler(this.HOME03_Production_06_cliem_Click);
             // 
             // HOME03_Production_06_cliem_gr
             // 

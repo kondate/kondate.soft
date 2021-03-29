@@ -505,6 +505,36 @@
     <Compile Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_print.Designer.cs">
       <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_print.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim.designer.cs">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_GR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_GR.designer.cs">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_GR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record.designer.cs">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_detail.designer.cs">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_print.designer.cs">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_record_print.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOME03_Production\HOME03_Production_13Type_Machine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1764,6 +1794,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_07Receive_Send_Dye_record_print.resx">
       <DependentUpon>HOME03_Production_07Receive_Send_Dye_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11send_FG2_Claim.resx">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_GR.resx">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_GR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record.resx">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_detail.resx">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME03_Production\HOME03_Production_11send_FG2_Claim_record_print.resx">
+      <DependentUpon>HOME03_Production_11send_FG2_Claim_record_print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME03_Production\HOME03_Production_13Type_Machine.resx">
       <DependentUpon>HOME03_Production_13Type_Machine.cs</DependentUpon>

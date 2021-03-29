@@ -283,5 +283,13 @@ namespace kondate.soft
             frm2.Show();
 
         }
+
+        private void HOME03_Production_06_cliem_Click(object sender, EventArgs e)
+        {
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06_cliem.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_11send_FG2_Claim_record();
+            frm2.Show();
+
+        }
     }
 }
