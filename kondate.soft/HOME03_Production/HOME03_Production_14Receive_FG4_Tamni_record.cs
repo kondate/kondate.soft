@@ -32,7 +32,7 @@ using CrystalDecisions.Shared;
 
 namespace kondate.soft.HOME03_Production
 {
-    public partial class HOME03_Production_10Receive_FG4_record : Form
+    public partial class HOME03_Production_14Receive_FG4_Tamni_record : Form
     {
         //Move Form ====================================
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -64,18 +64,18 @@ namespace kondate.soft.HOME03_Production
         }
 
 
-        public HOME03_Production_10Receive_FG4_record()
+        public HOME03_Production_14Receive_FG4_Tamni_record()
         {
             InitializeComponent();
         }
 
-        private void HOME03_Production_07Receive_Send_Dye_record_Load(object sender, EventArgs e)
+        private void HOME03_Production_14Receive_FG4_Tamni_record_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.btnmaximize.Visible = false;
             this.btnmaximize_full.Visible = true;
 
-            W_ID_Select.M_FORM_NUMBER = "H0310FG4RD";
+            W_ID_Select.M_FORM_NUMBER = "H0314FG4TNRD";
             CHECK_ADD_FORM();
 
             CHECK_USER_RULE();
@@ -87,7 +87,7 @@ namespace kondate.soft.HOME03_Production
             W_ID_Select.LOG_NAME = "Login";
             TRANS_LOG();
 
-            this.iblword_status.Text = "บันทึกใบรับเสื้อยึดสำเร็จรูป FG4";
+            this.iblword_status.Text = "บันทึกใบรับเสื้อยึดสำเร็จรูป FG4 มีตำหนิ";
 
             this.ActiveControl = this.txtrg_remark;
             this.BtnNew.Enabled = false;
@@ -97,10 +97,6 @@ namespace kondate.soft.HOME03_Production
             this.btnPreview.Enabled = false;
             this.BtnPrint.Enabled = false;
 
-            this.cbotxtFG4_type_name.Items.Add("รับตามใบส่งตัด");
-            this.cbotxtFG4_type_name.Items.Add("รับไม่มีใบส่งตัด");
-            this.cbotxtFG4_type_name.Text = "รับตามใบส่งตัด";
-            this.txtFG4_type_id.Text = "01";
 
             this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Text = "ซื้อไม่มีvat";
             this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Text = "PUR_NOvat";
@@ -111,8 +107,6 @@ namespace kondate.soft.HOME03_Production
             PANEL1306_WH_GridView1_wherehouse();
             PANEL1306_WH_Fill_wherehouse();
 
-            PANEL161_SUP_GridView1_supplier();
-            PANEL161_SUP_Fill_supplier();
 
             PANEL003_EMP_GridView1_emp();
             PANEL003_EMP_Fill_emp();
@@ -139,7 +133,7 @@ namespace kondate.soft.HOME03_Production
             Show_GridView1();
             //1.ส่วนหน้าหลัก======================================================================
             Show_GridView66();
-            Fill_Show_DATA_GridView66();
+            Fill_Show_DATA_GridView661();
 
             //=============================================
             Show_GridView2();
@@ -149,15 +143,241 @@ namespace kondate.soft.HOME03_Production
             Fill_Show_DATA_GridView2();
             //=============================================
 
-            Fill_cbotxtFG4_type_name();
-            this.cbotxtFG4_type_name.Text = "รับตามใบส่งตัด";
-            this.txtFG4_type_id.Text = "01";
-
         }
 
         //1.ส่วนหน้าหลัก ตารางสำหรับบันทึก========================================================================
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Fill_Show_DATA_GridView66();
+        }
+        private void Fill_Show_DATA_GridView661()
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
 
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            Clear_GridView66();
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+
+                cmd2.CommandText = "SELECT c002_10Receive_FG4_record.*," +
+                                   "c002_10Receive_FG4_record_detail.*," +
+                                   //"c001_05face_baking.*," +
+                                   "c001_06number_mat.*," +
+                                   "c001_07number_color.*," +
+                                   "c001_07number_sup_color.*," +
+
+                                   "c001_08shirt_type.*," +
+                                   "c001_09shirt_size.*," +
+
+                                   "k016db_1supplier.*," +
+                                   //"k013_1db_acc_13group_tax.*," +
+                                   "c002_10Receive_FG4_record_type.*," +
+
+                                   "k013_1db_acc_06wherehouse.*" +
+
+                                   " FROM c002_10Receive_FG4_record" +
+
+                                   " INNER JOIN c002_10Receive_FG4_record_detail" +
+                                   " ON c002_10Receive_FG4_record.cdkey = c002_10Receive_FG4_record_detail.cdkey" +
+                                   " AND c002_10Receive_FG4_record.txtco_id = c002_10Receive_FG4_record_detail.txtco_id" +
+                                   " AND c002_10Receive_FG4_record.txtFG4_id = c002_10Receive_FG4_record_detail.txtFG4_id" +
+
+                                   //" INNER JOIN c001_05face_baking" +
+                                   //" ON c002_10Receive_FG4_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   //" AND c002_10Receive_FG4_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   //" AND c002_10Receive_FG4_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+
+                                   " INNER JOIN c001_06number_mat" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+
+                                   " INNER JOIN c001_08shirt_type" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+
+                                   " INNER JOIN c001_09shirt_size" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
+
+                                   " INNER JOIN c001_07number_color" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+
+                                   " INNER JOIN c001_07number_sup_color" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+
+                                   " INNER JOIN k016db_1supplier" +
+                                   " ON c002_10Receive_FG4_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_10Receive_FG4_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_10Receive_FG4_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+
+                                   " INNER JOIN c002_10Receive_FG4_record_type" +
+                                   " ON c002_10Receive_FG4_record.txtFG4_type_id = c002_10Receive_FG4_record_type.txtFG4_type_id" +
+
+                                   //" INNER JOIN k013_1db_acc_13group_tax" +
+                                   //" ON c002_10Receive_FG4_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+
+                                   " INNER JOIN k013_1db_acc_06wherehouse" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+
+                                   " WHERE (c002_10Receive_FG4_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_10Receive_FG4_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   //" AND (c002_10Receive_FG4_record.txtFG4_id = '" + this.txtFG4_id.Text.Trim() + "')" +
+                                   " AND (c002_10Receive_FG4_record.txtFG4_status = '0')" +
+                                   " AND (c002_10Receive_FG4_record_detail.txtqty_tamni_after_cut > 0)" +
+                                  " ORDER BY c002_10Receive_FG4_record_detail.txttable_name ASC";
+
+
+                //cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
+                //cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
+
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+
+
+
+
+                        Int32 k = 0;
+
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            k = j + 1;
+
+                            var index = this.GridView66.Rows.Add();
+                            this.GridView66.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            this.GridView66.Rows[index].Cells["Col_txtFG4_id"].Value = dt2.Rows[j]["txtFG4_id"].ToString();      //1
+
+                            this.GridView66.Rows[index].Cells["Col_txtshirt_type_id"].Value = dt2.Rows[j]["txtshirt_type_id"].ToString();        //2
+                            this.GridView66.Rows[index].Cells["Col_txttable_name"].Value = dt2.Rows[j]["txttable_name"].ToString();        //2
+                            this.GridView66.Rows[index].Cells["Col_txtshirt_size_id"].Value = dt2.Rows[j]["txtshirt_size_id"].ToString();        //7
+                            this.GridView66.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();         //3
+                            this.GridView66.Rows[index].Cells["Col_txtnumber_sup_color_id"].Value = dt2.Rows[j]["txtnumber_sup_color_id"].ToString();        //3
+                            this.GridView66.Rows[index].Cells["Col_txtnumber_dyed"].Value = dt2.Rows[j]["txtnumber_dyed"].ToString();        //3
+                            this.GridView66.Rows[index].Cells["Col_txtnumber_mat_id"].Value = dt2.Rows[j]["txtnumber_mat_id"].ToString();        //3
+
+                            this.GridView66.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //15
+                            this.GridView66.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //16
+                            this.GridView66.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //17
+
+                            this.GridView66.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //19
+                            //this.GridView66.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
+
+                            this.GridView66.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni"]).ToString("###,###.00");   //8
+
+                            this.GridView66.Rows[index].Cells["Col_txtprice"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));       //18
+                            this.GridView66.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //19
+                            this.GridView66.Rows[index].Cells["Col_txtdiscount_money"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //20
+                            this.GridView66.Rows[index].Cells["Col_txtsum_total"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));     //21
+
+                            this.GridView66.Rows[index].Cells["Col_txtcost_qty_balance_yokma"].Value = ".00";      //22
+                            this.GridView66.Rows[index].Cells["Col_txtcost_qty_price_average_yokma"].Value = ".00";       //23
+                            this.GridView66.Rows[index].Cells["Col_txtcost_money_sum_yokma"].Value = ".00";       //24
+
+                            this.GridView66.Rows[index].Cells["Col_txtcost_qty_balance_yokpai"].Value = ".00";       //25
+                            this.GridView66.Rows[index].Cells["Col_txtcost_qty_price_average_yokpai"].Value = ".00";        //26
+                            this.GridView66.Rows[index].Cells["Col_txtcost_money_sum_yokpai"].Value = ".00";       //27
+
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut"].Value = "0";      //31
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokma"].Value = "0";      //32
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokpai"].Value = "0";      //32
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = "0";      //32
+
+                            this.GridView66.Rows[index].Cells["Col_1"].Value = "1";      //32
+
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_cut_yokma"]).ToString("###,###.00");      //36
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_after_cut_yokpai"]).ToString("###,###.00");      //37
+
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_cut"]).ToString("###,###.00");      //35
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_after_cut"]).ToString("###,###.00");      //36
+
+                            this.GridView66.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id2"].ToString();      //37
+
+                        }
+                        //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
+                    }
+                    else
+                    {
+
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        Cursor.Current = Cursors.Default;
+                        conn.Close();
+                        // return;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+            GridView66_Color_Column();
+
+        }
         private void Fill_Show_DATA_GridView66()
         {
             //เชื่อมต่อฐานข้อมูล=======================================================
@@ -201,8 +421,8 @@ namespace kondate.soft.HOME03_Production
                 cmd2.Connection = conn;
 
 
-                cmd2.CommandText = "SELECT c002_09Send_Sew_shirt_record.*," +
-                                   "c002_09Send_Sew_shirt_record_detail.*," +
+                cmd2.CommandText = "SELECT c002_10Receive_FG4_record.*," +
+                                   "c002_10Receive_FG4_record_detail.*," +
                                    //"c001_05face_baking.*," +
                                    "c001_06number_mat.*," +
                                    "c001_07number_color.*," +
@@ -213,68 +433,70 @@ namespace kondate.soft.HOME03_Production
 
                                    "k016db_1supplier.*," +
                                    //"k013_1db_acc_13group_tax.*," +
-                                   "c002_09Send_Sew_shirt_record_type.*," +
+                                   "c002_10Receive_FG4_record_type.*," +
 
                                    "k013_1db_acc_06wherehouse.*" +
 
-                                   " FROM c002_09Send_Sew_shirt_record" +
+                                   " FROM c002_10Receive_FG4_record" +
 
-                                   " INNER JOIN c002_09Send_Sew_shirt_record_detail" +
-                                   " ON c002_09Send_Sew_shirt_record.cdkey = c002_09Send_Sew_shirt_record_detail.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record.txtco_id = c002_09Send_Sew_shirt_record_detail.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record.txtSWT_id = c002_09Send_Sew_shirt_record_detail.txtSWT_id" +
+                                   " INNER JOIN c002_10Receive_FG4_record_detail" +
+                                   " ON c002_10Receive_FG4_record.cdkey = c002_10Receive_FG4_record_detail.cdkey" +
+                                   " AND c002_10Receive_FG4_record.txtco_id = c002_10Receive_FG4_record_detail.txtco_id" +
+                                   " AND c002_10Receive_FG4_record.txtFG4_id = c002_10Receive_FG4_record_detail.txtFG4_id" +
 
                                    //" INNER JOIN c001_05face_baking" +
-                                   //" ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_05face_baking.cdkey" +
-                                   //" AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_05face_baking.txtco_id" +
-                                   //" AND c002_09Send_Sew_shirt_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+                                   //" ON c002_10Receive_FG4_record_detail.cdkey = c001_05face_baking.cdkey" +
+                                   //" AND c002_10Receive_FG4_record_detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   //" AND c002_10Receive_FG4_record_detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
 
                                    " INNER JOIN c001_06number_mat" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_06number_mat.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_06number_mat.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_06number_mat.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_06number_mat.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtnumber_mat_id = c001_06number_mat.txtnumber_mat_id" +
 
                                    " INNER JOIN c001_08shirt_type" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_08shirt_type.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_08shirt_type.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_08shirt_type.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtshirt_type_id = c001_08shirt_type.txtshirt_type_id" +
 
                                    " INNER JOIN c001_09shirt_size" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_09shirt_size.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_09shirt_size.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_09shirt_size.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtshirt_size_id = c001_09shirt_size.txtshirt_size_id" +
 
                                    " INNER JOIN c001_07number_color" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_color.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_color.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
 
                                    " INNER JOIN c001_07number_sup_color" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = c001_07number_sup_color.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = c001_07number_sup_color.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = c001_07number_sup_color.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtnumber_sup_color_id = c001_07number_sup_color.txtnumber_sup_color_id" +
 
                                    " INNER JOIN k016db_1supplier" +
-                                   " ON c002_09Send_Sew_shirt_record.cdkey = k016db_1supplier.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record.txtco_id = k016db_1supplier.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
+                                   " ON c002_10Receive_FG4_record.cdkey = k016db_1supplier.cdkey" +
+                                   " AND c002_10Receive_FG4_record.txtco_id = k016db_1supplier.txtco_id" +
+                                   " AND c002_10Receive_FG4_record.txtsupplier_id = k016db_1supplier.txtsupplier_id" +
 
-                                   " INNER JOIN c002_09Send_Sew_shirt_record_type" +
-                                   " ON c002_09Send_Sew_shirt_record.txtsend_sew_cut_type_id = c002_09Send_Sew_shirt_record_type.txtsend_sew_cut_type_id" +
+                                   " INNER JOIN c002_10Receive_FG4_record_type" +
+                                   " ON c002_10Receive_FG4_record.txtFG4_type_id = c002_10Receive_FG4_record_type.txtFG4_type_id" +
 
                                    //" INNER JOIN k013_1db_acc_13group_tax" +
-                                   //" ON c002_09Send_Sew_shirt_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
+                                   //" ON c002_10Receive_FG4_record.txtacc_group_tax_id = k013_1db_acc_13group_tax.txtacc_group_tax_id" +
 
                                    " INNER JOIN k013_1db_acc_06wherehouse" +
-                                   " ON c002_09Send_Sew_shirt_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
-                                   " AND c002_09Send_Sew_shirt_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
+                                   " ON c002_10Receive_FG4_record_detail.cdkey = k013_1db_acc_06wherehouse.cdkey" +
+                                   " AND c002_10Receive_FG4_record_detail.txtco_id = k013_1db_acc_06wherehouse.txtco_id" +
+                                   " AND c002_10Receive_FG4_record_detail.txtwherehouse_id = k013_1db_acc_06wherehouse.txtwherehouse_id" +
 
-                                    " WHERE (c002_09Send_Sew_shirt_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                    " AND (c002_09Send_Sew_shirt_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    " AND (c002_09Send_Sew_shirt_record.txtSWT_status = '0')" +
-                                    " AND (c002_09Send_Sew_shirt_record_detail.txtqty_after_cut > 0)" +
-                                    " ORDER BY c002_09Send_Sew_shirt_record_detail.txttable_name ASC";
+                                   " WHERE (c002_10Receive_FG4_record.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (c002_10Receive_FG4_record.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (c002_10Receive_FG4_record.txtFG4_id = '" + this.txtFG4_id.Text.Trim() + "')" +
+                                   " AND (c002_10Receive_FG4_record.txtFG4_status = '0')" +
+                                   " AND (c002_10Receive_FG4_record_detail.txtqty_tamni_after_cut > 0)" +
+                                  " ORDER BY c002_10Receive_FG4_record_detail.txttable_name ASC";
+
 
                 //cmd2.Parameters.Add("@datestart", SqlDbType.Date).Value = this.dtpstart.Value;
                 //cmd2.Parameters.Add("@dateend", SqlDbType.Date).Value = this.dtpend.Value;
@@ -301,15 +523,7 @@ namespace kondate.soft.HOME03_Production
 
                             var index = this.GridView66.Rows.Add();
                             this.GridView66.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            this.GridView66.Rows[index].Cells["Col_txtSWT_id"].Value = dt2.Rows[j]["txtSWT_id"].ToString();      //1
-
-                            this.GridView66.Rows[index].Cells["Col_txtsum_qty_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_tier"]).ToString("###,###.0");//dt2.Rows[j]["txtsum_qty_tier"].ToString();      //16
-                            this.GridView66.Rows[index].Cells["Col_txtsum_qty_body_per_tier"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body_per_tier"]).ToString("###,###.0");//dt2.Rows[j]["txtsum_qty_body_per_tier"].ToString();       //16
-                            this.GridView66.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtsum_qty_body"]).ToString("###,###.0");//dt2.Rows[j]["txtsum_qty_body"].ToString();       //16
-
-                            this.GridView66.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();     //7
-                            this.GridView66.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //7
-                            this.GridView66.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
+                            this.GridView66.Rows[index].Cells["Col_txtFG4_id"].Value = dt2.Rows[j]["txtFG4_id"].ToString();      //1
 
                             this.GridView66.Rows[index].Cells["Col_txtshirt_type_id"].Value = dt2.Rows[j]["txtshirt_type_id"].ToString();        //2
                             this.GridView66.Rows[index].Cells["Col_txttable_name"].Value = dt2.Rows[j]["txttable_name"].ToString();        //2
@@ -324,14 +538,9 @@ namespace kondate.soft.HOME03_Production
                             this.GridView66.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //17
 
                             this.GridView66.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //19
-                            this.GridView66.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
-                            this.GridView66.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();      //21
-                            this.GridView66.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();      //22
-                            this.GridView66.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //23
+                            //this.GridView66.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");      //20
 
-                            //this.GridView66.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty"].Value.ToString()));    //8
-                            this.GridView66.Rows[index].Cells["Col_txtqty2"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));    //17
-
+                            this.GridView66.Rows[index].Cells["Col_txtqty"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni"]).ToString("###,###.00");   //8
 
                             this.GridView66.Rows[index].Cells["Col_txtprice"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));       //18
                             this.GridView66.Rows[index].Cells["Col_txtdiscount_rate"].Value = Convert.ToDouble(string.Format("{0:n4}", 0));      //19
@@ -346,24 +555,21 @@ namespace kondate.soft.HOME03_Production
                             this.GridView66.Rows[index].Cells["Col_txtcost_qty_price_average_yokpai"].Value = ".00";        //26
                             this.GridView66.Rows[index].Cells["Col_txtcost_money_sum_yokpai"].Value = ".00";       //27
 
-                            this.GridView66.Rows[index].Cells["Col_txtcost_qty2_balance_yokma"].Value = ".00";        //28
-                            this.GridView66.Rows[index].Cells["Col_txtcost_qty2_balance_yokpai"].Value = ".00";        //29
-
-                            //this.GridView66.Rows[index].Cells["Col_txtqty_after_cut"].Value = "0";      //31
-                            //this.GridView66.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = "0";      //32
-                            //this.GridView66.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //32
-                            //this.GridView66.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //32
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut"].Value = "0";      //31
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokma"].Value = "0";      //32
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokpai"].Value = "0";      //32
+                            //this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = "0";      //32
 
                             this.GridView66.Rows[index].Cells["Col_1"].Value = "1";      //32
 
-                            this.GridView66.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokma"]).ToString("###,###.00");      //36
-                            this.GridView66.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut_yokpai"]).ToString("###,###.00");      //37
-                            this.GridView66.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_cut_yokma"]).ToString("###,###.00");      //36
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_cut_yokpai"]).ToString("###,###.00");      //37
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_after_cut_yokpai"]).ToString("###,###.00");      //37
 
-                            this.GridView66.Rows[index].Cells["Col_txtqty_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");      //35
-                            this.GridView66.Rows[index].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");      //36
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_cut"]).ToString("###,###.00");      //35
+                            this.GridView66.Rows[index].Cells["Col_txtqty_tamni_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_after_cut"]).ToString("###,###.00");      //36
 
-                            this.GridView66.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id"].ToString();      //37
+                            this.GridView66.Rows[index].Cells["Col_txtcut_id"].Value = dt2.Rows[j]["txtcut_id2"].ToString();      //37
 
                         }
                         //=======================================================
@@ -401,128 +607,92 @@ namespace kondate.soft.HOME03_Production
         }
         private void Show_GridView66()
         {
-            this.GridView66.ColumnCount = 43;
+            this.GridView66.ColumnCount = 31;
             this.GridView66.Columns[0].Name = "Col_Auto_num";
-            this.GridView66.Columns[1].Name = "Col_txtSWT_id";
+            this.GridView66.Columns[1].Name = "Col_txtFG4_id";
 
-            this.GridView66.Columns[2].Name = "Col_txtsum_qty_tier";
-            this.GridView66.Columns[3].Name = "Col_txtsum_qty_body_per_tier";
-            this.GridView66.Columns[4].Name = "Col_txtqty";
-            this.GridView66.Columns[2].Visible = false;
-            this.GridView66.Columns[3].Visible = false;
+            this.GridView66.Columns[2].Name = "Col_txtshirt_type_id";
+            this.GridView66.Columns[3].Name = "Col_txttable_name";
+            this.GridView66.Columns[4].Name = "Col_txtshirt_size_id";
+            this.GridView66.Columns[5].Name = "Col_txtnumber_color_id";
+            this.GridView66.Columns[6].Name = "Col_txtnumber_sup_color_id";
+            this.GridView66.Columns[7].Name = "Col_txtnumber_dyed";
+            this.GridView66.Columns[8].Name = "Col_txtnumber_mat_id";
 
-            this.GridView66.Columns[5].Name = "Col_txtsupplier_id";
-            this.GridView66.Columns[6].Name = "Col_txtsupplier_name";
-            this.GridView66.Columns[7].Name = "Col_txtwherehouse_id";
+            this.GridView66.Columns[9].Name = "Col_txtmat_no";
+            this.GridView66.Columns[10].Name = "Col_txtmat_id";
+            this.GridView66.Columns[11].Name = "Col_txtmat_name";
 
-            this.GridView66.Columns[8].Name = "Col_txtshirt_type_id";
-            this.GridView66.Columns[9].Name = "Col_txttable_name";
-            this.GridView66.Columns[10].Name = "Col_txtshirt_size_id";
-            this.GridView66.Columns[11].Name = "Col_txtnumber_color_id";
-            this.GridView66.Columns[12].Name = "Col_txtnumber_sup_color_id";
-            this.GridView66.Columns[13].Name = "Col_txtnumber_dyed";
-            this.GridView66.Columns[14].Name = "Col_txtnumber_mat_id";
+            this.GridView66.Columns[12].Name = "Col_txtmat_unit1_name";
 
-            this.GridView66.Columns[15].Name = "Col_txtmat_no";
-            this.GridView66.Columns[16].Name = "Col_txtmat_id";
-            this.GridView66.Columns[17].Name = "Col_txtmat_name";
+            this.GridView66.Columns[13].Name = "Col_txtqty";
 
-            this.GridView66.Columns[18].Name = "Col_txtmat_unit1_name";
-            this.GridView66.Columns[19].Name = "Col_txtmat_unit1_qty";
-            this.GridView66.Columns[20].Name = "Col_chmat_unit_status";
-            this.GridView66.Columns[21].Name = "Col_txtmat_unit2_name";
-            this.GridView66.Columns[22].Name = "Col_txtmat_unit2_qty";
+            this.GridView66.Columns[14].Name = "Col_txtprice";
+            this.GridView66.Columns[15].Name = "Col_txtdiscount_rate";
+            this.GridView66.Columns[16].Name = "Col_txtdiscount_money";
+            this.GridView66.Columns[17].Name = "Col_txtsum_total";
 
-            this.GridView66.Columns[23].Name = "Col_txtqty2";
+            this.GridView66.Columns[18].Name = "Col_txtcost_qty_balance_yokma";
+            this.GridView66.Columns[19].Name = "Col_txtcost_qty_price_average_yokma";
+            this.GridView66.Columns[20].Name = "Col_txtcost_money_sum_yokma";
 
-            this.GridView66.Columns[24].Name = "Col_txtprice";
-            this.GridView66.Columns[25].Name = "Col_txtdiscount_rate";
-            this.GridView66.Columns[26].Name = "Col_txtdiscount_money";
-            this.GridView66.Columns[27].Name = "Col_txtsum_total";
+            this.GridView66.Columns[21].Name = "Col_txtcost_qty_balance_yokpai";
+            this.GridView66.Columns[22].Name = "Col_txtcost_qty_price_average_yokpai";
+            this.GridView66.Columns[23].Name = "Col_txtcost_money_sum_yokpai";
 
-            this.GridView66.Columns[28].Name = "Col_txtcost_qty_balance_yokma";
-            this.GridView66.Columns[29].Name = "Col_txtcost_qty_price_average_yokma";
-            this.GridView66.Columns[30].Name = "Col_txtcost_money_sum_yokma";
+            this.GridView66.Columns[24].Name = "Col_1";
 
-            this.GridView66.Columns[31].Name = "Col_txtcost_qty_balance_yokpai";
-            this.GridView66.Columns[32].Name = "Col_txtcost_qty_price_average_yokpai";
-            this.GridView66.Columns[33].Name = "Col_txtcost_money_sum_yokpai";
+            this.GridView66.Columns[25].Name = "Col_txtqty_tamni_cut_yokma";
+            this.GridView66.Columns[26].Name = "Col_txtqty_tamni_cut_yokpai";
+            this.GridView66.Columns[27].Name = "Col_txtqty_tamni_after_cut_yokpai";
 
-            this.GridView66.Columns[34].Name = "Col_txtcost_qty2_balance_yokma";
-            this.GridView66.Columns[35].Name = "Col_txtcost_qty2_balance_yokpai";
-
-            this.GridView66.Columns[36].Name = "Col_1";
-
-            this.GridView66.Columns[37].Name = "Col_txtqty_cut_yokma";
-            this.GridView66.Columns[38].Name = "Col_txtqty_cut_yokpai";
-            this.GridView66.Columns[39].Name = "Col_txtqty_after_cut_yokpai";
-
-            this.GridView66.Columns[40].Name = "Col_txtqty_cut";
-            this.GridView66.Columns[41].Name = "Col_txtqty_after_cut";
-
-            this.GridView66.Columns[42].Name = "Col_txtcut_id";
+            this.GridView66.Columns[28].Name = "Col_txtqty_tamni_cut";
+            this.GridView66.Columns[29].Name = "Col_txtqty_tamni_after_cut";
+            this.GridView66.Columns[30].Name = "Col_txtcut_id";
 
 
             this.GridView66.Columns[0].HeaderText = "No";
-            this.GridView66.Columns[1].HeaderText = "เลขที่ ส่งเย็บ";
+            this.GridView66.Columns[1].HeaderText = "เลขที่ FG4";
 
-            this.GridView66.Columns[2].HeaderText = "จำนวนชั้น";
-            this.GridView66.Columns[3].HeaderText = "จำนวนตัว/ชั้น";
-            this.GridView66.Columns[4].HeaderText = "จำนวนส่งเย็บ(ตัว)";
+            this.GridView66.Columns[2].HeaderText = " ชนิดงาน";
+            this.GridView66.Columns[3].HeaderText = " คิวงาน/โต๊ะที่";
+            this.GridView66.Columns[4].HeaderText = " ไซส์";
+            this.GridView66.Columns[5].HeaderText = " รหัสสี";
+            this.GridView66.Columns[6].HeaderText = " รหัสสีซัพ";
+            this.GridView66.Columns[7].HeaderText = " เบอร์กอง";
+            this.GridView66.Columns[8].HeaderText = " เบอร์ด้าย";
 
-            this.GridView66.Columns[5].HeaderText = "รหัส Sup";
-            this.GridView66.Columns[6].HeaderText = "Supplier";
-            this.GridView66.Columns[7].HeaderText = "รหัสคลัง";
+            this.GridView66.Columns[9].HeaderText = "ลำดับ";
+            this.GridView66.Columns[10].HeaderText = "รหัส";
+            this.GridView66.Columns[11].HeaderText = "ชื่อสินค้า";
 
+            this.GridView66.Columns[12].HeaderText = " หน่วย";
 
-            this.GridView66.Columns[8].HeaderText = " ชนิดงาน";
-            this.GridView66.Columns[9].HeaderText = " คิวงาน/โต๊ะที่";
-            this.GridView66.Columns[10].HeaderText = " ไซส์";
-            this.GridView66.Columns[11].HeaderText = " รหัสสี";
-            this.GridView66.Columns[12].HeaderText = " รหัสสีซัพ";
-            this.GridView66.Columns[13].HeaderText = " เบอร์กอง";
-            this.GridView66.Columns[14].HeaderText = " เบอร์ด้าย";
+            this.GridView66.Columns[13].HeaderText = "ตำหนิ (ตัว)";
+        
+            this.GridView66.Columns[14].HeaderText = "ราคา";
+            this.GridView66.Columns[15].HeaderText = "ส่วนลด(%)";
+            this.GridView66.Columns[16].HeaderText = "ส่วนลด(บาท)";
+            this.GridView66.Columns[17].HeaderText = "จำนวนเงิน(บาท)";
 
-            this.GridView66.Columns[15].HeaderText = "ลำดับ";
-            this.GridView66.Columns[16].HeaderText = "รหัส";
-            this.GridView66.Columns[17].HeaderText = "ชื่อสินค้า";
+            this.GridView66.Columns[18].HeaderText = "จำนวนยกมา";
+            this.GridView66.Columns[19].HeaderText = "ราคาเฉลี่ยยกมา";
+            this.GridView66.Columns[20].HeaderText = "จำนวนเงิน";
 
-            this.GridView66.Columns[18].HeaderText = " หน่วยหลัก";
-            this.GridView66.Columns[19].HeaderText = " หน่วย";
-            this.GridView66.Columns[20].HeaderText = "แปลง";
-            this.GridView66.Columns[21].HeaderText = " หน่วย(ปอนด์)";
-            this.GridView66.Columns[22].HeaderText = " หน่วย2";
+            this.GridView66.Columns[21].HeaderText = "จำนวนยกไป";
+            this.GridView66.Columns[22].HeaderText = "ราคาเฉลี่ยยกไป";
+            this.GridView66.Columns[23].HeaderText = "จำนวนเงิน";
 
-            this.GridView66.Columns[23].HeaderText = "น้ำหนัก/ม้วน(ปอนด์)";
+            this.GridView66.Columns[24].HeaderText = "1";  //ไว้นับจำนวน
 
-            this.GridView66.Columns[24].HeaderText = "ราคา";
-            this.GridView66.Columns[25].HeaderText = "ส่วนลด(%)";
-            this.GridView66.Columns[26].HeaderText = "ส่วนลด(บาท)";
-            this.GridView66.Columns[27].HeaderText = "จำนวนเงิน(บาท)";
+            this.GridView66.Columns[25].HeaderText = "Col_txtqty_tamni_cut_yokma";
+            this.GridView66.Columns[26].HeaderText = "Col_txtqty_tamni_cut_yokpai";
+            this.GridView66.Columns[27].HeaderText = "Col_txtqty_tamni_after_cut_yokpai";
 
-            this.GridView66.Columns[28].HeaderText = "จำนวนยกมา";
-            this.GridView66.Columns[29].HeaderText = "ราคาเฉลี่ยยกมา";
-            this.GridView66.Columns[30].HeaderText = "จำนวนเงิน";
+            this.GridView66.Columns[28].HeaderText = "Col_txtqty_tamni_cut";
+            this.GridView66.Columns[29].HeaderText = "เหลือตำหนิ (ตัว)"; //"Col_txtqty_tamni_after_cut";
 
-            this.GridView66.Columns[31].HeaderText = "จำนวนยกไป";
-            this.GridView66.Columns[32].HeaderText = "ราคาเฉลี่ยยกไป";
-            this.GridView66.Columns[33].HeaderText = "จำนวนเงิน";
-
-            this.GridView66.Columns[34].HeaderText = "จำนวน(แปลงหน่วย)ยกมา";
-            this.GridView66.Columns[35].HeaderText = "จำนวน(แปลงหน่วย)ยกไป";
-
-
-
-            this.GridView66.Columns[36].HeaderText = "1";  //ไว้นับจำนวน
-
-            this.GridView66.Columns[37].HeaderText = "Col_txtqty_cut_yokma";
-            this.GridView66.Columns[38].HeaderText = "Col_txtqty_cut_yokpai";
-            this.GridView66.Columns[39].HeaderText = "Col_txtqty_after_cut_yokpai";
-
-            this.GridView66.Columns[40].HeaderText = "Col_txtqty_cut";
-            this.GridView66.Columns[41].HeaderText = "ยอดค้างรับ(ตัว)"; //"Col_txtqty_after_cut";
-
-            this.GridView66.Columns[42].HeaderText = "เลขที่ FG4 รับเสื้อ";
+            this.GridView66.Columns[30].HeaderText = "เลขที่ FG4 ตำหนิ";
 
 
             this.GridView66.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
@@ -531,11 +701,18 @@ namespace kondate.soft.HOME03_Production
             this.GridView66.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView66.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView66.Columns["Col_txtSWT_id"].Visible = false;  //"Col_txtSWT_id";
-            this.GridView66.Columns["Col_txtSWT_id"].Width = 0;
-            this.GridView66.Columns["Col_txtSWT_id"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtSWT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtSWT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView66.Columns["Col_txtFG4_id"].Visible = false;  //"Col_txtFG4_id";
+            this.GridView66.Columns["Col_txtFG4_id"].Width = 0;
+            this.GridView66.Columns["Col_txtFG4_id"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtFG4_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtFG4_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView66.Columns["Col_txtshirt_type_id"].Visible = true;  //"Col_txtshirt_type_id";
+            this.GridView66.Columns["Col_txtshirt_type_id"].Width = 100;
+            this.GridView66.Columns["Col_txtshirt_type_id"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtshirt_type_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtshirt_type_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
 
             this.GridView66.Columns["Col_txttable_name"].Visible = true;  //"Col_txttable_name";
             this.GridView66.Columns["Col_txttable_name"].Width = 100;
@@ -574,24 +751,6 @@ namespace kondate.soft.HOME03_Production
             this.GridView66.Columns["Col_txtnumber_mat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
 
-            this.GridView66.Columns["Col_txtsupplier_id"].Visible = false;  //"Col_txtsupplier_id";
-            this.GridView66.Columns["Col_txtsupplier_id"].Width = 0;
-            this.GridView66.Columns["Col_txtsupplier_id"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtsupplier_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtsupplier_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView66.Columns["Col_txtsupplier_name"].Visible = true;  //"Col_txtsupplier_name";
-            this.GridView66.Columns["Col_txtsupplier_name"].Width = 150;
-            this.GridView66.Columns["Col_txtsupplier_name"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtsupplier_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtsupplier_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView66.Columns["Col_txtwherehouse_id"].Visible = false;  //"Col_txtwherehouse_id";
-            this.GridView66.Columns["Col_txtwherehouse_id"].Width = 0;
-            this.GridView66.Columns["Col_txtwherehouse_id"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtwherehouse_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
             this.GridView66.Columns["Col_txtmat_no"].Visible = false;  //"Col_txtmat_no";
             this.GridView66.Columns["Col_txtmat_no"].Width = 0;
             this.GridView66.Columns["Col_txtmat_no"].ReadOnly = true;
@@ -617,43 +776,6 @@ namespace kondate.soft.HOME03_Production
             this.GridView66.Columns["Col_txtmat_unit1_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
 
-            this.GridView66.Columns["Col_txtmat_unit1_qty"].Visible = false;  //"Col_txtmat_unit1_qty";
-            this.GridView66.Columns["Col_txtmat_unit1_qty"].Width = 0;
-            this.GridView66.Columns["Col_txtmat_unit1_qty"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtmat_unit1_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtmat_unit1_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView66.Columns["Col_chmat_unit_status"].Visible = false;  //"Col_chmat_unit_status";
-            this.GridView66.Columns["Col_chmat_unit_status"].Width = 0;
-            this.GridView66.Columns["Col_chmat_unit_status"].ReadOnly = true;
-            this.GridView66.Columns["Col_chmat_unit_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_chmat_unit_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
-            dgvCmb.Name = "Col_Chk1";
-            dgvCmb.Width = 0;  //70
-            dgvCmb.DisplayIndex = 14;
-            dgvCmb.HeaderText = "แปลงหน่วย?";
-            dgvCmb.ValueType = typeof(bool);
-            dgvCmb.ReadOnly = true;
-            dgvCmb.Visible = false;
-            dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCmb.DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
-            GridView66.Columns.Add(dgvCmb);
-
-            this.GridView66.Columns["Col_txtmat_unit2_name"].Visible = false;  //"Col_txtmat_unit2_name";
-            this.GridView66.Columns["Col_txtmat_unit2_name"].Width = 0;
-            this.GridView66.Columns["Col_txtmat_unit2_name"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtmat_unit2_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-
-            this.GridView66.Columns["Col_txtmat_unit2_qty"].Visible = false;  //"Col_txtmat_unit2_qty";
-            this.GridView66.Columns["Col_txtmat_unit2_qty"].Width = 0;
-            this.GridView66.Columns["Col_txtmat_unit2_qty"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtmat_unit2_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtmat_unit2_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView66.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
             this.GridView66.Columns["Col_txtqty"].Width = 120;
@@ -661,11 +783,6 @@ namespace kondate.soft.HOME03_Production
             this.GridView66.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView66.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView66.Columns["Col_txtqty2"].Visible = false;  //"Col_txtqty2";
-            this.GridView66.Columns["Col_txtqty2"].Width = 0;
-            this.GridView66.Columns["Col_txtqty2"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtqty2"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtqty2"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
             this.GridView66.Columns["Col_txtprice"].Visible = false;  //"Col_txtprice";
@@ -728,41 +845,30 @@ namespace kondate.soft.HOME03_Production
             this.GridView66.Columns["Col_txtcost_money_sum_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView66.Columns["Col_txtcost_money_sum_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokma"].Visible = false;  //"Col_txtcost_qty2_balance_yokma";
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokma"].Width = 0;
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokma"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokpai"].Visible = false;  //"Col_txtcost_qty2_balance_yokpai";
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokpai"].Width = 0;
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokpai"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtcost_qty2_balance_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].Visible = false;  //"Col_txtqty_tamni_after_cut";
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].Width = 0;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView66.Columns["Col_txtqty_after_cut"].Visible = false;  //"Col_txtqty_after_cut";
-            this.GridView66.Columns["Col_txtqty_after_cut"].Width = 0;
-            this.GridView66.Columns["Col_txtqty_after_cut"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtqty_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokma"].Visible = false;  //"Col_txtqty_tamni_cut_yokma";
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokma"].Width = 0;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokma"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView66.Columns["Col_txtqty_cut_yokma"].Visible = false;  //"Col_txtqty_cut_yokma";
-            this.GridView66.Columns["Col_txtqty_cut_yokma"].Width = 0;
-            this.GridView66.Columns["Col_txtqty_cut_yokma"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtqty_cut_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtqty_cut_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokpai"].Visible = false;  //"Col_txtqty_tamni_cut_yokpai";
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokpai"].Width = 0;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokpai"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtqty_tamni_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView66.Columns["Col_txtqty_cut_yokpai"].Visible = false;  //"Col_txtqty_cut_yokpai";
-            this.GridView66.Columns["Col_txtqty_cut_yokpai"].Width = 0;
-            this.GridView66.Columns["Col_txtqty_cut_yokpai"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtqty_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtqty_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView66.Columns["Col_txtqty_after_cut_yokpai"].Visible = false;  //"Col_txtqty_after_cut_yokpai";
-            this.GridView66.Columns["Col_txtqty_after_cut_yokpai"].Width = 0;
-            this.GridView66.Columns["Col_txtqty_after_cut_yokpai"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtqty_after_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtqty_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut_yokpai"].Visible = false;  //"Col_txtqty_tamni_after_cut_yokpai";
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut_yokpai"].Width = 0;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut_yokpai"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView66.Columns["Col_1"].Visible = false;  //"Col_1";
             this.GridView66.Columns["Col_1"].Width = 0;
@@ -770,17 +876,17 @@ namespace kondate.soft.HOME03_Production
             this.GridView66.Columns["Col_1"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView66.Columns["Col_1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView66.Columns["Col_txtqty_cut"].Visible = false;  //"Col_txtqty_cut";
-            this.GridView66.Columns["Col_txtqty_cut"].Width = 0;
-            this.GridView66.Columns["Col_txtqty_cut"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtqty_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtqty_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView66.Columns["Col_txtqty_tamni_cut"].Visible = false;  //"Col_txtqty_tamni_cut";
+            this.GridView66.Columns["Col_txtqty_tamni_cut"].Width = 0;
+            this.GridView66.Columns["Col_txtqty_tamni_cut"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtqty_tamni_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtqty_tamni_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView66.Columns["Col_txtqty_after_cut"].Visible = true;  //"Col_txtqty_after_cut";
-            this.GridView66.Columns["Col_txtqty_after_cut"].Width = 100;
-            this.GridView66.Columns["Col_txtqty_after_cut"].ReadOnly = true;
-            this.GridView66.Columns["Col_txtqty_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView66.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].Visible = true;  //"Col_txtqty_tamni_after_cut";
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].Width = 100;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].ReadOnly = true;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView66.Columns["Col_txtqty_tamni_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             this.GridView66.Columns["Col_txtcut_id"].Visible = false;  //"Col_txtcut_id";
             this.GridView66.Columns["Col_txtcut_id"].Width = 0;
@@ -811,8 +917,8 @@ namespace kondate.soft.HOME03_Production
                 GridView66.Rows[i].Cells["Col_txttable_name"].Style.BackColor = Color.GreenYellow;
                 GridView66.Rows[i].Cells["Col_txttable_name"].Style.ForeColor = Color.Black;
 
-                GridView66.Rows[i].Cells["Col_txtqty_after_cut"].Style.BackColor = Color.GreenYellow;
-                GridView66.Rows[i].Cells["Col_txtqty_after_cut"].Style.ForeColor = Color.Black;
+                GridView66.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Style.BackColor = Color.GreenYellow;
+                GridView66.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Style.ForeColor = Color.Black;
             }
         }
         private void GridView66_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -851,11 +957,7 @@ namespace kondate.soft.HOME03_Production
                         MessageBox.Show("โปรด เลือก รหัสสินค้า ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
-                    if (this.txtVat_id.Text == "")
-                    {
-                        MessageBox.Show("โปรด ใส่เลขที่ใบส่งของ / ใบกำกับภาษี ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return;
-                    }
+
                     if (this.PANEL003_EMP_txtemp_id.Text == "")
                     {
                         MessageBox.Show("โปรด เลือก ผู้รับของ ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -870,7 +972,6 @@ namespace kondate.soft.HOME03_Production
                         return;
                     }
 
-                    this.txtqty_after_cut.Text = row.Cells["Col_txtqty_after_cut"].Value.ToString();
 
                     //======================================================
                     //Fill_DATA_TO_GridView1();
@@ -1090,24 +1191,9 @@ namespace kondate.soft.HOME03_Production
                 //}
             }
 
-            if (this.txtqty.Text .ToString() == "0")
-            {
-                MessageBox.Show("ไม่พบ จำนวนรับ !!! ");
-                return;
-            }
-            if (Convert.ToDouble(string.Format("{0:n4}", this.txtqty.Text.ToString())) > Convert.ToDouble(string.Format("{0:n4}", this.txtqty_after_cut.Text.ToString())))
-            {
-                MessageBox.Show("ยอดรับ มากกว่า ยอดที่ค้างอยู่ !!!! ");
-                return;
-            }
+
             Add_Row66_To_Rows1();
 
-            this.txtqty_after_cut.Text = "0";
-            this.txtqty_receive.Text = "0";
-            this.txtqty_tamni.Text = "0";
-            this.txtqty_soonsear.Text = "0";
-            this.txtqty.Text = "0";
-            this.txtqty_after_cut_yokpai.Text = "0";
 
         }
 
@@ -1117,14 +1203,10 @@ namespace kondate.soft.HOME03_Production
 
             var index = this.GridView1.Rows.Add();
             this.GridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-            this.GridView1.Rows[index].Cells["Col_txtSWT_id"].Value = this.GridView66.Rows[selectedRowIndex].Cells["Col_txtSWT_id"].Value.ToString();        //1
+            this.GridView1.Rows[index].Cells["Col_txtFG4_id"].Value = this.GridView66.Rows[selectedRowIndex].Cells["Col_txtFG4_id"].Value.ToString();        //1
             this.GridView1.Rows[index].Cells["Col_txtwherehouse_id"].Value = this.PANEL1306_WH_txtwherehouse_id.Text.ToString();      //2
 
-            this.GridView1.Rows[index].Cells["Col_txtsum_qty_body"].Value = Convert.ToDouble(string.Format("{0:n4}", this.txtqty_after_cut.Text.ToString()));      //3
-            this.GridView1.Rows[index].Cells["Col_txtqty_receive"].Value = Convert.ToDouble(string.Format("{0:n4}", this.txtqty_receive.Text.ToString()));      //4
-            this.GridView1.Rows[index].Cells["Col_txtqty_tamni"].Value = Convert.ToDouble(string.Format("{0:n4}", this.txtqty_tamni.Text.ToString()));      //5
-            this.GridView1.Rows[index].Cells["Col_txtqty_soonsear"].Value = Convert.ToDouble(string.Format("{0:n4}", this.txtqty_soonsear.Text.ToString()));      //6
-            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.txtqty.Text.ToString()));      //7
+            this.GridView1.Rows[index].Cells["Col_txtqty"].Value = Convert.ToDouble(string.Format("{0:n4}", this.GridView66.Rows[selectedRowIndex].Cells["Col_txtqty_tamni_after_cut"].Value.ToString()));        //7
 
 
             this.GridView1.Rows[index].Cells["Col_txtshirt_type_id"].Value = this.GridView66.Rows[selectedRowIndex].Cells["Col_txtshirt_type_id"].Value.ToString();      //2
@@ -1156,20 +1238,10 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Rows[index].Cells["Col_txtitem_no"].Value = "0";      //31
             this.GridView1.Rows[index].Cells["Col_txtlot_no"].Value = "0";      //31
 
-            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut"].Value = "0";      //31
-            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokma"].Value = "0";      //32
-            this.GridView1.Rows[index].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //32
-            this.GridView1.Rows[index].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //32
-
             this.GridView1.Rows[index].Cells["Col_txtqty_tamni_after_cut"].Value = "0";      //31
             this.GridView1.Rows[index].Cells["Col_txtqty_tamni_cut_yokma"].Value = "0";      //32
             this.GridView1.Rows[index].Cells["Col_txtqty_tamni_cut_yokpai"].Value = "0";      //32
             this.GridView1.Rows[index].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = "0";      //32
-
-            this.GridView1.Rows[index].Cells["Col_txtqty_soonsear_after_cut"].Value = "0";      //31
-            this.GridView1.Rows[index].Cells["Col_txtqty_soonsear_cut_yokma"].Value = "0";      //32
-            this.GridView1.Rows[index].Cells["Col_txtqty_soonsear_cut_yokpai"].Value = "0";      //32
-            this.GridView1.Rows[index].Cells["Col_txtqty_soonsear_after_cut_yokpai"].Value = "0";      //32
 
             this.GridView1.Rows[index].Cells["Col_1"].Value = "1";      //32
 
@@ -1407,7 +1479,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Columns[14].HeaderText = "มูลค่าเฉลี่ย";
             this.GridView2.Columns[15].HeaderText = "คงเหลือ(หน่วย2)";
 
-            this.GridView2.Columns[16].HeaderText = "รับเสื้อยึดสำเร็จรูป FG4 ";
+            this.GridView2.Columns[16].HeaderText = "รับเสื้อยึดสำเร็จรูป FG4 มีตำหนิ ";
 
             this.GridView2.Columns[17].HeaderText = "ราคา";
             this.GridView2.Columns[18].HeaderText = "ส่วน";
@@ -1785,10 +1857,10 @@ namespace kondate.soft.HOME03_Production
                         if (this.GridView2.Rows[s].Cells["Col_txtmat_id"].Value.ToString() == this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString())
                         {
 
-                            if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive"].Value.ToString())) > 0)
+                            if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
                             {
                                 //Sum_Qty  จำนวนเบิก (กก)=================================================
-                                Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive"].Value.ToString()));
+                                Sum_Qty = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
                                 this.GridView2.Rows[s].Cells["Col_txtsum_qty"].Value = Sum_Qty.ToString("N", new CultureInfo("en-US"));
                             }
                             //END คำนวณต้นทุนถัวเฉลี่ย==================================================================
@@ -1959,219 +2031,139 @@ namespace kondate.soft.HOME03_Production
 
         private void Show_GridView1()
         {
-            this.GridView1.ColumnCount = 45;
+            this.GridView1.ColumnCount = 34;
             this.GridView1.Columns[0].Name = "Col_Auto_num";
-            this.GridView1.Columns[1].Name = "Col_txtSWT_id";
-            this.GridView1.Columns[2].Name = "Col_txtwherehouse_id";
+            this.GridView1.Columns[1].Name = "Col_txtFG4_id";
 
-            this.GridView1.Columns[3].Name = "Col_txtsum_qty_body";
-            this.GridView1.Columns[4].Name = "Col_txtqty_receive";
-            this.GridView1.Columns[5].Name = "Col_txtqty_tamni";
-            this.GridView1.Columns[6].Name = "Col_txtqty_soonsear";
-            this.GridView1.Columns[7].Name = "Col_txtqty";
-            this.GridView1.Columns[8].Name = "Col_txtqty_after_cut_yokpai";
+            this.GridView1.Columns[2].Name = "Col_txtshirt_type_id";
+            this.GridView1.Columns[3].Name = "Col_txttable_name";
+            this.GridView1.Columns[4].Name = "Col_txtshirt_size_id";
+            this.GridView1.Columns[5].Name = "Col_txtnumber_color_id";
+            this.GridView1.Columns[6].Name = "Col_txtnumber_sup_color_id";
+            this.GridView1.Columns[7].Name = "Col_txtnumber_dyed";
+            this.GridView1.Columns[8].Name = "Col_txtnumber_mat_id";
 
+            this.GridView1.Columns[9].Name = "Col_txtmat_no";
+            this.GridView1.Columns[10].Name = "Col_txtmat_id";
+            this.GridView1.Columns[11].Name = "Col_txtmat_name";
 
-            this.GridView1.Columns[9].Name = "Col_txttable_name";
-            this.GridView1.Columns[10].Name = "Col_txtnumber_dyed";
-            this.GridView1.Columns[11].Name = "Col_txtshirt_type_id";
-            this.GridView1.Columns[12].Name = "Col_txtshirt_size_id";
-            this.GridView1.Columns[13].Name = "Col_txtnumber_color_id";
-            this.GridView1.Columns[14].Name = "Col_txtnumber_sup_color_id";
-            this.GridView1.Columns[15].Name = "Col_txtnumber_mat_id";
+            this.GridView1.Columns[12].Name = "Col_txtmat_unit1_name";
 
-            this.GridView1.Columns[16].Name = "Col_txtmat_no";
-            this.GridView1.Columns[17].Name = "Col_txtmat_id";
-            this.GridView1.Columns[18].Name = "Col_txtmat_name";
-            this.GridView1.Columns[19].Name = "Col_txtmat_unit1_name";
+            this.GridView1.Columns[13].Name = "Col_txtqty";
 
-            this.GridView1.Columns[20].Name = "Col_txtprice";
-            this.GridView1.Columns[21].Name = "Col_txtdiscount_rate";
-            this.GridView1.Columns[22].Name = "Col_txtdiscount_money";
-            this.GridView1.Columns[23].Name = "Col_txtsum_total";
-        
-            this.GridView1.Columns[24].Name = "Col_txtcost_qty_balance_yokma";
-            this.GridView1.Columns[25].Name = "Col_txtcost_qty_price_average_yokma";
-            this.GridView1.Columns[26].Name = "Col_txtcost_money_sum_yokma";
+            this.GridView1.Columns[14].Name = "Col_txtprice";
+            this.GridView1.Columns[15].Name = "Col_txtdiscount_rate";
+            this.GridView1.Columns[16].Name = "Col_txtdiscount_money";
+            this.GridView1.Columns[17].Name = "Col_txtsum_total";
 
-            this.GridView1.Columns[27].Name = "Col_txtcost_qty_balance_yokpai";
-            this.GridView1.Columns[28].Name = "Col_txtcost_qty_price_average_yokpai";
-            this.GridView1.Columns[29].Name = "Col_txtcost_money_sum_yokpai";
+            this.GridView1.Columns[18].Name = "Col_txtcost_qty_balance_yokma";
+            this.GridView1.Columns[19].Name = "Col_txtcost_qty_price_average_yokma";
+            this.GridView1.Columns[20].Name = "Col_txtcost_money_sum_yokma";
 
-            this.GridView1.Columns[30].Name = "Col_txtitem_no";
-            this.GridView1.Columns[31].Name = "Col_txtlot_no";
+            this.GridView1.Columns[21].Name = "Col_txtcost_qty_balance_yokpai";
+            this.GridView1.Columns[22].Name = "Col_txtcost_qty_price_average_yokpai";
+            this.GridView1.Columns[23].Name = "Col_txtcost_money_sum_yokpai";
 
-            this.GridView1.Columns[32].Name = "Col_txtqty_after_cut";
-            this.GridView1.Columns[33].Name = "Col_txtqty_cut_yokma";
-            this.GridView1.Columns[34].Name = "Col_txtqty_cut_yokpai";
-            this.GridView1.Columns[35].Name = "Col_txtqty_after_cut_yokpai";
+            this.GridView1.Columns[24].Name = "Col_1";
 
+            this.GridView1.Columns[25].Name = "Col_txtqty_tamni_cut_yokma";
+            this.GridView1.Columns[26].Name = "Col_txtqty_tamni_cut_yokpai";
+            this.GridView1.Columns[27].Name = "Col_txtqty_tamni_after_cut_yokpai";
 
-            this.GridView1.Columns[36].Name = "Col_txtqty_tamni_after_cut";
-            this.GridView1.Columns[37].Name = "Col_txtqty_tamni_cut_yokma";
-            this.GridView1.Columns[38].Name = "Col_txtqty_tamni_cut_yokpai";
-            this.GridView1.Columns[39].Name = "Col_txtqty_tamni_after_cut_yokpai";
-
-            this.GridView1.Columns[40].Name = "Col_txtqty_soonsear_after_cut";
-            this.GridView1.Columns[41].Name = "Col_txtqty_soonsear_cut_yokma";
-            this.GridView1.Columns[42].Name = "Col_txtqty_soonsear_cut_yokpai";
-            this.GridView1.Columns[43].Name = "Col_txtqty_soonsear_after_cut_yokpai";
-
-            this.GridView1.Columns[44].Name = "Col_1";
+            this.GridView1.Columns[28].Name = "Col_txtqty_tamni_cut";
+            this.GridView1.Columns[29].Name = "Col_txtqty_tamni_after_cut";
+            this.GridView1.Columns[30].Name = "Col_txtcut_id";
+            this.GridView1.Columns[31].Name = "Col_txtwherehouse_id";
+            this.GridView1.Columns[32].Name = "Col_txtitem_no";
+            this.GridView1.Columns[33].Name = "Col_txtlot_no";
 
 
             this.GridView1.Columns[0].HeaderText = "No";
-            this.GridView1.Columns[1].HeaderText = "เลขที่ SWT";
-            this.GridView1.Columns[2].HeaderText = "คลัง";
+            this.GridView1.Columns[1].HeaderText = "เลขที่ FG4";
 
-            this.GridView1.Columns[3].HeaderText = "จำนวนค้างรับ";
-            this.GridView1.Columns[4].HeaderText = "จำนวนรับ";
-            this.GridView1.Columns[5].HeaderText = "ตำหนิ";
-            this.GridView1.Columns[6].HeaderText = "เสีย";
-            this.GridView1.Columns[7].HeaderText = "รวมรับ";
-            this.GridView1.Columns[8].HeaderText = "ค้างรับยกไป";
+            this.GridView1.Columns[2].HeaderText = " ชนิดงาน";
+            this.GridView1.Columns[3].HeaderText = " คิวงาน/โต๊ะที่";
+            this.GridView1.Columns[4].HeaderText = " ไซส์";
+            this.GridView1.Columns[5].HeaderText = " รหัสสี";
+            this.GridView1.Columns[6].HeaderText = " รหัสสีซัพ";
+            this.GridView1.Columns[7].HeaderText = " เบอร์กอง";
+            this.GridView1.Columns[8].HeaderText = " เบอร์ด้าย";
 
+            this.GridView1.Columns[9].HeaderText = "ลำดับ";
+            this.GridView1.Columns[10].HeaderText = "รหัส";
+            this.GridView1.Columns[11].HeaderText = "ชื่อสินค้า";
 
+            this.GridView1.Columns[12].HeaderText = " หน่วย";
 
-            this.GridView1.Columns[9].HeaderText  = "คิวงาน/โต๊ะที่";
-            this.GridView1.Columns[10].HeaderText  = "เบอร์กอง";
-            this.GridView1.Columns[11].HeaderText  = "ชนิดงาน";
-            this.GridView1.Columns[12].HeaderText  = "ไซส์";
-            this.GridView1.Columns[13].HeaderText  = "รหัสสี";
-            this.GridView1.Columns[14].HeaderText  = "รหัสสีซัพ";
-            this.GridView1.Columns[15].HeaderText  = "เบอร์ด้าย";
+            this.GridView1.Columns[13].HeaderText = "ตำหนิ (ตัว)";
 
-            this.GridView1.Columns[16].HeaderText  = "ลำดับ";
-            this.GridView1.Columns[17].HeaderText  = "รหัส";
-            this.GridView1.Columns[18].HeaderText  = "ชื่อสินค้า";
-            this.GridView1.Columns[19].HeaderText  = "หน่วยนับ";
+            this.GridView1.Columns[14].HeaderText = "ราคา";
+            this.GridView1.Columns[15].HeaderText = "ส่วนลด(%)";
+            this.GridView1.Columns[16].HeaderText = "ส่วนลด(บาท)";
+            this.GridView1.Columns[17].HeaderText = "จำนวนเงิน(บาท)";
 
-            this.GridView1.Columns[20].HeaderText  = "ราคา";
-            this.GridView1.Columns[21].HeaderText  = "อัตราส่วนลด";
-            this.GridView1.Columns[22].HeaderText  = "ส่วนลด";
-            this.GridView1.Columns[23].HeaderText  = "จำนวนเงิน";
+            this.GridView1.Columns[18].HeaderText = "จำนวนยกมา";
+            this.GridView1.Columns[19].HeaderText = "ราคาเฉลี่ยยกมา";
+            this.GridView1.Columns[20].HeaderText = "จำนวนเงิน";
 
-            this.GridView1.Columns[24].HeaderText  = "Col_txtcost_qty_balance_yokma";
-            this.GridView1.Columns[25].HeaderText  = "Col_txtcost_qty_price_average_yokma";
-            this.GridView1.Columns[26].HeaderText  = "Col_txtcost_money_sum_yokma";
+            this.GridView1.Columns[21].HeaderText = "จำนวนยกไป";
+            this.GridView1.Columns[22].HeaderText = "ราคาเฉลี่ยยกไป";
+            this.GridView1.Columns[23].HeaderText = "จำนวนเงิน";
 
-            this.GridView1.Columns[27].HeaderText  = "Col_txtcost_qty_balance_yokpai";
-            this.GridView1.Columns[28].HeaderText  = "Col_txtcost_qty_price_average_yokpai";
-            this.GridView1.Columns[29].HeaderText  = "Col_txtcost_money_sum_yokpai";
+            this.GridView1.Columns[24].HeaderText = "1";  //ไว้นับจำนวน
 
-            this.GridView1.Columns[30].HeaderText  = "Col_txtitem_no";
-            this.GridView1.Columns[31].HeaderText  = "Col_txtlot_no";
+            this.GridView1.Columns[25].HeaderText = "Col_txtqty_tamni_cut_yokma";
+            this.GridView1.Columns[26].HeaderText = "Col_txtqty_tamni_cut_yokpai";
+            this.GridView1.Columns[27].HeaderText = "Col_txtqty_tamni_after_cut_yokpai";
 
-            this.GridView1.Columns[32].HeaderText = "Col_txtqty_after_cut";
-            this.GridView1.Columns[33].HeaderText = "Col_txtqty_cut_yokma";
-            this.GridView1.Columns[34].HeaderText = "Col_txtqty_cut_yokpai";
-            this.GridView1.Columns[35].HeaderText = "Col_txtqty_after_cut_yokpai";
+            this.GridView1.Columns[28].HeaderText = "Col_txtqty_tamni_cut";
+            this.GridView1.Columns[29].HeaderText = "เหลือตำหนิ (ตัว)"; //"Col_txtqty_tamni_after_cut";
 
+            this.GridView1.Columns[30].HeaderText = "เลขที่ FG4 ตำหนิ";
+            this.GridView1.Columns[31].HeaderText = "Col_txtwherehouse_id";
+            this.GridView1.Columns[32].HeaderText = "Col_txtitem_no";
+            this.GridView1.Columns[33].HeaderText = "Col_txtlot_no";
 
-            this.GridView1.Columns[36].HeaderText = "Col_txtqty_tamni_after_cut";
-            this.GridView1.Columns[37].HeaderText = "Col_txtqty_tamni_cut_yokma";
-            this.GridView1.Columns[38].HeaderText = "Col_txtqty_tamni_cut_yokpai";
-            this.GridView1.Columns[39].HeaderText = "Col_txtqty_tamni_after_cut_yokpai";
-
-            this.GridView1.Columns[40].HeaderText = "Col_txtqty_soonsear_after_cut";
-            this.GridView1.Columns[41].HeaderText = "Col_txtqty_soonsear_cut_yokma";
-            this.GridView1.Columns[42].HeaderText = "Col_txtqty_soonsear_cut_yokpai";
-            this.GridView1.Columns[43].HeaderText = "Col_txtqty_soonsear_after_cut_yokpai";
-
-            this.GridView1.Columns[44].HeaderText = "Col_1";//ไว้นับจำนวน
+            this.GridView1.Columns[31].Visible = false;
             this.GridView1.Columns[32].Visible = false;
             this.GridView1.Columns[33].Visible = false;
-            this.GridView1.Columns[34].Visible = false;
-            this.GridView1.Columns[35].Visible = false;
-            this.GridView1.Columns[36].Visible = false;
-            this.GridView1.Columns[37].Visible = false;
-            this.GridView1.Columns[38].Visible = false;
-            this.GridView1.Columns[39].Visible = false;
-            this.GridView1.Columns[40].Visible = false;
-            this.GridView1.Columns[41].Visible = false;
-            this.GridView1.Columns[42].Visible = false;
-            this.GridView1.Columns[43].Visible = false;
-            this.GridView1.Columns[44].Visible = false;
 
-
-            this.GridView1.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
-            this.GridView1.Columns["Col_Auto_num"].Width = 40;
+            this.GridView1.Columns["Col_Auto_num"].Visible = false;  //"Col_Auto_num";
+            this.GridView1.Columns["Col_Auto_num"].Width = 0;
             this.GridView1.Columns["Col_Auto_num"].ReadOnly = true;
             this.GridView1.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtSWT_id"].Visible = false;  //"Col_txtSWT_id";
-            this.GridView1.Columns["Col_txtSWT_id"].Width = 0;
-            this.GridView1.Columns["Col_txtSWT_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtSWT_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtSWT_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtFG4_id"].Visible = false;  //"Col_txtFG4_id";
+            this.GridView1.Columns["Col_txtFG4_id"].Width = 0;
+            this.GridView1.Columns["Col_txtFG4_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtFG4_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtFG4_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtwherehouse_id"].Visible = false;  //"Col_txtwherehouse_id";
-            this.GridView1.Columns["Col_txtwherehouse_id"].Width = 0;
-            this.GridView1.Columns["Col_txtwherehouse_id"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtwherehouse_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtsum_qty_body"].Visible =false;  //"Col_txtsum_qty_body";
-            this.GridView1.Columns["Col_txtsum_qty_body"].Width = 0;
-            this.GridView1.Columns["Col_txtsum_qty_body"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtsum_qty_body"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtsum_qty_body"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtqty_receive"].Visible = true;  //"Col_txtqty_receive";
-            this.GridView1.Columns["Col_txtqty_receive"].Width = 90;
-            this.GridView1.Columns["Col_txtqty_receive"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_receive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_receive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtqty_tamni"].Visible = true;  //"Col_txtqty_tamni";
-            this.GridView1.Columns["Col_txtqty_tamni"].Width = 80;
-            this.GridView1.Columns["Col_txtqty_tamni"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_tamni"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_tamni"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtqty_soonsear"].Visible = true;  //"Col_txtqty_soonsear";
-            this.GridView1.Columns["Col_txtqty_soonsear"].Width = 80;
-            this.GridView1.Columns["Col_txtqty_soonsear"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_soonsear"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_soonsear"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
-            this.GridView1.Columns["Col_txtqty"].Width = 90;
-            this.GridView1.Columns["Col_txtqty"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.GridView1.Columns["Col_txttable_name"].Visible = true;  //"Col_txttable_name";
-            this.GridView1.Columns["Col_txttable_name"].Width = 90;
-            this.GridView1.Columns["Col_txttable_name"].ReadOnly = true;
-            this.GridView1.Columns["Col_txttable_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txttable_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtnumber_dyed"].Visible = false;  //"Col_txtnumber_dyed";
-            this.GridView1.Columns["Col_txtnumber_dyed"].Width = 0;
-            this.GridView1.Columns["Col_txtnumber_dyed"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtnumber_dyed"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtnumber_dyed"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-
-            this.GridView1.Columns["Col_txtshirt_type_id"].Visible = false;  //"Col_txtshirt_type_id";
-            this.GridView1.Columns["Col_txtshirt_type_id"].Width = 0;
+            this.GridView1.Columns["Col_txtshirt_type_id"].Visible = true;  //"Col_txtshirt_type_id";
+            this.GridView1.Columns["Col_txtshirt_type_id"].Width = 100;
             this.GridView1.Columns["Col_txtshirt_type_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtshirt_type_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtshirt_type_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = false;  //"Col_txtshirt_size_id";
-            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 0;
+
+            this.GridView1.Columns["Col_txttable_name"].Visible = true;  //"Col_txttable_name";
+            this.GridView1.Columns["Col_txttable_name"].Width = 100;
+            this.GridView1.Columns["Col_txttable_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txttable_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txttable_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtshirt_size_id"].Visible = true;  //"Col_txtshirt_size_id";
+            this.GridView1.Columns["Col_txtshirt_size_id"].Width = 60;
             this.GridView1.Columns["Col_txtshirt_size_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtshirt_size_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtshirt_size_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtnumber_color_id"].Visible = false;  //"Col_txtnumber_color_id";
-            this.GridView1.Columns["Col_txtnumber_color_id"].Width = 0;
+            this.GridView1.Columns["Col_txtnumber_color_id"].Visible = true;  //"Col_txtnumber_color_id";
+            this.GridView1.Columns["Col_txtnumber_color_id"].Width = 100;
             this.GridView1.Columns["Col_txtnumber_color_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtnumber_color_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtnumber_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtnumber_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_txtnumber_sup_color_id"].Visible = true;  //"Col_txtnumber_sup_color_id";
             this.GridView1.Columns["Col_txtnumber_sup_color_id"].Width = 100;
@@ -2179,11 +2171,18 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtnumber_sup_color_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtnumber_sup_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
+            this.GridView1.Columns["Col_txtnumber_dyed"].Visible = false;  //"Col_txtnumber_dyed";
+            this.GridView1.Columns["Col_txtnumber_dyed"].Width = 0;
+            this.GridView1.Columns["Col_txtnumber_dyed"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtnumber_dyed"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtnumber_dyed"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             this.GridView1.Columns["Col_txtnumber_mat_id"].Visible = true;  //"Col_txtnumber_mat_id";
-            this.GridView1.Columns["Col_txtnumber_mat_id"].Width =90;
+            this.GridView1.Columns["Col_txtnumber_mat_id"].Width = 100;
             this.GridView1.Columns["Col_txtnumber_mat_id"].ReadOnly = true;
             this.GridView1.Columns["Col_txtnumber_mat_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtnumber_mat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
 
             this.GridView1.Columns["Col_txtmat_no"].Visible = false;  //"Col_txtmat_no";
             this.GridView1.Columns["Col_txtmat_no"].Width = 0;
@@ -2208,6 +2207,16 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtmat_unit1_name"].ReadOnly = true;
             this.GridView1.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtmat_unit1_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+
+
+            this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
+            this.GridView1.Columns["Col_txtqty"].Width = 120;
+            this.GridView1.Columns["Col_txtqty"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
 
             this.GridView1.Columns["Col_txtprice"].Visible = false;  //"Col_txtprice";
             this.GridView1.Columns["Col_txtprice"].Width = 0;
@@ -2269,47 +2278,54 @@ namespace kondate.soft.HOME03_Production
             this.GridView1.Columns["Col_txtcost_money_sum_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_txtcost_money_sum_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtitem_no"].Visible = false;  //"Col_txtitem_no";
-            this.GridView1.Columns["Col_txtitem_no"].Width = 0;
-            this.GridView1.Columns["Col_txtitem_no"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtitem_no"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtitem_no"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtlot_no"].Visible = false;  //"Col_txtlot_no";
-            this.GridView1.Columns["Col_txtlot_no"].Width = 0;
-            this.GridView1.Columns["Col_txtlot_no"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtlot_no"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtlot_no"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].Visible = false;  //"Col_txtqty_tamni_after_cut";
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtqty_after_cut"].Visible = false;  //"Col_txtqty_after_cut";
-            this.GridView1.Columns["Col_txtqty_after_cut"].Width = 0;
-            this.GridView1.Columns["Col_txtqty_after_cut"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokma"].Visible = false;  //"Col_txtqty_tamni_cut_yokma";
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokma"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokma"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns["Col_txtqty_cut_yokma"].Visible = false;  //"Col_txtqty_cut_yokma";
-            this.GridView1.Columns["Col_txtqty_cut_yokma"].Width = 0;
-            this.GridView1.Columns["Col_txtqty_cut_yokma"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_cut_yokma"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_cut_yokma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokpai"].Visible = false;  //"Col_txtqty_tamni_cut_yokpai";
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_tamni_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns["Col_txtqty_cut_yokpai"].Visible = false;  //"Col_txtqty_cut_yokpai";
-            this.GridView1.Columns["Col_txtqty_cut_yokpai"].Width = 0;
-            this.GridView1.Columns["Col_txtqty_cut_yokpai"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Visible = true;  //"Col_txtqty_after_cut_yokpai";
-            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].Width = 100;
-            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].ReadOnly = true;
-            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns["Col_txtqty_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut_yokpai"].Visible = false;  //"Col_txtqty_tamni_after_cut_yokpai";
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut_yokpai"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut_yokpai"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut_yokpai"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut_yokpai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.GridView1.Columns["Col_1"].Visible = false;  //"Col_1";
             this.GridView1.Columns["Col_1"].Width = 0;
             this.GridView1.Columns["Col_1"].ReadOnly = true;
             this.GridView1.Columns["Col_1"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.GridView1.Columns["Col_1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView1.Columns["Col_txtqty_tamni_cut"].Visible = false;  //"Col_txtqty_tamni_cut";
+            this.GridView1.Columns["Col_txtqty_tamni_cut"].Width = 0;
+            this.GridView1.Columns["Col_txtqty_tamni_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_tamni_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_tamni_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].Visible = true;  //"Col_txtqty_tamni_after_cut";
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].Width = 100;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty_tamni_after_cut"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView1.Columns["Col_txtcut_id"].Visible = false;  //"Col_txtcut_id";
+            this.GridView1.Columns["Col_txtcut_id"].Width = 0;
+            this.GridView1.Columns["Col_txtcut_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtcut_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtcut_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
 
             this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
@@ -2363,10 +2379,6 @@ namespace kondate.soft.HOME03_Production
 
             double Sum_Qty_CUT_Yokpai = 0;
             double Sum_Qty_AF_CUT_Yokpai = 0;
-            double Sum_Qty_CUT_Yokpai2 = 0;
-            double Sum_Qty_AF_CUT_Yokpai3 = 0;
-            double Sum_Qty_CUT_Yokpai4 = 0;
-            double Sum_Qty_AF_CUT_Yokpai5 = 0;
 
             double Sum_Qtyx1 = 0;
             double Sum_Qty5 = 0;
@@ -2430,22 +2442,6 @@ namespace kondate.soft.HOME03_Production
                 }
 
 
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value = ".00";
-                }
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value = ".00";
-                }
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value = ".00";
-                }
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value = ".00";
-                }
                 if (this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Value == null)
                 {
                     this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Value = ".00";
@@ -2463,35 +2459,19 @@ namespace kondate.soft.HOME03_Production
                     this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = ".00";
                 }
 
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_after_cut"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_after_cut"].Value = ".00";
-                }
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokma"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokma"].Value = ".00";
-                }
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokpai"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokpai"].Value = ".00";
-                }
-                if (this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_after_cut_yokpai"].Value == null)
-                {
-                    this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_after_cut_yokpai"].Value = ".00";
-                }
                 if (double.Parse(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > 0)
                 {
-                    //if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())))
+                    //if (Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) > Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Value.ToString())))
                     //{
-                    //    this.GridView1.Rows[i].Cells["Col_txtqty"].Value = this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString();
+                    //    this.GridView1.Rows[i].Cells["Col_txtqty"].Value = this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Value.ToString();
                     //}
                     //======================================================================
                     //แปลงหน่วย เป็นหน่วย 2 จาก กก. เป็น ปอนด์
  
                     }
 
-                SUMS21 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear"].Value.ToString()));
-                this.GridView1.Rows[i].Cells["Col_txtqty"].Value = SUMS21.ToString("N", new CultureInfo("en-US"));
+                //SUMS21 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear"].Value.ToString()));
+                //this.GridView1.Rows[i].Cells["Col_txtqty"].Value = SUMS21.ToString("N", new CultureInfo("en-US"));
 
 
                 Sum_Qty5 = Convert.ToDouble(string.Format("{0:n4}", Sum_Qty5)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
@@ -2499,28 +2479,12 @@ namespace kondate.soft.HOME03_Production
 
 
                     //แล้ว เท่าไร = ปกติ บวก  ยกเลิก ลบ ================================================
-                    Sum_Qty_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
-                    this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value = Sum_Qty_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
+                    Sum_Qty_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokma"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
+                    this.GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokpai"].Value = Sum_Qty_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
 
                     //เหลืออีก เท่าไร  ปกติ ลบ  ยกเลิก บวก ===============================================
-                    Sum_Qty_AF_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
-                    this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value = Sum_Qty_AF_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
-
-                //แล้ว เท่าไร = ปกติ บวก  ยกเลิก ลบ ================================================
-                Sum_Qty_CUT_Yokpai2 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokma"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni"].Value.ToString()));
-                this.GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokpai"].Value = Sum_Qty_CUT_Yokpai2.ToString("N", new CultureInfo("en-US"));
-
-                //เหลืออีก เท่าไร  ปกติ ลบ  ยกเลิก บวก ===============================================
-                Sum_Qty_AF_CUT_Yokpai3 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni"].Value.ToString()));
-                this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = Sum_Qty_AF_CUT_Yokpai3.ToString("N", new CultureInfo("en-US"));
-
-                //แล้ว เท่าไร = ปกติ บวก  ยกเลิก ลบ ================================================
-                Sum_Qty_CUT_Yokpai4 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokma"].Value.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear"].Value.ToString()));
-                this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokpai"].Value = Sum_Qty_CUT_Yokpai4.ToString("N", new CultureInfo("en-US"));
-
-                //เหลืออีก เท่าไร  ปกติ ลบ  ยกเลิก บวก ===============================================
-                Sum_Qty_AF_CUT_Yokpai5 = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_after_cut"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear"].Value.ToString()));
-                this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_after_cut_yokpai"].Value = Sum_Qty_AF_CUT_Yokpai5.ToString("N", new CultureInfo("en-US"));
+                    Sum_Qty_AF_CUT_Yokpai = Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Value.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
+                    this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = Sum_Qty_AF_CUT_Yokpai.ToString("N", new CultureInfo("en-US"));
 
                 Sum_Qtyx1 = Convert.ToDouble(string.Format("{0:n4}", Sum_Qtyx1)) + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_1"].Value.ToString()));
                 this.txtcount_rows.Text = Sum_Qtyx1.ToString("N", new CultureInfo("en-US"));
@@ -2536,37 +2500,13 @@ namespace kondate.soft.HOME03_Production
 
             Sum_Qty_CUT_Yokpai = 0;
             Sum_Qty_AF_CUT_Yokpai = 0;
-            Sum_Qty_CUT_Yokpai2 = 0;
-            Sum_Qty_AF_CUT_Yokpai3 = 0;
-            Sum_Qty_CUT_Yokpai4 = 0;
-            Sum_Qty_AF_CUT_Yokpai5 = 0;
 
             Sum_Qtyx1 = 0;
             Sum_Qty5 = 0;
 
 
         }
-        private void SUM_TEXT()
-        {
-            double SUMS11 = 0;
-            double SUMS12 = 0;
-
-            SUMS11 = Convert.ToDouble(string.Format("{0:n4}", this.txtqty_receive.Text.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.txtqty_tamni.Text.ToString())) + Convert.ToDouble(string.Format("{0:n4}", this.txtqty_soonsear.Text.ToString()));
-            this.txtqty.Text = SUMS11.ToString("N", new CultureInfo("en-US"));
-
-            if (Convert.ToDouble(string.Format("{0:n4}", this.txtqty.Text.ToString())) > Convert.ToDouble(string.Format("{0:n4}", this.txtqty_after_cut.Text.ToString())))
-            {
-                MessageBox.Show("ยอดรับ มากกว่า ยอดที่ค้างอยู่ !!!! ");
-                return;
-            }
-
-            SUMS12 = Convert.ToDouble(string.Format("{0:n4}", this.txtqty_after_cut.Text.ToString())) - Convert.ToDouble(string.Format("{0:n4}", this.txtqty.Text.ToString()));
-            this.txtqty_after_cut_yokpai.Text = SUMS12.ToString("N", new CultureInfo("en-US"));
-
-             SUMS11 = 0;
-             SUMS12 = 0;
-
-        }
+    
         private void Show_Qty_Yokma()
         {
             //เชื่อมต่อฐานข้อมูล=======================================================
@@ -2731,13 +2671,13 @@ namespace kondate.soft.HOME03_Production
 
 
                     cmd2.CommandText = "SELECT *" +
-                                       " FROM c002_09Send_Sew_shirt_record_detail" +
+                                       " FROM c002_10Receive_FG4_record_detail" +
                                        " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                        " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                         " AND (txttable_name = '" + this.GridView1.Rows[i].Cells["Col_txttable_name"].Value.ToString() + "')" +
                                         " AND (txtnumber_dyed = '" + this.GridView1.Rows[i].Cells["Col_txtnumber_dyed"].Value.ToString() + "')" +
                                         //" AND (txtmat_id = '" + this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString() + "')" +
-                                         " AND (txtSWT_id = '" + this.GridView1.Rows[i].Cells["Col_txtSWT_id"].Value.ToString() + "')" +
+                                         " AND (txtFG4_id = '" + this.GridView1.Rows[i].Cells["Col_txtFG4_id"].Value.ToString() + "')" +
                                       " ORDER BY txtmat_no ASC";
 
                     try
@@ -2753,10 +2693,10 @@ namespace kondate.soft.HOME03_Production
                             for (int j = 0; j < dt2.Rows.Count; j++)
                             {
 
-                                GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_cut"]).ToString("###,###.00");    //36
-                                GridView1.Rows[i].Cells["Col_txtqty_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_after_cut"]).ToString("###,###.00");          //21
-                                //GridView1.Rows[j].Cells["Col_txtqty_cut_yokpai"].Value = "0";      //37
-                                //GridView1.Rows[j].Cells["Col_txtqty_after_cut_yokpai"].Value = "0";      //37
+                                GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokma"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_cut"]).ToString("###,###.00");    //36
+                                GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut"].Value = Convert.ToSingle(dt2.Rows[j]["txtqty_tamni_after_cut"]).ToString("###,###.00");          //21
+                                //GridView1.Rows[j].Cells["Col_txtqty_tamni_cut_yokpai"].Value = "0";      //37
+                                //GridView1.Rows[j].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value = "0";      //37
 
 
                             }
@@ -2838,7 +2778,7 @@ namespace kondate.soft.HOME03_Production
             if (e.KeyCode.Equals(Keys.Enter))
             {
                 DataGridViewRow dgr = GridView1.CurrentRow;
-                string column0 = dgr.Cells["Col_txtqty_after_cut"].Value.ToString();
+                string column0 = dgr.Cells["Col_txtqty_tamni_after_cut"].Value.ToString();
 
                 if (dgr.Cells["Col_txtqty"].Value.ToString() == "0")
                 {
@@ -3108,12 +3048,12 @@ namespace kondate.soft.HOME03_Production
             TRANS_LOG();
 
             this.Hide();
-            var frm2 = new HOME03_Production.HOME03_Production_10Receive_FG4_record();
+            var frm2 = new HOME03_Production.HOME03_Production_14Receive_FG4_Tamni_record();
             frm2.Closed += (s, args) => this.Close();
             frm2.Show();
 
-            this.iblword_status.Text = "บันทึกใบรับเสื้อยึดสำเร็จรูป FG4";
-            this.txtFG4_id.ReadOnly = true;
+            this.iblword_status.Text = "บันทึกใบรับเสื้อยึดสำเร็จรูป FG4 มีตำหนิ";
+            this.txtFG4TN_id.ReadOnly = true;
         }
 
         private void btnopen_Click(object sender, EventArgs e)
@@ -3154,12 +3094,6 @@ namespace kondate.soft.HOME03_Production
             {
                 MessageBox.Show("โปรด เลือกพนักงาน ที่รับสินค้า ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.PANEL003_EMP_txtemp_id.Focus();
-                return;
-            }
-            if (this.txtVat_id.Text == "")
-            {
-                MessageBox.Show("โปรด ใส่เลขที่ใบกำกับภาษี  หรือ ใบส่งของ  ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.txtVat_id.Focus();
                 return;
             }
 
@@ -3234,12 +3168,12 @@ namespace kondate.soft.HOME03_Production
                     //1 k020db_receive_record_trans
                     if (W_ID_Select.TRANS_BILL_STATUS.Trim() == "N")
                         {
-                            cmd2.CommandText = "INSERT INTO c002_10Receive_FG4_record_trans(cdkey," +
+                            cmd2.CommandText = "INSERT INTO c002_14Receive_FG4_Tamni_record_trans(cdkey," +
                                                "txtco_id,txtbranch_id," +
                                                "txttrans_id)" +
                                                "VALUES ('" + W_ID_Select.CDKEY.Trim() + "'," +
                                                "'" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +
-                                               "'" + this.txtFG4_id.Text.Trim() + "')";
+                                               "'" + this.txtFG4TN_id.Text.Trim() + "')";
 
                             cmd2.ExecuteNonQuery();
 
@@ -3247,7 +3181,7 @@ namespace kondate.soft.HOME03_Production
                         }
                         else
                         {
-                            cmd2.CommandText = "UPDATE c002_10Receive_FG4_record_trans SET txttrans_id = '" + this.txtFG4_id.Text.Trim() + "'" +
+                            cmd2.CommandText = "UPDATE c002_14Receive_FG4_Tamni_record_trans SET txttrans_id = '" + this.txtFG4TN_id.Text.Trim() + "'" +
                                                " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                                " AND (txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')";
@@ -3258,7 +3192,7 @@ namespace kondate.soft.HOME03_Production
                         //MessageBox.Show("ok1");
 
                         //2 k020db_receive_record
-                        cmd2.CommandText = "INSERT INTO c002_10Receive_FG4_record(cdkey,txtco_id,txtbranch_id," +  //1
+                        cmd2.CommandText = "INSERT INTO c002_14Receive_FG4_Tamni_record(cdkey,txtco_id,txtbranch_id," +  //1
                                                "txttrans_date_server,txttrans_time," +  //2
                                                "txttrans_year,txttrans_month,txttrans_day,txttrans_date_client," +  //3
                                                "txtcomputer_ip,txtcomputer_name," +  //4
@@ -3266,12 +3200,11 @@ namespace kondate.soft.HOME03_Production
                                                "txtversion_id," +  //6
                                                                    //====================================================
 
-                                               "txtFG4_id," + // 7
+                                               "txtFG4TN_id," + // 7
 
-                                               "txtFG4_type_id," + // 8
                                                                                 //"txtnumber_dyed," + // 8
 
-                                               //"txtSWT_id," + // 8
+                                               //"txtFG4_id," + // 8
                                                "txtsupplier_id," + // 9
                                                                    //"txtwherehouse_id," + // 10
                                                "txtVat_id," + // 11
@@ -3312,7 +3245,7 @@ namespace kondate.soft.HOME03_Production
                                                "txtmoney_after_vat_creditor," + // 52
 
                                                "txtcreditor_status," + // 53
-                                               "txtFG4_status," +  //54
+                                               "txtFG4TN_status," +  //54
                                               "txtpayment_status," +  //55
                                               "txtacc_record_status," +  //56
                                               "txtemp_print," +  //57
@@ -3327,12 +3260,11 @@ namespace kondate.soft.HOME03_Production
                                                                     //=========================================================
 
 
-                                                "@txtFG4_id," + // 7
+                                                "@txtFG4TN_id," + // 7
 
-                                               "@txtFG4_type_id," + // 8
                                                                                  //"@txtnumber_dyed," + // 8
 
-                                               //"@txtSWT_id," + // 8
+                                               //"@txtFG4_id," + // 8
                                                "@txtsupplier_id," + // 9
                                                                     //"@txtwherehouse_id," + // 10
                                                "@txtVat_id," + // 11
@@ -3372,7 +3304,7 @@ namespace kondate.soft.HOME03_Production
                                                "@txtmoney_after_vat_creditor," + // 52
 
                                                "@txtcreditor_status," + // 53
-                                               "@txtFG4_status," +  //54
+                                               "@txtFG4TN_status," +  //54
                                               "@txtpayment_status," +  //55
                                               "@txtacc_record_status," +  //56
                                               "@txtemp_print," +  //57
@@ -3398,19 +3330,16 @@ namespace kondate.soft.HOME03_Production
                         cmd2.Parameters.Add("@txtversion_id", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();  //7
                        //==============================================================================
 
-                        cmd2.Parameters.Add("@txtFG4_id", SqlDbType.NVarChar).Value = this.txtFG4_id.Text.Trim();  //7
+                        cmd2.Parameters.Add("@txtFG4TN_id", SqlDbType.NVarChar).Value = this.txtFG4TN_id.Text.Trim();  //7
 
-                    cmd2.Parameters.Add("@txtFG4_type_id", SqlDbType.NVarChar).Value = this.txtFG4_type_id.Text.Trim();  //8
                     //cmd2.Parameters.Add("@txtnumber_dyed", SqlDbType.NVarChar).Value = ""; //this.txtnumber_dyed.Text.Trim();  //8
 
-                    //cmd2.Parameters.Add("@txtSWT_id", SqlDbType.NVarChar).Value = ""; // this.txtSWT_id.Text.Trim();  //8
-                    cmd2.Parameters.Add("@txtsupplier_id", SqlDbType.NVarChar).Value =  this.PANEL161_SUP_txtsupplier_id.Text.Trim();  //9
+                    //cmd2.Parameters.Add("@txtFG4_id", SqlDbType.NVarChar).Value = ""; // this.txtFG4_id.Text.Trim();  //8
+                    cmd2.Parameters.Add("@txtsupplier_id", SqlDbType.NVarChar).Value =  "";  //9
                                                                                            //cmd2.Parameters.Add("@txtwherehouse_id", SqlDbType.NVarChar).Value = ""; // this.PANEL1306_WH_txtwherehouse_id.Text.Trim();  //10
-                    cmd2.Parameters.Add("@txtVat_id", SqlDbType.NVarChar).Value = this.txtVat_id.Text.Trim();  //11
+                    cmd2.Parameters.Add("@txtVat_id", SqlDbType.NVarChar).Value = "";  //11
 
-                        DateTime date_send_mat = Convert.ToDateTime(this.dtpdate_vat.Value.ToString());
-                        string d_send_mat = date_send_mat.ToString("yyyy-MM-dd");
-                        cmd2.Parameters.Add("@txtVat_date", SqlDbType.NVarChar).Value = d_send_mat;  //12
+                        cmd2.Parameters.Add("@txtVat_date", SqlDbType.NVarChar).Value = "";  //12
 
                         cmd2.Parameters.Add("@txtemp_id", SqlDbType.NVarChar).Value = this.PANEL003_EMP_txtemp_id.Text.Trim();  //14
                         cmd2.Parameters.Add("@txtemp_name", SqlDbType.NVarChar).Value = this.PANEL003_EMP_txtemp_name.Text.Trim();  //15
@@ -3450,7 +3379,7 @@ namespace kondate.soft.HOME03_Production
                         cmd2.Parameters.Add("@txtmoney_after_vat_creditor", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_after_vat.Text.ToString()));  //52
 
                         cmd2.Parameters.Add("@txtcreditor_status", SqlDbType.NVarChar).Value = "0";  //53
-                        cmd2.Parameters.Add("@txtFG4_status", SqlDbType.NVarChar).Value = "0";  //54
+                        cmd2.Parameters.Add("@txtFG4TN_status", SqlDbType.NVarChar).Value = "0";  //54
                         cmd2.Parameters.Add("@txtpayment_status", SqlDbType.NVarChar).Value = "";  //55
                         cmd2.Parameters.Add("@txtacc_record_status", SqlDbType.NVarChar).Value = "";  //56
                         cmd2.Parameters.Add("@txtemp_print", SqlDbType.NVarChar).Value = W_ID_Select.M_EMP_OFFICE_NAME.Trim();  //57
@@ -3475,12 +3404,12 @@ namespace kondate.soft.HOME03_Production
                             //===================================================================================================================
                             //3 c002_09Send_Sew_shirt_record_detail
 
-                            cmd2.CommandText = "INSERT INTO c002_10Receive_FG4_record_detail(cdkey,txtco_id,txtbranch_id," +  //1
+                            cmd2.CommandText = "INSERT INTO c002_14Receive_FG4_Tamni_record_detail(cdkey,txtco_id,txtbranch_id," +  //1
                                    "txttrans_year,txttrans_month,txttrans_day," +
 
                                    //=================================================================
-                                   "txtFG4_id," +  //6
-                                   "txtSWT_id," +  //7
+                                   "txtFG4TN_id," +  //6
+                                   "txtFG4_id," +  //7
                                     "txtwherehouse_id," +  //9
 
                                     "txtsum_qty_body," +  //10
@@ -3515,45 +3444,32 @@ namespace kondate.soft.HOME03_Production
                                      "txtcost_qty_price_average_yokpai," +  //34
                                      "txtcost_money_sum_yokpai," +  //35
 
-                                       "txtitem_no," +  //36
-                                       "txtlot_no," +  //37
+                                   "txtitem_no," +  //36
+                                   "txtlot_no," +  //37
 
-                                      "txtqty_cut_yokma," +  //38
-                                      "txtqty_cut_yokpai," +  //39
-                                       "txtqty_after_cut_yokpai," +  //40
-
-                                      "txtqty_cut," +  //41
-                                      "txtqty_after_cut," +  //42
-                                      "txtcut_id," +  //42
-
-                                       "txtqty_tamni_cut_yokma," +  //38
+                                      "txtqty_tamni_cut_yokma," +  //38
                                       "txtqty_tamni_cut_yokpai," +  //39
                                        "txtqty_tamni_after_cut_yokpai," +  //40
 
-                                       "txtqty_tamni_cut," +  //41
+
+                                      "txtqty_tamni_cut," +  //41
                                       "txtqty_tamni_after_cut," +  //42
-                                      "txtcut_id2," +  //42
 
-                                      "txtqty_soonsear_cut_yokma," +  //38
-                                      "txtqty_soonsear_cut_yokpai," +  //39
-                                       "txtqty_soonsear_after_cut_yokpai," +  //40
-
-                                       "txtqty_soonsear_cut," +  //41
-                                       "txtqty_soonsear_after_cut," +  //42
-                                       "txtcut_id3) " +  //43
+                                       "txtcut_id) " +  //43
 
                                    "VALUES ('" + W_ID_Select.CDKEY.Trim() + "','" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +  //1
                                    "'" + myDateTime.ToString("yyyy", UsaCulture) + "','" + myDateTime.ToString("MM", UsaCulture) + "','" + myDateTime.ToString("dd", UsaCulture) + "'," +
 
-                                    "'" + this.txtFG4_id.Text.ToString() + "'," +  //6
-                                    "'" + this.GridView1.Rows[i].Cells["Col_txtSWT_id"].Value.ToString() + "'," +  //7
+                                    "'" + this.txtFG4TN_id.Text.ToString() + "'," +  //6
+                                    "'" + this.GridView1.Rows[i].Cells["Col_txtFG4_id"].Value.ToString() + "'," +  //7
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtwherehouse_id"].Value.ToString() + "'," +  //9
 
-                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtsum_qty_body"].Value.ToString())) + "'," +  //10
-                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive"].Value.ToString())) + "'," +  //11
-                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni"].Value.ToString())) + "'," +  //12
-                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear"].Value.ToString())) + "'," +  //13
+                                    "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //10
+                                    "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //11
+                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) + "'," +  //12
+                                    "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //13
                                     "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) + "'," +  //14
+
 
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtshirt_type_id"].Value.ToString() + "'," +  //15
                                     "'" + this.GridView1.Rows[i].Cells["Col_txttable_name"].Value.ToString() + "'," +  //16
@@ -3563,10 +3479,14 @@ namespace kondate.soft.HOME03_Production
                                      "'" + this.GridView1.Rows[i].Cells["Col_txtnumber_sup_color_id"].Value.ToString() + "'," +  //20
                                    "'" + this.GridView1.Rows[i].Cells["Col_txtnumber_mat_id"].Value.ToString() + "'," +  //21
 
+
+
+
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtmat_no"].Value.ToString() + "'," +  //22
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString() + "'," +  //23
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtmat_name"].Value.ToString() + "'," +    //24
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtmat_unit1_name"].Value.ToString() + "'," +  //25
+
 
                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtprice"].Value.ToString())) + "'," +  //26
                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtdiscount_rate"].Value.ToString())) + "'," +  //27
@@ -3581,30 +3501,19 @@ namespace kondate.soft.HOME03_Production
                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtcost_qty_price_average_yokpai"].Value.ToString())) + "'," +  //34
                                    "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtcost_money_sum_yokpai"].Value.ToString())) + "'," +  //35
 
+
                                     "'" + this.GridView1.Rows[i].Cells["Col_Auto_num"].Value.ToString() + "'," +  //36
                                     "'" + this.GridView1.Rows[i].Cells["Col_txtlot_no"].Value.ToString() + "'," +  //37
-
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokma"].Value.ToString())) + "'," +  //38
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value.ToString())) + "'," +  //39
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value.ToString())) + "'," +   //40
-
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //41
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_receive"].Value.ToString())) + "'," +  //42
-                               "''," +
 
                                "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokma"].Value.ToString())) + "'," +  //38
                                "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokpai"].Value.ToString())) + "'," +  //39
                                "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value.ToString())) + "'," +   //40
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //41
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni"].Value.ToString())) + "'," +  //42
-                               "''," +
 
-                                "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokma"].Value.ToString())) + "'," +  //38
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_cut_yokpai"].Value.ToString())) + "'," +  //39
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear_after_cut_yokpai"].Value.ToString())) + "'," +   //40
-                                "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //41
-                                 "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_soonsear"].Value.ToString())) + "'," +  //42
-                                 "'')";   //34
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //41
+                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) + "'," +  //42
+
+
+                               "'')";   //34
 
 
                                 cmd2.ExecuteNonQuery();
@@ -3614,18 +3523,18 @@ namespace kondate.soft.HOME03_Production
 
 
                             //this.GridView1.Columns[40].Name = "Col_txtqty_balance_yokpai";
-                            //this.GridView1.Columns[41].Name = "Col_txtsum_qty_pub_yokpai";     txtqty_after_cut
+                            //this.GridView1.Columns[41].Name = "Col_txtsum_qty_pub_yokpai";     txtqty_tamni_after_cut
 
-                            cmd2.CommandText = "UPDATE c002_09Send_Sew_shirt_record_detail SET " +
-                                                   "txtcut_id = '" + this.txtFG4_id.Text.ToString() + "'," +
-                                                   "txtqty_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_cut_yokpai"].Value.ToString())) + "'," +
-                                                   "txtqty_after_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_after_cut_yokpai"].Value.ToString())) + "'" +
+                            cmd2.CommandText = "UPDATE c002_10Receive_FG4_record_detail SET " +
+                                                   "txtcut_id2 = '" + this.txtFG4TN_id.Text.ToString() + "'," +
+                                                   "txtqty_tamni_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_cut_yokpai"].Value.ToString())) + "'," +
+                                                   "txtqty_tamni_after_cut = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells["Col_txtqty_tamni_after_cut_yokpai"].Value.ToString())) + "'" +
                                                    " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                    " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                                     " AND (txttable_name = '" + this.GridView1.Rows[i].Cells["Col_txttable_name"].Value.ToString() + "')" +
                                                     " AND (txtnumber_dyed = '" + this.GridView1.Rows[i].Cells["Col_txtnumber_dyed"].Value.ToString() + "')" +
                                                     //" AND (txtmat_id = '" + this.GridView1.Rows[i].Cells["Col_txtmat_id"].Value.ToString() + "')" +
-                                                    " AND (txtSWT_id = '" + this.GridView1.Rows[i].Cells["Col_txtSWT_id"].Value.ToString() + "')";
+                                                    " AND (txtFG4_id = '" + this.GridView1.Rows[i].Cells["Col_txtFG4_id"].Value.ToString() + "')";
 
                             cmd2.ExecuteNonQuery();
                             //MessageBox.Show("ok7");
@@ -3719,9 +3628,9 @@ namespace kondate.soft.HOME03_Production
                                                                                       //=======================================================
 
 
-                                        "'" + this.txtFG4_id.Text.Trim() + "'," +  //7 txtbill_id
-                                        "'FG4'," +  //9 txtbill_type
-                                        "'รับเสื้อยึดสำเร็จรูป FG4 " + this.txtrg_remark.Text.Trim() + "'," +  //9 txtbill_remark
+                                        "'" + this.txtFG4TN_id.Text.Trim() + "'," +  //7 txtbill_id
+                                        "'FG4TN'," +  //9 txtbill_type
+                                        "'รับเสื้อยึดสำเร็จรูป FG4 มีตำหนิ " + this.txtrg_remark.Text.Trim() + "'," +  //9 txtbill_remark
 
                                          "'" + this.PANEL1306_WH_txtwherehouse_id.Text.Trim() + "'," +  //7 txtwherehouse_id
                                        "'" + this.GridView2.Rows[i].Cells["Col_txtmat_no"].Value.ToString() + "'," +  //10 
@@ -3784,7 +3693,7 @@ namespace kondate.soft.HOME03_Production
                         trans.Commit();
                         conn.Close();
 
-                        if (this.iblword_status.Text.Trim() == "บันทึกใบรับเสื้อยึดสำเร็จรูป FG4")
+                        if (this.iblword_status.Text.Trim() == "บันทึกใบรับเสื้อยึดสำเร็จรูป FG4 มีตำหนิ")
                         {
                             W_ID_Select.LOG_ID = "5";
                             W_ID_Select.LOG_NAME = "บันทึกใหม่";
@@ -3864,12 +3773,12 @@ namespace kondate.soft.HOME03_Production
 
             }
             UPDATE_PRINT_BY();
-            W_ID_Select.TRANS_ID = this.txtFG4_id.Text.Trim();
+            W_ID_Select.TRANS_ID = this.txtFG4TN_id.Text.Trim();
             W_ID_Select.LOG_ID = "8";
             W_ID_Select.LOG_NAME = "ปริ๊น";
             TRANS_LOG();
             //======================================================
-            kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4_record_print();
+            kondate.soft.HOME03_Production.HOME03_Production_14Receive_FG4_Tamni_record_print frm2 = new kondate.soft.HOME03_Production.HOME03_Production_14Receive_FG4_Tamni_record_print();
             frm2.Show();
             frm2.BringToFront();
 
@@ -3886,7 +3795,7 @@ namespace kondate.soft.HOME03_Production
 
             }
             UPDATE_PRINT_BY();
-            W_ID_Select.TRANS_ID = this.txtFG4_id.Text.Trim();
+            W_ID_Select.TRANS_ID = this.txtFG4TN_id.Text.Trim();
             W_ID_Select.LOG_ID = "8";
             W_ID_Select.LOG_NAME = "ปริ๊น";
             TRANS_LOG();
@@ -3906,7 +3815,7 @@ namespace kondate.soft.HOME03_Production
                 //E:\01_Project_ERP_Kondate.Soft\kondate.soft\kondate.soft\bin\Debug\KONDATE_REPORT
                 //E:\01_Project_ERP_Kondate.Soft\kondate.soft\kondate.soft\KONDATE_REPORT\Report_Chart_of_accounts.rpt
                 //C:\KD_ERP\KD_REPORT
-                rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_10Receive_FG4_record.rpt");
+                rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c002_14Receive_FG4_Tamni_record.rpt");
 
 
                 string cr_server = W_ID_Select.ADATASOURCE.Trim();
@@ -3941,7 +3850,7 @@ namespace kondate.soft.HOME03_Production
 
                 rpt.SetParameterValue("cdkey", W_ID_Select.CDKEY.Trim());
                 rpt.SetParameterValue("txtco_id", W_ID_Select.M_COID.Trim());
-                rpt.SetParameterValue("txtFG4_id", W_ID_Select.TRANS_ID.Trim());
+                rpt.SetParameterValue("txtFG4TN_id", W_ID_Select.TRANS_ID.Trim());
 
                 //พิมพ์กับเครื่องที่เราต้องการ ระบุชื่อไปเลย=============================================
                 //rpt.PrintOptions.PrinterName = "EPSON TM-T88V Receipt5";
@@ -3971,486 +3880,6 @@ namespace kondate.soft.HOME03_Production
         private void btnGo1_Click(object sender, EventArgs e)
         {
         }
-
-
-
-        //txtsupplier Supplier  =======================================================================
-        private void PANEL161_SUP_Fill_supplier()
-        {
-            //เชื่อมต่อฐานข้อมูล=======================================================
-            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
-            SqlConnection conn = new SqlConnection(
-                new SqlConnectionStringBuilder()
-                {
-                    DataSource = W_ID_Select.ADATASOURCE,
-                    InitialCatalog = W_ID_Select.DATABASE_NAME,
-                    UserID = W_ID_Select.Crytal_USER,
-                    Password = W_ID_Select.Crytal_Pass
-                }
-                .ConnectionString
-            );
-            try
-            {
-                //conn.Open();
-                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
-
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            //END เชื่อมต่อฐานข้อมูล=======================================================
-
-            //===========================================
-
-            PANEL161_SUP_Clear_GridView1();
-
-            Cursor.Current = Cursors.WaitCursor;
-
-            //เชื่อมต่อฐานข้อมูล======================================================
-            conn.Open();
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-
-                SqlCommand cmd2 = conn.CreateCommand();
-                cmd2.CommandType = CommandType.Text;
-                cmd2.Connection = conn;
-
-                //this.PANEL161_SUP_dataGridView1.Columns[0].Name = "Col_Auto_num";
-                //this.PANEL161_SUP_dataGridView1.Columns[1].Name = "Col_txtsupplier_no";
-                //this.PANEL161_SUP_dataGridView1.Columns[2].Name = "Col_txtsupplier_id";
-                //this.PANEL161_SUP_dataGridView1.Columns[3].Name = "Col_txtsupplier_name";
-                //this.PANEL161_SUP_dataGridView1.Columns[4].Name = "Col_txtsupplier_name_eng";
-                //this.PANEL161_SUP_dataGridView1.Columns[5].Name = "Col_txtcontact_person";
-                //this.PANEL161_SUP_dataGridView1.Columns[6].Name = "Col_txtcontact_person_tel";
-                //this.PANEL161_SUP_dataGridView1.Columns[7].Name = "Col_txtremark";
-                //this.PANEL161_SUP_dataGridView1.Columns[8].Name = "Col_txtsupplier_status";
-
-                cmd2.CommandText = "SELECT k016db_1supplier.*," +
-                                    "k016db_2supplier_address.*," +
-                                    "k016db_3supplier_account.*" +
-
-                                    " FROM k016db_1supplier" +
-
-                                    " INNER JOIN k016db_2supplier_address" +
-                                    " ON k016db_1supplier.cdkey = k016db_2supplier_address.cdkey" +
-                                    " AND k016db_1supplier.txtco_id = k016db_2supplier_address.txtco_id" +
-                                    " AND k016db_1supplier.txtsupplier_id = k016db_2supplier_address.txtsupplier_id" +
-
-                                    " INNER JOIN k016db_3supplier_account" +
-                                    " ON k016db_1supplier.cdkey = k016db_3supplier_account.cdkey" +
-                                    " AND k016db_1supplier.txtco_id = k016db_3supplier_account.txtco_id" +
-                                    " AND k016db_1supplier.txtsupplier_id = k016db_3supplier_account.txtsupplier_id" +
-
-
-                                    " WHERE (k016db_1supplier.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                    " AND (k016db_1supplier.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                     " AND (k016db_1supplier.txtsupplier_id <> '')" +
-                                   " ORDER BY k016db_1supplier.txtsupplier_no ASC";
-
-                //  " AND (k004db_foods_order_1total.txtmat_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
-                //   " AND (k011db_receipt.daily_status = '0')";
-                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
-                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
-
-                try
-                {
-                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
-                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                    DataTable dt2 = new DataTable();
-                    da.Fill(dt2);
-
-                    if (dt2.Rows.Count > 0)
-                    {
-                        for (int j = 0; j < dt2.Rows.Count; j++)
-                        {
-                            var index = PANEL161_SUP_dataGridView1.Rows.Add();
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_no"].Value = dt2.Rows[j]["txtsupplier_no"].ToString();      //1
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //2
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //3
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_name_eng"].Value = dt2.Rows[j]["txtsupplier_name_eng"].ToString();      //4
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtcontact_person"].Value = dt2.Rows[j]["txtcontact_person"].ToString();      //5
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtcontact_person_tel"].Value = dt2.Rows[j]["txtcontact_person_tel"].ToString();      //6
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtremark"].Value = dt2.Rows[j]["txtremark"].ToString();      //7
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_status"].Value = dt2.Rows[j]["txtsupplier_status"].ToString();      //8
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtcredit_day"].Value = dt2.Rows[j]["txtcredit_day"].ToString();      //8
-                        }
-                        //=======================================================
-                        Cursor.Current = Cursors.Default;
-
-                        PANEL161_SUP_Clear_GridView1_Up_Status();
-
-                    }
-                    else
-                    {
-                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        Cursor.Current = Cursors.Default;
-                        conn.Close();
-                        // return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("kondate.soft", ex.Message);
-                    return;
-                }
-                finally
-                {
-                    Cursor.Current = Cursors.Default;
-                    conn.Close();
-                }
-
-                //===========================================
-            }
-            //================================
-            //================================
-
-        }
-        private void PANEL161_SUP_GridView1_supplier()
-        {
-            this.PANEL161_SUP_dataGridView1.ColumnCount = 10;
-            this.PANEL161_SUP_dataGridView1.Columns[0].Name = "Col_Auto_num";
-            this.PANEL161_SUP_dataGridView1.Columns[1].Name = "Col_txtsupplier_no";
-            this.PANEL161_SUP_dataGridView1.Columns[2].Name = "Col_txtsupplier_id";
-            this.PANEL161_SUP_dataGridView1.Columns[3].Name = "Col_txtsupplier_name";
-            this.PANEL161_SUP_dataGridView1.Columns[4].Name = "Col_txtsupplier_name_eng";
-            this.PANEL161_SUP_dataGridView1.Columns[5].Name = "Col_txtcontact_person";
-            this.PANEL161_SUP_dataGridView1.Columns[6].Name = "Col_txtcontact_person_tel";
-            this.PANEL161_SUP_dataGridView1.Columns[7].Name = "Col_txtremark";
-            this.PANEL161_SUP_dataGridView1.Columns[8].Name = "Col_txtcredit_day";
-            this.PANEL161_SUP_dataGridView1.Columns[9].Name = "Col_txtsupplier_status";
-
-            this.PANEL161_SUP_dataGridView1.Columns[0].HeaderText = "No";
-            this.PANEL161_SUP_dataGridView1.Columns[1].HeaderText = "ลำดับ";
-            this.PANEL161_SUP_dataGridView1.Columns[2].HeaderText = " รหัส";
-            this.PANEL161_SUP_dataGridView1.Columns[3].HeaderText = " ชื่อ Supplier";
-            this.PANEL161_SUP_dataGridView1.Columns[4].HeaderText = " ชื่อ Supplier Eng";
-            this.PANEL161_SUP_dataGridView1.Columns[5].HeaderText = " ผู้ติดต่อ";
-            this.PANEL161_SUP_dataGridView1.Columns[6].HeaderText = " เบอร์โทร";
-            this.PANEL161_SUP_dataGridView1.Columns[7].HeaderText = " หมายเหตุ";
-            this.PANEL161_SUP_dataGridView1.Columns[8].HeaderText = "เครดิต(วัน)";
-            this.PANEL161_SUP_dataGridView1.Columns[9].HeaderText = " สถานะ";
-
-            this.PANEL161_SUP_dataGridView1.Columns[0].Visible = false;  //"No";
-            this.PANEL161_SUP_dataGridView1.Columns[1].Visible = false;  //"Col_txtsupplier_no";
-            this.PANEL161_SUP_dataGridView1.Columns[1].Width = 0;
-            this.PANEL161_SUP_dataGridView1.Columns[1].ReadOnly = true;
-            this.PANEL161_SUP_dataGridView1.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.PANEL161_SUP_dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.PANEL161_SUP_dataGridView1.Columns[2].Visible = true;  //"Col_txtsupplier_id";
-            this.PANEL161_SUP_dataGridView1.Columns[2].Width = 100;
-            this.PANEL161_SUP_dataGridView1.Columns[2].ReadOnly = true;
-            this.PANEL161_SUP_dataGridView1.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.PANEL161_SUP_dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.PANEL161_SUP_dataGridView1.Columns[3].Visible = true;  //"Col_txtsupplier_name";
-            this.PANEL161_SUP_dataGridView1.Columns[3].Width = 250;
-            this.PANEL161_SUP_dataGridView1.Columns[3].ReadOnly = true;
-            this.PANEL161_SUP_dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.PANEL161_SUP_dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.PANEL161_SUP_dataGridView1.Columns[4].Visible = false;  //"Col_txtsupplier_name_eng";
-            this.PANEL161_SUP_dataGridView1.Columns[4].Width = 0;
-            this.PANEL161_SUP_dataGridView1.Columns[4].ReadOnly = true;
-            this.PANEL161_SUP_dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.PANEL161_SUP_dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.PANEL161_SUP_dataGridView1.Columns[5].Visible = true;  //"Col_txtcontact_person";
-            this.PANEL161_SUP_dataGridView1.Columns[5].Width = 200;
-            this.PANEL161_SUP_dataGridView1.Columns[5].ReadOnly = true;
-            this.PANEL161_SUP_dataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.PANEL161_SUP_dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.PANEL161_SUP_dataGridView1.Columns[6].Visible = false;  //"Col_txtcontact_person_tel";
-            this.PANEL161_SUP_dataGridView1.Columns[6].Width = 0;
-            this.PANEL161_SUP_dataGridView1.Columns[6].ReadOnly = true;
-            this.PANEL161_SUP_dataGridView1.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.PANEL161_SUP_dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.PANEL161_SUP_dataGridView1.Columns[7].Visible = true;  //"Col_txtremark";
-            this.PANEL161_SUP_dataGridView1.Columns[7].Width = 300;
-            this.PANEL161_SUP_dataGridView1.Columns[7].ReadOnly = true;
-            this.PANEL161_SUP_dataGridView1.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.PANEL161_SUP_dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            this.PANEL161_SUP_dataGridView1.Columns[8].Visible = false;  //"Col_txtcredit_day";
-            this.PANEL161_SUP_dataGridView1.Columns[9].Visible = false;  //"Col_txtsupplier_status";
-
-            this.PANEL161_SUP_dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
-            this.PANEL161_SUP_dataGridView1.GridColor = Color.FromArgb(227, 227, 227);
-
-            this.PANEL161_SUP_dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
-            this.PANEL161_SUP_dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            this.PANEL161_SUP_dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
-            this.PANEL161_SUP_dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Pixel); //Segoe UI, 11pt
-            this.PANEL161_SUP_dataGridView1.EnableHeadersVisualStyles = false;
-
-            DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
-            dgvCmb.ValueType = typeof(bool);
-            dgvCmb.Name = "Col_Chk";
-            dgvCmb.HeaderText = "สถานะ";
-            dgvCmb.ReadOnly = true;
-            dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            PANEL161_SUP_dataGridView1.Columns.Add(dgvCmb);
-
-        }
-        private void PANEL161_SUP_Clear_GridView1_Up_Status()
-        {
-            //สถานะ Checkbox =======================================================
-            for (int i = 0; i < this.PANEL161_SUP_dataGridView1.Rows.Count; i++)
-            {
-                if (this.PANEL161_SUP_dataGridView1.Rows[i].Cells[9].Value.ToString() == "0")  //Active
-                {
-                    this.PANEL161_SUP_dataGridView1.Rows[i].Cells[10].Value = true;
-                }
-                else
-                {
-                    this.PANEL161_SUP_dataGridView1.Rows[i].Cells[10].Value = false;
-
-                }
-            }
-        }
-        private void PANEL161_SUP_Clear_GridView1()
-        {
-            this.PANEL161_SUP_dataGridView1.Rows.Clear();
-            this.PANEL161_SUP_dataGridView1.Refresh();
-        }
-        private void PANEL161_SUP_txtsupplier_name_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-
-                if (this.PANEL161_SUP.Visible == false)
-                {
-                    this.PANEL161_SUP.Visible = true;
-                    this.PANEL161_SUP.Location = new Point(this.PANEL161_SUP_txtsupplier_name.Location.X, this.PANEL161_SUP_txtsupplier_name.Location.Y + 22);
-                    this.PANEL161_SUP_dataGridView1.Focus();
-                }
-                else
-                {
-                    this.PANEL161_SUP.Visible = false;
-                }
-        }
-        private void PANEL161_SUP_btnsupplier_Click(object sender, EventArgs e)
-        {
-            if (this.PANEL161_SUP.Visible == false)
-            {
-                this.PANEL161_SUP.Visible = true;
-                this.PANEL161_SUP.BringToFront();
-                this.PANEL161_SUP.Location = new Point(this.PANEL161_SUP_txtsupplier_name.Location.X, this.PANEL161_SUP_txtsupplier_name.Location.Y + 22);
-            }
-            else
-            {
-                this.PANEL161_SUP.Visible = false;
-            }
-        }
-        private void PANEL161_SUP_btnclose_Click(object sender, EventArgs e)
-        {
-            if (this.PANEL161_SUP.Visible == false)
-            {
-                this.PANEL161_SUP.Visible = true;
-            }
-            else
-            {
-                this.PANEL161_SUP.Visible = false;
-            }
-        }
-        private void PANEL161_SUP_dataGridView1_supplier_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.PANEL161_SUP_dataGridView1.Rows[e.RowIndex];
-
-                var cell = row.Cells[1].Value;
-                if (cell != null)
-                {
-                    this.PANEL161_SUP_txtsupplier_id.Text = row.Cells[2].Value.ToString();
-                    this.PANEL161_SUP_txtsupplier_name.Text = row.Cells[3].Value.ToString();
-                    //Col_txtcontact_person
-                    //this.txtcontact_person.Text = row.Cells["Col_txtcontact_person"].Value.ToString();
-                    //Col_txtcredit_day
-                    //this.txtcredit_in_day.Text = row.Cells["Col_txtcredit_day"].Value.ToString();
-                }
-            }
-        }
-        private void PANEL161_SUP_dataGridView1_supplier_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                int i = PANEL161_SUP_dataGridView1.CurrentRow.Index;
-
-                this.PANEL161_SUP_txtsupplier_id.Text = PANEL161_SUP_dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                this.PANEL161_SUP_txtsupplier_name.Text = PANEL161_SUP_dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                this.PANEL161_SUP_txtsupplier_name.Focus();
-                this.PANEL161_SUP.Visible = false;
-            }
-        }
-        private void PANEL161_SUP_txtsearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-        private void PANEL161_SUP_btn_search_Click(object sender, EventArgs e)
-        {
-            //เชื่อมต่อฐานข้อมูล=======================================================
-            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
-            SqlConnection conn = new SqlConnection(
-                new SqlConnectionStringBuilder()
-                {
-                    DataSource = W_ID_Select.ADATASOURCE,
-                    InitialCatalog = W_ID_Select.DATABASE_NAME,
-                    UserID = W_ID_Select.Crytal_USER,
-                    Password = W_ID_Select.Crytal_Pass
-                }
-                .ConnectionString
-            );
-            try
-            {
-                //conn.Open();
-                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
-
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            //END เชื่อมต่อฐานข้อมูล=======================================================
-
-            //===========================================
-
-            PANEL161_SUP_Clear_GridView1();
-
-            Cursor.Current = Cursors.WaitCursor;
-
-            //เชื่อมต่อฐานข้อมูล======================================================
-            conn.Open();
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-
-                SqlCommand cmd2 = conn.CreateCommand();
-                cmd2.CommandType = CommandType.Text;
-                cmd2.Connection = conn;
-
-                //this.PANEL161_SUP_dataGridView1.Columns[0].Name = "Col_Auto_num";
-                //this.PANEL161_SUP_dataGridView1.Columns[1].Name = "Col_txtsupplier_no";
-                //this.PANEL161_SUP_dataGridView1.Columns[2].Name = "Col_txtsupplier_id";
-                //this.PANEL161_SUP_dataGridView1.Columns[3].Name = "Col_txtsupplier_name";
-                //this.PANEL161_SUP_dataGridView1.Columns[4].Name = "Col_txtsupplier_name_eng";
-                //this.PANEL161_SUP_dataGridView1.Columns[5].Name = "Col_txtcontact_person";
-                //this.PANEL161_SUP_dataGridView1.Columns[6].Name = "Col_txtcontact_person_tel";
-                //this.PANEL161_SUP_dataGridView1.Columns[7].Name = "Col_txtremark";
-                //this.PANEL161_SUP_dataGridView1.Columns[8].Name = "Col_txtsupplier_status";
-
-                cmd2.CommandText = "SELECT k016db_1supplier.*," +
-                                    "k016db_2supplier_address.*," +
-                                    "k016db_3supplier_account.*" +
-
-                                    " FROM k016db_1supplier" +
-
-                                    " INNER JOIN k016db_2supplier_address" +
-                                    " ON k016db_1supplier.cdkey = k016db_2supplier_address.cdkey" +
-                                    " AND k016db_1supplier.txtco_id = k016db_2supplier_address.txtco_id" +
-                                    " AND k016db_1supplier.txtsupplier_id = k016db_2supplier_address.txtsupplier_id" +
-
-                                    " INNER JOIN k016db_3supplier_account" +
-                                    " ON k016db_1supplier.cdkey = k016db_3supplier_account.cdkey" +
-                                    " AND k016db_1supplier.txtco_id = k016db_3supplier_account.txtco_id" +
-                                    " AND k016db_1supplier.txtsupplier_id = k016db_3supplier_account.txtsupplier_id" +
-
-                                    " WHERE (k016db_1supplier.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                    " AND (k016db_1supplier.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                     " AND (k016db_1supplier.txtsupplier_name LIKE '%" + this.PANEL161_SUP_txtsearch.Text.Trim() + "%')" +
-                                    " AND (k016db_1supplier.txtsupplier_id <> '')" +
-                                   " ORDER BY k016db_1supplier.txtsupplier_no ASC";
-
-                //  " AND (k004db_foods_order_1total.txtmat_id = '" + this.lvw_sale_detail.Items[j].SubItems[0].Text.ToString() + "')" +
-                //   " AND (k011db_receipt.daily_status = '0')";
-                //cmd1.Parameters.Add("@txtreceipt_date_start", SqlDbType.Date).Value = this.dtpstart.Value;
-                //cmd1.Parameters.Add("@txtreceipt_date_end", SqlDbType.Date).Value = this.dtpend.Value;
-
-                try
-                {
-                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
-                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                    DataTable dt2 = new DataTable();
-                    da.Fill(dt2);
-
-                    if (dt2.Rows.Count > 0)
-                    {
-                        for (int j = 0; j < dt2.Rows.Count; j++)
-                        {
-                            var index = PANEL161_SUP_dataGridView1.Rows.Add();
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_no"].Value = dt2.Rows[j]["txtsupplier_no"].ToString();      //1
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_id"].Value = dt2.Rows[j]["txtsupplier_id"].ToString();      //2
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_name"].Value = dt2.Rows[j]["txtsupplier_name"].ToString();      //3
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_name_eng"].Value = dt2.Rows[j]["txtsupplier_name_eng"].ToString();      //4
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtcontact_person"].Value = dt2.Rows[j]["txtcontact_person"].ToString();      //5
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtcontact_person_tel"].Value = dt2.Rows[j]["txtcontact_person_tel"].ToString();      //6
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtremark"].Value = dt2.Rows[j]["txtremark"].ToString();      //7
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtsupplier_status"].Value = dt2.Rows[j]["txtsupplier_status"].ToString();      //8
-                            PANEL161_SUP_dataGridView1.Rows[index].Cells["Col_txtcredit_day"].Value = dt2.Rows[j]["txtcredit_day"].ToString();      //8
-                        }
-                        //=======================================================
-                        Cursor.Current = Cursors.Default;
-
-                        PANEL161_SUP_Clear_GridView1_Up_Status();
-
-                    }
-                    else
-                    {
-                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        Cursor.Current = Cursors.Default;
-                        conn.Close();
-                        // return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("kondate.soft", ex.Message);
-                    return;
-                }
-                finally
-                {
-                    Cursor.Current = Cursors.Default;
-                    conn.Close();
-                }
-
-                //===========================================
-            }
-            //================================
-
-
-        }
-        private void PANEL161_SUP_btnresize_low_MouseDown(object sender, MouseEventArgs e)
-        {
-            allowResize = true;
-        }
-        private void PANEL161_SUP_btnresize_low_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (allowResize)
-            {
-                this.PANEL161_SUP.Height = PANEL161_SUP_btnresize_low.Top + e.Y;
-                this.PANEL161_SUP.Width = PANEL161_SUP_btnresize_low.Left + e.X;
-            }
-        }
-        private void PANEL161_SUP_btnresize_low_MouseUp(object sender, MouseEventArgs e)
-        {
-            allowResize = false;
-        }
-        private void PANEL161_SUP_btnnew_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //END txtsupplier Supplier  =======================================================================
 
 
 
@@ -6119,198 +5548,7 @@ namespace kondate.soft.HOME03_Production
         //END txtmat สินค้า =======================================================================
 
 
-        private void Fill_cbotxtFG4_type_name()
-        {
-            //เชื่อมต่อฐานข้อมูล=======================================================
-            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
-            SqlConnection conn = new SqlConnection(
-                new SqlConnectionStringBuilder()
-                {
-                    DataSource = W_ID_Select.ADATASOURCE,
-                    InitialCatalog = W_ID_Select.DATABASE_NAME,
-                    UserID = W_ID_Select.Crytal_USER,
-                    Password = W_ID_Select.Crytal_Pass
-                }
-                .ConnectionString
-            );
-            try
-            {
-                //conn.Open();
-                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
-
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "Performance", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            //END เชื่อมต่อฐานข้อมูล=======================================================
-            conn.Open();
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-
-                SqlCommand cmd1 = conn.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.Connection = conn;
-
-                cmd1.CommandText = "SELECT *" +
-                                  " FROM c002_10Receive_FG4_record_type" +
-                                  " ORDER BY txtFG4_type_id";
-                try
-                {
-                    //แบบที่ 1 ใช้ SqlDataReader =========================================================
-                    SqlDataReader dr = cmd1.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        string txtFG4_type_name = dr.GetString(5);
-                        this.cbotxtFG4_type_name.Items.Add(txtFG4_type_name);
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("kondate.soft", ex.Message);
-                    return;
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
-            }
-            //จบเชื่อมต่อฐานข้อมูล=======================================================
-            conn.Close();
-        }
-        private void Fill_cbotxtFG4_type_name2()
-        {
-            //เชื่อมต่อฐานข้อมูล=======================================================
-            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
-            SqlConnection conn = new SqlConnection(
-                new SqlConnectionStringBuilder()
-                {
-                    DataSource = W_ID_Select.ADATASOURCE,
-                    InitialCatalog = W_ID_Select.DATABASE_NAME,
-                    UserID = W_ID_Select.Crytal_USER,
-                    Password = W_ID_Select.Crytal_Pass
-                }
-                .ConnectionString
-            );
-            try
-            {
-                //conn.Open();
-                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
-
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "Performance", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            //END เชื่อมต่อฐานข้อมูล=======================================================
-            conn.Open();
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-
-                SqlCommand cmd1 = conn.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.Connection = conn;
-                cmd1.CommandText = "SELECT *" +
-                                  " FROM c002_10Receive_FG4_record_type" +
-                                  " WHERE (txtFG4_type_name = '" + this.cbotxtFG4_type_name.Text.Trim() + "')";
-
-                try
-                {
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd1);
-                    da.Fill(dt);
-                    if (dt.Rows.Count > 0)
-                    {
-                        this.txtFG4_type_id.Text = dt.Rows[0]["txtFG4_type_id"].ToString();
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("kondate.soft", ex.Message);
-                    return;
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
-            }
-            //จบเชื่อมต่อฐานข้อมูล=======================================================
-        }
-        private void cbotxtFG4_type_name_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Fill_cbotxtFG4_type_name2();
-        }
-        private void Fill_cbotxtFG4_type_name_Edit()
-        {
-            //เชื่อมต่อฐานข้อมูล=======================================================
-            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
-            SqlConnection conn = new SqlConnection(
-                new SqlConnectionStringBuilder()
-                {
-                    DataSource = W_ID_Select.ADATASOURCE,
-                    InitialCatalog = W_ID_Select.DATABASE_NAME,
-                    UserID = W_ID_Select.Crytal_USER,
-                    Password = W_ID_Select.Crytal_Pass
-                }
-                .ConnectionString
-            );
-            try
-            {
-                //conn.Open();
-                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
-
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "Performance", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            //END เชื่อมต่อฐานข้อมูล=======================================================
-            conn.Open();
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-
-                SqlCommand cmd1 = conn.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.Connection = conn;
-                cmd1.CommandText = "SELECT *" +
-                                  " FROM c002_10Receive_FG4_record_type" +
-                                  " WHERE (txtFG4_type_id = '" + this.txtFG4_type_id.Text.Trim() + "')";
-
-                try
-                {
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd1);
-                    da.Fill(dt);
-                    if (dt.Rows.Count > 0)
-                    {
-                        this.cbotxtFG4_type_name.Text = dt.Rows[0]["txtFG4_type_name"].ToString();
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("kondate.soft", ex.Message);
-                    return;
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
-            }
-            //จบเชื่อมต่อฐานข้อมูล=======================================================
-        }
-
-
+  
         private void STOCK_FIND_INSERT_MAT()
         {
             //เชื่อมต่อฐานข้อมูล=======================================================
@@ -6552,12 +5790,12 @@ namespace kondate.soft.HOME03_Production
                 try
                 {
 
-                    cmd2.CommandText = "UPDATE c002_10Receive_FG4_record SET " +
+                    cmd2.CommandText = "UPDATE c002_14Receive_FG4_Tamni_record SET " +
                                                                  "txtemp_print = '" + W_ID_Select.M_EMP_OFFICE_NAME.Trim() + "'," +
                                                                  "txtemp_print_datetime = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture) + "'" +
                                                                 " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                                                " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                                               " AND (txtFG4_id = '" + this.txtFG4_id.Text.Trim() + "')";
+                                                               " AND (txtFG4TN_id = '" + this.txtFG4TN_id.Text.Trim() + "')";
                     cmd2.ExecuteNonQuery();
 
 
@@ -6644,7 +5882,7 @@ namespace kondate.soft.HOME03_Production
                 cmd1.Connection = conn;
 
                 cmd1.CommandText = "SELECT *" +
-                                  " FROM c002_10Receive_FG4_record_trans" +
+                                  " FROM c002_14Receive_FG4_Tamni_record_trans" +
                                   " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
                                   " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
                                   " AND (txtbranch_id = '" + W_ID_Select.M_BRANCHID.Trim() + "')" +
@@ -6672,11 +5910,11 @@ namespace kondate.soft.HOME03_Production
 
                         if (year2.Trim() == year_now2.Trim())
                         {
-                            TMP = "FG4" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + trans.Trim();
+                            TMP = "FG4TN" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + trans.Trim();
                         }
                         else
                         {
-                            TMP = "FG4" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
+                            TMP = "FG4TN" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
                         }
 
                     }
@@ -6684,7 +5922,7 @@ namespace kondate.soft.HOME03_Production
                     else
                     {
                         W_ID_Select.TRANS_BILL_STATUS = "N";
-                        TMP = "FG4" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
+                        TMP = "FG4TN" + W_ID_Select.M_BRANCHNAME_SHORT.Trim() + "-" + year_now2.Trim() + "" + month_now.Trim() + "" + day_now.Trim() + "-" + "000001";
 
                     }
                     conn.Close();
@@ -6698,7 +5936,7 @@ namespace kondate.soft.HOME03_Production
                 {
                     conn.Close();
                 }
-                this.txtFG4_id.Text = TMP.Trim();
+                this.txtFG4TN_id.Text = TMP.Trim();
             }
             //จบเชื่อมต่อฐานข้อมูล=======================================================
 
@@ -7379,8 +6617,8 @@ namespace kondate.soft.HOME03_Production
 
         private void BtnGrid_Click(object sender, EventArgs e)
         {
-            W_ID_Select.WORD_TOP = "ระเบียนใบรับเสื้อยึดสำเร็จรูป FG4";
-            kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4 frm2 = new kondate.soft.HOME03_Production.HOME03_Production_10Receive_FG4();
+            W_ID_Select.WORD_TOP = "ระเบียนใบรับเสื้อยึดสำเร็จรูป FG4 มีตำหนิ";
+            kondate.soft.HOME03_Production.HOME03_Production_14Receive_FG4_Tamni frm2 = new kondate.soft.HOME03_Production.HOME03_Production_14Receive_FG4_Tamni();
             frm2.Show();
 
         }
@@ -7555,84 +6793,7 @@ namespace kondate.soft.HOME03_Production
 
         }
 
-        private void txtqty_receive_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter && this.txtqty_receive.Text == "")
-            {
-                this.txtqty_receive.Focus();
-            }
-            //========================================
-            else if (e.KeyChar == (char)Keys.Enter && this.txtqty_receive.Text.Trim() != "")
-            {
-                SUM_TEXT();
-                this.txtqty_tamni.Focus();
 
-            }
-            else if ((e.KeyChar > '9') && (e.KeyChar != '\b') && (e.KeyChar != '.') && txtqty_receive.Text.Length == 0)
-            {
-                //e.KeyChar <= '0' || 
-                e.Handled = true;
-                return;
-            }
-            else if ((e.KeyChar < '0' || e.KeyChar > '9') && (e.KeyChar != '\b') && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtqty_tamni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter && this.txtqty_tamni.Text == "")
-            {
-                this.txtqty_tamni.Focus();
-            }
-            //========================================
-            else if (e.KeyChar == (char)Keys.Enter && this.txtqty_tamni.Text.Trim() != "")
-            {
-                SUM_TEXT();
-                this.txtqty_soonsear.Focus();
-
-            }
-            else if ((e.KeyChar > '9') && (e.KeyChar != '\b') && (e.KeyChar != '.') && txtqty_tamni.Text.Length == 0)
-            {
-                //e.KeyChar <= '0' || 
-                e.Handled = true;
-                return;
-            }
-            else if ((e.KeyChar < '0' || e.KeyChar > '9') && (e.KeyChar != '\b') && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtqty_soonsear_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter && this.txtqty_soonsear.Text == "")
-            {
-                this.txtqty_soonsear.Focus();
-
-            }
-            //========================================
-            else if (e.KeyChar == (char)Keys.Enter && this.txtqty_soonsear.Text.Trim() != "")
-            {
-                SUM_TEXT();
-                this.btnAdd_Row.Focus();
-
-            }
-            else if ((e.KeyChar > '9') && (e.KeyChar != '\b') && (e.KeyChar != '.') && txtqty_soonsear.Text.Length == 0)
-            {
-                //e.KeyChar <= '0' || 
-                e.Handled = true;
-                return;
-            }
-            else if ((e.KeyChar < '0' || e.KeyChar > '9') && (e.KeyChar != '\b') && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-                return;
-            }
-        }
 
 
 

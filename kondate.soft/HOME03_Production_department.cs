@@ -315,5 +315,20 @@ namespace kondate.soft
             kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_13send_FG2_Reduce_Debt_record();
             frm2.Show();
         }
+
+        private void HOME03_Production_06FG4_sale_Click(object sender, EventArgs e)
+        {
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06FG4_sale.Text.Trim();
+            kondate.soft.HOME05_Sales.HOME05_Sale_01sale_record frm2 = new kondate.soft.HOME05_Sales.HOME05_Sale_01sale_record();
+            frm2.Show();
+        }
+
+        private void HOME03_Production_06FG42_Click(object sender, EventArgs e)
+        {
+            
+            W_ID_Select.WORD_TOP = this.HOME03_Production_06FG42.Text.Trim();
+            kondate.soft.HOME03_Production.HOME03_Production_14Receive_FG4_Tamni_record frm2 = new kondate.soft.HOME03_Production.HOME03_Production_14Receive_FG4_Tamni_record();
+            frm2.Show();
+        }
     }
 }

@@ -879,6 +879,7 @@
             this.HOME03_Production_06FG42.Text = "บันทึก FG4 มีตำหนิ";
             this.HOME03_Production_06FG42.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06FG42.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06FG42.Click += new System.EventHandler(this.HOME03_Production_06FG42_Click);
             // 
             // HOME03_Production_06FG4_sale
             // 
@@ -897,6 +898,7 @@
             this.HOME03_Production_06FG4_sale.Text = "ใบส่งของ";
             this.HOME03_Production_06FG4_sale.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06FG4_sale.UseVisualStyleBackColor = false;
+            this.HOME03_Production_06FG4_sale.Click += new System.EventHandler(this.HOME03_Production_06FG4_sale_Click);
             // 
             // HOME03_Production_department
             // 
