@@ -53,6 +53,13 @@
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.txtcost_qty1_balance_yokpai = new System.Windows.Forms.TextBox();
+            this.txtcost_qty1_balance = new System.Windows.Forms.TextBox();
+            this.txtcost_qty1_balance_yokma = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.txtmat_sac_id = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
@@ -253,13 +260,6 @@
             this.label64 = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.txtcost_qty1_balance_yokpai = new System.Windows.Forms.TextBox();
-            this.txtcost_qty1_balance = new System.Windows.Forms.TextBox();
-            this.txtcost_qty1_balance_yokma = new System.Windows.Forms.TextBox();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -269,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.PANEL0106_NUMBER_MAT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0106_NUMBER_MAT_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0106_NUMBER_MAT_btnclose)).BeginInit();
@@ -318,7 +319,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_top
@@ -699,6 +699,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.GridView_Import);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label61);
             this.panel1.Controls.Add(this.txtmat_sac_id);
@@ -711,7 +712,6 @@
             this.panel1.Controls.Add(this.label59);
             this.panel1.Controls.Add(this.GridView66);
             this.panel1.Controls.Add(this.check_import);
-            this.panel1.Controls.Add(this.GridView_Import);
             this.panel1.Controls.Add(this.PANEL0102_MACHINE);
             this.panel1.Controls.Add(this.btnImport_excel);
             this.panel1.Controls.Add(this.btnrun_num);
@@ -791,6 +791,93 @@
             this.panel1.Size = new System.Drawing.Size(1424, 665);
             this.panel1.TabIndex = 1043;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label69);
+            this.panel5.Controls.Add(this.label68);
+            this.panel5.Controls.Add(this.label67);
+            this.panel5.Controls.Add(this.txtcost_qty1_balance_yokpai);
+            this.panel5.Controls.Add(this.txtcost_qty1_balance);
+            this.panel5.Controls.Add(this.txtcost_qty1_balance_yokma);
+            this.panel5.Location = new System.Drawing.Point(900, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(187, 75);
+            this.panel5.TabIndex = 1244;
+            // 
+            // label69
+            // 
+            this.label69.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label69.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label69.ForeColor = System.Drawing.Color.Black;
+            this.label69.Location = new System.Drawing.Point(6, 50);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(79, 21);
+            this.label69.TabIndex = 996;
+            this.label69.Text = "เหลือ(ยกไป) :";
+            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label68
+            // 
+            this.label68.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label68.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label68.ForeColor = System.Drawing.Color.Black;
+            this.label68.Location = new System.Drawing.Point(6, 26);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(79, 21);
+            this.label68.TabIndex = 995;
+            this.label68.Text = "ผลิตได้ (ม้วน):";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label67
+            // 
+            this.label67.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label67.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label67.ForeColor = System.Drawing.Color.Black;
+            this.label67.Location = new System.Drawing.Point(6, 4);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(79, 21);
+            this.label67.TabIndex = 994;
+            this.label67.Text = "เหลือ(ยกมา) :";
+            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtcost_qty1_balance_yokpai
+            // 
+            this.txtcost_qty1_balance_yokpai.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtcost_qty1_balance_yokpai.BackColor = System.Drawing.Color.White;
+            this.txtcost_qty1_balance_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtcost_qty1_balance_yokpai.Location = new System.Drawing.Point(91, 50);
+            this.txtcost_qty1_balance_yokpai.Name = "txtcost_qty1_balance_yokpai";
+            this.txtcost_qty1_balance_yokpai.Size = new System.Drawing.Size(86, 21);
+            this.txtcost_qty1_balance_yokpai.TabIndex = 993;
+            this.txtcost_qty1_balance_yokpai.Text = ".00";
+            this.txtcost_qty1_balance_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtcost_qty1_balance
+            // 
+            this.txtcost_qty1_balance.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtcost_qty1_balance.BackColor = System.Drawing.Color.White;
+            this.txtcost_qty1_balance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtcost_qty1_balance.Location = new System.Drawing.Point(91, 26);
+            this.txtcost_qty1_balance.Name = "txtcost_qty1_balance";
+            this.txtcost_qty1_balance.Size = new System.Drawing.Size(86, 21);
+            this.txtcost_qty1_balance.TabIndex = 992;
+            this.txtcost_qty1_balance.Text = ".00";
+            this.txtcost_qty1_balance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtcost_qty1_balance_yokma
+            // 
+            this.txtcost_qty1_balance_yokma.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtcost_qty1_balance_yokma.BackColor = System.Drawing.Color.White;
+            this.txtcost_qty1_balance_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtcost_qty1_balance_yokma.Location = new System.Drawing.Point(91, 3);
+            this.txtcost_qty1_balance_yokma.Name = "txtcost_qty1_balance_yokma";
+            this.txtcost_qty1_balance_yokma.Size = new System.Drawing.Size(86, 21);
+            this.txtcost_qty1_balance_yokma.TabIndex = 991;
+            this.txtcost_qty1_balance_yokma.Text = ".00";
+            this.txtcost_qty1_balance_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label61
             // 
@@ -1134,7 +1221,7 @@
             // 
             this.btnImport_excel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImport_excel.Image = ((System.Drawing.Image)(resources.GetObject("btnImport_excel.Image")));
-            this.btnImport_excel.Location = new System.Drawing.Point(846, 54);
+            this.btnImport_excel.Location = new System.Drawing.Point(805, 24);
             this.btnImport_excel.Name = "btnImport_excel";
             this.btnImport_excel.Size = new System.Drawing.Size(30, 22);
             this.btnImport_excel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -3364,93 +3451,6 @@
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label69);
-            this.panel5.Controls.Add(this.label68);
-            this.panel5.Controls.Add(this.label67);
-            this.panel5.Controls.Add(this.txtcost_qty1_balance_yokpai);
-            this.panel5.Controls.Add(this.txtcost_qty1_balance);
-            this.panel5.Controls.Add(this.txtcost_qty1_balance_yokma);
-            this.panel5.Location = new System.Drawing.Point(900, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(187, 75);
-            this.panel5.TabIndex = 1244;
-            // 
-            // label69
-            // 
-            this.label69.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label69.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label69.ForeColor = System.Drawing.Color.Black;
-            this.label69.Location = new System.Drawing.Point(6, 50);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(79, 21);
-            this.label69.TabIndex = 996;
-            this.label69.Text = "เหลือ(ยกไป) :";
-            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label68
-            // 
-            this.label68.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label68.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label68.ForeColor = System.Drawing.Color.Black;
-            this.label68.Location = new System.Drawing.Point(6, 26);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(79, 21);
-            this.label68.TabIndex = 995;
-            this.label68.Text = "ผลิตได้ (ม้วน):";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label67
-            // 
-            this.label67.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label67.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label67.ForeColor = System.Drawing.Color.Black;
-            this.label67.Location = new System.Drawing.Point(6, 4);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(79, 21);
-            this.label67.TabIndex = 994;
-            this.label67.Text = "เหลือ(ยกมา) :";
-            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtcost_qty1_balance_yokpai
-            // 
-            this.txtcost_qty1_balance_yokpai.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtcost_qty1_balance_yokpai.BackColor = System.Drawing.Color.White;
-            this.txtcost_qty1_balance_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtcost_qty1_balance_yokpai.Location = new System.Drawing.Point(91, 50);
-            this.txtcost_qty1_balance_yokpai.Name = "txtcost_qty1_balance_yokpai";
-            this.txtcost_qty1_balance_yokpai.Size = new System.Drawing.Size(86, 21);
-            this.txtcost_qty1_balance_yokpai.TabIndex = 993;
-            this.txtcost_qty1_balance_yokpai.Text = ".00";
-            this.txtcost_qty1_balance_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtcost_qty1_balance
-            // 
-            this.txtcost_qty1_balance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtcost_qty1_balance.BackColor = System.Drawing.Color.White;
-            this.txtcost_qty1_balance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtcost_qty1_balance.Location = new System.Drawing.Point(91, 26);
-            this.txtcost_qty1_balance.Name = "txtcost_qty1_balance";
-            this.txtcost_qty1_balance.Size = new System.Drawing.Size(86, 21);
-            this.txtcost_qty1_balance.TabIndex = 992;
-            this.txtcost_qty1_balance.Text = ".00";
-            this.txtcost_qty1_balance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtcost_qty1_balance_yokma
-            // 
-            this.txtcost_qty1_balance_yokma.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtcost_qty1_balance_yokma.BackColor = System.Drawing.Color.White;
-            this.txtcost_qty1_balance_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtcost_qty1_balance_yokma.Location = new System.Drawing.Point(91, 3);
-            this.txtcost_qty1_balance_yokma.Name = "txtcost_qty1_balance_yokma";
-            this.txtcost_qty1_balance_yokma.Size = new System.Drawing.Size(86, 21);
-            this.txtcost_qty1_balance_yokma.TabIndex = 991;
-            this.txtcost_qty1_balance_yokma.Text = ".00";
-            this.txtcost_qty1_balance_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // HOME03_Production_03Produce_record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3478,6 +3478,8 @@
             this.panel1_contens.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.PANEL0106_NUMBER_MAT.ResumeLayout(false);
             this.PANEL0106_NUMBER_MAT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0106_NUMBER_MAT_btnnew)).EndInit();
@@ -3537,8 +3539,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

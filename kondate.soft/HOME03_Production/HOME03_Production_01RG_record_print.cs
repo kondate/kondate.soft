@@ -91,8 +91,8 @@ namespace kondate.soft.HOME03_Production
             //C:\KD_ERP\KD_REPORT
 
 
-           rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c003_receive_record.rpt");
-          //  rpt.Load("E:\\01_Project_ERP_Kondate.Soft\\kondate.soft\\kondate.soft\\KONDATE_REPORT\\Report_k020db_receive_record.rpt");
+            rpt.Load("C:\\KD_ERP\\KD_REPORT\\Report_c003_receive_record.rpt");
+            //rpt.Load("E:\\01_Project_ERP_Kondate.Soft\\kondate.soft\\kondate.soft\\KONDATE_REPORT\\Report_c003_receive_record.rpt");
 
 
             string cr_server = W_ID_Select.ADATASOURCE.Trim();

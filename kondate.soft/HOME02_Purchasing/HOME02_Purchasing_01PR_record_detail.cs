@@ -288,65 +288,65 @@ namespace kondate.soft.HOME02_Purchasing
             this.GridView1.Columns[8].HeaderText = " จำนวนเงิน(บาท)";
             this.GridView1.Columns[9].HeaderText = " วันที่ต้องการสินค้า";
 
-            this.GridView1.Columns[0].Visible = true;  //"Col_Auto_num";
-            this.GridView1.Columns[0].Width = 36;
-            this.GridView1.Columns[0].ReadOnly = true;
-            this.GridView1.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_Auto_num"].Visible = true;  //"Col_Auto_num";
+            this.GridView1.Columns["Col_Auto_num"].Width = 36;
+            this.GridView1.Columns["Col_Auto_num"].ReadOnly = true;
+            this.GridView1.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns[1].Visible = true;  //"Col_txtmat_no";
+            this.GridView1.Columns["Col_txtmat_no"].Visible = true;  //"Col_txtmat_no";
 
-            this.GridView1.Columns[2].Visible = true;  //"Col_txtmat_id";
-            this.GridView1.Columns[2].Width = 100;
-            this.GridView1.Columns[2].ReadOnly = true;
-            this.GridView1.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtmat_id"].Visible = true;  //"Col_txtmat_id";
+            this.GridView1.Columns["Col_txtmat_id"].Width = 100;
+            this.GridView1.Columns["Col_txtmat_id"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns[3].Visible = true;  //"Col_txtmat_name";
-            this.GridView1.Columns[3].Width = 150;
-            this.GridView1.Columns[3].ReadOnly = true;
-            this.GridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.GridView1.Columns["Col_txtmat_name"].Visible = true;  //"Col_txtmat_name";
+            this.GridView1.Columns["Col_txtmat_name"].Width = 150;
+            this.GridView1.Columns["Col_txtmat_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            this.GridView1.Columns[4].Visible = true;  //"Col_txtmat_unit1_name";
-            this.GridView1.Columns[4].Width = 100;
-            this.GridView1.Columns[4].ReadOnly = true;
-            this.GridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.GridView1.Columns["Col_txtmat_unit1_name"].Visible = true;  //"Col_txtmat_unit1_name";
+            this.GridView1.Columns["Col_txtmat_unit1_name"].Width = 100;
+            this.GridView1.Columns["Col_txtmat_unit1_name"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtmat_unit1_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            this.GridView1.Columns[5].Visible = true;  //"Col_txtqty";
-            this.GridView1.Columns[5].Width = 100;
-            this.GridView1.Columns[5].ReadOnly = false;
-            this.GridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtqty"].Visible = true;  //"Col_txtqty";
+            this.GridView1.Columns["Col_txtqty"].Width = 100;
+            this.GridView1.Columns["Col_txtqty"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtqty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns[6].Visible = true;  //"Col_txtprice";
-            this.GridView1.Columns[6].Width = 100;
-            this.GridView1.Columns[6].ReadOnly = false;
-            this.GridView1.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtprice"].Visible = true;  //"Col_txtprice";
+            this.GridView1.Columns["Col_txtprice"].Width = 100;
+            this.GridView1.Columns["Col_txtprice"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtprice"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtprice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns[7].Visible = true;  //"Col_txtdiscount_money";
-            this.GridView1.Columns[7].Width = 100;
-            this.GridView1.Columns[7].ReadOnly = false;
-            this.GridView1.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtdiscount_money"].Visible = true;  //"Col_txtdiscount_money";
+            this.GridView1.Columns["Col_txtdiscount_money"].Width = 100;
+            this.GridView1.Columns["Col_txtdiscount_money"].ReadOnly = false;
+            this.GridView1.Columns["Col_txtdiscount_money"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtdiscount_money"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns[8].Visible = true;  //"Col_txtsum_total";
-            this.GridView1.Columns[8].Width = 150;
-            this.GridView1.Columns[8].ReadOnly = true;
-            this.GridView1.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.GridView1.Columns["Col_txtsum_total"].Visible = true;  //"Col_txtsum_total";
+            this.GridView1.Columns["Col_txtsum_total"].Width = 150;
+            this.GridView1.Columns["Col_txtsum_total"].ReadOnly = true;
+            this.GridView1.Columns["Col_txtsum_total"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_txtsum_total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            this.GridView1.Columns[9].Visible = true;  //"Col_date";
-            this.GridView1.Columns[9].Width = 150;
-            this.GridView1.Columns[9].ReadOnly = false;
-            this.GridView1.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.GridView1.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_date"].Visible = true;  //"Col_date";
+            this.GridView1.Columns["Col_date"].Width = 150;
+            this.GridView1.Columns["Col_date"].ReadOnly = false;
+            this.GridView1.Columns["Col_date"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView1.Columns["Col_date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.GridView1.DefaultCellStyle.Font = new Font("Tahoma", 8F);
-            this.GridView1.GridColor = Color.FromArgb(227, 227, 227);
 
+            this.GridView1.GridColor = Color.FromArgb(227, 227, 227);
             this.GridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
             this.GridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             this.GridView1.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
@@ -398,47 +398,47 @@ namespace kondate.soft.HOME02_Purchasing
 
                 if (valu != "")
                 {
-                    if (this.GridView1.Rows[i].Cells[0].Value == null)
+                    if (this.GridView1.Rows[i].Cells["Col_Auto_num"].Value == null)
                     {
-                        this.GridView1.Rows[i].Cells[0].Value = k.ToString();
+                        this.GridView1.Rows[i].Cells["Col_Auto_num"].Value = k.ToString();
                     }
-                    if (this.GridView1.Rows[i].Cells[5].Value == null)
+                    if (this.GridView1.Rows[i].Cells["Col_txtqty"].Value == null)
                     {
-                        this.GridView1.Rows[i].Cells[5].Value = "0";
+                        this.GridView1.Rows[i].Cells["Col_txtqty"].Value = "0";
                     }
-                    if (this.GridView1.Rows[i].Cells[6].Value == null)
+                    if (this.GridView1.Rows[i].Cells["Col_txtprice"].Value == null)
                     {
-                        this.GridView1.Rows[i].Cells[6].Value = "0";
+                        this.GridView1.Rows[i].Cells["Col_txtprice"].Value = "0";
                     }
-                    if (this.GridView1.Rows[i].Cells[7].Value == null)
+                    if (this.GridView1.Rows[i].Cells["Col_txtdiscount_money"].Value == null)
                     {
-                        this.GridView1.Rows[i].Cells[7].Value = "0";
+                        this.GridView1.Rows[i].Cells["Col_txtdiscount_money"].Value = "0";
                     }
-                    if (this.GridView1.Rows[i].Cells[8].Value == null)
+                    if (this.GridView1.Rows[i].Cells["Col_txtsum_total"].Value == null)
                     {
-                        this.GridView1.Rows[i].Cells[8].Value = "0";
+                        this.GridView1.Rows[i].Cells["Col_txtsum_total"].Value = "0";
                     }
 
                     //5 * 6 = 8
 
                     //Sum_Total  =================================================
-                    Sum_Total = Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells[5].Value.ToString())) * Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells[6].Value.ToString()));
-                    this.GridView1.Rows[i].Cells[8].Value = Sum_Total.ToString("N", new CultureInfo("en-US"));
+                    Sum_Total = Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString())) * Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtprice"].Value.ToString()));
+                    this.GridView1.Rows[i].Cells["Col_txtsum_total"].Value = Sum_Total.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Qty  =================================================
-                    Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells[5].Value.ToString()));
+                    Sum_Qty = Convert.ToDouble(string.Format("{0:n}", Sum_Qty)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtqty"].Value.ToString()));
                     this.txtsum_qty.Text = Sum_Qty.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Price  =================================================
-                    Sum_Price = Convert.ToDouble(string.Format("{0:n}", Sum_Price)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells[6].Value.ToString()));
+                    Sum_Price = Convert.ToDouble(string.Format("{0:n}", Sum_Price)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtprice"].Value.ToString()));
                     this.txtsum_price.Text = Sum_Price.ToString("N", new CultureInfo("en-US"));
 
                     //Sum_Discount  =================================================
-                    Sum_Discount = Convert.ToDouble(string.Format("{0:n}", Sum_Discount)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells[7].Value.ToString()));
+                    Sum_Discount = Convert.ToDouble(string.Format("{0:n}", Sum_Discount)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtdiscount_money"].Value.ToString()));
                     this.txtsum_discount.Text = Sum_Discount.ToString("N", new CultureInfo("en-US"));
 
                     //MoneySum  =================================================
-                    MoneySum = Convert.ToDouble(string.Format("{0:n}", MoneySum)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells[8].Value.ToString()));
+                    MoneySum = Convert.ToDouble(string.Format("{0:n}", MoneySum)) + Convert.ToDouble(string.Format("{0:n}", this.GridView1.Rows[i].Cells["Col_txtsum_total"].Value.ToString()));
                     this.txtmoney_sum.Text = MoneySum.ToString("N", new CultureInfo("en-US"));
 
                     this.txtcount.Text = k.ToString();

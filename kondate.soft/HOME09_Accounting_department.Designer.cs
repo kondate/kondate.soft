@@ -175,7 +175,7 @@
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.Location = new System.Drawing.Point(550, 34);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 75);
+            this.button3.Size = new System.Drawing.Size(135, 75);
             this.button3.TabIndex = 29;
             this.button3.Text = "4.วางบิลลูกหนี้";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

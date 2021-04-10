@@ -142,6 +142,7 @@ namespace kondate.soft
         public static string M_FORM_PRINT = "";  //5 ปริ๊นเอกสารได้
 
         public static string TRANS_BILL_STATUS = "";
+        public static string TRANS_BILL_STATUS2 = "";
         public static string TRANS_Month_STATUS = "";
         public static string RECEIVE_TYPE = "";
 

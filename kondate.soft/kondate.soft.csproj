@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>182</ApplicationRevision>
+    <ApplicationRevision>187</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -240,6 +240,30 @@
     </Compile>
     <Compile Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_print.Designer.cs">
       <DependentUpon>HOME02_Purchasing_05RG_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_06Change_Price.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price_record.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_06Change_Price_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price_record_detail.Designer.cs">
+      <DependentUpon>HOME02_Purchasing_06Change_Price_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Price_sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME02_Purchasing\HOME02_Purchasing_06Price_sale.designer.cs">
+      <DependentUpon>HOME02_Purchasing_06Price_sale.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME02_Purchasing_Department.cs">
       <SubType>Form</SubType>
@@ -679,11 +703,65 @@
     <Compile Include="HOME03_Production_department.Designer.cs">
       <DependentUpon>HOME03_Production_department.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOME04_Warehouse\Form1_Generate_Barcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\Form1_Generate_Barcode.designer.cs">
+      <DependentUpon>Form1_Generate_Barcode.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01Mat_Average.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01Mat_Average.Designer.cs">
       <DependentUpon>HOME04_Warehouse_01Mat_Average.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell.Designer.cs">
+      <DependentUpon>HOME04_Warehouse_01request_sell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record.Designer.cs">
+      <DependentUpon>HOME04_Warehouse_01request_sell_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record_detail.Designer.cs">
+      <DependentUpon>HOME04_Warehouse_01request_sell_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record_print.designer.cs">
+      <DependentUpon>HOME04_Warehouse_01request_sell_record_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell.designer.cs">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record.designer.cs">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record_detail.designer.cs">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell_record_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record_print.designer.cs">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell_record_print.cs</DependentUpon>
     </Compile>
     <Compile Include="HOME04_Warehouse_department.cs">
       <SubType>Form</SubType>
@@ -1008,6 +1086,12 @@
     </Compile>
     <Compile Include="Home_SETUP_Enter_4WH.Designer.cs">
       <DependentUpon>Home_SETUP_Enter_4WH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KONDATE_REPORT\Report_01request_sell_record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_01request_sell_record.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="KONDATE_REPORT\Report_c002_02produce_record.cs">
       <DependentUpon>Report_c002_02produce_record.rpt</DependentUpon>
@@ -1718,6 +1802,18 @@
     <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_05RG_record_print.resx">
       <DependentUpon>HOME02_Purchasing_05RG_record_print.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price.resx">
+      <DependentUpon>HOME02_Purchasing_06Change_Price.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price_record.resx">
+      <DependentUpon>HOME02_Purchasing_06Change_Price_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_06Change_Price_record_detail.resx">
+      <DependentUpon>HOME02_Purchasing_06Change_Price_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME02_Purchasing\HOME02_Purchasing_06Price_sale.resx">
+      <DependentUpon>HOME02_Purchasing_06Price_sale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HOME02_Purchasing_Department.resx">
       <DependentUpon>HOME02_Purchasing_Department.cs</DependentUpon>
     </EmbeddedResource>
@@ -1937,8 +2033,35 @@
     <EmbeddedResource Include="HOME03_Production_department.resx">
       <DependentUpon>HOME03_Production_department.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\Form1_Generate_Barcode.resx">
+      <DependentUpon>Form1_Generate_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_01Mat_Average.resx">
       <DependentUpon>HOME04_Warehouse_01Mat_Average.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell.resx">
+      <DependentUpon>HOME04_Warehouse_01request_sell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record.resx">
+      <DependentUpon>HOME04_Warehouse_01request_sell_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record_detail.resx">
+      <DependentUpon>HOME04_Warehouse_01request_sell_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_01request_sell_record_print.resx">
+      <DependentUpon>HOME04_Warehouse_01request_sell_record_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell.resx">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record.resx">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record_detail.resx">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell_record_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME04_Warehouse\HOME04_Warehouse_02approve_request_sell_record_print.resx">
+      <DependentUpon>HOME04_Warehouse_02approve_request_sell_record_print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HOME04_Warehouse_department.resx">
       <DependentUpon>HOME04_Warehouse_department.cs</DependentUpon>
@@ -2101,6 +2224,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home_SETUP_Enter_4WH.resx">
       <DependentUpon>Home_SETUP_Enter_4WH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KONDATE_REPORT\Report_01request_sell_record.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_01request_sell_record.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KONDATE_REPORT\Report_c002_02produce_record.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

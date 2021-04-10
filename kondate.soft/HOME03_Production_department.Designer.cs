@@ -895,7 +895,7 @@
             this.HOME03_Production_06FG4_sale.Name = "HOME03_Production_06FG4_sale";
             this.HOME03_Production_06FG4_sale.Size = new System.Drawing.Size(142, 60);
             this.HOME03_Production_06FG4_sale.TabIndex = 54;
-            this.HOME03_Production_06FG4_sale.Text = "ใบส่งของ";
+            this.HOME03_Production_06FG4_sale.Text = "ใบส่งของ(ขายเชื่อ)";
             this.HOME03_Production_06FG4_sale.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HOME03_Production_06FG4_sale.UseVisualStyleBackColor = false;
             this.HOME03_Production_06FG4_sale.Click += new System.EventHandler(this.HOME03_Production_06FG4_sale_Click);

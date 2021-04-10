@@ -46,6 +46,26 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.PANEL1316_DEPARTMENT_txtdepartment_id = new System.Windows.Forms.TextBox();
+            this.PANEL1316_DEPARTMENT_btndepartment = new System.Windows.Forms.Button();
+            this.PANEL1316_DEPARTMENT_txtdepartment_name = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.PANEL1316_DEPARTMENT = new System.Windows.Forms.Panel();
+            this.PANEL1316_DEPARTMENT_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL1316_DEPARTMENT_btnnew = new System.Windows.Forms.PictureBox();
+            this.PANEL1316_DEPARTMENT_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL1316_DEPARTMENT_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL1316_DEPARTMENT_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL1316_DEPARTMENT_dataGridView1_department = new System.Windows.Forms.DataGridView();
+            this.PANEL1317_JOB = new System.Windows.Forms.Panel();
+            this.PANEL1317_JOB_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL1317_JOB_btnnew = new System.Windows.Forms.PictureBox();
+            this.PANEL1317_JOB_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL1317_JOB_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL1317_JOB_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL1317_JOB_dataGridView1_job = new System.Windows.Forms.DataGridView();
+            this.txtmat_id = new System.Windows.Forms.TextBox();
+            this.btnUp = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.Paneldate_btndate1 = new System.Windows.Forms.Button();
             this.Paneldate_txtcurrency_date = new System.Windows.Forms.TextBox();
@@ -139,13 +159,6 @@
             this.PANEL1313_ACC_GROUP_TAX_btn_search = new System.Windows.Forms.PictureBox();
             this.PANEL1313_ACC_GROUP_TAX_txtsearch = new System.Windows.Forms.TextBox();
             this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax = new System.Windows.Forms.DataGridView();
-            this.PANEL1317_JOB = new System.Windows.Forms.Panel();
-            this.PANEL1317_JOB_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL1317_JOB_btnnew = new System.Windows.Forms.PictureBox();
-            this.PANEL1317_JOB_btnclose = new System.Windows.Forms.PictureBox();
-            this.PANEL1317_JOB_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL1317_JOB_txtsearch = new System.Windows.Forms.TextBox();
-            this.PANEL1317_JOB_dataGridView1_job = new System.Windows.Forms.DataGridView();
             this.PANEL1307_PROJECT = new System.Windows.Forms.Panel();
             this.PANEL1307_PROJECT_btnresize_low = new System.Windows.Forms.Button();
             this.PANEL1307_PROJECT_btnnew = new System.Windows.Forms.PictureBox();
@@ -163,20 +176,8 @@
             this.PANEL_PR = new System.Windows.Forms.Panel();
             this.ch_all_po = new System.Windows.Forms.CheckBox();
             this.btnGo4 = new System.Windows.Forms.PictureBox();
-            this.PANEL1316_DEPARTMENT = new System.Windows.Forms.Panel();
-            this.PANEL1316_DEPARTMENT_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL1316_DEPARTMENT_btnnew = new System.Windows.Forms.PictureBox();
-            this.PANEL1316_DEPARTMENT_btnclose = new System.Windows.Forms.PictureBox();
-            this.PANEL1316_DEPARTMENT_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL1316_DEPARTMENT_txtsearch = new System.Windows.Forms.TextBox();
-            this.PANEL1316_DEPARTMENT_dataGridView1_department = new System.Windows.Forms.DataGridView();
             this.PANEL_PR_txtcount_rows = new System.Windows.Forms.TextBox();
             this.PANEL_PR_iblcount_rows = new System.Windows.Forms.Label();
-            this.PANEL_PR_btnGo3 = new System.Windows.Forms.PictureBox();
-            this.PANEL1316_DEPARTMENT_txtdepartment_id = new System.Windows.Forms.TextBox();
-            this.PANEL1316_DEPARTMENT_btndepartment = new System.Windows.Forms.Button();
-            this.PANEL1316_DEPARTMENT_txtdepartment_name = new System.Windows.Forms.TextBox();
-            this.PANEL_PR_ibldepartment = new System.Windows.Forms.Label();
             this.PANEL_PR_btnGo2 = new System.Windows.Forms.PictureBox();
             this.PANEL_PR_cboSearch = new System.Windows.Forms.ComboBox();
             this.PANEL_PR_iblsearch = new System.Windows.Forms.Label();
@@ -277,6 +278,16 @@
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
+            this.PANEL1316_DEPARTMENT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnnew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btn_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_dataGridView1_department)).BeginInit();
+            this.PANEL1317_JOB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnnew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btn_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_dataGridView1_job)).BeginInit();
             this.PANEL_MAT.SuspendLayout();
             this.PANEL104_MAT_BRAND2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL104_MAT_BRAND2_btnnew)).BeginInit();
@@ -317,11 +328,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax)).BeginInit();
-            this.PANEL1317_JOB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnnew)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnclose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btn_search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_dataGridView1_job)).BeginInit();
             this.PANEL1307_PROJECT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1307_PROJECT_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1307_PROJECT_btnclose)).BeginInit();
@@ -334,12 +340,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PANEL161_SUP_dataGridView1)).BeginInit();
             this.PANEL_PR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo4)).BeginInit();
-            this.PANEL1316_DEPARTMENT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnnew)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnclose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btn_search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_dataGridView1_department)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL_PR_btnGo3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_PR_btnGo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_PR_btnGo1)).BeginInit();
             this.PANEL_PR_panel_top.SuspendLayout();
@@ -624,12 +624,19 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.PANEL1316_DEPARTMENT_txtdepartment_id);
+            this.panel1_contens.Controls.Add(this.PANEL1316_DEPARTMENT_btndepartment);
+            this.panel1_contens.Controls.Add(this.PANEL1316_DEPARTMENT_txtdepartment_name);
+            this.panel1_contens.Controls.Add(this.label37);
+            this.panel1_contens.Controls.Add(this.PANEL1316_DEPARTMENT);
+            this.panel1_contens.Controls.Add(this.PANEL1317_JOB);
+            this.panel1_contens.Controls.Add(this.txtmat_id);
+            this.panel1_contens.Controls.Add(this.btnUp);
             this.panel1_contens.Controls.Add(this.label36);
             this.panel1_contens.Controls.Add(this.Paneldate_btndate1);
             this.panel1_contens.Controls.Add(this.Paneldate_txtcurrency_date);
             this.panel1_contens.Controls.Add(this.PANEL_MAT);
             this.panel1_contens.Controls.Add(this.PANEL1313_ACC_GROUP_TAX);
-            this.panel1_contens.Controls.Add(this.PANEL1317_JOB);
             this.panel1_contens.Controls.Add(this.PANEL1307_PROJECT);
             this.panel1_contens.Controls.Add(this.PANEL161_SUP);
             this.panel1_contens.Controls.Add(this.PANEL_PR);
@@ -716,6 +723,283 @@
             this.panel1_contens.Name = "panel1_contens";
             this.panel1_contens.Size = new System.Drawing.Size(1306, 682);
             this.panel1_contens.TabIndex = 13;
+            // 
+            // PANEL1316_DEPARTMENT_txtdepartment_id
+            // 
+            this.PANEL1316_DEPARTMENT_txtdepartment_id.BackColor = System.Drawing.Color.White;
+            this.PANEL1316_DEPARTMENT_txtdepartment_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT_txtdepartment_id.Location = new System.Drawing.Point(1252, 108);
+            this.PANEL1316_DEPARTMENT_txtdepartment_id.Name = "PANEL1316_DEPARTMENT_txtdepartment_id";
+            this.PANEL1316_DEPARTMENT_txtdepartment_id.ReadOnly = true;
+            this.PANEL1316_DEPARTMENT_txtdepartment_id.Size = new System.Drawing.Size(45, 21);
+            this.PANEL1316_DEPARTMENT_txtdepartment_id.TabIndex = 762;
+            // 
+            // PANEL1316_DEPARTMENT_btndepartment
+            // 
+            this.PANEL1316_DEPARTMENT_btndepartment.BackColor = System.Drawing.Color.White;
+            this.PANEL1316_DEPARTMENT_btndepartment.FlatAppearance.BorderSize = 0;
+            this.PANEL1316_DEPARTMENT_btndepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL1316_DEPARTMENT_btndepartment.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT_btndepartment.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btndepartment.Image")));
+            this.PANEL1316_DEPARTMENT_btndepartment.Location = new System.Drawing.Point(1221, 110);
+            this.PANEL1316_DEPARTMENT_btndepartment.Name = "PANEL1316_DEPARTMENT_btndepartment";
+            this.PANEL1316_DEPARTMENT_btndepartment.Size = new System.Drawing.Size(22, 16);
+            this.PANEL1316_DEPARTMENT_btndepartment.TabIndex = 761;
+            this.PANEL1316_DEPARTMENT_btndepartment.UseVisualStyleBackColor = false;
+            this.PANEL1316_DEPARTMENT_btndepartment.Click += new System.EventHandler(this.PANEL1316_DEPARTMENT_btndepartment_Click);
+            // 
+            // PANEL1316_DEPARTMENT_txtdepartment_name
+            // 
+            this.PANEL1316_DEPARTMENT_txtdepartment_name.BackColor = System.Drawing.Color.White;
+            this.PANEL1316_DEPARTMENT_txtdepartment_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT_txtdepartment_name.Location = new System.Drawing.Point(1011, 108);
+            this.PANEL1316_DEPARTMENT_txtdepartment_name.Name = "PANEL1316_DEPARTMENT_txtdepartment_name";
+            this.PANEL1316_DEPARTMENT_txtdepartment_name.ReadOnly = true;
+            this.PANEL1316_DEPARTMENT_txtdepartment_name.Size = new System.Drawing.Size(235, 21);
+            this.PANEL1316_DEPARTMENT_txtdepartment_name.TabIndex = 760;
+            // 
+            // label37
+            // 
+            this.label37.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label37.ForeColor = System.Drawing.Color.Black;
+            this.label37.Location = new System.Drawing.Point(915, 108);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(88, 21);
+            this.label37.TabIndex = 759;
+            this.label37.Text = "ฝ่ายที่ต้องการ :";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PANEL1316_DEPARTMENT
+            // 
+            this.PANEL1316_DEPARTMENT.AutoScroll = true;
+            this.PANEL1316_DEPARTMENT.AutoSize = true;
+            this.PANEL1316_DEPARTMENT.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PANEL1316_DEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btnresize_low);
+            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btnnew);
+            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btnclose);
+            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btn_search);
+            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_txtsearch);
+            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_dataGridView1_department);
+            this.PANEL1316_DEPARTMENT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT.Location = new System.Drawing.Point(1028, 11);
+            this.PANEL1316_DEPARTMENT.Name = "PANEL1316_DEPARTMENT";
+            this.PANEL1316_DEPARTMENT.Size = new System.Drawing.Size(215, 93);
+            this.PANEL1316_DEPARTMENT.TabIndex = 758;
+            this.PANEL1316_DEPARTMENT.Visible = false;
+            // 
+            // PANEL1316_DEPARTMENT_btnresize_low
+            // 
+            this.PANEL1316_DEPARTMENT_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1316_DEPARTMENT_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1316_DEPARTMENT_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.BorderSize = 0;
+            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1316_DEPARTMENT_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL1316_DEPARTMENT_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT_btnresize_low.ForeColor = System.Drawing.Color.Black;
+            this.PANEL1316_DEPARTMENT_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btnresize_low.Image")));
+            this.PANEL1316_DEPARTMENT_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PANEL1316_DEPARTMENT_btnresize_low.Location = new System.Drawing.Point(188, 65);
+            this.PANEL1316_DEPARTMENT_btnresize_low.Name = "PANEL1316_DEPARTMENT_btnresize_low";
+            this.PANEL1316_DEPARTMENT_btnresize_low.Size = new System.Drawing.Size(23, 22);
+            this.PANEL1316_DEPARTMENT_btnresize_low.TabIndex = 438;
+            this.PANEL1316_DEPARTMENT_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PANEL1316_DEPARTMENT_btnresize_low.UseVisualStyleBackColor = false;
+            this.PANEL1316_DEPARTMENT_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL1316_DEPARTMENT_btnresize_low_MouseDown);
+            this.PANEL1316_DEPARTMENT_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL1316_DEPARTMENT_btnresize_low_MouseMove);
+            this.PANEL1316_DEPARTMENT_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL1316_DEPARTMENT_btnresize_low_MouseUp);
+            // 
+            // PANEL1316_DEPARTMENT_btnnew
+            // 
+            this.PANEL1316_DEPARTMENT_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1316_DEPARTMENT_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btnnew.Image")));
+            this.PANEL1316_DEPARTMENT_btnnew.Location = new System.Drawing.Point(3, 3);
+            this.PANEL1316_DEPARTMENT_btnnew.Name = "PANEL1316_DEPARTMENT_btnnew";
+            this.PANEL1316_DEPARTMENT_btnnew.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1316_DEPARTMENT_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1316_DEPARTMENT_btnnew.TabIndex = 437;
+            this.PANEL1316_DEPARTMENT_btnnew.TabStop = false;
+            this.PANEL1316_DEPARTMENT_btnnew.Visible = false;
+            // 
+            // PANEL1316_DEPARTMENT_btnclose
+            // 
+            this.PANEL1316_DEPARTMENT_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1316_DEPARTMENT_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1316_DEPARTMENT_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btnclose.Image")));
+            this.PANEL1316_DEPARTMENT_btnclose.Location = new System.Drawing.Point(178, 3);
+            this.PANEL1316_DEPARTMENT_btnclose.Name = "PANEL1316_DEPARTMENT_btnclose";
+            this.PANEL1316_DEPARTMENT_btnclose.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1316_DEPARTMENT_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1316_DEPARTMENT_btnclose.TabIndex = 436;
+            this.PANEL1316_DEPARTMENT_btnclose.TabStop = false;
+            this.PANEL1316_DEPARTMENT_btnclose.Click += new System.EventHandler(this.PANEL1316_DEPARTMENT_btnclose_Click);
+            // 
+            // PANEL1316_DEPARTMENT_btn_search
+            // 
+            this.PANEL1316_DEPARTMENT_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1316_DEPARTMENT_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btn_search.Image")));
+            this.PANEL1316_DEPARTMENT_btn_search.Location = new System.Drawing.Point(142, 4);
+            this.PANEL1316_DEPARTMENT_btn_search.Name = "PANEL1316_DEPARTMENT_btn_search";
+            this.PANEL1316_DEPARTMENT_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1316_DEPARTMENT_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1316_DEPARTMENT_btn_search.TabIndex = 433;
+            this.PANEL1316_DEPARTMENT_btn_search.TabStop = false;
+            this.PANEL1316_DEPARTMENT_btn_search.Click += new System.EventHandler(this.PANEL1316_DEPARTMENT_btn_search_Click);
+            // 
+            // PANEL1316_DEPARTMENT_txtsearch
+            // 
+            this.PANEL1316_DEPARTMENT_txtsearch.BackColor = System.Drawing.Color.White;
+            this.PANEL1316_DEPARTMENT_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT_txtsearch.Location = new System.Drawing.Point(3, 4);
+            this.PANEL1316_DEPARTMENT_txtsearch.Name = "PANEL1316_DEPARTMENT_txtsearch";
+            this.PANEL1316_DEPARTMENT_txtsearch.Size = new System.Drawing.Size(133, 21);
+            this.PANEL1316_DEPARTMENT_txtsearch.TabIndex = 432;
+            // 
+            // PANEL1316_DEPARTMENT_dataGridView1_department
+            // 
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.AllowUserToAddRows = false;
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.Location = new System.Drawing.Point(3, 42);
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.Name = "PANEL1316_DEPARTMENT_dataGridView1_department";
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.Size = new System.Drawing.Size(204, 18);
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.TabIndex = 0;
+            this.PANEL1316_DEPARTMENT_dataGridView1_department.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1316_DEPARTMENT_dataGridView1_department_CellMouseClick);
+            // 
+            // PANEL1317_JOB
+            // 
+            this.PANEL1317_JOB.AutoScroll = true;
+            this.PANEL1317_JOB.AutoSize = true;
+            this.PANEL1317_JOB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btnresize_low);
+            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btnnew);
+            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btnclose);
+            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btn_search);
+            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_txtsearch);
+            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_dataGridView1_job);
+            this.PANEL1317_JOB.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1317_JOB.Location = new System.Drawing.Point(494, 51);
+            this.PANEL1317_JOB.Name = "PANEL1317_JOB";
+            this.PANEL1317_JOB.Size = new System.Drawing.Size(220, 85);
+            this.PANEL1317_JOB.TabIndex = 744;
+            this.PANEL1317_JOB.Visible = false;
+            // 
+            // PANEL1317_JOB_btnresize_low
+            // 
+            this.PANEL1317_JOB_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1317_JOB_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1317_JOB_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.PANEL1317_JOB_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PANEL1317_JOB_btnresize_low.FlatAppearance.BorderSize = 0;
+            this.PANEL1317_JOB_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1317_JOB_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1317_JOB_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL1317_JOB_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1317_JOB_btnresize_low.ForeColor = System.Drawing.Color.Black;
+            this.PANEL1317_JOB_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnresize_low.Image")));
+            this.PANEL1317_JOB_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PANEL1317_JOB_btnresize_low.Location = new System.Drawing.Point(193, 57);
+            this.PANEL1317_JOB_btnresize_low.Name = "PANEL1317_JOB_btnresize_low";
+            this.PANEL1317_JOB_btnresize_low.Size = new System.Drawing.Size(23, 22);
+            this.PANEL1317_JOB_btnresize_low.TabIndex = 438;
+            this.PANEL1317_JOB_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PANEL1317_JOB_btnresize_low.UseVisualStyleBackColor = false;
+            this.PANEL1317_JOB_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL1317_JOB_btnresize_low_MouseDown);
+            this.PANEL1317_JOB_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL1317_JOB_btnresize_low_MouseMove);
+            this.PANEL1317_JOB_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL1317_JOB_btnresize_low_MouseUp);
+            // 
+            // PANEL1317_JOB_btnnew
+            // 
+            this.PANEL1317_JOB_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1317_JOB_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnnew.Image")));
+            this.PANEL1317_JOB_btnnew.Location = new System.Drawing.Point(3, 3);
+            this.PANEL1317_JOB_btnnew.Name = "PANEL1317_JOB_btnnew";
+            this.PANEL1317_JOB_btnnew.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1317_JOB_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1317_JOB_btnnew.TabIndex = 437;
+            this.PANEL1317_JOB_btnnew.TabStop = false;
+            this.PANEL1317_JOB_btnnew.Visible = false;
+            // 
+            // PANEL1317_JOB_btnclose
+            // 
+            this.PANEL1317_JOB_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1317_JOB_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1317_JOB_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnclose.Image")));
+            this.PANEL1317_JOB_btnclose.Location = new System.Drawing.Point(183, 3);
+            this.PANEL1317_JOB_btnclose.Name = "PANEL1317_JOB_btnclose";
+            this.PANEL1317_JOB_btnclose.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1317_JOB_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1317_JOB_btnclose.TabIndex = 436;
+            this.PANEL1317_JOB_btnclose.TabStop = false;
+            this.PANEL1317_JOB_btnclose.Click += new System.EventHandler(this.PANEL1317_JOB_btnclose_Click);
+            // 
+            // PANEL1317_JOB_btn_search
+            // 
+            this.PANEL1317_JOB_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1317_JOB_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btn_search.Image")));
+            this.PANEL1317_JOB_btn_search.Location = new System.Drawing.Point(154, 4);
+            this.PANEL1317_JOB_btn_search.Name = "PANEL1317_JOB_btn_search";
+            this.PANEL1317_JOB_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1317_JOB_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1317_JOB_btn_search.TabIndex = 433;
+            this.PANEL1317_JOB_btn_search.TabStop = false;
+            this.PANEL1317_JOB_btn_search.Click += new System.EventHandler(this.PANEL1317_JOB_btn_search_Click);
+            // 
+            // PANEL1317_JOB_txtsearch
+            // 
+            this.PANEL1317_JOB_txtsearch.BackColor = System.Drawing.Color.White;
+            this.PANEL1317_JOB_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1317_JOB_txtsearch.Location = new System.Drawing.Point(3, 4);
+            this.PANEL1317_JOB_txtsearch.Name = "PANEL1317_JOB_txtsearch";
+            this.PANEL1317_JOB_txtsearch.Size = new System.Drawing.Size(145, 21);
+            this.PANEL1317_JOB_txtsearch.TabIndex = 432;
+            // 
+            // PANEL1317_JOB_dataGridView1_job
+            // 
+            this.PANEL1317_JOB_dataGridView1_job.AllowUserToAddRows = false;
+            this.PANEL1317_JOB_dataGridView1_job.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1317_JOB_dataGridView1_job.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PANEL1317_JOB_dataGridView1_job.Location = new System.Drawing.Point(3, 32);
+            this.PANEL1317_JOB_dataGridView1_job.Name = "PANEL1317_JOB_dataGridView1_job";
+            this.PANEL1317_JOB_dataGridView1_job.Size = new System.Drawing.Size(209, 20);
+            this.PANEL1317_JOB_dataGridView1_job.TabIndex = 0;
+            this.PANEL1317_JOB_dataGridView1_job.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1317_JOB_dataGridView1_job_CellMouseClick);
+            // 
+            // txtmat_id
+            // 
+            this.txtmat_id.BackColor = System.Drawing.Color.White;
+            this.txtmat_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtmat_id.Location = new System.Drawing.Point(321, 214);
+            this.txtmat_id.Name = "txtmat_id";
+            this.txtmat_id.Size = new System.Drawing.Size(172, 21);
+            this.txtmat_id.TabIndex = 753;
+            this.txtmat_id.Visible = false;
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnUp.FlatAppearance.BorderSize = 0;
+            this.btnUp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnUp.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnUp.ForeColor = System.Drawing.Color.Black;
+            this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
+            this.btnUp.Location = new System.Drawing.Point(172, 214);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(58, 45);
+            this.btnUp.TabIndex = 752;
+            this.btnUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Visible = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // label36
             // 
@@ -808,7 +1092,7 @@
             this.PANEL_MAT.Controls.Add(this.PANEL_MAT_txtsearch);
             this.PANEL_MAT.Controls.Add(this.PANEL_MAT_btnresize_low);
             this.PANEL_MAT.Controls.Add(this.PANEL_MAT_GridView1);
-            this.PANEL_MAT.Location = new System.Drawing.Point(1203, 606);
+            this.PANEL_MAT.Location = new System.Drawing.Point(3, 369);
             this.PANEL_MAT.Name = "PANEL_MAT";
             this.PANEL_MAT.Size = new System.Drawing.Size(1220, 539);
             this.PANEL_MAT.TabIndex = 746;
@@ -1994,108 +2278,6 @@
             this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.TabIndex = 0;
             this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax_CellMouseClick);
             // 
-            // PANEL1317_JOB
-            // 
-            this.PANEL1317_JOB.AutoScroll = true;
-            this.PANEL1317_JOB.AutoSize = true;
-            this.PANEL1317_JOB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PANEL1317_JOB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btnresize_low);
-            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btnnew);
-            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btnclose);
-            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_btn_search);
-            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_txtsearch);
-            this.PANEL1317_JOB.Controls.Add(this.PANEL1317_JOB_dataGridView1_job);
-            this.PANEL1317_JOB.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1317_JOB.Location = new System.Drawing.Point(1276, 5);
-            this.PANEL1317_JOB.Name = "PANEL1317_JOB";
-            this.PANEL1317_JOB.Size = new System.Drawing.Size(502, 337);
-            this.PANEL1317_JOB.TabIndex = 744;
-            this.PANEL1317_JOB.Visible = false;
-            // 
-            // PANEL1317_JOB_btnresize_low
-            // 
-            this.PANEL1317_JOB_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL1317_JOB_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL1317_JOB_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.PANEL1317_JOB_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PANEL1317_JOB_btnresize_low.FlatAppearance.BorderSize = 0;
-            this.PANEL1317_JOB_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL1317_JOB_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL1317_JOB_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL1317_JOB_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1317_JOB_btnresize_low.ForeColor = System.Drawing.Color.Black;
-            this.PANEL1317_JOB_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnresize_low.Image")));
-            this.PANEL1317_JOB_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL1317_JOB_btnresize_low.Location = new System.Drawing.Point(475, 309);
-            this.PANEL1317_JOB_btnresize_low.Name = "PANEL1317_JOB_btnresize_low";
-            this.PANEL1317_JOB_btnresize_low.Size = new System.Drawing.Size(23, 22);
-            this.PANEL1317_JOB_btnresize_low.TabIndex = 438;
-            this.PANEL1317_JOB_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.PANEL1317_JOB_btnresize_low.UseVisualStyleBackColor = false;
-            this.PANEL1317_JOB_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL1317_JOB_btnresize_low_MouseDown);
-            this.PANEL1317_JOB_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL1317_JOB_btnresize_low_MouseMove);
-            this.PANEL1317_JOB_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL1317_JOB_btnresize_low_MouseUp);
-            // 
-            // PANEL1317_JOB_btnnew
-            // 
-            this.PANEL1317_JOB_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL1317_JOB_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnnew.Image")));
-            this.PANEL1317_JOB_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL1317_JOB_btnnew.Name = "PANEL1317_JOB_btnnew";
-            this.PANEL1317_JOB_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL1317_JOB_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL1317_JOB_btnnew.TabIndex = 437;
-            this.PANEL1317_JOB_btnnew.TabStop = false;
-            this.PANEL1317_JOB_btnnew.Visible = false;
-            // 
-            // PANEL1317_JOB_btnclose
-            // 
-            this.PANEL1317_JOB_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL1317_JOB_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL1317_JOB_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnclose.Image")));
-            this.PANEL1317_JOB_btnclose.Location = new System.Drawing.Point(465, 3);
-            this.PANEL1317_JOB_btnclose.Name = "PANEL1317_JOB_btnclose";
-            this.PANEL1317_JOB_btnclose.Size = new System.Drawing.Size(30, 22);
-            this.PANEL1317_JOB_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL1317_JOB_btnclose.TabIndex = 436;
-            this.PANEL1317_JOB_btnclose.TabStop = false;
-            this.PANEL1317_JOB_btnclose.Click += new System.EventHandler(this.PANEL1317_JOB_btnclose_Click);
-            // 
-            // PANEL1317_JOB_btn_search
-            // 
-            this.PANEL1317_JOB_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL1317_JOB_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btn_search.Image")));
-            this.PANEL1317_JOB_btn_search.Location = new System.Drawing.Point(276, 15);
-            this.PANEL1317_JOB_btn_search.Name = "PANEL1317_JOB_btn_search";
-            this.PANEL1317_JOB_btn_search.Size = new System.Drawing.Size(30, 22);
-            this.PANEL1317_JOB_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL1317_JOB_btn_search.TabIndex = 433;
-            this.PANEL1317_JOB_btn_search.TabStop = false;
-            this.PANEL1317_JOB_btn_search.Click += new System.EventHandler(this.PANEL1317_JOB_btn_search_Click);
-            // 
-            // PANEL1317_JOB_txtsearch
-            // 
-            this.PANEL1317_JOB_txtsearch.BackColor = System.Drawing.Color.White;
-            this.PANEL1317_JOB_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1317_JOB_txtsearch.Location = new System.Drawing.Point(39, 16);
-            this.PANEL1317_JOB_txtsearch.Name = "PANEL1317_JOB_txtsearch";
-            this.PANEL1317_JOB_txtsearch.Size = new System.Drawing.Size(231, 21);
-            this.PANEL1317_JOB_txtsearch.TabIndex = 432;
-            // 
-            // PANEL1317_JOB_dataGridView1_job
-            // 
-            this.PANEL1317_JOB_dataGridView1_job.AllowUserToAddRows = false;
-            this.PANEL1317_JOB_dataGridView1_job.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL1317_JOB_dataGridView1_job.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL1317_JOB_dataGridView1_job.Location = new System.Drawing.Point(3, 42);
-            this.PANEL1317_JOB_dataGridView1_job.Name = "PANEL1317_JOB_dataGridView1_job";
-            this.PANEL1317_JOB_dataGridView1_job.Size = new System.Drawing.Size(491, 262);
-            this.PANEL1317_JOB_dataGridView1_job.TabIndex = 0;
-            this.PANEL1317_JOB_dataGridView1_job.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1317_JOB_dataGridView1_job_CellMouseClick);
-            // 
             // PANEL1307_PROJECT
             // 
             this.PANEL1307_PROJECT.AutoScroll = true;
@@ -2202,7 +2384,6 @@
             // 
             this.PANEL161_SUP.AutoScroll = true;
             this.PANEL161_SUP.AutoSize = true;
-            this.PANEL161_SUP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PANEL161_SUP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_btnresize_low);
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_btnnew);
@@ -2211,9 +2392,9 @@
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_txtsearch);
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_dataGridView1);
             this.PANEL161_SUP.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL161_SUP.Location = new System.Drawing.Point(-476, 296);
+            this.PANEL161_SUP.Location = new System.Drawing.Point(717, 55);
             this.PANEL161_SUP.Name = "PANEL161_SUP";
-            this.PANEL161_SUP.Size = new System.Drawing.Size(502, 337);
+            this.PANEL161_SUP.Size = new System.Drawing.Size(218, 80);
             this.PANEL161_SUP.TabIndex = 742;
             this.PANEL161_SUP.Visible = false;
             // 
@@ -2231,7 +2412,7 @@
             this.PANEL161_SUP_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL161_SUP_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL161_SUP_btnresize_low.Image")));
             this.PANEL161_SUP_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL161_SUP_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL161_SUP_btnresize_low.Location = new System.Drawing.Point(191, 52);
             this.PANEL161_SUP_btnresize_low.Name = "PANEL161_SUP_btnresize_low";
             this.PANEL161_SUP_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL161_SUP_btnresize_low.TabIndex = 438;
@@ -2258,7 +2439,7 @@
             this.PANEL161_SUP_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL161_SUP_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL161_SUP_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL161_SUP_btnclose.Image")));
-            this.PANEL161_SUP_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL161_SUP_btnclose.Location = new System.Drawing.Point(181, 3);
             this.PANEL161_SUP_btnclose.Name = "PANEL161_SUP_btnclose";
             this.PANEL161_SUP_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL161_SUP_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -2270,7 +2451,7 @@
             // 
             this.PANEL161_SUP_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL161_SUP_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL161_SUP_btn_search.Image")));
-            this.PANEL161_SUP_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL161_SUP_btn_search.Location = new System.Drawing.Point(147, 4);
             this.PANEL161_SUP_btn_search.Name = "PANEL161_SUP_btn_search";
             this.PANEL161_SUP_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL161_SUP_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -2282,9 +2463,9 @@
             // 
             this.PANEL161_SUP_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL161_SUP_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL161_SUP_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL161_SUP_txtsearch.Location = new System.Drawing.Point(6, 4);
             this.PANEL161_SUP_txtsearch.Name = "PANEL161_SUP_txtsearch";
-            this.PANEL161_SUP_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL161_SUP_txtsearch.Size = new System.Drawing.Size(137, 21);
             this.PANEL161_SUP_txtsearch.TabIndex = 432;
             // 
             // PANEL161_SUP_dataGridView1
@@ -2294,9 +2475,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL161_SUP_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL161_SUP_dataGridView1.Location = new System.Drawing.Point(3, 42);
+            this.PANEL161_SUP_dataGridView1.Location = new System.Drawing.Point(3, 32);
             this.PANEL161_SUP_dataGridView1.Name = "PANEL161_SUP_dataGridView1";
-            this.PANEL161_SUP_dataGridView1.Size = new System.Drawing.Size(491, 262);
+            this.PANEL161_SUP_dataGridView1.Size = new System.Drawing.Size(207, 15);
             this.PANEL161_SUP_dataGridView1.TabIndex = 0;
             this.PANEL161_SUP_dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL161_SUP_dataGridView1_supplier_CellMouseClick);
             this.PANEL161_SUP_dataGridView1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL161_SUP_dataGridView1_supplier_PreviewKeyDown);
@@ -2307,14 +2488,8 @@
             this.PANEL_PR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PANEL_PR.Controls.Add(this.ch_all_po);
             this.PANEL_PR.Controls.Add(this.btnGo4);
-            this.PANEL_PR.Controls.Add(this.PANEL1316_DEPARTMENT);
             this.PANEL_PR.Controls.Add(this.PANEL_PR_txtcount_rows);
             this.PANEL_PR.Controls.Add(this.PANEL_PR_iblcount_rows);
-            this.PANEL_PR.Controls.Add(this.PANEL_PR_btnGo3);
-            this.PANEL_PR.Controls.Add(this.PANEL1316_DEPARTMENT_txtdepartment_id);
-            this.PANEL_PR.Controls.Add(this.PANEL1316_DEPARTMENT_btndepartment);
-            this.PANEL_PR.Controls.Add(this.PANEL1316_DEPARTMENT_txtdepartment_name);
-            this.PANEL_PR.Controls.Add(this.PANEL_PR_ibldepartment);
             this.PANEL_PR.Controls.Add(this.PANEL_PR_btnGo2);
             this.PANEL_PR.Controls.Add(this.PANEL_PR_cboSearch);
             this.PANEL_PR.Controls.Add(this.PANEL_PR_iblsearch);
@@ -2327,7 +2502,7 @@
             this.PANEL_PR.Controls.Add(this.PANEL_PR_panel_top);
             this.PANEL_PR.Controls.Add(this.PANEL_PR_btnresize_low);
             this.PANEL_PR.Controls.Add(this.PANEL_PR_GridView1);
-            this.PANEL_PR.Location = new System.Drawing.Point(40, 272);
+            this.PANEL_PR.Location = new System.Drawing.Point(40, 286);
             this.PANEL_PR.Name = "PANEL_PR";
             this.PANEL_PR.Size = new System.Drawing.Size(1225, 582);
             this.PANEL_PR.TabIndex = 741;
@@ -2340,7 +2515,7 @@
             this.ch_all_po.AutoSize = true;
             this.ch_all_po.Checked = true;
             this.ch_all_po.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ch_all_po.Location = new System.Drawing.Point(681, 88);
+            this.ch_all_po.Location = new System.Drawing.Point(681, 60);
             this.ch_all_po.Name = "ch_all_po";
             this.ch_all_po.Size = new System.Drawing.Size(88, 17);
             this.ch_all_po.TabIndex = 730;
@@ -2351,115 +2526,13 @@
             // 
             this.btnGo4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGo4.Image = ((System.Drawing.Image)(resources.GetObject("btnGo4.Image")));
-            this.btnGo4.Location = new System.Drawing.Point(770, 86);
+            this.btnGo4.Location = new System.Drawing.Point(770, 58);
             this.btnGo4.Name = "btnGo4";
             this.btnGo4.Size = new System.Drawing.Size(30, 22);
             this.btnGo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnGo4.TabIndex = 729;
             this.btnGo4.TabStop = false;
             this.btnGo4.Click += new System.EventHandler(this.btnGo4_Click);
-            // 
-            // PANEL1316_DEPARTMENT
-            // 
-            this.PANEL1316_DEPARTMENT.AutoScroll = true;
-            this.PANEL1316_DEPARTMENT.AutoSize = true;
-            this.PANEL1316_DEPARTMENT.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PANEL1316_DEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btnresize_low);
-            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btnnew);
-            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btnclose);
-            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_btn_search);
-            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_txtsearch);
-            this.PANEL1316_DEPARTMENT.Controls.Add(this.PANEL1316_DEPARTMENT_dataGridView1_department);
-            this.PANEL1316_DEPARTMENT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1316_DEPARTMENT.Location = new System.Drawing.Point(19, 122);
-            this.PANEL1316_DEPARTMENT.Name = "PANEL1316_DEPARTMENT";
-            this.PANEL1316_DEPARTMENT.Size = new System.Drawing.Size(502, 337);
-            this.PANEL1316_DEPARTMENT.TabIndex = 686;
-            this.PANEL1316_DEPARTMENT.Visible = false;
-            // 
-            // PANEL1316_DEPARTMENT_btnresize_low
-            // 
-            this.PANEL1316_DEPARTMENT_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL1316_DEPARTMENT_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL1316_DEPARTMENT_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.BorderSize = 0;
-            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL1316_DEPARTMENT_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL1316_DEPARTMENT_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL1316_DEPARTMENT_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1316_DEPARTMENT_btnresize_low.ForeColor = System.Drawing.Color.Black;
-            this.PANEL1316_DEPARTMENT_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btnresize_low.Image")));
-            this.PANEL1316_DEPARTMENT_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL1316_DEPARTMENT_btnresize_low.Location = new System.Drawing.Point(475, 309);
-            this.PANEL1316_DEPARTMENT_btnresize_low.Name = "PANEL1316_DEPARTMENT_btnresize_low";
-            this.PANEL1316_DEPARTMENT_btnresize_low.Size = new System.Drawing.Size(23, 22);
-            this.PANEL1316_DEPARTMENT_btnresize_low.TabIndex = 438;
-            this.PANEL1316_DEPARTMENT_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.PANEL1316_DEPARTMENT_btnresize_low.UseVisualStyleBackColor = false;
-            this.PANEL1316_DEPARTMENT_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL1316_DEPARTMENT_btnresize_low_MouseDown);
-            this.PANEL1316_DEPARTMENT_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL1316_DEPARTMENT_btnresize_low_MouseMove);
-            this.PANEL1316_DEPARTMENT_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL1316_DEPARTMENT_btnresize_low_MouseUp);
-            // 
-            // PANEL1316_DEPARTMENT_btnnew
-            // 
-            this.PANEL1316_DEPARTMENT_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL1316_DEPARTMENT_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btnnew.Image")));
-            this.PANEL1316_DEPARTMENT_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL1316_DEPARTMENT_btnnew.Name = "PANEL1316_DEPARTMENT_btnnew";
-            this.PANEL1316_DEPARTMENT_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL1316_DEPARTMENT_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL1316_DEPARTMENT_btnnew.TabIndex = 437;
-            this.PANEL1316_DEPARTMENT_btnnew.TabStop = false;
-            this.PANEL1316_DEPARTMENT_btnnew.Visible = false;
-            // 
-            // PANEL1316_DEPARTMENT_btnclose
-            // 
-            this.PANEL1316_DEPARTMENT_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL1316_DEPARTMENT_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL1316_DEPARTMENT_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btnclose.Image")));
-            this.PANEL1316_DEPARTMENT_btnclose.Location = new System.Drawing.Point(465, 3);
-            this.PANEL1316_DEPARTMENT_btnclose.Name = "PANEL1316_DEPARTMENT_btnclose";
-            this.PANEL1316_DEPARTMENT_btnclose.Size = new System.Drawing.Size(30, 22);
-            this.PANEL1316_DEPARTMENT_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL1316_DEPARTMENT_btnclose.TabIndex = 436;
-            this.PANEL1316_DEPARTMENT_btnclose.TabStop = false;
-            this.PANEL1316_DEPARTMENT_btnclose.Click += new System.EventHandler(this.PANEL1316_DEPARTMENT_btnclose_Click);
-            // 
-            // PANEL1316_DEPARTMENT_btn_search
-            // 
-            this.PANEL1316_DEPARTMENT_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL1316_DEPARTMENT_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btn_search.Image")));
-            this.PANEL1316_DEPARTMENT_btn_search.Location = new System.Drawing.Point(319, 15);
-            this.PANEL1316_DEPARTMENT_btn_search.Name = "PANEL1316_DEPARTMENT_btn_search";
-            this.PANEL1316_DEPARTMENT_btn_search.Size = new System.Drawing.Size(30, 22);
-            this.PANEL1316_DEPARTMENT_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL1316_DEPARTMENT_btn_search.TabIndex = 433;
-            this.PANEL1316_DEPARTMENT_btn_search.TabStop = false;
-            this.PANEL1316_DEPARTMENT_btn_search.Click += new System.EventHandler(this.PANEL1316_DEPARTMENT_btn_search_Click);
-            // 
-            // PANEL1316_DEPARTMENT_txtsearch
-            // 
-            this.PANEL1316_DEPARTMENT_txtsearch.BackColor = System.Drawing.Color.White;
-            this.PANEL1316_DEPARTMENT_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1316_DEPARTMENT_txtsearch.Location = new System.Drawing.Point(87, 15);
-            this.PANEL1316_DEPARTMENT_txtsearch.Name = "PANEL1316_DEPARTMENT_txtsearch";
-            this.PANEL1316_DEPARTMENT_txtsearch.Size = new System.Drawing.Size(231, 21);
-            this.PANEL1316_DEPARTMENT_txtsearch.TabIndex = 432;
-            // 
-            // PANEL1316_DEPARTMENT_dataGridView1_department
-            // 
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.AllowUserToAddRows = false;
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.Location = new System.Drawing.Point(3, 42);
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.Name = "PANEL1316_DEPARTMENT_dataGridView1_department";
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.Size = new System.Drawing.Size(491, 262);
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.TabIndex = 0;
-            this.PANEL1316_DEPARTMENT_dataGridView1_department.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1316_DEPARTMENT_dataGridView1_department_CellMouseClick);
             // 
             // PANEL_PR_txtcount_rows
             // 
@@ -2485,64 +2558,6 @@
             this.PANEL_PR_iblcount_rows.Text = "จำนวนรายการ :";
             this.PANEL_PR_iblcount_rows.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PANEL_PR_btnGo3
-            // 
-            this.PANEL_PR_btnGo3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL_PR_btnGo3.Image = ((System.Drawing.Image)(resources.GetObject("PANEL_PR_btnGo3.Image")));
-            this.PANEL_PR_btnGo3.Location = new System.Drawing.Point(607, 60);
-            this.PANEL_PR_btnGo3.Name = "PANEL_PR_btnGo3";
-            this.PANEL_PR_btnGo3.Size = new System.Drawing.Size(30, 22);
-            this.PANEL_PR_btnGo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL_PR_btnGo3.TabIndex = 683;
-            this.PANEL_PR_btnGo3.TabStop = false;
-            this.PANEL_PR_btnGo3.Click += new System.EventHandler(this.PANEL_PR_btnGo3_Click);
-            // 
-            // PANEL1316_DEPARTMENT_txtdepartment_id
-            // 
-            this.PANEL1316_DEPARTMENT_txtdepartment_id.BackColor = System.Drawing.Color.White;
-            this.PANEL1316_DEPARTMENT_txtdepartment_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1316_DEPARTMENT_txtdepartment_id.Location = new System.Drawing.Point(314, 61);
-            this.PANEL1316_DEPARTMENT_txtdepartment_id.Name = "PANEL1316_DEPARTMENT_txtdepartment_id";
-            this.PANEL1316_DEPARTMENT_txtdepartment_id.ReadOnly = true;
-            this.PANEL1316_DEPARTMENT_txtdepartment_id.Size = new System.Drawing.Size(287, 21);
-            this.PANEL1316_DEPARTMENT_txtdepartment_id.TabIndex = 682;
-            // 
-            // PANEL1316_DEPARTMENT_btndepartment
-            // 
-            this.PANEL1316_DEPARTMENT_btndepartment.BackColor = System.Drawing.Color.White;
-            this.PANEL1316_DEPARTMENT_btndepartment.FlatAppearance.BorderSize = 0;
-            this.PANEL1316_DEPARTMENT_btndepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL1316_DEPARTMENT_btndepartment.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1316_DEPARTMENT_btndepartment.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1316_DEPARTMENT_btndepartment.Image")));
-            this.PANEL1316_DEPARTMENT_btndepartment.Location = new System.Drawing.Point(284, 63);
-            this.PANEL1316_DEPARTMENT_btndepartment.Name = "PANEL1316_DEPARTMENT_btndepartment";
-            this.PANEL1316_DEPARTMENT_btndepartment.Size = new System.Drawing.Size(22, 16);
-            this.PANEL1316_DEPARTMENT_btndepartment.TabIndex = 681;
-            this.PANEL1316_DEPARTMENT_btndepartment.UseVisualStyleBackColor = false;
-            this.PANEL1316_DEPARTMENT_btndepartment.Click += new System.EventHandler(this.PANEL1316_DEPARTMENT_btndepartment_Click);
-            // 
-            // PANEL1316_DEPARTMENT_txtdepartment_name
-            // 
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.BackColor = System.Drawing.Color.White;
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.Location = new System.Drawing.Point(111, 61);
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.Name = "PANEL1316_DEPARTMENT_txtdepartment_name";
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.ReadOnly = true;
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.Size = new System.Drawing.Size(197, 21);
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.TabIndex = 680;
-            this.PANEL1316_DEPARTMENT_txtdepartment_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PANEL1316_DEPARTMENT_txtdepartment_name_KeyDown);
-            // 
-            // PANEL_PR_ibldepartment
-            // 
-            this.PANEL_PR_ibldepartment.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL_PR_ibldepartment.ForeColor = System.Drawing.Color.Black;
-            this.PANEL_PR_ibldepartment.Location = new System.Drawing.Point(7, 61);
-            this.PANEL_PR_ibldepartment.Name = "PANEL_PR_ibldepartment";
-            this.PANEL_PR_ibldepartment.Size = new System.Drawing.Size(96, 21);
-            this.PANEL_PR_ibldepartment.TabIndex = 679;
-            this.PANEL_PR_ibldepartment.Text = "ฝ่ายที่ต้องการ :";
-            this.PANEL_PR_ibldepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // PANEL_PR_btnGo2
             // 
             this.PANEL_PR_btnGo2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -2559,7 +2574,7 @@
             // 
             this.PANEL_PR_cboSearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL_PR_cboSearch.FormattingEnabled = true;
-            this.PANEL_PR_cboSearch.Location = new System.Drawing.Point(111, 86);
+            this.PANEL_PR_cboSearch.Location = new System.Drawing.Point(111, 58);
             this.PANEL_PR_cboSearch.Name = "PANEL_PR_cboSearch";
             this.PANEL_PR_cboSearch.Size = new System.Drawing.Size(196, 21);
             this.PANEL_PR_cboSearch.TabIndex = 677;
@@ -2568,7 +2583,7 @@
             // 
             this.PANEL_PR_iblsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL_PR_iblsearch.ForeColor = System.Drawing.Color.Black;
-            this.PANEL_PR_iblsearch.Location = new System.Drawing.Point(64, 86);
+            this.PANEL_PR_iblsearch.Location = new System.Drawing.Point(64, 58);
             this.PANEL_PR_iblsearch.Name = "PANEL_PR_iblsearch";
             this.PANEL_PR_iblsearch.Size = new System.Drawing.Size(41, 21);
             this.PANEL_PR_iblsearch.TabIndex = 676;
@@ -2579,7 +2594,7 @@
             // 
             this.PANEL_PR_btnGo1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL_PR_btnGo1.Image = ((System.Drawing.Image)(resources.GetObject("PANEL_PR_btnGo1.Image")));
-            this.PANEL_PR_btnGo1.Location = new System.Drawing.Point(606, 85);
+            this.PANEL_PR_btnGo1.Location = new System.Drawing.Point(606, 57);
             this.PANEL_PR_btnGo1.Name = "PANEL_PR_btnGo1";
             this.PANEL_PR_btnGo1.Size = new System.Drawing.Size(30, 22);
             this.PANEL_PR_btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -2591,7 +2606,7 @@
             // 
             this.PANEL_PR_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL_PR_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL_PR_txtsearch.Location = new System.Drawing.Point(313, 86);
+            this.PANEL_PR_txtsearch.Location = new System.Drawing.Point(313, 58);
             this.PANEL_PR_txtsearch.Name = "PANEL_PR_txtsearch";
             this.PANEL_PR_txtsearch.Size = new System.Drawing.Size(288, 21);
             this.PANEL_PR_txtsearch.TabIndex = 674;
@@ -2717,9 +2732,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL_PR_GridView1.BackgroundColor = System.Drawing.Color.White;
             this.PANEL_PR_GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL_PR_GridView1.Location = new System.Drawing.Point(3, 113);
+            this.PANEL_PR_GridView1.Location = new System.Drawing.Point(3, 86);
             this.PANEL_PR_GridView1.Name = "PANEL_PR_GridView1";
-            this.PANEL_PR_GridView1.Size = new System.Drawing.Size(1212, 436);
+            this.PANEL_PR_GridView1.Size = new System.Drawing.Size(1212, 463);
             this.PANEL_PR_GridView1.TabIndex = 669;
             this.PANEL_PR_GridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL_PR_GridView1_CellMouseClick);
             this.PANEL_PR_GridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.PANEL_PR_GridView1_CellMouseLeave);
@@ -2730,7 +2745,7 @@
             // 
             this.PANEL1317_JOB_txtjob_id.BackColor = System.Drawing.Color.White;
             this.PANEL1317_JOB_txtjob_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1317_JOB_txtjob_id.Location = new System.Drawing.Point(1252, 135);
+            this.PANEL1317_JOB_txtjob_id.Location = new System.Drawing.Point(1252, 161);
             this.PANEL1317_JOB_txtjob_id.Name = "PANEL1317_JOB_txtjob_id";
             this.PANEL1317_JOB_txtjob_id.ReadOnly = true;
             this.PANEL1317_JOB_txtjob_id.Size = new System.Drawing.Size(45, 21);
@@ -2743,7 +2758,7 @@
             this.PANEL1317_JOB_btnjob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL1317_JOB_btnjob.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL1317_JOB_btnjob.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnjob.Image")));
-            this.PANEL1317_JOB_btnjob.Location = new System.Drawing.Point(1221, 137);
+            this.PANEL1317_JOB_btnjob.Location = new System.Drawing.Point(1221, 163);
             this.PANEL1317_JOB_btnjob.Name = "PANEL1317_JOB_btnjob";
             this.PANEL1317_JOB_btnjob.Size = new System.Drawing.Size(22, 16);
             this.PANEL1317_JOB_btnjob.TabIndex = 739;
@@ -2754,7 +2769,7 @@
             // 
             this.PANEL1317_JOB_txtjob_name.BackColor = System.Drawing.Color.White;
             this.PANEL1317_JOB_txtjob_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1317_JOB_txtjob_name.Location = new System.Drawing.Point(1011, 135);
+            this.PANEL1317_JOB_txtjob_name.Location = new System.Drawing.Point(1011, 161);
             this.PANEL1317_JOB_txtjob_name.Name = "PANEL1317_JOB_txtjob_name";
             this.PANEL1317_JOB_txtjob_name.ReadOnly = true;
             this.PANEL1317_JOB_txtjob_name.Size = new System.Drawing.Size(235, 21);
@@ -2765,7 +2780,7 @@
             // 
             this.PANEL1307_PROJECT_txtproject_id.BackColor = System.Drawing.Color.White;
             this.PANEL1307_PROJECT_txtproject_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1307_PROJECT_txtproject_id.Location = new System.Drawing.Point(1252, 108);
+            this.PANEL1307_PROJECT_txtproject_id.Location = new System.Drawing.Point(1252, 134);
             this.PANEL1307_PROJECT_txtproject_id.Name = "PANEL1307_PROJECT_txtproject_id";
             this.PANEL1307_PROJECT_txtproject_id.ReadOnly = true;
             this.PANEL1307_PROJECT_txtproject_id.Size = new System.Drawing.Size(45, 21);
@@ -2778,7 +2793,7 @@
             this.PANEL1307_PROJECT_btnproject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL1307_PROJECT_btnproject.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL1307_PROJECT_btnproject.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1307_PROJECT_btnproject.Image")));
-            this.PANEL1307_PROJECT_btnproject.Location = new System.Drawing.Point(1221, 110);
+            this.PANEL1307_PROJECT_btnproject.Location = new System.Drawing.Point(1221, 136);
             this.PANEL1307_PROJECT_btnproject.Name = "PANEL1307_PROJECT_btnproject";
             this.PANEL1307_PROJECT_btnproject.Size = new System.Drawing.Size(22, 16);
             this.PANEL1307_PROJECT_btnproject.TabIndex = 736;
@@ -2789,7 +2804,7 @@
             // 
             this.PANEL1307_PROJECT_txtproject_name.BackColor = System.Drawing.Color.White;
             this.PANEL1307_PROJECT_txtproject_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1307_PROJECT_txtproject_name.Location = new System.Drawing.Point(1011, 108);
+            this.PANEL1307_PROJECT_txtproject_name.Location = new System.Drawing.Point(1011, 134);
             this.PANEL1307_PROJECT_txtproject_name.Name = "PANEL1307_PROJECT_txtproject_name";
             this.PANEL1307_PROJECT_txtproject_name.ReadOnly = true;
             this.PANEL1307_PROJECT_txtproject_name.Size = new System.Drawing.Size(235, 21);
@@ -2892,7 +2907,7 @@
             // checkBox1_txtjob_send_mat_status
             // 
             this.checkBox1_txtjob_send_mat_status.AutoSize = true;
-            this.checkBox1_txtjob_send_mat_status.Location = new System.Drawing.Point(1011, 165);
+            this.checkBox1_txtjob_send_mat_status.Location = new System.Drawing.Point(1011, 191);
             this.checkBox1_txtjob_send_mat_status.Name = "checkBox1_txtjob_send_mat_status";
             this.checkBox1_txtjob_send_mat_status.Size = new System.Drawing.Size(74, 17);
             this.checkBox1_txtjob_send_mat_status.TabIndex = 727;
@@ -2904,7 +2919,7 @@
             // 
             this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(932, 133);
+            this.label23.Location = new System.Drawing.Point(932, 159);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(73, 21);
             this.label23.TabIndex = 726;
@@ -2915,7 +2930,7 @@
             // 
             this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(932, 106);
+            this.label22.Location = new System.Drawing.Point(932, 132);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(73, 21);
             this.label22.TabIndex = 725;
@@ -2994,7 +3009,7 @@
             this.txtcontact_person.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtcontact_person.Location = new System.Drawing.Point(595, 106);
             this.txtcontact_person.Name = "txtcontact_person";
-            this.txtcontact_person.Size = new System.Drawing.Size(331, 21);
+            this.txtcontact_person.Size = new System.Drawing.Size(306, 21);
             this.txtcontact_person.TabIndex = 718;
             // 
             // label18
@@ -3199,7 +3214,7 @@
             this.txtpo_remark.Location = new System.Drawing.Point(595, 133);
             this.txtpo_remark.Multiline = true;
             this.txtpo_remark.Name = "txtpo_remark";
-            this.txtpo_remark.Size = new System.Drawing.Size(331, 75);
+            this.txtpo_remark.Size = new System.Drawing.Size(306, 75);
             this.txtpo_remark.TabIndex = 691;
             // 
             // label3
@@ -3529,6 +3544,7 @@
             this.GridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridView1_EditingControlShowing);
             this.GridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.GridView1_Scroll);
             this.GridView1.SelectionChanged += new System.EventHandler(this.GridView1_SelectionChanged);
+            this.GridView1.DoubleClick += new System.EventHandler(this.GridView1_DoubleClick);
             this.GridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GridView1_KeyPress);
             this.GridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GridView1_KeyUp);
             // 
@@ -3536,9 +3552,9 @@
             // 
             this.txtmat_barcode_id.BackColor = System.Drawing.Color.White;
             this.txtmat_barcode_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_barcode_id.Location = new System.Drawing.Point(250, 237);
+            this.txtmat_barcode_id.Location = new System.Drawing.Point(321, 238);
             this.txtmat_barcode_id.Name = "txtmat_barcode_id";
-            this.txtmat_barcode_id.Size = new System.Drawing.Size(181, 21);
+            this.txtmat_barcode_id.Size = new System.Drawing.Size(172, 21);
             this.txtmat_barcode_id.TabIndex = 664;
             this.txtmat_barcode_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmat_barcode_id_KeyPress);
             // 
@@ -3546,7 +3562,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(171, 237);
+            this.label6.Location = new System.Drawing.Point(242, 238);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 21);
             this.label6.TabIndex = 663;
@@ -3556,7 +3572,7 @@
             // txtqty
             // 
             this.txtqty.BackColor = System.Drawing.Color.White;
-            this.txtqty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtqty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtqty.Location = new System.Drawing.Point(113, 237);
             this.txtqty.Name = "txtqty";
             this.txtqty.Size = new System.Drawing.Size(55, 21);
@@ -3586,7 +3602,7 @@
             this.btnbarcode_set.ForeColor = System.Drawing.Color.Black;
             this.btnbarcode_set.Image = ((System.Drawing.Image)(resources.GetObject("btnbarcode_set.Image")));
             this.btnbarcode_set.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnbarcode_set.Location = new System.Drawing.Point(437, 217);
+            this.btnbarcode_set.Location = new System.Drawing.Point(499, 217);
             this.btnbarcode_set.Name = "btnbarcode_set";
             this.btnbarcode_set.Size = new System.Drawing.Size(58, 42);
             this.btnbarcode_set.TabIndex = 703;
@@ -3605,7 +3621,7 @@
             this.btnadd_mat.ForeColor = System.Drawing.Color.Black;
             this.btnadd_mat.Image = ((System.Drawing.Image)(resources.GetObject("btnadd_mat.Image")));
             this.btnadd_mat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnadd_mat.Location = new System.Drawing.Point(593, 217);
+            this.btnadd_mat.Location = new System.Drawing.Point(563, 217);
             this.btnadd_mat.Name = "btnadd_mat";
             this.btnadd_mat.Size = new System.Drawing.Size(58, 42);
             this.btnadd_mat.TabIndex = 702;
@@ -3624,7 +3640,7 @@
             this.btnremove_row.ForeColor = System.Drawing.Color.Black;
             this.btnremove_row.Image = ((System.Drawing.Image)(resources.GetObject("btnremove_row.Image")));
             this.btnremove_row.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnremove_row.Location = new System.Drawing.Point(657, 217);
+            this.btnremove_row.Location = new System.Drawing.Point(627, 217);
             this.btnremove_row.Name = "btnremove_row";
             this.btnremove_row.Size = new System.Drawing.Size(58, 42);
             this.btnremove_row.TabIndex = 701;
@@ -3714,6 +3730,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
+            this.PANEL1316_DEPARTMENT.ResumeLayout(false);
+            this.PANEL1316_DEPARTMENT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnnew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btn_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_dataGridView1_department)).EndInit();
+            this.PANEL1317_JOB.ResumeLayout(false);
+            this.PANEL1317_JOB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnnew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btn_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_dataGridView1_job)).EndInit();
             this.PANEL_MAT.ResumeLayout(false);
             this.PANEL_MAT.PerformLayout();
             this.PANEL104_MAT_BRAND2.ResumeLayout(false);
@@ -3761,12 +3789,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax)).EndInit();
-            this.PANEL1317_JOB.ResumeLayout(false);
-            this.PANEL1317_JOB.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnnew)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btnclose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_btn_search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1317_JOB_dataGridView1_job)).EndInit();
             this.PANEL1307_PROJECT.ResumeLayout(false);
             this.PANEL1307_PROJECT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL1307_PROJECT_btnnew)).EndInit();
@@ -3782,13 +3804,6 @@
             this.PANEL_PR.ResumeLayout(false);
             this.PANEL_PR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo4)).EndInit();
-            this.PANEL1316_DEPARTMENT.ResumeLayout(false);
-            this.PANEL1316_DEPARTMENT.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnnew)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btnclose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_btn_search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL1316_DEPARTMENT_dataGridView1_department)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL_PR_btnGo3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_PR_btnGo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_PR_btnGo1)).EndInit();
             this.PANEL_PR_panel_top.ResumeLayout(false);
@@ -3898,11 +3913,6 @@
         private System.Windows.Forms.Panel PANEL_PR;
         private System.Windows.Forms.TextBox PANEL_PR_txtcount_rows;
         private System.Windows.Forms.Label PANEL_PR_iblcount_rows;
-        private System.Windows.Forms.PictureBox PANEL_PR_btnGo3;
-        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtdepartment_id;
-        private System.Windows.Forms.Button PANEL1316_DEPARTMENT_btndepartment;
-        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtdepartment_name;
-        private System.Windows.Forms.Label PANEL_PR_ibldepartment;
         private System.Windows.Forms.PictureBox PANEL_PR_btnGo2;
         private System.Windows.Forms.ComboBox PANEL_PR_cboSearch;
         private System.Windows.Forms.Label PANEL_PR_iblsearch;
@@ -3917,13 +3927,6 @@
         private System.Windows.Forms.PictureBox PANEL_PR_btnclose;
         private System.Windows.Forms.Button PANEL_PR_btnresize_low;
         private System.Windows.Forms.DataGridView PANEL_PR_GridView1;
-        private System.Windows.Forms.Panel PANEL1316_DEPARTMENT;
-        private System.Windows.Forms.Button PANEL1316_DEPARTMENT_btnresize_low;
-        private System.Windows.Forms.PictureBox PANEL1316_DEPARTMENT_btnnew;
-        private System.Windows.Forms.PictureBox PANEL1316_DEPARTMENT_btnclose;
-        private System.Windows.Forms.PictureBox PANEL1316_DEPARTMENT_btn_search;
-        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtsearch;
-        private System.Windows.Forms.DataGridView PANEL1316_DEPARTMENT_dataGridView1_department;
         private System.Windows.Forms.Panel PANEL161_SUP;
         private System.Windows.Forms.Button PANEL161_SUP_btnresize_low;
         private System.Windows.Forms.PictureBox PANEL161_SUP_btnnew;
@@ -4042,5 +4045,18 @@
         private System.Windows.Forms.PictureBox btnGo4;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button BtnGrid;
+        private System.Windows.Forms.TextBox txtmat_id;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Panel PANEL1316_DEPARTMENT;
+        private System.Windows.Forms.Button PANEL1316_DEPARTMENT_btnresize_low;
+        private System.Windows.Forms.PictureBox PANEL1316_DEPARTMENT_btnnew;
+        private System.Windows.Forms.PictureBox PANEL1316_DEPARTMENT_btnclose;
+        private System.Windows.Forms.PictureBox PANEL1316_DEPARTMENT_btn_search;
+        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtsearch;
+        private System.Windows.Forms.DataGridView PANEL1316_DEPARTMENT_dataGridView1_department;
+        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtdepartment_id;
+        private System.Windows.Forms.Button PANEL1316_DEPARTMENT_btndepartment;
+        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtdepartment_name;
+        private System.Windows.Forms.Label label37;
     }
 }

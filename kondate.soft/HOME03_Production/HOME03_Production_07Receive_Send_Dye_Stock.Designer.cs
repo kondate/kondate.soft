@@ -39,6 +39,8 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtmat_sac_id = new System.Windows.Forms.TextBox();
             this.GridView3 = new System.Windows.Forms.DataGridView();
             this.btnLot_all = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -79,8 +81,9 @@
             this.btnmaximize_full = new System.Windows.Forms.PictureBox();
             this.btnminimize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.txtmat_sac_id = new System.Windows.Forms.TextBox();
+            this.btnArr_Color = new System.Windows.Forms.Button();
+            this.btnArr_Mat_id = new System.Windows.Forms.Button();
+            this.GridView6_Color = new System.Windows.Forms.DataGridView();
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
@@ -96,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView6_Color)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_button_top
@@ -268,6 +272,9 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.GridView6_Color);
+            this.panel1_contens.Controls.Add(this.btnArr_Mat_id);
+            this.panel1_contens.Controls.Add(this.btnArr_Color);
             this.panel1_contens.Controls.Add(this.label35);
             this.panel1_contens.Controls.Add(this.txtmat_sac_id);
             this.panel1_contens.Controls.Add(this.GridView3);
@@ -311,6 +318,30 @@
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
             // 
+            // label35
+            // 
+            this.label35.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(433, 155);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(84, 23);
+            this.label35.TabIndex = 1327;
+            this.label35.Text = "หมวดสินค้า :";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label35.Visible = false;
+            // 
+            // txtmat_sac_id
+            // 
+            this.txtmat_sac_id.BackColor = System.Drawing.Color.White;
+            this.txtmat_sac_id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtmat_sac_id.ForeColor = System.Drawing.Color.Blue;
+            this.txtmat_sac_id.Location = new System.Drawing.Point(526, 155);
+            this.txtmat_sac_id.Name = "txtmat_sac_id";
+            this.txtmat_sac_id.Size = new System.Drawing.Size(56, 27);
+            this.txtmat_sac_id.TabIndex = 1326;
+            this.txtmat_sac_id.Text = "007";
+            this.txtmat_sac_id.Visible = false;
+            // 
             // GridView3
             // 
             this.GridView3.AllowUserToAddRows = false;
@@ -318,9 +349,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView3.BackgroundColor = System.Drawing.Color.White;
             this.GridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView3.Location = new System.Drawing.Point(1, 164);
+            this.GridView3.Location = new System.Drawing.Point(2, 200);
             this.GridView3.Name = "GridView3";
-            this.GridView3.Size = new System.Drawing.Size(1427, 391);
+            this.GridView3.Size = new System.Drawing.Size(1427, 357);
             this.GridView3.TabIndex = 768;
             this.GridView3.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView3_CellMouseClick_1);
             this.GridView3.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView3_CellMouseLeave);
@@ -339,7 +370,7 @@
             this.btnLot_all.ForeColor = System.Drawing.Color.Black;
             this.btnLot_all.Image = ((System.Drawing.Image)(resources.GetObject("btnLot_all.Image")));
             this.btnLot_all.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLot_all.Location = new System.Drawing.Point(228, 121);
+            this.btnLot_all.Location = new System.Drawing.Point(226, 155);
             this.btnLot_all.Name = "btnLot_all";
             this.btnLot_all.Size = new System.Drawing.Size(185, 39);
             this.btnLot_all.TabIndex = 1025;
@@ -368,9 +399,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView4.BackgroundColor = System.Drawing.Color.White;
             this.GridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView4.Location = new System.Drawing.Point(3, 166);
+            this.GridView4.Location = new System.Drawing.Point(3, 200);
             this.GridView4.Name = "GridView4";
-            this.GridView4.Size = new System.Drawing.Size(1427, 391);
+            this.GridView4.Size = new System.Drawing.Size(1427, 357);
             this.GridView4.TabIndex = 1023;
             this.GridView4.Visible = false;
             this.GridView4.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView4_CellMouseClick);
@@ -389,7 +420,7 @@
             this.btnbalance_lot.ForeColor = System.Drawing.Color.Black;
             this.btnbalance_lot.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_lot.Image")));
             this.btnbalance_lot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbalance_lot.Location = new System.Drawing.Point(1, 121);
+            this.btnbalance_lot.Location = new System.Drawing.Point(-1, 155);
             this.btnbalance_lot.Name = "btnbalance_lot";
             this.btnbalance_lot.Size = new System.Drawing.Size(119, 39);
             this.btnbalance_lot.TabIndex = 1022;
@@ -410,7 +441,7 @@
             this.btnbalance_mat.ForeColor = System.Drawing.Color.Black;
             this.btnbalance_mat.Image = ((System.Drawing.Image)(resources.GetObject("btnbalance_mat.Image")));
             this.btnbalance_mat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbalance_mat.Location = new System.Drawing.Point(126, 121);
+            this.btnbalance_mat.Location = new System.Drawing.Point(124, 155);
             this.btnbalance_mat.Name = "btnbalance_mat";
             this.btnbalance_mat.Size = new System.Drawing.Size(98, 39);
             this.btnbalance_mat.TabIndex = 1021;
@@ -543,11 +574,11 @@
             this.dtpend.CustomFormat = "dd-MM-yyyy";
             this.dtpend.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpend.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpend.Location = new System.Drawing.Point(843, 12);
+            this.dtpend.Location = new System.Drawing.Point(784, 9);
             this.dtpend.MaxDate = new System.DateTime(2066, 12, 31, 0, 0, 0, 0);
             this.dtpend.MinDate = new System.DateTime(1753, 2, 1, 0, 0, 0, 0);
             this.dtpend.Name = "dtpend";
-            this.dtpend.Size = new System.Drawing.Size(197, 21);
+            this.dtpend.Size = new System.Drawing.Size(151, 21);
             this.dtpend.TabIndex = 776;
             this.dtpend.ValueChanged += new System.EventHandler(this.dtpend_ValueChanged);
             // 
@@ -555,7 +586,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(786, 12);
+            this.label3.Location = new System.Drawing.Point(727, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 21);
             this.label3.TabIndex = 775;
@@ -568,11 +599,11 @@
             this.dtpstart.CustomFormat = "dd-MM-yyyy";
             this.dtpstart.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpstart.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpstart.Location = new System.Drawing.Point(585, 12);
+            this.dtpstart.Location = new System.Drawing.Point(564, 9);
             this.dtpstart.MaxDate = new System.DateTime(2066, 12, 31, 0, 0, 0, 0);
             this.dtpstart.MinDate = new System.DateTime(1753, 2, 1, 0, 0, 0, 0);
             this.dtpstart.Name = "dtpstart";
-            this.dtpstart.Size = new System.Drawing.Size(198, 21);
+            this.dtpstart.Size = new System.Drawing.Size(156, 21);
             this.dtpstart.TabIndex = 774;
             this.dtpstart.ValueChanged += new System.EventHandler(this.dtpstart_ValueChanged);
             // 
@@ -580,7 +611,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(426, 12);
+            this.label7.Location = new System.Drawing.Point(405, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 21);
             this.label7.TabIndex = 773;
@@ -591,16 +622,16 @@
             // 
             this.cboSearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Location = new System.Drawing.Point(585, 38);
+            this.cboSearch.Location = new System.Drawing.Point(564, 35);
             this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(198, 21);
+            this.cboSearch.Size = new System.Drawing.Size(156, 21);
             this.cboSearch.TabIndex = 772;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(538, 38);
+            this.label2.Location = new System.Drawing.Point(517, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 21);
             this.label2.TabIndex = 771;
@@ -611,7 +642,7 @@
             // 
             this.btnGo1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGo1.Image = ((System.Drawing.Image)(resources.GetObject("btnGo1.Image")));
-            this.btnGo1.Location = new System.Drawing.Point(1046, 39);
+            this.btnGo1.Location = new System.Drawing.Point(941, 34);
             this.btnGo1.Name = "btnGo1";
             this.btnGo1.Size = new System.Drawing.Size(30, 22);
             this.btnGo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -623,9 +654,9 @@
             // 
             this.txtsearch.BackColor = System.Drawing.Color.White;
             this.txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsearch.Location = new System.Drawing.Point(789, 38);
+            this.txtsearch.Location = new System.Drawing.Point(730, 35);
             this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(251, 21);
+            this.txtsearch.Size = new System.Drawing.Size(205, 21);
             this.txtsearch.TabIndex = 769;
             // 
             // GridView2
@@ -636,10 +667,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView2.BackgroundColor = System.Drawing.Color.White;
             this.GridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView2.Location = new System.Drawing.Point(332, 64);
+            this.GridView2.Location = new System.Drawing.Point(330, 109);
             this.GridView2.Name = "GridView2";
-            this.GridView2.Size = new System.Drawing.Size(1097, 51);
+            this.GridView2.Size = new System.Drawing.Size(1097, 43);
             this.GridView2.TabIndex = 754;
+            this.GridView2.Visible = false;
             this.GridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView2_CellMouseClick);
             this.GridView2.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView2_CellMouseLeave);
             this.GridView2.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridView2_CellMouseMove);
@@ -673,9 +705,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PANEL1306_WH_dataGridView1_wherehouse.BackgroundColor = System.Drawing.Color.White;
             this.PANEL1306_WH_dataGridView1_wherehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL1306_WH_dataGridView1_wherehouse.Location = new System.Drawing.Point(3, 64);
+            this.PANEL1306_WH_dataGridView1_wherehouse.Location = new System.Drawing.Point(2, 64);
             this.PANEL1306_WH_dataGridView1_wherehouse.Name = "PANEL1306_WH_dataGridView1_wherehouse";
-            this.PANEL1306_WH_dataGridView1_wherehouse.Size = new System.Drawing.Size(326, 51);
+            this.PANEL1306_WH_dataGridView1_wherehouse.Size = new System.Drawing.Size(326, 88);
             this.PANEL1306_WH_dataGridView1_wherehouse.TabIndex = 654;
             this.PANEL1306_WH_dataGridView1_wherehouse.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1306_WH_dataGridView1_wherehouse_CellMouseClick);
             this.PANEL1306_WH_dataGridView1_wherehouse.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL1306_WH_dataGridView1_wherehouse_PreviewKeyDown);
@@ -853,29 +885,58 @@
             this.btnclose.TabStop = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // label35
+            // btnArr_Color
             // 
-            this.label35.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(435, 121);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(84, 23);
-            this.label35.TabIndex = 1327;
-            this.label35.Text = "หมวดสินค้า :";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label35.Visible = false;
+            this.btnArr_Color.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnArr_Color.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArr_Color.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnArr_Color.FlatAppearance.BorderSize = 0;
+            this.btnArr_Color.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnArr_Color.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnArr_Color.ForeColor = System.Drawing.Color.Black;
+            this.btnArr_Color.Image = ((System.Drawing.Image)(resources.GetObject("btnArr_Color.Image")));
+            this.btnArr_Color.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArr_Color.Location = new System.Drawing.Point(334, 64);
+            this.btnArr_Color.Name = "btnArr_Color";
+            this.btnArr_Color.Size = new System.Drawing.Size(98, 39);
+            this.btnArr_Color.TabIndex = 1328;
+            this.btnArr_Color.Text = "ดูเรียงรหัสสี";
+            this.btnArr_Color.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnArr_Color.UseVisualStyleBackColor = false;
+            this.btnArr_Color.Click += new System.EventHandler(this.btnArr_Color_Click);
             // 
-            // txtmat_sac_id
+            // btnArr_Mat_id
             // 
-            this.txtmat_sac_id.BackColor = System.Drawing.Color.White;
-            this.txtmat_sac_id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_sac_id.ForeColor = System.Drawing.Color.Blue;
-            this.txtmat_sac_id.Location = new System.Drawing.Point(528, 121);
-            this.txtmat_sac_id.Name = "txtmat_sac_id";
-            this.txtmat_sac_id.Size = new System.Drawing.Size(56, 27);
-            this.txtmat_sac_id.TabIndex = 1326;
-            this.txtmat_sac_id.Text = "007";
-            this.txtmat_sac_id.Visible = false;
+            this.btnArr_Mat_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnArr_Mat_id.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArr_Mat_id.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnArr_Mat_id.FlatAppearance.BorderSize = 0;
+            this.btnArr_Mat_id.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnArr_Mat_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnArr_Mat_id.ForeColor = System.Drawing.Color.Black;
+            this.btnArr_Mat_id.Image = ((System.Drawing.Image)(resources.GetObject("btnArr_Mat_id.Image")));
+            this.btnArr_Mat_id.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArr_Mat_id.Location = new System.Drawing.Point(438, 64);
+            this.btnArr_Mat_id.Name = "btnArr_Mat_id";
+            this.btnArr_Mat_id.Size = new System.Drawing.Size(111, 39);
+            this.btnArr_Mat_id.TabIndex = 1329;
+            this.btnArr_Mat_id.Text = "ดูเรียงรหัสผ้าพับ";
+            this.btnArr_Mat_id.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnArr_Mat_id.UseVisualStyleBackColor = false;
+            this.btnArr_Mat_id.Click += new System.EventHandler(this.btnArr_Mat_id_Click);
+            // 
+            // GridView6_Color
+            // 
+            this.GridView6_Color.AllowUserToAddRows = false;
+            this.GridView6_Color.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridView6_Color.BackgroundColor = System.Drawing.Color.White;
+            this.GridView6_Color.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView6_Color.Location = new System.Drawing.Point(329, 109);
+            this.GridView6_Color.Name = "GridView6_Color";
+            this.GridView6_Color.Size = new System.Drawing.Size(1097, 43);
+            this.GridView6_Color.TabIndex = 1330;
             // 
             // HOME03_Production_07Receive_Send_Dye_Stock
             // 
@@ -909,6 +970,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView6_Color)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -966,5 +1028,8 @@
         private System.Windows.Forms.Button btnLot_all;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox txtmat_sac_id;
+        private System.Windows.Forms.Button btnArr_Mat_id;
+        private System.Windows.Forms.Button btnArr_Color;
+        private System.Windows.Forms.DataGridView GridView6_Color;
     }
 }

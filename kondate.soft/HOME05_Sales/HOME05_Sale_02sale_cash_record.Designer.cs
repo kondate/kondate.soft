@@ -36,6 +36,7 @@
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.panel_button_top = new System.Windows.Forms.Panel();
+            this.BtnGrid = new System.Windows.Forms.Button();
             this.BtnPrint_copy = new System.Windows.Forms.Button();
             this.btnPreview_copy = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
@@ -301,7 +302,6 @@
             this.iblword_status = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
-            this.BtnGrid = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -471,6 +471,25 @@
             this.panel_button_top.Name = "panel_button_top";
             this.panel_button_top.Size = new System.Drawing.Size(1360, 61);
             this.panel_button_top.TabIndex = 21;
+            // 
+            // BtnGrid
+            // 
+            this.BtnGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGrid.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnGrid.FlatAppearance.BorderSize = 0;
+            this.BtnGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnGrid.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnGrid.ForeColor = System.Drawing.Color.Black;
+            this.BtnGrid.Image = ((System.Drawing.Image)(resources.GetObject("BtnGrid.Image")));
+            this.BtnGrid.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnGrid.Location = new System.Drawing.Point(8, 3);
+            this.BtnGrid.Name = "BtnGrid";
+            this.BtnGrid.Size = new System.Drawing.Size(75, 55);
+            this.BtnGrid.TabIndex = 62;
+            this.BtnGrid.Text = "ระเบียน";
+            this.BtnGrid.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnGrid.UseVisualStyleBackColor = false;
             // 
             // BtnPrint_copy
             // 
@@ -1172,7 +1191,7 @@
             this.PANEL_02PAY_TYPE_4TRANSFER.Controls.Add(this.PANEL_02PAY_TYPE_4TRANSFER_BtnOK);
             this.PANEL_02PAY_TYPE_4TRANSFER.Controls.Add(this.PANEL_02PAY_TYPE_4TRANSFER_panel_top);
             this.PANEL_02PAY_TYPE_4TRANSFER.Controls.Add(this.pictureBox3);
-            this.PANEL_02PAY_TYPE_4TRANSFER.Location = new System.Drawing.Point(23, 130);
+            this.PANEL_02PAY_TYPE_4TRANSFER.Location = new System.Drawing.Point(18, 198);
             this.PANEL_02PAY_TYPE_4TRANSFER.Name = "PANEL_02PAY_TYPE_4TRANSFER";
             this.PANEL_02PAY_TYPE_4TRANSFER.Size = new System.Drawing.Size(412, 384);
             this.PANEL_02PAY_TYPE_4TRANSFER.TabIndex = 2049;
@@ -1369,7 +1388,7 @@
             this.PANEL_02PAY_TYPE.Controls.Add(this.label49);
             this.PANEL_02PAY_TYPE.Controls.Add(this.PANEL_02PAY_TYPE_panel_top);
             this.PANEL_02PAY_TYPE.Controls.Add(this.PANEL_02CUS_TYPE_btnclose);
-            this.PANEL_02PAY_TYPE.Location = new System.Drawing.Point(117, 73);
+            this.PANEL_02PAY_TYPE.Location = new System.Drawing.Point(474, 162);
             this.PANEL_02PAY_TYPE.Name = "PANEL_02PAY_TYPE";
             this.PANEL_02PAY_TYPE.Size = new System.Drawing.Size(555, 488);
             this.PANEL_02PAY_TYPE.TabIndex = 2046;
@@ -4039,25 +4058,6 @@
             this.iblstatus.Size = new System.Drawing.Size(1358, 30);
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // BtnGrid
-            // 
-            this.BtnGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGrid.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnGrid.FlatAppearance.BorderSize = 0;
-            this.BtnGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnGrid.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnGrid.ForeColor = System.Drawing.Color.Black;
-            this.BtnGrid.Image = ((System.Drawing.Image)(resources.GetObject("BtnGrid.Image")));
-            this.BtnGrid.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnGrid.Location = new System.Drawing.Point(8, 3);
-            this.BtnGrid.Name = "BtnGrid";
-            this.BtnGrid.Size = new System.Drawing.Size(75, 55);
-            this.BtnGrid.TabIndex = 62;
-            this.BtnGrid.Text = "ระเบียน";
-            this.BtnGrid.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnGrid.UseVisualStyleBackColor = false;
             // 
             // HOME05_Sale_02sale_cash_record
             // 

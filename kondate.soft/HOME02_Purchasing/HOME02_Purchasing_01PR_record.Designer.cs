@@ -47,6 +47,7 @@
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.button_low_right = new System.Windows.Forms.Button();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.btnUp = new System.Windows.Forms.Button();
             this.txtemp_office_name_approve = new System.Windows.Forms.TextBox();
             this.txtemp_office_name_manager = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -195,6 +196,7 @@
             this.btnbarcode_set = new System.Windows.Forms.Button();
             this.btnadd_mat = new System.Windows.Forms.Button();
             this.btnremove_row = new System.Windows.Forms.Button();
+            this.txtmat_id = new System.Windows.Forms.TextBox();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -547,6 +549,8 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.txtmat_id);
+            this.panel1_contens.Controls.Add(this.btnUp);
             this.panel1_contens.Controls.Add(this.txtemp_office_name_approve);
             this.panel1_contens.Controls.Add(this.txtemp_office_name_manager);
             this.panel1_contens.Controls.Add(this.label26);
@@ -606,6 +610,25 @@
             this.panel1_contens.Name = "panel1_contens";
             this.panel1_contens.Size = new System.Drawing.Size(1316, 685);
             this.panel1_contens.TabIndex = 649;
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnUp.FlatAppearance.BorderSize = 0;
+            this.btnUp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnUp.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnUp.ForeColor = System.Drawing.Color.Black;
+            this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
+            this.btnUp.Location = new System.Drawing.Point(168, 188);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(58, 45);
+            this.btnUp.TabIndex = 661;
+            this.btnUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Visible = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // txtemp_office_name_approve
             // 
@@ -2484,6 +2507,7 @@
             this.GridView1.CurrentCellChanged += new System.EventHandler(this.GridView1_SelectionChanged);
             this.GridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridView1_EditingControlShowing);
             this.GridView1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.GridView1_Scroll);
+            this.GridView1.DoubleClick += new System.EventHandler(this.GridView1_DoubleClick);
             this.GridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GridView1_KeyPress);
             this.GridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GridView1_KeyUp);
             // 
@@ -2491,7 +2515,7 @@
             // 
             this.txtmat_barcode_id.BackColor = System.Drawing.Color.White;
             this.txtmat_barcode_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_barcode_id.Location = new System.Drawing.Point(247, 211);
+            this.txtmat_barcode_id.Location = new System.Drawing.Point(311, 211);
             this.txtmat_barcode_id.Name = "txtmat_barcode_id";
             this.txtmat_barcode_id.Size = new System.Drawing.Size(181, 21);
             this.txtmat_barcode_id.TabIndex = 511;
@@ -2501,7 +2525,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(168, 211);
+            this.label6.Location = new System.Drawing.Point(232, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 21);
             this.label6.TabIndex = 510;
@@ -2511,7 +2535,7 @@
             // txtqty
             // 
             this.txtqty.BackColor = System.Drawing.Color.White;
-            this.txtqty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtqty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtqty.Location = new System.Drawing.Point(110, 211);
             this.txtqty.Name = "txtqty";
             this.txtqty.Size = new System.Drawing.Size(55, 21);
@@ -2551,9 +2575,9 @@
             this.btnbarcode_set.ForeColor = System.Drawing.Color.Black;
             this.btnbarcode_set.Image = ((System.Drawing.Image)(resources.GetObject("btnbarcode_set.Image")));
             this.btnbarcode_set.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnbarcode_set.Location = new System.Drawing.Point(434, 191);
+            this.btnbarcode_set.Location = new System.Drawing.Point(496, 188);
             this.btnbarcode_set.Name = "btnbarcode_set";
-            this.btnbarcode_set.Size = new System.Drawing.Size(58, 42);
+            this.btnbarcode_set.Size = new System.Drawing.Size(58, 45);
             this.btnbarcode_set.TabIndex = 654;
             this.btnbarcode_set.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnbarcode_set.UseVisualStyleBackColor = false;
@@ -2570,9 +2594,9 @@
             this.btnadd_mat.ForeColor = System.Drawing.Color.Black;
             this.btnadd_mat.Image = ((System.Drawing.Image)(resources.GetObject("btnadd_mat.Image")));
             this.btnadd_mat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnadd_mat.Location = new System.Drawing.Point(594, 191);
+            this.btnadd_mat.Location = new System.Drawing.Point(560, 188);
             this.btnadd_mat.Name = "btnadd_mat";
-            this.btnadd_mat.Size = new System.Drawing.Size(58, 42);
+            this.btnadd_mat.Size = new System.Drawing.Size(58, 45);
             this.btnadd_mat.TabIndex = 653;
             this.btnadd_mat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnadd_mat.UseVisualStyleBackColor = false;
@@ -2589,14 +2613,24 @@
             this.btnremove_row.ForeColor = System.Drawing.Color.Black;
             this.btnremove_row.Image = ((System.Drawing.Image)(resources.GetObject("btnremove_row.Image")));
             this.btnremove_row.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnremove_row.Location = new System.Drawing.Point(658, 191);
+            this.btnremove_row.Location = new System.Drawing.Point(624, 188);
             this.btnremove_row.Name = "btnremove_row";
-            this.btnremove_row.Size = new System.Drawing.Size(58, 42);
+            this.btnremove_row.Size = new System.Drawing.Size(58, 45);
             this.btnremove_row.TabIndex = 652;
             this.btnremove_row.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnremove_row.UseVisualStyleBackColor = false;
             this.btnremove_row.Visible = false;
             this.btnremove_row.Click += new System.EventHandler(this.btnremove_row_Click);
+            // 
+            // txtmat_id
+            // 
+            this.txtmat_id.BackColor = System.Drawing.Color.White;
+            this.txtmat_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtmat_id.Location = new System.Drawing.Point(311, 188);
+            this.txtmat_id.Name = "txtmat_id";
+            this.txtmat_id.Size = new System.Drawing.Size(181, 21);
+            this.txtmat_id.TabIndex = 662;
+            this.txtmat_id.Visible = false;
             // 
             // HOME02_Purchasing_01PR_record
             // 
@@ -2852,5 +2886,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button BtnGrid;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.TextBox txtmat_id;
     }
 }

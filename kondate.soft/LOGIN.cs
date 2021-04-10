@@ -326,14 +326,14 @@ namespace kondate.soft
             }
             else
             {
-                //this.txtuser_name.Text = "admin";
-                //this.txtuser_pass.Text = "1234";
-                //this.txtsleep.Text = "100";
-                //W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
-
-                this.txtuser_pass.Text = "";
-                this.txtsleep.Text = "10000";
+                this.txtuser_name.Text = "admin";
+                this.txtuser_pass.Text = "1234";
+                this.txtsleep.Text = "100";
                 W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
+
+                //this.txtuser_pass.Text = "";
+                //this.txtsleep.Text = "10000";
+                //W_ID_Select.SLEEP = Convert.ToInt16(string.Format("{0:n4}", this.txtsleep.Text.ToString()));
 
                 this.check_version.Checked = true;
 
@@ -482,9 +482,9 @@ namespace kondate.soft
                         if (this.check_version.Checked == true)
                         {
                             //////==================================================
-                            MessageBox.Show("โปรด Update Version ปัจจุบัน  :  " + dt.Rows[0]["txtversion_id"].ToString() + "  ก่อนใช้งาน !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            conn.Close();
-                            Application.Exit();
+                            //MessageBox.Show("โปรด Update Version ปัจจุบัน  :  " + dt.Rows[0]["txtversion_id"].ToString() + "  ก่อนใช้งาน !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            //conn.Close();
+                            //Application.Exit();
                             //////==================================================
 
                         }
@@ -1262,6 +1262,9 @@ namespace kondate.soft
         {
             if (this.PANEL1_CO.Visible == false)
             {
+                this.PANEL1_CO.Width = 502;
+                this.PANEL1_CO.Height = 337;
+
                 this.PANEL1_CO.Visible = true;
                 this.PANEL1_CO.Location  = new Point(120, this.iblPoint.Location.Y + 2);
             }
@@ -1611,6 +1614,9 @@ namespace kondate.soft
         {
             if (this.PANEL2_BRANCH.Visible == false)
             {
+                this.PANEL2_BRANCH.Width = 502;
+                this.PANEL2_BRANCH.Height = 337;
+
                 this.PANEL2_BRANCH.Visible = true;
                 this.PANEL2_BRANCH.Location = new Point(120, this.iblPoint.Location.Y + 2);
 

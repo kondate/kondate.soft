@@ -45,24 +45,6 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtmat_unit2_qty = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.txtmat_unit2_name = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.chmat_unit_status = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.txtmat_unit1_qty = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtmat_unit1_name = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.txtmat_name = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.txtmat_no = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.PANEL_MAT_txtmat_id = new System.Windows.Forms.TextBox();
-            this.PANEL_MAT_txtmat_name = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
             this.txtreceive_type_id = new System.Windows.Forms.TextBox();
             this.cbotxtreceive_type_name = new System.Windows.Forms.ComboBox();
             this.label51 = new System.Windows.Forms.Label();
@@ -71,18 +53,8 @@
             this.txtword_cancel1 = new System.Windows.Forms.Label();
             this.txtemp_office_name = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.txtsum_qty_receive_yokpai = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.txtsum_qty_receive_yokma = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
             this.txtapprove_id = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.txtsum2_qty = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txtsum_qty_yokpai = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtsum_qty_yokma = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.PANEL1306_WH_txtwherehouse_id = new System.Windows.Forms.TextBox();
             this.PANEL1306_WH_btnwherehouse = new System.Windows.Forms.Button();
             this.PANEL1306_WH_txtwherehouse_name = new System.Windows.Forms.TextBox();
@@ -132,8 +104,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtsum_price = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtsum_qty = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.GridView1 = new System.Windows.Forms.DataGridView();
             this.txtrg_remark = new System.Windows.Forms.TextBox();
             this.PANEL1316_DEPARTMENT_txtdepartment_id = new System.Windows.Forms.TextBox();
@@ -166,6 +136,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
+            this.txtsum_qty_balance_yokpai = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtsum_qty = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtsum_qty_balance_yokma = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -174,7 +150,6 @@
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -433,10 +408,12 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1_contens.Controls.Add(this.panel3);
-            this.panel1_contens.Controls.Add(this.PANEL_MAT_txtmat_id);
-            this.panel1_contens.Controls.Add(this.PANEL_MAT_txtmat_name);
-            this.panel1_contens.Controls.Add(this.label39);
+            this.panel1_contens.Controls.Add(this.txtsum_qty_balance_yokpai);
+            this.panel1_contens.Controls.Add(this.label42);
+            this.panel1_contens.Controls.Add(this.txtsum_qty);
+            this.panel1_contens.Controls.Add(this.label41);
+            this.panel1_contens.Controls.Add(this.txtsum_qty_balance_yokma);
+            this.panel1_contens.Controls.Add(this.label40);
             this.panel1_contens.Controls.Add(this.txtreceive_type_id);
             this.panel1_contens.Controls.Add(this.cbotxtreceive_type_name);
             this.panel1_contens.Controls.Add(this.label51);
@@ -445,18 +422,8 @@
             this.panel1_contens.Controls.Add(this.txtword_cancel1);
             this.panel1_contens.Controls.Add(this.txtemp_office_name);
             this.panel1_contens.Controls.Add(this.label38);
-            this.panel1_contens.Controls.Add(this.txtsum_qty_receive_yokpai);
-            this.panel1_contens.Controls.Add(this.label36);
-            this.panel1_contens.Controls.Add(this.txtsum_qty_receive_yokma);
-            this.panel1_contens.Controls.Add(this.label37);
             this.panel1_contens.Controls.Add(this.txtapprove_id);
             this.panel1_contens.Controls.Add(this.label35);
-            this.panel1_contens.Controls.Add(this.txtsum2_qty);
-            this.panel1_contens.Controls.Add(this.label34);
-            this.panel1_contens.Controls.Add(this.txtsum_qty_yokpai);
-            this.panel1_contens.Controls.Add(this.label33);
-            this.panel1_contens.Controls.Add(this.txtsum_qty_yokma);
-            this.panel1_contens.Controls.Add(this.label32);
             this.panel1_contens.Controls.Add(this.PANEL1306_WH_txtwherehouse_id);
             this.panel1_contens.Controls.Add(this.PANEL1306_WH_btnwherehouse);
             this.panel1_contens.Controls.Add(this.PANEL1306_WH_txtwherehouse_name);
@@ -506,8 +473,6 @@
             this.panel1_contens.Controls.Add(this.label15);
             this.panel1_contens.Controls.Add(this.txtsum_price);
             this.panel1_contens.Controls.Add(this.label14);
-            this.panel1_contens.Controls.Add(this.txtsum_qty);
-            this.panel1_contens.Controls.Add(this.label13);
             this.panel1_contens.Controls.Add(this.GridView1);
             this.panel1_contens.Controls.Add(this.txtrg_remark);
             this.panel1_contens.Controls.Add(this.PANEL1316_DEPARTMENT_txtdepartment_id);
@@ -546,201 +511,6 @@
             this.panel1_contens.Size = new System.Drawing.Size(1577, 620);
             this.panel1_contens.TabIndex = 13;
             this.panel1_contens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_contens_MouseDown);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.txtmat_unit2_qty);
-            this.panel3.Controls.Add(this.label48);
-            this.panel3.Controls.Add(this.txtmat_unit2_name);
-            this.panel3.Controls.Add(this.label49);
-            this.panel3.Controls.Add(this.chmat_unit_status);
-            this.panel3.Controls.Add(this.label50);
-            this.panel3.Controls.Add(this.txtmat_unit1_qty);
-            this.panel3.Controls.Add(this.label45);
-            this.panel3.Controls.Add(this.txtmat_unit1_name);
-            this.panel3.Controls.Add(this.label46);
-            this.panel3.Controls.Add(this.txtmat_name);
-            this.panel3.Controls.Add(this.label44);
-            this.panel3.Controls.Add(this.txtmat_no);
-            this.panel3.Controls.Add(this.label43);
-            this.panel3.Location = new System.Drawing.Point(513, 225);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(327, 173);
-            this.panel3.TabIndex = 1040;
-            this.panel3.Visible = false;
-            // 
-            // txtmat_unit2_qty
-            // 
-            this.txtmat_unit2_qty.BackColor = System.Drawing.Color.White;
-            this.txtmat_unit2_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_unit2_qty.Location = new System.Drawing.Point(241, 136);
-            this.txtmat_unit2_qty.Name = "txtmat_unit2_qty";
-            this.txtmat_unit2_qty.Size = new System.Drawing.Size(45, 21);
-            this.txtmat_unit2_qty.TabIndex = 1012;
-            this.txtmat_unit2_qty.Text = "0";
-            // 
-            // label48
-            // 
-            this.label48.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label48.ForeColor = System.Drawing.Color.Black;
-            this.label48.Location = new System.Drawing.Point(12, 135);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(223, 21);
-            this.label48.TabIndex = 1011;
-            this.label48.Text = "txtmat_unit2_qty :";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtmat_unit2_name
-            // 
-            this.txtmat_unit2_name.BackColor = System.Drawing.Color.White;
-            this.txtmat_unit2_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_unit2_name.Location = new System.Drawing.Point(241, 115);
-            this.txtmat_unit2_name.Name = "txtmat_unit2_name";
-            this.txtmat_unit2_name.Size = new System.Drawing.Size(45, 21);
-            this.txtmat_unit2_name.TabIndex = 1010;
-            // 
-            // label49
-            // 
-            this.label49.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label49.ForeColor = System.Drawing.Color.Black;
-            this.label49.Location = new System.Drawing.Point(12, 114);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(223, 21);
-            this.label49.TabIndex = 1009;
-            this.label49.Text = "txtmat_unit2_name :";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // chmat_unit_status
-            // 
-            this.chmat_unit_status.BackColor = System.Drawing.Color.White;
-            this.chmat_unit_status.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chmat_unit_status.Location = new System.Drawing.Point(241, 94);
-            this.chmat_unit_status.Name = "chmat_unit_status";
-            this.chmat_unit_status.Size = new System.Drawing.Size(45, 21);
-            this.chmat_unit_status.TabIndex = 1008;
-            // 
-            // label50
-            // 
-            this.label50.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label50.ForeColor = System.Drawing.Color.Black;
-            this.label50.Location = new System.Drawing.Point(12, 93);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(223, 21);
-            this.label50.TabIndex = 1007;
-            this.label50.Text = "chmat_unit_status :";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtmat_unit1_qty
-            // 
-            this.txtmat_unit1_qty.BackColor = System.Drawing.Color.White;
-            this.txtmat_unit1_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_unit1_qty.Location = new System.Drawing.Point(241, 73);
-            this.txtmat_unit1_qty.Name = "txtmat_unit1_qty";
-            this.txtmat_unit1_qty.Size = new System.Drawing.Size(45, 21);
-            this.txtmat_unit1_qty.TabIndex = 1006;
-            this.txtmat_unit1_qty.Text = "0";
-            // 
-            // label45
-            // 
-            this.label45.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label45.ForeColor = System.Drawing.Color.Black;
-            this.label45.Location = new System.Drawing.Point(12, 72);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(223, 21);
-            this.label45.TabIndex = 1005;
-            this.label45.Text = "txtmat_unit1_qty :";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtmat_unit1_name
-            // 
-            this.txtmat_unit1_name.BackColor = System.Drawing.Color.White;
-            this.txtmat_unit1_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_unit1_name.Location = new System.Drawing.Point(241, 52);
-            this.txtmat_unit1_name.Name = "txtmat_unit1_name";
-            this.txtmat_unit1_name.Size = new System.Drawing.Size(45, 21);
-            this.txtmat_unit1_name.TabIndex = 1004;
-            // 
-            // label46
-            // 
-            this.label46.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label46.ForeColor = System.Drawing.Color.Black;
-            this.label46.Location = new System.Drawing.Point(12, 51);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(223, 21);
-            this.label46.TabIndex = 1003;
-            this.label46.Text = "txtmat_unit1_name :";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtmat_name
-            // 
-            this.txtmat_name.BackColor = System.Drawing.Color.White;
-            this.txtmat_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_name.Location = new System.Drawing.Point(241, 31);
-            this.txtmat_name.Name = "txtmat_name";
-            this.txtmat_name.Size = new System.Drawing.Size(45, 21);
-            this.txtmat_name.TabIndex = 1002;
-            // 
-            // label44
-            // 
-            this.label44.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label44.ForeColor = System.Drawing.Color.Black;
-            this.label44.Location = new System.Drawing.Point(12, 30);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(223, 21);
-            this.label44.TabIndex = 1001;
-            this.label44.Text = "txtmat_name :";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtmat_no
-            // 
-            this.txtmat_no.BackColor = System.Drawing.Color.White;
-            this.txtmat_no.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtmat_no.Location = new System.Drawing.Point(241, 10);
-            this.txtmat_no.Name = "txtmat_no";
-            this.txtmat_no.Size = new System.Drawing.Size(45, 21);
-            this.txtmat_no.TabIndex = 1000;
-            // 
-            // label43
-            // 
-            this.label43.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(12, 9);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(223, 21);
-            this.label43.TabIndex = 999;
-            this.label43.Text = "txtmat_no :";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PANEL_MAT_txtmat_id
-            // 
-            this.PANEL_MAT_txtmat_id.BackColor = System.Drawing.Color.White;
-            this.PANEL_MAT_txtmat_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL_MAT_txtmat_id.Location = new System.Drawing.Point(841, 196);
-            this.PANEL_MAT_txtmat_id.Name = "PANEL_MAT_txtmat_id";
-            this.PANEL_MAT_txtmat_id.ReadOnly = true;
-            this.PANEL_MAT_txtmat_id.Size = new System.Drawing.Size(156, 21);
-            this.PANEL_MAT_txtmat_id.TabIndex = 1039;
-            // 
-            // PANEL_MAT_txtmat_name
-            // 
-            this.PANEL_MAT_txtmat_name.BackColor = System.Drawing.Color.White;
-            this.PANEL_MAT_txtmat_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL_MAT_txtmat_name.Location = new System.Drawing.Point(589, 196);
-            this.PANEL_MAT_txtmat_name.Name = "PANEL_MAT_txtmat_name";
-            this.PANEL_MAT_txtmat_name.ReadOnly = true;
-            this.PANEL_MAT_txtmat_name.Size = new System.Drawing.Size(249, 21);
-            this.PANEL_MAT_txtmat_name.TabIndex = 1038;
-            // 
-            // label39
-            // 
-            this.label39.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label39.ForeColor = System.Drawing.Color.Black;
-            this.label39.Location = new System.Drawing.Point(483, 195);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(99, 21);
-            this.label39.TabIndex = 1037;
-            this.label39.Text = "รหัสวัตถุดิบ(ด้าย) :";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtreceive_type_id
             // 
@@ -788,7 +558,7 @@
             this.txtword_cancel2.Location = new System.Drawing.Point(589, 4);
             this.txtword_cancel2.Multiline = true;
             this.txtword_cancel2.Name = "txtword_cancel2";
-            this.txtword_cancel2.Size = new System.Drawing.Size(702, 43);
+            this.txtword_cancel2.Size = new System.Drawing.Size(249, 43);
             this.txtword_cancel2.TabIndex = 1029;
             this.txtword_cancel2.Visible = false;
             // 
@@ -825,58 +595,6 @@
             this.label38.Text = "ผู้บันทึก :";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtsum_qty_receive_yokpai
-            // 
-            this.txtsum_qty_receive_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtsum_qty_receive_yokpai.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_receive_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_receive_yokpai.Location = new System.Drawing.Point(270, 419);
-            this.txtsum_qty_receive_yokpai.Name = "txtsum_qty_receive_yokpai";
-            this.txtsum_qty_receive_yokpai.Size = new System.Drawing.Size(84, 21);
-            this.txtsum_qty_receive_yokpai.TabIndex = 1025;
-            this.txtsum_qty_receive_yokpai.Text = ".00";
-            this.txtsum_qty_receive_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtsum_qty_receive_yokpai.Visible = false;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label36.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label36.ForeColor = System.Drawing.Color.Black;
-            this.label36.Location = new System.Drawing.Point(113, 419);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(152, 21);
-            this.label36.TabIndex = 1026;
-            this.label36.Text = "txtsum_qty_receive_yokpai :";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label36.Visible = false;
-            // 
-            // txtsum_qty_receive_yokma
-            // 
-            this.txtsum_qty_receive_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtsum_qty_receive_yokma.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_receive_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_receive_yokma.Location = new System.Drawing.Point(270, 377);
-            this.txtsum_qty_receive_yokma.Name = "txtsum_qty_receive_yokma";
-            this.txtsum_qty_receive_yokma.Size = new System.Drawing.Size(84, 21);
-            this.txtsum_qty_receive_yokma.TabIndex = 1023;
-            this.txtsum_qty_receive_yokma.Text = ".00";
-            this.txtsum_qty_receive_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtsum_qty_receive_yokma.Visible = false;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label37.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label37.ForeColor = System.Drawing.Color.Black;
-            this.label37.Location = new System.Drawing.Point(113, 377);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(152, 21);
-            this.label37.TabIndex = 1024;
-            this.label37.Text = "txtsum_qty_receive_yokma :";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label37.Visible = false;
-            // 
             // txtapprove_id
             // 
             this.txtapprove_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -897,82 +615,6 @@
             this.label35.TabIndex = 1022;
             this.label35.Text = "เลขที่ อนุมัติ :";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtsum2_qty
-            // 
-            this.txtsum2_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtsum2_qty.BackColor = System.Drawing.Color.White;
-            this.txtsum2_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum2_qty.Location = new System.Drawing.Point(490, 465);
-            this.txtsum2_qty.Name = "txtsum2_qty";
-            this.txtsum2_qty.Size = new System.Drawing.Size(84, 21);
-            this.txtsum2_qty.TabIndex = 1019;
-            this.txtsum2_qty.Text = ".00";
-            this.txtsum2_qty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label34
-            // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label34.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(356, 465);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(132, 21);
-            this.label34.TabIndex = 1020;
-            this.label34.Text = "รวมจำนวน(แปลงหน่วย) :";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtsum_qty_yokpai
-            // 
-            this.txtsum_qty_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtsum_qty_yokpai.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_yokpai.Location = new System.Drawing.Point(270, 485);
-            this.txtsum_qty_yokpai.Name = "txtsum_qty_yokpai";
-            this.txtsum_qty_yokpai.Size = new System.Drawing.Size(84, 21);
-            this.txtsum_qty_yokpai.TabIndex = 1017;
-            this.txtsum_qty_yokpai.Text = ".00";
-            this.txtsum_qty_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtsum_qty_yokpai.Visible = false;
-            // 
-            // label33
-            // 
-            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label33.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(179, 485);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(86, 21);
-            this.label33.TabIndex = 1018;
-            this.label33.Text = "รวมจำนวนยกไป :";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label33.Visible = false;
-            // 
-            // txtsum_qty_yokma
-            // 
-            this.txtsum_qty_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtsum_qty_yokma.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty_yokma.Location = new System.Drawing.Point(270, 443);
-            this.txtsum_qty_yokma.Name = "txtsum_qty_yokma";
-            this.txtsum_qty_yokma.Size = new System.Drawing.Size(84, 21);
-            this.txtsum_qty_yokma.TabIndex = 1015;
-            this.txtsum_qty_yokma.Text = ".00";
-            this.txtsum_qty_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtsum_qty_yokma.Visible = false;
-            // 
-            // label32
-            // 
-            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label32.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(179, 443);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(86, 21);
-            this.label32.TabIndex = 1016;
-            this.label32.Text = "รวมจำนวนยกมา :";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label32.Visible = false;
             // 
             // PANEL1306_WH_txtwherehouse_id
             // 
@@ -1470,7 +1112,7 @@
             this.txtemp_office_name_approve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtemp_office_name_approve.BackColor = System.Drawing.Color.White;
             this.txtemp_office_name_approve.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtemp_office_name_approve.Location = new System.Drawing.Point(108, 520);
+            this.txtemp_office_name_approve.Location = new System.Drawing.Point(108, 512);
             this.txtemp_office_name_approve.Name = "txtemp_office_name_approve";
             this.txtemp_office_name_approve.Size = new System.Drawing.Size(245, 21);
             this.txtemp_office_name_approve.TabIndex = 971;
@@ -1480,7 +1122,7 @@
             this.txtemp_office_name_manager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtemp_office_name_manager.BackColor = System.Drawing.Color.White;
             this.txtemp_office_name_manager.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtemp_office_name_manager.Location = new System.Drawing.Point(109, 492);
+            this.txtemp_office_name_manager.Location = new System.Drawing.Point(109, 484);
             this.txtemp_office_name_manager.Name = "txtemp_office_name_manager";
             this.txtemp_office_name_manager.Size = new System.Drawing.Size(245, 21);
             this.txtemp_office_name_manager.TabIndex = 970;
@@ -1490,7 +1132,7 @@
             this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label26.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(27, 520);
+            this.label26.Location = new System.Drawing.Point(27, 512);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(75, 19);
             this.label26.TabIndex = 969;
@@ -1502,7 +1144,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(28, 492);
+            this.label9.Location = new System.Drawing.Point(28, 484);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 19);
             this.label9.TabIndex = 968;
@@ -1514,7 +1156,7 @@
             this.txtcount_rows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtcount_rows.BackColor = System.Drawing.Color.White;
             this.txtcount_rows.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtcount_rows.Location = new System.Drawing.Point(109, 466);
+            this.txtcount_rows.Location = new System.Drawing.Point(109, 457);
             this.txtcount_rows.Name = "txtcount_rows";
             this.txtcount_rows.Size = new System.Drawing.Size(84, 21);
             this.txtcount_rows.TabIndex = 967;
@@ -1526,7 +1168,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(36, 464);
+            this.label15.Location = new System.Drawing.Point(36, 455);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 21);
             this.label15.TabIndex = 966;
@@ -1538,7 +1180,7 @@
             this.txtsum_price.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtsum_price.BackColor = System.Drawing.Color.White;
             this.txtsum_price.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_price.Location = new System.Drawing.Point(636, 465);
+            this.txtsum_price.Location = new System.Drawing.Point(822, 456);
             this.txtsum_price.Name = "txtsum_price";
             this.txtsum_price.Size = new System.Drawing.Size(84, 21);
             this.txtsum_price.TabIndex = 964;
@@ -1550,36 +1192,12 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(567, 466);
+            this.label14.Location = new System.Drawing.Point(753, 457);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(67, 19);
             this.label14.TabIndex = 965;
             this.label14.Text = "รวมราคา :";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtsum_qty
-            // 
-            this.txtsum_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtsum_qty.BackColor = System.Drawing.Color.White;
-            this.txtsum_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtsum_qty.Location = new System.Drawing.Point(270, 464);
-            this.txtsum_qty.Name = "txtsum_qty";
-            this.txtsum_qty.Size = new System.Drawing.Size(84, 21);
-            this.txtsum_qty.TabIndex = 962;
-            this.txtsum_qty.Text = ".00";
-            this.txtsum_qty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(198, 464);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 21);
-            this.label13.TabIndex = 963;
-            this.label13.Text = "รวมจำนวน :";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GridView1
             // 
@@ -1952,6 +1570,78 @@
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // txtsum_qty_balance_yokpai
+            // 
+            this.txtsum_qty_balance_yokpai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtsum_qty_balance_yokpai.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_balance_yokpai.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_balance_yokpai.Location = new System.Drawing.Point(599, 456);
+            this.txtsum_qty_balance_yokpai.Name = "txtsum_qty_balance_yokpai";
+            this.txtsum_qty_balance_yokpai.Size = new System.Drawing.Size(84, 21);
+            this.txtsum_qty_balance_yokpai.TabIndex = 1049;
+            this.txtsum_qty_balance_yokpai.Text = ".00";
+            this.txtsum_qty_balance_yokpai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label42.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label42.ForeColor = System.Drawing.Color.Black;
+            this.label42.Location = new System.Drawing.Point(530, 457);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(67, 19);
+            this.label42.TabIndex = 1050;
+            this.label42.Text = "เหลืออีก :";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtsum_qty
+            // 
+            this.txtsum_qty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtsum_qty.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty.Location = new System.Drawing.Point(432, 456);
+            this.txtsum_qty.Name = "txtsum_qty";
+            this.txtsum_qty.Size = new System.Drawing.Size(84, 21);
+            this.txtsum_qty.TabIndex = 1047;
+            this.txtsum_qty.Text = ".00";
+            this.txtsum_qty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label41
+            // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label41.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label41.ForeColor = System.Drawing.Color.Black;
+            this.label41.Location = new System.Drawing.Point(363, 457);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(67, 19);
+            this.label41.TabIndex = 1048;
+            this.label41.Text = "รวมรับ :";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtsum_qty_balance_yokma
+            // 
+            this.txtsum_qty_balance_yokma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtsum_qty_balance_yokma.BackColor = System.Drawing.Color.White;
+            this.txtsum_qty_balance_yokma.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtsum_qty_balance_yokma.Location = new System.Drawing.Point(268, 457);
+            this.txtsum_qty_balance_yokma.Name = "txtsum_qty_balance_yokma";
+            this.txtsum_qty_balance_yokma.Size = new System.Drawing.Size(84, 21);
+            this.txtsum_qty_balance_yokma.TabIndex = 1045;
+            this.txtsum_qty_balance_yokma.Text = ".00";
+            this.txtsum_qty_balance_yokma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label40
+            // 
+            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label40.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label40.ForeColor = System.Drawing.Color.Black;
+            this.label40.Location = new System.Drawing.Point(199, 458);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(67, 19);
+            this.label40.TabIndex = 1046;
+            this.label40.Text = "จำนวนค้าง :";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // HOME02_Purchasing_05RG_record_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1977,8 +1667,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -2004,18 +1692,8 @@
         private System.Windows.Forms.Panel panel1_contens;
         private System.Windows.Forms.Button button_low_right;
         private System.Windows.Forms.Label iblstatus;
-        private System.Windows.Forms.TextBox txtsum_qty_receive_yokpai;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox txtsum_qty_receive_yokma;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtapprove_id;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox txtsum2_qty;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox txtsum_qty_yokpai;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox txtsum_qty_yokma;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox PANEL1306_WH_txtwherehouse_id;
         private System.Windows.Forms.Button PANEL1306_WH_btnwherehouse;
         private System.Windows.Forms.TextBox PANEL1306_WH_txtwherehouse_name;
@@ -2065,8 +1743,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtsum_price;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtsum_qty;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView GridView1;
         private System.Windows.Forms.TextBox txtrg_remark;
         private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtdepartment_id;
@@ -2105,23 +1781,11 @@
         private System.Windows.Forms.TextBox txtreceive_type_id;
         private System.Windows.Forms.ComboBox cbotxtreceive_type_name;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox PANEL_MAT_txtmat_id;
-        private System.Windows.Forms.TextBox PANEL_MAT_txtmat_name;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtmat_unit2_qty;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox txtmat_unit2_name;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox chmat_unit_status;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox txtmat_unit1_qty;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox txtmat_unit1_name;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.TextBox txtmat_name;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox txtmat_no;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtsum_qty_balance_yokpai;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtsum_qty;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox txtsum_qty_balance_yokma;
+        private System.Windows.Forms.Label label40;
     }
 }

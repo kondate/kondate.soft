@@ -94,7 +94,10 @@ namespace kondate.soft
 
         private void btnPurchasing_10change_price_Click(object sender, EventArgs e)
         {
-
+            
+            W_ID_Select.WORD_TOP = this.btnPurchasing_10change_price.Text.Trim();
+            kondate.soft.HOME02_Purchasing.HOME02_Purchasing_06Change_Price_record frm2 = new kondate.soft.HOME02_Purchasing.HOME02_Purchasing_06Change_Price_record();
+            frm2.Show();
         }
 
         private void btnPurchasing_11promotion_Click(object sender, EventArgs e)
@@ -119,11 +122,16 @@ namespace kondate.soft
 
         private void HOME03_Production_07_Click(object sender, EventArgs e)
         {
-            
              W_ID_Select.WORD_TOP = this.HOME03_Production_07.Text.Trim();
             kondate.soft.HOME04_Warehouse.HOME04_Warehouse_01Mat_Average frm2 = new kondate.soft.HOME04_Warehouse.HOME04_Warehouse_01Mat_Average();
             frm2.Show();
+        }
 
+        private void btnPurchasing_11price_sale_Click(object sender, EventArgs e)
+        {
+               W_ID_Select.WORD_TOP = this.btnPurchasing_11price_sale.Text.Trim();
+            kondate.soft.HOME02_Purchasing.HOME02_Purchasing_06Price_sale frm2 = new kondate.soft.HOME02_Purchasing.HOME02_Purchasing_06Price_sale();
+            frm2.Show();
         }
     }
 }

@@ -937,8 +937,8 @@ namespace kondate.soft.HOME03_Production
                 //===========================================
             }
             //================================
-            GridView2_Color();
             GridView2_Color_Column();
+            GridView2_Color();
             GridView2_UP_Status();
         }
         private void Show_GridView2()
@@ -1143,33 +1143,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Rows.Clear();
             this.GridView2.Refresh();
         }
-        private void GridView2_Color()
-        {
-            for (int i = 0; i < this.GridView2.Rows.Count - 0; i++)
-            {
-                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) < Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
-                {
-                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
 
-                }
-               else if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) == Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
-                {
-                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-
-                }
-                else
-                {
-                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
-                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-
-                }
-            }
-        }
         private void GridView2_Color_Column()
         {
 
@@ -1182,6 +1156,54 @@ namespace kondate.soft.HOME03_Production
                 GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.LightSkyBlue;//Color.FromArgb(0, 195, 0);
                 GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.FromArgb(0, 0, 0);
 
+            }
+        }
+        private void GridView2_Color()
+        {
+            for (int i = 0; i < this.GridView2.Rows.Count - 0; i++)
+            {
+                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) < Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
+                {
+                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.ForeColor = Color.White;
+
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.White;
+
+
+                }
+                else if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) == Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
+                {
+                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.ForeColor = Color.White;
+
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.White;
+
+
+                }
+                else
+                {
+                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.LightGoldenrodYellow;
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.ForeColor = Color.Black;
+
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.LightGoldenrodYellow;
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.Black;
+
+
+                }
             }
         }
         private void GridView2_UP_Status()

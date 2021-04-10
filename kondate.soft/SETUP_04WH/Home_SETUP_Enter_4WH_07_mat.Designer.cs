@@ -46,6 +46,12 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.PANEL101_MAT_TYPE2 = new System.Windows.Forms.Panel();
+            this.PANEL101_MAT_TYPE2_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL101_MAT_TYPE2_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL101_MAT_TYPE2_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL101_MAT_TYPE2_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type = new System.Windows.Forms.DataGridView();
             this.PANEL102_MAT_SAC2 = new System.Windows.Forms.Panel();
             this.PANEL102_MAT_SAC2_btnresize_low = new System.Windows.Forms.Button();
             this.PANEL102_MAT_SAC2_btnclose = new System.Windows.Forms.PictureBox();
@@ -133,12 +139,6 @@
             this.btnGo4 = new System.Windows.Forms.PictureBox();
             this.btnGo3 = new System.Windows.Forms.PictureBox();
             this.btnGo2 = new System.Windows.Forms.PictureBox();
-            this.PANEL101_MAT_TYPE2 = new System.Windows.Forms.Panel();
-            this.PANEL101_MAT_TYPE2_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL101_MAT_TYPE2_btnclose = new System.Windows.Forms.PictureBox();
-            this.PANEL101_MAT_TYPE2_btn_search = new System.Windows.Forms.PictureBox();
-            this.PANEL101_MAT_TYPE2_txtsearch = new System.Windows.Forms.TextBox();
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type = new System.Windows.Forms.DataGridView();
             this.PANEL104_MAT_BRAND2_txtmat_brand_id = new System.Windows.Forms.TextBox();
             this.PANEL104_MAT_BRAND2_btnmat_brand = new System.Windows.Forms.Button();
             this.PANEL104_MAT_BRAND2_txtmat_brand_name = new System.Windows.Forms.TextBox();
@@ -357,6 +357,10 @@
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
+            this.PANEL101_MAT_TYPE2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btnclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btn_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type)).BeginInit();
             this.PANEL102_MAT_SAC2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btn_search)).BeginInit();
@@ -414,10 +418,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGo4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo2)).BeginInit();
-            this.PANEL101_MAT_TYPE2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btnclose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btn_search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_FORM1_btnrefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_FORM1_btnsearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
@@ -701,10 +701,10 @@
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1_contens.Controls.Add(this.PANEL101_MAT_TYPE2);
             this.panel1_contens.Controls.Add(this.PANEL102_MAT_SAC2);
-            this.panel1_contens.Controls.Add(this.PANEL103_MAT_GROUP2);
-            this.panel1_contens.Controls.Add(this.PANEL104_MAT_BRAND);
-            this.panel1_contens.Controls.Add(this.PANEL103_MAT_GROUP);
             this.panel1_contens.Controls.Add(this.PANEL102_MAT_SAC);
+            this.panel1_contens.Controls.Add(this.PANEL103_MAT_GROUP);
+            this.panel1_contens.Controls.Add(this.PANEL104_MAT_BRAND);
+            this.panel1_contens.Controls.Add(this.PANEL103_MAT_GROUP2);
             this.panel1_contens.Controls.Add(this.PANEL101_MAT_TYPE);
             this.panel1_contens.Controls.Add(this.PANEL161_SUP);
             this.panel1_contens.Controls.Add(this.PANEL105_MAT_UNIT2);
@@ -737,6 +737,96 @@
             this.panel1_contens.Name = "panel1_contens";
             this.panel1_contens.Size = new System.Drawing.Size(1308, 816);
             this.panel1_contens.TabIndex = 12;
+            // 
+            // PANEL101_MAT_TYPE2
+            // 
+            this.PANEL101_MAT_TYPE2.AutoScroll = true;
+            this.PANEL101_MAT_TYPE2.AutoSize = true;
+            this.PANEL101_MAT_TYPE2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PANEL101_MAT_TYPE2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_btnresize_low);
+            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_btnclose);
+            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_btn_search);
+            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_txtsearch);
+            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type);
+            this.PANEL101_MAT_TYPE2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL101_MAT_TYPE2.Location = new System.Drawing.Point(698, 7);
+            this.PANEL101_MAT_TYPE2.Name = "PANEL101_MAT_TYPE2";
+            this.PANEL101_MAT_TYPE2.Size = new System.Drawing.Size(199, 100);
+            this.PANEL101_MAT_TYPE2.TabIndex = 611;
+            this.PANEL101_MAT_TYPE2.Visible = false;
+            // 
+            // PANEL101_MAT_TYPE2_btnresize_low
+            // 
+            this.PANEL101_MAT_TYPE2_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL101_MAT_TYPE2_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL101_MAT_TYPE2_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.BorderSize = 0;
+            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL101_MAT_TYPE2_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL101_MAT_TYPE2_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL101_MAT_TYPE2_btnresize_low.ForeColor = System.Drawing.Color.Black;
+            this.PANEL101_MAT_TYPE2_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL101_MAT_TYPE2_btnresize_low.Image")));
+            this.PANEL101_MAT_TYPE2_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PANEL101_MAT_TYPE2_btnresize_low.Location = new System.Drawing.Point(172, 72);
+            this.PANEL101_MAT_TYPE2_btnresize_low.Name = "PANEL101_MAT_TYPE2_btnresize_low";
+            this.PANEL101_MAT_TYPE2_btnresize_low.Size = new System.Drawing.Size(23, 22);
+            this.PANEL101_MAT_TYPE2_btnresize_low.TabIndex = 438;
+            this.PANEL101_MAT_TYPE2_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PANEL101_MAT_TYPE2_btnresize_low.UseVisualStyleBackColor = false;
+            this.PANEL101_MAT_TYPE2_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL101_MAT_TYPE2_btnresize_low_MouseDown);
+            this.PANEL101_MAT_TYPE2_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL101_MAT_TYPE2_btnresize_low_MouseMove);
+            this.PANEL101_MAT_TYPE2_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL101_MAT_TYPE2_btnresize_low_MouseUp);
+            // 
+            // PANEL101_MAT_TYPE2_btnclose
+            // 
+            this.PANEL101_MAT_TYPE2_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL101_MAT_TYPE2_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL101_MAT_TYPE2_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL101_MAT_TYPE2_btnclose.Image")));
+            this.PANEL101_MAT_TYPE2_btnclose.Location = new System.Drawing.Point(162, 3);
+            this.PANEL101_MAT_TYPE2_btnclose.Name = "PANEL101_MAT_TYPE2_btnclose";
+            this.PANEL101_MAT_TYPE2_btnclose.Size = new System.Drawing.Size(30, 22);
+            this.PANEL101_MAT_TYPE2_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL101_MAT_TYPE2_btnclose.TabIndex = 436;
+            this.PANEL101_MAT_TYPE2_btnclose.TabStop = false;
+            this.PANEL101_MAT_TYPE2_btnclose.Click += new System.EventHandler(this.PANEL101_MAT_TYPE2_btnclose_Click);
+            // 
+            // PANEL101_MAT_TYPE2_btn_search
+            // 
+            this.PANEL101_MAT_TYPE2_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL101_MAT_TYPE2_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL101_MAT_TYPE2_btn_search.Image")));
+            this.PANEL101_MAT_TYPE2_btn_search.Location = new System.Drawing.Point(126, 4);
+            this.PANEL101_MAT_TYPE2_btn_search.Name = "PANEL101_MAT_TYPE2_btn_search";
+            this.PANEL101_MAT_TYPE2_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL101_MAT_TYPE2_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL101_MAT_TYPE2_btn_search.TabIndex = 433;
+            this.PANEL101_MAT_TYPE2_btn_search.TabStop = false;
+            this.PANEL101_MAT_TYPE2_btn_search.Click += new System.EventHandler(this.PANEL101_MAT_TYPE2_btn_search_Click);
+            // 
+            // PANEL101_MAT_TYPE2_txtsearch
+            // 
+            this.PANEL101_MAT_TYPE2_txtsearch.BackColor = System.Drawing.Color.White;
+            this.PANEL101_MAT_TYPE2_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL101_MAT_TYPE2_txtsearch.Location = new System.Drawing.Point(6, 4);
+            this.PANEL101_MAT_TYPE2_txtsearch.Name = "PANEL101_MAT_TYPE2_txtsearch";
+            this.PANEL101_MAT_TYPE2_txtsearch.Size = new System.Drawing.Size(114, 21);
+            this.PANEL101_MAT_TYPE2_txtsearch.TabIndex = 432;
+            // 
+            // PANEL101_MAT_TYPE2_dataGridView1_mat_type
+            // 
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.AllowUserToAddRows = false;
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Location = new System.Drawing.Point(3, 42);
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Name = "PANEL101_MAT_TYPE2_dataGridView1_mat_type";
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Size = new System.Drawing.Size(188, 25);
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.TabIndex = 0;
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type_CellMouseClick);
+            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type_PreviewKeyDown);
             // 
             // PANEL102_MAT_SAC2
             // 
@@ -929,7 +1019,7 @@
             this.PANEL104_MAT_BRAND.Controls.Add(this.PANEL104_MAT_BRAND_txtsearch);
             this.PANEL104_MAT_BRAND.Controls.Add(this.PANEL104_MAT_BRAND_dataGridView1_mat_brand);
             this.PANEL104_MAT_BRAND.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL104_MAT_BRAND.Location = new System.Drawing.Point(3, 216);
+            this.PANEL104_MAT_BRAND.Location = new System.Drawing.Point(3, 364);
             this.PANEL104_MAT_BRAND.Name = "PANEL104_MAT_BRAND";
             this.PANEL104_MAT_BRAND.Size = new System.Drawing.Size(224, 105);
             this.PANEL104_MAT_BRAND.TabIndex = 570;
@@ -1020,7 +1110,7 @@
             this.PANEL103_MAT_GROUP.Controls.Add(this.PANEL103_MAT_GROUP_txtsearch);
             this.PANEL103_MAT_GROUP.Controls.Add(this.PANEL103_MAT_GROUP_dataGridView1_mat_group);
             this.PANEL103_MAT_GROUP.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL103_MAT_GROUP.Location = new System.Drawing.Point(6, 116);
+            this.PANEL103_MAT_GROUP.Location = new System.Drawing.Point(2, 264);
             this.PANEL103_MAT_GROUP.Name = "PANEL103_MAT_GROUP";
             this.PANEL103_MAT_GROUP.Size = new System.Drawing.Size(216, 94);
             this.PANEL103_MAT_GROUP.TabIndex = 566;
@@ -1111,7 +1201,7 @@
             this.PANEL102_MAT_SAC.Controls.Add(this.PANEL102_MAT_SAC_txtsearch);
             this.PANEL102_MAT_SAC.Controls.Add(this.PANEL102_MAT_SAC_dataGridView1_mat_sac);
             this.PANEL102_MAT_SAC.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL102_MAT_SAC.Location = new System.Drawing.Point(2, 322);
+            this.PANEL102_MAT_SAC.Location = new System.Drawing.Point(2, 475);
             this.PANEL102_MAT_SAC.Name = "PANEL102_MAT_SAC";
             this.PANEL102_MAT_SAC.Size = new System.Drawing.Size(227, 92);
             this.PANEL102_MAT_SAC.TabIndex = 562;
@@ -2053,96 +2143,6 @@
             this.btnGo2.TabIndex = 607;
             this.btnGo2.TabStop = false;
             this.btnGo2.Click += new System.EventHandler(this.btnGo2_Click);
-            // 
-            // PANEL101_MAT_TYPE2
-            // 
-            this.PANEL101_MAT_TYPE2.AutoScroll = true;
-            this.PANEL101_MAT_TYPE2.AutoSize = true;
-            this.PANEL101_MAT_TYPE2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PANEL101_MAT_TYPE2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_btnresize_low);
-            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_btnclose);
-            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_btn_search);
-            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_txtsearch);
-            this.PANEL101_MAT_TYPE2.Controls.Add(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type);
-            this.PANEL101_MAT_TYPE2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL101_MAT_TYPE2.Location = new System.Drawing.Point(698, 7);
-            this.PANEL101_MAT_TYPE2.Name = "PANEL101_MAT_TYPE2";
-            this.PANEL101_MAT_TYPE2.Size = new System.Drawing.Size(199, 100);
-            this.PANEL101_MAT_TYPE2.TabIndex = 611;
-            this.PANEL101_MAT_TYPE2.Visible = false;
-            // 
-            // PANEL101_MAT_TYPE2_btnresize_low
-            // 
-            this.PANEL101_MAT_TYPE2_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL101_MAT_TYPE2_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL101_MAT_TYPE2_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.BorderSize = 0;
-            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL101_MAT_TYPE2_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PANEL101_MAT_TYPE2_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PANEL101_MAT_TYPE2_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL101_MAT_TYPE2_btnresize_low.ForeColor = System.Drawing.Color.Black;
-            this.PANEL101_MAT_TYPE2_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL101_MAT_TYPE2_btnresize_low.Image")));
-            this.PANEL101_MAT_TYPE2_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL101_MAT_TYPE2_btnresize_low.Location = new System.Drawing.Point(172, 72);
-            this.PANEL101_MAT_TYPE2_btnresize_low.Name = "PANEL101_MAT_TYPE2_btnresize_low";
-            this.PANEL101_MAT_TYPE2_btnresize_low.Size = new System.Drawing.Size(23, 22);
-            this.PANEL101_MAT_TYPE2_btnresize_low.TabIndex = 438;
-            this.PANEL101_MAT_TYPE2_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.PANEL101_MAT_TYPE2_btnresize_low.UseVisualStyleBackColor = false;
-            this.PANEL101_MAT_TYPE2_btnresize_low.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PANEL101_MAT_TYPE2_btnresize_low_MouseDown);
-            this.PANEL101_MAT_TYPE2_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL101_MAT_TYPE2_btnresize_low_MouseMove);
-            this.PANEL101_MAT_TYPE2_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL101_MAT_TYPE2_btnresize_low_MouseUp);
-            // 
-            // PANEL101_MAT_TYPE2_btnclose
-            // 
-            this.PANEL101_MAT_TYPE2_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL101_MAT_TYPE2_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL101_MAT_TYPE2_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL101_MAT_TYPE2_btnclose.Image")));
-            this.PANEL101_MAT_TYPE2_btnclose.Location = new System.Drawing.Point(162, 3);
-            this.PANEL101_MAT_TYPE2_btnclose.Name = "PANEL101_MAT_TYPE2_btnclose";
-            this.PANEL101_MAT_TYPE2_btnclose.Size = new System.Drawing.Size(30, 22);
-            this.PANEL101_MAT_TYPE2_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL101_MAT_TYPE2_btnclose.TabIndex = 436;
-            this.PANEL101_MAT_TYPE2_btnclose.TabStop = false;
-            this.PANEL101_MAT_TYPE2_btnclose.Click += new System.EventHandler(this.PANEL101_MAT_TYPE2_btnclose_Click);
-            // 
-            // PANEL101_MAT_TYPE2_btn_search
-            // 
-            this.PANEL101_MAT_TYPE2_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL101_MAT_TYPE2_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL101_MAT_TYPE2_btn_search.Image")));
-            this.PANEL101_MAT_TYPE2_btn_search.Location = new System.Drawing.Point(126, 4);
-            this.PANEL101_MAT_TYPE2_btn_search.Name = "PANEL101_MAT_TYPE2_btn_search";
-            this.PANEL101_MAT_TYPE2_btn_search.Size = new System.Drawing.Size(30, 22);
-            this.PANEL101_MAT_TYPE2_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL101_MAT_TYPE2_btn_search.TabIndex = 433;
-            this.PANEL101_MAT_TYPE2_btn_search.TabStop = false;
-            this.PANEL101_MAT_TYPE2_btn_search.Click += new System.EventHandler(this.PANEL101_MAT_TYPE2_btn_search_Click);
-            // 
-            // PANEL101_MAT_TYPE2_txtsearch
-            // 
-            this.PANEL101_MAT_TYPE2_txtsearch.BackColor = System.Drawing.Color.White;
-            this.PANEL101_MAT_TYPE2_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL101_MAT_TYPE2_txtsearch.Location = new System.Drawing.Point(6, 4);
-            this.PANEL101_MAT_TYPE2_txtsearch.Name = "PANEL101_MAT_TYPE2_txtsearch";
-            this.PANEL101_MAT_TYPE2_txtsearch.Size = new System.Drawing.Size(114, 21);
-            this.PANEL101_MAT_TYPE2_txtsearch.TabIndex = 432;
-            // 
-            // PANEL101_MAT_TYPE2_dataGridView1_mat_type
-            // 
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.AllowUserToAddRows = false;
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Location = new System.Drawing.Point(3, 42);
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Name = "PANEL101_MAT_TYPE2_dataGridView1_mat_type";
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.Size = new System.Drawing.Size(188, 25);
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.TabIndex = 0;
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type_CellMouseClick);
-            this.PANEL101_MAT_TYPE2_dataGridView1_mat_type.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type_PreviewKeyDown);
             // 
             // PANEL104_MAT_BRAND2_txtmat_brand_id
             // 
@@ -4685,6 +4685,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
+            this.PANEL101_MAT_TYPE2.ResumeLayout(false);
+            this.PANEL101_MAT_TYPE2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btnclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btn_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type)).EndInit();
             this.PANEL102_MAT_SAC2.ResumeLayout(false);
             this.PANEL102_MAT_SAC2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL102_MAT_SAC2_btnclose)).EndInit();
@@ -4756,11 +4761,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnGo4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGo2)).EndInit();
-            this.PANEL101_MAT_TYPE2.ResumeLayout(false);
-            this.PANEL101_MAT_TYPE2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btnclose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_btn_search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL101_MAT_TYPE2_dataGridView1_mat_type)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_FORM1_btnrefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_FORM1_btnsearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();

@@ -79,6 +79,8 @@ namespace kondate.soft.Panel_SETUP
 
         }
 
+        bool allowResize = false;
+
         //txtroom_collect ห้องเก็บ  =======================================================================
         private void PANEL0110_ROOM_COLLECT_Fill_room_collect()
         {
@@ -303,6 +305,9 @@ namespace kondate.soft.Panel_SETUP
         }
         private void PANEL0110_ROOM_COLLECT_btnroom_collect_Click(object sender, EventArgs e)
         {
+            this.PANEL0110_ROOM_COLLECT.Width = 502;
+            this.PANEL0110_ROOM_COLLECT.Height = 337;
+
             if (this.PANEL0110_ROOM_COLLECT.Visible == false)
             {
                 this.PANEL0110_ROOM_COLLECT.Visible = true;
@@ -465,7 +470,6 @@ namespace kondate.soft.Panel_SETUP
             //================================
 
         }
-        bool allowResize = false;
         private void PANEL0110_ROOM_COLLECT_btnresize_low_MouseDown(object sender, MouseEventArgs e)
         {
             allowResize = true;

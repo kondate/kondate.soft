@@ -36,6 +36,10 @@
             this.btnmaximize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.panel_button_top = new System.Windows.Forms.Panel();
+            this.BtnPrint_copy = new System.Windows.Forms.Button();
+            this.btnPreview_copy = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
+            this.BtnPrint = new System.Windows.Forms.Button();
             this.btnopen = new System.Windows.Forms.Button();
             this.BtnClose_Form = new System.Windows.Forms.Button();
             this.BtnCancel_Doc = new System.Windows.Forms.Button();
@@ -132,10 +136,6 @@
             this.iblword_status = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
-            this.BtnPrint_copy = new System.Windows.Forms.Button();
-            this.btnPreview_copy = new System.Windows.Forms.Button();
-            this.btnPreview = new System.Windows.Forms.Button();
-            this.BtnPrint = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -248,6 +248,86 @@
             this.panel_button_top.Name = "panel_button_top";
             this.panel_button_top.Size = new System.Drawing.Size(1358, 61);
             this.panel_button_top.TabIndex = 21;
+            // 
+            // BtnPrint_copy
+            // 
+            this.BtnPrint_copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnPrint_copy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPrint_copy.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnPrint_copy.FlatAppearance.BorderSize = 0;
+            this.BtnPrint_copy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnPrint_copy.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnPrint_copy.ForeColor = System.Drawing.Color.Black;
+            this.BtnPrint_copy.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrint_copy.Image")));
+            this.BtnPrint_copy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnPrint_copy.Location = new System.Drawing.Point(557, 3);
+            this.BtnPrint_copy.Name = "BtnPrint_copy";
+            this.BtnPrint_copy.Size = new System.Drawing.Size(80, 55);
+            this.BtnPrint_copy.TabIndex = 55;
+            this.BtnPrint_copy.Text = "ปริ๊น(สำเนา)";
+            this.BtnPrint_copy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnPrint_copy.UseVisualStyleBackColor = false;
+            this.BtnPrint_copy.Click += new System.EventHandler(this.BtnPrint_copy_Click);
+            // 
+            // btnPreview_copy
+            // 
+            this.btnPreview_copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnPreview_copy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreview_copy.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPreview_copy.FlatAppearance.BorderSize = 0;
+            this.btnPreview_copy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnPreview_copy.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPreview_copy.ForeColor = System.Drawing.Color.Black;
+            this.btnPreview_copy.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview_copy.Image")));
+            this.btnPreview_copy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPreview_copy.Location = new System.Drawing.Point(365, 3);
+            this.btnPreview_copy.Name = "btnPreview_copy";
+            this.btnPreview_copy.Size = new System.Drawing.Size(99, 55);
+            this.btnPreview_copy.TabIndex = 54;
+            this.btnPreview_copy.Text = "ปริ๊น(สำเนา)";
+            this.btnPreview_copy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPreview_copy.UseVisualStyleBackColor = false;
+            this.btnPreview_copy.Click += new System.EventHandler(this.btnPreview_copy_Click);
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnPreview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreview.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPreview.FlatAppearance.BorderSize = 0;
+            this.btnPreview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.btnPreview.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPreview.ForeColor = System.Drawing.Color.Black;
+            this.btnPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.Image")));
+            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPreview.Location = new System.Drawing.Point(260, 3);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(99, 55);
+            this.btnPreview.TabIndex = 53;
+            this.btnPreview.Text = "ปริ๊น(ต้นฉบับ)";
+            this.btnPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPreview.UseVisualStyleBackColor = false;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
+            // 
+            // BtnPrint
+            // 
+            this.BtnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BtnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPrint.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnPrint.FlatAppearance.BorderSize = 0;
+            this.BtnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.BtnPrint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.BtnPrint.ForeColor = System.Drawing.Color.Black;
+            this.BtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrint.Image")));
+            this.BtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnPrint.Location = new System.Drawing.Point(470, 3);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(80, 55);
+            this.BtnPrint.TabIndex = 52;
+            this.BtnPrint.Text = "ปริ๊น(ต้นฉบับ)";
+            this.BtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnPrint.UseVisualStyleBackColor = false;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // btnopen
             // 
@@ -1502,86 +1582,6 @@
             this.iblstatus.TabIndex = 648;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // BtnPrint_copy
-            // 
-            this.BtnPrint_copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnPrint_copy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPrint_copy.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnPrint_copy.FlatAppearance.BorderSize = 0;
-            this.BtnPrint_copy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnPrint_copy.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnPrint_copy.ForeColor = System.Drawing.Color.Black;
-            this.BtnPrint_copy.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrint_copy.Image")));
-            this.BtnPrint_copy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnPrint_copy.Location = new System.Drawing.Point(557, 3);
-            this.BtnPrint_copy.Name = "BtnPrint_copy";
-            this.BtnPrint_copy.Size = new System.Drawing.Size(80, 55);
-            this.BtnPrint_copy.TabIndex = 55;
-            this.BtnPrint_copy.Text = "ปริ๊น(สำเนา)";
-            this.BtnPrint_copy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnPrint_copy.UseVisualStyleBackColor = false;
-            this.BtnPrint_copy.Click += new System.EventHandler(this.BtnPrint_copy_Click);
-            // 
-            // btnPreview_copy
-            // 
-            this.btnPreview_copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnPreview_copy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPreview_copy.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPreview_copy.FlatAppearance.BorderSize = 0;
-            this.btnPreview_copy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnPreview_copy.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPreview_copy.ForeColor = System.Drawing.Color.Black;
-            this.btnPreview_copy.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview_copy.Image")));
-            this.btnPreview_copy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPreview_copy.Location = new System.Drawing.Point(365, 3);
-            this.btnPreview_copy.Name = "btnPreview_copy";
-            this.btnPreview_copy.Size = new System.Drawing.Size(99, 55);
-            this.btnPreview_copy.TabIndex = 54;
-            this.btnPreview_copy.Text = "ปริ๊น(สำเนา)";
-            this.btnPreview_copy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPreview_copy.UseVisualStyleBackColor = false;
-            this.btnPreview_copy.Click += new System.EventHandler(this.btnPreview_copy_Click);
-            // 
-            // btnPreview
-            // 
-            this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnPreview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPreview.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPreview.FlatAppearance.BorderSize = 0;
-            this.btnPreview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnPreview.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPreview.ForeColor = System.Drawing.Color.Black;
-            this.btnPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.Image")));
-            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPreview.Location = new System.Drawing.Point(260, 3);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(99, 55);
-            this.btnPreview.TabIndex = 53;
-            this.btnPreview.Text = "ปริ๊น(ต้นฉบับ)";
-            this.btnPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPreview.UseVisualStyleBackColor = false;
-            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
-            // 
-            // BtnPrint
-            // 
-            this.BtnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.BtnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPrint.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnPrint.FlatAppearance.BorderSize = 0;
-            this.BtnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.BtnPrint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.BtnPrint.ForeColor = System.Drawing.Color.Black;
-            this.BtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrint.Image")));
-            this.BtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnPrint.Location = new System.Drawing.Point(470, 3);
-            this.BtnPrint.Name = "BtnPrint";
-            this.BtnPrint.Size = new System.Drawing.Size(80, 55);
-            this.BtnPrint.TabIndex = 52;
-            this.BtnPrint.Text = "ปริ๊น(ต้นฉบับ)";
-            this.BtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnPrint.UseVisualStyleBackColor = false;
-            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
-            // 
             // HOME05_Sale_01sale_record_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1596,7 +1596,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HOME05_Sale_01sale_record_detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ข้อมูลขาย";
+            this.Text = "ใบส่งของ(ขายเชื่อ)";
             this.Load += new System.EventHandler(this.HOME05_Sale_01sale_record_detail_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).EndInit();

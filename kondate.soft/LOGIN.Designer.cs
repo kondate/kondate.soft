@@ -160,7 +160,7 @@
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(738, 31);
+            this.panel_top.Size = new System.Drawing.Size(733, 31);
             this.panel_top.TabIndex = 2;
             // 
             // label1
@@ -187,7 +187,7 @@
             this.btnmaximize_full.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmaximize_full.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximize_full.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximize_full.Image")));
-            this.btnmaximize_full.Location = new System.Drawing.Point(601, 3);
+            this.btnmaximize_full.Location = new System.Drawing.Point(596, 3);
             this.btnmaximize_full.Name = "btnmaximize_full";
             this.btnmaximize_full.Size = new System.Drawing.Size(30, 22);
             this.btnmaximize_full.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -200,7 +200,7 @@
             this.btnminimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimize.Image = ((System.Drawing.Image)(resources.GetObject("btnminimize.Image")));
-            this.btnminimize.Location = new System.Drawing.Point(637, 4);
+            this.btnminimize.Location = new System.Drawing.Point(632, 4);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(29, 22);
             this.btnminimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -213,7 +213,7 @@
             this.btnmaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmaximize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximize.Image")));
-            this.btnmaximize.Location = new System.Drawing.Point(565, 3);
+            this.btnmaximize.Location = new System.Drawing.Point(560, 3);
             this.btnmaximize.Name = "btnmaximize";
             this.btnmaximize.Size = new System.Drawing.Size(30, 22);
             this.btnmaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -226,7 +226,7 @@
             this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
-            this.btnclose.Location = new System.Drawing.Point(702, 4);
+            this.btnclose.Location = new System.Drawing.Point(697, 4);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(30, 22);
             this.btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -240,7 +240,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(738, 30);
+            this.pictureBox2.Size = new System.Drawing.Size(733, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -285,7 +285,7 @@
             this.panel4_low.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4_low.Location = new System.Drawing.Point(0, 492);
             this.panel4_low.Name = "panel4_low";
-            this.panel4_low.Size = new System.Drawing.Size(738, 31);
+            this.panel4_low.Size = new System.Drawing.Size(733, 31);
             this.panel4_low.TabIndex = 5;
             // 
             // iblName_Company
@@ -315,7 +315,7 @@
             this.iblVersion_id.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.iblVersion_id.BackColor = System.Drawing.Color.White;
             this.iblVersion_id.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.iblVersion_id.Location = new System.Drawing.Point(649, 4);
+            this.iblVersion_id.Location = new System.Drawing.Point(644, 4);
             this.iblVersion_id.Name = "iblVersion_id";
             this.iblVersion_id.Size = new System.Drawing.Size(77, 23);
             this.iblVersion_id.TabIndex = 429;
@@ -327,7 +327,7 @@
             this.iblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.iblVersion.BackColor = System.Drawing.Color.White;
             this.iblVersion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.iblVersion.Location = new System.Drawing.Point(581, 4);
+            this.iblVersion.Location = new System.Drawing.Point(576, 4);
             this.iblVersion.Name = "iblVersion";
             this.iblVersion.Size = new System.Drawing.Size(66, 23);
             this.iblVersion.TabIndex = 428;
@@ -341,7 +341,7 @@
             this.pictureBox3_low.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3_low.Image")));
             this.pictureBox3_low.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3_low.Name = "pictureBox3_low";
-            this.pictureBox3_low.Size = new System.Drawing.Size(738, 31);
+            this.pictureBox3_low.Size = new System.Drawing.Size(733, 31);
             this.pictureBox3_low.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3_low.TabIndex = 7;
             this.pictureBox3_low.TabStop = false;
@@ -794,7 +794,7 @@
             this.PANEL1_CO.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL1_CO.Location = new System.Drawing.Point(740, 44);
             this.PANEL1_CO.Name = "PANEL1_CO";
-            this.PANEL1_CO.Size = new System.Drawing.Size(502, 337);
+            this.PANEL1_CO.Size = new System.Drawing.Size(219, 90);
             this.PANEL1_CO.TabIndex = 440;
             this.PANEL1_CO.Visible = false;
             // 
@@ -824,7 +824,7 @@
             this.PANEL1_CO_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL1_CO_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1_CO_btnresize_low.Image")));
             this.PANEL1_CO_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL1_CO_btnresize_low.Location = new System.Drawing.Point(471, 306);
+            this.PANEL1_CO_btnresize_low.Location = new System.Drawing.Point(188, 59);
             this.PANEL1_CO_btnresize_low.Name = "PANEL1_CO_btnresize_low";
             this.PANEL1_CO_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL1_CO_btnresize_low.TabIndex = 436;
@@ -838,7 +838,7 @@
             // 
             this.PANEL1_CO_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL1_CO_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1_CO_btn_search.Image")));
-            this.PANEL1_CO_btn_search.Location = new System.Drawing.Point(332, 27);
+            this.PANEL1_CO_btn_search.Location = new System.Drawing.Point(182, 26);
             this.PANEL1_CO_btn_search.Name = "PANEL1_CO_btn_search";
             this.PANEL1_CO_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL1_CO_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -850,9 +850,9 @@
             // 
             this.PANEL1_CO_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL1_CO_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1_CO_txtsearch.Location = new System.Drawing.Point(100, 27);
+            this.PANEL1_CO_txtsearch.Location = new System.Drawing.Point(39, 27);
             this.PANEL1_CO_txtsearch.Name = "PANEL1_CO_txtsearch";
-            this.PANEL1_CO_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL1_CO_txtsearch.Size = new System.Drawing.Size(137, 21);
             this.PANEL1_CO_txtsearch.TabIndex = 432;
             this.PANEL1_CO_txtsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PANEL1_CO_txtsearch_KeyPress);
             // 
@@ -865,7 +865,7 @@
             this.PANEL1_CO_dataGridView1_co.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PANEL1_CO_dataGridView1_co.Location = new System.Drawing.Point(3, 52);
             this.PANEL1_CO_dataGridView1_co.Name = "PANEL1_CO_dataGridView1_co";
-            this.PANEL1_CO_dataGridView1_co.Size = new System.Drawing.Size(491, 252);
+            this.PANEL1_CO_dataGridView1_co.Size = new System.Drawing.Size(208, 5);
             this.PANEL1_CO_dataGridView1_co.TabIndex = 0;
             this.PANEL1_CO_dataGridView1_co.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1_CO_dataGridView1_co_CellMouseClick);
             // 
@@ -876,7 +876,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 23);
+            this.panel2.Size = new System.Drawing.Size(217, 23);
             this.panel2.TabIndex = 441;
             // 
             // PANEL1_CO_btnclose
@@ -884,7 +884,7 @@
             this.PANEL1_CO_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL1_CO_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL1_CO_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1_CO_btnclose.Image")));
-            this.PANEL1_CO_btnclose.Location = new System.Drawing.Point(469, 0);
+            this.PANEL1_CO_btnclose.Location = new System.Drawing.Point(186, 0);
             this.PANEL1_CO_btnclose.Name = "PANEL1_CO_btnclose";
             this.PANEL1_CO_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL1_CO_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -905,9 +905,9 @@
             this.PANEL2_BRANCH.Controls.Add(this.PANEL2_BRANCH_dataGridView1_branch);
             this.PANEL2_BRANCH.Controls.Add(this.panel1);
             this.PANEL2_BRANCH.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL2_BRANCH.Location = new System.Drawing.Point(738, 383);
+            this.PANEL2_BRANCH.Location = new System.Drawing.Point(740, 156);
             this.PANEL2_BRANCH.Name = "PANEL2_BRANCH";
-            this.PANEL2_BRANCH.Size = new System.Drawing.Size(502, 337);
+            this.PANEL2_BRANCH.Size = new System.Drawing.Size(219, 93);
             this.PANEL2_BRANCH.TabIndex = 444;
             this.PANEL2_BRANCH.Visible = false;
             // 
@@ -925,7 +925,7 @@
             this.PANEL2_BRANCH_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL2_BRANCH_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL2_BRANCH_btnresize_low.Image")));
             this.PANEL2_BRANCH_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL2_BRANCH_btnresize_low.Location = new System.Drawing.Point(474, 310);
+            this.PANEL2_BRANCH_btnresize_low.Location = new System.Drawing.Point(191, 66);
             this.PANEL2_BRANCH_btnresize_low.Name = "PANEL2_BRANCH_btnresize_low";
             this.PANEL2_BRANCH_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL2_BRANCH_btnresize_low.TabIndex = 439;
@@ -951,7 +951,7 @@
             // 
             this.PANEL2_BRANCH_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL2_BRANCH_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL2_BRANCH_btn_search.Image")));
-            this.PANEL2_BRANCH_btn_search.Location = new System.Drawing.Point(334, 26);
+            this.PANEL2_BRANCH_btn_search.Location = new System.Drawing.Point(181, 27);
             this.PANEL2_BRANCH_btn_search.Name = "PANEL2_BRANCH_btn_search";
             this.PANEL2_BRANCH_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL2_BRANCH_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -963,9 +963,9 @@
             // 
             this.PANEL2_BRANCH_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL2_BRANCH_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL2_BRANCH_txtsearch.Location = new System.Drawing.Point(102, 26);
+            this.PANEL2_BRANCH_txtsearch.Location = new System.Drawing.Point(37, 27);
             this.PANEL2_BRANCH_txtsearch.Name = "PANEL2_BRANCH_txtsearch";
-            this.PANEL2_BRANCH_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL2_BRANCH_txtsearch.Size = new System.Drawing.Size(139, 21);
             this.PANEL2_BRANCH_txtsearch.TabIndex = 432;
             // 
             // PANEL2_BRANCH_dataGridView1_branch
@@ -977,7 +977,7 @@
             this.PANEL2_BRANCH_dataGridView1_branch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PANEL2_BRANCH_dataGridView1_branch.Location = new System.Drawing.Point(3, 53);
             this.PANEL2_BRANCH_dataGridView1_branch.Name = "PANEL2_BRANCH_dataGridView1_branch";
-            this.PANEL2_BRANCH_dataGridView1_branch.Size = new System.Drawing.Size(491, 251);
+            this.PANEL2_BRANCH_dataGridView1_branch.Size = new System.Drawing.Size(208, 7);
             this.PANEL2_BRANCH_dataGridView1_branch.TabIndex = 0;
             this.PANEL2_BRANCH_dataGridView1_branch.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL2_BRANCH_dataGridView1_branch_CellMouseClick);
             // 
@@ -988,7 +988,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 23);
+            this.panel1.Size = new System.Drawing.Size(217, 23);
             this.panel1.TabIndex = 440;
             // 
             // PANEL2_BRANCH_btnclose
@@ -996,7 +996,7 @@
             this.PANEL2_BRANCH_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL2_BRANCH_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL2_BRANCH_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL2_BRANCH_btnclose.Image")));
-            this.PANEL2_BRANCH_btnclose.Location = new System.Drawing.Point(469, 0);
+            this.PANEL2_BRANCH_btnclose.Location = new System.Drawing.Point(186, 0);
             this.PANEL2_BRANCH_btnclose.Name = "PANEL2_BRANCH_btnclose";
             this.PANEL2_BRANCH_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL2_BRANCH_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -1133,7 +1133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(738, 523);
+            this.ClientSize = new System.Drawing.Size(733, 523);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnCaption);
             this.Controls.Add(this.btnEncrypt);

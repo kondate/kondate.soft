@@ -418,7 +418,7 @@ namespace kondate.soft.HOME05_Sales
                                     "b001_05mat_unit1.*," +
                                     "b001_05mat_unit2.*," +
 
-                                    "b001mat_06price_sale.*" +
+                                    "b001mat_61change_price_main.*" +
 
                                     " FROM b001mat" +
 
@@ -437,10 +437,10 @@ namespace kondate.soft.HOME05_Sales
                                     " AND b001mat_02detail.txtco_id = b001_05mat_unit2.txtco_id" +
                                     " AND b001mat_02detail.txtmat_unit2_id = b001_05mat_unit2.txtmat_unit2_id" +
 
-                                    " INNER JOIN b001mat_06price_sale" +
-                                    " ON b001mat.cdkey = b001mat_06price_sale.cdkey" +
-                                    " AND b001mat.txtco_id = b001mat_06price_sale.txtco_id" +
-                                    " AND b001mat.txtmat_id = b001mat_06price_sale.txtmat_id" +
+                                    " INNER JOIN b001mat_61change_price_main" +
+                                    " ON b001mat.cdkey = b001mat_61change_price_main.cdkey" +
+                                    " AND b001mat.txtco_id = b001mat_61change_price_main.txtco_id" +
+                                    " AND b001mat.txtmat_id = b001mat_61change_price_main.txtmat_id" +
 
 
                                     " WHERE (b001mat.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
@@ -933,7 +933,7 @@ namespace kondate.soft.HOME05_Sales
                                         "b001_05mat_unit1.*," +
                                         "b001_05mat_unit2.*," +
 
-                                        "b001mat_06price_sale.*" +
+                                        "b001mat_61change_price_main.*" +
 
                                         " FROM b001mat" +
 
@@ -952,10 +952,10 @@ namespace kondate.soft.HOME05_Sales
                                         " AND b001mat_02detail.txtco_id = b001_05mat_unit2.txtco_id" +
                                         " AND b001mat_02detail.txtmat_unit2_id = b001_05mat_unit2.txtmat_unit2_id" +
 
-                                        " INNER JOIN b001mat_06price_sale" +
-                                        " ON b001mat.cdkey = b001mat_06price_sale.cdkey" +
-                                        " AND b001mat.txtco_id = b001mat_06price_sale.txtco_id" +
-                                        " AND b001mat.txtmat_id = b001mat_06price_sale.txtmat_id" +
+                                        " INNER JOIN b001mat_61change_price_main" +
+                                        " ON b001mat.cdkey = b001mat_61change_price_main.cdkey" +
+                                        " AND b001mat.txtco_id = b001mat_61change_price_main.txtco_id" +
+                                        " AND b001mat.txtmat_id = b001mat_61change_price_main.txtmat_id" +
 
 
 
@@ -973,7 +973,7 @@ namespace kondate.soft.HOME05_Sales
                                         "b001_05mat_unit1.*," +
                                         "b001_05mat_unit2.*," +
 
-                                        "b001mat_06price_sale.*" +
+                                        "b001mat_61change_price_main.*" +
 
                                         " FROM b001mat" +
 
@@ -992,10 +992,10 @@ namespace kondate.soft.HOME05_Sales
                                         " AND b001mat_02detail.txtco_id = b001_05mat_unit2.txtco_id" +
                                         " AND b001mat_02detail.txtmat_unit2_id = b001_05mat_unit2.txtmat_unit2_id" +
 
-                                        " INNER JOIN b001mat_06price_sale" +
-                                        " ON b001mat.cdkey = b001mat_06price_sale.cdkey" +
-                                        " AND b001mat.txtco_id = b001mat_06price_sale.txtco_id" +
-                                        " AND b001mat.txtmat_id = b001mat_06price_sale.txtmat_id" +
+                                        " INNER JOIN b001mat_61change_price_main" +
+                                        " ON b001mat.cdkey = b001mat_61change_price_main.cdkey" +
+                                        " AND b001mat.txtco_id = b001mat_61change_price_main.txtco_id" +
+                                        " AND b001mat.txtmat_id = b001mat_61change_price_main.txtmat_id" +
 
 
 
@@ -1212,6 +1212,9 @@ namespace kondate.soft.HOME05_Sales
                 MessageBox.Show("โปรด เลือก คลังสินค้าที่จะขาย ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 if (this.PANEL1306_WH.Visible == false)
                 {
+                    this.PANEL1306_WH.Width = 502;
+                    this.PANEL1306_WH.Height = 337;
+
                     this.PANEL1306_WH.Visible = true;
                     this.PANEL1306_WH.BringToFront();
                     this.PANEL1306_WH.Location = new Point(this.PANEL1306_WH_txtwherehouse_name.Location.X, this.PANEL1306_WH_txtwherehouse_name.Location.Y + 22);
@@ -1229,6 +1232,9 @@ namespace kondate.soft.HOME05_Sales
                 MessageBox.Show("โปรด เลือก ลูกค้า ก่อน !", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 if (this.PANEL103_CUS.Visible == false)
                 {
+                    this.PANEL103_CUS.Width = 502;
+                    this.PANEL103_CUS.Height = 337;
+
                     this.PANEL103_CUS.Visible = true;
                     this.PANEL103_CUS.BringToFront();
                     this.PANEL103_CUS.Location = new Point(this.PANEL103_CUS_txtcus_name.Location.X, this.PANEL103_CUS_txtcus_name.Location.Y + 22);
@@ -1593,7 +1599,7 @@ namespace kondate.soft.HOME05_Sales
                 cmd2.CommandText = "SELECT k018db_po_record_detail.*," +
                                     "b001mat.*," +
                                     "b001mat_02detail.*," +
-                                    "b001mat_06price_sale.*," +
+                                    "b001mat_61change_price_main.*," +
                                     "b001_05mat_unit1.*" +
                                     " FROM k018db_po_record_detail" +
 
@@ -1607,10 +1613,10 @@ namespace kondate.soft.HOME05_Sales
                                     " AND k018db_po_record_detail.txtco_id = b001mat_02detail.txtco_id" +
                                     " AND k018db_po_record_detail.txtmat_id = b001mat_02detail.txtmat_id" +
 
-                                    " INNER JOIN b001mat_06price_sale" +
-                                    " ON k018db_po_record_detail.cdkey = b001mat_06price_sale.cdkey" +
-                                    " AND k018db_po_record_detail.txtco_id = b001mat_06price_sale.txtco_id" +
-                                    " AND k018db_po_record_detail.txtmat_id = b001mat_06price_sale.txtmat_id" +
+                                    " INNER JOIN b001mat_61change_price_main" +
+                                    " ON k018db_po_record_detail.cdkey = b001mat_61change_price_main.cdkey" +
+                                    " AND k018db_po_record_detail.txtco_id = b001mat_61change_price_main.txtco_id" +
+                                    " AND k018db_po_record_detail.txtmat_id = b001mat_61change_price_main.txtmat_id" +
 
                                     " INNER JOIN b001_05mat_unit1" +
                                     " ON b001mat_02detail.cdkey = b001_05mat_unit1.cdkey" +
@@ -1968,7 +1974,7 @@ namespace kondate.soft.HOME05_Sales
                 cmd2.CommandText = "SELECT b001_09bom_detail.*," +
                                     "b001mat.*," +
                                     "b001mat_02detail.*," +
-                                    "b001mat_06price_sale.*," +
+                                    "b001mat_61change_price_main.*," +
                                     "b001_05mat_unit1.*" +
                                     " FROM b001_09bom_detail" +
 
@@ -1982,10 +1988,10 @@ namespace kondate.soft.HOME05_Sales
                                     " AND b001_09bom_detail.txtco_id = b001mat_02detail.txtco_id" +
                                     " AND b001_09bom_detail.txtmat_id = b001mat_02detail.txtmat_id" +
 
-                                    " INNER JOIN b001mat_06price_sale" +
-                                    " ON b001_09bom_detail.cdkey = b001mat_06price_sale.cdkey" +
-                                    " AND b001_09bom_detail.txtco_id = b001mat_06price_sale.txtco_id" +
-                                    " AND b001_09bom_detail.txtmat_id = b001mat_06price_sale.txtmat_id" +
+                                    " INNER JOIN b001mat_61change_price_main" +
+                                    " ON b001_09bom_detail.cdkey = b001mat_61change_price_main.cdkey" +
+                                    " AND b001_09bom_detail.txtco_id = b001mat_61change_price_main.txtco_id" +
+                                    " AND b001_09bom_detail.txtmat_id = b001mat_61change_price_main.txtmat_id" +
 
                                     " INNER JOIN b001_05mat_unit1" +
                                     " ON b001mat_02detail.cdkey = b001_05mat_unit1.cdkey" +
@@ -4442,7 +4448,7 @@ namespace kondate.soft.HOME05_Sales
                 cmd2.CommandText = "SELECT b001mat.*," +
                                     "b001mat_02detail.*," +
                                      "b001mat_04barcode.*," +
-                                     "b001mat_06price_sale.*," +
+                                     "b001mat_61change_price_main.*," +
                                      "b001_05mat_unit1.*" +
                                      " FROM b001mat" +
 
@@ -4456,10 +4462,10 @@ namespace kondate.soft.HOME05_Sales
                                     " AND b001mat.txtco_id = b001mat_04barcode.txtco_id" +
                                     " AND b001mat.txtmat_id = b001mat_04barcode.txtmat_id" +
 
-                                    " INNER JOIN b001mat_06price_sale" +
-                                    " ON b001mat.cdkey = b001mat_06price_sale.cdkey" +
-                                    " AND b001mat.txtco_id = b001mat_06price_sale.txtco_id" +
-                                    " AND b001mat.txtmat_id = b001mat_06price_sale.txtmat_id" +
+                                    " INNER JOIN b001mat_61change_price_main" +
+                                    " ON b001mat.cdkey = b001mat_61change_price_main.cdkey" +
+                                    " AND b001mat.txtco_id = b001mat_61change_price_main.txtco_id" +
+                                    " AND b001mat.txtmat_id = b001mat_61change_price_main.txtmat_id" +
 
 
                                     " INNER JOIN b001_05mat_unit1" +
@@ -4921,6 +4927,7 @@ namespace kondate.soft.HOME05_Sales
 
             for (int i = 0; i < this.GridView1.Rows.Count - 0; i++)
             {
+                GridView1.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.LightGoldenrodYellow;
                 GridView1.Rows[i].Cells["Col_txtQTY_out"].Style.BackColor = Color.LightSkyBlue;
             }
         }

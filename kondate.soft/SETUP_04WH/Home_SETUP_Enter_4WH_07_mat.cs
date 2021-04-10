@@ -10976,18 +10976,20 @@ namespace kondate.soft.SETUP_4WH
         }
         private void PANEL_FORM1_dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            Clear_Text();
+
             if (e.RowIndex >= 0)
             {
                 selectedRowIndex = e.RowIndex;
                 DataGridViewRow row = this.GridView1.Rows[e.RowIndex];
 
-                var cell = row.Cells[1].Value;
+                var cell = row.Cells["Col_txtmat_id"].Value;
                 if (cell != null)
                 {
 
-                    this.txtmat_no.Text = row.Cells[1].Value.ToString();
-                    this.txtmat_id.Text = row.Cells[2].Value.ToString();
-                    this.txtmat_name.Text = row.Cells[3].Value.ToString();
+                    this.txtmat_no.Text = row.Cells["Col_txtmat_no"].Value.ToString();
+                    this.txtmat_id.Text = row.Cells["Col_txtmat_id"].Value.ToString();
+                    this.txtmat_name.Text = row.Cells["Col_txtmat_name"].Value.ToString();
 
                     //เชื่อมต่อฐานข้อมูล=======================================================
                     //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
@@ -11013,7 +11015,6 @@ namespace kondate.soft.SETUP_4WH
                         return;
                     }
                     //END เชื่อมต่อฐานข้อมูล=======================================================
-                    Clear_Text();
                     //===========================================
                     //เชื่อมต่อฐานข้อมูล======================================================
                     conn.Open();

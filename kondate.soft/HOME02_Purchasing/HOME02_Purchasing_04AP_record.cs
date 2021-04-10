@@ -608,179 +608,10 @@ namespace kondate.soft.HOME02_Purchasing
 
 
 
-                        //if (PR_STATUS.Trim() == "Y")
-                        //{
-                        //    cmd2.CommandText = "UPDATE k017db_pr_all SET txtPo_id = '" + this.txtPo_id.Text.Trim() + "'," +
-                        //                      "txtpo_date = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture) + "'," +
-                        //                       "txtsupplier_id = '" + PANEL161_SUP_txtsupplier_id.Text.Trim() + "'," +
-                        //                       "txtsupplier_name = '" + PANEL161_SUP_txtsupplier_name.Text.Trim() + "'," +
-                        //                       "txtsum_qty = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) + "'," +
-                        //                       "txtsum_qty_receive = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
-                        //                       "txtsum_qty_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString())) + "'," +
-                        //                       "txtpo_status = '0'" +
-                        //                       " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                        //                       " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                        //                       " AND (txtPr_id = '" + this.txtPr_id.Text.Trim() + "')";
-
-                        //    cmd2.ExecuteNonQuery();
-
-                        //}
-                        //else
-                        //{
-                            //2 k017db_pr_record
-                            cmd2.CommandText = "INSERT INTO k017db_pr_all(cdkey,txtco_id,txtbranch_id," +  //1
-                                                   "txttrans_date_server,txttrans_time," +  //2
-                                                   "txttrans_year,txttrans_month,txttrans_day,txttrans_date_client," +  //3
-                                                   "txtcomputer_ip,txtcomputer_name," +  //4
-                                                    "txtuser_name,txtemp_office_name," +  //5
-                                                   "txtversion_id," +  //6
-                                                                       //====================================================
-                                                   "txtstatus_remark," + // 7
-                                                   "txtPr_id," + // 7
-                                                   "txtdepartment_id," + // 8
-                                                   "txtdepartment_name," + // 9
-                                                   "txtPo_id," + // 10
-                                                   "txtpo_date," + // 11
-                                                   "txtapprove_id," + // 14
-                                                   "txtapprove_date," + // 15
-                                                   "txtapprove_name," + // 16
-                                                   "txtRG_id," + // 17
-                                                   "txtRG_date," + // 18
-                                                   "txtRG_name," + // 19
-                                                   "txtReceive_id," + // 20
-                                                   "txtReceive_date," + // 21
-
-                                                   "txtsupplier_id," + // 22
-                                                   "txtsupplier_name," + // 23
-
-                                                   "txtwherehouse_id," + // 22
-                                                   "txtwherehouse_name," + // 23
-                                                   "txtmoney_after_vat," + // 25
-                                                   "txtpr_status," + // 26
-                                                   "txtpo_status," + // 27
-                                                   "txtapprove_status," + // 28
-                                                  "txtRG_status," +  //29
-                                                  "txtreceive_status," +  //30
-
-                                               "txtsum_qty," + // 32
-                                               "txtsum_qty_receive," + // 32
-                                               "txtsum_qty_balance," + // 32
-
-                                                  "txtemp_print,txtemp_print_datetime) " +  //31
-                                                   "VALUES (@cdkey2,@txtco_id2,@txtbranch_id2," +  //1
-                                                   "@txttrans_date_server2,@txttrans_time2," +  //2
-                                                   "@txttrans_year2,@txttrans_month2,@txttrans_day2,@txttrans_date_client2," +  //3
-                                                   "@txtcomputer_ip2,@txtcomputer_name2," +  //4
-                                                   "@txtuser_name2,@txtemp_office_name2," +  //5
-                                                   "@txtversion_id2," +  //6
-                                                                         //=========================================================
-
-                                                   "@txtstatus_remark2," + // 7
-                                                    "@txtPr_id2," + // 7
-                                                   "@txtdepartment_id2," + // 8
-                                                   "@txtdepartment_name2," + // 9
-                                                   "@txtPo_id2," + // 10
-                                                   "@txtpo_date2," + // 11
-                                                   "@txtapprove_id2," + // 14
-                                                   "@txtapprove_date2," + // 15
-                                                   "@txtapprove_name2," + // 16
-                                                   "@txtRG_id2," + // 17
-                                                   "@txtRG_date2," + // 18
-                                                   "@txtRG_name2," + // 19
-                                                   "@txtReceive_id2," + // 20
-                                                   "@txtReceive_date2," + // 21
-
-                                                   "@txtsupplier_id2," + // 22
-                                                   "@txtsupplier_name2," + // 23
-
-                                                   "@txtwherehouse_id2," + // 22
-                                                   "@txtwherehouse_name2," + // 23
-                                                   "@txtmoney_after_vat2," + // 25
-                                                   "@txtpr_status2," + // 26
-                                                   "@txtpo_status2," + // 27
-                                                   "@txtapprove_status2," + // 28
-                                                   "@txtRG_status2," +  //29
-                                                   "@txtreceive_status2," +  //30
-
-                                                    "@txtsum_qty2," + // 32
-                                                    "@txtsum_qty_receive2," + // 32
-                                                     "@txtsum_qty_balance2," + // 32
-
-                                                    "@txtemp_print2,@txtemp_print_datetime2)";   //31 
-
-                            cmd2.Parameters.Add("@cdkey2", SqlDbType.NVarChar).Value = W_ID_Select.CDKEY.Trim();
-                            cmd2.Parameters.Add("@txtco_id2", SqlDbType.NVarChar).Value = W_ID_Select.M_COID.Trim();
-                            cmd2.Parameters.Add("@txtbranch_id2", SqlDbType.NVarChar).Value = W_ID_Select.M_BRANCHID.Trim();  //1
-
-
-                            cmd2.Parameters.Add("@txttrans_date_server2", SqlDbType.NVarChar).Value = myDateTime.ToString("yyyy-MM-dd", UsaCulture);
-                            cmd2.Parameters.Add("@txttrans_time2", SqlDbType.NVarChar).Value = myDateTime2.ToString("HH:mm:ss", UsaCulture);
-                            cmd2.Parameters.Add("@txttrans_year2", SqlDbType.NVarChar).Value = myDateTime.ToString("yyyy", UsaCulture);
-                            cmd2.Parameters.Add("@txttrans_month2", SqlDbType.NVarChar).Value = myDateTime.ToString("MM", UsaCulture);
-                            cmd2.Parameters.Add("@txttrans_day2", SqlDbType.NVarChar).Value = myDateTime.ToString("dd", UsaCulture);
-                            cmd2.Parameters.Add("@txttrans_date_client2", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyy-MM-dd", UsaCulture);
-
-
-                            cmd2.Parameters.Add("@txtcomputer_ip2", SqlDbType.NVarChar).Value = W_ID_Select.COMPUTER_IP.Trim();
-                            cmd2.Parameters.Add("@txtcomputer_name2", SqlDbType.NVarChar).Value = W_ID_Select.COMPUTER_NAME.Trim();
-                            cmd2.Parameters.Add("@txtuser_name2", SqlDbType.NVarChar).Value = W_ID_Select.M_USERNAME.Trim();
-                            cmd2.Parameters.Add("@txtemp_office_name2", SqlDbType.NVarChar).Value = W_ID_Select.M_EMP_OFFICE_NAME.Trim();
-                            cmd2.Parameters.Add("@txtversion_id2", SqlDbType.NVarChar).Value = W_ID_Select.VERSION_ID.Trim();  //7
-                                                                                                                               //==============================================================================
-
-                            cmd2.Parameters.Add("@txtstatus_remark2", SqlDbType.NVarChar).Value = this.txtpo_remark.Text.Trim();  //7
-                            cmd2.Parameters.Add("@txtPr_id2", SqlDbType.NVarChar).Value = this.txtPr_id.Text.Trim();  //7
-                            cmd2.Parameters.Add("@txtdepartment_id2", SqlDbType.NVarChar).Value = this.PANEL1316_DEPARTMENT_txtdepartment_id.Text.Trim();  //8
-                            cmd2.Parameters.Add("@txtdepartment_name2", SqlDbType.NVarChar).Value = this.PANEL1316_DEPARTMENT_txtdepartment_name.Text.Trim();  //9
-                            cmd2.Parameters.Add("@txtPo_id2", SqlDbType.NVarChar).Value = this.txtPo_id.Text.Trim();  //10
-                            cmd2.Parameters.Add("@txtpo_date2", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture);  //11
-
-
-                            cmd2.Parameters.Add("@txtapprove_id2", SqlDbType.NVarChar).Value = this.txtApprove_id.Text.Trim();  //14
-                            cmd2.Parameters.Add("@txtapprove_date2", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture);  //15
-                            cmd2.Parameters.Add("@txtapprove_name2", SqlDbType.NVarChar).Value = W_ID_Select.M_EMP_OFFICE_NAME.Trim();  //16
-                            cmd2.Parameters.Add("@txtRG_id2", SqlDbType.NVarChar).Value = "";  //17
-                            cmd2.Parameters.Add("@txtRG_date2", SqlDbType.NVarChar).Value = "";  //18
-                            cmd2.Parameters.Add("@txtRG_name2", SqlDbType.NVarChar).Value = "";  //19
-                            cmd2.Parameters.Add("@txtReceive_id2", SqlDbType.NVarChar).Value = "";  //20
-                            cmd2.Parameters.Add("@txtReceive_date2", SqlDbType.NVarChar).Value = "";  //21
-
-                            cmd2.Parameters.Add("@txtsupplier_id2", SqlDbType.NVarChar).Value = PANEL161_SUP_txtsupplier_id.Text.Trim();  //12
-                            cmd2.Parameters.Add("@txtsupplier_name2", SqlDbType.NVarChar).Value = PANEL161_SUP_txtsupplier_name.Text.Trim();  //13
-
-                            cmd2.Parameters.Add("@txtwherehouse_id2", SqlDbType.NVarChar).Value = "";  //22
-                            cmd2.Parameters.Add("@txtwherehouse_name2", SqlDbType.NVarChar).Value = "";  //23
-                            cmd2.Parameters.Add("@txtmoney_after_vat2", SqlDbType.NVarChar).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtmoney_after_vat.Text.ToString()));  //24
-
-                            cmd2.Parameters.Add("@txtpr_status2", SqlDbType.NVarChar).Value = "0";  //25
-                            cmd2.Parameters.Add("@txtpo_status2", SqlDbType.NVarChar).Value = "0";  //26
-                            cmd2.Parameters.Add("@txtapprove_status2", SqlDbType.NVarChar).Value = this.txtapprove_status_id.Text.Trim();  //27
-                            cmd2.Parameters.Add("@txtRG_status2", SqlDbType.NVarChar).Value = "";  //28
-                            cmd2.Parameters.Add("@txtreceive_status2", SqlDbType.NVarChar).Value = "";  //29
-
-                            cmd2.Parameters.Add("@txtsum_qty2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString()));  //32
-                            cmd2.Parameters.Add("@txtsum_qty_receive2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", 0));  //32
-                            cmd2.Parameters.Add("@txtsum_qty_balance2", SqlDbType.Float).Value = Convert.ToDouble(string.Format("{0:n4}", this.txtsum_qty.Text.ToString()));  //32
-
-                            cmd2.Parameters.Add("@txtemp_print2", SqlDbType.NVarChar).Value = W_ID_Select.M_EMP_OFFICE_NAME.Trim();   //30
-                            cmd2.Parameters.Add("@txtemp_print_datetime2", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", UsaCulture);  //31
-
-                            //==============================
-                            cmd2.ExecuteNonQuery();
 
                         //}
 
 
-                        //this.GridView1.Columns[0].Name = "Col_Auto_num";
-                        //this.GridView1.Columns[1].Name = "Col_txtmat_no";
-                        //this.GridView1.Columns[2].Name = "Col_txtmat_id";
-                        //this.GridView1.Columns[3].Name = "Col_txtmat_name";
-                        //this.GridView1.Columns[4].Name = "Col_txtmat_unit1_name";
-                        //this.GridView1.Columns[5].Name = "Col_txtqty";
-                        //this.GridView1.Columns[6].Name = "Col_txtprice";
-                        //this.GridView1.Columns[7].Name = "Col_txtdiscount_money";
-                        //this.GridView1.Columns[8].Name = "Col_txtsum_total";
-                        //this.GridView1.Columns[9].Name = "Col_date";
                         int s = 0;
                         //command.Parameters.AddWithValue("@Name", txtName.Text);
                         //command.Parameters.AddWithValue("@BirthDate", birthday);
@@ -846,202 +677,16 @@ namespace kondate.soft.HOME02_Purchasing
 
                                     //===================================================================================================================
                                     //===================================================================================================================
-                                    //4 k017db_pr_all_detail
-                                    //if (PR_STATUS.Trim() == "Y")
-                                    //{
-                                    //    cmd2.CommandText = "UPDATE k017db_pr_all_detail SET txtPo_id = '" + this.txtPo_id.Text.Trim() + "'," +
-                                    //                       "txtwant_receive_date = '" + want_date + "'," +
-                                    //                       "txtprice = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +
-                                    //                        "txtdiscount_rate = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
-                                    //                       "txtdiscount_money = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +
-                                    //                       "txtsum_total = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +
-
-                                    //                       "txtqty_approve = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +
-                                    //                       "txtqty_rg = '" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +
-                                    //                       "txtqty_balance = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +
-
-                                    //                       "txtqty_po = '" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'" +
-                                    //                       " WHERE (cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
-                                    //                       " AND (txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
-                                    //                       " AND (txtpr_id = '" + this.txtPr_id.Text.Trim() + "')" +
-                                    //                       " AND (txtmat_id = '" + this.GridView1.Rows[i].Cells[2].Value.ToString() + "')";
-
-
-                                    //    cmd2.ExecuteNonQuery();
-
-
                                     //}
                                     //else
                                     //{
-                                        cmd2.CommandText = "INSERT INTO k017db_pr_all_detail(cdkey,txtco_id,txtbranch_id," +  //1
-                                       "txttrans_date_server,txttrans_time," +  //2
-                                       "txttrans_year,txttrans_month,txttrans_day,txttrans_date_client," +  //3
-                                       "txtcomputer_ip,txtcomputer_name," +  //4
-                                        "txtuser_name,txtemp_office_name," +  //5
-                                       "txtversion_id," +  //6
-                                                           //====================================================
-
-                                           "txtpr_id," +  //7
-                                           "txtpo_id," +  //8
-                                           "txtapprove_id," +  //9
-                                           "txtRG_id," +  //10
-                                           "txtreceive_id," +  //11
-                                           "txtbill_remark," +  //12
-                                           "txtwant_receive_date," +  //13
-
-                                           "txtmat_no," +  //14
-                                           "txtmat_id," +  //15
-                                           "txtmat_name," +  //16
-                                           "txtmat_unit1_name," +  //17
-                                           "txtprice," +   //18
-                                           "txtdiscount_rate," +  //19
-                                           "txtdiscount_money," +  //20
-                                           "txtsum_total," +  //21
-                                           "txtitem_no," +  //22
-
-                                            "txtqty_pr," +  //23
-                                           "txtqty_po," +  //24
-                                           "txtqty_approve," +  //25  จำนวนทั้งหมด
-                                           "txtqty_rg," +  //26   จำนวนที่รับแล้ว
-                                           "txtqty_balance," +  //27   จำนวนที่ยังไม่รับ
-                                           "txtqty_receive) " +  //28
-
-                                    "VALUES ('" + W_ID_Select.CDKEY.Trim() + "','" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +  //1
-                                    "'" + myDateTime.ToString("yyyy-MM-dd", UsaCulture) + "','" + myDateTime2.ToString("HH:mm:ss", UsaCulture) + "'," +  //2
-                                    "'" + myDateTime.ToString("yyyy", UsaCulture) + "','" + myDateTime.ToString("MM", UsaCulture) + "','" + myDateTime.ToString("dd", UsaCulture) + "','" + DateTime.Now.ToString("yyyy-MM-dd", UsaCulture) + "'," +  //3
-                                    "'" + W_ID_Select.COMPUTER_IP.Trim() + "','" + W_ID_Select.COMPUTER_NAME.Trim() + "'," +  //4
-                                    "'" + W_ID_Select.M_USERNAME.Trim() + "','" + W_ID_Select.M_EMP_OFFICE_NAME.Trim() + "'," +  //5
-                                    "'" + W_ID_Select.VERSION_ID.Trim() + "'," +  //6
-                                                                                  //=======================================================
-
-
-                                    "'" + this.txtPr_id.Text.Trim() + "'," +  //7
-                                    "'" + this.txtPo_id.Text.Trim() + "'," +  //8
-                                    "'" + this.txtApprove_id.Text.Trim() + "'," +  //9
-                                    "''," +  //10
-                                    "''," +  //11
-                                    "'" + this.txtpo_remark.Text.Trim() + "'," +  //12
-                                    "'" + want_date + "'," +  //13
-
-                                    "'" + this.GridView1.Rows[i].Cells[1].Value.ToString() + "'," +  //14
-                                    "'" + this.GridView1.Rows[i].Cells[2].Value.ToString() + "'," +  //15
-                                    "'" + this.GridView1.Rows[i].Cells[3].Value.ToString() + "'," +    //16
-                                    "'" + this.GridView1.Rows[i].Cells[4].Value.ToString() + "'," +  //17
-                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //18
-                                  "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //19
-                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //20
-                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //21
-                                    "'" + this.GridView1.Rows[i].Cells[0].Value.ToString() + "'," +  //22
-
-                                  "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //23
-                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //24
-                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //25
-                                  "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //26
-                                   "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //27
-                                   "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "')";   //28
-
-                                        cmd2.ExecuteNonQuery();
-
-                                        //this.GridView1.Columns[0].Name = "Col_Auto_num";
-                                        //this.GridView1.Columns[1].Name = "Col_txtmat_no";
-                                        //this.GridView1.Columns[2].Name = "Col_txtmat_id";
-                                        //this.GridView1.Columns[3].Name = "Col_txtmat_name";
-                                        //this.GridView1.Columns[4].Name = "Col_txtmat_unit1_name";
-                                        //this.GridView1.Columns[5].Name = "Col_txtqty";
-                                        //this.GridView1.Columns[6].Name = "Col_txtprice";
-                                        //this.GridView1.Columns[7].Name = "Col_txtdiscount_money";
-                                        //this.GridView1.Columns[8].Name = "Col_txtsum_total";
-                                        //this.GridView1.Columns[9].Name = "Col_date";
 
 
                                     //}
                                     //========================================================
                                     //5 k017db_pr_all_detail_balance ==============================================================================================
 
-                                    cmd2.CommandText = "INSERT INTO k017db_pr_all_detail_balance(cdkey,txtco_id,txtbranch_id," +  //1
-                                   "txttrans_date_server,txttrans_time," +  //2
-                                   "txttrans_year,txttrans_month,txttrans_day,txttrans_date_client," +  //3
-                                   "txtcomputer_ip,txtcomputer_name," +  //4
-                                    "txtuser_name,txtemp_office_name," +  //5
-                                   "txtversion_id," +  //6
-                                                       //====================================================
 
-                                       "txtpr_id," +  //7
-                                       "txtpo_id," +  //8
-                                       "txtapprove_id," +  //9
-                                       "txtRG_id," +  //10
-                                       "txtreceive_id," +  //11
-                                       "txtbill_remark," +  //12
-                                       "txtwant_receive_date," +  //13
-
-                                       "txtmat_no," +  //14
-                                       "txtmat_id," +  //15
-                                       "txtmat_name," +  //16
-                                       "txtmat_unit1_name," +  //17
-                                       "txtprice," +   //18
-                                       "txtdiscount_rate," +  //19
-                                       "txtdiscount_money," +  //20
-                                       "txtsum_total," +  //21
-                                       "txtitem_no," +  //22
-
-                                        "txtqty_pr," +  //23
-                                       "txtqty_po," +  //24
-
-                                       "txtqty_approve," +  //25
-                                       "txtqty_rg," +  //26
-                                       "txtqty_balance," +  //27
-
-                                       "txtqty_receive) " +  //28
-
-                                "VALUES ('" + W_ID_Select.CDKEY.Trim() + "','" + W_ID_Select.M_COID.Trim() + "','" + W_ID_Select.M_BRANCHID.Trim() + "'," +  //1
-                                "'" + myDateTime.ToString("yyyy-MM-dd", UsaCulture) + "','" + myDateTime2.ToString("HH:mm:ss", UsaCulture) + "'," +  //2
-                                "'" + myDateTime.ToString("yyyy", UsaCulture) + "','" + myDateTime.ToString("MM", UsaCulture) + "','" + myDateTime.ToString("dd", UsaCulture) + "','" + DateTime.Now.ToString("yyyy-MM-dd", UsaCulture) + "'," +  //3
-                                "'" + W_ID_Select.COMPUTER_IP.Trim() + "','" + W_ID_Select.COMPUTER_NAME.Trim() + "'," +  //4
-                                "'" + W_ID_Select.M_USERNAME.Trim() + "','" + W_ID_Select.M_EMP_OFFICE_NAME.Trim() + "'," +  //5
-                                "'" + W_ID_Select.VERSION_ID.Trim() + "'," +  //6
-                                                                              //=======================================================
-
-
-                                "'" + this.txtPr_id.Text.Trim() + "'," +  //7
-                                "'" + this.txtPo_id.Text.Trim() + "'," +  //7
-                                "'" + this.txtApprove_id.Text.Trim() + "'," +  //7
-                                "''," +  //10
-                                "''," +  //11
-                                "'" + this.txtpo_remark.Text.Trim() + "'," +  //12
-                                "'" + want_date + "'," +  //13
-
-                                "'" + this.GridView1.Rows[i].Cells[1].Value.ToString() + "'," +  //14
-                                "'" + this.GridView1.Rows[i].Cells[2].Value.ToString() + "'," +  //15
-                                "'" + this.GridView1.Rows[i].Cells[3].Value.ToString() + "'," +    //16
-                                "'" + this.GridView1.Rows[i].Cells[4].Value.ToString() + "'," +  //17
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[6].Value.ToString())) + "'," +  //18
-                              "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //19
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[7].Value.ToString())) + "'," +  //20
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[8].Value.ToString())) + "'," +  //21
-                                "'" + this.GridView1.Rows[i].Cells[0].Value.ToString() + "'," +  //22
-
-                              "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //23
-
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //24
-
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //25
-                              "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "'," +  //26
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", this.GridView1.Rows[i].Cells[5].Value.ToString())) + "'," +  //27
-
-                               "'" + Convert.ToDouble(string.Format("{0:n4}", 0)) + "')";   //28
-
-                                    cmd2.ExecuteNonQuery();
-
-                                    //this.GridView1.Columns[0].Name = "Col_Auto_num";
-                                    //this.GridView1.Columns[1].Name = "Col_txtmat_no";
-                                    //this.GridView1.Columns[2].Name = "Col_txtmat_id";
-                                    //this.GridView1.Columns[3].Name = "Col_txtmat_name";
-                                    //this.GridView1.Columns[4].Name = "Col_txtmat_unit1_name";
-                                    //this.GridView1.Columns[5].Name = "Col_txtqty";
-                                    //this.GridView1.Columns[6].Name = "Col_txtprice";
-                                    //this.GridView1.Columns[7].Name = "Col_txtdiscount_money";
-                                    //this.GridView1.Columns[8].Name = "Col_txtsum_total";
-                                    //this.GridView1.Columns[9].Name = "Col_date";
                                     //====================================================================================================
                                 }
                             }
@@ -1803,7 +1448,7 @@ namespace kondate.soft.HOME02_Purchasing
 
                 cmd2.CommandText = "SELECT k018db_po_record.*," +
                                    "k018db_po_record_detail.*," +
-                                   "k017db_pr_record.*," +
+                                   //"k017db_pr_record.*," +
                                    "k013_1db_acc_16department.*," +
                                    "k013_1db_acc_07project.*," +
                                    "k013_1db_acc_17job.*," +
@@ -1817,16 +1462,16 @@ namespace kondate.soft.HOME02_Purchasing
                                    " AND k018db_po_record.txtco_id = k018db_po_record_detail.txtco_id" +
                                    " AND k018db_po_record.txtPr_id = k018db_po_record_detail.txtPr_id" +
 
-                                   " INNER JOIN k017db_pr_record" +
-                                   " ON k018db_po_record.cdkey = k017db_pr_record.cdkey" +
-                                   " AND k018db_po_record.txtco_id = k017db_pr_record.txtco_id" +
-                                   " AND k018db_po_record.txtPr_id = k017db_pr_record.txtPr_id" +
+                                   //" INNER JOIN k017db_pr_record" +
+                                   //" ON k018db_po_record.cdkey = k017db_pr_record.cdkey" +
+                                   //" AND k018db_po_record.txtco_id = k017db_pr_record.txtco_id" +
+                                   //" AND k018db_po_record.txtPr_id = k017db_pr_record.txtPr_id" +
 
 
                                    " INNER JOIN k013_1db_acc_16department" +
-                                   " ON k017db_pr_record.cdkey = k013_1db_acc_16department.cdkey" +
-                                   " AND k017db_pr_record.txtco_id = k013_1db_acc_16department.txtco_id" +
-                                   " AND k017db_pr_record.txtdepartment_id = k013_1db_acc_16department.txtdepartment_id" +
+                                   " ON k018db_po_record.cdkey = k013_1db_acc_16department.cdkey" +
+                                   " AND k018db_po_record.txtco_id = k013_1db_acc_16department.txtco_id" +
+                                   " AND k018db_po_record.txtdepartment_id = k013_1db_acc_16department.txtdepartment_id" +
 
                                    " INNER JOIN k013_1db_acc_07project" +
                                    " ON k018db_po_record.cdkey = k013_1db_acc_07project.cdkey" +

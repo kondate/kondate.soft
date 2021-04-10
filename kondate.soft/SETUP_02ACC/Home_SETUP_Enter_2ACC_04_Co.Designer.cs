@@ -44,6 +44,20 @@
             this.BtnNew = new System.Windows.Forms.Button();
             this.panel_button_top_pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1_contens = new System.Windows.Forms.Panel();
+            this.txtvat_rate = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok = new System.Windows.Forms.TextBox();
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id = new System.Windows.Forms.TextBox();
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax = new System.Windows.Forms.Button();
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.PANEL1313_ACC_GROUP_TAX = new System.Windows.Forms.Panel();
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low = new System.Windows.Forms.Button();
+            this.PANEL1313_ACC_GROUP_TAX_btnnew = new System.Windows.Forms.PictureBox();
+            this.PANEL1313_ACC_GROUP_TAX_btnclose = new System.Windows.Forms.PictureBox();
+            this.PANEL1313_ACC_GROUP_TAX_btn_search = new System.Windows.Forms.PictureBox();
+            this.PANEL1313_ACC_GROUP_TAX_txtsearch = new System.Windows.Forms.TextBox();
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
@@ -90,6 +104,11 @@
             this.panel_button_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).BeginInit();
             this.panel1_contens.SuspendLayout();
+            this.PANEL1313_ACC_GROUP_TAX.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btnnew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btnclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btn_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax)).BeginInit();
             this.PANEL_FORM1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_FORM1_btnrefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_FORM1_btnsearch)).BeginInit();
@@ -330,6 +349,14 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.txtvat_rate);
+            this.panel1_contens.Controls.Add(this.label17);
+            this.panel1_contens.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok);
+            this.panel1_contens.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id);
+            this.panel1_contens.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax);
+            this.panel1_contens.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name);
+            this.panel1_contens.Controls.Add(this.label16);
+            this.panel1_contens.Controls.Add(this.PANEL1313_ACC_GROUP_TAX);
             this.panel1_contens.Controls.Add(this.label15);
             this.panel1_contens.Controls.Add(this.button_low_right);
             this.panel1_contens.Controls.Add(this.iblstatus);
@@ -369,6 +396,191 @@
             this.panel1_contens.Name = "panel1_contens";
             this.panel1_contens.Size = new System.Drawing.Size(1148, 755);
             this.panel1_contens.TabIndex = 12;
+            // 
+            // txtvat_rate
+            // 
+            this.txtvat_rate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtvat_rate.BackColor = System.Drawing.Color.White;
+            this.txtvat_rate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtvat_rate.Location = new System.Drawing.Point(136, 329);
+            this.txtvat_rate.Name = "txtvat_rate";
+            this.txtvat_rate.ReadOnly = true;
+            this.txtvat_rate.Size = new System.Drawing.Size(44, 21);
+            this.txtvat_rate.TabIndex = 1995;
+            this.txtvat_rate.Text = ".00";
+            this.txtvat_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(71, 328);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(59, 21);
+            this.label17.TabIndex = 1994;
+            this.label17.Text = "ภาษี :";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.BackColor = System.Drawing.Color.White;
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.Location = new System.Drawing.Point(339, 304);
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.Name = "PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok";
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.Size = new System.Drawing.Size(40, 21);
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.TabIndex = 1993;
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok.Visible = false;
+            // 
+            // PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.BackColor = System.Drawing.Color.White;
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Location = new System.Drawing.Point(388, 304);
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Name = "PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id";
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Size = new System.Drawing.Size(44, 21);
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.TabIndex = 1992;
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id.Visible = false;
+            // 
+            // PANEL1313_ACC_GROUP_TAX_btnacc_group_tax
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.BackColor = System.Drawing.Color.White;
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.FlatAppearance.BorderSize = 0;
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Image")));
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Location = new System.Drawing.Point(310, 308);
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Name = "PANEL1313_ACC_GROUP_TAX_btnacc_group_tax";
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Size = new System.Drawing.Size(22, 16);
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.TabIndex = 1991;
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.UseVisualStyleBackColor = false;
+            this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax.Click += new System.EventHandler(this.PANEL1313_ACC_GROUP_TAX_btnacc_group_tax_Click);
+            // 
+            // PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.BackColor = System.Drawing.Color.White;
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Location = new System.Drawing.Point(136, 305);
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Name = "PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name";
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.Size = new System.Drawing.Size(197, 21);
+            this.PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name.TabIndex = 1990;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(11, 304);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(119, 21);
+            this.label16.TabIndex = 1989;
+            this.label16.Text = "กลุ่มภาษี :";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PANEL1313_ACC_GROUP_TAX
+            // 
+            this.PANEL1313_ACC_GROUP_TAX.AutoScroll = true;
+            this.PANEL1313_ACC_GROUP_TAX.AutoSize = true;
+            this.PANEL1313_ACC_GROUP_TAX.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PANEL1313_ACC_GROUP_TAX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PANEL1313_ACC_GROUP_TAX.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_btnresize_low);
+            this.PANEL1313_ACC_GROUP_TAX.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_btnnew);
+            this.PANEL1313_ACC_GROUP_TAX.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_btnclose);
+            this.PANEL1313_ACC_GROUP_TAX.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_btn_search);
+            this.PANEL1313_ACC_GROUP_TAX.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_txtsearch);
+            this.PANEL1313_ACC_GROUP_TAX.Controls.Add(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax);
+            this.PANEL1313_ACC_GROUP_TAX.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1313_ACC_GROUP_TAX.Location = new System.Drawing.Point(667, 273);
+            this.PANEL1313_ACC_GROUP_TAX.Name = "PANEL1313_ACC_GROUP_TAX";
+            this.PANEL1313_ACC_GROUP_TAX.Size = new System.Drawing.Size(227, 82);
+            this.PANEL1313_ACC_GROUP_TAX.TabIndex = 1988;
+            this.PANEL1313_ACC_GROUP_TAX.Visible = false;
+            // 
+            // PANEL1313_ACC_GROUP_TAX_btnresize_low
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Cursor = System.Windows.Forms.Cursors.SizeNESW;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.FlatAppearance.BorderSize = 0;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.ForeColor = System.Drawing.Color.Black;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1313_ACC_GROUP_TAX_btnresize_low.Image")));
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Location = new System.Drawing.Point(160, -251);
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Name = "PANEL1313_ACC_GROUP_TAX_btnresize_low";
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Size = new System.Drawing.Size(23, 22);
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.TabIndex = 438;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.UseVisualStyleBackColor = false;
+            this.PANEL1313_ACC_GROUP_TAX_btnresize_low.Visible = false;
+            // 
+            // PANEL1313_ACC_GROUP_TAX_btnnew
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1313_ACC_GROUP_TAX_btnnew.Image")));
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.Location = new System.Drawing.Point(3, 31);
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.Name = "PANEL1313_ACC_GROUP_TAX_btnnew";
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.TabIndex = 437;
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.TabStop = false;
+            this.PANEL1313_ACC_GROUP_TAX_btnnew.Visible = false;
+            // 
+            // PANEL1313_ACC_GROUP_TAX_btnclose
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1313_ACC_GROUP_TAX_btnclose.Image")));
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.Location = new System.Drawing.Point(189, 3);
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.Name = "PANEL1313_ACC_GROUP_TAX_btnclose";
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.TabIndex = 436;
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.TabStop = false;
+            this.PANEL1313_ACC_GROUP_TAX_btnclose.Click += new System.EventHandler(this.PANEL1313_ACC_GROUP_TAX_btnclose_Click);
+            // 
+            // PANEL1313_ACC_GROUP_TAX_btn_search
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1313_ACC_GROUP_TAX_btn_search.Image")));
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.Location = new System.Drawing.Point(118, 4);
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.Name = "PANEL1313_ACC_GROUP_TAX_btn_search";
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.Size = new System.Drawing.Size(30, 22);
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.TabIndex = 433;
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.TabStop = false;
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.Visible = false;
+            this.PANEL1313_ACC_GROUP_TAX_btn_search.Click += new System.EventHandler(this.PANEL1313_ACC_GROUP_TAX_btn_search_Click);
+            // 
+            // PANEL1313_ACC_GROUP_TAX_txtsearch
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_txtsearch.BackColor = System.Drawing.Color.White;
+            this.PANEL1313_ACC_GROUP_TAX_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1313_ACC_GROUP_TAX_txtsearch.Location = new System.Drawing.Point(3, 4);
+            this.PANEL1313_ACC_GROUP_TAX_txtsearch.Name = "PANEL1313_ACC_GROUP_TAX_txtsearch";
+            this.PANEL1313_ACC_GROUP_TAX_txtsearch.Size = new System.Drawing.Size(113, 21);
+            this.PANEL1313_ACC_GROUP_TAX_txtsearch.TabIndex = 432;
+            // 
+            // PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax
+            // 
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.AllowUserToAddRows = false;
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.Location = new System.Drawing.Point(3, 31);
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.Name = "PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax";
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.Size = new System.Drawing.Size(216, 22);
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.TabIndex = 0;
+            this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax_CellMouseClick);
             // 
             // label15
             // 
@@ -433,7 +645,7 @@
             // 
             this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(133, 302);
+            this.label19.Location = new System.Drawing.Point(133, 360);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(235, 21);
             this.label19.TabIndex = 475;
@@ -444,7 +656,7 @@
             // 
             this.label18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(28, 302);
+            this.label18.Location = new System.Drawing.Point(28, 360);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(102, 21);
             this.label18.TabIndex = 474;
@@ -461,16 +673,16 @@
             this.PANEL_FORM1.Controls.Add(this.PANEL_FORM1_btnsearch);
             this.PANEL_FORM1.Controls.Add(this.PANEL_FORM1_txtsearch);
             this.PANEL_FORM1.Controls.Add(this.GridView1);
-            this.PANEL_FORM1.Location = new System.Drawing.Point(11, 326);
+            this.PANEL_FORM1.Location = new System.Drawing.Point(11, 384);
             this.PANEL_FORM1.Name = "PANEL_FORM1";
-            this.PANEL_FORM1.Size = new System.Drawing.Size(1124, 394);
+            this.PANEL_FORM1.Size = new System.Drawing.Size(1124, 336);
             this.PANEL_FORM1.TabIndex = 473;
             // 
             // PANEL_FORM1_btnrefresh
             // 
             this.PANEL_FORM1_btnrefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL_FORM1_btnrefresh.Image = ((System.Drawing.Image)(resources.GetObject("PANEL_FORM1_btnrefresh.Image")));
-            this.PANEL_FORM1_btnrefresh.Location = new System.Drawing.Point(68, 17);
+            this.PANEL_FORM1_btnrefresh.Location = new System.Drawing.Point(362, 7);
             this.PANEL_FORM1_btnrefresh.Name = "PANEL_FORM1_btnrefresh";
             this.PANEL_FORM1_btnrefresh.Size = new System.Drawing.Size(30, 22);
             this.PANEL_FORM1_btnrefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -482,7 +694,7 @@
             // 
             this.PANEL_FORM1_btnsearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL_FORM1_btnsearch.Image = ((System.Drawing.Image)(resources.GetObject("PANEL_FORM1_btnsearch.Image")));
-            this.PANEL_FORM1_btnsearch.Location = new System.Drawing.Point(331, 16);
+            this.PANEL_FORM1_btnsearch.Location = new System.Drawing.Point(326, 6);
             this.PANEL_FORM1_btnsearch.Name = "PANEL_FORM1_btnsearch";
             this.PANEL_FORM1_btnsearch.Size = new System.Drawing.Size(30, 22);
             this.PANEL_FORM1_btnsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -494,9 +706,9 @@
             // 
             this.PANEL_FORM1_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL_FORM1_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL_FORM1_txtsearch.Location = new System.Drawing.Point(99, 17);
+            this.PANEL_FORM1_txtsearch.Location = new System.Drawing.Point(124, 7);
             this.PANEL_FORM1_txtsearch.Name = "PANEL_FORM1_txtsearch";
-            this.PANEL_FORM1_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL_FORM1_txtsearch.Size = new System.Drawing.Size(197, 21);
             this.PANEL_FORM1_txtsearch.TabIndex = 435;
             this.PANEL_FORM1_txtsearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PANEL_FORM1_txtsearch_KeyPress);
             // 
@@ -508,9 +720,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridView1.BackgroundColor = System.Drawing.Color.White;
             this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView1.Location = new System.Drawing.Point(6, 44);
+            this.GridView1.Location = new System.Drawing.Point(6, 34);
             this.GridView1.Name = "GridView1";
-            this.GridView1.Size = new System.Drawing.Size(1111, 336);
+            this.GridView1.Size = new System.Drawing.Size(1111, 288);
             this.GridView1.TabIndex = 434;
             this.GridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL_FORM1_dataGridView1_CellMouseClick);
             // 
@@ -825,6 +1037,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_button_top_pictureBox)).EndInit();
             this.panel1_contens.ResumeLayout(false);
             this.panel1_contens.PerformLayout();
+            this.PANEL1313_ACC_GROUP_TAX.ResumeLayout(false);
+            this.PANEL1313_ACC_GROUP_TAX.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btnnew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btnclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_btn_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax)).EndInit();
             this.PANEL_FORM1.ResumeLayout(false);
             this.PANEL_FORM1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL_FORM1_btnrefresh)).EndInit();
@@ -889,5 +1107,19 @@
         private System.Windows.Forms.Label iblstatus;
         private System.Windows.Forms.Button button_low_right;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button PANEL1313_ACC_GROUP_TAX_btnacc_group_tax;
+        private System.Windows.Forms.TextBox PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_name;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel PANEL1313_ACC_GROUP_TAX;
+        private System.Windows.Forms.Button PANEL1313_ACC_GROUP_TAX_btnresize_low;
+        private System.Windows.Forms.PictureBox PANEL1313_ACC_GROUP_TAX_btnnew;
+        private System.Windows.Forms.PictureBox PANEL1313_ACC_GROUP_TAX_btnclose;
+        private System.Windows.Forms.PictureBox PANEL1313_ACC_GROUP_TAX_btn_search;
+        private System.Windows.Forms.TextBox PANEL1313_ACC_GROUP_TAX_txtsearch;
+        private System.Windows.Forms.DataGridView PANEL1313_ACC_GROUP_TAX_dataGridView1_acc_group_tax;
+        private System.Windows.Forms.TextBox PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id_ok;
+        private System.Windows.Forms.TextBox PANEL1313_ACC_GROUP_TAX_txtacc_group_tax_id;
+        private System.Windows.Forms.TextBox txtvat_rate;
+        private System.Windows.Forms.Label label17;
     }
 }

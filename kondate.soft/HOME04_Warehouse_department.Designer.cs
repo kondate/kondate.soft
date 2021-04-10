@@ -32,20 +32,19 @@
             this.panel_top = new System.Windows.Forms.Panel();
             this.btnminimize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
-            this.btnEnter1PR_Setup1_type_supplier = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.HOME03_Production_07 = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01aprrove_sale_mat_return = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_99Gen_barcode = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01Receive_mat = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01stock_money = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01stock = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01sale_mat_return = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01sale_mat_approve = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01berg_mat_approve = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01berg_mat = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01Refresh_stock = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01sale_mat = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01Sell_mat_approve = new System.Windows.Forms.Button();
+            this.HOME03_Production_07_01Sell_mat = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
@@ -88,289 +87,244 @@
             this.btnclose.TabStop = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // btnEnter1PR_Setup1_type_supplier
+            // HOME03_Production_07_01aprrove_sale_mat_return
             // 
-            this.btnEnter1PR_Setup1_type_supplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnEnter1PR_Setup1_type_supplier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnter1PR_Setup1_type_supplier.Enabled = false;
-            this.btnEnter1PR_Setup1_type_supplier.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEnter1PR_Setup1_type_supplier.FlatAppearance.BorderSize = 0;
-            this.btnEnter1PR_Setup1_type_supplier.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.btnEnter1PR_Setup1_type_supplier.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnEnter1PR_Setup1_type_supplier.ForeColor = System.Drawing.Color.Black;
-            this.btnEnter1PR_Setup1_type_supplier.Image = ((System.Drawing.Image)(resources.GetObject("btnEnter1PR_Setup1_type_supplier.Image")));
-            this.btnEnter1PR_Setup1_type_supplier.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEnter1PR_Setup1_type_supplier.Location = new System.Drawing.Point(147, 43);
-            this.btnEnter1PR_Setup1_type_supplier.Name = "btnEnter1PR_Setup1_type_supplier";
-            this.btnEnter1PR_Setup1_type_supplier.Size = new System.Drawing.Size(129, 75);
-            this.btnEnter1PR_Setup1_type_supplier.TabIndex = 16;
-            this.btnEnter1PR_Setup1_type_supplier.Text = "2.ขอโอนสินค้า";
-            this.btnEnter1PR_Setup1_type_supplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEnter1PR_Setup1_type_supplier.UseVisualStyleBackColor = false;
-            this.btnEnter1PR_Setup1_type_supplier.Visible = false;
+            this.HOME03_Production_07_01aprrove_sale_mat_return.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01aprrove_sale_mat_return.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01aprrove_sale_mat_return.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01aprrove_sale_mat_return.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01aprrove_sale_mat_return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01aprrove_sale_mat_return.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01aprrove_sale_mat_return.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01aprrove_sale_mat_return.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01aprrove_sale_mat_return.Image")));
+            this.HOME03_Production_07_01aprrove_sale_mat_return.Location = new System.Drawing.Point(162, 263);
+            this.HOME03_Production_07_01aprrove_sale_mat_return.Name = "HOME03_Production_07_01aprrove_sale_mat_return";
+            this.HOME03_Production_07_01aprrove_sale_mat_return.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01aprrove_sale_mat_return.TabIndex = 32;
+            this.HOME03_Production_07_01aprrove_sale_mat_return.Text = "อนุมัติ ขอโอนสินค้า";
+            this.HOME03_Production_07_01aprrove_sale_mat_return.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01aprrove_sale_mat_return.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // HOME03_Production_07_99Gen_barcode
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(282, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 75);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "3.อนุมัติ ขอโอนสินค้า";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
+            this.HOME03_Production_07_99Gen_barcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_99Gen_barcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_99Gen_barcode.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_99Gen_barcode.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_99Gen_barcode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_99Gen_barcode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_99Gen_barcode.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_99Gen_barcode.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_99Gen_barcode.Image")));
+            this.HOME03_Production_07_99Gen_barcode.Location = new System.Drawing.Point(162, 57);
+            this.HOME03_Production_07_99Gen_barcode.Name = "HOME03_Production_07_99Gen_barcode";
+            this.HOME03_Production_07_99Gen_barcode.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_99Gen_barcode.TabIndex = 31;
+            this.HOME03_Production_07_99Gen_barcode.Text = "สร้างบาร์โค๊ต";
+            this.HOME03_Production_07_99Gen_barcode.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_99Gen_barcode.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_99Gen_barcode.Click += new System.EventHandler(this.HOME03_Production_07_99Gen_barcode_Click);
             // 
-            // button2
+            // HOME03_Production_07_01Receive_mat
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Enabled = false;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(417, 43);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 75);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "4.โอนย้ายสินค้าออก";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Visible = false;
+            this.HOME03_Production_07_01Receive_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01Receive_mat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01Receive_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01Receive_mat.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01Receive_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01Receive_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01Receive_mat.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01Receive_mat.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01Receive_mat.Image")));
+            this.HOME03_Production_07_01Receive_mat.Location = new System.Drawing.Point(26, 57);
+            this.HOME03_Production_07_01Receive_mat.Name = "HOME03_Production_07_01Receive_mat";
+            this.HOME03_Production_07_01Receive_mat.Size = new System.Drawing.Size(120, 75);
+            this.HOME03_Production_07_01Receive_mat.TabIndex = 30;
+            this.HOME03_Production_07_01Receive_mat.Text = "รับสินค้าเข้าคลัง";
+            this.HOME03_Production_07_01Receive_mat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01Receive_mat.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01Receive_mat.Click += new System.EventHandler(this.HOME03_Production_07_01Receive_mat_Click);
             // 
-            // button3
+            // HOME03_Production_07_01stock_money
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Enabled = false;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(552, 43);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 75);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "5.โอนย้ายสินค้าเข้า";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Visible = false;
+            this.HOME03_Production_07_01stock_money.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01stock_money.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01stock_money.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01stock_money.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01stock_money.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01stock_money.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01stock_money.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01stock_money.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01stock_money.Image")));
+            this.HOME03_Production_07_01stock_money.Location = new System.Drawing.Point(196, 517);
+            this.HOME03_Production_07_01stock_money.Name = "HOME03_Production_07_01stock_money";
+            this.HOME03_Production_07_01stock_money.Size = new System.Drawing.Size(264, 75);
+            this.HOME03_Production_07_01stock_money.TabIndex = 28;
+            this.HOME03_Production_07_01stock_money.Text = "รายงานมูลค่าคงเหลือ (ต้นทุนถัวเฉลี่ย)";
+            this.HOME03_Production_07_01stock_money.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01stock_money.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // HOME03_Production_07_01stock
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(698, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 75);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "6.ปรับปรุงสต๊อคสินค้า";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
+            this.HOME03_Production_07_01stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01stock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01stock.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01stock.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01stock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01stock.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01stock.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01stock.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01stock.Image")));
+            this.HOME03_Production_07_01stock.Location = new System.Drawing.Point(17, 517);
+            this.HOME03_Production_07_01stock.Name = "HOME03_Production_07_01stock";
+            this.HOME03_Production_07_01stock.Size = new System.Drawing.Size(168, 75);
+            this.HOME03_Production_07_01stock.TabIndex = 26;
+            this.HOME03_Production_07_01stock.Text = "รายงานสต๊อคสินค้าคงเหลือ";
+            this.HOME03_Production_07_01stock.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01stock.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01stock.Click += new System.EventHandler(this.HOME03_Production_07_01stock_Click);
             // 
-            // button5
+            // HOME03_Production_07_01sale_mat_return
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Enabled = false;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(12, 161);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 75);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "7.ขอเบิก(ใช้งาน)";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01sale_mat_return.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01sale_mat_return.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01sale_mat_return.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01sale_mat_return.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01sale_mat_return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01sale_mat_return.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01sale_mat_return.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01sale_mat_return.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01sale_mat_return.Image")));
+            this.HOME03_Production_07_01sale_mat_return.Location = new System.Drawing.Point(22, 263);
+            this.HOME03_Production_07_01sale_mat_return.Name = "HOME03_Production_07_01sale_mat_return";
+            this.HOME03_Production_07_01sale_mat_return.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01sale_mat_return.TabIndex = 25;
+            this.HOME03_Production_07_01sale_mat_return.Text = "คืนสินค้าจากการเบิก";
+            this.HOME03_Production_07_01sale_mat_return.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01sale_mat_return.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // HOME03_Production_07_01sale_mat_approve
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Enabled = false;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(147, 161);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(129, 75);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "8.อนุมัติขอเบิก(ใช้งาน)";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01sale_mat_approve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01sale_mat_approve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01sale_mat_approve.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01sale_mat_approve.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01sale_mat_approve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01sale_mat_approve.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01sale_mat_approve.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01sale_mat_approve.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01sale_mat_approve.Image")));
+            this.HOME03_Production_07_01sale_mat_approve.Location = new System.Drawing.Point(432, 155);
+            this.HOME03_Production_07_01sale_mat_approve.Name = "HOME03_Production_07_01sale_mat_approve";
+            this.HOME03_Production_07_01sale_mat_approve.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01sale_mat_approve.TabIndex = 24;
+            this.HOME03_Production_07_01sale_mat_approve.Text = "อนุมัติขอเบิก(ขาย)";
+            this.HOME03_Production_07_01sale_mat_approve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01sale_mat_approve.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // HOME03_Production_07_01berg_mat_approve
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Enabled = false;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(282, 161);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(129, 75);
-            this.button7.TabIndex = 23;
-            this.button7.Text = "9.อนุมัติขอเบิก (ผลิต)";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01berg_mat_approve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01berg_mat_approve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01berg_mat_approve.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01berg_mat_approve.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01berg_mat_approve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01berg_mat_approve.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01berg_mat_approve.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01berg_mat_approve.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01berg_mat_approve.Image")));
+            this.HOME03_Production_07_01berg_mat_approve.Location = new System.Drawing.Point(702, 155);
+            this.HOME03_Production_07_01berg_mat_approve.Name = "HOME03_Production_07_01berg_mat_approve";
+            this.HOME03_Production_07_01berg_mat_approve.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01berg_mat_approve.TabIndex = 22;
+            this.HOME03_Production_07_01berg_mat_approve.Text = "อนุมัติขอเบิก(ใช้งาน)";
+            this.HOME03_Production_07_01berg_mat_approve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01berg_mat_approve.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // HOME03_Production_07_01berg_mat
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Enabled = false;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(417, 161);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(129, 75);
-            this.button8.TabIndex = 24;
-            this.button8.Text = "10.อนุมัติขอเบิก(ขาย)";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01berg_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01berg_mat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01berg_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01berg_mat.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01berg_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01berg_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01berg_mat.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01berg_mat.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01berg_mat.Image")));
+            this.HOME03_Production_07_01berg_mat.Location = new System.Drawing.Point(567, 155);
+            this.HOME03_Production_07_01berg_mat.Name = "HOME03_Production_07_01berg_mat";
+            this.HOME03_Production_07_01berg_mat.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01berg_mat.TabIndex = 21;
+            this.HOME03_Production_07_01berg_mat.Text = "ขอเบิก(ใช้งาน)";
+            this.HOME03_Production_07_01berg_mat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01berg_mat.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // HOME03_Production_07_01Refresh_stock
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Enabled = false;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(12, 278);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(129, 75);
-            this.button9.TabIndex = 25;
-            this.button9.Text = "11.คืนสินค้าจากการเบิก";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01Refresh_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01Refresh_stock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01Refresh_stock.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01Refresh_stock.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01Refresh_stock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01Refresh_stock.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01Refresh_stock.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01Refresh_stock.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01Refresh_stock.Image")));
+            this.HOME03_Production_07_01Refresh_stock.Location = new System.Drawing.Point(17, 436);
+            this.HOME03_Production_07_01Refresh_stock.Name = "HOME03_Production_07_01Refresh_stock";
+            this.HOME03_Production_07_01Refresh_stock.Size = new System.Drawing.Size(168, 75);
+            this.HOME03_Production_07_01Refresh_stock.TabIndex = 20;
+            this.HOME03_Production_07_01Refresh_stock.Text = "ปรับปรุงสต๊อคสินค้า";
+            this.HOME03_Production_07_01Refresh_stock.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01Refresh_stock.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // HOME03_Production_07_01sale_mat
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Enabled = false;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(12, 403);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(168, 75);
-            this.button10.TabIndex = 26;
-            this.button10.Text = "12.รายงานสต๊อคสินค้าคงเหลือ";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01sale_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01sale_mat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01sale_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01sale_mat.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01sale_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01sale_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01sale_mat.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01sale_mat.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01sale_mat.Image")));
+            this.HOME03_Production_07_01sale_mat.Location = new System.Drawing.Point(297, 155);
+            this.HOME03_Production_07_01sale_mat.Name = "HOME03_Production_07_01sale_mat";
+            this.HOME03_Production_07_01sale_mat.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01sale_mat.TabIndex = 18;
+            this.HOME03_Production_07_01sale_mat.Text = "ขอเบิกขาย";
+            this.HOME03_Production_07_01sale_mat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01sale_mat.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // HOME03_Production_07_01Sell_mat_approve
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.Enabled = false;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(186, 403);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(178, 75);
-            this.button11.TabIndex = 27;
-            this.button11.Text = "13.รายงานความเคลื่อนไหวสินค้า";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01Sell_mat_approve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01Sell_mat_approve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01Sell_mat_approve.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01Sell_mat_approve.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01Sell_mat_approve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01Sell_mat_approve.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01Sell_mat_approve.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01Sell_mat_approve.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01Sell_mat_approve.Image")));
+            this.HOME03_Production_07_01Sell_mat_approve.Location = new System.Drawing.Point(162, 155);
+            this.HOME03_Production_07_01Sell_mat_approve.Name = "HOME03_Production_07_01Sell_mat_approve";
+            this.HOME03_Production_07_01Sell_mat_approve.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01Sell_mat_approve.TabIndex = 17;
+            this.HOME03_Production_07_01Sell_mat_approve.Text = "อนุมัติ ขอโอนสินค้า";
+            this.HOME03_Production_07_01Sell_mat_approve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01Sell_mat_approve.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01Sell_mat_approve.Click += new System.EventHandler(this.HOME03_Production_07_01Sell_mat_approve_Click);
             // 
-            // button12
+            // HOME03_Production_07_01Sell_mat
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button12.Enabled = false;
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.button12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(370, 403);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(264, 75);
-            this.button12.TabIndex = 28;
-            this.button12.Text = "14.รายงานมูลค่าคงเหลือ (ต้นทุนถัวเฉลี่ย)";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // HOME03_Production_07
-            // 
-            this.HOME03_Production_07.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.HOME03_Production_07.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HOME03_Production_07.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.HOME03_Production_07.FlatAppearance.BorderSize = 0;
-            this.HOME03_Production_07.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
-            this.HOME03_Production_07.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.HOME03_Production_07.ForeColor = System.Drawing.Color.Black;
-            this.HOME03_Production_07.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07.Image")));
-            this.HOME03_Production_07.Location = new System.Drawing.Point(12, 43);
-            this.HOME03_Production_07.Name = "HOME03_Production_07";
-            this.HOME03_Production_07.Size = new System.Drawing.Size(124, 75);
-            this.HOME03_Production_07.TabIndex = 29;
-            this.HOME03_Production_07.Text = "1.เช็คสต๊อค";
-            this.HOME03_Production_07.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.HOME03_Production_07.UseVisualStyleBackColor = false;
-            this.HOME03_Production_07.Click += new System.EventHandler(this.HOME03_Production_07_Click);
+            this.HOME03_Production_07_01Sell_mat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HOME03_Production_07_01Sell_mat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HOME03_Production_07_01Sell_mat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HOME03_Production_07_01Sell_mat.FlatAppearance.BorderSize = 0;
+            this.HOME03_Production_07_01Sell_mat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(74)))));
+            this.HOME03_Production_07_01Sell_mat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.HOME03_Production_07_01Sell_mat.ForeColor = System.Drawing.Color.Black;
+            this.HOME03_Production_07_01Sell_mat.Image = ((System.Drawing.Image)(resources.GetObject("HOME03_Production_07_01Sell_mat.Image")));
+            this.HOME03_Production_07_01Sell_mat.Location = new System.Drawing.Point(22, 155);
+            this.HOME03_Production_07_01Sell_mat.Name = "HOME03_Production_07_01Sell_mat";
+            this.HOME03_Production_07_01Sell_mat.Size = new System.Drawing.Size(129, 75);
+            this.HOME03_Production_07_01Sell_mat.TabIndex = 16;
+            this.HOME03_Production_07_01Sell_mat.Text = "ขอโอนสินค้า";
+            this.HOME03_Production_07_01Sell_mat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HOME03_Production_07_01Sell_mat.UseVisualStyleBackColor = false;
+            this.HOME03_Production_07_01Sell_mat.Click += new System.EventHandler(this.HOME03_Production_07_01Sell_mat_Click);
             // 
             // HOME04_Warehouse_department
             // 
@@ -378,20 +332,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(981, 619);
-            this.Controls.Add(this.HOME03_Production_07);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnEnter1PR_Setup1_type_supplier);
+            this.Controls.Add(this.HOME03_Production_07_01aprrove_sale_mat_return);
+            this.Controls.Add(this.HOME03_Production_07_99Gen_barcode);
+            this.Controls.Add(this.HOME03_Production_07_01Receive_mat);
+            this.Controls.Add(this.HOME03_Production_07_01stock_money);
+            this.Controls.Add(this.HOME03_Production_07_01stock);
+            this.Controls.Add(this.HOME03_Production_07_01sale_mat_return);
+            this.Controls.Add(this.HOME03_Production_07_01sale_mat_approve);
+            this.Controls.Add(this.HOME03_Production_07_01berg_mat_approve);
+            this.Controls.Add(this.HOME03_Production_07_01berg_mat);
+            this.Controls.Add(this.HOME03_Production_07_01Refresh_stock);
+            this.Controls.Add(this.HOME03_Production_07_01sale_mat);
+            this.Controls.Add(this.HOME03_Production_07_01Sell_mat_approve);
+            this.Controls.Add(this.HOME03_Production_07_01Sell_mat);
             this.Controls.Add(this.panel_top);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -411,19 +364,18 @@
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.PictureBox btnminimize;
         private System.Windows.Forms.PictureBox btnclose;
-        private System.Windows.Forms.Button btnEnter1PR_Setup1_type_supplier;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button HOME03_Production_07;
+        private System.Windows.Forms.Button HOME03_Production_07_01Sell_mat;
+        private System.Windows.Forms.Button HOME03_Production_07_01Sell_mat_approve;
+        private System.Windows.Forms.Button HOME03_Production_07_01sale_mat;
+        private System.Windows.Forms.Button HOME03_Production_07_01Refresh_stock;
+        private System.Windows.Forms.Button HOME03_Production_07_01berg_mat;
+        private System.Windows.Forms.Button HOME03_Production_07_01berg_mat_approve;
+        private System.Windows.Forms.Button HOME03_Production_07_01sale_mat_approve;
+        private System.Windows.Forms.Button HOME03_Production_07_01sale_mat_return;
+        private System.Windows.Forms.Button HOME03_Production_07_01stock;
+        private System.Windows.Forms.Button HOME03_Production_07_01stock_money;
+        private System.Windows.Forms.Button HOME03_Production_07_01Receive_mat;
+        private System.Windows.Forms.Button HOME03_Production_07_99Gen_barcode;
+        private System.Windows.Forms.Button HOME03_Production_07_01aprrove_sale_mat_return;
     }
 }

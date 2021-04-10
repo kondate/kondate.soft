@@ -122,6 +122,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_low_right = new System.Windows.Forms.Button();
             this.iblstatus = new System.Windows.Forms.Label();
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize_full)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -385,6 +389,10 @@
             // 
             this.panel1_contens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1_contens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1_contens.Controls.Add(this.PANEL1316_DEPARTMENT_txtdepartment_id2);
+            this.panel1_contens.Controls.Add(this.button1);
+            this.panel1_contens.Controls.Add(this.PANEL1316_DEPARTMENT_txtdepartment_name2);
+            this.panel1_contens.Controls.Add(this.label37);
             this.panel1_contens.Controls.Add(this.txtdate_send_mat);
             this.panel1_contens.Controls.Add(this.txtword_cancel2);
             this.panel1_contens.Controls.Add(this.txtword_cancel1);
@@ -981,7 +989,7 @@
             // 
             this.PANEL1317_JOB_txtjob_id.BackColor = System.Drawing.Color.White;
             this.PANEL1317_JOB_txtjob_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1317_JOB_txtjob_id.Location = new System.Drawing.Point(1252, 135);
+            this.PANEL1317_JOB_txtjob_id.Location = new System.Drawing.Point(1249, 159);
             this.PANEL1317_JOB_txtjob_id.Name = "PANEL1317_JOB_txtjob_id";
             this.PANEL1317_JOB_txtjob_id.ReadOnly = true;
             this.PANEL1317_JOB_txtjob_id.Size = new System.Drawing.Size(39, 21);
@@ -994,7 +1002,7 @@
             this.PANEL1317_JOB_btnjob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL1317_JOB_btnjob.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL1317_JOB_btnjob.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1317_JOB_btnjob.Image")));
-            this.PANEL1317_JOB_btnjob.Location = new System.Drawing.Point(1221, 137);
+            this.PANEL1317_JOB_btnjob.Location = new System.Drawing.Point(1219, 135);
             this.PANEL1317_JOB_btnjob.Name = "PANEL1317_JOB_btnjob";
             this.PANEL1317_JOB_btnjob.Size = new System.Drawing.Size(22, 16);
             this.PANEL1317_JOB_btnjob.TabIndex = 773;
@@ -1004,7 +1012,7 @@
             // 
             this.PANEL1317_JOB_txtjob_name.BackColor = System.Drawing.Color.White;
             this.PANEL1317_JOB_txtjob_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1317_JOB_txtjob_name.Location = new System.Drawing.Point(1011, 135);
+            this.PANEL1317_JOB_txtjob_name.Location = new System.Drawing.Point(1008, 159);
             this.PANEL1317_JOB_txtjob_name.Name = "PANEL1317_JOB_txtjob_name";
             this.PANEL1317_JOB_txtjob_name.ReadOnly = true;
             this.PANEL1317_JOB_txtjob_name.Size = new System.Drawing.Size(235, 21);
@@ -1014,7 +1022,7 @@
             // 
             this.PANEL1307_PROJECT_txtproject_id.BackColor = System.Drawing.Color.White;
             this.PANEL1307_PROJECT_txtproject_id.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1307_PROJECT_txtproject_id.Location = new System.Drawing.Point(1252, 108);
+            this.PANEL1307_PROJECT_txtproject_id.Location = new System.Drawing.Point(1249, 132);
             this.PANEL1307_PROJECT_txtproject_id.Name = "PANEL1307_PROJECT_txtproject_id";
             this.PANEL1307_PROJECT_txtproject_id.ReadOnly = true;
             this.PANEL1307_PROJECT_txtproject_id.Size = new System.Drawing.Size(39, 21);
@@ -1027,7 +1035,7 @@
             this.PANEL1307_PROJECT_btnproject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PANEL1307_PROJECT_btnproject.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL1307_PROJECT_btnproject.Image = ((System.Drawing.Image)(resources.GetObject("PANEL1307_PROJECT_btnproject.Image")));
-            this.PANEL1307_PROJECT_btnproject.Location = new System.Drawing.Point(1221, 110);
+            this.PANEL1307_PROJECT_btnproject.Location = new System.Drawing.Point(1218, 134);
             this.PANEL1307_PROJECT_btnproject.Name = "PANEL1307_PROJECT_btnproject";
             this.PANEL1307_PROJECT_btnproject.Size = new System.Drawing.Size(22, 16);
             this.PANEL1307_PROJECT_btnproject.TabIndex = 770;
@@ -1037,7 +1045,7 @@
             // 
             this.PANEL1307_PROJECT_txtproject_name.BackColor = System.Drawing.Color.White;
             this.PANEL1307_PROJECT_txtproject_name.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1307_PROJECT_txtproject_name.Location = new System.Drawing.Point(1011, 108);
+            this.PANEL1307_PROJECT_txtproject_name.Location = new System.Drawing.Point(1008, 132);
             this.PANEL1307_PROJECT_txtproject_name.Name = "PANEL1307_PROJECT_txtproject_name";
             this.PANEL1307_PROJECT_txtproject_name.ReadOnly = true;
             this.PANEL1307_PROJECT_txtproject_name.Size = new System.Drawing.Size(235, 21);
@@ -1046,7 +1054,7 @@
             // checkBox1_txtjob_send_mat_status
             // 
             this.checkBox1_txtjob_send_mat_status.AutoSize = true;
-            this.checkBox1_txtjob_send_mat_status.Location = new System.Drawing.Point(1011, 165);
+            this.checkBox1_txtjob_send_mat_status.Location = new System.Drawing.Point(1008, 189);
             this.checkBox1_txtjob_send_mat_status.Name = "checkBox1_txtjob_send_mat_status";
             this.checkBox1_txtjob_send_mat_status.Size = new System.Drawing.Size(74, 17);
             this.checkBox1_txtjob_send_mat_status.TabIndex = 768;
@@ -1057,7 +1065,7 @@
             // 
             this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(932, 133);
+            this.label23.Location = new System.Drawing.Point(929, 157);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(73, 21);
             this.label23.TabIndex = 767;
@@ -1068,7 +1076,7 @@
             // 
             this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(932, 106);
+            this.label22.Location = new System.Drawing.Point(929, 130);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(73, 21);
             this.label22.TabIndex = 766;
@@ -1132,7 +1140,7 @@
             this.txtcontact_person.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtcontact_person.Location = new System.Drawing.Point(595, 106);
             this.txtcontact_person.Name = "txtcontact_person";
-            this.txtcontact_person.Size = new System.Drawing.Size(331, 21);
+            this.txtcontact_person.Size = new System.Drawing.Size(303, 21);
             this.txtcontact_person.TabIndex = 759;
             // 
             // label18
@@ -1370,6 +1378,50 @@
             this.iblstatus.TabIndex = 568;
             this.iblstatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // PANEL1316_DEPARTMENT_txtdepartment_id2
+            // 
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2.BackColor = System.Drawing.Color.White;
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2.Location = new System.Drawing.Point(1249, 107);
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2.Name = "PANEL1316_DEPARTMENT_txtdepartment_id2";
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2.ReadOnly = true;
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2.Size = new System.Drawing.Size(39, 21);
+            this.PANEL1316_DEPARTMENT_txtdepartment_id2.TabIndex = 820;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1218, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 16);
+            this.button1.TabIndex = 819;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // PANEL1316_DEPARTMENT_txtdepartment_name2
+            // 
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2.BackColor = System.Drawing.Color.White;
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2.Location = new System.Drawing.Point(1008, 107);
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2.Name = "PANEL1316_DEPARTMENT_txtdepartment_name2";
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2.ReadOnly = true;
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2.Size = new System.Drawing.Size(235, 21);
+            this.PANEL1316_DEPARTMENT_txtdepartment_name2.TabIndex = 818;
+            // 
+            // label37
+            // 
+            this.label37.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label37.ForeColor = System.Drawing.Color.Black;
+            this.label37.Location = new System.Drawing.Point(904, 107);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(96, 21);
+            this.label37.TabIndex = 817;
+            this.label37.Text = "ฝ่ายที่ต้องการ :";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // HOME02_Purchasing_02PO_record_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1496,5 +1548,9 @@
         private System.Windows.Forms.TextBox txtword_cancel2;
         private System.Windows.Forms.Label txtword_cancel1;
         private System.Windows.Forms.TextBox txtdate_send_mat;
+        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtdepartment_id2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox PANEL1316_DEPARTMENT_txtdepartment_name2;
+        private System.Windows.Forms.Label label37;
     }
 }

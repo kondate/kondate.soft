@@ -42,7 +42,6 @@
             this.PANEL0110_ROOM_COLLECT_txtroom_collect_id = new System.Windows.Forms.TextBox();
             this.PANEL0110_ROOM_COLLECT = new System.Windows.Forms.Panel();
             this.PANEL0110_ROOM_COLLECT_btnresize_low = new System.Windows.Forms.Button();
-            this.PANEL0110_ROOM_COLLECT_btnnew = new System.Windows.Forms.PictureBox();
             this.PANEL0110_ROOM_COLLECT_btnclose = new System.Windows.Forms.PictureBox();
             this.PANEL0110_ROOM_COLLECT_btn_search = new System.Windows.Forms.PictureBox();
             this.PANEL0110_ROOM_COLLECT_txtsearch = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             this.PANEL0110_ROOM_COLLECT_btnroom_collect = new System.Windows.Forms.Button();
             this.PANEL0110_ROOM_COLLECT_txtroom_collect_name = new System.Windows.Forms.TextBox();
             this.PANEL0110_ROOM_COLLECT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_btnnew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_btn_search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect)).BeginInit();
@@ -167,7 +165,6 @@
             this.PANEL0110_ROOM_COLLECT.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PANEL0110_ROOM_COLLECT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PANEL0110_ROOM_COLLECT.Controls.Add(this.PANEL0110_ROOM_COLLECT_btnresize_low);
-            this.PANEL0110_ROOM_COLLECT.Controls.Add(this.PANEL0110_ROOM_COLLECT_btnnew);
             this.PANEL0110_ROOM_COLLECT.Controls.Add(this.PANEL0110_ROOM_COLLECT_btnclose);
             this.PANEL0110_ROOM_COLLECT.Controls.Add(this.PANEL0110_ROOM_COLLECT_btn_search);
             this.PANEL0110_ROOM_COLLECT.Controls.Add(this.PANEL0110_ROOM_COLLECT_txtsearch);
@@ -175,7 +172,7 @@
             this.PANEL0110_ROOM_COLLECT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.PANEL0110_ROOM_COLLECT.Location = new System.Drawing.Point(124, 155);
             this.PANEL0110_ROOM_COLLECT.Name = "PANEL0110_ROOM_COLLECT";
-            this.PANEL0110_ROOM_COLLECT.Size = new System.Drawing.Size(502, 337);
+            this.PANEL0110_ROOM_COLLECT.Size = new System.Drawing.Size(197, 96);
             this.PANEL0110_ROOM_COLLECT.TabIndex = 605;
             this.PANEL0110_ROOM_COLLECT.Visible = false;
             // 
@@ -193,7 +190,7 @@
             this.PANEL0110_ROOM_COLLECT_btnresize_low.ForeColor = System.Drawing.Color.Black;
             this.PANEL0110_ROOM_COLLECT_btnresize_low.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0110_ROOM_COLLECT_btnresize_low.Image")));
             this.PANEL0110_ROOM_COLLECT_btnresize_low.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.PANEL0110_ROOM_COLLECT_btnresize_low.Location = new System.Drawing.Point(475, 309);
+            this.PANEL0110_ROOM_COLLECT_btnresize_low.Location = new System.Drawing.Point(170, 68);
             this.PANEL0110_ROOM_COLLECT_btnresize_low.Name = "PANEL0110_ROOM_COLLECT_btnresize_low";
             this.PANEL0110_ROOM_COLLECT_btnresize_low.Size = new System.Drawing.Size(23, 22);
             this.PANEL0110_ROOM_COLLECT_btnresize_low.TabIndex = 438;
@@ -203,24 +200,12 @@
             this.PANEL0110_ROOM_COLLECT_btnresize_low.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PANEL0110_ROOM_COLLECT_btnresize_low_MouseMove);
             this.PANEL0110_ROOM_COLLECT_btnresize_low.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PANEL0110_ROOM_COLLECT_btnresize_low_MouseUp);
             // 
-            // PANEL0110_ROOM_COLLECT_btnnew
-            // 
-            this.PANEL0110_ROOM_COLLECT_btnnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PANEL0110_ROOM_COLLECT_btnnew.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0110_ROOM_COLLECT_btnnew.Image")));
-            this.PANEL0110_ROOM_COLLECT_btnnew.Location = new System.Drawing.Point(3, 3);
-            this.PANEL0110_ROOM_COLLECT_btnnew.Name = "PANEL0110_ROOM_COLLECT_btnnew";
-            this.PANEL0110_ROOM_COLLECT_btnnew.Size = new System.Drawing.Size(30, 22);
-            this.PANEL0110_ROOM_COLLECT_btnnew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PANEL0110_ROOM_COLLECT_btnnew.TabIndex = 437;
-            this.PANEL0110_ROOM_COLLECT_btnnew.TabStop = false;
-            this.PANEL0110_ROOM_COLLECT_btnnew.Visible = false;
-            // 
             // PANEL0110_ROOM_COLLECT_btnclose
             // 
             this.PANEL0110_ROOM_COLLECT_btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL0110_ROOM_COLLECT_btnclose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL0110_ROOM_COLLECT_btnclose.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0110_ROOM_COLLECT_btnclose.Image")));
-            this.PANEL0110_ROOM_COLLECT_btnclose.Location = new System.Drawing.Point(465, 3);
+            this.PANEL0110_ROOM_COLLECT_btnclose.Location = new System.Drawing.Point(160, 3);
             this.PANEL0110_ROOM_COLLECT_btnclose.Name = "PANEL0110_ROOM_COLLECT_btnclose";
             this.PANEL0110_ROOM_COLLECT_btnclose.Size = new System.Drawing.Size(30, 22);
             this.PANEL0110_ROOM_COLLECT_btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -232,7 +217,7 @@
             // 
             this.PANEL0110_ROOM_COLLECT_btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PANEL0110_ROOM_COLLECT_btn_search.Image = ((System.Drawing.Image)(resources.GetObject("PANEL0110_ROOM_COLLECT_btn_search.Image")));
-            this.PANEL0110_ROOM_COLLECT_btn_search.Location = new System.Drawing.Point(319, 15);
+            this.PANEL0110_ROOM_COLLECT_btn_search.Location = new System.Drawing.Point(128, 4);
             this.PANEL0110_ROOM_COLLECT_btn_search.Name = "PANEL0110_ROOM_COLLECT_btn_search";
             this.PANEL0110_ROOM_COLLECT_btn_search.Size = new System.Drawing.Size(30, 22);
             this.PANEL0110_ROOM_COLLECT_btn_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -244,9 +229,9 @@
             // 
             this.PANEL0110_ROOM_COLLECT_txtsearch.BackColor = System.Drawing.Color.White;
             this.PANEL0110_ROOM_COLLECT_txtsearch.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL0110_ROOM_COLLECT_txtsearch.Location = new System.Drawing.Point(87, 15);
+            this.PANEL0110_ROOM_COLLECT_txtsearch.Location = new System.Drawing.Point(3, 4);
             this.PANEL0110_ROOM_COLLECT_txtsearch.Name = "PANEL0110_ROOM_COLLECT_txtsearch";
-            this.PANEL0110_ROOM_COLLECT_txtsearch.Size = new System.Drawing.Size(231, 21);
+            this.PANEL0110_ROOM_COLLECT_txtsearch.Size = new System.Drawing.Size(119, 21);
             this.PANEL0110_ROOM_COLLECT_txtsearch.TabIndex = 432;
             // 
             // PANEL0110_ROOM_COLLECT_dataGridView1_room_collect
@@ -258,7 +243,7 @@
             this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect.Location = new System.Drawing.Point(3, 42);
             this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect.Name = "PANEL0110_ROOM_COLLECT_dataGridView1_room_collect";
-            this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect.Size = new System.Drawing.Size(491, 262);
+            this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect.Size = new System.Drawing.Size(186, 21);
             this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect.TabIndex = 0;
             this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect_CellMouseClick);
             // 
@@ -311,7 +296,6 @@
             this.Load += new System.EventHandler(this.Form_c001_10room_collect_Load);
             this.PANEL0110_ROOM_COLLECT.ResumeLayout(false);
             this.PANEL0110_ROOM_COLLECT.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_btnnew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_btn_search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PANEL0110_ROOM_COLLECT_dataGridView1_room_collect)).EndInit();
@@ -335,7 +319,6 @@
         private System.Windows.Forms.TextBox PANEL0110_ROOM_COLLECT_txtroom_collect_id;
         private System.Windows.Forms.Panel PANEL0110_ROOM_COLLECT;
         private System.Windows.Forms.Button PANEL0110_ROOM_COLLECT_btnresize_low;
-        private System.Windows.Forms.PictureBox PANEL0110_ROOM_COLLECT_btnnew;
         private System.Windows.Forms.PictureBox PANEL0110_ROOM_COLLECT_btnclose;
         private System.Windows.Forms.PictureBox PANEL0110_ROOM_COLLECT_btn_search;
         private System.Windows.Forms.TextBox PANEL0110_ROOM_COLLECT_txtsearch;

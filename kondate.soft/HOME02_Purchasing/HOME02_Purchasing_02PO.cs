@@ -168,6 +168,7 @@ namespace kondate.soft.HOME02_Purchasing
                                    "k016db_1supplier.*" +
 
                                    " FROM k018db_po_record" +
+
                                    " INNER JOIN k016db_1supplier" +
                                    " ON k018db_po_record.cdkey = k016db_1supplier.cdkey" +
                                    " AND k018db_po_record.txtco_id = k016db_1supplier.txtco_id" +

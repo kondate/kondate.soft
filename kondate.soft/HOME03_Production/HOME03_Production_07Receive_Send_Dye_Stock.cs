@@ -125,6 +125,10 @@ namespace kondate.soft.HOME03_Production
             //=============================================
             Show_GridView3();
             Show_GridView4();
+
+            Show_GridView6_Color();
+            Fill_Show_DATA_GridView6_Color();
+
         }
 
 
@@ -939,8 +943,8 @@ namespace kondate.soft.HOME03_Production
                 //===========================================
             }
             //================================
-            GridView2_Color();
             GridView2_Color_Column();
+            GridView2_Color();
             GridView2_UP_Status();
         }
         private void Show_GridView2()
@@ -1154,33 +1158,7 @@ namespace kondate.soft.HOME03_Production
             this.GridView2.Rows.Clear();
             this.GridView2.Refresh();
         }
-        private void GridView2_Color()
-        {
-            for (int i = 0; i < this.GridView2.Rows.Count - 0; i++)
-            {
-                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) < Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
-                {
-                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
 
-                }
-               else if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) == Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
-                {
-                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-
-                }
-                else
-                {
-                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
-                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
-
-                }
-            }
-        }
         private void GridView2_Color_Column()
         {
 
@@ -1193,6 +1171,54 @@ namespace kondate.soft.HOME03_Production
                 GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.LightSkyBlue;//Color.FromArgb(0, 195, 0);
                 GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.FromArgb(0, 0, 0);
 
+            }
+        }
+        private void GridView2_Color()
+        {
+            for (int i = 0; i < this.GridView2.Rows.Count - 0; i++)
+            {
+                if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) < Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
+                {
+                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.ForeColor = Color.White;
+
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.White;
+
+
+                }
+                else if (Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtmat_amount_phurchase"].Value.ToString())) == Convert.ToDouble(string.Format("{0:n4}", this.GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Value.ToString())))
+                {
+                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.ForeColor = Color.White;
+
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.Red;
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.White;
+
+
+                }
+                else
+                {
+                    GridView2.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    GridView2.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                    GridView2.Rows[i].DefaultCellStyle.Font = new Font("Tahoma", 8F);
+
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.BackColor = Color.LightGoldenrodYellow;
+                    GridView2.Rows[i].Cells["Col_txtmat_name"].Style.ForeColor = Color.Black;
+
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.BackColor = Color.LightGoldenrodYellow;
+                    GridView2.Rows[i].Cells["Col_txtcost_qty_balance"].Style.ForeColor = Color.Black;
+
+
+                }
             }
         }
         private void GridView2_UP_Status()
@@ -3274,7 +3300,525 @@ namespace kondate.soft.HOME03_Production
              Fill_Show_DATA_GridView3_all();
         }
 
+        private void btnArr_Color_Click(object sender, EventArgs e)
+        {
+            this.GridView6_Color.Visible = true;
+            this.GridView2.Visible = false;
+        }
 
+        private void btnArr_Mat_id_Click(object sender, EventArgs e)
+        {
+            this.GridView6_Color.Visible = false;
+            this.GridView2.Visible = true;
+
+        }
+
+        private void Fill_Show_DATA_GridView6_Color()
+        {
+            //เชื่อมต่อฐานข้อมูล=======================================================
+            //SqlConnection conn = new SqlConnection(KRest.W_ID_Select.conn_string);
+            SqlConnection conn = new SqlConnection(
+                new SqlConnectionStringBuilder()
+                {
+                    DataSource = W_ID_Select.ADATASOURCE,
+                    InitialCatalog = W_ID_Select.DATABASE_NAME,
+                    UserID = W_ID_Select.Crytal_USER,
+                    Password = W_ID_Select.Crytal_Pass
+                }
+                .ConnectionString
+            );
+            try
+            {
+                //conn.Open();
+                //MessageBox.Show("เชื่อมต่อฐานข้อมูลสำเร็จ....");
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("ไม่สามารถเชื่อมต่อฐานข้อมูลได้ !!  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //END เชื่อมต่อฐานข้อมูล=======================================================
+
+            //===========================================
+
+            Clear_GridView6_Color();
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            //เชื่อมต่อฐานข้อมูล======================================================
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+
+                SqlCommand cmd2 = conn.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Connection = conn;
+
+
+                cmd2.CommandText = "SELECT k021_mat_average.*," +
+                                   "b001mat.*," +
+                                    "b001mat_02detail.*," +
+
+                                    "c001_07number_color.*," +
+                                    "c001_05face_baking.*," +
+
+                                   "b001_05mat_unit1.*," +
+                                   "b001_05mat_unit2.*," +
+
+                                   "b001mat_13point_phurchase.*" +
+
+                                   " FROM k021_mat_average" +
+
+                                   " INNER JOIN b001mat" +
+                                   " ON k021_mat_average.cdkey = b001mat.cdkey" +
+                                   " AND k021_mat_average.txtco_id = b001mat.txtco_id" +
+                                   " AND k021_mat_average.txtmat_id = b001mat.txtmat_id" +
+
+                                   " INNER JOIN b001mat_02detail" +
+                                   " ON k021_mat_average.cdkey = b001mat_02detail.cdkey" +
+                                   " AND k021_mat_average.txtco_id = b001mat_02detail.txtco_id" +
+                                   " AND k021_mat_average.txtmat_id = b001mat_02detail.txtmat_id" +
+
+                                   " INNER JOIN c001_07number_color" +
+                                   " ON b001mat_02detail.cdkey = c001_07number_color.cdkey" +
+                                   " AND b001mat_02detail.txtco_id = c001_07number_color.txtco_id" +
+                                   " AND b001mat_02detail.txtnumber_color_id = c001_07number_color.txtnumber_color_id" +
+
+                                   " INNER JOIN c001_05face_baking" +
+                                   " ON b001mat_02detail.cdkey = c001_05face_baking.cdkey" +
+                                   " AND b001mat_02detail.txtco_id = c001_05face_baking.txtco_id" +
+                                   " AND b001mat_02detail.txtface_baking_id = c001_05face_baking.txtface_baking_id" +
+
+                                   " INNER JOIN b001_05mat_unit1" +
+                                   " ON b001mat_02detail.cdkey = b001_05mat_unit1.cdkey" +
+                                   " AND b001mat_02detail.txtco_id = b001_05mat_unit1.txtco_id" +
+                                   " AND b001mat_02detail.txtmat_unit1_id = b001_05mat_unit1.txtmat_unit1_id" +
+
+                                   " INNER JOIN b001_05mat_unit2" +
+                                   " ON b001mat_02detail.cdkey = b001_05mat_unit2.cdkey" +
+                                   " AND b001mat_02detail.txtco_id = b001_05mat_unit2.txtco_id" +
+                                   " AND b001mat_02detail.txtmat_unit2_id = b001_05mat_unit2.txtmat_unit2_id" +
+
+                                   " INNER JOIN b001mat_13point_phurchase" +
+                                   " ON k021_mat_average.cdkey = b001mat_13point_phurchase.cdkey" +
+                                   " AND k021_mat_average.txtco_id = b001mat_13point_phurchase.txtco_id" +
+                                   " AND k021_mat_average.txtmat_id = b001mat_13point_phurchase.txtmat_id" +
+
+                                   " WHERE (k021_mat_average.cdkey = '" + W_ID_Select.CDKEY.Trim() + "')" +
+                                   " AND (k021_mat_average.txtco_id = '" + W_ID_Select.M_COID.Trim() + "')" +
+                                   " AND (k021_mat_average.txtwherehouse_id = '" + W_ID_Select.TRANS_ID.Trim() + "')" +
+                                    " AND (b001mat_02detail.txtmat_sac_id = '" + this.txtmat_sac_id.Text.Trim() + "')" +   //ผ้าพับ
+                                    " AND (b001mat.txtmat_id <> '')" +
+                                   " ORDER BY k021_mat_average.txtmat_no ASC";
+
+                try
+                {
+                    //แบบที่ 3 ใช้ SqlDataAdapter =========================================================
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    DataTable dt2 = new DataTable();
+                    da.Fill(dt2);
+
+                    if (dt2.Rows.Count > 0)
+                    {
+
+
+
+
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            //this.GridView6_Color.ColumnCount = 16;
+                            //this.GridView6_Color.Columns[0].Name = "Col_Auto_num";
+                            //this.GridView6_Color.Columns[1].Name = "Col_txtwherehouse_id";
+
+                            //this.GridView6_Color.Columns[2].Name = "Col_txtmat_no";
+                            //this.GridView6_Color.Columns[3].Name = "Col_txtmat_id";
+                            //this.GridView6_Color.Columns[4].Name = "Col_txtmat_name";
+                            //this.GridView6_Color.Columns[5].Name = "Col_txtmat_unit1_name";
+                            //this.GridView6_Color.Columns[6].Name = "Col_txtmat_unit1_qty";
+
+                            //this.GridView6_Color.Columns[7].Name = "Col_chmat_unit_status";
+
+                            //this.GridView6_Color.Columns[8].Name = "Col_txtmat_unit2_name";
+                            //this.GridView6_Color.Columns[9].Name = "Col_txtmat_unit2_qty";
+
+
+                            //this.GridView6_Color.Columns[10].Name = "Col_txtcost_qty_balance";
+                            //this.GridView6_Color.Columns[11].Name = "Col_txtcost_qty_price_average";
+                            //this.GridView6_Color.Columns[12].Name = "Col_txtcost_money_sum";
+                            //this.GridView6_Color.Columns[13].Name = "Col_txtcost_qty2_balance";
+                            //this.GridView6_Color.Columns[14].Name = "Col_txtmat_amount_phurchase";
+                            //this.GridView6_Color.Columns[15].Name = "Col_txtmat_status";
+
+                            var index = GridView6_Color.Rows.Add();
+                            GridView6_Color.Rows[index].Cells["Col_Auto_num"].Value = ""; //0
+                            GridView6_Color.Rows[index].Cells["Col_txtwherehouse_id"].Value = dt2.Rows[j]["txtwherehouse_id"].ToString();      //1
+
+                            GridView6_Color.Rows[index].Cells["Col_txtnumber_color_id"].Value = dt2.Rows[j]["txtnumber_color_id"].ToString();      //1
+                            GridView6_Color.Rows[index].Cells["Col_txtnumber_color_name"].Value = dt2.Rows[j]["txtnumber_color_name"].ToString();      //1
+
+                            if (dt2.Rows[j]["txtface_baking_id"].ToString() == "16")
+                            {
+                                GridView6_Color.Rows[index].Cells["Col_Qty_txtface_baking_id_16"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,##0");      //10
+                            }
+                            if (dt2.Rows[j]["txtface_baking_id"].ToString() == "18")
+                            {
+                                GridView6_Color.Rows[index].Cells["Col_Qty_txtface_baking_id_18"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,##0");      //10
+                            }
+                            if (dt2.Rows[j]["txtface_baking_id"].ToString() == "20")
+                            {
+                                GridView6_Color.Rows[index].Cells["Col_Qty_txtface_baking_id_20"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,##0");      //10
+                            }
+                            if (dt2.Rows[j]["txtface_baking_id"].ToString() == "22")
+                            {
+                                GridView6_Color.Rows[index].Cells["Col_Qty_txtface_baking_id_22"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,##0");      //10
+                            }
+                            if (dt2.Rows[j]["txtface_baking_id"].ToString() == "24")
+                            {
+                                GridView6_Color.Rows[index].Cells["Col_Qty_txtface_baking_id_24"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,##0");      //10
+                            }
+
+                                GridView6_Color.Rows[index].Cells["Col_Qty_txtface_baking_id_Sum"].Value = "0";      //10
+
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_no"].Value = dt2.Rows[j]["txtmat_no"].ToString();      //2
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_id"].Value = dt2.Rows[j]["txtmat_id"].ToString();      //3
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_name"].Value = dt2.Rows[j]["txtmat_name"].ToString();      //4
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_unit1_name"].Value = dt2.Rows[j]["txtmat_unit1_name"].ToString();      //5
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_unit1_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit1_qty"]).ToString("###,###.00");        //6
+                            GridView6_Color.Rows[index].Cells["Col_chmat_unit_status"].Value = dt2.Rows[j]["chmat_unit_status"].ToString();     //7
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_unit2_name"].Value = dt2.Rows[j]["txtmat_unit2_name"].ToString();     //8
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_unit2_qty"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_unit2_qty"]).ToString("###,###.0000");      //9
+
+                            GridView6_Color.Rows[index].Cells["Col_txtcost_qty1_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty1_balance"]).ToString("###,###.00");      //10
+                            GridView6_Color.Rows[index].Cells["Col_txtcost_qty_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_balance"]).ToString("###,###.00");      //10
+                            GridView6_Color.Rows[index].Cells["Col_txtcost_qty_price_average"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty_price_average"]).ToString("###,###.00");      //11
+                            GridView6_Color.Rows[index].Cells["Col_txtcost_money_sum"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_money_sum"]).ToString("###,###.00");      //12
+
+                            GridView6_Color.Rows[index].Cells["Col_txtcost_qty2_balance"].Value = Convert.ToSingle(dt2.Rows[j]["txtcost_qty2_balance"]).ToString("###,###.00");      //13
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_amount_phurchase"].Value = Convert.ToSingle(dt2.Rows[j]["txtmat_amount_phurchase"]).ToString("###,###.00");      //14
+                            GridView6_Color.Rows[index].Cells["Col_txtmat_status"].Value = dt2.Rows[j]["txtmat_status"].ToString();      //15
+
+                        }
+                        //=======================================================
+                        Cursor.Current = Cursors.Default;
+
+
+                    }
+                    else
+                    {
+
+                        // MessageBox.Show("Not found k006db_sale_record2020  ", "ผลการทำงาน", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        Cursor.Current = Cursors.Default;
+                        conn.Close();
+                        // return;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("kondate.soft", ex.Message);
+                    return;
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                    conn.Close();
+                }
+
+                //===========================================
+            }
+            //================================
+            //GridView6_Color_Color();
+            //GridView6_Color_Color_Column();
+            //GridView6_Color_UP_Status();
+        }
+        private void Show_GridView6_Color()
+        {
+            this.GridView6_Color.ColumnCount = 25;
+            this.GridView6_Color.Columns[0].Name = "Col_Auto_num";
+            this.GridView6_Color.Columns[1].Name = "Col_txtwherehouse_id";
+
+            this.GridView6_Color.Columns[2].Name = "Col_txtnumber_color_id";
+            this.GridView6_Color.Columns[3].Name = "Col_txtnumber_color_name";
+            this.GridView6_Color.Columns[4].Name = "Col_Qty_txtface_baking_id_16";
+            this.GridView6_Color.Columns[5].Name = "Col_Qty_txtface_baking_id_18";
+            this.GridView6_Color.Columns[6].Name = "Col_Qty_txtface_baking_id_20";
+            this.GridView6_Color.Columns[7].Name = "Col_Qty_txtface_baking_id_22";
+            this.GridView6_Color.Columns[8].Name = "Col_Qty_txtface_baking_id_24";
+            this.GridView6_Color.Columns[9].Name = "Col_Qty_txtface_baking_id_Sum";
+
+            this.GridView6_Color.Columns[10].Name = "Col_txtmat_no";
+            this.GridView6_Color.Columns[11].Name = "Col_txtmat_id";
+            this.GridView6_Color.Columns[12].Name = "Col_txtmat_name";
+            this.GridView6_Color.Columns[13].Name = "Col_txtmat_unit1_name";
+            this.GridView6_Color.Columns[14].Name = "Col_txtmat_unit1_qty";
+
+            this.GridView6_Color.Columns[15].Name = "Col_chmat_unit_status";
+
+            this.GridView6_Color.Columns[16].Name = "Col_txtmat_unit2_name";
+            this.GridView6_Color.Columns[17].Name = "Col_txtmat_unit2_qty";
+
+
+            this.GridView6_Color.Columns[18].Name = "Col_txtcost_qty1_balance";
+            this.GridView6_Color.Columns[19].Name = "Col_txtcost_qty_balance";
+            this.GridView6_Color.Columns[20].Name = "Col_txtcost_qty_price_average";
+            this.GridView6_Color.Columns[21].Name = "Col_txtcost_money_sum";
+            this.GridView6_Color.Columns[22].Name = "Col_txtcost_qty2_balance";
+
+
+            this.GridView6_Color.Columns[23].Name = "Col_txtmat_amount_phurchase";
+            this.GridView6_Color.Columns[24].Name = "Col_txtmat_status";
+
+            this.GridView6_Color.Columns[0].HeaderText = "No";
+            this.GridView6_Color.Columns[1].HeaderText = "รหัสคลัง";
+
+            this.GridView6_Color.Columns[2].HeaderText = "รหัส";
+            this.GridView6_Color.Columns[3].HeaderText =  " สี";
+            this.GridView6_Color.Columns[4].HeaderText = "16 (S)";
+            this.GridView6_Color.Columns[5].HeaderText = "18 (M)";
+            this.GridView6_Color.Columns[6].HeaderText = "20 (L)";
+            this.GridView6_Color.Columns[7].HeaderText = "22 (XL)";
+            this.GridView6_Color.Columns[8].HeaderText = "24 (2XL)";
+            this.GridView6_Color.Columns[9].HeaderText = " รวม";
+
+
+            this.GridView6_Color.Columns[10].HeaderText = "ลำดับ";
+            this.GridView6_Color.Columns[11].HeaderText = " รหัส";
+            this.GridView6_Color.Columns[12].HeaderText = " ชื่อสินค้า";
+            this.GridView6_Color.Columns[13].HeaderText = " หน่วยหลัก";
+            this.GridView6_Color.Columns[14].HeaderText = " หน่วย";
+            this.GridView6_Color.Columns[15].HeaderText = "แปลง";
+            this.GridView6_Color.Columns[16].HeaderText = " หน่วย2";
+            this.GridView6_Color.Columns[17].HeaderText = " หน่วย";
+
+
+            this.GridView6_Color.Columns[18].HeaderText = "คงเหลือ(พับ)";
+            this.GridView6_Color.Columns[19].HeaderText = "คงเหลือ(kg)";
+            this.GridView6_Color.Columns[20].HeaderText = "ราคาเฉลี่ย";
+            this.GridView6_Color.Columns[21].HeaderText = "มูลค่าเฉลี่ย";
+            this.GridView6_Color.Columns[22].HeaderText = "คงเหลือ(ปอนด์)";
+
+            this.GridView6_Color.Columns[23].HeaderText = "จุดสั่งซื้อ";
+            this.GridView6_Color.Columns[24].HeaderText = "สถานะ";
+
+            this.GridView6_Color.Columns[0].Visible = false;  //"Col_Auto_num";
+
+            this.GridView6_Color.Columns["Col_Auto_num"].Visible = false;  //"Col_txtwherehouse_id";
+            this.GridView6_Color.Columns["Col_Auto_num"].Width = 0;
+            this.GridView6_Color.Columns["Col_Auto_num"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_Auto_num"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_Auto_num"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_Auto_num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtwherehouse_id"].Visible = false;  //"Col_txtwherehouse_id";
+            this.GridView6_Color.Columns["Col_txtwherehouse_id"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtwherehouse_id"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtwherehouse_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtwherehouse_id"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtwherehouse_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtnumber_color_id"].Visible = true;  //"Col_txtnumber_color_id"";
+            this.GridView6_Color.Columns["Col_txtnumber_color_id"].Width = 80;
+            this.GridView6_Color.Columns["Col_txtnumber_color_id"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_txtnumber_color_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtnumber_color_id"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtnumber_color_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView6_Color.Columns["Col_txtnumber_color_name"].Visible = true;  //"Col_txtnumber_color_name"";
+            this.GridView6_Color.Columns["Col_txtnumber_color_name"].Width = 120;
+            this.GridView6_Color.Columns["Col_txtnumber_color_name"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_txtnumber_color_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtnumber_color_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtnumber_color_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_16"].Visible = true;  //"Col_Qty_txtface_baking_id_16"";
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_16"].Width = 80;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_16"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_16"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_16"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_16"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_18"].Visible = true;  //"Col_Qty_txtface_baking_id_18"";
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_18"].Width = 80;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_18"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_18"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_18"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_18"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_20"].Visible = true;  //"Col_Qty_txtface_baking_id_20"";
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_20"].Width = 80;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_20"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_20"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_20"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_20"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_22"].Visible = true;  //"Col_Qty_txtface_baking_id_22"";
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_22"].Width = 80;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_22"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_22"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_22"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_22"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_24"].Visible = true;  //"Col_Qty_txtface_baking_id_24"";
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_24"].Width = 80;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_24"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_24"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_24"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_24"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_Sum"].Visible = true;  //"Col_Qty_txtface_baking_id_Sum"";
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_Sum"].Width = 80;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_Sum"].ReadOnly = false;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_Sum"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_Sum"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_Qty_txtface_baking_id_Sum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.GridView6_Color.Columns["Col_txtmat_no"].Visible = false;  //"Col_txtmat_no"";
+            this.GridView6_Color.Columns["Col_txtmat_no"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_no"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_no"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_no"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_no"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtmat_id"].Visible = false;  //"Col_txtmat_id";
+            this.GridView6_Color.Columns["Col_txtmat_id"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_id"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_id"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtmat_name"].Visible = false;  //"Col_txtmat_name";
+            this.GridView6_Color.Columns["Col_txtmat_name"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_name"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtmat_unit1_name"].Visible = false;  //"Col_txtmat_unit1_name";
+            this.GridView6_Color.Columns["Col_txtmat_unit1_name"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_unit1_name"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_unit1_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_unit1_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtmat_unit1_qty"].Visible = false;  //"Col_txtmat_unit1_qty";
+            this.GridView6_Color.Columns["Col_txtmat_unit1_qty"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_unit1_qty"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_unit1_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_unit1_qty"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_unit1_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_chmat_unit_status"].Visible = false;  //"Col_chmat_unit_status";
+            this.GridView6_Color.Columns["Col_chmat_unit_status"].Width = 0;
+            this.GridView6_Color.Columns["Col_chmat_unit_status"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_chmat_unit_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_chmat_unit_status"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_chmat_unit_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtmat_unit2_name"].Visible = false;  //Col_txtmat_unit2_name";
+            this.GridView6_Color.Columns["Col_txtmat_unit2_name"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_unit2_name"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_unit2_name"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_unit2_name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            this.GridView6_Color.Columns["Col_txtmat_unit2_qty"].Visible = false;  //"Col_txtmat_unit2_qty";
+            this.GridView6_Color.Columns["Col_txtmat_unit2_qty"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_unit2_qty"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_unit2_qty"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_unit2_qty"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_unit2_qty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_txtcost_qty1_balance"].Visible = false;  //"Col_txtcost_qty1_balance";
+            this.GridView6_Color.Columns["Col_txtcost_qty1_balance"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtcost_qty1_balance"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtcost_qty1_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtcost_qty1_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtcost_qty1_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_txtcost_qty_balance"].Visible = false;  //"Col_txtcost_qty_balance";
+            this.GridView6_Color.Columns["Col_txtcost_qty_balance"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtcost_qty_balance"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtcost_qty_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtcost_qty_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtcost_qty_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_txtcost_qty_price_average"].Visible = false;  //"Col_txtcost_qty_price_average";
+            this.GridView6_Color.Columns["Col_txtcost_qty_price_average"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtcost_qty_price_average"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtcost_qty_price_average"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtcost_qty_price_average"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtcost_qty_price_average"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_txtcost_money_sum"].Visible = false;  //"Col_txtcost_money_sum";
+            this.GridView6_Color.Columns["Col_txtcost_money_sum"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtcost_money_sum"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtcost_money_sum"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtcost_money_sum"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtcost_money_sum"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_txtcost_qty2_balance"].Visible = false;  //"Col_txtcost_qty2_balance";
+            this.GridView6_Color.Columns["Col_txtcost_qty2_balance"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtcost_qty2_balance"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtcost_qty2_balance"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtcost_qty2_balance"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtcost_qty2_balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_txtmat_amount_phurchase"].Visible = false;  //"Col_txtmat_amount_phurchase";
+            this.GridView6_Color.Columns["Col_txtmat_amount_phurchase"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_amount_phurchase"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_amount_phurchase"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_amount_phurchase"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_amount_phurchase"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.GridView6_Color.Columns["Col_txtmat_status"].Visible = false;  //"Col_txtmat_status";
+            this.GridView6_Color.Columns["Col_txtmat_status"].Width = 0;
+            this.GridView6_Color.Columns["Col_txtmat_status"].ReadOnly = true;
+            this.GridView6_Color.Columns["Col_txtmat_status"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.GridView6_Color.Columns["Col_txtmat_status"].HeaderCell.Style.BackColor = Color.FromArgb(255, 255, 255);
+            this.GridView6_Color.Columns["Col_txtmat_status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
+            dgvCmb.Name = "Col_Chk1";
+            dgvCmb.Width = 0;
+            dgvCmb.DisplayIndex = 7;
+            dgvCmb.HeaderText = "แปลงหน่วย?";
+            dgvCmb.ValueType = typeof(bool);
+            dgvCmb.ReadOnly = true;
+            dgvCmb.Visible = false;
+            dgvCmb.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb.DefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+            GridView6_Color.Columns.Add(dgvCmb);
+
+            DataGridViewCheckBoxColumn dgvCmb2 = new DataGridViewCheckBoxColumn();
+            dgvCmb2.ValueType = typeof(bool);
+            dgvCmb2.Width = 70;
+            dgvCmb2.DisplayIndex = 16;
+            dgvCmb2.Name = "Col_Chk2";
+            dgvCmb2.HeaderText = "สถานะ";
+            dgvCmb2.ReadOnly = true;
+            dgvCmb2.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCmb2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            GridView6_Color.Columns.Add(dgvCmb2);
+
+
+            this.GridView6_Color.DefaultCellStyle.Font = new Font("Tahoma", 8F);
+            this.GridView6_Color.GridColor = Color.FromArgb(227, 227, 227);
+
+            this.GridView6_Color.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            this.GridView6_Color.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            this.GridView6_Color.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+            this.GridView6_Color.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Pixel); //Segoe UI, 11pt
+            this.GridView6_Color.EnableHeadersVisualStyles = false;
+
+        }
+        private void Clear_GridView6_Color()
+        {
+            this.GridView6_Color.Rows.Clear();
+            this.GridView6_Color.Refresh();
+        }
 
 
 

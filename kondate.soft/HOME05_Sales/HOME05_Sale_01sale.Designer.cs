@@ -761,7 +761,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HOME05_Sale_01sale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ระเบียนขาย";
+            this.Text = "ระเบียน ใบส่งของ(ขายเชื่อ)";
             this.Load += new System.EventHandler(this.HOME05_Sale_01sale_Load);
             this.panel_top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).EndInit();

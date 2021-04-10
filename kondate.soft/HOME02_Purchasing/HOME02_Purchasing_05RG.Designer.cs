@@ -439,7 +439,7 @@
             this.PANEL1306_WH.Controls.Add(this.PANEL1306_WH_txtsearch);
             this.PANEL1306_WH.Controls.Add(this.PANEL1306_WH_dataGridView1_wherehouse);
             this.PANEL1306_WH.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL1306_WH.Location = new System.Drawing.Point(680, 167);
+            this.PANEL1306_WH.Location = new System.Drawing.Point(526, 159);
             this.PANEL1306_WH.Name = "PANEL1306_WH";
             this.PANEL1306_WH.Size = new System.Drawing.Size(502, 337);
             this.PANEL1306_WH.TabIndex = 918;
@@ -678,7 +678,7 @@
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_txtsearch);
             this.PANEL161_SUP.Controls.Add(this.PANEL161_SUP_dataGridView1);
             this.PANEL161_SUP.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PANEL161_SUP.Location = new System.Drawing.Point(360, 506);
+            this.PANEL161_SUP.Location = new System.Drawing.Point(1034, 163);
             this.PANEL161_SUP.Name = "PANEL161_SUP";
             this.PANEL161_SUP.Size = new System.Drawing.Size(502, 337);
             this.PANEL161_SUP.TabIndex = 797;
